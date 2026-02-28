@@ -153,7 +153,7 @@ export function ShopPage() {
                 viewport={{ once: true }}
                 variants={fadeUp}
                 custom={i}
-                className={`group p-8 bg-white/[0.04] backdrop-blur-xl border-2 border-dashed border-white/[0.15] ${accent.hoverBorder} transition-all hover:-translate-y-2 ${accent.shadow} text-center ${item.tilt} hover:rotate-0 rounded-sm`}
+                className={`group p-8 bg-white/[0.04] backdrop-blur-xl border-2 border-dashed border-white/[0.15] ${accent.hoverBorder} transition-[border-color,box-shadow] duration-300 hover:-translate-y-2 ${accent.shadow} text-center ${item.tilt} hover:rotate-0 rounded-sm will-change-transform`}
               >
                 <div className={`w-14 h-14 ${accent.iconBg} border flex items-center justify-center mx-auto mb-5 group-hover:scale-110 group-hover:-rotate-12 transition-transform rounded-sm`}>
                   <item.icon className={`w-7 h-7 ${accent.iconColor}`} />

@@ -65,6 +65,13 @@ export const router = createHashRouter([
             Component: m.ContactPage,
           })),
       },
+      {
+        path: "games/acrostix/privacy",
+        lazy: () =>
+          import("./components/AcrostixPrivacyPage").then((m) => ({
+            Component: m.AcrostixPrivacyPage,
+          })),
+      },
       { path: "*", Component: NotFound },
     ],
   },

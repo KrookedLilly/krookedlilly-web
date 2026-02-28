@@ -472,7 +472,7 @@ export function BallDropPage() {
                   viewport={{ once: true, margin: "-40px" }}
                   variants={fadeUp}
                   custom={i}
-                  className={`group p-6 bg-white/[0.04] backdrop-blur-xl border-2 border-white/[0.12] ${a.hoverBorder} transition-all hover:-translate-y-2 ${a.shadow} ${tilts[i]} hover:rotate-0 rounded-sm`}
+                  className={`group p-6 bg-white/[0.04] backdrop-blur-xl border-2 border-white/[0.12] ${a.hoverBorder} transition-[border-color,box-shadow] duration-300 hover:-translate-y-2 ${a.shadow} ${tilts[i]} hover:rotate-0 rounded-sm will-change-transform`}
                 >
                   <div
                     className={`w-12 h-12 ${a.bg} flex items-center justify-center mb-5 transition-transform group-hover:scale-110 group-hover:-rotate-6 rounded-sm`}

@@ -122,7 +122,7 @@ export function ContactPage() {
                   key={item.label}
                   variants={fadeUp}
                   custom={i + 1}
-                  className={`flex items-start gap-4 p-4 bg-white/[0.04] backdrop-blur-xl border-2 border-white/[0.12] ${styles.hoverBorder} transition-all hover:-translate-y-1 ${styles.shadow} ${item.tilt} hover:rotate-0 rounded-sm`}
+                  className={`flex items-start gap-4 p-4 bg-white/[0.04] backdrop-blur-xl border-2 border-white/[0.12] ${styles.hoverBorder} transition-[border-color,box-shadow] duration-300 hover:-translate-y-1 ${styles.shadow} ${item.tilt} hover:rotate-0 rounded-sm will-change-transform`}
                 >
                   <div className={`w-12 h-12 ${styles.iconBg} border flex items-center justify-center shrink-0 -rotate-3 rounded-sm`}>
                     <item.icon className={`w-5 h-5 ${styles.iconColor}`} />

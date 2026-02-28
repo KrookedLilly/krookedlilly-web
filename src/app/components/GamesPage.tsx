@@ -211,8 +211,7 @@ export function GamesPage() {
                   animate="visible"
                   variants={fadeUp}
                   custom={i}
-                  layout
-                  className={`group relative overflow-hidden bg-white/[0.04] backdrop-blur-xl border-2 border-white/[0.12] ${accent.hoverBorder} transition-all hover:-translate-y-2 ${accent.shadow} ${project.tilt} hover:rotate-0 rounded-sm ${project.slug ? "cursor-pointer" : ""}`}
+                  className={`group relative overflow-hidden bg-white/[0.04] backdrop-blur-xl border-2 border-white/[0.12] ${accent.hoverBorder} transition-[border-color,box-shadow] duration-300 hover:-translate-y-2 ${accent.shadow} ${project.tilt} hover:rotate-0 rounded-sm will-change-transform ${project.slug ? "cursor-pointer" : ""}`}
                 >
                   {/* Make the whole card clickable if it has a detail page */}
                   {project.slug && (

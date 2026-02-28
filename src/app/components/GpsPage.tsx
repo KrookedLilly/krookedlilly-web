@@ -429,7 +429,7 @@ export function GpsPage() {
                 key={planet.alt}
                 variants={fadeUp}
                 custom={planet.delay}
-                className={`group relative rounded-sm overflow-hidden border-2 ${planet.border} ${planet.hoverBorder} ${planet.tilt} hover:rotate-0 transition-all hover:-translate-y-3 ${planet.shadow} ${planet.hoverShadow}`}
+                className={`group relative rounded-sm overflow-hidden border-2 ${planet.border} ${planet.hoverBorder} ${planet.tilt} hover:rotate-0 transition-[border-color,box-shadow] duration-300 hover:-translate-y-3 ${planet.shadow} ${planet.hoverShadow} will-change-transform`}
               >
                 <div className="aspect-square bg-black/40">
                   <img
@@ -500,7 +500,7 @@ export function GpsPage() {
                   viewport={{ once: true, margin: "-40px" }}
                   variants={fadeUp}
                   custom={i}
-                  className={`group p-6 bg-white/[0.04] backdrop-blur-xl border-2 border-white/[0.12] ${a.hoverBorder} transition-all hover:-translate-y-2 ${a.shadow} ${tilts[i]} hover:rotate-0 rounded-sm`}
+                  className={`group p-6 bg-white/[0.04] backdrop-blur-xl border-2 border-white/[0.12] ${a.hoverBorder} transition-[border-color,box-shadow] duration-300 hover:-translate-y-2 ${a.shadow} ${tilts[i]} hover:rotate-0 rounded-sm will-change-transform`}
                 >
                   <div
                     className={`w-12 h-12 ${a.bg} flex items-center justify-center mb-5 transition-transform group-hover:scale-110 group-hover:-rotate-6 rounded-sm`}
@@ -719,7 +719,7 @@ export function GpsPage() {
                   key={style.title}
                   variants={fadeUp}
                   custom={i}
-                  className={`group p-8 bg-white/[0.04] backdrop-blur-xl border-2 border-white/[0.12] ${a.hoverBorder} transition-all hover:-translate-y-2 ${a.shadow} ${style.tilt} hover:rotate-0 rounded-sm text-center`}
+                  className={`group p-8 bg-white/[0.04] backdrop-blur-xl border-2 border-white/[0.12] ${a.hoverBorder} transition-[border-color,box-shadow] duration-300 hover:-translate-y-2 ${a.shadow} ${style.tilt} hover:rotate-0 rounded-sm text-center will-change-transform`}
                 >
                   <span className="text-4xl mb-4 block">{style.emoji}</span>
                   <h3

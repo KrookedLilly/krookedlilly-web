@@ -222,7 +222,7 @@ export function HomePage() {
                   viewport={{ once: true, margin: "-50px" }}
                   variants={fadeUp}
                   custom={i}
-                  className={`group relative overflow-hidden bg-white/[0.04] backdrop-blur-xl border-2 border-white/[0.12] ${accent.hoverBorder} transition-all hover:-translate-y-2 ${accent.shadow} ${game.rotate} hover:rotate-0 rounded-sm ${game.slug ? "cursor-pointer" : ""}`}
+                  className={`group relative overflow-hidden bg-white/[0.04] backdrop-blur-xl border-2 border-white/[0.12] ${accent.hoverBorder} transition-[border-color,box-shadow] duration-300 hover:-translate-y-2 ${accent.shadow} ${game.rotate} hover:rotate-0 rounded-sm will-change-transform ${game.slug ? "cursor-pointer" : ""}`}
                 >
                   {game.slug && (
                     <Link
@@ -314,7 +314,7 @@ export function HomePage() {
                   viewport={{ once: true, margin: "-50px" }}
                   variants={fadeUp}
                   custom={i}
-                  className={`p-6 bg-white/[0.04] backdrop-blur-xl border-2 border-white/[0.12] ${accent.hoverBorder} transition-all hover:-translate-y-2 ${accent.shadow} ${mod.rotate} hover:rotate-0 rounded-sm`}
+                  className={`p-6 bg-white/[0.04] backdrop-blur-xl border-2 border-white/[0.12] ${accent.hoverBorder} transition-[border-color,box-shadow] duration-300 hover:-translate-y-2 ${accent.shadow} ${mod.rotate} hover:rotate-0 rounded-sm will-change-transform`}
                 >
                   {mod.logo && (
                     <div className="mb-4">

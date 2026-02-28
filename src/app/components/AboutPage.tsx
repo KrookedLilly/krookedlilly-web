@@ -212,7 +212,7 @@ export function AboutPage() {
                 viewport={{ once: true }}
                 variants={fadeUp}
                 custom={i}
-                className={`p-6 bg-white/[0.04] backdrop-blur-xl border-2 border-white/[0.12] hover:border-white/[0.2] transition-all hover:-translate-y-2 rounded-sm ${
+                className={`p-6 bg-white/[0.04] backdrop-blur-xl border-2 border-white/[0.12] hover:border-white/[0.2] transition-[border-color,box-shadow] duration-300 hover:-translate-y-2 rounded-sm will-change-transform ${
                   i === 0 ? "rotate-1" : i === 1 ? "-rotate-1" : "rotate-2"
                 } hover:rotate-0`}
               >
@@ -264,7 +264,7 @@ export function AboutPage() {
                 viewport={{ once: true }}
                 variants={fadeUp}
                 custom={i}
-                className={`text-center p-6 bg-white/[0.04] backdrop-blur-xl border-2 border-white/[0.12] ${value.hoverBorder} transition-all hover:-translate-y-2 ${value.shadow} ${value.tilt} hover:rotate-0 rounded-sm`}
+                className={`text-center p-6 bg-white/[0.04] backdrop-blur-xl border-2 border-white/[0.12] ${value.hoverBorder} transition-[border-color,box-shadow] duration-300 hover:-translate-y-2 ${value.shadow} ${value.tilt} hover:rotate-0 rounded-sm will-change-transform`}
               >
                 <div
                   className={`w-12 h-12 ${value.color} flex items-center justify-center mx-auto mb-4 -rotate-6 rounded-sm`}
