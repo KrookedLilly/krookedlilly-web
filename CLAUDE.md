@@ -4,26 +4,32 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Build & Development Commands
 
-- `npm start` — Start dev server (port 3000)
-- `npm run build` — Production build
-- `npm test` — Run tests in watch mode
+- `npm run dev` — Start Vite dev server
+- `npm run build` — Production build (tsc + vite build)
+- `npm run preview` — Preview production build locally
 - `npm run deploy` — Build and deploy to GitHub Pages
 
 ## Tech Stack
 
-- React 19 with TypeScript (CRA / react-scripts 5)
-- React Router DOM 7 with HashRouter (required for GitHub Pages static hosting)
-- Vanilla CSS (global styles in index.css, component styles in App.css)
-- Testing: Jest + React Testing Library
+- React 19 with TypeScript
+- Vite 6 with @vitejs/plugin-react
+- Tailwind CSS 4 with @tailwindcss/vite
+- React Router 7 with createHashRouter (required for GitHub Pages)
+- Motion (Framer Motion) for animations
+- Lucide React for icons
+- Custom fonts: Permanent Marker, Space Grotesk, Inter
 
 ## Architecture
 
-Single-page app with a flat component structure:
-- `src/index.tsx` — Entry point, renders App
-- `src/App.tsx` — Root component, defines routes via HashRouter
-- `src/pages/` — Page components (currently only Home.tsx)
-- `src/helpers/functions.ts` — Shared utilities (isStringEmpty, ObjToQueryString)
+- `src/main.tsx` — Entry point
+- `src/app/App.tsx` — Root component, renders RouterProvider
+- `src/app/routes.ts` — All route definitions (createHashRouter)
+- `src/app/components/Layout.tsx` — Shared layout (Navbar, Footer, ambient effects)
+- `src/app/components/` — Page and shared components
+- `src/app/assets/` — Screenshot data layers and asset re-exports
+- `src/assets/` — PNG image assets
+- `src/styles/` — CSS (index.css imports fonts.css, tailwind.css, theme.css)
 
 ## Deployment
 
-Deployed to GitHub Pages with custom domain (krookedlilly.com). The `public/CNAME` file configures the custom domain. HashRouter is used instead of BrowserRouter because GitHub Pages doesn't support server-side routing.
+Deployed to GitHub Pages with custom domain (krookedlilly.com). The `public/CNAME` file configures the custom domain. HashRouter (createHashRouter) is used instead of BrowserRouter because GitHub Pages doesn't support server-side routing.
