@@ -16,6 +16,15 @@ export default defineConfig({
   },
   build: {
     outDir: 'dist',
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          'vendor-react': ['react', 'react-dom'],
+          'vendor-router': ['react-router'],
+          'vendor-motion': ['motion'],
+        },
+      },
+    },
   },
   assetsInclude: ['**/*.svg', '**/*.csv'],
 })
