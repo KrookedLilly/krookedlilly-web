@@ -1,4 +1,4 @@
-import{f as c,j as e,e as a,S as h}from"./index-D7rTgYnA.js";import{a as n}from"./vendor-router-BxE02yVp.js";import{P as u}from"./package-BURp_sEs.js";import"./vendor-react-7pfywCae.js";import"./vendor-motion-ChfWCO4p.js";/**
+import{f as c,j as e,e as a,S as h}from"./index-CkfHbcmI.js";import{a as n}from"./vendor-router-BxE02yVp.js";import{P as u}from"./package-_QG_0eKD.js";import"./vendor-react-7pfywCae.js";import"./vendor-motion-ChfWCO4p.js";/**
  * @license lucide-react v0.487.0 - ISC
  *
  * This source code is licensed under the ISC license.
