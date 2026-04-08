@@ -125,8 +125,8 @@ export function GpsPage() {
       <section className="relative pt-6 pb-20">
         {/* Background glow */}
         <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute -top-[200px] left-1/4 w-[500px] h-[500px] bg-primary/10 rounded-full blur-[160px]" />
-          <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-teal/8 rounded-full blur-[140px]" />
+          <div className="absolute -top-[200px] left-1/4 w-[500px] h-[500px] bg-[radial-gradient(circle,_rgba(160,92,246,0.10)_0%,_transparent_70%)]" />
+          <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-[radial-gradient(circle,_rgba(34,211,238,0.08)_0%,_transparent_70%)]" />
         </div>
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -274,8 +274,7 @@ export function GpsPage() {
             {/* Tutorial screenshot */}
             <motion.div variants={fadeUp} custom={2} className="flex justify-center">
               <div className="relative">
-                <div className="absolute inset-0 bg-primary/10 blur-[80px] rounded-full scale-125" />
-                <div className="relative rounded-sm overflow-hidden border-2 border-white/[0.12] rotate-1 hover:rotate-0 transition-transform duration-500 shadow-[6px_6px_0px_0px_rgba(160,92,246,0.2)]">
+                <div className="rounded-sm overflow-hidden border-2 border-white/[0.12] rotate-1 hover:rotate-0 transition-transform duration-500 shadow-[6px_6px_0px_0px_rgba(160,92,246,0.2)]">
                   <img
                     src={imgTutorialScreenshot}
                     alt="GPS tutorial gameplay — building routes around a sun with planets"
@@ -291,7 +290,7 @@ export function GpsPage() {
       {/* ═══════════ THE GOODS ARE ODD ═══════════ */}
       <section className="py-20 relative">
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
-          <div className="absolute top-1/2 left-1/3 w-[400px] h-[400px] bg-lime/5 rounded-full blur-[140px]" />
+          <div className="absolute top-1/2 left-1/3 w-[400px] h-[400px] bg-[radial-gradient(circle,_rgba(132,204,22,0.05)_0%,_transparent_70%)]" />
         </div>
         <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
@@ -340,8 +339,8 @@ export function GpsPage() {
       {/* ═══════════ RANDOMLY GENERATED WORLDS ═══════════ */}
       <section className="py-24 relative overflow-hidden bg-white/[0.02] backdrop-blur-sm border-y-2 border-white/[0.08]">
         <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-1/3 left-1/4 w-[500px] h-[500px] bg-teal/6 rounded-full blur-[160px]" />
-          <div className="absolute bottom-1/4 right-1/3 w-[400px] h-[400px] bg-primary/8 rounded-full blur-[140px]" />
+          <div className="absolute top-1/3 left-1/4 w-[500px] h-[500px] bg-[radial-gradient(circle,_rgba(34,211,238,0.06)_0%,_transparent_70%)]" />
+          <div className="absolute bottom-1/4 right-1/3 w-[400px] h-[400px] bg-[radial-gradient(circle,_rgba(160,92,246,0.08)_0%,_transparent_70%)]" />
         </div>
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -392,8 +391,7 @@ export function GpsPage() {
               custom={0}
               className="relative max-w-4xl w-full"
             >
-              <div className="absolute inset-0 bg-teal/8 blur-[100px] rounded-full scale-110 pointer-events-none" />
-              <div className="relative rounded-sm overflow-hidden border-2 border-teal/30 hover:border-teal/50 transition-all hover:-translate-y-1 shadow-[6px_6px_0px_0px_rgba(34,211,238,0.15)] hover:shadow-[8px_8px_0px_0px_rgba(34,211,238,0.25)]">
+              <div className="rounded-sm overflow-hidden border-2 border-teal/30 hover:border-teal/50 transition-all hover:-translate-y-1 shadow-[6px_6px_0px_0px_rgba(34,211,238,0.15)] hover:shadow-[8px_8px_0px_0px_rgba(34,211,238,0.25)]">
                 <img
                   src={imgSolarSystem}
                   alt="Solar system overview — a glowing blue-white star surrounded by orbiting planets, moons, and asteroids, one of 50+ randomly generated systems per game"
@@ -500,7 +498,7 @@ export function GpsPage() {
                   viewport={{ once: true, margin: "-40px" }}
                   variants={fadeUp}
                   custom={i}
-                  className={`group p-6 bg-white/[0.04] backdrop-blur-xl border-2 border-white/[0.12] ${a.hoverBorder} transition-[border-color,box-shadow] duration-300 hover:-translate-y-2 ${a.shadow} ${tilts[i]} hover:rotate-0 rounded-sm will-change-transform`}
+                  className={`group p-6 bg-white/[0.06] border-2 border-white/[0.12] ${a.hoverBorder} transition-[border-color,box-shadow] duration-300 hover:-translate-y-2 ${a.shadow} ${tilts[i]} hover:rotate-0 rounded-sm will-change-transform`}
                 >
                   <div
                     className={`w-12 h-12 ${a.bg} flex items-center justify-center mb-5 transition-transform group-hover:scale-110 group-hover:-rotate-6 rounded-sm`}
@@ -524,8 +522,8 @@ export function GpsPage() {
       {/* ═══════════ ENEMIES & THE NARWHAL ═══════════ */}
       <section className="py-24 relative bg-white/[0.02] backdrop-blur-sm border-y-2 border-white/[0.08]">
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
-          <div className="absolute top-0 right-1/4 w-[500px] h-[500px] bg-primary/8 rounded-full blur-[160px]" />
-          <div className="absolute bottom-0 left-1/4 w-[400px] h-[400px] bg-teal/6 rounded-full blur-[140px]" />
+          <div className="absolute top-0 right-1/4 w-[500px] h-[500px] bg-[radial-gradient(circle,_rgba(160,92,246,0.08)_0%,_transparent_70%)]" />
+          <div className="absolute bottom-0 left-1/4 w-[400px] h-[400px] bg-[radial-gradient(circle,_rgba(34,211,238,0.06)_0%,_transparent_70%)]" />
         </div>
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -656,8 +654,8 @@ export function GpsPage() {
       {/* ═══════════ OPEN WORLD FREEDOM ═══════════ */}
       <section className="py-20 relative">
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/8 rounded-full blur-[160px]" />
-          <div className="absolute top-1/4 right-1/4 w-[300px] h-[300px] bg-teal/6 rounded-full blur-[100px]" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[radial-gradient(circle,_rgba(160,92,246,0.08)_0%,_transparent_70%)]" />
+          <div className="absolute top-1/4 right-1/4 w-[300px] h-[300px] bg-[radial-gradient(circle,_rgba(34,211,238,0.06)_0%,_transparent_70%)]" />
         </div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -719,7 +717,7 @@ export function GpsPage() {
                   key={style.title}
                   variants={fadeUp}
                   custom={i}
-                  className={`group p-8 bg-white/[0.04] backdrop-blur-xl border-2 border-white/[0.12] ${a.hoverBorder} transition-[border-color,box-shadow] duration-300 hover:-translate-y-2 ${a.shadow} ${style.tilt} hover:rotate-0 rounded-sm text-center will-change-transform`}
+                  className={`group p-8 bg-white/[0.06] border-2 border-white/[0.12] ${a.hoverBorder} transition-[border-color,box-shadow] duration-300 hover:-translate-y-2 ${a.shadow} ${style.tilt} hover:rotate-0 rounded-sm text-center will-change-transform`}
                 >
                   <span className="text-4xl mb-4 block">{style.emoji}</span>
                   <h3
@@ -739,8 +737,8 @@ export function GpsPage() {
       {/* ═══════════ CTA ═══════════ */}
       <section className="py-24 relative bg-white/[0.02] backdrop-blur-sm border-y-2 border-white/[0.08]">
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/8 rounded-full blur-[160px]" />
-          <div className="absolute top-1/4 right-1/4 w-[300px] h-[300px] bg-teal/6 rounded-full blur-[100px]" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[radial-gradient(circle,_rgba(160,92,246,0.08)_0%,_transparent_70%)]" />
+          <div className="absolute top-1/4 right-1/4 w-[300px] h-[300px] bg-[radial-gradient(circle,_rgba(34,211,238,0.06)_0%,_transparent_70%)]" />
         </div>
         <div className="relative max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
@@ -781,14 +779,6 @@ export function GpsPage() {
                 <Rocket className="w-4 h-4" />
                 Wishlist on Steam
               </a>
-              <Link
-                to="/games"
-                className="inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-transparent hover:bg-white/5 text-foreground border-2 border-white/20 hover:border-white/40 rounded-md transition-all hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_rgba(255,255,255,0.1)] uppercase tracking-wider text-sm"
-                style={{ fontFamily: "var(--font-heading)", fontWeight: 700 }}
-              >
-                <ArrowLeft className="w-4 h-4" />
-                All Projects
-              </Link>
             </motion.div>
           </motion.div>
         </div>

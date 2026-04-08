@@ -162,8 +162,8 @@ export function HEKeyboardsPage() {
       {/* ═══════════ HERO ═══════════ */}
       <section className="relative pt-6 pb-20">
         <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute -top-[200px] left-1/4 w-[500px] h-[500px] bg-primary/10 rounded-full blur-[160px]" />
-          <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-teal/8 rounded-full blur-[140px]" />
+          <div className="absolute -top-[200px] left-1/4 w-[500px] h-[500px] bg-[radial-gradient(circle,_rgba(160,92,246,0.10)_0%,_transparent_70%)]" />
+          <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-[radial-gradient(circle,_rgba(34,211,238,0.08)_0%,_transparent_70%)]" />
         </div>
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -252,12 +252,11 @@ export function HEKeyboardsPage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, ease: "easeOut" }}
             >
-              <div className="relative w-full max-w-lg">
-                <div className="absolute inset-0 bg-primary/15 blur-[80px] rounded-full scale-125" />
+              <div className="w-full max-w-lg">
                 <ImageWithFallback
                   src={heKeyboardsPromoImage}
                   alt="HE Keyboards — Apply Pressure Sensitive Keyboard Inputs To Your Game"
-                  className="relative w-full rounded-sm border-2 border-white/[0.12] shadow-[6px_6px_0px_0px_rgba(160,92,246,0.15)]"
+                  className="w-full rounded-sm border-2 border-white/[0.12] shadow-[6px_6px_0px_0px_rgba(160,92,246,0.15)]"
                 />
               </div>
             </motion.div>
@@ -312,14 +311,11 @@ export function HEKeyboardsPage() {
             custom={0}
             className="max-w-3xl mx-auto"
           >
-            <div className="relative">
-              <div className="absolute inset-0 bg-primary/10 blur-[60px] rounded-full scale-110" />
-              <ImageWithFallback
-                src={heKeyboardsScreenshots[0].src}
-                alt="Analog pedal and steering values demo"
-                className="relative w-full rounded-sm border-2 border-white/[0.12] rotate-[0.5deg] hover:rotate-0 transition-transform duration-500"
-              />
-            </div>
+            <ImageWithFallback
+              src={heKeyboardsScreenshots[0].src}
+              alt="Analog pedal and steering values demo"
+              className="w-full rounded-sm border-2 border-white/[0.12] rotate-[0.5deg] hover:rotate-0 transition-transform duration-500"
+            />
           </motion.div>
         </div>
       </section>
@@ -377,7 +373,7 @@ export function HEKeyboardsPage() {
                   viewport={{ once: true, margin: "-40px" }}
                   variants={fadeUp}
                   custom={i}
-                  className={`group p-6 bg-white/[0.04] backdrop-blur-xl border-2 border-white/[0.12] ${a.hoverBorder} transition-[border-color,box-shadow] duration-300 hover:-translate-y-2 ${a.shadow} ${tilts[i]} hover:rotate-0 rounded-sm will-change-transform`}
+                  className={`group p-6 bg-white/[0.06] border-2 border-white/[0.12] ${a.hoverBorder} transition-[border-color,box-shadow] duration-300 hover:-translate-y-2 ${a.shadow} ${tilts[i]} hover:rotate-0 rounded-sm will-change-transform`}
                 >
                   <div
                     className={`w-12 h-12 ${a.bg} flex items-center justify-center mb-5 transition-transform group-hover:scale-110 group-hover:-rotate-6 rounded-sm`}
@@ -489,13 +485,6 @@ export function HEKeyboardsPage() {
                 Unity Asset Store
                 <ExternalLink className="w-4 h-4" />
               </a>
-              <Link
-                to="/games"
-                className="inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-transparent hover:bg-white/5 text-foreground border-2 border-white/20 hover:border-white/40 rounded-md transition-all hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_rgba(255,255,255,0.1)] uppercase tracking-wider text-sm"
-                style={{ fontFamily: "var(--font-heading)", fontWeight: 700 }}
-              >
-                Back to all projects
-              </Link>
             </motion.div>
           </motion.div>
         </div>

@@ -5,11 +5,12 @@ import { matchFivesCardImage } from "../assets/matchfives-screenshots";
 import { ballDropCardImage } from "../assets/balldrop-screenshots";
 import { heKeyboardsIcon } from "../assets/hekeyboards-screenshots";
 import { lunchBoxLogo } from "../assets/lunchbox-screenshots";
-import imgStorePageBackground from "@/assets/gps-store-background.png";
+import imgAcrostixHero from "@/assets/acrostix-iphone-slide-1-gameplay.png";
 import { Link } from "react-router";
 import { motion } from "motion/react";
 import { ArrowRight, Gamepad2, Wrench, Sparkles } from "lucide-react";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
+import { PhoneScreenshot } from "./PhoneScreenshot";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -136,64 +137,62 @@ const accentMap = {
 export function HomePage() {
   return (
     <div className="overflow-hidden">
-      {/* Hero - GPS Featured */}
+      {/* Hero - Acrostix Featured */}
       <section className="relative pt-12 pb-20 lg:pt-16 lg:pb-28">
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/15 rounded-full blur-[128px]" />
-          <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-teal/10 rounded-full blur-[128px]" />
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[radial-gradient(circle,_rgba(160,92,246,0.15)_0%,_transparent_70%)]" />
+          <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-[radial-gradient(circle,_rgba(34,211,238,0.10)_0%,_transparent_70%)]" />
         </div>
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* GPS Feature Card */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: "easeOut" as const }}
           >
             <Link
-              to="/games/galactic-parcel-service"
-              className="group block bg-white/[0.04] backdrop-blur-xl border-2 border-white/[0.12] hover:border-primary/40 rounded-sm overflow-hidden transition-all hover:-translate-y-1 hover:shadow-[8px_8px_0px_0px_rgba(160,92,246,0.12)] rotate-[0.5deg] hover:rotate-0"
+              to="/games/acrostix"
+              className="group block bg-white/[0.06] border-2 border-white/[0.12] hover:border-teal/40 rounded-sm overflow-hidden transition-all hover:-translate-y-1 hover:shadow-[8px_8px_0px_0px_rgba(34,211,238,0.12)] rotate-[0.5deg] hover:rotate-0"
             >
               <div className="grid grid-cols-1 lg:grid-cols-2">
-                <div className="relative aspect-video lg:aspect-auto overflow-hidden">
-                  <ImageWithFallback
-                    src={imgStorePageBackground}
-                    alt="Galactic Parcel Service"
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 grayscale-[20%] group-hover:grayscale-0"
+                <div className="relative flex items-center justify-center bg-black/20 py-8 lg:py-12 overflow-hidden">
+                  <PhoneScreenshot
+                    src={imgAcrostixHero}
+                    alt="Acrostix — Craft Clever Sentences"
+                    bezel
+                    className="w-40 sm:w-48 lg:w-56 transition-transform duration-700 group-hover:scale-105"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-card/60 hidden lg:block" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-card/80 to-transparent lg:hidden" />
                   <div className="absolute top-4 left-4">
                     <span
                       className="px-3 py-1.5 bg-lime text-black text-xs uppercase tracking-wider border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,0.8)] -rotate-3 inline-block rounded-sm"
                       style={{ fontFamily: "var(--font-heading)", fontWeight: 700 }}
                     >
-                      In Development
+                      Released
                     </span>
                   </div>
                 </div>
 
                 <div className="p-8 lg:p-12 flex flex-col justify-center">
                   <span
-                    className="text-primary text-xs uppercase tracking-[0.2em] mb-2"
+                    className="text-teal text-xs uppercase tracking-[0.2em] mb-2"
                     style={{ fontFamily: "var(--font-heading)", fontWeight: 600 }}
                   >
-                    Simulation · PC & Mobile
+                    Word Game · Mobile
                   </span>
                   <h2
                     className="text-3xl sm:text-4xl lg:text-5xl text-foreground mb-4"
                     style={{ fontFamily: "var(--font-display)" }}
                   >
-                    Galactic Parcel Service
+                    Acrostix
                   </h2>
                   <p className="text-muted-foreground mb-2" style={{ fontSize: "1.05rem" }}>
-                    Build a fleet of automated ships to deliver strange packages across randomly generated solar systems. Smuggle contraband, dodge tentacles, mine asteroids, and try not to go broke
+                    A creative word game where you build sentences from a single word — then get scored on grammar, complexity, and relevance.
                   </p>
                   <p
-                    className="text-primary/80 italic mb-6"
+                    className="text-teal/80 italic mb-6"
                     style={{ fontSize: "0.95rem" }}
                   >
-                    "The odds are good, the goods are odd"
+                    "One word. Infinite sentences."
                   </p>
                   <div className="flex items-center gap-2 text-lime group-hover:gap-3 transition-all">
                     <span
@@ -256,7 +255,7 @@ export function HomePage() {
                   viewport={{ once: true, margin: "-50px" }}
                   variants={fadeUp}
                   custom={i}
-                  className={`group relative overflow-hidden bg-white/[0.04] backdrop-blur-xl border-2 border-white/[0.12] ${accent.hoverBorder} transition-[border-color,box-shadow] duration-300 hover:-translate-y-2 ${accent.shadow} ${game.rotate} hover:rotate-0 rounded-sm will-change-transform ${game.slug ? "cursor-pointer" : ""}`}
+                  className={`group relative overflow-hidden bg-white/[0.06] border-2 border-white/[0.12] ${accent.hoverBorder} transition-[border-color,box-shadow] duration-300 hover:-translate-y-2 ${accent.shadow} ${game.rotate} hover:rotate-0 rounded-sm will-change-transform ${game.slug ? "cursor-pointer" : ""}`}
                 >
                   {game.slug && (
                     <Link
@@ -269,7 +268,7 @@ export function HomePage() {
                     <ImageWithFallback
                       src={game.image}
                       alt={game.title}
-                      className={`w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 grayscale-[30%] group-hover:grayscale-0 ${game.imagePosition}`}
+                      className={`w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 ${game.imagePosition}`}
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-card/90 to-transparent" />
                     <div className="absolute top-3 right-3">
@@ -348,7 +347,7 @@ export function HomePage() {
                   viewport={{ once: true, margin: "-50px" }}
                   variants={fadeUp}
                   custom={i}
-                  className={`relative p-6 bg-white/[0.04] backdrop-blur-xl border-2 border-white/[0.12] ${accent.hoverBorder} transition-[border-color,box-shadow] duration-300 hover:-translate-y-2 ${accent.shadow} ${mod.rotate} hover:rotate-0 rounded-sm will-change-transform ${mod.slug ? "cursor-pointer" : ""}`}
+                  className={`relative p-6 bg-white/[0.06] border-2 border-white/[0.12] ${accent.hoverBorder} transition-[border-color,box-shadow] duration-300 hover:-translate-y-2 ${accent.shadow} ${mod.rotate} hover:rotate-0 rounded-sm will-change-transform ${mod.slug ? "cursor-pointer" : ""}`}
                 >
                   {mod.slug && (
                     <Link

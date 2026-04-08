@@ -61,19 +61,22 @@ export function Footer() {
             <p className="text-muted-foreground mb-4 text-sm">
               Get notified when we drop something new. No spam, we promise
             </p>
-            <div className="flex gap-2">
+            <form action="https://formspree.io/f/mzdkwgka" method="POST" className="flex gap-2">
               <input
                 type="email"
+                name="email"
+                required
                 placeholder="your@email.com"
-                className="flex-1 px-4 py-2 bg-input-background border-2 border-white/10 rounded-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-teal/50"
+                className="flex-1 min-w-0 px-4 py-2 bg-input-background border-2 border-white/10 rounded-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-teal/50"
               />
               <button
-                className="px-4 py-2 bg-primary hover:bg-primary/90 text-white rounded-sm transition-all border-2 border-primary hover:-translate-y-0.5 uppercase text-xs tracking-wider whitespace-nowrap"
+                type="submit"
+                className="shrink-0 px-4 py-2 bg-primary hover:bg-primary/90 text-white rounded-sm transition-all border-2 border-primary hover:-translate-y-0.5 uppercase text-xs tracking-wider whitespace-nowrap"
                 style={{ fontFamily: "var(--font-heading)", fontWeight: 700 }}
               >
                 Join
               </button>
-            </div>
+            </form>
           </div>
         </div>
 

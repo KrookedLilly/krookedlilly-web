@@ -18,6 +18,7 @@ import {
 import { PhoneScreenshot } from "./PhoneScreenshot";
 import imgAcrostixGameplay from "@/assets/acrostix-iphone-slide-1-gameplay.png";
 import imgAcrostixScoreBreakdown from "@/assets/acrostix-iphone-slide-2-score-breakdown.png";
+import imgAcrostixCampaign from "@/assets/small/acrostix-iphone-slide-3-campaign-worlds.png";
 import {
   getScreenshot,
   getScreenshotsByMode,
@@ -44,36 +45,6 @@ const floatPhone = {
     transition: { duration: 0.7, ease: "easeOut" as const },
   },
 };
-
-/* ─── gameplay flow data ─── */
-const gameplaySteps: {
-  screen: ScreenName;
-  title: string;
-  description: string;
-  accent: "teal" | "primary" | "lime";
-}[] = [
-  {
-    screen: "home",
-    title: "Pick Your Word",
-    description:
-      "Jump into a daily challenge, explore campaign islands, or grab a random word. Each one is a blank canvas — your launchpad into whatever your brain comes up with",
-    accent: "teal",
-  },
-  {
-    screen: "challenge",
-    title: "Make It Yours",
-    description:
-      "You get a word. Each letter starts a line. What you write is entirely up to you — build a sentence, tell a story, go completely unhinged. The game scores you on grammar, word complexity, and how well it all ties back to the word",
-    accent: "primary",
-  },
-  {
-    screen: "results",
-    title: "See Your Score",
-    description:
-      "Grammar, creativity, relevance — it all gets broken down. Compare with your best runs, chase higher scores, or just admire whatever weird thing you wrote",
-    accent: "teal",
-  },
-];
 
 /* ─── visual modes ─── */
 const modes: { key: ThemeMode; label: string; emoji: string; description: string }[] = [
@@ -102,7 +73,7 @@ const features = [
   {
     icon: Puzzle,
     title: "Your Words, Your Way",
-    desc: "Given a word, you craft sentences where each line starts with the next letter. There's no right answer — just your creativity and whatever chaos comes out",
+    desc: "Given a word, you craft sentences where each line starts with the next letter. There's no right answer — just your creativity and whatever your mind comes up with",
     accent: "teal" as const,
   },
   {
@@ -132,7 +103,7 @@ const features = [
   {
     icon: Star,
     title: "Campaign Mode",
-    desc: "Themed islands with related words — Animals, Sports, and more. We're building it out as we go, with plans to keep expanding if people are into it",
+    desc: "Five themed worlds with curated word sets — from Starter Shore to Crystal Castle. New worlds and content added regularly.",
     accent: "primary" as const,
   },
 ];
@@ -239,8 +210,8 @@ export function AcrostixPage() {
       <section className="relative pt-6 pb-20">
         {/* Background glow */}
         <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute -top-[200px] left-1/4 w-[500px] h-[500px] bg-teal/10 rounded-full blur-[160px]" />
-          <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-primary/8 rounded-full blur-[140px]" />
+          <div className="absolute -top-[200px] left-1/4 w-[500px] h-[500px] bg-[radial-gradient(circle,_rgba(34,211,238,0.10)_0%,_transparent_70%)]" />
+          <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-[radial-gradient(circle,_rgba(160,92,246,0.08)_0%,_transparent_70%)]" />
         </div>
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -302,19 +273,22 @@ export function AcrostixPage() {
               </motion.p>
 
               <motion.div variants={fadeUp} custom={4} className="flex flex-wrap gap-3">
-                <div
-                  className="inline-flex items-center gap-2 px-5 py-3 bg-white/[0.04] backdrop-blur-xl border-2 border-white/[0.12] rounded-sm text-muted-foreground"
+                <a
+                  href="https://play.google.com/store/apps/details?id=com.krookedlilly.acrostix"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-5 py-3 bg-white/[0.06] border-2 border-white/[0.12] rounded-sm text-muted-foreground hover:text-foreground hover:border-teal/40 transition-all"
                   style={{ fontFamily: "var(--font-heading)", fontWeight: 600 }}
                 >
                   <Smartphone className="w-4 h-4 text-teal" />
-                  <span className="text-sm uppercase tracking-wider">iOS & Android</span>
-                </div>
+                  <span className="text-sm uppercase tracking-wider">Download on Google Play</span>
+                </a>
                 <div
-                  className="inline-flex items-center gap-2 px-5 py-3 bg-white/[0.04] backdrop-blur-xl border-2 border-white/[0.12] rounded-sm text-muted-foreground"
+                  className="inline-flex items-center gap-2 px-5 py-3 bg-white/[0.04] backdrop-blur-xl border-2 border-white/[0.12] rounded-sm text-muted-foreground opacity-60 cursor-default"
                   style={{ fontFamily: "var(--font-heading)", fontWeight: 600 }}
                 >
-                  <Puzzle className="w-4 h-4 text-primary" />
-                  <span className="text-sm uppercase tracking-wider">Creative Word Game</span>
+                  <Smartphone className="w-4 h-4 text-primary" />
+                  <span className="text-sm uppercase tracking-wider">Coming Soon on App Store</span>
                 </div>
               </motion.div>
             </motion.div>
@@ -326,306 +300,140 @@ export function AcrostixPage() {
               initial="hidden"
               animate="visible"
             >
-              <div className="relative">
-                {/* Soft glow behind phone */}
-                <div className="absolute inset-0 bg-teal/15 blur-[80px] rounded-full scale-125" />
-                <PhoneScreenshot
-                  src={imgAcrostixGameplay}
-                  alt="Acrostix Gameplay"
-                  bezel
-                  className="relative w-56 sm:w-64 md:w-72"
-                />
-              </div>
+              <PhoneScreenshot
+                src={imgAcrostixGameplay}
+                alt="Acrostix Gameplay"
+                bezel
+                className="w-56 sm:w-64 md:w-72"
+              />
             </motion.div>
           </div>
         </div>
       </section>
 
-      {/* ═══════════ WHAT IS ACROSTIX ═══════════ */}
+      {/* ═══════════ GAMEPLAY VIDEO ═══════════ */}
+      <section className="py-16 bg-white/[0.02] backdrop-blur-sm border-y-2 border-white/[0.08]">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="aspect-video bg-white/[0.04] border-2 border-white/[0.12] rounded-sm flex items-center justify-center">
+            <span
+              className="text-muted-foreground text-sm uppercase tracking-wider"
+              style={{ fontFamily: "var(--font-heading)", fontWeight: 600 }}
+            >
+              Gameplay Video Coming Soon
+            </span>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════ WHAT IS ACROSTIX — commented out
       <section className="py-20 bg-white/[0.02] backdrop-blur-sm border-y-2 border-white/[0.08]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            className="text-center mb-16"
-          >
-            <motion.div variants={fadeUp} custom={0} className="inline-block mb-4">
-              <span
-                className="text-xs uppercase tracking-[0.25em] text-primary bg-primary/10 px-3 py-1 rounded-sm border border-primary/20"
-                style={{ fontFamily: "var(--font-heading)", fontWeight: 600 }}
-              >
-                What is it?
-              </span>
-            </motion.div>
-            <motion.h2
-              variants={fadeUp}
-              custom={1}
-              className="text-3xl sm:text-5xl text-foreground mb-4"
-              style={{ fontFamily: "var(--font-display)" }}
-            >
-              Not Your Average Word Game
-            </motion.h2>
-            <motion.p
-              variants={fadeUp}
-              custom={2}
-              className="text-muted-foreground max-w-2xl mx-auto"
-              style={{ fontSize: "1.05rem" }}
-            >
-              You get a word. Each letter becomes the start of a new line. What
-              you write is completely up to you — form a sentence, tell a micro-story,
-              go weird with it. The game scores you on grammar, word complexity, and
-              how well your creation ties back to the original word. It's creative
-              writing meets word play, and it's way more fun than it has any right to be
-            </motion.p>
-          </motion.div>
-        </div>
+        ...
       </section>
+      ═══════════ */}
 
-      {/* ═══════════ GAMEPLAY FLOW ═══════════ */}
+      {/* ═══════════ MARKETING SHOWCASE ═══════════ */}
       <section className="py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-28">
+          {/* Section 1 — Craft Clever Sentences (image left, text right) */}
           <motion.div
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            className="text-center mb-20"
+            viewport={{ once: true, margin: "100px" }}
+            className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center"
           >
-            <motion.div variants={fadeUp} custom={0} className="inline-block mb-4">
-              <span
-                className="text-xs uppercase tracking-[0.25em] text-teal bg-teal/10 px-3 py-1 rounded-sm border border-teal/20"
-                style={{ fontFamily: "var(--font-heading)", fontWeight: 600 }}
-              >
-                How it works
-              </span>
+            <motion.div variants={fadeUp} custom={0} className="flex justify-center lg:order-1">
+              <PhoneScreenshot
+                src={imgAcrostixGameplay}
+                alt="Craft Clever Sentences"
+                bezel
+                className="w-48 sm:w-56 md:w-64 -rotate-2 hover:rotate-0 transition-transform duration-500"
+              />
             </motion.div>
-            <motion.h2
-              variants={fadeUp}
-              custom={1}
-              className="text-3xl sm:text-5xl text-foreground"
-              style={{ fontFamily: "var(--font-display)" }}
-            >
-              Word. Write. Score.
-            </motion.h2>
+            <motion.div variants={fadeUp} custom={0} className="lg:order-2">
+              <h3
+                className="text-foreground mb-4"
+                style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.75rem, 4vw, 2.5rem)" }}
+              >
+                Craft Clever Sentences
+              </h3>
+              <p
+                className="text-muted-foreground max-w-md"
+                style={{ fontSize: "1.05rem", lineHeight: 1.7 }}
+              >
+                You get a word. Each letter becomes the start of a new word in your sentence. What you write is entirely up to you — build something clever, tell a micro-story, get creative with it. The game scores you on grammar, word complexity, and how well your creation ties back to the original word.
+              </p>
+            </motion.div>
           </motion.div>
 
-          <div className="space-y-28">
-            {gameplaySteps.map((step, idx) => {
-              const stepImageOverrides: Partial<Record<ScreenName, string>> = {
-                results: imgAcrostixScoreBreakdown,
-              };
-              const screenshot = getScreenshot("dark", step.screen);
-              const overrideSrc = stepImageOverrides[step.screen] ?? screenshot.src;
-              const isEven = idx % 2 === 0;
-              const a = accentClasses[step.accent];
-              const rotations = ["-rotate-2", "rotate-2", "-rotate-1"];
-              return (
-                <motion.div
-                  key={step.screen}
-                  initial="hidden"
-                  whileInView="visible"
-                  viewport={{ once: true, margin: "-80px" }}
-                  className={`grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center ${
-                    isEven ? "" : "lg:direction-rtl"
-                  }`}
-                >
-                  {/* Phone */}
-                  <motion.div
-                    variants={fadeUp}
-                    custom={0}
-                    className={`flex justify-center ${isEven ? "lg:order-1" : "lg:order-2"}`}
-                  >
-                    <div className="relative">
-                      <div className={`absolute inset-0 ${a.glow} blur-[80px] rounded-full scale-125`} />
-                      <PhoneScreenshot
-                        src={overrideSrc}
-                        alt={screenshot.label}
-                        bezel
-                        className={`relative w-48 sm:w-56 ${rotations[idx]} hover:rotate-0 transition-transform duration-500`}
-                      />
-                    </div>
-                  </motion.div>
+          {/* Section 2 — Smarter Scoring (text left, image right) */}
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-80px" }}
+            className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center"
+          >
+            <motion.div variants={fadeUp} custom={0} className="flex justify-center lg:order-2">
+              <PhoneScreenshot
+                src={imgAcrostixScoreBreakdown}
+                alt="Smarter Scoring Rewards Creativity"
+                bezel
+                className="w-48 sm:w-56 md:w-64 rotate-2 hover:rotate-0 transition-transform duration-500"
+              />
+            </motion.div>
+            <motion.div variants={fadeUp} custom={1} className="lg:order-1">
+              <h3
+                className="text-foreground mb-4"
+                style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.75rem, 4vw, 2.5rem)" }}
+              >
+                Smarter Scoring Rewards Creativity
+              </h3>
+              <p
+                className="text-muted-foreground max-w-md"
+                style={{ fontSize: "1.05rem", lineHeight: 1.7 }}
+              >
+                Every sentence is scored across grammar, complexity, and relevance — then rewarded with synergy bonuses for doing multiple things well. No random luck. No guessing. Pure creative skill.
+              </p>
+            </motion.div>
+          </motion.div>
 
-                  {/* Text */}
-                  <motion.div
-                    variants={fadeUp}
-                    custom={1}
-                    className={`${isEven ? "lg:order-2" : "lg:order-1"}`}
-                  >
-                    {/* Step number */}
-                    <div
-                      className={`inline-flex items-center gap-3 mb-4`}
-                    >
-                      <span
-                        className={`w-10 h-10 ${a.bg} text-black flex items-center justify-center rounded-sm border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,0.8)]`}
-                        style={{
-                          fontFamily: "var(--font-display)",
-                          fontSize: "1.25rem",
-                        }}
-                      >
-                        {idx + 1}
-                      </span>
-                      <span
-                        className={`text-xs uppercase tracking-[0.2em] ${a.text}`}
-                        style={{ fontFamily: "var(--font-heading)", fontWeight: 600 }}
-                      >
-                        Step {idx + 1}
-                      </span>
-                    </div>
-
-                    <h3
-                      className="text-foreground mb-4"
-                      style={{
-                        fontFamily: "var(--font-display)",
-                        fontSize: "clamp(1.75rem, 4vw, 2.5rem)",
-                      }}
-                    >
-                      {step.title}
-                    </h3>
-                    <p
-                      className="text-muted-foreground max-w-md"
-                      style={{ fontSize: "1.05rem", lineHeight: 1.7 }}
-                    >
-                      {step.description}
-                    </p>
-                  </motion.div>
-                </motion.div>
-              );
-            })}
-          </div>
+          {/* Section 3 — Journey For Your Brain (image left, text right) */}
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-80px" }}
+            className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center"
+          >
+            <motion.div variants={fadeUp} custom={0} className="flex justify-center lg:order-1">
+              <PhoneScreenshot
+                src={imgAcrostixCampaign}
+                alt="Journey For Your Brain"
+                bezel
+                className="w-48 sm:w-56 md:w-64 -rotate-1 hover:rotate-0 transition-transform duration-500"
+              />
+            </motion.div>
+            <motion.div variants={fadeUp} custom={1} className="lg:order-2">
+              <h3
+                className="text-foreground mb-4"
+                style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.75rem, 4vw, 2.5rem)" }}
+              >
+                Journey For Your Brain
+              </h3>
+              <p
+                className="text-muted-foreground max-w-md"
+                style={{ fontSize: "1.05rem", lineHeight: 1.7 }}
+              >
+                Daily challenges, five themed campaign worlds with branching paths, and a deep pool of quick play words. Whether you have one minute or one hour, there's always a new word waiting.
+              </p>
+            </motion.div>
+          </motion.div>
         </div>
       </section>
 
-      {/* ═══════════ VISUAL MODES ═══════════ */}
+      {/* ═══════════ VISUAL MODES — commented out until all theme screenshots are ready
       <section className="py-24 bg-white/[0.02] backdrop-blur-sm border-y-2 border-white/[0.08]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            className="text-center mb-16"
-          >
-            <motion.div variants={fadeUp} custom={0} className="inline-block mb-4">
-              <span
-                className="text-xs uppercase tracking-[0.25em] text-lime bg-lime/10 px-3 py-1 rounded-sm border border-lime/20"
-                style={{ fontFamily: "var(--font-heading)", fontWeight: 600 }}
-              >
-                Accessibility
-              </span>
-            </motion.div>
-            <motion.h2
-              variants={fadeUp}
-              custom={1}
-              className="text-3xl sm:text-5xl text-foreground mb-4"
-              style={{ fontFamily: "var(--font-display)" }}
-            >
-              Your Style, Your Game
-            </motion.h2>
-            <motion.p
-              variants={fadeUp}
-              custom={2}
-              className="text-muted-foreground max-w-lg mx-auto"
-            >
-              Three visual modes so everyone gets a great experience.
-              Because puzzles should be for everybody
-            </motion.p>
-          </motion.div>
-
-          {/* Mode switcher */}
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={fadeUp}
-            custom={0}
-            className="flex justify-center mb-12"
-          >
-            <div className="inline-flex gap-2 p-1.5 bg-white/[0.04] backdrop-blur-xl border-2 border-white/[0.12] rounded-sm">
-              {modes.map((m) => (
-                <button
-                  key={m.key}
-                  onClick={() => setActiveMode(m.key)}
-                  className={`px-5 py-2.5 rounded-sm transition-all text-xs uppercase tracking-wider ${
-                    activeMode === m.key
-                      ? "bg-teal text-black shadow-[2px_2px_0px_0px_rgba(34,211,238,0.4)]"
-                      : "text-muted-foreground hover:text-foreground hover:bg-white/5"
-                  }`}
-                  style={{ fontFamily: "var(--font-heading)", fontWeight: 700 }}
-                >
-                  <span className="mr-1.5">{m.emoji}</span>
-                  {m.label}
-                </button>
-              ))}
-            </div>
-          </motion.div>
-
-          {/* Gallery + description */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={fadeUp}
-              custom={1}
-              className="flex justify-center"
-            >
-              <ScreenshotGallery mode={activeMode} />
-            </motion.div>
-
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={fadeUp}
-              custom={2}
-            >
-              {modes.map((m) => (
-                <AnimatePresence key={m.key} mode="wait">
-                  {activeMode === m.key && (
-                    <motion.div
-                      key={m.key}
-                      initial={{ opacity: 0, y: 10 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: -10 }}
-                      transition={{ duration: 0.25 }}
-                    >
-                      <span className="text-4xl mb-4 block">{m.emoji}</span>
-                      <h3
-                        className="text-foreground mb-3"
-                        style={{
-                          fontFamily: "var(--font-display)",
-                          fontSize: "1.75rem",
-                        }}
-                      >
-                        {m.label}
-                      </h3>
-                      <p
-                        className="text-muted-foreground max-w-md"
-                        style={{ fontSize: "1.05rem", lineHeight: 1.7 }}
-                      >
-                        {m.description}
-                      </p>
-                      <div className="mt-6 flex gap-3">
-                        <span className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-white/5 border border-white/10 rounded-sm text-xs text-muted-foreground uppercase tracking-wider"
-                          style={{ fontFamily: "var(--font-heading)", fontWeight: 500 }}
-                        >
-                          <Eye className="w-3 h-3" />
-                          6 Screens
-                        </span>
-                        <span className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-white/5 border border-white/10 rounded-sm text-xs text-muted-foreground uppercase tracking-wider"
-                          style={{ fontFamily: "var(--font-heading)", fontWeight: 500 }}
-                        >
-                          Swipe to browse
-                        </span>
-                      </div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              ))}
-            </motion.div>
-          </div>
-        </div>
+        ...
       </section>
+      ═══════════ */}
 
       {/* ═══════════ FEATURES ═══════════ */}
       <section className="py-24">
@@ -657,7 +465,7 @@ export function AcrostixPage() {
               custom={2}
               className="text-muted-foreground max-w-lg mx-auto"
             >
-              It's a word game, but it's also kind of a whole thing
+              Everything you need for a daily creative challenge
             </motion.p>
           </motion.div>
 
@@ -673,7 +481,7 @@ export function AcrostixPage() {
                   viewport={{ once: true, margin: "-40px" }}
                   variants={fadeUp}
                   custom={i}
-                  className={`group p-6 bg-white/[0.04] backdrop-blur-xl border-2 border-white/[0.12] ${a.hoverBorder} transition-[border-color,box-shadow] duration-300 hover:-translate-y-2 ${a.shadow} ${tilts[i]} hover:rotate-0 rounded-sm will-change-transform`}
+                  className={`group p-6 bg-white/[0.06] border-2 border-white/[0.12] ${a.hoverBorder} transition-[border-color,box-shadow] duration-300 hover:-translate-y-2 ${a.shadow} ${tilts[i]} hover:rotate-0 rounded-sm will-change-transform`}
                 >
                   <div
                     className={`w-12 h-12 ${a.bg} flex items-center justify-center mb-5 transition-transform group-hover:scale-110 group-hover:-rotate-6 rounded-sm`}
@@ -736,12 +544,11 @@ export function AcrostixPage() {
             className="flex flex-col sm:flex-row justify-center items-center gap-8 sm:gap-12"
           >
             <motion.div variants={fadeUp} custom={0} className="relative">
-              <div className="absolute inset-0 bg-primary/10 blur-[60px] rounded-full scale-125" />
               <PhoneScreenshot
                 src={getScreenshot("dark", "stats").src}
                 alt="Stats Screen"
                 bezel
-                className="relative w-44 sm:w-52 -rotate-3 hover:rotate-0 transition-transform duration-500"
+                className="w-44 sm:w-52 -rotate-3 hover:rotate-0 transition-transform duration-500"
               />
               <span
                 className="absolute -bottom-3 left-1/2 -translate-x-1/2 px-3 py-1 bg-primary text-white text-xs uppercase tracking-wider rounded-sm border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,0.8)] rotate-2"
@@ -752,12 +559,11 @@ export function AcrostixPage() {
             </motion.div>
 
             <motion.div variants={fadeUp} custom={1} className="relative">
-              <div className="absolute inset-0 bg-teal/10 blur-[60px] rounded-full scale-125" />
               <PhoneScreenshot
                 src={getScreenshot("dark", "achievements").src}
                 alt="Achievements Screen"
                 bezel
-                className="relative w-44 sm:w-52 rotate-3 hover:rotate-0 transition-transform duration-500"
+                className="w-44 sm:w-52 rotate-3 hover:rotate-0 transition-transform duration-500"
               />
               <span
                 className="absolute -bottom-3 left-1/2 -translate-x-1/2 px-3 py-1 bg-teal text-black text-xs uppercase tracking-wider rounded-sm border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,0.8)] -rotate-2"
@@ -773,8 +579,8 @@ export function AcrostixPage() {
       {/* ═══════════ CTA ═══════════ */}
       <section className="py-24 relative">
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-teal/8 rounded-full blur-[160px]" />
-          <div className="absolute top-1/4 right-1/4 w-[300px] h-[300px] bg-primary/6 rounded-full blur-[100px]" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[radial-gradient(circle,_rgba(34,211,238,0.08)_0%,_transparent_70%)]" />
+          <div className="absolute top-1/4 right-1/4 w-[300px] h-[300px] bg-[radial-gradient(circle,_rgba(160,92,246,0.06)_0%,_transparent_70%)]" />
         </div>
         <div className="relative max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
@@ -801,27 +607,26 @@ export function AcrostixPage() {
               className="text-muted-foreground mb-8 max-w-lg mx-auto"
               style={{ fontSize: "1.05rem" }}
             >
-              Acrostix is coming soon to iOS and Android. We're putting the
-              finishing touches on it right now and honestly can't wait for you
-              to try it. Stay tuned
+              Download Acrostix and see what your words are worth.
             </motion.p>
             <motion.div variants={fadeUp} custom={3} className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link
-                to="/contact"
+              <a
+                href="https://play.google.com/store/apps/details?id=com.krookedlilly.acrostix"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-teal hover:bg-teal/90 text-black rounded-md border-2 border-teal transition-all hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_rgba(34,211,238,0.4)] uppercase tracking-wider text-sm"
                 style={{ fontFamily: "var(--font-heading)", fontWeight: 700 }}
               >
-                <Sparkles className="w-4 h-4" />
-                Get Notified
-              </Link>
-              <Link
-                to="/games"
-                className="inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-transparent hover:bg-white/5 text-foreground border-2 border-white/20 hover:border-white/40 rounded-md transition-all hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_rgba(255,255,255,0.1)] uppercase tracking-wider text-sm"
+                <Smartphone className="w-4 h-4" />
+                Download on Google Play
+              </a>
+              <div
+                className="inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-transparent text-foreground border-2 border-white/20 rounded-md uppercase tracking-wider text-sm opacity-60 cursor-default"
                 style={{ fontFamily: "var(--font-heading)", fontWeight: 700 }}
               >
-                <ArrowLeft className="w-4 h-4" />
-                All Projects
-              </Link>
+                <Smartphone className="w-4 h-4" />
+                Coming Soon on App Store
+              </div>
             </motion.div>
           </motion.div>
         </div>

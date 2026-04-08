@@ -198,8 +198,8 @@ export function GamesPage() {
       {/* Header */}
       <section className="pt-16 pb-8 relative">
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-0 left-1/3 w-72 h-72 bg-primary/15 rounded-full blur-[100px]" />
-          <div className="absolute top-12 right-1/3 w-56 h-56 bg-teal/10 rounded-full blur-[100px]" />
+          <div className="absolute top-0 left-1/3 w-72 h-72 bg-[radial-gradient(circle,_rgba(160,92,246,0.15)_0%,_transparent_70%)]" />
+          <div className="absolute top-12 right-1/3 w-56 h-56 bg-[radial-gradient(circle,_rgba(34,211,238,0.10)_0%,_transparent_70%)]" />
         </div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.h1
@@ -258,7 +258,7 @@ export function GamesPage() {
                   animate="visible"
                   variants={fadeUp}
                   custom={i}
-                  className={`group relative overflow-hidden bg-white/[0.04] backdrop-blur-xl border-2 border-white/[0.12] ${accent.hoverBorder} transition-[border-color,box-shadow] duration-300 hover:-translate-y-2 ${accent.shadow} ${project.tilt} hover:rotate-0 rounded-sm will-change-transform ${project.slug ? "cursor-pointer" : ""}`}
+                  className={`group relative overflow-hidden bg-white/[0.06] border-2 border-white/[0.12] ${accent.hoverBorder} transition-[border-color,box-shadow] duration-300 hover:-translate-y-2 ${accent.shadow} ${project.tilt} hover:rotate-0 rounded-sm will-change-transform ${project.slug ? "cursor-pointer" : ""}`}
                 >
                   {/* Make the whole card clickable if it has a detail page */}
                   {project.slug && (
@@ -273,7 +273,7 @@ export function GamesPage() {
                       <ImageWithFallback
                         src={project.image}
                         alt={project.title}
-                        className={`w-full h-full ${project.imagePosition} transition-transform duration-500 group-hover:scale-110 grayscale-[20%] group-hover:grayscale-0 ${project.imagePosition === ("object-contain" as string) ? "p-4 bg-black/40" : ""}`}
+                        className={`w-full h-full ${project.imagePosition} transition-transform duration-500 group-hover:scale-110 ${project.imagePosition === ("object-contain" as string) ? "p-4 bg-black/40" : ""}`}
                       />
                     ) : (
                       <div className="w-full h-full bg-white/[0.02] flex items-center justify-center">

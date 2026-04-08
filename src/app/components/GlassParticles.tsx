@@ -32,17 +32,43 @@ const COLORS = [
 
 const PARTICLE_COUNT = 18;
 
+// Pre-render a glow sprite for each unique color into an offscreen canvas
+function createGlowCache(colors: string[], maxGlowSize: number, dpr: number): Map<string, HTMLCanvasElement> {
+  const cache = new Map<string, HTMLCanvasElement>();
+  const size = Math.ceil(maxGlowSize * 2 * dpr);
+  for (const color of colors) {
+    if (cache.has(color)) continue;
+    const oc = document.createElement("canvas");
+    oc.width = size;
+    oc.height = size;
+    const octx = oc.getContext("2d");
+    if (!octx) continue;
+    const center = size / 2;
+    const radius = maxGlowSize * dpr;
+    const gradient = octx.createRadialGradient(center, center, 0, center, center, radius);
+    gradient.addColorStop(0, `rgba(${color},0.4)`);
+    gradient.addColorStop(1, `rgba(${color},0)`);
+    octx.fillStyle = gradient;
+    octx.fillRect(0, 0, size, size);
+    cache.set(color, oc);
+  }
+  return cache;
+}
+
 export function GlassParticles() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const particlesRef = useRef<GlassParticle[]>([]);
   const animRef = useRef<number>(0);
   const dims = useRef({ w: 0, h: 0 });
+  const glowCacheRef = useRef<Map<string, HTMLCanvasElement>>(new Map());
 
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
+
+    const maxGlowSize = 3.4 * (2.5 + 3); // max size * max glow multiplier
 
     const initParticles = (w: number, h: number): GlassParticle[] => {
       const particles: GlassParticle[] = [];
@@ -79,23 +105,29 @@ export function GlassParticles() {
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
       dims.current = { w, h };
       particlesRef.current = initParticles(w, h);
+      glowCacheRef.current = createGlowCache(COLORS, maxGlowSize, dpr);
     };
 
     resize();
     window.addEventListener("resize", resize);
 
     let time = 0;
+    let hidden = false;
+
+    const onVisibility = () => { hidden = document.hidden; };
+    document.addEventListener("visibilitychange", onVisibility);
 
     const animate = () => {
+      animRef.current = requestAnimationFrame(animate);
+      if (hidden) return;
+
       const { w, h } = dims.current;
-      if (w === 0 || h === 0) {
-        animRef.current = requestAnimationFrame(animate);
-        return;
-      }
+      if (w === 0 || h === 0) return;
       time += 0.005;
       ctx.clearRect(0, 0, w, h);
 
       const particles = particlesRef.current;
+      const dpr = Math.min(window.devicePixelRatio || 1, 2);
 
       for (let i = 0; i < particles.length; i++) {
         const p = particles[i];
@@ -105,7 +137,7 @@ export function GlassParticles() {
         p.y += Math.sin(p.angle) * p.speed * 0.3;
         p.angle += Math.sin(time * p.pulseSpeed + p.pulseOffset) * 0.01;
 
-        // Wrap horizontally, bounce vertically within bounds
+        // Wrap
         if (p.x < -20) p.x = w + 20;
         if (p.x > w + 20) p.x = -20;
         if (p.y < -10) p.y = h + 10;
@@ -117,22 +149,15 @@ export function GlassParticles() {
           p.baseOpacity + Math.sin(time * p.pulseSpeed + p.pulseOffset) * 0.12
         );
 
-        // Glow halo
+        // Draw pre-cached glow sprite
         if (p.glowSize > 0) {
-          const gradient = ctx.createRadialGradient(
-            p.x,
-            p.y,
-            0,
-            p.x,
-            p.y,
-            p.glowSize
-          );
-          gradient.addColorStop(0, `rgba(${p.color},${pulsed * 0.4})`);
-          gradient.addColorStop(1, `rgba(${p.color},0)`);
-          ctx.beginPath();
-          ctx.arc(p.x, p.y, p.glowSize, 0, Math.PI * 2);
-          ctx.fillStyle = gradient;
-          ctx.fill();
+          const sprite = glowCacheRef.current.get(p.color);
+          if (sprite) {
+            const drawSize = p.glowSize * 2;
+            ctx.globalAlpha = pulsed;
+            ctx.drawImage(sprite, p.x - p.glowSize, p.y - p.glowSize, drawSize, drawSize);
+            ctx.globalAlpha = 1;
+          }
         }
 
         // Dot
@@ -141,13 +166,12 @@ export function GlassParticles() {
         ctx.fillStyle = `rgba(${p.color},${pulsed})`;
         ctx.fill();
       }
-
-      animRef.current = requestAnimationFrame(animate);
     };
     animate();
 
     return () => {
       window.removeEventListener("resize", resize);
+      document.removeEventListener("visibilitychange", onVisibility);
       cancelAnimationFrame(animRef.current);
     };
   }, []);
@@ -156,7 +180,7 @@ export function GlassParticles() {
     <canvas
       ref={canvasRef}
       className="absolute inset-0 z-[1] pointer-events-none"
-      style={{ mixBlendMode: "screen", filter: "blur(3px)" }}
+      style={{ mixBlendMode: "screen" }}
       aria-hidden="true"
     />
   );

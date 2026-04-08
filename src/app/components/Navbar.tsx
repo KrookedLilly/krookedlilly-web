@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "motion/react";
 import { LogoCircleIcon } from "./LogoCircleIcon";
 import { LogoLong } from "./LogoLong";
 import { GlassParticles } from "./GlassParticles";
+import { useReducedMotion } from "../../hooks/useReducedMotion";
 
 const navLinks = [
   { to: "/", label: "Home", accent: "primary" as const },
@@ -32,11 +33,12 @@ const accentStyles = {
 export function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const location = useLocation();
+  const reducedMotion = useReducedMotion();
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/35 backdrop-blur-xl border-b-2 border-white/10">
       {/* Screen-blended particle overlay — above blurred bg, below text */}
-      <GlassParticles />
+      {!reducedMotion && <GlassParticles />}
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">

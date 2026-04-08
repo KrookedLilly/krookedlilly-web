@@ -227,3 +227,11 @@
   40% { transform: translate(50px, -60px) scale(1.12); }
   70% { transform: translate(-40px, 30px) scale(0.93); }
 }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

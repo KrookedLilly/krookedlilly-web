@@ -5,6 +5,7 @@ import {
   ArrowLeft,
   Smartphone,
   CheckCircle,
+  Clock,
   Brain,
   Grid3X3,
   Timer,
@@ -168,8 +169,8 @@ export function MatchFivesPage() {
       {/* ═══════════ HERO ═══════════ */}
       <section className="relative pt-6 pb-20">
         <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute -top-[200px] left-1/4 w-[500px] h-[500px] bg-primary/10 rounded-full blur-[160px]" />
-          <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-teal/8 rounded-full blur-[140px]" />
+          <div className="absolute -top-[200px] left-1/4 w-[500px] h-[500px] bg-[radial-gradient(circle,_rgba(160,92,246,0.10)_0%,_transparent_70%)]" />
+          <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-[radial-gradient(circle,_rgba(34,211,238,0.08)_0%,_transparent_70%)]" />
         </div>
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -187,11 +188,11 @@ export function MatchFivesPage() {
             <motion.div initial="hidden" animate="visible">
               <motion.div variants={fadeUp} custom={0} className="mb-6">
                 <span
-                  className="inline-flex items-center gap-2 px-4 py-2 bg-lime text-black rounded-md -rotate-2 border-2 border-black shadow-[3px_3px_0px_0px_rgba(0,0,0,0.8)]"
+                  className="inline-flex items-center gap-2 px-4 py-2 bg-white/[0.06] text-muted-foreground rounded-md -rotate-2 border-2 border-white/[0.15] shadow-[3px_3px_0px_0px_rgba(255,255,255,0.08)]"
                   style={{ fontFamily: "var(--font-heading)", fontWeight: 700 }}
                 >
-                  <CheckCircle className="w-4 h-4" />
-                  <span className="text-sm uppercase tracking-wider">Released</span>
+                  <Clock className="w-4 h-4 text-primary" />
+                  <span className="text-sm uppercase tracking-wider">Coming Soon</span>
                 </span>
               </motion.div>
 
@@ -251,15 +252,12 @@ export function MatchFivesPage() {
               initial="hidden"
               animate="visible"
             >
-              <div className="relative">
-                <div className="absolute inset-0 bg-primary/15 blur-[80px] rounded-full scale-125" />
-                <PhoneScreenshot
-                  src={matchFivesScreenshots[0].src}
-                  alt="Match Fives - Train Your Brain"
-                  bezel
-                  className="relative w-56 sm:w-64 md:w-72"
-                />
-              </div>
+              <PhoneScreenshot
+                src={matchFivesScreenshots[0].src}
+                alt="Match Fives - Train Your Brain"
+                bezel
+                className="w-56 sm:w-64 md:w-72"
+              />
             </motion.div>
           </div>
         </div>
@@ -401,7 +399,7 @@ export function MatchFivesPage() {
                   viewport={{ once: true, margin: "-40px" }}
                   variants={fadeUp}
                   custom={i}
-                  className={`group p-6 bg-white/[0.04] backdrop-blur-xl border-2 border-white/[0.12] ${a.hoverBorder} transition-[border-color,box-shadow] duration-300 hover:-translate-y-2 ${a.shadow} ${tilts[i]} hover:rotate-0 rounded-sm will-change-transform`}
+                  className={`group p-6 bg-white/[0.06] border-2 border-white/[0.12] ${a.hoverBorder} transition-[border-color,box-shadow] duration-300 hover:-translate-y-2 ${a.shadow} ${tilts[i]} hover:rotate-0 rounded-sm will-change-transform`}
                 >
                   <div
                     className={`w-12 h-12 ${a.bg} flex items-center justify-center mb-5 transition-transform group-hover:scale-110 group-hover:-rotate-6 rounded-sm`}
@@ -488,7 +486,7 @@ export function MatchFivesPage() {
               className="text-muted-foreground mb-8 max-w-md mx-auto"
               style={{ fontSize: "1.05rem" }}
             >
-              Available now on mobile. It's free, it's small, and it will
+              Coming soon to mobile. It's free, it's small, and it will
               absolutely consume more of your time than you planned
             </motion.p>
             <motion.div
@@ -497,12 +495,12 @@ export function MatchFivesPage() {
               className="flex flex-wrap justify-center gap-4"
             >
               <div
-                className="inline-flex items-center gap-2 px-6 py-3 bg-white/[0.04] backdrop-blur-xl border-2 border-white/[0.12] rounded-sm text-muted-foreground"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-white/[0.04] border-2 border-white/[0.12] rounded-sm text-muted-foreground"
                 style={{ fontFamily: "var(--font-heading)", fontWeight: 600 }}
               >
                 <Smartphone className="w-4 h-4 text-primary" />
                 <span className="text-sm uppercase tracking-wider">
-                  Available on Mobile
+                  Coming Soon
                 </span>
               </div>
             </motion.div>

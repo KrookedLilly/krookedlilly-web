@@ -36,11 +36,34 @@ const FRONT_COLORS = [
   "240,240,232", // white
 ];
 
-const BACK_COUNT = 110;
-const FRONT_COUNT = 35;
+const BACK_COUNT = 60;
+const FRONT_COUNT = 20;
 const BACK_PARALLAX = 28;
 const FRONT_PARALLAX = 85;
 const LERP_FACTOR = 0.04;
+
+// Pre-render glow sprites for front-layer particles
+function createGlowCache(colors: string[], maxGlowSize: number, dpr: number): Map<string, HTMLCanvasElement> {
+  const cache = new Map<string, HTMLCanvasElement>();
+  const size = Math.ceil(maxGlowSize * 2 * dpr);
+  for (const color of colors) {
+    if (cache.has(color)) continue;
+    const oc = document.createElement("canvas");
+    oc.width = size;
+    oc.height = size;
+    const octx = oc.getContext("2d");
+    if (!octx) continue;
+    const center = size / 2;
+    const radius = maxGlowSize * dpr;
+    const gradient = octx.createRadialGradient(center, center, 0, center, center, radius);
+    gradient.addColorStop(0, `rgba(${color},0.35)`);
+    gradient.addColorStop(1, `rgba(${color},0)`);
+    octx.fillStyle = gradient;
+    octx.fillRect(0, 0, size, size);
+    cache.set(color, oc);
+  }
+  return cache;
+}
 
 export function InteractiveBackground() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -49,6 +72,7 @@ export function InteractiveBackground() {
   const particlesRef = useRef<Particle[]>([]);
   const animRef = useRef<number>(0);
   const dimensions = useRef({ w: 0, h: 0 });
+  const glowCacheRef = useRef<Map<string, HTMLCanvasElement>>(new Map());
 
   const initParticles = useCallback((w: number, h: number) => {
     const particles: Particle[] = [];
@@ -131,6 +155,9 @@ export function InteractiveBackground() {
       dimensions.current = { w, h };
       // Regenerate particles to fill new viewport
       particlesRef.current = initParticles(w, h);
+      // Pre-cache glow sprites for front-layer particles
+      const maxGlow = 3.7 * (2.5 + 3); // max size * max glow multiplier
+      glowCacheRef.current = createGlowCache(FRONT_COLORS, maxGlow, dpr);
     };
     resize();
     window.addEventListener("resize", resize);
@@ -156,8 +183,15 @@ export function InteractiveBackground() {
     window.addEventListener("touchmove", handleTouch, { passive: true });
 
     let time = 0;
+    let hidden = false;
+
+    const onVisibility = () => { hidden = document.hidden; };
+    document.addEventListener("visibilitychange", onVisibility);
 
     const animate = () => {
+      animRef.current = requestAnimationFrame(animate);
+      if (hidden) return;
+
       const { w, h } = dimensions.current;
       time += 0.006;
 
@@ -174,7 +208,6 @@ export function InteractiveBackground() {
 
       const particles = particlesRef.current;
 
-      // Draw back layer first, then front layer (painters order)
       for (let i = 0; i < particles.length; i++) {
         const p = particles[i];
 
@@ -205,24 +238,14 @@ export function InteractiveBackground() {
         );
 
         if (p.layer === "front" && p.glowSize > 0) {
-          // Front layer: draw soft glow halo behind the dot
-          const gradient = ctx.createRadialGradient(
-            drawX,
-            drawY,
-            0,
-            drawX,
-            drawY,
-            p.glowSize
-          );
-          gradient.addColorStop(
-            0,
-            `rgba(${p.color},${pulsedOpacity * 0.35})`
-          );
-          gradient.addColorStop(1, `rgba(${p.color},0)`);
-          ctx.beginPath();
-          ctx.arc(drawX, drawY, p.glowSize, 0, Math.PI * 2);
-          ctx.fillStyle = gradient;
-          ctx.fill();
+          // Draw pre-cached glow sprite instead of creating gradient per frame
+          const sprite = glowCacheRef.current.get(p.color);
+          if (sprite) {
+            const drawSize = p.glowSize * 2;
+            ctx.globalAlpha = pulsedOpacity;
+            ctx.drawImage(sprite, drawX - p.glowSize, drawY - p.glowSize, drawSize, drawSize);
+            ctx.globalAlpha = 1;
+          }
         }
 
         // Draw the dot
@@ -231,8 +254,6 @@ export function InteractiveBackground() {
         ctx.fillStyle = `rgba(${p.color},${pulsedOpacity})`;
         ctx.fill();
       }
-
-      animRef.current = requestAnimationFrame(animate);
     };
     animate();
 
@@ -240,6 +261,7 @@ export function InteractiveBackground() {
       window.removeEventListener("resize", resize);
       window.removeEventListener("mousemove", handleMouse);
       window.removeEventListener("touchmove", handleTouch);
+      document.removeEventListener("visibilitychange", onVisibility);
       cancelAnimationFrame(animRef.current);
     };
   }, [initParticles]);

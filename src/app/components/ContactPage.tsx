@@ -26,8 +26,13 @@ export function ContactPage() {
     setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    await fetch("https://formspree.io/f/mzdkwgka", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(formData),
+    });
     setSubmitted(true);
     setFormData({ name: "", email: "", subject: "", message: "" });
   };
@@ -37,8 +42,8 @@ export function ContactPage() {
       {/* Hero */}
       <section className="pt-16 pb-12 relative">
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-0 right-1/3 w-72 h-72 bg-primary/15 rounded-full blur-[100px]" />
-          <div className="absolute top-12 left-1/3 w-56 h-56 bg-teal/10 rounded-full blur-[100px]" />
+          <div className="absolute top-0 right-1/3 w-72 h-72 bg-[radial-gradient(circle,_rgba(160,92,246,0.15)_0%,_transparent_70%)]" />
+          <div className="absolute top-12 left-1/3 w-56 h-56 bg-[radial-gradient(circle,_rgba(34,211,238,0.10)_0%,_transparent_70%)]" />
         </div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.h1
@@ -122,7 +127,7 @@ export function ContactPage() {
                   key={item.label}
                   variants={fadeUp}
                   custom={i + 1}
-                  className={`flex items-start gap-4 p-4 bg-white/[0.04] backdrop-blur-xl border-2 border-white/[0.12] ${styles.hoverBorder} transition-[border-color,box-shadow] duration-300 hover:-translate-y-1 ${styles.shadow} ${item.tilt} hover:rotate-0 rounded-sm will-change-transform`}
+                  className={`flex items-start gap-4 p-4 bg-white/[0.06] border-2 border-white/[0.12] ${styles.hoverBorder} transition-[border-color,box-shadow] duration-300 hover:-translate-y-1 ${styles.shadow} ${item.tilt} hover:rotate-0 rounded-sm will-change-transform`}
                 >
                   <div className={`w-12 h-12 ${styles.iconBg} border flex items-center justify-center shrink-0 -rotate-3 rounded-sm`}>
                     <item.icon className={`w-5 h-5 ${styles.iconColor}`} />

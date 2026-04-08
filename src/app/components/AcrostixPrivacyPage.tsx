@@ -45,8 +45,8 @@ export function AcrostixPrivacyPage() {
       {/* Hero */}
       <section className="pt-16 pb-12 relative">
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-0 right-1/3 w-72 h-72 bg-primary/15 rounded-full blur-[100px]" />
-          <div className="absolute top-12 left-1/3 w-56 h-56 bg-teal/10 rounded-full blur-[100px]" />
+          <div className="absolute top-0 right-1/3 w-72 h-72 bg-[radial-gradient(circle,_rgba(160,92,246,0.15)_0%,_transparent_70%)]" />
+          <div className="absolute top-12 left-1/3 w-56 h-56 bg-[radial-gradient(circle,_rgba(34,211,238,0.10)_0%,_transparent_70%)]" />
         </div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div

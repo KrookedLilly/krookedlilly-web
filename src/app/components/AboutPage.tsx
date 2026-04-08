@@ -87,8 +87,8 @@ export function AboutPage() {
       {/* Hero */}
       <section className="pt-16 pb-12 relative">
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-0 right-1/4 w-72 h-72 bg-primary/15 rounded-full blur-[100px]" />
-          <div className="absolute top-16 left-1/4 w-56 h-56 bg-teal/10 rounded-full blur-[100px]" />
+          <div className="absolute top-0 right-1/4 w-72 h-72 bg-[radial-gradient(circle,_rgba(160,92,246,0.15)_0%,_transparent_70%)]" />
+          <div className="absolute top-16 left-1/4 w-56 h-56 bg-[radial-gradient(circle,_rgba(34,211,238,0.10)_0%,_transparent_70%)]" />
         </div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.h1
@@ -212,7 +212,7 @@ export function AboutPage() {
                 viewport={{ once: true }}
                 variants={fadeUp}
                 custom={i}
-                className={`p-6 bg-white/[0.04] backdrop-blur-xl border-2 border-white/[0.12] hover:border-white/[0.2] transition-[border-color,box-shadow] duration-300 hover:-translate-y-2 rounded-sm will-change-transform ${
+                className={`p-6 bg-white/[0.06] border-2 border-white/[0.12] hover:border-white/[0.2] transition-[border-color,box-shadow] duration-300 hover:-translate-y-2 rounded-sm will-change-transform ${
                   i === 0 ? "rotate-1" : i === 1 ? "-rotate-1" : "rotate-2"
                 } hover:rotate-0`}
               >
@@ -264,7 +264,7 @@ export function AboutPage() {
                 viewport={{ once: true }}
                 variants={fadeUp}
                 custom={i}
-                className={`text-center p-6 bg-white/[0.04] backdrop-blur-xl border-2 border-white/[0.12] ${value.hoverBorder} transition-[border-color,box-shadow] duration-300 hover:-translate-y-2 ${value.shadow} ${value.tilt} hover:rotate-0 rounded-sm will-change-transform`}
+                className={`text-center p-6 bg-white/[0.06] border-2 border-white/[0.12] ${value.hoverBorder} transition-[border-color,box-shadow] duration-300 hover:-translate-y-2 ${value.shadow} ${value.tilt} hover:rotate-0 rounded-sm will-change-transform`}
               >
                 <div
                   className={`w-12 h-12 ${value.color} flex items-center justify-center mx-auto mb-4 -rotate-6 rounded-sm`}

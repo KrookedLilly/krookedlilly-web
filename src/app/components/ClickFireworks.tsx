@@ -13,6 +13,9 @@ interface Spark {
   vy: number;
   size: number;
   color: string;
+  r: number;
+  g: number;
+  b: number;
   life: number; // 1 → 0
   decay: number;
   gravity: number;
@@ -55,17 +58,25 @@ export function ClickFireworks() {
     window.addEventListener("resize", resize);
 
     // ── Spawn burst ──
+    const MAX_SPARKS = 66; // Cap at 3 simultaneous bursts
+
     const spawnBurst = (x: number, y: number) => {
+      if (sparksRef.current.length >= MAX_SPARKS) return;
       for (let i = 0; i < SPARKS_PER_BURST; i++) {
         const angle = Math.random() * Math.PI * 2;
         const speed = 1.5 + Math.random() * 4.5;
+        const color = PALETTE[Math.floor(Math.random() * PALETTE.length)];
+        const r = parseInt(color.slice(1, 3), 16);
+        const g = parseInt(color.slice(3, 5), 16);
+        const b = parseInt(color.slice(5, 7), 16);
         sparksRef.current.push({
           x,
           y,
           vx: Math.cos(angle) * speed,
-          vy: Math.sin(angle) * speed - 1.5, // slight upward bias
+          vy: Math.sin(angle) * speed - 1.5,
           size: 1.5 + Math.random() * 2.5,
-          color: PALETTE[Math.floor(Math.random() * PALETTE.length)],
+          color,
+          r, g, b,
           life: 1,
           decay: 0.015 + Math.random() * 0.015,
           gravity: 0.06 + Math.random() * 0.04,
@@ -117,7 +128,7 @@ export function ClickFireworks() {
           continue;
         }
 
-        // Draw glow + dot
+        // Draw glow + dot using pre-computed RGB
         const alpha = s.life;
         const glowRadius = s.size * (2 + s.life * 2);
 
@@ -126,8 +137,8 @@ export function ClickFireworks() {
           s.x, s.y, 0,
           s.x, s.y, glowRadius
         );
-        gradient.addColorStop(0, colorWithAlpha(s.color, alpha * 0.5));
-        gradient.addColorStop(1, colorWithAlpha(s.color, 0));
+        gradient.addColorStop(0, `rgba(${s.r},${s.g},${s.b},${alpha * 0.5})`);
+        gradient.addColorStop(1, `rgba(${s.r},${s.g},${s.b},0)`);
         ctx.beginPath();
         ctx.arc(s.x, s.y, glowRadius, 0, Math.PI * 2);
         ctx.fillStyle = gradient;
@@ -136,7 +147,7 @@ export function ClickFireworks() {
         // Core dot
         ctx.beginPath();
         ctx.arc(s.x, s.y, s.size * s.life, 0, Math.PI * 2);
-        ctx.fillStyle = colorWithAlpha(s.color, alpha);
+        ctx.fillStyle = `rgba(${s.r},${s.g},${s.b},${alpha})`;
         ctx.fill();
       }
 
@@ -165,10 +176,3 @@ export function ClickFireworks() {
   );
 }
 
-/** Convert hex color to rgba string */
-function colorWithAlpha(hex: string, alpha: number): string {
-  const r = parseInt(hex.slice(1, 3), 16);
-  const g = parseInt(hex.slice(3, 5), 16);
-  const b = parseInt(hex.slice(5, 7), 16);
-  return `rgba(${r},${g},${b},${alpha})`;
-}

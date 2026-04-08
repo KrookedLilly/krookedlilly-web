@@ -47,9 +47,14 @@ export function ShopPage() {
   const [email, setEmail] = useState("");
   const [submitted, setSubmitted] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (email) {
+      await fetch("https://formspree.io/f/mzdkwgka", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email }),
+      });
       setSubmitted(true);
       setEmail("");
     }
@@ -60,7 +65,7 @@ export function ShopPage() {
       {/* Hero */}
       <section className="pt-16 pb-12 relative">
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-0 left-1/2 w-96 h-96 bg-primary/10 rounded-full blur-[128px]" />
+          <div className="absolute top-0 left-1/2 w-96 h-96 bg-[radial-gradient(circle,_rgba(160,92,246,0.10)_0%,_transparent_70%)]" />
         </div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
@@ -153,7 +158,7 @@ export function ShopPage() {
                 viewport={{ once: true }}
                 variants={fadeUp}
                 custom={i}
-                className={`group p-8 bg-white/[0.04] backdrop-blur-xl border-2 border-dashed border-white/[0.15] ${accent.hoverBorder} transition-[border-color,box-shadow] duration-300 hover:-translate-y-2 ${accent.shadow} text-center ${item.tilt} hover:rotate-0 rounded-sm will-change-transform`}
+                className={`group p-8 bg-white/[0.06] border-2 border-dashed border-white/[0.15] ${accent.hoverBorder} transition-[border-color,box-shadow] duration-300 hover:-translate-y-2 ${accent.shadow} text-center ${item.tilt} hover:rotate-0 rounded-sm will-change-transform`}
               >
                 <div className={`w-14 h-14 ${accent.iconBg} border flex items-center justify-center mx-auto mb-5 group-hover:scale-110 group-hover:-rotate-12 transition-transform rounded-sm`}>
                   <item.icon className={`w-7 h-7 ${accent.iconColor}`} />
