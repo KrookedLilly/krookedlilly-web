@@ -171,17 +171,6 @@ export function InteractiveBackground() {
     };
     window.addEventListener("mousemove", handleMouse);
 
-    // Touch support
-    const handleTouch = (e: TouchEvent) => {
-      if (e.touches.length > 0) {
-        mouseTarget.current = {
-          x: e.touches[0].clientX / window.innerWidth,
-          y: e.touches[0].clientY / window.innerHeight,
-        };
-      }
-    };
-    window.addEventListener("touchmove", handleTouch, { passive: true });
-
     let time = 0;
     let hidden = false;
 
@@ -260,7 +249,6 @@ export function InteractiveBackground() {
     return () => {
       window.removeEventListener("resize", resize);
       window.removeEventListener("mousemove", handleMouse);
-      window.removeEventListener("touchmove", handleTouch);
       document.removeEventListener("visibilitychange", onVisibility);
       cancelAnimationFrame(animRef.current);
     };

@@ -14,7 +14,7 @@ export function Layout() {
   }, [pathname]);
 
   return (
-    <div className="min-h-screen flex flex-col bg-background relative">
+    <div className="min-h-screen flex flex-col bg-background relative overflow-x-hidden">
       {/* Ambient glow blobs — persistent colored light */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none z-[1]" aria-hidden="true">
         <div className={`absolute w-[600px] h-[600px] bg-[radial-gradient(circle,_rgba(160,92,246,0.07)_0%,_transparent_70%)] -top-[5%] left-[5%] will-change-transform${reducedMotion ? "" : " animate-[drift1_25s_ease-in-out_infinite]"}`} />
