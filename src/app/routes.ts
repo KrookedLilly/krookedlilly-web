@@ -66,6 +66,20 @@ export const router = createHashRouter([
           })),
       },
       {
+        path: "tools/he-keyboards",
+        lazy: () =>
+          import("./components/HEKeyboardsPage").then((m) => ({
+            Component: m.HEKeyboardsPage,
+          })),
+      },
+      {
+        path: "tools/lunchbox",
+        lazy: () =>
+          import("./components/LunchBoxPage").then((m) => ({
+            Component: m.LunchBoxPage,
+          })),
+      },
+      {
         path: "games/acrostix/privacy",
         lazy: () =>
           import("./components/AcrostixPrivacyPage").then((m) => ({

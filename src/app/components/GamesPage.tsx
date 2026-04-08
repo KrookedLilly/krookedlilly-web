@@ -4,13 +4,15 @@ import imgStorePageBackground from "@/assets/gps-store-background.png";
 import { useState } from "react";
 import { Link } from "react-router";
 import { motion } from "motion/react";
-import { ExternalLink, Clock, CheckCircle, Zap } from "lucide-react";
+import { ExternalLink, Clock, CheckCircle, Wrench } from "lucide-react";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
 import { acrostixCardImage } from "../assets/acrostix-screenshots";
 import { matchFivesCardImage } from "../assets/matchfives-screenshots";
 import { ballDropCardImage } from "../assets/balldrop-screenshots";
+import { heKeyboardsCardImage } from "../assets/hekeyboards-screenshots";
+import { lunchBoxCardImage } from "../assets/lunchbox-screenshots";
 
-type Category = "All" | "Games" | "Mods";
+type Category = "All" | "Games" | "Tools" | "Mods";
 
 const projects = [
   {
@@ -21,7 +23,7 @@ const projects = [
     description:
       "Build a fleet of automated ships to deliver packages across randomly generated solar systems. Steal cargo, mine asteroids, terraform planets, and fend off space tentacles. Open-world and play your way",
     image: imgStorePageBackground,
-    status: "Early Access",
+    status: "In Development",
     platforms: ["PC", "Mobile"],
     tilt: "rotate-1",
     accent: "primary" as const,
@@ -36,7 +38,7 @@ const projects = [
     description:
       "A creative word game where you build sentences from acrostic words and get scored on grammar, complexity, and creativity. Coming soon to mobile",
     image: acrostixCardImage,
-    status: "Coming Soon",
+    status: "Released",
     platforms: ["Mobile"],
     tilt: "-rotate-1",
     accent: "teal" as const,
@@ -51,7 +53,7 @@ const projects = [
     description:
       "Match numbers together and chase those high scores. Simple to pick up, surprisingly hard to put down. The kind of game that eats your bus ride",
     image: matchFivesCardImage,
-    status: "Released",
+    status: "Coming Soon",
     platforms: ["Mobile"],
     tilt: "rotate-2",
     accent: "primary" as const,
@@ -66,7 +68,7 @@ const projects = [
     description:
       "Drop balls, watch mayhem unfold, unlock a wild amount of cosmetics. It's an arcade game with way more drip than you'd expect",
     image: ballDropCardImage,
-    status: "Released",
+    status: "Coming Soon",
     platforms: ["Mobile"],
     tilt: "-rotate-2",
     accent: "teal" as const,
@@ -75,6 +77,51 @@ const projects = [
   },
   {
     id: 5,
+    title: "HE Keyboards",
+    category: "Tools" as const,
+    type: "Unity Asset",
+    description:
+      "Add Hall Effect keyboard compatibility to your Unity game. Read analog pressure values from individual keys — turn a keyboard into a proper analog input device",
+    image: heKeyboardsCardImage,
+    status: "In Review",
+    platforms: ["Unity"],
+    tilt: "rotate-1",
+    accent: "primary" as const,
+    imagePosition: "object-cover" as const,
+    slug: "he-keyboards" as string | null,
+  },
+  {
+    id: 6,
+    title: "Screen Manager",
+    category: "Tools" as const,
+    type: "Unity Asset",
+    description:
+      "A UI Toolkit-based screen management system for Unity. Handle screen transitions, navigation stacks, and lifecycle events without reinventing the wheel every project",
+    image: null as string | null,
+    status: "In Development",
+    platforms: ["Unity"],
+    tilt: "-rotate-1",
+    accent: "teal" as const,
+    imagePosition: "object-cover" as const,
+    slug: null as string | null,
+  },
+  {
+    id: 7,
+    title: "LunchBox",
+    category: "Tools" as const,
+    type: "macOS App",
+    description:
+      "A menu bar app for customizing window snapping layouts across multiple monitors. Because macOS window management shouldn't make you want to flip a table",
+    image: lunchBoxCardImage,
+    status: "Released",
+    platforms: ["macOS"],
+    tilt: "rotate-2",
+    accent: "primary" as const,
+    imagePosition: "object-cover" as const,
+    slug: "lunchbox" as string | null,
+  },
+  {
+    id: 8,
     title: "AutoHideHud",
     category: "Mods" as const,
     type: "Minecraft Mod",
@@ -89,14 +136,14 @@ const projects = [
     slug: null as string | null,
   },
   {
-    id: 6,
+    id: 9,
     title: "Card Labeler",
     category: "Mods" as const,
     type: "Trello Extension",
     description:
       "Add labels and better sorting to your Trello boards. Because organizing cards shouldn't require a PhD. A small tool that just makes things tidier",
     image: imgCardLabelerLogo,
-    status: "Released",
+    status: "In Development",
     platforms: ["Trello"],
     tilt: "rotate-2",
     accent: "primary" as const,
@@ -120,11 +167,11 @@ const accentMap = {
   },
 };
 
-const categories: Category[] = ["All", "Games", "Mods"];
+const categories: Category[] = ["All", "Games", "Tools", "Mods"];
 
 const statusConfig: Record<string, { icon: typeof Clock; color: string; bg: string }> = {
   "Released": { icon: CheckCircle, color: "text-lime", bg: "bg-black/60 border border-lime/20 backdrop-blur-sm" },
-  "Early Access": { icon: Zap, color: "text-primary", bg: "bg-black/60 border border-primary/20 backdrop-blur-sm" },
+  "In Review": { icon: Clock, color: "text-primary", bg: "bg-black/60 border border-primary/20 backdrop-blur-sm" },
   "Coming Soon": { icon: Clock, color: "text-teal", bg: "bg-black/60 border border-teal/20 backdrop-blur-sm" },
   "In Development": { icon: Clock, color: "text-muted-foreground", bg: "bg-black/60 border border-white/10 backdrop-blur-sm" },
 };
@@ -161,7 +208,7 @@ export function GamesPage() {
             className="text-4xl sm:text-6xl text-foreground mb-4"
             style={{ fontFamily: "var(--font-display)" }}
           >
-            Games & Mods
+            Games & Tools
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -216,17 +263,23 @@ export function GamesPage() {
                   {/* Make the whole card clickable if it has a detail page */}
                   {project.slug && (
                     <Link
-                      to={`/games/${project.slug}`}
+                      to={`/${project.category === "Tools" ? "tools" : "games"}/${project.slug}`}
                       className="absolute inset-0 z-10"
                       aria-label={`View ${project.title} details`}
                     />
                   )}
                   <div className="relative aspect-video overflow-hidden">
-                    <ImageWithFallback
-                      src={project.image}
-                      alt={project.title}
-                      className={`w-full h-full ${project.imagePosition} transition-transform duration-500 group-hover:scale-110 grayscale-[20%] group-hover:grayscale-0 ${project.imagePosition === ("object-contain" as string) ? "p-4 bg-black/40" : ""}`}
-                    />
+                    {project.image ? (
+                      <ImageWithFallback
+                        src={project.image}
+                        alt={project.title}
+                        className={`w-full h-full ${project.imagePosition} transition-transform duration-500 group-hover:scale-110 grayscale-[20%] group-hover:grayscale-0 ${project.imagePosition === ("object-contain" as string) ? "p-4 bg-black/40" : ""}`}
+                      />
+                    ) : (
+                      <div className="w-full h-full bg-white/[0.02] flex items-center justify-center">
+                        <Wrench className="w-12 h-12 text-white/10" />
+                      </div>
+                    )}
                     <div className="absolute inset-0 bg-gradient-to-t from-card via-transparent to-transparent" />
                     <div className="absolute top-3 left-3">
                       <span
@@ -246,7 +299,7 @@ export function GamesPage() {
                       >
                         {project.type}
                       </span>
-                      <span className="text-muted-foreground text-xs">{project.category === "Games" ? "Game" : "Mod"}</span>
+                      <span className="text-muted-foreground text-xs">{project.category === "Games" ? "Game" : project.category === "Mods" ? "Mod" : "Tool"}</span>
                     </div>
                     <h3
                       className="text-foreground mb-3"

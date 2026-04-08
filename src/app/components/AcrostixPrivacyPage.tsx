@@ -77,7 +77,7 @@ export function AcrostixPrivacyPage() {
             transition={{ delay: 0.1 }}
             className="text-muted-foreground"
           >
-            Effective Date: February 27, 2026
+            Effective Date: April 3, 2026
           </motion.p>
         </div>
       </section>
@@ -95,31 +95,26 @@ export function AcrostixPrivacyPage() {
                 and being transparent about our data practices.
               </p>
               <div className="bg-primary/10 border-l-3 border-primary p-4 rounded-r-sm text-sm text-foreground">
-                Acrostix does not require an account to play, does not display
-                advertisements, does not track you, and does not sell your
-                personal information.
+                Acrostix does not require an account to play and does not sell
+                your personal information.
               </div>
             </Section>
 
             <Section title="Information We Collect" index={1}>
               <p className="text-muted-foreground mb-3">
-                <strong className="text-foreground">
-                  Gameplay Data (Stored Locally)
-                </strong>
+                <strong className="text-foreground">Gameplay Data</strong>
                 <br />
-                All of your campaign progress, high scores, collectibles, user
-                preferences, and other gameplay data are stored locally on your
-                device in an on-device database. This data never leaves your
-                device unless you explicitly choose to sync it using the premium
-                sync feature described below.
+                Your campaign progress, high scores, collectibles, and user
+                preferences are stored locally on your device in an on-device
+                database.
               </p>
 
               <p className="text-muted-foreground mb-3">
                 <strong className="text-foreground">Score Submissions</strong>
                 <br />
-                When you complete levels, gameplay data may be sent to us to help
-                improve our scoring engine, level design, and game balance. These
-                submissions include:
+                When you complete levels, scoring data is sent to our servers to
+                help improve the scoring engine, level design, and game balance.
+                These submissions include:
               </p>
               <ul className="list-disc ml-6 text-muted-foreground mb-3 space-y-1">
                 <li>The sentence you wrote and the target word</li>
@@ -128,13 +123,32 @@ export function AcrostixPrivacyPage() {
                   relevance, synergies)
                 </li>
                 <li>Game metadata (mode, difficulty tier, time spent)</li>
-                <li>App version number</li>
+                <li>App version number and platform (iOS or Android)</li>
               </ul>
               <p className="text-muted-foreground mb-3">
                 These submissions do not include any device identifiers, account
                 information, or any data that could be used to identify you
                 personally. We use this data solely to improve the game's scoring
                 accuracy and level design.
+              </p>
+
+              <p className="text-muted-foreground mb-3">
+                <strong className="text-foreground">Advertising Data</strong>
+                <br />
+                Acrostix displays optional rewarded ads powered by Google AdMob.
+                When you choose to watch a rewarded ad, AdMob may collect
+                certain device information, including your device's advertising
+                identifier (IDFA on iOS, GAID on Android), to serve and measure
+                ads. This data is collected by Google and is governed by{" "}
+                <a
+                  href="https://policies.google.com/privacy"
+                  className="text-primary hover:text-primary/80 transition-colors underline underline-offset-2"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Google's Privacy Policy
+                </a>
+                . We do not have access to this data.
               </p>
 
               <p className="text-muted-foreground">
@@ -161,14 +175,11 @@ export function AcrostixPrivacyPage() {
                 </li>
                 <li>
                   We do not collect device identifiers or any information that
-                  could be used to track or identify you.
+                  could be used to identify you — advertising identifiers are
+                  collected only by Google AdMob when you watch a rewarded ad.
                 </li>
                 <li>We do not collect location data.</li>
-                <li>We do not use analytics or tracking services.</li>
-                <li>
-                  We do not display advertisements or share data with advertising
-                  networks.
-                </li>
+                <li>We do not use our own analytics or tracking services.</li>
                 <li>
                   We do not collect payment or financial information — all
                   purchases are processed entirely by the Apple App Store or
@@ -178,6 +189,37 @@ export function AcrostixPrivacyPage() {
             </Section>
 
             <Section title="Third-Party Services" index={3}>
+              <p className="text-muted-foreground mb-3">
+                <strong className="text-foreground">
+                  Advertising (Google AdMob)
+                </strong>
+                <br />
+                Acrostix includes optional rewarded ads served by Google AdMob.
+                Rewarded ads are never forced — you may choose to watch an ad in
+                exchange for additional daily scores. AdMob may use your device's
+                advertising identifier and other device information to serve
+                relevant ads and measure ad performance. For more information,
+                see{" "}
+                <a
+                  href="https://policies.google.com/privacy"
+                  className="text-primary hover:text-primary/80 transition-colors underline underline-offset-2"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Google's Privacy Policy
+                </a>{" "}
+                and{" "}
+                <a
+                  href="https://support.google.com/admob/answer/6128543"
+                  className="text-primary hover:text-primary/80 transition-colors underline underline-offset-2"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  how Google uses data from apps that use their services
+                </a>
+                .
+              </p>
+
               <p className="text-muted-foreground mb-3">
                 <strong className="text-foreground">
                   Platform Game Services
@@ -217,11 +259,10 @@ export function AcrostixPrivacyPage() {
                   Scoring Data Updates
                 </strong>
                 <br />
-                Acrostix periodically checks a public server for updated scoring
-                data to improve gameplay accuracy. These requests do not include
-                any user data, device identifiers, or personal information — the
-                app simply downloads a small data file if a newer version is
-                available.
+                Acrostix periodically checks for updated scoring data to improve
+                gameplay accuracy. These requests are authenticated with an
+                app-level token but do not include any user data, device
+                identifiers, or personal information.
               </p>
 
               <p className="text-muted-foreground">
@@ -263,10 +304,9 @@ export function AcrostixPrivacyPage() {
               <p className="text-muted-foreground mb-3">
                 Acrostix is rated for all ages and is not specifically directed
                 at children under the age of 13. We do not knowingly collect
-                personal information from children. Because the app does not
-                require accounts, does not collect personal information, and does
-                not display ads, we believe it provides a safe experience for
-                users of all ages.
+                personal information from children. The app includes optional
+                rewarded ads served by Google AdMob; these ads are not
+                personalized for children and comply with applicable regulations.
               </p>
               <p className="text-muted-foreground">
                 If you are a parent or guardian and believe your child has
@@ -301,6 +341,14 @@ export function AcrostixPrivacyPage() {
                   <strong className="text-foreground">Local Data:</strong> You
                   can delete all local gameplay data by uninstalling the app or
                   clearing its data through your device settings.
+                </li>
+                <li>
+                  <strong className="text-foreground">Advertising:</strong> You
+                  can limit ad tracking or reset your advertising identifier
+                  through your device's privacy settings. On iOS, you can
+                  disable the IDFA via Settings &gt; Privacy &gt; Tracking. On
+                  Android, you can opt out of personalized ads via Settings &gt;
+                  Google &gt; Ads.
                 </li>
                 <li>
                   <strong className="text-foreground">Cloud Sync:</strong> You

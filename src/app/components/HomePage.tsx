@@ -3,6 +3,8 @@ import imgCardLabelerLogo from "@/assets/cardlabeler-logo.png";
 import { acrostixCardImage } from "../assets/acrostix-screenshots";
 import { matchFivesCardImage } from "../assets/matchfives-screenshots";
 import { ballDropCardImage } from "../assets/balldrop-screenshots";
+import { heKeyboardsIcon } from "../assets/hekeyboards-screenshots";
+import { lunchBoxLogo } from "../assets/lunchbox-screenshots";
 import imgStorePageBackground from "@/assets/gps-store-background.png";
 import { Link } from "react-router";
 import { motion } from "motion/react";
@@ -27,7 +29,7 @@ const games = [
       "Build sentences from acrostic words and get scored on grammar, complexity, and creativity. Campaign mode with themed islands, endless replayability",
     image: acrostixCardImage,
     imagePosition: "object-top",
-    status: "Coming Soon",
+    status: "Released",
     platforms: ["Mobile"],
     accent: "teal" as const,
     rotate: "-rotate-1",
@@ -41,7 +43,7 @@ const games = [
       "Match numbers together and chase high scores. Simple to pick up, surprisingly hard to put down",
     image: matchFivesCardImage,
     imagePosition: "object-top",
-    status: "Released",
+    status: "Coming Soon",
     platforms: ["Mobile"],
     accent: "primary" as const,
     rotate: "rotate-2",
@@ -55,7 +57,7 @@ const games = [
       "Drop balls, watch mayhem unfold, unlock a wild amount of cosmetics. Way more drip than you'd expect",
     image: ballDropCardImage,
     imagePosition: "object-cover",
-    status: "Released",
+    status: "Coming Soon",
     platforms: ["Mobile"],
     accent: "teal" as const,
     rotate: "-rotate-2",
@@ -65,6 +67,36 @@ const games = [
 
 const mods = [
   {
+    title: "HE Keyboards",
+    platform: "Unity Asset",
+    description: "Hall Effect keyboard support for Unity games. Analog pressure values from every key",
+    status: "In Review",
+    accent: "teal" as const,
+    rotate: "rotate-1",
+    logo: heKeyboardsIcon as string | null,
+    slug: "/tools/he-keyboards" as string | null,
+  },
+  {
+    title: "Screen Manager",
+    platform: "Unity Asset",
+    description: "UI Toolkit screen management — transitions, nav stacks, and lifecycle events out of the box",
+    status: "In Development",
+    accent: "primary" as const,
+    rotate: "-rotate-2",
+    logo: null as string | null,
+    slug: null as string | null,
+  },
+  {
+    title: "LunchBox",
+    platform: "macOS",
+    description: "Menu bar app for custom window snapping layouts on multiple monitors",
+    status: "Released",
+    accent: "teal" as const,
+    rotate: "rotate-1",
+    logo: lunchBoxLogo as string | null,
+    slug: "/tools/lunchbox" as string | null,
+  },
+  {
     title: "AutoHideHud",
     platform: "Minecraft",
     description: "Auto-hides HUD elements to your parameters. See the world, not your hotbar",
@@ -72,15 +104,17 @@ const mods = [
     accent: "primary" as const,
     rotate: "-rotate-1",
     logo: imgAutoHideHudLogo as string | null,
+    slug: null as string | null,
   },
   {
     title: "Card Labeler",
     platform: "Trello",
     description: "Better labels and sorting for your boards. Organizing cards shouldn't require a PhD",
-    status: "Released",
+    status: "In Development",
     accent: "primary" as const,
     rotate: "rotate-2",
     logo: imgCardLabelerLogo as string | null,
+    slug: null as string | null,
   },
 ];
 
@@ -134,7 +168,7 @@ export function HomePage() {
                       className="px-3 py-1.5 bg-lime text-black text-xs uppercase tracking-wider border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,0.8)] -rotate-3 inline-block rounded-sm"
                       style={{ fontFamily: "var(--font-heading)", fontWeight: 700 }}
                     >
-                      Early Access
+                      In Development
                     </span>
                   </div>
                 </div>
@@ -153,7 +187,7 @@ export function HomePage() {
                     Galactic Parcel Service
                   </h2>
                   <p className="text-muted-foreground mb-2" style={{ fontSize: "1.05rem" }}>
-                    Build your S.C.A.M.E.D. fleet and deliver strange packages across randomly generated solar systems. Smuggle contraband, dodge tentacles, mine asteroids, and try not to go broke
+                    Build a fleet of automated ships to deliver strange packages across randomly generated solar systems. Smuggle contraband, dodge tentacles, mine asteroids, and try not to go broke
                   </p>
                   <p
                     className="text-primary/80 italic mb-6"
@@ -288,7 +322,7 @@ export function HomePage() {
                 className="text-3xl sm:text-4xl text-foreground"
                 style={{ fontFamily: "var(--font-display)" }}
               >
-                Mods & Tools
+                Tools & Mods
               </motion.h2>
             </div>
             <motion.div variants={fadeUp} custom={1}>
@@ -314,8 +348,15 @@ export function HomePage() {
                   viewport={{ once: true, margin: "-50px" }}
                   variants={fadeUp}
                   custom={i}
-                  className={`p-6 bg-white/[0.04] backdrop-blur-xl border-2 border-white/[0.12] ${accent.hoverBorder} transition-[border-color,box-shadow] duration-300 hover:-translate-y-2 ${accent.shadow} ${mod.rotate} hover:rotate-0 rounded-sm will-change-transform`}
+                  className={`relative p-6 bg-white/[0.04] backdrop-blur-xl border-2 border-white/[0.12] ${accent.hoverBorder} transition-[border-color,box-shadow] duration-300 hover:-translate-y-2 ${accent.shadow} ${mod.rotate} hover:rotate-0 rounded-sm will-change-transform ${mod.slug ? "cursor-pointer" : ""}`}
                 >
+                  {mod.slug && (
+                    <Link
+                      to={mod.slug}
+                      className="absolute inset-0 z-10"
+                      aria-label={`View ${mod.title} details`}
+                    />
+                  )}
                   {mod.logo && (
                     <div className="mb-4">
                       <ImageWithFallback

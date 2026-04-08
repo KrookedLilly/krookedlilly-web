@@ -64,20 +64,20 @@ const whatWeDo = [
     bg: "bg-primary/10",
   },
   {
-    icon: Zap,
-    label: "Mods",
-    description: "Small quality-of-life tweaks for games we already play. Scratching our own itch, basically",
-    color: "text-teal",
-    border: "border-teal/20",
-    bg: "bg-teal/10",
-  },
-  {
     icon: Sparkles,
     label: "Tools",
     description: "Occasionally we build little utilities that make our lives easier — and then share them because why not",
     color: "text-lime",
     border: "border-lime/20",
     bg: "bg-lime/10",
+  },
+  {
+    icon: Zap,
+    label: "Mods",
+    description: "Small quality-of-life tweaks for games we already play. Scratching our own itch, basically",
+    color: "text-teal",
+    border: "border-teal/20",
+    bg: "bg-teal/10",
   },
 ];
 
@@ -158,7 +158,7 @@ export function AboutPage() {
                 className="space-y-4 text-muted-foreground"
               >
                 <p>
-                  KrookedLilly is a two-person indie studio that makes games, mods, and
+                  KrookedLilly is a husband and wife indie studio that makes games, mods, and
                   whatever else we feel like. We started by accident, kept going on
                   purpose, and now we're here — building whatever sounds interesting and
                   hoping other people think it's cool too

@@ -9,12 +9,15 @@ import {
   Eye,
   Sparkles,
   Puzzle,
+  CheckCircle,
   Clock,
   Star,
   ChevronLeft,
   ChevronRight,
 } from "lucide-react";
 import { PhoneScreenshot } from "./PhoneScreenshot";
+import imgAcrostixGameplay from "@/assets/acrostix-iphone-slide-1-gameplay.png";
+import imgAcrostixScoreBreakdown from "@/assets/acrostix-iphone-slide-2-score-breakdown.png";
 import {
   getScreenshot,
   getScreenshotsByMode,
@@ -257,14 +260,14 @@ export function AcrostixPage() {
               initial="hidden"
               animate="visible"
             >
-              {/* Coming Soon badge */}
+              {/* Released badge */}
               <motion.div variants={fadeUp} custom={0} className="mb-6">
                 <span
-                  className="inline-flex items-center gap-2 px-4 py-2 bg-teal text-black rounded-md -rotate-2 border-2 border-black shadow-[3px_3px_0px_0px_rgba(0,0,0,0.8)]"
+                  className="inline-flex items-center gap-2 px-4 py-2 bg-lime text-black rounded-md -rotate-2 border-2 border-black shadow-[3px_3px_0px_0px_rgba(0,0,0,0.8)]"
                   style={{ fontFamily: "var(--font-heading)", fontWeight: 700 }}
                 >
-                  <Clock className="w-4 h-4" />
-                  <span className="text-sm uppercase tracking-wider">Coming Soon</span>
+                  <CheckCircle className="w-4 h-4" />
+                  <span className="text-sm uppercase tracking-wider">Released</span>
                 </span>
               </motion.div>
 
@@ -327,8 +330,8 @@ export function AcrostixPage() {
                 {/* Soft glow behind phone */}
                 <div className="absolute inset-0 bg-teal/15 blur-[80px] rounded-full scale-125" />
                 <PhoneScreenshot
-                  src={getScreenshot("dark", "home").src}
-                  alt="Acrostix Home Screen"
+                  src={imgAcrostixGameplay}
+                  alt="Acrostix Gameplay"
                   bezel
                   className="relative w-56 sm:w-64 md:w-72"
                 />
@@ -408,7 +411,11 @@ export function AcrostixPage() {
 
           <div className="space-y-28">
             {gameplaySteps.map((step, idx) => {
+              const stepImageOverrides: Partial<Record<ScreenName, string>> = {
+                results: imgAcrostixScoreBreakdown,
+              };
               const screenshot = getScreenshot("dark", step.screen);
+              const overrideSrc = stepImageOverrides[step.screen] ?? screenshot.src;
               const isEven = idx % 2 === 0;
               const a = accentClasses[step.accent];
               const rotations = ["-rotate-2", "rotate-2", "-rotate-1"];
@@ -431,7 +438,7 @@ export function AcrostixPage() {
                     <div className="relative">
                       <div className={`absolute inset-0 ${a.glow} blur-[80px] rounded-full scale-125`} />
                       <PhoneScreenshot
-                        src={screenshot.src}
+                        src={overrideSrc}
                         alt={screenshot.label}
                         bezel
                         className={`relative w-48 sm:w-56 ${rotations[idx]} hover:rotate-0 transition-transform duration-500`}

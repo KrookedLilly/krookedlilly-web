@@ -16,7 +16,7 @@ import {
   Sparkles,
   Star,
   Crosshair,
-  Zap,
+  Clock,
 } from "lucide-react";
 
 /* ── asset imports ── */
@@ -171,8 +171,8 @@ export function GpsPage() {
                     className="inline-flex items-center gap-2 px-4 py-2 bg-primary text-white rounded-md -rotate-2 border-2 border-black shadow-[3px_3px_0px_0px_rgba(0,0,0,0.8)]"
                     style={{ fontFamily: "var(--font-heading)", fontWeight: 700 }}
                   >
-                    <Zap className="w-4 h-4" />
-                    <span className="text-sm uppercase tracking-wider">Early Access</span>
+                    <Clock className="w-4 h-4" />
+                    <span className="text-sm uppercase tracking-wider">In Development</span>
                   </span>
                   <div
                     className="inline-flex items-center gap-2 px-4 py-2 bg-white/[0.06] backdrop-blur-xl border-2 border-white/[0.12] rounded-sm text-muted-foreground"
@@ -767,8 +767,8 @@ export function GpsPage() {
               className="text-muted-foreground mb-8 max-w-lg mx-auto"
               style={{ fontSize: "1.05rem" }}
             >
-              Galactic Parcel Service is in Early Access on Steam right now. Jump in, start
-              delivering, and help us shape the game as it grows. The galaxy needs couriers
+              Galactic Parcel Service is currently in development. Stay tuned as we build
+              out the galaxy and shape the game. The galaxy will need couriers soon
             </motion.p>
             <motion.div variants={fadeUp} custom={3} className="flex flex-col sm:flex-row gap-4 justify-center">
               <a

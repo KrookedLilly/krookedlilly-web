@@ -135,7 +135,7 @@
 <header>
   <div class="brand">Krookedlilly LLC</div>
   <h1>Acrostix Privacy Policy</h1>
-  <div class="effective">Effective Date: February 27, 2026</div>
+  <div class="effective">Effective Date: April 3, 2026</div>
 </header>
 
 <main>
@@ -144,25 +144,28 @@
     <h2>Introduction</h2>
     <p>Krookedlilly LLC ("we," "our," or "us") built Acrostix as a word game application available on iOS and Android. This Privacy Policy explains what information we collect, how we use it, and the choices you have. We are committed to protecting your privacy and being transparent about our data practices.</p>
     <div class="highlight-box">
-      Acrostix does not require an account to play, does not display advertisements, does not track you, and does not sell your personal information.
+      Acrostix does not require an account to play and does not sell your personal information.
     </div>
   </section>
 
   <section>
     <h2>Information We Collect</h2>
 
-    <p><strong>Gameplay Data (Stored Locally)</strong><br />
-    All of your campaign progress, high scores, collectibles, user preferences, and other gameplay data are stored locally on your device in an on-device database. This data never leaves your device unless you explicitly choose to sync it using the premium sync feature described below.</p>
+    <p><strong>Gameplay Data</strong><br />
+    Your campaign progress, high scores, collectibles, and user preferences are stored locally on your device in an on-device database.</p>
 
     <p><strong>Score Submissions</strong><br />
-    When you complete levels, gameplay data may be sent to us to help improve our scoring engine, level design, and game balance. These submissions include:</p>
+    When you complete levels, scoring data is sent to our servers to help improve the scoring engine, level design, and game balance. These submissions include:</p>
     <ul>
       <li>The sentence you wrote and the target word</li>
       <li>Your scores and score breakdowns (grammar, complexity, relevance, synergies)</li>
       <li>Game metadata (mode, difficulty tier, time spent)</li>
-      <li>App version number</li>
+      <li>App version number and platform (iOS or Android)</li>
     </ul>
     <p>These submissions do not include any device identifiers, account information, or any data that could be used to identify you personally. We use this data solely to improve the game's scoring accuracy and level design.</p>
+
+    <p><strong>Advertising Data</strong><br />
+    Acrostix displays optional rewarded ads powered by Google AdMob. When you choose to watch a rewarded ad, AdMob may collect certain device information, including your device's advertising identifier (IDFA on iOS, GAID on Android), to serve and measure ads. This data is collected by Google and is governed by <a href="https://policies.google.com/privacy">Google's Privacy Policy</a>. We do not have access to this data.</p>
 
     <p><strong>Premium Sync Data</strong><br />
     If you are a premium subscriber and choose to enable data syncing, your gameplay data (including campaign progress, high scores, and collectibles) will be synced through your platform's cloud storage service — Apple iCloud on iOS or Google Drive on Android. This data is stored in your personal cloud storage account and is governed by the respective platform's privacy policies.</p>
@@ -173,16 +176,18 @@
     <p>We want to be clear about the data we do not collect:</p>
     <ul>
       <li>We do not collect your name, email address, or any personal contact information through the app.</li>
-      <li>We do not collect device identifiers or any information that could be used to track or identify you.</li>
+      <li>We do not collect device identifiers or any information that could be used to identify you — advertising identifiers are collected only by Google AdMob when you watch a rewarded ad.</li>
       <li>We do not collect location data.</li>
-      <li>We do not use analytics or tracking services.</li>
-      <li>We do not display advertisements or share data with advertising networks.</li>
+      <li>We do not use our own analytics or tracking services.</li>
       <li>We do not collect payment or financial information — all purchases are processed entirely by the Apple App Store or Google Play Store.</li>
     </ul>
   </section>
 
   <section>
     <h2>Third-Party Services</h2>
+
+    <p><strong>Advertising (Google AdMob)</strong><br />
+    Acrostix includes optional rewarded ads served by Google AdMob. Rewarded ads are never forced — you may choose to watch an ad in exchange for additional daily scores. AdMob may use your device's advertising identifier and other device information to serve relevant ads and measure ad performance. For more information, see <a href="https://policies.google.com/privacy">Google's Privacy Policy</a> and <a href="https://support.google.com/admob/answer/6128543">how Google uses data from apps that use their services</a>.</p>
 
     <p><strong>Platform Game Services</strong><br />
     Acrostix integrates with Apple Game Center (iOS) and Google Play Games Services (Android) to provide leaderboard functionality. Your use of these services is governed by their respective privacy policies. Participation in leaderboards requires you to sign in to these platform services, which is handled entirely by Apple or Google.</p>
@@ -194,7 +199,7 @@
     Premium users may opt in to sync their gameplay data via Apple iCloud or Google Drive. We do not operate our own servers for this feature — your data is stored in your personal cloud account and subject to Apple's or Google's privacy policies.</p>
 
     <p><strong>Scoring Data Updates</strong><br />
-    Acrostix periodically checks a public server for updated scoring data to improve gameplay accuracy. These requests do not include any user data, device identifiers, or personal information — the app simply downloads a small data file if a newer version is available.</p>
+    Acrostix periodically checks for updated scoring data to improve gameplay accuracy. These requests are authenticated with an app-level token but do not include any user data, device identifiers, or personal information.</p>
 
     <p><strong>App Store Services</strong><br />
     Apple and Google may independently collect crash reports, diagnostics, and usage statistics through their respective app store platforms. This data collection is managed by Apple and Google under their own privacy policies and is not controlled by us.</p>
@@ -213,7 +218,7 @@
 
   <section>
     <h2>Children's Privacy</h2>
-    <p>Acrostix is rated for all ages and is not specifically directed at children under the age of 13. We do not knowingly collect personal information from children. Because the app does not require accounts, does not collect personal information, and does not display ads, we believe it provides a safe experience for users of all ages.</p>
+    <p>Acrostix is rated for all ages and is not specifically directed at children under the age of 13. We do not knowingly collect personal information from children. The app includes optional rewarded ads served by Google AdMob; these ads are not personalized for children and comply with applicable regulations.</p>
     <p>If you are a parent or guardian and believe your child has somehow provided us with personal information, please contact us at <a href="mailto:support@krookedlilly.com">support@krookedlilly.com</a> and we will promptly address the matter.</p>
   </section>
 
@@ -227,6 +232,7 @@
     <p>You have control over your data in the following ways:</p>
     <ul>
       <li><strong>Local Data:</strong> You can delete all local gameplay data by uninstalling the app or clearing its data through your device settings.</li>
+      <li><strong>Advertising:</strong> You can limit ad tracking or reset your advertising identifier through your device's privacy settings. On iOS, you can disable the IDFA via Settings > Privacy > Tracking. On Android, you can opt out of personalized ads via Settings > Google > Ads.</li>
       <li><strong>Cloud Sync:</strong> You can disable cloud syncing at any time within the app's settings. You may also manage or delete synced data through your iCloud or Google Drive account.</li>
       <li><strong>Leaderboards:</strong> You can opt out of leaderboards by signing out of Game Center or Google Play Games Services in your device settings.</li>
     </ul>
