@@ -1,12 +1,9 @@
 import { Link } from "react-router";
 import { LogoCircle } from "./LogoCircle";
-import { GlassParticles } from "./GlassParticles";
 
 export function Footer() {
   return (
-    <footer className="relative overflow-hidden bg-background/40 backdrop-blur-xl border-t-2 border-white/10">
-      {/* Screen-blended particle overlay — above blurred bg, below text */}
-      <GlassParticles />
+    <footer className="relative overflow-hidden bg-white/[0.02] backdrop-blur-sm border-t-2 border-white/10">
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">

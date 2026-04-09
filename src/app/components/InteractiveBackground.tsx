@@ -9,7 +9,6 @@ interface Particle {
   color: string;
   angle: number;
   speed: number;
-  depth: number;
   pulseOffset: number;
   pulseSpeed: number;
   layer: "back" | "front";
@@ -38,9 +37,6 @@ const FRONT_COLORS = [
 
 const BACK_COUNT = 60;
 const FRONT_COUNT = 20;
-const BACK_PARALLAX = 28;
-const FRONT_PARALLAX = 85;
-const LERP_FACTOR = 0.04;
 
 // Pre-render glow sprites for front-layer particles
 function createGlowCache(colors: string[], maxGlowSize: number, dpr: number): Map<string, HTMLCanvasElement> {
@@ -67,8 +63,6 @@ function createGlowCache(colors: string[], maxGlowSize: number, dpr: number): Ma
 
 export function InteractiveBackground() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const mouseTarget = useRef({ x: 0.5, y: 0.5 });
-  const mouseCurrent = useRef({ x: 0.5, y: 0.5 });
   const particlesRef = useRef<Particle[]>([]);
   const animRef = useRef<number>(0);
   const dimensions = useRef({ w: 0, h: 0 });
@@ -103,7 +97,6 @@ export function InteractiveBackground() {
           color: BACK_COLORS[Math.floor(Math.random() * BACK_COLORS.length)],
           angle: Math.random() * Math.PI * 2,
           speed: 0.02 + Math.random() * 0.08,
-          depth: Math.random() * 0.3, // shallow depth range
           pulseOffset: Math.random() * Math.PI * 2,
           pulseSpeed: 0.15 + Math.random() * 0.4,
           layer: "back",
@@ -114,9 +107,9 @@ export function InteractiveBackground() {
 
     // ── Front layer: random scatter ──
     for (let i = 0; i < FRONT_COUNT; i++) {
-      const depth = 0.5 + Math.random() * 0.5; // 0.5–1.0 depth range
-      const baseOpacity = 0.25 + depth * 0.4;
-      const size = 1.3 + depth * 2.4;
+      const sizeVar = 0.5 + Math.random() * 0.5; // 0.5–1.0 variation
+      const baseOpacity = 0.25 + sizeVar * 0.4;
+      const size = 1.3 + sizeVar * 2.4;
       particles.push({
         baseX: Math.random() * w,
         baseY: Math.random() * h,
@@ -126,7 +119,6 @@ export function InteractiveBackground() {
         color: FRONT_COLORS[Math.floor(Math.random() * FRONT_COLORS.length)],
         angle: Math.random() * Math.PI * 2,
         speed: 0.12 + Math.random() * 0.3,
-        depth,
         pulseOffset: Math.random() * Math.PI * 2,
         pulseSpeed: 0.3 + Math.random() * 0.7,
         layer: "front",
@@ -143,6 +135,7 @@ export function InteractiveBackground() {
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
+    let lastWidth = 0;
     const resize = () => {
       const dpr = Math.min(window.devicePixelRatio || 1, 2);
       const w = window.innerWidth;
@@ -153,47 +146,37 @@ export function InteractiveBackground() {
       canvas.style.height = `${h}px`;
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
       dimensions.current = { w, h };
-      // Regenerate particles to fill new viewport
-      particlesRef.current = initParticles(w, h);
-      // Pre-cache glow sprites for front-layer particles
-      const maxGlow = 3.7 * (2.5 + 3); // max size * max glow multiplier
-      glowCacheRef.current = createGlowCache(FRONT_COLORS, maxGlow, dpr);
+      // Only regenerate particles when width changes (not on mobile address bar show/hide)
+      if (w !== lastWidth) {
+        lastWidth = w;
+        particlesRef.current = initParticles(w, h);
+        const maxGlow = 3.7 * (2.5 + 3);
+        glowCacheRef.current = createGlowCache(FRONT_COLORS, maxGlow, dpr);
+      }
     };
     resize();
     window.addEventListener("resize", resize);
 
-    // Mouse tracking
-    const handleMouse = (e: MouseEvent) => {
-      mouseTarget.current = {
-        x: e.clientX / window.innerWidth,
-        y: e.clientY / window.innerHeight,
-      };
-    };
-    window.addEventListener("mousemove", handleMouse);
-
     let time = 0;
     let hidden = false;
+    let lastFrame = performance.now();
 
     const onVisibility = () => { hidden = document.hidden; };
     document.addEventListener("visibilitychange", onVisibility);
 
-    const animate = () => {
+    const animate = (now: number) => {
       animRef.current = requestAnimationFrame(animate);
-      if (hidden) return;
+      if (hidden) { lastFrame = now; return; }
+
+      // Delta-time with cap to prevent burst accumulation during overscroll
+      const delta = Math.min(now - lastFrame, 33.33); // cap at ~30fps
+      lastFrame = now;
+      const dt = delta / 16.667; // normalize to 60fps baseline
 
       const { w, h } = dimensions.current;
-      time += 0.006;
+      time += 0.006 * dt;
 
       ctx.clearRect(0, 0, w, h);
-
-      // Smooth lerp toward target mouse
-      mouseCurrent.current.x +=
-        (mouseTarget.current.x - mouseCurrent.current.x) * LERP_FACTOR;
-      mouseCurrent.current.y +=
-        (mouseTarget.current.y - mouseCurrent.current.y) * LERP_FACTOR;
-
-      const mx = (mouseCurrent.current.x - 0.5) * 2; // -1 to 1
-      const my = (mouseCurrent.current.y - 0.5) * 2;
 
       const particles = particlesRef.current;
 
@@ -211,13 +194,8 @@ export function InteractiveBackground() {
         if (p.baseY < -40) p.baseY = h + 40;
         if (p.baseY > h + 40) p.baseY = -40;
 
-        // Layer-specific parallax
-        const maxP = p.layer === "back" ? BACK_PARALLAX : FRONT_PARALLAX;
-        const parallaxX = mx * p.depth * maxP;
-        const parallaxY = my * p.depth * maxP;
-
-        const drawX = p.baseX + parallaxX;
-        const drawY = p.baseY + parallaxY;
+        const drawX = p.baseX;
+        const drawY = p.baseY;
 
         // Opacity pulse
         const pulsedOpacity = Math.max(
@@ -244,11 +222,10 @@ export function InteractiveBackground() {
         ctx.fill();
       }
     };
-    animate();
+    animRef.current = requestAnimationFrame(animate);
 
     return () => {
       window.removeEventListener("resize", resize);
-      window.removeEventListener("mousemove", handleMouse);
       document.removeEventListener("visibilitychange", onVisibility);
       cancelAnimationFrame(animRef.current);
     };

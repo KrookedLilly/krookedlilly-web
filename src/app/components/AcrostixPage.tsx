@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef, useCallback } from "react";
 import { Link } from "react-router";
 import { motion, AnimatePresence } from "motion/react";
 import {
@@ -17,6 +17,7 @@ import {
 } from "lucide-react";
 import { PhoneScreenshot } from "./PhoneScreenshot";
 import imgAcrostixGameplay from "@/assets/acrostix-iphone-slide-1-gameplay.png";
+import acrostixGameplayVideo from "@/assets/acrostix-gameplay.mp4";
 import imgAcrostixScoreBreakdown from "@/assets/acrostix-iphone-slide-2-score-breakdown.png";
 import imgAcrostixCampaign from "@/assets/small/acrostix-iphone-slide-3-campaign-worlds.png";
 import {
@@ -203,6 +204,16 @@ function ScreenshotGallery({ mode }: { mode: ThemeMode }) {
    ═══════════════════════════════════════════════════════ */
 export function AcrostixPage() {
   const [activeMode, setActiveMode] = useState<ThemeMode>("dark");
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  const handleVideoEnded = useCallback(() => {
+    setTimeout(() => {
+      if (videoRef.current) {
+        videoRef.current.currentTime = 0;
+        videoRef.current.play();
+      }
+    }, 3000);
+  }, []);
 
   return (
     <div className="min-h-screen">
@@ -313,14 +324,20 @@ export function AcrostixPage() {
 
       {/* ═══════════ GAMEPLAY VIDEO ═══════════ */}
       <section className="py-16 bg-white/[0.02] backdrop-blur-sm border-y-2 border-white/[0.08]">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="aspect-video bg-white/[0.04] border-2 border-white/[0.12] rounded-sm flex items-center justify-center">
-            <span
-              className="text-muted-foreground text-sm uppercase tracking-wider"
-              style={{ fontFamily: "var(--font-heading)", fontWeight: 600 }}
-            >
-              Gameplay Video Coming Soon
-            </span>
+        <div className="max-w-sm mx-auto px-4 sm:px-6 lg:px-8 flex justify-center">
+          <div className="inline-block rounded-[2rem] border-[6px] border-white/10 bg-black p-[3px] shadow-xl w-56 sm:w-64 md:w-72">
+            <div className="overflow-hidden rounded-[1.5rem]">
+              <video
+                ref={videoRef}
+                className="w-full block"
+                autoPlay
+                muted
+                playsInline
+                onEnded={handleVideoEnded}
+              >
+                <source src={acrostixGameplayVideo} type="video/mp4" />
+              </video>
+            </div>
           </div>
         </div>
       </section>

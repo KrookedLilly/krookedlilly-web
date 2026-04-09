@@ -113,17 +113,24 @@ export function GlassParticles() {
 
     let time = 0;
     let hidden = false;
+    let lastFrame = performance.now();
 
     const onVisibility = () => { hidden = document.hidden; };
     document.addEventListener("visibilitychange", onVisibility);
 
-    const animate = () => {
+    const animate = (now: number) => {
       animRef.current = requestAnimationFrame(animate);
-      if (hidden) return;
+      if (hidden) { lastFrame = now; return; }
 
       const { w, h } = dims.current;
-      if (w === 0 || h === 0) return;
-      time += 0.005;
+      if (w === 0 || h === 0) { lastFrame = now; return; }
+
+      // Delta-time with cap to prevent burst accumulation during overscroll
+      const delta = Math.min(now - lastFrame, 33.33); // cap at ~30fps
+      lastFrame = now;
+      const dt = delta / 16.667; // normalize to 60fps baseline
+
+      time += 0.005 * dt;
       ctx.clearRect(0, 0, w, h);
 
       const particles = particlesRef.current;
@@ -167,7 +174,7 @@ export function GlassParticles() {
         ctx.fill();
       }
     };
-    animate();
+    animRef.current = requestAnimationFrame(animate);
 
     return () => {
       window.removeEventListener("resize", resize);

@@ -4,7 +4,6 @@ import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 import { LogoCircleIcon } from "./LogoCircleIcon";
 import { LogoLong } from "./LogoLong";
-import { GlassParticles } from "./GlassParticles";
 import { useReducedMotion } from "../../hooks/useReducedMotion";
 
 const navLinks = [
@@ -36,9 +35,7 @@ export function Navbar() {
   const reducedMotion = useReducedMotion();
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/35 backdrop-blur-xl border-b-2 border-white/10">
-      {/* Screen-blended particle overlay — above blurred bg, below text */}
-      {!reducedMotion && <GlassParticles />}
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/[0.02] backdrop-blur-sm border-b-2 border-white/10">
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
