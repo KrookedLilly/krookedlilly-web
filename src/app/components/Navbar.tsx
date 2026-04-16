@@ -8,7 +8,7 @@ import { useReducedMotion } from "../../hooks/useReducedMotion";
 
 const navLinks = [
   { to: "/", label: "Home", accent: "primary" as const },
-  { to: "/games", label: "Games & Tools", accent: "teal" as const },
+  { to: "/catalog", label: "Catalog", accent: "teal" as const },
   { to: "/about", label: "About", accent: "primary" as const },
   { to: "/shop", label: "Shop", accent: "teal" as const },
   { to: "/contact", label: "Contact", accent: "primary" as const },

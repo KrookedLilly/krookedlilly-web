@@ -10,7 +10,7 @@ export const router = createHashRouter([
     children: [
       { index: true, Component: HomePage },
       {
-        path: "games",
+        path: "catalog",
         lazy: () =>
           import("./components/GamesPage").then((m) => ({
             Component: m.GamesPage,
@@ -42,6 +42,13 @@ export const router = createHashRouter([
         lazy: () =>
           import("./components/BallDropPage").then((m) => ({
             Component: m.BallDropPage,
+          })),
+      },
+      {
+        path: "games/homunculai",
+        lazy: () =>
+          import("./components/HomunculAIPage").then((m) => ({
+            Component: m.HomunculAIPage,
           })),
       },
       {

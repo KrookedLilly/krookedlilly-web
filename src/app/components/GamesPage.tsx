@@ -4,24 +4,26 @@ import imgStorePageBackground from "@/assets/gps-store-background.png";
 import { useState } from "react";
 import { Link } from "react-router";
 import { motion } from "motion/react";
-import { ExternalLink, Clock, CheckCircle, Wrench } from "lucide-react";
+import { ExternalLink, Clock, CheckCircle, Wrench, Calendar } from "lucide-react";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
 import { acrostixCardImage } from "../assets/acrostix-screenshots";
 import { matchFivesCardImage } from "../assets/matchfives-screenshots";
 import { ballDropCardImage } from "../assets/balldrop-screenshots";
 import { heKeyboardsCardImage } from "../assets/hekeyboards-screenshots";
 import { lunchBoxCardImage } from "../assets/lunchbox-screenshots";
+import imgHomunculAICard from "@/assets/homunculai-capsule-main.png";
 
-type Category = "All" | "Games" | "Tools" | "Mods";
+type Category = "All" | "Games & Apps" | "Tools & Mods";
+type Kind = "Game" | "App" | "Tool" | "Mod";
 
 const projects = [
   {
     id: 1,
     title: "Galactic Parcel Service",
-    category: "Games" as const,
+    category: "Games & Apps" as const,
+    kind: "Game" as Kind,
     type: "Simulation",
-    description:
-      "Build a fleet of automated ships to deliver packages across randomly generated solar systems. Steal cargo, mine asteroids, terraform planets, and fend off space tentacles. Open-world and play your way",
+    description: "Build a fleet, deliver packages, terraform planets. Open-world, play your way.",
     image: imgStorePageBackground,
     status: "In Development",
     platforms: ["PC", "Mobile"],
@@ -33,10 +35,10 @@ const projects = [
   {
     id: 2,
     title: "Acrostix",
-    category: "Games" as const,
+    category: "Games & Apps" as const,
+    kind: "Game" as Kind,
     type: "Creative Word Game",
-    description:
-      "A creative word game where you build sentences from acrostic words and get scored on grammar, complexity, and creativity. Coming soon to mobile",
+    description: "One word. Infinite sentences.",
     image: acrostixCardImage,
     status: "Released",
     platforms: ["Mobile"],
@@ -47,86 +49,101 @@ const projects = [
   },
   {
     id: 3,
+    title: "HomunculAI",
+    category: "Games & Apps" as const,
+    kind: "App" as Kind,
+    type: "Desktop App",
+    description: "What body will your AI make?",
+    image: imgHomunculAICard,
+    status: "Coming May 7",
+    platforms: ["Windows"],
+    tilt: "rotate-1",
+    accent: "primary" as const,
+    imagePosition: "object-cover" as const,
+    slug: "homunculai" as string | null,
+  },
+  {
+    id: 4,
     title: "Match Fives",
-    category: "Games" as const,
+    category: "Games & Apps" as const,
+    kind: "Game" as Kind,
     type: "Puzzle",
-    description:
-      "Match numbers together and chase those high scores. Simple to pick up, surprisingly hard to put down. The kind of game that eats your bus ride",
+    description: "Match numbers, chase high scores. Simple to pick up, hard to put down.",
     image: matchFivesCardImage,
     status: "Coming Soon",
     platforms: ["Mobile"],
-    tilt: "rotate-2",
-    accent: "primary" as const,
+    tilt: "-rotate-1",
+    accent: "teal" as const,
     imagePosition: "object-cover object-top" as const,
     slug: "match-fives" as string | null,
   },
   {
-    id: 4,
+    id: 5,
     title: "50 Ball Drop",
-    category: "Games" as const,
+    category: "Games & Apps" as const,
+    kind: "Game" as Kind,
     type: "Arcade",
-    description:
-      "Drop balls, watch mayhem unfold, unlock a wild amount of cosmetics. It's an arcade game with way more drip than you'd expect",
+    description: "Drop balls, watch mayhem unfold, unlock a pile of cosmetics.",
     image: ballDropCardImage,
     status: "Coming Soon",
     platforms: ["Mobile"],
-    tilt: "-rotate-2",
-    accent: "teal" as const,
+    tilt: "rotate-1",
+    accent: "primary" as const,
     imagePosition: "object-cover" as const,
     slug: "50-ball-drop" as string | null,
   },
   {
-    id: 5,
+    id: 6,
     title: "HE Keyboards",
-    category: "Tools" as const,
+    category: "Tools & Mods" as const,
+    kind: "Tool" as Kind,
     type: "Unity Asset",
-    description:
-      "Add Hall Effect keyboard compatibility to your Unity game. Read analog pressure values from individual keys — turn a keyboard into a proper analog input device",
+    description: "Hall Effect keyboard support for Unity. Analog pressure from every key.",
     image: heKeyboardsCardImage,
     status: "Released",
-    platforms: ["Unity"],
-    tilt: "rotate-1",
-    accent: "primary" as const,
-    imagePosition: "object-cover" as const,
-    slug: "he-keyboards" as string | null,
-  },
-  {
-    id: 6,
-    title: "Screen Manager",
-    category: "Tools" as const,
-    type: "Unity Asset",
-    description:
-      "A UI Toolkit-based screen management system for Unity. Handle screen transitions, navigation stacks, and lifecycle events without reinventing the wheel every project",
-    image: null as string | null,
-    status: "In Development",
     platforms: ["Unity"],
     tilt: "-rotate-1",
     accent: "teal" as const,
     imagePosition: "object-cover" as const,
-    slug: null as string | null,
+    slug: "he-keyboards" as string | null,
   },
   {
     id: 7,
+    title: "Screen Manager",
+    category: "Tools & Mods" as const,
+    kind: "Tool" as Kind,
+    type: "Unity Asset",
+    description: "UI Toolkit screen management for Unity — transitions, navigation, lifecycle.",
+    image: null as string | null,
+    status: "In Development",
+    platforms: ["Unity"],
+    tilt: "rotate-1",
+    accent: "primary" as const,
+    imagePosition: "object-cover" as const,
+    slug: null as string | null,
+  },
+  {
+    id: 8,
     title: "LunchBox",
-    category: "Tools" as const,
+    category: "Tools & Mods" as const,
+    kind: "Tool" as Kind,
     type: "macOS App",
-    description:
-      "A menu bar app for customizing window snapping layouts across multiple monitors. Because macOS window management shouldn't make you want to flip a table",
+    description: "Menu bar window snapping for multi-monitor macOS setups.",
     image: lunchBoxCardImage,
     status: "Released",
     platforms: ["macOS"],
-    tilt: "rotate-2",
-    accent: "primary" as const,
+    tilt: "-rotate-1",
+    accent: "teal" as const,
     imagePosition: "object-cover" as const,
     slug: "lunchbox" as string | null,
   },
   {
-    id: 8,
+    id: 9,
     title: "AutoHideHud",
-    category: "Mods" as const,
+    category: "Tools & Mods" as const,
+    kind: "Mod" as Kind,
     type: "Minecraft Mod",
-    description:
-      "Automatically hides all HUD elements based on your custom parameters. See the world, not your hotbar. Krooked's solo creation for the clean-screen crowd",
+    description: "Auto-hides Minecraft HUD to your parameters. See the world, not your hotbar.",
     image: imgAutoHideHudLogo,
     status: "Released",
     platforms: ["Minecraft"],
@@ -136,17 +153,17 @@ const projects = [
     slug: null as string | null,
   },
   {
-    id: 9,
+    id: 10,
     title: "Card Labeler",
-    category: "Mods" as const,
+    category: "Tools & Mods" as const,
+    kind: "Mod" as Kind,
     type: "Trello Extension",
-    description:
-      "Add labels and better sorting to your Trello boards. Because organizing cards shouldn't require a PhD. A small tool that just makes things tidier",
+    description: "Better labels and sorting for Trello boards.",
     image: imgCardLabelerLogo,
     status: "In Development",
     platforms: ["Trello"],
-    tilt: "rotate-2",
-    accent: "primary" as const,
+    tilt: "-rotate-1",
+    accent: "teal" as const,
     imagePosition: "object-contain" as const,
     slug: null as string | null,
   },
@@ -167,12 +184,13 @@ const accentMap = {
   },
 };
 
-const categories: Category[] = ["All", "Games", "Tools", "Mods"];
+const categories: Category[] = ["All", "Games & Apps", "Tools & Mods"];
 
 const statusConfig: Record<string, { icon: typeof Clock; color: string; bg: string }> = {
   "Released": { icon: CheckCircle, color: "text-lime", bg: "bg-black/60 border border-lime/20 backdrop-blur-sm" },
   "In Review": { icon: Clock, color: "text-primary", bg: "bg-black/60 border border-primary/20 backdrop-blur-sm" },
   "Coming Soon": { icon: Clock, color: "text-teal", bg: "bg-black/60 border border-teal/20 backdrop-blur-sm" },
+  "Coming May 7": { icon: Calendar, color: "text-lime", bg: "bg-black/60 border border-lime/20 backdrop-blur-sm" },
   "In Development": { icon: Clock, color: "text-muted-foreground", bg: "bg-black/60 border border-white/10 backdrop-blur-sm" },
 };
 
@@ -185,13 +203,51 @@ const fadeUp = {
   }),
 };
 
+/* ─── sort helpers ─── */
+const categoryOrder: Category[] = ["Games & Apps", "Tools & Mods"];
+
+// Lower number = higher priority (renders first). "Coming <date>" items rank
+// between Released and the generic "Coming Soon", sorted by their date ascending.
+function statusRank(status: string): number {
+  if (status === "Released") return 1;
+  if (status === "Coming Soon") return 3;
+  if (status === "In Review") return 4;
+  if (status === "In Development") return 5;
+  if (status.startsWith("Coming ")) return 2; // has a specific date
+  return 6; // unknown
+}
+
+function comingDate(status: string): number {
+  // Parse "Coming May 7" → epoch ms, or Infinity if no date
+  const match = status.match(/^Coming (\w+)\s+(\d+)/);
+  if (!match) return Infinity;
+  const [, monthName, day] = match;
+  const year = new Date().getFullYear();
+  const d = new Date(`${monthName} ${day}, ${year}`);
+  return isNaN(d.getTime()) ? Infinity : d.getTime();
+}
+
+function sortProjects<T extends { category: Category; status: string }>(items: T[]): T[] {
+  return [...items].sort((a, b) => {
+    const catA = categoryOrder.indexOf(a.category);
+    const catB = categoryOrder.indexOf(b.category);
+    if (catA !== catB) return catA - catB;
+    const rankA = statusRank(a.status);
+    const rankB = statusRank(b.status);
+    if (rankA !== rankB) return rankA - rankB;
+    if (rankA === 2) return comingDate(a.status) - comingDate(b.status);
+    return 0;
+  });
+}
+
 export function GamesPage() {
   const [activeCategory, setActiveCategory] = useState<Category>("All");
 
-  const filtered =
+  const filtered = sortProjects(
     activeCategory === "All"
       ? projects
-      : projects.filter((p) => p.category === activeCategory);
+      : projects.filter((p) => p.category === activeCategory)
+  );
 
   return (
     <div className="min-h-screen">
@@ -208,7 +264,7 @@ export function GamesPage() {
             className="text-4xl sm:text-6xl text-foreground mb-4"
             style={{ fontFamily: "var(--font-display)" }}
           >
-            Games & Tools
+            Games, Apps & Tools
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -216,7 +272,7 @@ export function GamesPage() {
             transition={{ delay: 0.1 }}
             className="text-muted-foreground max-w-lg mx-auto"
           >
-            Everything we've shipped, everything we're building, and the mods Krooked couldn't stop himself from making.
+            Everything we've shipped, everything we're building, and the tools we've made along the way.
           </motion.p>
         </div>
       </section>
@@ -250,7 +306,10 @@ export function GamesPage() {
             {filtered.map((project, i) => {
               const statusInfo = statusConfig[project.status];
               const StatusIcon = statusInfo.icon;
-              const accent = accentMap[project.accent];
+              // Compute tilt + accent from render position so alternation stays clean after sort
+              const accentKey = i % 2 === 0 ? ("teal" as const) : ("primary" as const);
+              const accent = accentMap[accentKey];
+              const tilt = i % 2 === 0 ? "-rotate-1" : "rotate-1";
               return (
                 <motion.div
                   key={project.id}
@@ -258,12 +317,12 @@ export function GamesPage() {
                   animate="visible"
                   variants={fadeUp}
                   custom={i}
-                  className={`group relative overflow-hidden bg-white/[0.06] border-2 border-white/[0.12] ${accent.hoverBorder} transition-[border-color,box-shadow] duration-300 hover:-translate-y-2 ${accent.shadow} ${project.tilt} hover:rotate-0 rounded-sm will-change-transform ${project.slug ? "cursor-pointer" : ""}`}
+                  className={`group relative overflow-hidden bg-white/[0.06] border-2 border-white/[0.12] ${accent.hoverBorder} transition-[border-color,box-shadow] duration-300 hover:-translate-y-2 ${accent.shadow} ${tilt} hover:rotate-0 rounded-sm will-change-transform ${project.slug ? "cursor-pointer" : ""}`}
                 >
                   {/* Make the whole card clickable if it has a detail page */}
                   {project.slug && (
                     <Link
-                      to={`/${project.category === "Tools" ? "tools" : "games"}/${project.slug}`}
+                      to={`/${project.category === "Tools & Mods" ? "tools" : "games"}/${project.slug}`}
                       className="absolute inset-0 z-10"
                       aria-label={`View ${project.title} details`}
                     />
@@ -299,7 +358,7 @@ export function GamesPage() {
                       >
                         {project.type}
                       </span>
-                      <span className="text-muted-foreground text-xs">{project.category === "Games" ? "Game" : project.category === "Mods" ? "Mod" : "Tool"}</span>
+                      <span className="text-muted-foreground text-xs">{project.kind}</span>
                     </div>
                     <h3
                       className="text-foreground mb-3"

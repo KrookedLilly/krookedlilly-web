@@ -13,8 +13,7 @@ export function Footer() {
               <LogoCircle className="h-10 w-10 text-white transition-transform group-hover:-rotate-12" />
             </Link>
             <p className="text-muted-foreground max-w-sm">
-              A husband-and-wife duo making games, apps, and whatever else we feel like.
-              No corporate energy here - just vibes
+              A husband-and-wife duo making games, apps, and whatever else we feel like
             </p>
           </div>
 
@@ -28,7 +27,7 @@ export function Footer() {
             </h4>
             <ul className="space-y-2">
               {[
-                { to: "/games", label: "Games & Tools", accent: "primary" },
+                { to: "/catalog", label: "Catalog", accent: "primary" },
                 { to: "/about", label: "About Us", accent: "teal" },
                 { to: "/shop", label: "Shop", accent: "primary" },
                 { to: "/contact", label: "Contact", accent: "teal" },

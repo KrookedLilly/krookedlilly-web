@@ -26,7 +26,7 @@ const principles = [
     icon: Heart,
     title: "People > Metrics",
     description:
-      "We build for actual humans. Not engagement numbers, not download counts. Just cool stuff for cool people",
+      "We build for actual humans. Not engagement numbers, not download counts. Just things people actually want to use",
     color: "bg-teal",
     tilt: "-rotate-2",
     hoverBorder: "hover:border-teal/30",
@@ -36,7 +36,7 @@ const principles = [
     icon: Sparkles,
     title: "Forever Figuring It Out",
     description:
-      "Self-taught and proud of it. Every project teaches us something new, and that's kind of the whole point",
+      "Self-taught and proud of it. Every project teaches us something new, and that's the whole point",
     color: "bg-primary",
     tilt: "rotate-2",
     hoverBorder: "hover:border-primary/30",
@@ -58,7 +58,7 @@ const whatWeDo = [
   {
     icon: Gamepad2,
     label: "Games",
-    description: "From space delivery sims to word games — if it sounds fun and slightly unhinged, we're probably building it",
+    description: "From space delivery sims to word games — if it sounds fun and a bit off-kilter, we're probably building it",
     color: "text-primary",
     border: "border-primary/20",
     bg: "bg-primary/10",
@@ -66,7 +66,7 @@ const whatWeDo = [
   {
     icon: Sparkles,
     label: "Tools",
-    description: "Occasionally we build little utilities that make our lives easier — and then share them because why not",
+    description: "Occasionally we build little utilities that make our lives easier — and then share them, in case others find them useful",
     color: "text-lime",
     border: "border-lime/20",
     bg: "bg-lime/10",
@@ -105,7 +105,7 @@ export function AboutPage() {
             transition={{ delay: 0.1 }}
             className="text-muted-foreground max-w-xl mx-auto"
           >
-            A tiny indie studio with big ideas, questionable time management, and a dangerous amount of caffeine
+            An indie studio with big ideas, questionable time management, and a dangerous love of making things
           </motion.p>
         </div>
       </section>
@@ -158,18 +158,19 @@ export function AboutPage() {
                 className="space-y-4 text-muted-foreground"
               >
                 <p>
-                  KrookedLilly is a husband and wife indie studio that makes games, mods, and
-                  whatever else we feel like. We started by accident, kept going on
-                  purpose, and now we're here — building whatever sounds interesting and
-                  hoping other people think it's cool too
+                  KrookedLilly is a husband and wife team that makes games, apps, mods, and
+                  whatever else we feel like. We started separately in our lives, came
+                  together without expecting how well it would work, and now we're here —
+                  building things we believe in and hoping other people find them worth
+                  their time.
                 </p>
                 <p>
-                  There's not really any five-year roadmap currently. Just a lot of
-                  hyper-focused late-nights, laughs, and the kind of stubbornness that
-                  turns "What about this...?" into something tangible
+                  There's no five-year roadmap here. Just hyper-focused late-nights and
+                  the kind of stubbornness that turns "What about this...?" into something
+                  real.
                 </p>
                 <p>
-                  Making things is just fun
+                  Making things is the whole reason we do this.
                 </p>
               </motion.div>
             </motion.div>
