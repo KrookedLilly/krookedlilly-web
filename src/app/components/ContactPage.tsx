@@ -16,6 +16,7 @@ export function ContactPage() {
     name: "",
     email: "",
     subject: "",
+    product: "",
     message: "",
   });
   const [submitted, setSubmitted] = useState(false);
@@ -23,7 +24,12 @@ export function ContactPage() {
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
   ) => {
-    setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+    const { name, value } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+      ...(name === "subject" && value !== "support" ? { product: "" } : {}),
+    }));
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -34,7 +40,7 @@ export function ContactPage() {
       body: JSON.stringify(formData),
     });
     setSubmitted(true);
-    setFormData({ name: "", email: "", subject: "", message: "" });
+    setFormData({ name: "", email: "", subject: "", product: "", message: "" });
   };
 
   return (
@@ -96,7 +102,7 @@ export function ContactPage() {
                   label: "Email",
                   value: "support@krookedlilly.com",
                   href: "",
-                  subtext: "We'll respond within 48 hours (probably)",
+                  subtext: "We try our best to respond within 48 hours",
                   tilt: "rotate-1",
                   accent: "primary" as const,
                 },
@@ -247,9 +253,40 @@ export function ContactPage() {
                         <option value="collab">Collaboration</option>
                         <option value="feedback">Feedback</option>
                         <option value="press">Press / Media</option>
-                        <option value="other">Other / Just Vibing</option>
+                        <option value="support">Support</option>
+                        <option value="other">Other</option>
                       </select>
                     </div>
+
+                    {formData.subject === "support" && (
+                      <div>
+                        <label
+                          className="block text-foreground mb-2 text-xs uppercase tracking-wider"
+                          style={{ fontFamily: "var(--font-heading)", fontWeight: 600 }}
+                        >
+                          Which product?
+                        </label>
+                        <select
+                          name="product"
+                          value={formData.product}
+                          onChange={handleChange}
+                          required
+                          className="w-full px-4 py-3 bg-input-background border-2 border-white/10 rounded-sm text-foreground focus:outline-none focus:border-primary/50 appearance-none"
+                        >
+                          <option value="">Pick one...</option>
+                          <option value="galactic-parcel-service">Galactic Parcel Service</option>
+                          <option value="acrostix">Acrostix</option>
+                          <option value="match-fives">Match Fives</option>
+                          <option value="50-ball-drop">50 Ball Drop</option>
+                          <option value="he-keyboards">HE Keyboards</option>
+                          <option value="screen-manager">Screen Manager</option>
+                          <option value="lunchbox">LunchBox</option>
+                          <option value="autohidehud">AutoHideHud</option>
+                          <option value="card-labeler">Card Labeler</option>
+                          <option value="homunculai">HomunculAi</option>
+                        </select>
+                      </div>
+                    )}
 
                     <div>
                       <label

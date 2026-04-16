@@ -476,7 +476,7 @@ export function HEKeyboardsPage() {
               className="flex flex-wrap justify-center gap-4"
             >
               <a
-                href="https://assetstore.unity.com"
+                href="https://assetstore.unity.com/packages/tools/utilities/he-keyboard-364800"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-primary hover:bg-primary/90 text-white rounded-md border-2 border-primary transition-all hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_rgba(160,92,246,0.4)] uppercase tracking-wider text-sm"

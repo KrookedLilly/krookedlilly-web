@@ -280,7 +280,7 @@ export function AcrostixPage() {
                 custom={3}
                 className="text-muted-foreground/60 text-sm mb-8 max-w-md"
               >
-                Designed by Lilly. Built by Krooked. Powered by an unhealthy obsession with word games
+                Designed by Lilly. Built by Krooked
               </motion.p>
 
               <motion.div variants={fadeUp} custom={4} className="flex flex-wrap gap-3">
@@ -644,6 +644,15 @@ export function AcrostixPage() {
                 <Smartphone className="w-4 h-4" />
                 Coming Soon on App Store
               </div>
+            </motion.div>
+            <motion.div variants={fadeUp} custom={4} className="mt-6">
+              <Link
+                to="/games/acrostix/privacy"
+                className="text-muted-foreground/50 hover:text-muted-foreground transition-colors text-xs uppercase tracking-wider"
+                style={{ fontFamily: "var(--font-heading)", fontWeight: 500 }}
+              >
+                Privacy Policy
+              </Link>
             </motion.div>
           </motion.div>
         </div>

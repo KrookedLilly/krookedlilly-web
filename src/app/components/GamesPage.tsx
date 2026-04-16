@@ -83,7 +83,7 @@ const projects = [
     description:
       "Add Hall Effect keyboard compatibility to your Unity game. Read analog pressure values from individual keys — turn a keyboard into a proper analog input device",
     image: heKeyboardsCardImage,
-    status: "In Review",
+    status: "Released",
     platforms: ["Unity"],
     tilt: "rotate-1",
     accent: "primary" as const,

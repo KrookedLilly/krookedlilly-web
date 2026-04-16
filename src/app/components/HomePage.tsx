@@ -71,7 +71,7 @@ const mods = [
     title: "HE Keyboards",
     platform: "Unity Asset",
     description: "Hall Effect keyboard support for Unity games. Analog pressure values from every key",
-    status: "In Review",
+    status: "Released",
     accent: "teal" as const,
     rotate: "rotate-1",
     logo: heKeyboardsIcon as string | null,
