@@ -188,11 +188,11 @@ export function MatchFivesPage() {
             <motion.div initial="hidden" animate="visible">
               <motion.div variants={fadeUp} custom={0} className="mb-6">
                 <span
-                  className="inline-flex items-center gap-2 px-4 py-2 bg-white/[0.06] text-muted-foreground rounded-md -rotate-2 border-2 border-white/[0.15] shadow-[3px_3px_0px_0px_rgba(255,255,255,0.08)]"
+                  className="inline-flex items-center gap-2 px-4 py-2 bg-lime text-black rounded-md -rotate-2 border-2 border-black shadow-[3px_3px_0px_0px_rgba(0,0,0,0.8)]"
                   style={{ fontFamily: "var(--font-heading)", fontWeight: 700 }}
                 >
-                  <Clock className="w-4 h-4 text-primary" />
-                  <span className="text-sm uppercase tracking-wider">Coming Soon</span>
+                  <CheckCircle className="w-4 h-4" />
+                  <span className="text-sm uppercase tracking-wider">Released</span>
                 </span>
               </motion.div>
 
@@ -228,13 +228,16 @@ export function MatchFivesPage() {
               </motion.p>
 
               <motion.div variants={fadeUp} custom={4} className="flex flex-wrap gap-3">
-                <div
-                  className="inline-flex items-center gap-2 px-5 py-3 bg-white/[0.04] backdrop-blur-xl border-2 border-white/[0.12] rounded-sm text-muted-foreground"
+                <a
+                  href="https://apps.apple.com/us/app/match-fives/id1444786124"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-5 py-3 bg-white/[0.06] border-2 border-white/[0.12] rounded-sm text-muted-foreground hover:text-foreground hover:border-primary/40 transition-all"
                   style={{ fontFamily: "var(--font-heading)", fontWeight: 600 }}
                 >
                   <Smartphone className="w-4 h-4 text-primary" />
-                  <span className="text-sm uppercase tracking-wider">Mobile</span>
-                </div>
+                  <span className="text-sm uppercase tracking-wider">Download on App Store</span>
+                </a>
                 <div
                   className="inline-flex items-center gap-2 px-5 py-3 bg-white/[0.04] backdrop-blur-xl border-2 border-white/[0.12] rounded-sm text-muted-foreground"
                   style={{ fontFamily: "var(--font-heading)", fontWeight: 600 }}
@@ -486,23 +489,24 @@ export function MatchFivesPage() {
               className="text-muted-foreground mb-8 max-w-md mx-auto"
               style={{ fontSize: "1.05rem" }}
             >
-              Coming soon to mobile. It's free, it's small, and it will
-              absolutely consume more of your time than you planned
+              Out now on iOS. Free, small, and perfectly happy to consume
+              more of your time than you planned.
             </motion.p>
             <motion.div
               variants={fadeUp}
               custom={2}
               className="flex flex-wrap justify-center gap-4"
             >
-              <div
-                className="inline-flex items-center gap-2 px-6 py-3 bg-white/[0.04] border-2 border-white/[0.12] rounded-sm text-muted-foreground"
-                style={{ fontFamily: "var(--font-heading)", fontWeight: 600 }}
+              <a
+                href="https://apps.apple.com/us/app/match-fives/id1444786124"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-primary hover:bg-primary/90 text-white rounded-md border-2 border-primary transition-all hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_rgba(160,92,246,0.4)] uppercase tracking-wider text-sm"
+                style={{ fontFamily: "var(--font-heading)", fontWeight: 700 }}
               >
-                <Smartphone className="w-4 h-4 text-primary" />
-                <span className="text-sm uppercase tracking-wider">
-                  Coming Soon
-                </span>
-              </div>
+                <Smartphone className="w-4 h-4" />
+                Download on App Store
+              </a>
             </motion.div>
           </motion.div>
         </div>

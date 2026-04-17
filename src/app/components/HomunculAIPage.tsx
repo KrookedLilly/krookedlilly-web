@@ -18,21 +18,11 @@ import {
   Plug,
   Ghost,
   Shield,
+  AlertTriangle,
 } from "lucide-react";
 import { DesktopWindow } from "./DesktopWindow";
 
-/* TODO: drop real assets in from F:\KrookedLilly\HomunculAI\Steam\ and wire up here
- * import imgHomunculAIHero from "@/assets/homunculai-hero.png";
- * import homunculAITrailer from "@/assets/homunculai-trailer.mp4";
- * import imgHomunculAIDragon from "@/assets/homunculai-dragon.png";
- * import imgHomunculAIWardrobe from "@/assets/homunculai-wardrobe.png";
- * import imgHomunculAIChat from "@/assets/homunculai-chat.png";
- * import imgHomunculAIArrive from "@/assets/homunculai-arrive.png";
- * import imgHomunculAIInhabit from "@/assets/homunculai-inhabit.png";
- * import imgHomunculAIExpress from "@/assets/homunculai-express.png";
- */
-
-/* TODO: replace with real Steam app URL once approval clears */
+/* TODO: replace with real Steam app URL once store approval clears */
 const STEAM_URL = "https://store.steampowered.com/";
 
 /* ─── animation variants ─── */
@@ -60,7 +50,7 @@ const features = [
   {
     icon: Zap,
     title: "A Body Language For Your AI",
-    desc: "29 emotes, 21 gestures, 20 idle animations, 15 quick reactions. Meltdowns when you break prod. Eureka when you ship. Vibes while you're heads-down.",
+    desc: "29 emotes, 21 gestures, 20 idle animations, 15 quick reactions. Meltdowns when you break prod. Eureka when you ship. Vibes while you're working.",
     accent: "teal" as const,
   },
   {
@@ -121,60 +111,6 @@ const accentClasses = {
     glow: "bg-lime/10",
   },
 };
-
-/* ─── stat strip for "Everything In The Box" ─── */
-const stats = [
-  { num: "45", label: "Bodies", accent: "teal" as const },
-  { num: "22", label: "Emotions", accent: "primary" as const },
-  { num: "29", label: "Emotes", accent: "lime" as const },
-  { num: "20", label: "Effects", accent: "teal" as const },
-  { num: "21", label: "Gestures", accent: "primary" as const },
-  { num: "15", label: "Reactions", accent: "lime" as const },
-];
-
-/* ─── emote name cloud ─── */
-const emoteNames: { name: string; accent: "teal" | "primary" | "lime"; rotate: string }[] = [
-  { name: "eureka", accent: "lime", rotate: "-rotate-2" },
-  { name: "vibing", accent: "teal", rotate: "rotate-1" },
-  { name: "smolder", accent: "primary", rotate: "-rotate-1" },
-  { name: "dramatic-reveal", accent: "lime", rotate: "rotate-2" },
-  { name: "facepalm", accent: "teal", rotate: "-rotate-1" },
-  { name: "sassy", accent: "primary", rotate: "rotate-1" },
-  { name: "zen", accent: "lime", rotate: "-rotate-2" },
-  { name: "peek", accent: "teal", rotate: "rotate-2" },
-  { name: "power-up", accent: "primary", rotate: "-rotate-1" },
-  { name: "confused-spiral", accent: "teal", rotate: "rotate-1" },
-  { name: "scheming", accent: "lime", rotate: "-rotate-2" },
-  { name: "celebration", accent: "primary", rotate: "rotate-2" },
-  { name: "applause", accent: "teal", rotate: "-rotate-1" },
-  { name: "flex", accent: "lime", rotate: "rotate-1" },
-  { name: "nervous-laugh", accent: "primary", rotate: "-rotate-2" },
-];
-
-/* ─── three-step flow ─── */
-const flowSteps = [
-  {
-    num: "01",
-    label: "Launch",
-    accent: "lime" as const,
-    rotate: "-rotate-2",
-    copy: "Open the app. A little transparent window lands on your desktop, ready to be inhabited.",
-  },
-  {
-    num: "02",
-    label: "Watch",
-    accent: "teal" as const,
-    rotate: "rotate-1",
-    copy: "Watch what your agent picks. Every session is a surprise — a new body, a different mood.",
-  },
-  {
-    num: "03",
-    label: "Engage",
-    accent: "primary" as const,
-    rotate: "-rotate-1",
-    copy: "Have fun with your agent in ways you couldn't before. Two-way chat, thought bubbles, reactions. A desktop companion that actually shows up.",
-  },
-];
 
 /* ═══════════════════════════════════════════════════════
    MAIN PAGE
@@ -247,27 +183,18 @@ export function HomunculAIPage() {
               <motion.p
                 variants={fadeUp}
                 custom={3}
-                className="text-muted-foreground max-w-md mb-4"
+                className="text-muted-foreground max-w-md mb-5"
                 style={{ fontSize: "1.05rem", lineHeight: 1.65 }}
               >
-                Your AI doesn't have a face. Give it one. HomunculAI is a little window on your desktop where whatever AI you use — Claude, Cursor, whoever — can show up however it wants. Sometimes a dragon. Sometimes a cupcake. Let them.
+                Right now, your AI probably lives in a chat window, a terminal, or an editor. HomunculAI gives it a desktop presence. Your AI takes a form, changes its mood, raises a thought bubble, chats with you in a separate channel, or just floats there next to your work.
               </motion.p>
 
               <motion.p
                 variants={fadeUp}
                 custom={4}
-                className="text-muted-foreground max-w-md mb-5"
-                style={{ fontSize: "1.05rem", lineHeight: 1.65 }}
-              >
-                Emotions, accessories, thought bubbles, a chat channel that goes both ways. 45 bodies and custom SVG if your AI wants to draw its own. You don't have to manage it — it picks while you work.
-              </motion.p>
-
-              <motion.p
-                variants={fadeUp}
-                custom={5}
                 className="text-muted-foreground/60 text-sm mb-8 max-w-md"
               >
-                Designed by Lilly. Built with Claude. Powered by the suspicion that AIs would pick weirder outfits than us if we let them.
+                Designed by Lilly. Built with AI input. Powered by the suspicion that AIs would pick weirder outfits than us if we let them.
               </motion.p>
 
               {/* Pill tags */}
@@ -453,7 +380,7 @@ export function HomunculAIPage() {
       </section>
 
       {/* ═══════════ FEATURES GRID ═══════════ */}
-      <section className="py-24">
+      <section className="py-24 bg-white/[0.02] backdrop-blur-sm border-y-2 border-white/[0.08]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial="hidden"
@@ -461,17 +388,9 @@ export function HomunculAIPage() {
             viewport={{ once: true, margin: "-100px" }}
             className="text-center mb-16"
           >
-            <motion.div variants={fadeUp} custom={0} className="inline-block mb-4">
-              <span
-                className="text-xs uppercase tracking-[0.25em] text-primary bg-primary/10 px-3 py-1 rounded-sm border border-primary/20"
-                style={{ fontFamily: "var(--font-heading)", fontWeight: 600 }}
-              >
-                Features
-              </span>
-            </motion.div>
             <motion.h2
               variants={fadeUp}
-              custom={1}
+              custom={0}
               className="text-3xl sm:text-5xl text-foreground mb-4"
               style={{ fontFamily: "var(--font-display)" }}
             >
@@ -512,184 +431,6 @@ export function HomunculAIPage() {
                     {feat.title}
                   </h3>
                   <p className="text-muted-foreground text-sm">{feat.desc}</p>
-                </motion.div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* ═══════════ EVERYTHING IN THE BOX ═══════════ */}
-      <section className="py-24 relative overflow-hidden">
-        <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-1/2 left-1/4 w-[400px] h-[400px] bg-[radial-gradient(circle,_rgba(132,204,22,0.06)_0%,_transparent_70%)]" />
-          <div className="absolute top-1/4 right-1/4 w-[300px] h-[300px] bg-[radial-gradient(circle,_rgba(34,211,238,0.06)_0%,_transparent_70%)]" />
-        </div>
-
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            className="text-center mb-14"
-          >
-            <motion.div variants={fadeUp} custom={0} className="inline-block mb-4">
-              <span
-                className="text-xs uppercase tracking-[0.25em] text-lime bg-lime/10 px-3 py-1 rounded-sm border border-lime/20"
-                style={{ fontFamily: "var(--font-heading)", fontWeight: 600 }}
-              >
-                What's Included
-              </span>
-            </motion.div>
-            <motion.h2
-              variants={fadeUp}
-              custom={1}
-              className="text-3xl sm:text-5xl text-foreground mb-4"
-              style={{ fontFamily: "var(--font-display)" }}
-            >
-              Loaded out of the box.
-            </motion.h2>
-            <motion.p
-              variants={fadeUp}
-              custom={2}
-              className="text-muted-foreground max-w-lg mx-auto"
-            >
-              Every option, shipped and ready. No DLC, no upsells.
-            </motion.p>
-          </motion.div>
-
-          {/* Stat strip */}
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-60px" }}
-            className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 mb-16"
-          >
-            {stats.map((stat, i) => {
-              const a = accentClasses[stat.accent];
-              const tilts = ["-rotate-2", "rotate-1", "-rotate-1", "rotate-2", "-rotate-1", "rotate-1"];
-              return (
-                <motion.div
-                  key={stat.label}
-                  variants={fadeUp}
-                  custom={i}
-                  className={`group p-5 bg-white/[0.06] border-2 border-white/[0.12] ${a.hoverBorder} transition-[border-color,box-shadow,transform] duration-300 hover:-translate-y-1 ${a.shadow} ${tilts[i]} hover:rotate-0 rounded-sm text-center will-change-transform`}
-                >
-                  <div
-                    className={`${a.text} mb-1`}
-                    style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2.5rem, 5vw, 3.5rem)", lineHeight: 1 }}
-                  >
-                    {stat.num}
-                  </div>
-                  <div
-                    className="text-muted-foreground text-xs uppercase tracking-wider"
-                    style={{ fontFamily: "var(--font-heading)", fontWeight: 700 }}
-                  >
-                    {stat.label}
-                  </div>
-                </motion.div>
-              );
-            })}
-          </motion.div>
-
-          {/* Emote name cloud */}
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-60px" }}
-            className="flex flex-wrap justify-center gap-3 max-w-4xl mx-auto"
-          >
-            {emoteNames.map((e, i) => {
-              const a = accentClasses[e.accent];
-              return (
-                <motion.span
-                  key={e.name}
-                  variants={fadeUp}
-                  custom={i * 0.5}
-                  className={`inline-block px-4 py-2 bg-white/[0.04] border-2 border-white/[0.12] ${a.hoverBorder} ${a.text} text-sm uppercase tracking-wider rounded-sm ${e.rotate} hover:rotate-0 hover:-translate-y-0.5 transition-all cursor-default`}
-                  style={{ fontFamily: "var(--font-heading)", fontWeight: 700 }}
-                >
-                  {e.name}
-                </motion.span>
-              );
-            })}
-          </motion.div>
-          <motion.p
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.3 }}
-            className="text-center text-muted-foreground/50 text-xs uppercase tracking-widest mt-8"
-            style={{ fontFamily: "var(--font-heading)", fontWeight: 600 }}
-          >
-            and 14 more
-          </motion.p>
-        </div>
-      </section>
-
-      {/* ═══════════ THREE WAYS IT MOVES ═══════════ */}
-      <section className="py-24 bg-white/[0.02] backdrop-blur-sm border-y-2 border-white/[0.08]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            className="text-center mb-16"
-          >
-            <motion.div variants={fadeUp} custom={0} className="inline-block mb-4">
-              <span
-                className="text-xs uppercase tracking-[0.25em] text-teal bg-teal/10 px-3 py-1 rounded-sm border border-teal/20"
-                style={{ fontFamily: "var(--font-heading)", fontWeight: 600 }}
-              >
-                Flow
-              </span>
-            </motion.div>
-            <motion.h2
-              variants={fadeUp}
-              custom={1}
-              className="text-3xl sm:text-5xl text-foreground mb-4"
-              style={{ fontFamily: "var(--font-display)" }}
-            >
-              Launch. Watch. Engage.
-            </motion.h2>
-            <motion.p
-              variants={fadeUp}
-              custom={2}
-              className="text-muted-foreground max-w-lg mx-auto"
-            >
-              Three beats. That's the whole app.
-            </motion.p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
-            {flowSteps.map((step, i) => {
-              const a = accentClasses[step.accent];
-              return (
-                <motion.div
-                  key={step.num}
-                  initial="hidden"
-                  whileInView="visible"
-                  viewport={{ once: true, margin: "-60px" }}
-                  variants={fadeUp}
-                  custom={i}
-                  className={`relative p-8 pt-10 bg-white/[0.06] border-2 border-white/[0.12] ${a.hoverBorder} transition-[border-color,box-shadow] duration-300 hover:-translate-y-2 ${a.shadow} ${step.rotate} hover:rotate-0 rounded-sm will-change-transform`}
-                >
-                  {/* Tape-tag number */}
-                  <span
-                    className={`absolute -top-3 left-6 px-3 py-1 ${a.bg} ${step.accent === "primary" ? "text-white" : "text-black"} text-xs uppercase tracking-wider rounded-sm border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,0.8)] ${i % 2 === 0 ? "-rotate-3" : "rotate-3"}`}
-                    style={{ fontFamily: "var(--font-heading)", fontWeight: 700 }}
-                  >
-                    {step.num}
-                  </span>
-                  <h3
-                    className="text-foreground mb-3"
-                    style={{ fontFamily: "var(--font-display)", fontSize: "1.75rem" }}
-                  >
-                    {step.label}
-                  </h3>
-                  <p className="text-muted-foreground text-sm" style={{ lineHeight: 1.7 }}>
-                    {step.copy}
-                  </p>
                 </motion.div>
               );
             })}
@@ -746,6 +487,24 @@ export function HomunculAIPage() {
               </Link>
             </motion.div>
           </motion.div>
+        </div>
+      </section>
+
+      {/* ═══════════ AGE REQUIREMENT NOTICE ═══════════ */}
+      <section className="py-8 bg-white/[0.02] border-t-2 border-white/[0.08]">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-start gap-3">
+            <AlertTriangle className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" />
+            <p
+              className="text-muted-foreground/70 text-xs"
+              style={{ fontFamily: "var(--font-heading)", fontWeight: 500, lineHeight: 1.6 }}
+            >
+              <span className="uppercase tracking-wider text-foreground/90" style={{ fontWeight: 700 }}>
+                18+ Age Requirement:
+              </span>{" "}
+              HomunculAI requires agreement to a Terms of Use that restricts use to individuals 18 years of age or older due to existing and incoming laws around use of AI.
+            </p>
+          </div>
         </div>
       </section>
 

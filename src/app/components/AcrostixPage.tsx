@@ -294,13 +294,16 @@ export function AcrostixPage() {
                   <Smartphone className="w-4 h-4 text-teal" />
                   <span className="text-sm uppercase tracking-wider">Download on Google Play</span>
                 </a>
-                <div
-                  className="inline-flex items-center gap-2 px-5 py-3 bg-white/[0.04] backdrop-blur-xl border-2 border-white/[0.12] rounded-sm text-muted-foreground opacity-60 cursor-default"
+                <a
+                  href="https://apps.apple.com/us/app/acrostix/id6760374016"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-5 py-3 bg-white/[0.06] border-2 border-white/[0.12] rounded-sm text-muted-foreground hover:text-foreground hover:border-primary/40 transition-all"
                   style={{ fontFamily: "var(--font-heading)", fontWeight: 600 }}
                 >
                   <Smartphone className="w-4 h-4 text-primary" />
-                  <span className="text-sm uppercase tracking-wider">Coming Soon on App Store</span>
-                </div>
+                  <span className="text-sm uppercase tracking-wider">Download on App Store</span>
+                </a>
               </motion.div>
             </motion.div>
 
@@ -637,13 +640,16 @@ export function AcrostixPage() {
                 <Smartphone className="w-4 h-4" />
                 Download on Google Play
               </a>
-              <div
-                className="inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-transparent text-foreground border-2 border-white/20 rounded-md uppercase tracking-wider text-sm opacity-60 cursor-default"
+              <a
+                href="https://apps.apple.com/us/app/acrostix/id6760374016"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-primary hover:bg-primary/90 text-white rounded-md border-2 border-primary transition-all hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_rgba(160,92,246,0.4)] uppercase tracking-wider text-sm"
                 style={{ fontFamily: "var(--font-heading)", fontWeight: 700 }}
               >
                 <Smartphone className="w-4 h-4" />
-                Coming Soon on App Store
-              </div>
+                Download on App Store
+              </a>
             </motion.div>
             <motion.div variants={fadeUp} custom={4} className="mt-6">
               <Link

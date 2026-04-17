@@ -31,7 +31,7 @@ const games = [
     description:
       "Build sentences from acrostic words and get scored on grammar, complexity, and creativity. Campaign mode with themed islands, endless replayability",
     image: acrostixCardImage,
-    imagePosition: "object-top",
+    imagePosition: "object-[center_12%]",
     status: "Released",
     platforms: ["Mobile"],
     accent: "teal" as const,
@@ -59,8 +59,8 @@ const games = [
     description:
       "Match numbers together and chase high scores. Simple to pick up, surprisingly hard to put down",
     image: matchFivesCardImage,
-    imagePosition: "object-top",
-    status: "Coming Soon",
+    imagePosition: "object-center",
+    status: "Released",
     platforms: ["Mobile"],
     accent: "teal" as const,
     rotate: "-rotate-1",
@@ -74,7 +74,7 @@ const games = [
       "Drop balls, watch mayhem unfold, unlock a wild amount of cosmetics. Way more drip than you'd expect",
     image: ballDropCardImage,
     imagePosition: "object-cover",
-    status: "Coming Soon",
+    status: "Released",
     platforms: ["Mobile"],
     accent: "primary" as const,
     rotate: "rotate-1",

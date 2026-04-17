@@ -44,7 +44,7 @@ const projects = [
     platforms: ["Mobile"],
     tilt: "-rotate-1",
     accent: "teal" as const,
-    imagePosition: "object-cover object-top" as const,
+    imagePosition: "object-cover object-[center_12%]" as const,
     slug: "acrostix" as string | null,
   },
   {
@@ -70,11 +70,11 @@ const projects = [
     type: "Puzzle",
     description: "Match numbers, chase high scores. Simple to pick up, hard to put down.",
     image: matchFivesCardImage,
-    status: "Coming Soon",
+    status: "Released",
     platforms: ["Mobile"],
     tilt: "-rotate-1",
     accent: "teal" as const,
-    imagePosition: "object-cover object-top" as const,
+    imagePosition: "object-cover object-center" as const,
     slug: "match-fives" as string | null,
   },
   {
@@ -85,7 +85,7 @@ const projects = [
     type: "Arcade",
     description: "Drop balls, watch mayhem unfold, unlock a pile of cosmetics.",
     image: ballDropCardImage,
-    status: "Coming Soon",
+    status: "Released",
     platforms: ["Mobile"],
     tilt: "rotate-1",
     accent: "primary" as const,
@@ -206,14 +206,15 @@ const fadeUp = {
 /* ─── sort helpers ─── */
 const categoryOrder: Category[] = ["Games & Apps", "Tools & Mods"];
 
-// Lower number = higher priority (renders first). "Coming <date>" items rank
-// between Released and the generic "Coming Soon", sorted by their date ascending.
+// Lower number = higher priority (renders first). Coming items lead (dated
+// first, sorted by date asc, then generic "Coming Soon"), then Released,
+// then In Dev last.
 function statusRank(status: string): number {
-  if (status === "Released") return 1;
-  if (status === "Coming Soon") return 3;
+  if (status === "Coming Soon") return 2;
+  if (status === "Released") return 3;
   if (status === "In Review") return 4;
   if (status === "In Development") return 5;
-  if (status.startsWith("Coming ")) return 2; // has a specific date
+  if (status.startsWith("Coming ")) return 1; // has a specific date
   return 6; // unknown
 }
 
@@ -235,7 +236,7 @@ function sortProjects<T extends { category: Category; status: string }>(items: T
     const rankA = statusRank(a.status);
     const rankB = statusRank(b.status);
     if (rankA !== rankB) return rankA - rankB;
-    if (rankA === 2) return comingDate(a.status) - comingDate(b.status);
+    if (rankA === 1) return comingDate(a.status) - comingDate(b.status);
     return 0;
   });
 }
