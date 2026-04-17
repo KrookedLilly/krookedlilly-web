@@ -8,8 +8,7 @@ import imgHomunculAIMultiagent from "@/assets/homunculai-multiagent.png";
 import imgHomunculAIArt from "@/assets/homunculai-art.png";
 import {
   ArrowLeft,
-  Monitor,
-  Calendar,
+  Clock,
   Sparkles,
   Bot,
   Zap,
@@ -19,11 +18,14 @@ import {
   Ghost,
   Shield,
   AlertTriangle,
+  ShoppingBag,
+  ExternalLink,
 } from "lucide-react";
 import { DesktopWindow } from "./DesktopWindow";
 
-/* TODO: replace with real Steam app URL once store approval clears */
-const STEAM_URL = "https://store.steampowered.com/";
+/* TODO: swap placeholders once direct/itch URLs are ready */
+const BUY_DIRECT_URL = "#";
+const ITCH_URL = "#";
 
 /* ─── animation variants ─── */
 const fadeUp = {
@@ -50,7 +52,7 @@ const features = [
   {
     icon: Zap,
     title: "A Body Language For Your AI",
-    desc: "29 emotes, 21 gestures, 20 idle animations, 15 quick reactions. Meltdowns when you break prod. Eureka when you ship. Vibes while you're working.",
+    desc: "29 emotes, 21 gestures, 20 idle animations, 15 quick reactions. A full visual vocabulary your AI can mix and match for whatever it's doing.",
     accent: "teal" as const,
   },
   {
@@ -68,7 +70,7 @@ const features = [
   {
     icon: Layers,
     title: "Multi-Instance",
-    desc: "Run several homunculi at once — one per AI, one per project, or just because you want a little crowd. Each window, its own identity.",
+    desc: "Run as many windows as you want, in whatever arrangement fits your workflow. Each window is isolated with its own state, scoped to only the AI connected to it.",
     accent: "primary" as const,
   },
   {
@@ -80,7 +82,7 @@ const features = [
   {
     icon: Ghost,
     title: "Ambient Window",
-    desc: "Transparent, low-demand, 20 idle animations between prompts. Present on your desktop without dominating it.",
+    desc: "Transparent, low CPU, 20 idle animations between prompts. Runs on your desktop without blocking your work.",
     accent: "primary" as const,
   },
 ];
@@ -155,8 +157,8 @@ export function HomunculAIPage() {
                   className="inline-flex items-center gap-2 px-4 py-2 bg-lime text-black rounded-md -rotate-2 border-2 border-black shadow-[3px_3px_0px_0px_rgba(0,0,0,0.8)]"
                   style={{ fontFamily: "var(--font-heading)", fontWeight: 700 }}
                 >
-                  <Calendar className="w-4 h-4" />
-                  <span className="text-sm uppercase tracking-wider">Coming May 7</span>
+                  <Clock className="w-4 h-4" />
+                  <span className="text-sm uppercase tracking-wider">Coming Soon</span>
                 </span>
               </motion.div>
 
@@ -219,18 +221,74 @@ export function HomunculAIPage() {
                 </span>
               </motion.div>
 
-              <motion.div variants={fadeUp} custom={7} className="flex flex-wrap gap-3">
+              {/* Legal links strip above buy buttons */}
+              <motion.div variants={fadeUp} custom={7} className="flex flex-wrap gap-x-4 gap-y-1 mb-3 text-xs">
+                <Link
+                  to="/games/homunculai/terms"
+                  className="text-muted-foreground/70 hover:text-primary transition-colors uppercase tracking-wider"
+                  style={{ fontFamily: "var(--font-heading)", fontWeight: 600 }}
+                >
+                  Terms of Use
+                </Link>
+                <span className="text-muted-foreground/30">&middot;</span>
+                <Link
+                  to="/games/homunculai/sales-restrictions"
+                  className="text-muted-foreground/70 hover:text-primary transition-colors uppercase tracking-wider"
+                  style={{ fontFamily: "var(--font-heading)", fontWeight: 600 }}
+                >
+                  Sales Restrictions
+                </Link>
+                <span className="text-muted-foreground/30">&middot;</span>
+                <Link
+                  to="/games/homunculai/what-is-ai"
+                  className="text-muted-foreground/70 hover:text-primary transition-colors uppercase tracking-wider"
+                  style={{ fontFamily: "var(--font-heading)", fontWeight: 600 }}
+                >
+                  New to AI?
+                </Link>
+              </motion.div>
+
+              {/* Buy buttons */}
+              <motion.div variants={fadeUp} custom={8} className="flex flex-wrap gap-3">
                 <a
-                  href={STEAM_URL}
+                  href={BUY_DIRECT_URL}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 px-5 py-3 bg-teal hover:bg-teal/90 text-black rounded-sm border-2 border-teal transition-all hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_rgba(34,211,238,0.4)]"
                   style={{ fontFamily: "var(--font-heading)", fontWeight: 700 }}
                 >
-                  <Monitor className="w-4 h-4" />
-                  <span className="text-sm uppercase tracking-wider">Wishlist on Steam</span>
+                  <ShoppingBag className="w-4 h-4" />
+                  <span className="text-sm uppercase tracking-wider">Buy Direct</span>
+                </a>
+                <a
+                  href={ITCH_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-5 py-3 bg-white/[0.06] border-2 border-white/[0.12] rounded-sm text-muted-foreground hover:text-foreground hover:border-primary/40 transition-all"
+                  style={{ fontFamily: "var(--font-heading)", fontWeight: 600 }}
+                >
+                  <ExternalLink className="w-4 h-4 text-primary" />
+                  <span className="text-sm uppercase tracking-wider">On itch.io</span>
                 </a>
               </motion.div>
+
+              {/* Inline 18+ / regional note below buy buttons */}
+              <motion.p
+                variants={fadeUp}
+                custom={9}
+                className="text-muted-foreground/60 text-xs mt-3 max-w-md"
+                style={{ fontFamily: "var(--font-heading)", fontWeight: 500, lineHeight: 1.6 }}
+              >
+                <span className="uppercase tracking-wider text-amber-400/80">18+ only.</span>{" "}
+                Not available in certain regions &mdash;{" "}
+                <Link
+                  to="/games/homunculai/sales-restrictions"
+                  className="underline underline-offset-2 hover:text-foreground transition-colors"
+                >
+                  see list
+                </Link>
+                .
+              </motion.p>
             </motion.div>
 
             {/* Right — hero desktop window */}
@@ -252,12 +310,12 @@ export function HomunculAIPage() {
         </div>
       </section>
 
-      {/* ═══════════ TRAILER ═══════════ */}
+      {/* ═══════════ DEMO ═══════════ */}
       <section className="py-16 bg-white/[0.02] backdrop-blur-sm border-y-2 border-white/[0.08]">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-center">
           <DesktopWindow
             chrome
-            title="Trailer"
+            title="Demo"
             aspect="56.25%"
             className="w-full max-w-3xl"
           >
@@ -366,13 +424,13 @@ export function HomunculAIPage() {
                 className="text-foreground mb-4"
                 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.75rem, 4vw, 2.5rem)", lineHeight: 1.1 }}
               >
-                It lives on your desktop.
+                A face on your AI's state.
               </h3>
               <p
                 className="text-muted-foreground max-w-md"
                 style={{ fontSize: "1.05rem", lineHeight: 1.7 }}
               >
-                Floats when you're quiet. Looks up when you're not. Never just static, never demanding attention. 20 idle animations mean it's always gently alive — there when you glance over, out of the way when you don't.
+                Thought bubbles when it's processing. Speech bubbles when it has an answer. Gestures and expressions for everything in between. No switching to a chat log. No reading a terminal.
               </p>
             </motion.div>
           </motion.div>
@@ -462,30 +520,83 @@ export function HomunculAIPage() {
             <motion.p
               variants={fadeUp}
               custom={2}
-              className="text-muted-foreground mb-8 max-w-lg mx-auto"
+              className="text-muted-foreground mb-6 max-w-lg mx-auto"
               style={{ fontSize: "1.05rem" }}
             >
-              HomunculAI launches May 7 on Steam for Windows. Wishlist now and it'll show up the moment it drops.
+              HomunculAI is coming soon for Windows. Sold direct so it goes straight to the people making it.
             </motion.p>
-            <motion.div variants={fadeUp} custom={3} className="flex flex-col sm:flex-row gap-4 justify-center">
+
+            {/* Legal links strip above buy buttons */}
+            <motion.div
+              variants={fadeUp}
+              custom={3}
+              className="flex flex-wrap gap-x-4 gap-y-1 mb-4 text-xs justify-center"
+            >
+              <Link
+                to="/games/homunculai/terms"
+                className="text-muted-foreground/70 hover:text-primary transition-colors uppercase tracking-wider"
+                style={{ fontFamily: "var(--font-heading)", fontWeight: 600 }}
+              >
+                Terms of Use
+              </Link>
+              <span className="text-muted-foreground/30">&middot;</span>
+              <Link
+                to="/games/homunculai/sales-restrictions"
+                className="text-muted-foreground/70 hover:text-primary transition-colors uppercase tracking-wider"
+                style={{ fontFamily: "var(--font-heading)", fontWeight: 600 }}
+              >
+                Sales Restrictions
+              </Link>
+              <span className="text-muted-foreground/30">&middot;</span>
+              <Link
+                to="/games/homunculai/what-is-ai"
+                className="text-muted-foreground/70 hover:text-primary transition-colors uppercase tracking-wider"
+                style={{ fontFamily: "var(--font-heading)", fontWeight: 600 }}
+              >
+                New to AI?
+              </Link>
+            </motion.div>
+
+            <motion.div variants={fadeUp} custom={4} className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href={STEAM_URL}
+                href={BUY_DIRECT_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-teal hover:bg-teal/90 text-black rounded-md border-2 border-teal transition-all hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_rgba(34,211,238,0.4)] uppercase tracking-wider text-sm"
                 style={{ fontFamily: "var(--font-heading)", fontWeight: 700 }}
               >
-                <Monitor className="w-4 h-4" />
-                Wishlist on Steam
+                <ShoppingBag className="w-4 h-4" />
+                Buy Direct
               </a>
-              <Link
-                to="/catalog"
-                className="inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-transparent hover:bg-white/5 text-foreground border-2 border-white/20 hover:border-white/40 rounded-md transition-all hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_rgba(255,255,255,0.1)] uppercase tracking-wider text-sm"
+              <a
+                href={ITCH_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-transparent hover:bg-white/5 text-foreground border-2 border-white/20 hover:border-primary/40 rounded-md transition-all hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_rgba(160,92,246,0.2)] uppercase tracking-wider text-sm"
                 style={{ fontFamily: "var(--font-heading)", fontWeight: 700 }}
               >
-                More from Krooked
-              </Link>
+                <ExternalLink className="w-4 h-4" />
+                On itch.io
+              </a>
             </motion.div>
+
+            {/* Inline 18+ / regional note below buy buttons */}
+            <motion.p
+              variants={fadeUp}
+              custom={5}
+              className="text-muted-foreground/60 text-xs mt-4"
+              style={{ fontFamily: "var(--font-heading)", fontWeight: 500, lineHeight: 1.6 }}
+            >
+              <span className="uppercase tracking-wider text-amber-400/80">18+ only.</span>{" "}
+              Not available in certain regions &mdash;{" "}
+              <Link
+                to="/games/homunculai/sales-restrictions"
+                className="underline underline-offset-2 hover:text-foreground transition-colors"
+              >
+                see list
+              </Link>
+              .
+            </motion.p>
           </motion.div>
         </div>
       </section>

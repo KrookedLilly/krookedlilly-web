@@ -52,6 +52,27 @@ export const router = createHashRouter([
           })),
       },
       {
+        path: "games/homunculai/terms",
+        lazy: () =>
+          import("./components/HomunculAITermsPage").then((m) => ({
+            Component: m.HomunculAITermsPage,
+          })),
+      },
+      {
+        path: "games/homunculai/sales-restrictions",
+        lazy: () =>
+          import("./components/HomunculAISalesRestrictionsPage").then((m) => ({
+            Component: m.HomunculAISalesRestrictionsPage,
+          })),
+      },
+      {
+        path: "games/homunculai/what-is-ai",
+        lazy: () =>
+          import("./components/HomunculAIWhatIsAIPage").then((m) => ({
+            Component: m.HomunculAIWhatIsAIPage,
+          })),
+      },
+      {
         path: "about",
         lazy: () =>
           import("./components/AboutPage").then((m) => ({
