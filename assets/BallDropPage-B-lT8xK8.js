@@ -1,4 +1,4 @@
-import{f as m,j as e,A as g,e as t,o as n,S as y,n as b}from"./index-DXsGdeOx.js";import{L as f,a as v}from"./vendor-router-BxE02yVp.js";import{P as d,T as w}from"./PhoneScreenshot-C-1GEb3s.js";import{C as j}from"./circle-check-big-CU0_vngj.js";import{S as x}from"./smartphone-49xRARWC.js";import{T as u}from"./target-BWiEnCH2.js";import{C as N,a as k}from"./chevron-right-D2W2pBj9.js";import"./vendor-react-7pfywCae.js";import"./vendor-motion-BTeieGXM.js";/**
+import{c as m,j as e,A as g,f as t,o as n,S as y,n as b}from"./index-Bq_a8Dz2.js";import{L as f,a as v}from"./vendor-router-BxE02yVp.js";import{P as d,T as w}from"./PhoneScreenshot-DlzA2e94.js";import{C as j}from"./circle-check-big-DUHj002a.js";import{S as x}from"./smartphone-Cea07Mca.js";import{T as u}from"./target-CSD-06En.js";import{C as N,a as k}from"./chevron-right-CmbzEJN2.js";import"./vendor-react-7pfywCae.js";import"./vendor-motion-BTeieGXM.js";/**
  * @license lucide-react v0.487.0 - ISC
  *
  * This source code is licensed under the ISC license.
