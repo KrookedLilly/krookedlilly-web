@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { motion } from "motion/react";
 import { Mail, Send, MapPin, CheckCircle, Twitch } from "lucide-react";
+import { PageMeta } from "./PageMeta";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -45,6 +46,11 @@ export function ContactPage() {
 
   return (
     <div className="min-h-screen">
+      <PageMeta
+        title="Contact"
+        description="Get in touch with KrookedLilly — press, partnerships, support, or just to say hi."
+        path="/contact"
+      />
       {/* Hero */}
       <section className="pt-16 pb-12 relative">
         <div className="absolute inset-0 overflow-hidden">

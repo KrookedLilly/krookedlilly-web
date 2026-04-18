@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { motion } from "motion/react";
 import { ShoppingBag, Bell, Sparkles, Package } from "lucide-react";
+import { PageMeta } from "./PageMeta";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -62,6 +63,11 @@ export function ShopPage() {
 
   return (
     <div className="min-h-screen">
+      <PageMeta
+        title="Shop"
+        description="The KrookedLilly shop — merch, prints, and odd physical objects tied to the games and tools we make."
+        path="/shop"
+      />
       {/* Hero */}
       <section className="pt-16 pb-12 relative">
         <div className="absolute inset-0 overflow-hidden">

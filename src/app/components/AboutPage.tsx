@@ -1,6 +1,7 @@
 import { motion } from "motion/react";
 import { Flame, Heart, Sparkles, Target, Zap, Gamepad2 } from "lucide-react";
 import { LogoCircle } from "./LogoCircle";
+import { PageMeta } from "./PageMeta";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -84,6 +85,11 @@ const whatWeDo = [
 export function AboutPage() {
   return (
     <div className="min-h-screen">
+      <PageMeta
+        title="About"
+        description="About KrookedLilly — the indie studio behind HomunculAI, Acrostix, Galactic Parcel Service, and a handful of sharp tools and mods."
+        path="/about"
+      />
       {/* Hero */}
       <section className="pt-16 pb-12 relative">
         <div className="absolute inset-0 overflow-hidden">

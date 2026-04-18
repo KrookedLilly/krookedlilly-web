@@ -1,5 +1,6 @@
 import { motion } from "motion/react";
 import { Shield } from "lucide-react";
+import { PageMeta } from "./PageMeta";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -42,6 +43,12 @@ function Section({
 export function AcrostixPrivacyPage() {
   return (
     <div className="min-h-screen">
+      <PageMeta
+        title="Acrostix Privacy Policy"
+        description="Privacy policy for the Acrostix iOS app."
+        path="/games/acrostix/privacy"
+        noIndex
+      />
       {/* Hero */}
       <section className="pt-16 pb-12 relative">
         <div className="absolute inset-0 overflow-hidden">

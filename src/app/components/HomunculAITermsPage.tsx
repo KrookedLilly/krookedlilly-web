@@ -1,6 +1,7 @@
 import { motion } from "motion/react";
-import { Link } from "react-router";
+import { Link } from "react-router-dom";
 import { FileText, ArrowLeft } from "lucide-react";
+import { PageMeta } from "./PageMeta";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -43,6 +44,12 @@ function Section({
 export function HomunculAITermsPage() {
   return (
     <div className="min-h-screen">
+      <PageMeta
+        title="HomunculAI Terms"
+        description="Terms of service for HomunculAI."
+        path="/games/homunculai/terms"
+        noIndex
+      />
       {/* Hero */}
       <section className="pt-16 pb-12 relative">
         <div className="absolute inset-0 overflow-hidden">

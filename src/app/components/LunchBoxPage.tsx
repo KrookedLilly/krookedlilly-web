@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router";
+import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "motion/react";
 import {
   ArrowLeft,
@@ -20,6 +20,7 @@ import {
   lunchBoxScreenshots,
   lunchBoxLogo,
 } from "../assets/lunchbox-screenshots";
+import { PageMeta } from "./PageMeta";
 
 /* ─── animation variants ─── */
 const fadeUp = {
@@ -157,6 +158,11 @@ function ScreenshotGallery() {
 export function LunchBoxPage() {
   return (
     <div className="min-h-screen">
+      <PageMeta
+        title="LunchBox"
+        description="LunchBox — a productivity tool from KrookedLilly for organizing your day in tidy, portable boxes."
+        path="/tools/lunchbox"
+      />
       {/* ═══════════ HERO ═══════════ */}
       <section className="relative pt-6 pb-20">
         <div className="absolute inset-0 pointer-events-none">

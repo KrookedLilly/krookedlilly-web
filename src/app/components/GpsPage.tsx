@@ -1,4 +1,4 @@
-import { Link } from "react-router";
+import { Link } from "react-router-dom";
 import { motion } from "motion/react";
 import {
   ArrowLeft,
@@ -18,6 +18,7 @@ import {
   Crosshair,
   Clock,
 } from "lucide-react";
+import { PageMeta } from "./PageMeta";
 
 /* ── asset imports ── */
 import imgStorePageBackground from "@/assets/gps-store-background.png";
@@ -121,6 +122,11 @@ const accentClasses = {
 export function GpsPage() {
   return (
     <div className="min-h-screen">
+      <PageMeta
+        title="Galactic Parcel Service"
+        description="Galactic Parcel Service is an open-world delivery sim — build a fleet, haul packages across the galaxy, and terraform planets along the way."
+        path="/games/galactic-parcel-service"
+      />
       {/* ═══════════ HERO ═══════════ */}
       <section className="relative pt-6 pb-20">
         {/* Background glow */}

@@ -1,12 +1,13 @@
-import { createHashRouter } from "react-router";
+import type { RouteRecord } from "vite-react-ssg";
 import { Layout } from "./components/Layout";
 import { HomePage } from "./components/HomePage";
 import { NotFound } from "./components/NotFound";
 
-export const router = createHashRouter([
+export const routes: RouteRecord[] = [
   {
     path: "/",
     Component: Layout,
+    entry: "src/app/components/Layout.tsx",
     children: [
       { index: true, Component: HomePage },
       {
@@ -117,4 +118,4 @@ export const router = createHashRouter([
       { path: "*", Component: NotFound },
     ],
   },
-]);
+];

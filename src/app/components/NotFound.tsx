@@ -1,10 +1,17 @@
-import { Link } from "react-router";
+import { Link } from "react-router-dom";
 import { motion } from "motion/react";
 import { Home, ArrowLeft } from "lucide-react";
+import { PageMeta } from "./PageMeta";
 
 export function NotFound() {
   return (
     <div className="min-h-[80vh] flex items-center justify-center">
+      <PageMeta
+        title="Not Found"
+        description="The page you were looking for doesn't exist."
+        path="/404"
+        noIndex
+      />
       <motion.div
         initial={{ opacity: 0, y: 20, rotate: -3 }}
         animate={{ opacity: 1, y: 0, rotate: 0 }}

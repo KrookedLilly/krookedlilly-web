@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router";
+import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "motion/react";
 import {
   ArrowLeft,
@@ -19,6 +19,7 @@ import { PhoneScreenshot } from "./PhoneScreenshot";
 import {
   ballDropScreenshots,
 } from "../assets/balldrop-screenshots";
+import { PageMeta } from "./PageMeta";
 
 /* ─── animation variants ─── */
 const fadeUp = {
@@ -199,6 +200,11 @@ function ScreenshotGallery() {
 export function BallDropPage() {
   return (
     <div className="min-h-screen">
+      <PageMeta
+        title="50 Ball Drop"
+        description="50 Ball Drop is a quick-hit arcade puzzler for iOS — release fifty balls, bank the biggest runs, beat your best."
+        path="/games/50-ball-drop"
+      />
       {/* ═══════════ HERO ═══════════ */}
       <section className="relative pt-6 pb-20">
         <div className="absolute inset-0 pointer-events-none">

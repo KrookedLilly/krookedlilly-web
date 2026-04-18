@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router";
+import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "motion/react";
 import {
   ArrowLeft,
@@ -18,6 +18,7 @@ import { PhoneScreenshot } from "./PhoneScreenshot";
 import {
   matchFivesScreenshots,
 } from "../assets/matchfives-screenshots";
+import { PageMeta } from "./PageMeta";
 
 /* ─── animation variants ─── */
 const fadeUp = {
@@ -166,6 +167,11 @@ function ScreenshotGallery() {
 export function MatchFivesPage() {
   return (
     <div className="min-h-screen">
+      <PageMeta
+        title="Match Fives"
+        description="Match Fives is a brain-stretching iOS puzzle — line up five-in-a-row across overlapping grids against the clock."
+        path="/games/match-fives"
+      />
       {/* ═══════════ HERO ═══════════ */}
       <section className="relative pt-6 pb-20">
         <div className="absolute inset-0 pointer-events-none">

@@ -1,6 +1,7 @@
 import { motion } from "motion/react";
-import { Link } from "react-router";
+import { Link } from "react-router-dom";
 import { BookOpen, ArrowLeft } from "lucide-react";
+import { PageMeta } from "./PageMeta";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -43,6 +44,12 @@ function Section({
 export function HomunculAIWhatIsAIPage() {
   return (
     <div className="min-h-screen">
+      <PageMeta
+        title="What is AI — HomunculAI"
+        description="Background reading on what HomunculAI is, how it works, and what modern AI can and can't do."
+        path="/games/homunculai/what-is-ai"
+        noIndex
+      />
       {/* Hero */}
       <section className="pt-16 pb-12 relative">
         <div className="absolute inset-0 overflow-hidden">

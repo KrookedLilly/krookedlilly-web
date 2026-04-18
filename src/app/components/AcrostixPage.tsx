@@ -1,5 +1,5 @@
 import { useState, useRef, useCallback } from "react";
-import { Link } from "react-router";
+import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "motion/react";
 import {
   ArrowLeft,
@@ -16,6 +16,7 @@ import {
   ChevronRight,
 } from "lucide-react";
 import { PhoneScreenshot } from "./PhoneScreenshot";
+import { PageMeta } from "./PageMeta";
 import imgAcrostixGameplay from "@/assets/acrostix-iphone-slide-1-gameplay.png";
 import acrostixGameplayVideo from "@/assets/acrostix-gameplay.mp4";
 import imgAcrostixScoreBreakdown from "@/assets/acrostix-iphone-slide-2-score-breakdown.png";
@@ -217,6 +218,11 @@ export function AcrostixPage() {
 
   return (
     <div className="min-h-screen">
+      <PageMeta
+        title="Acrostix"
+        description="Acrostix is a creative word game for iOS — spell across and down to build tiny acrostic grids and chase high scores."
+        path="/games/acrostix"
+      />
       {/* ═══════════ HERO ═══════════ */}
       <section className="relative pt-6 pb-20">
         {/* Background glow */}

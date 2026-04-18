@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router";
+import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "motion/react";
 import {
   ArrowLeft,
@@ -20,6 +20,7 @@ import {
   heKeyboardsPromoImage,
   heKeyboardsIcon,
 } from "../assets/hekeyboards-screenshots";
+import { PageMeta } from "./PageMeta";
 
 /* ─── animation variants ─── */
 const fadeUp = {
@@ -159,6 +160,11 @@ function ScreenshotGallery() {
 export function HEKeyboardsPage() {
   return (
     <div className="min-h-screen">
+      <PageMeta
+        title="HE Keyboards"
+        description="HE Keyboards — a KrookedLilly tool for Hall-Effect keyboard enthusiasts. Tune, tweak, and get the most out of your hardware."
+        path="/tools/he-keyboards"
+      />
       {/* ═══════════ HERO ═══════════ */}
       <section className="relative pt-6 pb-20">
         <div className="absolute inset-0 pointer-events-none">

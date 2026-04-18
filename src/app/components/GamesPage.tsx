@@ -2,10 +2,11 @@ import imgAutoHideHudLogo from "@/assets/autohidehud-logo.png";
 import imgCardLabelerLogo from "@/assets/cardlabeler-logo.png";
 import imgStorePageBackground from "@/assets/gps-store-background.png";
 import { useState } from "react";
-import { Link } from "react-router";
+import { Link } from "react-router-dom";
 import { motion } from "motion/react";
 import { ExternalLink, Clock, CheckCircle, Wrench, Calendar } from "lucide-react";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
+import { PageMeta } from "./PageMeta";
 import { acrostixCardImage } from "../assets/acrostix-screenshots";
 import { matchFivesCardImage } from "../assets/matchfives-screenshots";
 import { ballDropCardImage } from "../assets/balldrop-screenshots";
@@ -252,6 +253,11 @@ export function GamesPage() {
 
   return (
     <div className="min-h-screen">
+      <PageMeta
+        title="Catalog"
+        description="Browse every KrookedLilly game, app, tool, and mod — from Acrostix to HomunculAI to Galactic Parcel Service."
+        path="/catalog"
+      />
       {/* Header */}
       <section className="pt-16 pb-8 relative">
         <div className="absolute inset-0 overflow-hidden">

@@ -1,5 +1,5 @@
 import { useRef, useCallback } from "react";
-import { Link } from "react-router";
+import { Link } from "react-router-dom";
 import { motion } from "motion/react";
 import imgHomunculAIHero from "@/assets/homunculai-capsule-vertical.png";
 import homunculAITrailer from "@/assets/homunculai-trailer.mp4";
@@ -21,6 +21,7 @@ import {
   ShoppingBag,
 } from "lucide-react";
 import { DesktopWindow } from "./DesktopWindow";
+import { PageMeta } from "./PageMeta";
 
 const BUY_DIRECT_URL =
   "https://krookedlilly.lemonsqueezy.com/checkout/buy/dbbcf923-b434-4fcf-a1b4-5f35225ad16b";
@@ -129,6 +130,12 @@ export function HomunculAIPage() {
 
   return (
     <div className="min-h-screen">
+      <PageMeta
+        title="HomunculAI"
+        description="HomunculAI is a desktop AI assistant for Windows — a multi-agent sidekick that writes, draws, debugs, and ships work alongside you."
+        path="/games/homunculai"
+        image="/homunculai-og.png"
+      />
       {/* ═══════════ HERO ═══════════ */}
       <section className="relative pt-6 pb-20">
         {/* Background glow */}

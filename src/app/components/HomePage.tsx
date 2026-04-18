@@ -8,11 +8,12 @@ import { lunchBoxLogo } from "../assets/lunchbox-screenshots";
 import imgAcrostixHero from "@/assets/acrostix-ipad-slide-1-gameplay.png";
 import imgHomunculAIHero from "@/assets/homunculai-library-capsule.png";
 import imgHomunculAICard from "@/assets/homunculai-capsule-main.png";
-import { Link } from "react-router";
+import { Link } from "react-router-dom";
 import { motion } from "motion/react";
 import { ArrowRight, Gamepad2, Wrench, Sparkles } from "lucide-react";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
 import { DesktopWindow } from "./DesktopWindow";
+import { PageMeta } from "./PageMeta";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -153,6 +154,12 @@ const accentMap = {
 export function HomePage() {
   return (
     <div className="overflow-hidden">
+      <PageMeta
+        title="KrookedLilly"
+        description="KrookedLilly makes indie games, creative tools, and mods — playful software with sharp edges and weird ideas."
+        path="/"
+        image="/og-image.png"
+      />
       {/* Featured Heroes — Acrostix & HomunculAI, side-by-side for equal billing */}
       <section className="relative pt-12 pb-20 lg:pt-16 lg:pb-24">
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
