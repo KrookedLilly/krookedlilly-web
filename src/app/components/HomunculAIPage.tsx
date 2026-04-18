@@ -19,12 +19,15 @@ import {
   Shield,
   AlertTriangle,
   ShoppingBag,
+  Download,
 } from "lucide-react";
 import { DesktopWindow } from "./DesktopWindow";
 import { PageMeta } from "./PageMeta";
 
 const BUY_DIRECT_URL =
   "https://krookedlilly.lemonsqueezy.com/checkout/buy/dbbcf923-b434-4fcf-a1b4-5f35225ad16b";
+const TRIAL_DOWNLOAD_URL =
+  "https://github.com/KrookedLilly/homunculai-releases/releases";
 
 /* ─── animation variants ─── */
 const fadeUp = {
@@ -253,17 +256,17 @@ export function HomunculAIPage() {
                 </Link>
               </motion.div>
 
-              {/* Buy button */}
+              {/* Trial download button */}
               <motion.div variants={fadeUp} custom={8} className="max-w-xs">
                 <a
-                  href={BUY_DIRECT_URL}
+                  href={TRIAL_DOWNLOAD_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex w-full items-center justify-center gap-3 px-10 py-4 bg-teal hover:bg-teal/90 text-black rounded-sm border-2 border-teal transition-all hover:-translate-y-1 hover:shadow-[6px_6px_0px_0px_rgba(34,211,238,0.4)]"
+                  className="flex w-full items-center justify-center gap-3 px-10 py-4 bg-primary hover:bg-primary/90 text-white rounded-sm border-2 border-primary transition-all hover:-translate-y-1 hover:shadow-[6px_6px_0px_0px_rgba(160,92,246,0.4)]"
                   style={{ fontFamily: "var(--font-heading)", fontWeight: 700 }}
                 >
-                  <ShoppingBag className="w-5 h-5" />
-                  <span className="text-base uppercase tracking-wider">Buy Direct</span>
+                  <Download className="w-5 h-5" />
+                  <span className="text-base uppercase tracking-wider">Download 7-Day Trial</span>
                 </a>
               </motion.div>
 
@@ -557,11 +560,11 @@ export function HomunculAIPage() {
                 href={BUY_DIRECT_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex w-full max-w-xs items-center justify-center gap-3 px-10 py-4 bg-teal hover:bg-teal/90 text-black rounded-md border-2 border-teal transition-all hover:-translate-y-1 hover:shadow-[6px_6px_0px_0px_rgba(34,211,238,0.4)] uppercase tracking-wider text-base"
+                className="flex w-full max-w-xs items-center justify-center gap-3 px-10 py-4 bg-lime hover:bg-lime/90 text-black rounded-md border-2 border-lime transition-all hover:-translate-y-1 hover:shadow-[6px_6px_0px_0px_rgba(132,204,22,0.4)] uppercase tracking-wider text-base"
                 style={{ fontFamily: "var(--font-heading)", fontWeight: 700 }}
               >
                 <ShoppingBag className="w-5 h-5" />
-                Buy Direct
+                Buy Now
               </a>
             </motion.div>
 

@@ -59,7 +59,7 @@ export function HomunculAISalesRestrictionsPage() {
         <div className="relative max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <Link
             to="/games/homunculai"
-            className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors text-sm uppercase tracking-wider mb-6"
+            className="flex w-fit items-center gap-2 text-muted-foreground hover:text-primary transition-colors text-sm uppercase tracking-wider mb-6"
             style={{ fontFamily: "var(--font-heading)", fontWeight: 600 }}
           >
             <ArrowLeft className="w-4 h-4" />
