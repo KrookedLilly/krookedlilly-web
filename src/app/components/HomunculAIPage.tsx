@@ -19,13 +19,11 @@ import {
   Shield,
   AlertTriangle,
   ShoppingBag,
-  ExternalLink,
 } from "lucide-react";
 import { DesktopWindow } from "./DesktopWindow";
 
-/* TODO: swap placeholders once direct/itch URLs are ready */
-const BUY_DIRECT_URL = "#";
-const ITCH_URL = "#";
+const BUY_DIRECT_URL =
+  "https://krookedlilly.lemonsqueezy.com/checkout/buy/dbbcf923-b434-4fcf-a1b4-5f35225ad16b";
 
 /* ─── animation variants ─── */
 const fadeUp = {
@@ -248,7 +246,7 @@ export function HomunculAIPage() {
                 </Link>
               </motion.div>
 
-              {/* Buy buttons */}
+              {/* Buy button */}
               <motion.div variants={fadeUp} custom={8} className="flex flex-wrap gap-3">
                 <a
                   href={BUY_DIRECT_URL}
@@ -259,16 +257,6 @@ export function HomunculAIPage() {
                 >
                   <ShoppingBag className="w-4 h-4" />
                   <span className="text-sm uppercase tracking-wider">Buy Direct</span>
-                </a>
-                <a
-                  href={ITCH_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-5 py-3 bg-white/[0.06] border-2 border-white/[0.12] rounded-sm text-muted-foreground hover:text-foreground hover:border-primary/40 transition-all"
-                  style={{ fontFamily: "var(--font-heading)", fontWeight: 600 }}
-                >
-                  <ExternalLink className="w-4 h-4 text-primary" />
-                  <span className="text-sm uppercase tracking-wider">On itch.io</span>
                 </a>
               </motion.div>
 
@@ -557,7 +545,7 @@ export function HomunculAIPage() {
               </Link>
             </motion.div>
 
-            <motion.div variants={fadeUp} custom={4} className="flex flex-col sm:flex-row gap-4 justify-center">
+            <motion.div variants={fadeUp} custom={4} className="flex justify-center">
               <a
                 href={BUY_DIRECT_URL}
                 target="_blank"
@@ -567,16 +555,6 @@ export function HomunculAIPage() {
               >
                 <ShoppingBag className="w-4 h-4" />
                 Buy Direct
-              </a>
-              <a
-                href={ITCH_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-transparent hover:bg-white/5 text-foreground border-2 border-white/20 hover:border-primary/40 rounded-md transition-all hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_rgba(160,92,246,0.2)] uppercase tracking-wider text-sm"
-                style={{ fontFamily: "var(--font-heading)", fontWeight: 700 }}
-              >
-                <ExternalLink className="w-4 h-4" />
-                On itch.io
               </a>
             </motion.div>
 

@@ -427,8 +427,10 @@ export function HomunculAITermsPage() {
                 HomunculAI stores all data locally on your device. No avatar state,
                 chat messages, activity logs, or forensic audit data is transmitted
                 to KrookedLilly, to any third party, or to any cloud service by
-                HomunculAI itself. The only network connection HomunculAI makes is
-                the local loopback bridge between its own windows on your computer.
+                HomunculAI itself. Aside from a one-time license activation call
+                and the manual update check described below, the only network
+                connection HomunculAI makes is the local loopback bridge between
+                its own windows on your computer.
               </p>
               <p className="text-muted-foreground mb-3">
                 HomunculAI maintains a local, tamper-evident audit trail of agent
@@ -438,6 +440,42 @@ export function HomunculAITermsPage() {
                 bubbles. The audit trail exists to protect both you and the AI
                 agent by providing an independent record of what happened during a
                 session.
+              </p>
+
+              <p className="text-muted-foreground mb-3">
+                <strong className="text-foreground">License activation.</strong>{" "}
+                HomunculAI requires a one-time license activation to verify your
+                purchase. When you enter your license key on first launch,
+                HomunculAI makes a single outbound network call to the activation
+                service of the distributor you purchased through (currently Lemon
+                Squeezy) to validate the key. Your license key and an anonymous
+                instance identifier are transmitted to that service, processed
+                according to the distributor's privacy policy, and used solely to
+                verify that the key is valid and has not exceeded permitted
+                activations. On successful activation, HomunculAI stores an
+                encrypted activation token locally on your device; subsequent
+                launches do not require network connectivity for activation.
+                HomunculAI does not transmit any usage data, telemetry, activity
+                logs, chat content, or avatar state at any time — before, during,
+                or after activation. Free trial activation, if offered, is fully
+                local and does not transmit any data.
+              </p>
+
+              <p className="text-muted-foreground mb-3">
+                <strong className="text-foreground">Update checks.</strong>{" "}
+                HomunculAI includes a manual update-check feature in Settings.
+                When you click the update-check button, HomunculAI makes an
+                outbound network call to KrookedLilly's release infrastructure to
+                check whether a newer version of the app is available, and — if an
+                update is available and you choose to install it — downloads the
+                installer from that same infrastructure. Update checks and
+                downloads occur only when you explicitly initiate them; HomunculAI
+                does not check for or download updates automatically or in the
+                background. The update check transmits your installed app version
+                and standard HTTP request metadata (such as IP address and user
+                agent string). It does not transmit your license key, your
+                instance identifier, usage data, telemetry, activity logs, chat
+                content, or avatar state.
               </p>
 
               <p className="text-muted-foreground mb-3">
@@ -581,8 +619,8 @@ export function HomunculAITermsPage() {
             <Section title="10. Distribution, Platforms, and Refunds" index={10}>
               <p className="text-muted-foreground mb-3">
                 HomunculAI is distributed through one or more authorized channels.
-                As of the effective date of this version, authorized distributors
-                include:
+                As of the effective date of this version, the authorized
+                distributor is:
               </p>
               <ul className="list-disc ml-6 text-muted-foreground mb-3 space-y-1">
                 <li>
@@ -590,49 +628,30 @@ export function HomunculAITermsPage() {
                     Direct sales through Lemon Squeezy
                   </strong>{" "}
                   (KrookedLilly's Merchant of Record), via the KrookedLilly website
-                  or other KrookedLilly-operated storefronts;
-                </li>
-                <li>
-                  <strong className="text-foreground">itch.io</strong> (itch corp.);
-                </li>
-                <li>
-                  Other storefronts that KrookedLilly may add from time to time.
+                  or other KrookedLilly-operated storefronts.
                 </li>
               </ul>
               <p className="text-muted-foreground mb-4">
-                The current authorized distributor list is maintained by
-                KrookedLilly and may be updated without notice. When you purchase
-                or obtain HomunculAI through a distributor, that distributor's
-                terms of service, payment terms, and refund policy apply to the
-                transaction itself in addition to these Terms. Where any
-                distributor's mandatory terms conflict with these Terms, the
-                distributor's terms control for the transaction.
+                KrookedLilly may add or remove authorized distributors from time
+                to time without notice. When you purchase or obtain HomunculAI
+                through a distributor, that distributor's terms of service,
+                payment terms, and refund policy apply to the transaction itself
+                in addition to these Terms. Where any distributor's mandatory
+                terms conflict with these Terms, the distributor's terms control
+                for the transaction.
               </p>
 
-              <p className="text-muted-foreground mb-3">
+              <p className="text-muted-foreground mb-4">
                 <strong className="text-foreground">Refunds.</strong> Refund
                 requests are handled by the distributor you purchased from, not by
-                KrookedLilly:
+                KrookedLilly. For direct purchases through Lemon Squeezy, refunds
+                are available per Lemon Squeezy's policy (currently a 14-day
+                cooling-off window matching European Union consumer-protection
+                standards); refund requests are submitted through Lemon Squeezy
+                and processed by Lemon Squeezy, not by KrookedLilly. For purchases
+                through any other authorized distributor, that distributor's
+                refund policy controls.
               </p>
-              <ul className="list-disc ml-6 text-muted-foreground mb-4 space-y-2">
-                <li>
-                  For direct purchases through Lemon Squeezy, refunds are available
-                  per Lemon Squeezy's policy (currently a 14-day cooling-off window
-                  matching European Union consumer-protection standards); refund
-                  requests are submitted through Lemon Squeezy and processed by
-                  Lemon Squeezy, not by KrookedLilly.
-                </li>
-                <li>
-                  For purchases through itch.io, refunds are handled per itch.io's
-                  policy; by default, itch.io digital goods are non-refundable
-                  once downloaded, and users accept this at the point of purchase.
-                  Consult itch.io's support for refund requests.
-                </li>
-                <li>
-                  For purchases through any other distributor, that distributor's
-                  refund policy controls.
-                </li>
-              </ul>
 
               <div className="bg-primary/10 border-l-3 border-primary p-4 rounded-r-sm text-sm text-foreground">
                 Nothing in this section waives any non-waivable statutory consumer
@@ -693,9 +712,9 @@ export function HomunculAITermsPage() {
                   authorized to purchase or use HomunculAI, and any copy you
                   obtain is unlicensed
                 </strong>{" "}
-                (see Section 9). KrookedLilly's authorized distributors (including
-                Lemon Squeezy and itch.io) enforce territorial restrictions at the
-                point of sale through their own compliance systems.
+                (see Section 9). KrookedLilly's authorized distributor (Lemon
+                Squeezy) enforces territorial restrictions at the point of sale
+                through its compliance system.
               </p>
             </Section>
 

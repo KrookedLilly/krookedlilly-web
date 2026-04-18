@@ -121,11 +121,11 @@ export function HomunculAISalesRestrictionsPage() {
               </p>
               <p className="text-muted-foreground mt-3">
                 Enforcement is primarily handled by KrookedLilly's authorized
-                distributors (currently Lemon Squeezy and itch.io) through their
-                own point-of-sale compliance systems. Users in restricted regions
-                who obtain HomunculAI through any means are not granted a license
-                under the Terms of Use (see Section 9 — Intellectual Property and
-                Authorized Copies).
+                distributor (currently Lemon Squeezy) through its point-of-sale
+                compliance system. Users in restricted regions who obtain
+                HomunculAI through any means are not granted a license under the
+                Terms of Use (see Section 9 — Intellectual Property and Authorized
+                Copies).
               </p>
             </motion.div>
 
@@ -247,11 +247,6 @@ export function HomunculAISalesRestrictionsPage() {
                   (direct sales) enforces OFAC sanctions and export-control
                   restrictions at the point of sale through its compliance
                   systems. Sales to restricted regions are automatically blocked.
-                </li>
-                <li>
-                  <strong className="text-foreground">itch.io</strong> enforces
-                  sanctions and territorial restrictions through its own
-                  compliance systems and payment processors.
                 </li>
                 <li>
                   <strong className="text-foreground">Other distributors</strong>,
