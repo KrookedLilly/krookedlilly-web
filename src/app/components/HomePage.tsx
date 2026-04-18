@@ -46,7 +46,7 @@ const games = [
       "A little transparent window where your AI gets a body it controls itself. 45 bodies, custom SVG, two-way chat — works with any MCP client",
     image: imgHomunculAICard,
     imagePosition: "object-cover",
-    status: "Coming May 7",
+    status: "Released",
     platforms: ["Windows"],
     accent: "primary" as const,
     rotate: "rotate-1",
@@ -247,7 +247,7 @@ export function HomePage() {
                       className="px-3 py-1.5 bg-lime text-black text-xs uppercase tracking-wider border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,0.8)] rotate-3 inline-block rounded-sm"
                       style={{ fontFamily: "var(--font-heading)", fontWeight: 700 }}
                     >
-                      Coming May 7
+                      Released
                     </span>
                   </div>
                 </div>

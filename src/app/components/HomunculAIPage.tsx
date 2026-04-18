@@ -8,7 +8,7 @@ import imgHomunculAIMultiagent from "@/assets/homunculai-multiagent.png";
 import imgHomunculAIArt from "@/assets/homunculai-art.png";
 import {
   ArrowLeft,
-  Clock,
+  CheckCircle,
   Sparkles,
   Bot,
   Zap,
@@ -155,8 +155,8 @@ export function HomunculAIPage() {
                   className="inline-flex items-center gap-2 px-4 py-2 bg-lime text-black rounded-md -rotate-2 border-2 border-black shadow-[3px_3px_0px_0px_rgba(0,0,0,0.8)]"
                   style={{ fontFamily: "var(--font-heading)", fontWeight: 700 }}
                 >
-                  <Clock className="w-4 h-4" />
-                  <span className="text-sm uppercase tracking-wider">Coming Soon</span>
+                  <CheckCircle className="w-4 h-4" />
+                  <span className="text-sm uppercase tracking-wider">Released</span>
                 </span>
               </motion.div>
 
@@ -247,16 +247,16 @@ export function HomunculAIPage() {
               </motion.div>
 
               {/* Buy button */}
-              <motion.div variants={fadeUp} custom={8} className="flex flex-wrap gap-3">
+              <motion.div variants={fadeUp} custom={8} className="max-w-xs">
                 <a
                   href={BUY_DIRECT_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-5 py-3 bg-teal hover:bg-teal/90 text-black rounded-sm border-2 border-teal transition-all hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_rgba(34,211,238,0.4)]"
+                  className="flex w-full items-center justify-center gap-3 px-10 py-4 bg-teal hover:bg-teal/90 text-black rounded-sm border-2 border-teal transition-all hover:-translate-y-1 hover:shadow-[6px_6px_0px_0px_rgba(34,211,238,0.4)]"
                   style={{ fontFamily: "var(--font-heading)", fontWeight: 700 }}
                 >
-                  <ShoppingBag className="w-4 h-4" />
-                  <span className="text-sm uppercase tracking-wider">Buy Direct</span>
+                  <ShoppingBag className="w-5 h-5" />
+                  <span className="text-base uppercase tracking-wider">Buy Direct</span>
                 </a>
               </motion.div>
 
@@ -511,7 +511,7 @@ export function HomunculAIPage() {
               className="text-muted-foreground mb-6 max-w-lg mx-auto"
               style={{ fontSize: "1.05rem" }}
             >
-              HomunculAI is coming soon for Windows. Sold direct so it goes straight to the people making it.
+              HomunculAI is live for Windows. Sold direct so it goes straight to the people making it.
             </motion.p>
 
             {/* Legal links strip above buy buttons */}
@@ -550,10 +550,10 @@ export function HomunculAIPage() {
                 href={BUY_DIRECT_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-teal hover:bg-teal/90 text-black rounded-md border-2 border-teal transition-all hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_rgba(34,211,238,0.4)] uppercase tracking-wider text-sm"
+                className="flex w-full max-w-xs items-center justify-center gap-3 px-10 py-4 bg-teal hover:bg-teal/90 text-black rounded-md border-2 border-teal transition-all hover:-translate-y-1 hover:shadow-[6px_6px_0px_0px_rgba(34,211,238,0.4)] uppercase tracking-wider text-base"
                 style={{ fontFamily: "var(--font-heading)", fontWeight: 700 }}
               >
-                <ShoppingBag className="w-4 h-4" />
+                <ShoppingBag className="w-5 h-5" />
                 Buy Direct
               </a>
             </motion.div>

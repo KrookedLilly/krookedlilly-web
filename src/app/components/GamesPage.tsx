@@ -55,7 +55,7 @@ const projects = [
     type: "Desktop App",
     description: "What body will your AI make?",
     image: imgHomunculAICard,
-    status: "Coming May 7",
+    status: "Released",
     platforms: ["Windows"],
     tilt: "rotate-1",
     accent: "primary" as const,
