@@ -115,6 +115,13 @@ export const routes: RouteRecord[] = [
             Component: m.AcrostixPrivacyPage,
           })),
       },
+      {
+        path: "press-kits",
+        lazy: () =>
+          import("./components/PressKitsPage").then((m) => ({
+            Component: m.PressKitsPage,
+          })),
+      },
       { path: "*", Component: NotFound },
     ],
   },

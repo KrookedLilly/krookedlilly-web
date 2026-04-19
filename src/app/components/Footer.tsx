@@ -31,6 +31,7 @@ export function Footer() {
                 { to: "/about", label: "About Us", accent: "teal" },
                 { to: "/shop", label: "Shop", accent: "primary" },
                 { to: "/contact", label: "Contact", accent: "teal" },
+                { to: "/press-kits", label: "Press Kits", accent: "primary" },
               ].map((link) => (
                 <li key={link.to}>
                   <Link
