@@ -135,7 +135,7 @@ export function HomunculAIPage() {
     <div className="min-h-screen">
       <PageMeta
         title="HomunculAI"
-        description="HomunculAI is a desktop AI assistant for Windows — a multi-agent sidekick that writes, draws, debugs, and ships work alongside you."
+        description="HomunculAI is a visualization layer for your AI agents. Any MCP-compatible agent picks a desktop body, changes its mood, and chats back while you work. Windows."
         path="/games/homunculai"
         image="/homunculai-og.png"
       />
