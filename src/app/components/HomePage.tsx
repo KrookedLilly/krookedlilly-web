@@ -6,7 +6,7 @@ import { ballDropCardImage } from "../assets/balldrop-screenshots";
 import { heKeyboardsIcon } from "../assets/hekeyboards-screenshots";
 import { lunchBoxLogo } from "../assets/lunchbox-screenshots";
 import imgAcrostixHero from "@/assets/acrostix-ipad-slide-1-gameplay.png";
-import imgHomunculAICard from "@/assets/homunculai-capsule-main.png";
+import imgHomunculAiCard from "@/assets/homunculai-capsule-main.png";
 import { Link } from "react-router-dom";
 import { motion } from "motion/react";
 import { ArrowRight, Gamepad2, Wrench, Sparkles } from "lucide-react";
@@ -68,11 +68,11 @@ const games = [
   },
   {
     id: "homunculai",
-    title: "HomunculAI",
+    title: "HomunculAi",
     type: "Desktop App",
     description:
       "A little transparent window where your AI gets a body it controls itself. 45 bodies, custom SVG, two-way chat — works with any MCP client",
-    image: imgHomunculAICard,
+    image: imgHomunculAiCard,
     imagePosition: "object-cover",
     status: "Released",
     platforms: ["Windows"],

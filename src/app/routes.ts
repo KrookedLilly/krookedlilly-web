@@ -48,29 +48,29 @@ export const routes: RouteRecord[] = [
       {
         path: "games/homunculai",
         lazy: () =>
-          import("./components/HomunculAIPage").then((m) => ({
-            Component: m.HomunculAIPage,
+          import("./components/HomunculAiPage").then((m) => ({
+            Component: m.HomunculAiPage,
           })),
       },
       {
         path: "games/homunculai/terms",
         lazy: () =>
-          import("./components/HomunculAITermsPage").then((m) => ({
-            Component: m.HomunculAITermsPage,
+          import("./components/HomunculAiTermsPage").then((m) => ({
+            Component: m.HomunculAiTermsPage,
           })),
       },
       {
         path: "games/homunculai/sales-restrictions",
         lazy: () =>
-          import("./components/HomunculAISalesRestrictionsPage").then((m) => ({
-            Component: m.HomunculAISalesRestrictionsPage,
+          import("./components/HomunculAiSalesRestrictionsPage").then((m) => ({
+            Component: m.HomunculAiSalesRestrictionsPage,
           })),
       },
       {
         path: "games/homunculai/what-is-ai",
         lazy: () =>
-          import("./components/HomunculAIWhatIsAIPage").then((m) => ({
-            Component: m.HomunculAIWhatIsAIPage,
+          import("./components/HomunculAiWhatIsAIPage").then((m) => ({
+            Component: m.HomunculAiWhatIsAIPage,
           })),
       },
       {

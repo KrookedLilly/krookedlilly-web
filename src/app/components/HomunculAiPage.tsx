@@ -1,11 +1,11 @@
 import { useRef, useCallback } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "motion/react";
-import imgHomunculAIHero from "@/assets/homunculai-capsule-vertical.png";
+import imgHomunculAiHero from "@/assets/homunculai-capsule-vertical.png";
 import homunculAITrailer from "@/assets/homunculai-trailer.mp4";
-import imgHomunculAISvgDoc from "@/assets/homunculai-svg-document.png";
-import imgHomunculAIMultiagent from "@/assets/homunculai-multiagent.png";
-import imgHomunculAIArt from "@/assets/homunculai-art.png";
+import imgHomunculAiSvgDoc from "@/assets/homunculai-svg-document.png";
+import imgHomunculAiMultiagent from "@/assets/homunculai-multiagent.png";
+import imgHomunculAiArt from "@/assets/homunculai-art.png";
 import {
   ArrowLeft,
   CheckCircle,
@@ -119,7 +119,7 @@ const accentClasses = {
 /* ═══════════════════════════════════════════════════════
    MAIN PAGE
    ═══════════════════════════════════════════════════════ */
-export function HomunculAIPage() {
+export function HomunculAiPage() {
   const videoRef = useRef<HTMLVideoElement>(null);
 
   const handleVideoEnded = useCallback(() => {
@@ -134,8 +134,8 @@ export function HomunculAIPage() {
   return (
     <div className="min-h-screen">
       <PageMeta
-        title="HomunculAI"
-        description="HomunculAI is a visualization layer for your AI agents. Any MCP-compatible agent picks a desktop body, changes its mood, and chats back while you work. Windows."
+        title="HomunculAi"
+        description="HomunculAi is a visualization layer for your AI agents. Any MCP-compatible agent picks a desktop body, changes its mood, and chats back while you work. Windows."
         path="/games/homunculai"
         image="/homunculai-og.png"
       />
@@ -179,7 +179,7 @@ export function HomunculAIPage() {
                 style={{ fontFamily: "var(--font-display)", lineHeight: 0.95 }}
               >
                 <span className="bg-gradient-to-r from-teal to-primary bg-clip-text text-transparent">
-                  HomunculAI
+                  HomunculAi
                 </span>
               </motion.h1>
 
@@ -198,7 +198,7 @@ export function HomunculAIPage() {
                 className="text-muted-foreground max-w-md mb-5"
                 style={{ fontSize: "1.05rem", lineHeight: 1.65 }}
               >
-                Right now, your AI probably lives in a chat window, a terminal, or an editor. HomunculAI gives it a desktop presence. Your AI takes a form, changes its mood, raises a thought bubble, chats with you in a separate channel, or just floats there next to your work.
+                Right now, your AI probably lives in a chat window, a terminal, or an editor. HomunculAi gives it a desktop presence. Your AI takes a form, changes its mood, raises a thought bubble, chats with you in a separate channel, or just floats there next to your work.
               </motion.p>
 
               <motion.p
@@ -299,8 +299,8 @@ export function HomunculAIPage() {
               animate="visible"
             >
               <DesktopWindow
-                src={imgHomunculAIHero}
-                alt="HomunculAI"
+                src={imgHomunculAiHero}
+                alt="HomunculAi"
                 chrome={false}
                 aspect="120%"
                 className="w-64 sm:w-72 md:w-80"
@@ -345,8 +345,8 @@ export function HomunculAIPage() {
           >
             <motion.div variants={fadeUp} custom={0} className="flex justify-center lg:order-1">
               <DesktopWindow
-                src={imgHomunculAISvgDoc}
-                alt="HomunculAI SVG identity"
+                src={imgHomunculAiSvgDoc}
+                alt="HomunculAi SVG identity"
                 chrome
                 title="Identity"
                 aspect="100%"
@@ -378,8 +378,8 @@ export function HomunculAIPage() {
           >
             <motion.div variants={fadeUp} custom={0} className="flex justify-center lg:order-2">
               <DesktopWindow
-                src={imgHomunculAIMultiagent}
-                alt="Custom SVG in HomunculAI"
+                src={imgHomunculAiMultiagent}
+                alt="Custom SVG in HomunculAi"
                 chrome
                 title="Custom SVG"
                 aspect="100%"
@@ -411,8 +411,8 @@ export function HomunculAIPage() {
           >
             <motion.div variants={fadeUp} custom={0} className="flex justify-center lg:order-1">
               <DesktopWindow
-                src={imgHomunculAIArt}
-                alt="HomunculAI ambient on your desktop"
+                src={imgHomunculAiArt}
+                alt="HomunculAi ambient on your desktop"
                 chrome
                 title="On Your Desktop"
                 aspect="100%"
@@ -523,7 +523,7 @@ export function HomunculAIPage() {
               className="text-muted-foreground mb-6 max-w-lg mx-auto"
               style={{ fontSize: "1.05rem" }}
             >
-              HomunculAI is live for Windows. Sold direct so it goes straight to the people making it.
+              HomunculAi is live for Windows. Sold direct so it goes straight to the people making it.
             </motion.p>
 
             {/* Legal links strip above buy buttons */}
@@ -603,7 +603,7 @@ export function HomunculAIPage() {
               <span className="uppercase tracking-wider text-foreground/90" style={{ fontWeight: 700 }}>
                 18+ Age Requirement:
               </span>{" "}
-              HomunculAI requires agreement to a Terms of Use that restricts use to individuals 18 years of age or older due to existing and incoming laws around use of AI.
+              HomunculAi requires agreement to a Terms of Use that restricts use to individuals 18 years of age or older due to existing and incoming laws around use of AI.
             </p>
           </div>
         </div>

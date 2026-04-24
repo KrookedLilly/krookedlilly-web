@@ -41,12 +41,12 @@ function Section({
   );
 }
 
-export function HomunculAISalesRestrictionsPage() {
+export function HomunculAiSalesRestrictionsPage() {
   return (
     <div className="min-h-screen">
       <PageMeta
-        title="HomunculAI Sales Restrictions"
-        description="Sales restrictions for HomunculAI."
+        title="HomunculAi Sales Restrictions"
+        description="Sales restrictions for HomunculAi."
         path="/games/homunculai/sales-restrictions"
         noIndex
       />
@@ -63,7 +63,7 @@ export function HomunculAISalesRestrictionsPage() {
             style={{ fontFamily: "var(--font-heading)", fontWeight: 600 }}
           >
             <ArrowLeft className="w-4 h-4" />
-            Back to HomunculAI
+            Back to HomunculAi
           </Link>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -75,7 +75,7 @@ export function HomunculAISalesRestrictionsPage() {
               className="uppercase tracking-wider text-xs"
               style={{ fontFamily: "var(--font-heading)", fontWeight: 600 }}
             >
-              HomunculAI
+              HomunculAi
             </span>
           </motion.div>
           <motion.h1
@@ -93,7 +93,7 @@ export function HomunculAISalesRestrictionsPage() {
             transition={{ delay: 0.1 }}
             className="text-muted-foreground"
           >
-            Territorial restrictions on the sale and use of HomunculAI. Last updated April 13, 2026.
+            Territorial restrictions on the sale and use of HomunculAi. Last updated April 13, 2026.
           </motion.p>
         </div>
       </section>
@@ -111,7 +111,7 @@ export function HomunculAISalesRestrictionsPage() {
               className="mb-8"
             >
               <div className="bg-primary/10 border-l-3 border-primary p-4 rounded-r-sm text-sm text-foreground mb-4">
-                This is not legal advice. This list is maintained by KrookedLilly as a companion to the HomunculAI{" "}
+                This is not legal advice. This list is maintained by KrookedLilly as a companion to the HomunculAi{" "}
                 <Link
                   to="/games/homunculai/terms"
                   className="text-primary hover:text-primary/80 transition-colors underline underline-offset-2"
@@ -121,16 +121,16 @@ export function HomunculAISalesRestrictionsPage() {
                 (Section 11 — Export Controls and Territorial Restrictions). The list is subject to change as applicable laws, distributor policies, and KrookedLilly's business decisions evolve.
               </div>
               <p className="text-muted-foreground">
-                HomunculAI is not sold, licensed, or supported in the regions
+                HomunculAi is not sold, licensed, or supported in the regions
                 listed below. This list is referenced from Section 11 of the
-                HomunculAI Terms of Use and may be updated without a Terms
+                HomunculAi Terms of Use and may be updated without a Terms
                 version bump, as permitted by that section.
               </p>
               <p className="text-muted-foreground mt-3">
                 Enforcement is primarily handled by KrookedLilly's authorized
                 distributor (currently Lemon Squeezy) through its point-of-sale
                 compliance system. Users in restricted regions who obtain
-                HomunculAI through any means are not granted a license under the
+                HomunculAi through any means are not granted a license under the
                 Terms of Use (see Section 9 — Intellectual Property and Authorized
                 Copies).
               </p>
@@ -140,7 +140,7 @@ export function HomunculAISalesRestrictionsPage() {
               <p className="text-muted-foreground mb-3">
                 The following regions are subject to comprehensive U.S. economic
                 sanctions as administered by the U.S. Department of the
-                Treasury's Office of Foreign Assets Control (OFAC). HomunculAI is
+                Treasury's Office of Foreign Assets Control (OFAC). HomunculAi is
                 not authorized for sale or use in these regions:
               </p>
               <ul className="list-disc ml-6 text-muted-foreground space-y-1">
@@ -204,7 +204,7 @@ export function HomunculAISalesRestrictionsPage() {
 
             <Section title="Restricted Parties" index={3}>
               <p className="text-muted-foreground mb-3">
-                HomunculAI is not sold to any individual or entity listed on any
+                HomunculAi is not sold to any individual or entity listed on any
                 of the following U.S. government restricted-party lists:
               </p>
               <ul className="list-disc ml-6 text-muted-foreground space-y-1">
@@ -263,7 +263,7 @@ export function HomunculAISalesRestrictionsPage() {
               </ul>
               <p className="text-muted-foreground">
                 If you are located in a restricted region and have obtained a
-                copy of HomunculAI through any channel, that copy is unlicensed
+                copy of HomunculAi through any channel, that copy is unlicensed
                 (per Section 9 of the Terms of Use), and KrookedLilly disclaims
                 all responsibility for its use. Continued use may violate U.S. or
                 local law.

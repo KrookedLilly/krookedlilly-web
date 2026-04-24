@@ -87,7 +87,7 @@ export function AboutPage() {
     <div className="min-h-screen">
       <PageMeta
         title="About"
-        description="About KrookedLilly — the indie studio behind HomunculAI, Acrostix, Galactic Parcel Service, and a handful of sharp tools and mods."
+        description="About KrookedLilly — the indie studio behind HomunculAi, Acrostix, Galactic Parcel Service, and a handful of sharp tools and mods."
         path="/about"
       />
       {/* Hero */}

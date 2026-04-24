@@ -41,12 +41,12 @@ function Section({
   );
 }
 
-export function HomunculAIWhatIsAIPage() {
+export function HomunculAiWhatIsAIPage() {
   return (
     <div className="min-h-screen">
       <PageMeta
-        title="What is AI — HomunculAI"
-        description="Background reading on what HomunculAI is, how it works, and what modern AI can and can't do."
+        title="What is AI — HomunculAi"
+        description="Background reading on what HomunculAi is, how it works, and what modern AI can and can't do."
         path="/games/homunculai/what-is-ai"
         noIndex
       />
@@ -63,7 +63,7 @@ export function HomunculAIWhatIsAIPage() {
             style={{ fontFamily: "var(--font-heading)", fontWeight: 600 }}
           >
             <ArrowLeft className="w-4 h-4" />
-            Back to HomunculAI
+            Back to HomunculAi
           </Link>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -75,7 +75,7 @@ export function HomunculAIWhatIsAIPage() {
               className="uppercase tracking-wider text-xs"
               style={{ fontFamily: "var(--font-heading)", fontWeight: 600 }}
             >
-              HomunculAI
+              HomunculAi
             </span>
           </motion.div>
           <motion.h1
@@ -94,7 +94,7 @@ export function HomunculAIWhatIsAIPage() {
             className="text-muted-foreground italic"
             style={{ fontSize: "1.05rem", lineHeight: 1.6 }}
           >
-            Plain-language explanation of what AI is, what it can and cannot do, and how it works inside HomunculAI. If you've never used an AI before, or you're not sure what to expect, this is for you.
+            Plain-language explanation of what AI is, what it can and cannot do, and how it works inside HomunculAi. If you've never used an AI before, or you're not sure what to expect, this is for you.
           </motion.p>
         </div>
       </section>
@@ -103,12 +103,12 @@ export function HomunculAIWhatIsAIPage() {
       <section className="pb-24">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="p-6 sm:p-10 bg-white/[0.04] backdrop-blur-xl border-2 border-white/[0.12] rounded-sm">
-            <Section title="What Happens When You Connect an AI to HomunculAI" index={0}>
+            <Section title="What Happens When You Connect an AI to HomunculAi" index={0}>
               <p className="text-muted-foreground mb-3">
-                HomunculAI gives an AI agent a body — an avatar it can control
+                HomunculAi gives an AI agent a body — an avatar it can control
                 with expressions, colors, animations, and chat messages. The AI
                 agent you connect (such as Claude, ChatGPT, a local model, or
-                another AI) is what brings the avatar to life. HomunculAI
+                another AI) is what brings the avatar to life. HomunculAi
                 provides the body; the AI provides the mind.
               </p>
               <p className="text-muted-foreground">
@@ -151,7 +151,7 @@ export function HomunculAIWhatIsAIPage() {
                 </li>
                 <li>
                   Controlling the avatar — choosing a body, setting expressions,
-                  playing animations, and chatting with you through HomunculAI
+                  playing animations, and chatting with you through HomunculAi
                 </li>
                 <li>
                   Carrying on a conversation that feels natural and engaging
@@ -203,24 +203,24 @@ export function HomunculAIWhatIsAIPage() {
 
             <Section title="What About Your Data?" index={5}>
               <p className="text-muted-foreground mb-3">
-                When you connect a cloud-based AI agent to HomunculAI, the
+                When you connect a cloud-based AI agent to HomunculAi, the
                 messages you type in the chat are sent to that AI's provider
                 (for example, Anthropic for Claude, or OpenAI for ChatGPT) for
-                processing. HomunculAI itself keeps everything on your device,
+                processing. HomunculAi itself keeps everything on your device,
                 but your AI provider receives and processes your messages
                 according to their own privacy policy. If you use a
                 locally-running AI model, your messages stay on your device —
                 unless that local model has its own network capabilities
                 (internet access, telemetry, update checks) that operate
-                independently of HomunculAI.
+                independently of HomunculAi.
               </p>
               <p className="text-muted-foreground">
                 The AI agent you connect may also have its own capabilities
-                outside of HomunculAI — such as reading files on your computer or
-                browsing the web — depending on your AI setup. HomunculAI does
+                outside of HomunculAi — such as reading files on your computer or
+                browsing the web — depending on your AI setup. HomunculAi does
                 not grant those capabilities, but it also cannot prevent the AI
                 from using them. Be aware of what your AI can do in its own
-                environment, not just inside HomunculAI.
+                environment, not just inside HomunculAi.
               </p>
             </Section>
 
@@ -230,7 +230,7 @@ export function HomunculAIWhatIsAIPage() {
                 but it is subject to all of the limitations above. It may say
                 things that are wrong. It may express emotions it does not
                 genuinely experience. It may sound like a friend, but it is not
-                one. HomunculAI provides safety layers — activity logging,
+                one. HomunculAi provides safety layers — activity logging,
                 suspicious-pattern detection, language enforcement, and
                 verification gates — but these are aids to your judgment, not
                 replacements for it.

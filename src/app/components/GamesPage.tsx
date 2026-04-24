@@ -15,7 +15,7 @@ import { matchFivesCardImage } from "../assets/matchfives-screenshots";
 import { ballDropCardImage } from "../assets/balldrop-screenshots";
 import { heKeyboardsCardImage } from "../assets/hekeyboards-screenshots";
 import { lunchBoxCardImage } from "../assets/lunchbox-screenshots";
-import imgHomunculAICard from "@/assets/homunculai-capsule-main.png";
+import imgHomunculAiCard from "@/assets/homunculai-capsule-main.png";
 
 type Category = "All" | "Games & Apps" | "Tools & Mods";
 type Kind = "Game" | "App" | "Tool" | "Mod";
@@ -53,12 +53,12 @@ const projects = [
   },
   {
     id: 3,
-    title: "HomunculAI",
+    title: "HomunculAi",
     category: "Games & Apps" as const,
     kind: "App" as Kind,
     type: "Desktop App",
     description: "What body will your AI make?",
-    image: imgHomunculAICard,
+    image: imgHomunculAiCard,
     status: "Released",
     platforms: ["Windows"],
     tilt: "rotate-1",
@@ -318,7 +318,7 @@ export function GamesPage() {
     <div className="min-h-screen">
       <PageMeta
         title="Catalog"
-        description="Browse every KrookedLilly game, app, tool, and mod — from Acrostix to HomunculAI to Galactic Parcel Service."
+        description="Browse every KrookedLilly game, app, tool, and mod — from Acrostix to HomunculAi to Galactic Parcel Service."
         path="/catalog"
       />
       {/* Header */}

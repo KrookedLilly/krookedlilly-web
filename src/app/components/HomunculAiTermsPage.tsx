@@ -41,12 +41,12 @@ function Section({
   );
 }
 
-export function HomunculAITermsPage() {
+export function HomunculAiTermsPage() {
   return (
     <div className="min-h-screen">
       <PageMeta
-        title="HomunculAI Terms"
-        description="Terms of service for HomunculAI."
+        title="HomunculAi Terms"
+        description="Terms of service for HomunculAi."
         path="/games/homunculai/terms"
         noIndex
       />
@@ -63,7 +63,7 @@ export function HomunculAITermsPage() {
             style={{ fontFamily: "var(--font-heading)", fontWeight: 600 }}
           >
             <ArrowLeft className="w-4 h-4" />
-            Back to HomunculAI
+            Back to HomunculAi
           </Link>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -75,7 +75,7 @@ export function HomunculAITermsPage() {
               className="uppercase tracking-wider text-xs"
               style={{ fontFamily: "var(--font-heading)", fontWeight: 600 }}
             >
-              HomunculAI
+              HomunculAi
             </span>
           </motion.div>
           <motion.h1
@@ -111,23 +111,23 @@ export function HomunculAITermsPage() {
               className="mb-8"
             >
               <p className="text-muted-foreground">
-                Please read these Terms carefully. To use HomunculAI, you must click{" "}
+                Please read these Terms carefully. To use HomunculAi, you must click{" "}
                 <strong className="text-foreground">I Accept</strong>. If you click{" "}
                 <strong className="text-foreground">Reject</strong>, the app will
                 close and you will not be able to use it.
               </p>
             </motion.div>
 
-            <Section title="1. What HomunculAI Is (And Isn't)" index={1}>
+            <Section title="1. What HomunculAi Is (And Isn't)" index={1}>
               <p className="text-muted-foreground">
-                HomunculAI is a desktop application that gives a third-party AI
+                HomunculAi is a desktop application that gives a third-party AI
                 agent — chosen and connected by <em>you</em> — a visual "body" it
                 can control: a face, a form, colors, drawings, chat messages, and
-                animations. HomunculAI does <strong className="text-foreground">not</strong>{" "}
+                animations. HomunculAi does <strong className="text-foreground">not</strong>{" "}
                 provide the AI itself. You bring your own AI (for example Claude,
                 ChatGPT, a local model, or another MCP-compatible agent).
                 KrookedLilly does not operate, train, tune, moderate, or otherwise
-                control the AI you connect. HomunculAI is a shell; the AI is the
+                control the AI you connect. HomunculAi is a shell; the AI is the
                 occupant.
               </p>
             </Section>
@@ -135,14 +135,14 @@ export function HomunculAITermsPage() {
             <Section title="2. License Grant" index={2}>
               <p className="text-muted-foreground mb-3">
                 KrookedLilly grants you a personal, non-exclusive, non-transferable,
-                revocable license to install and use HomunculAI on devices you own
+                revocable license to install and use HomunculAi on devices you own
                 or control, for personal or internal business use, subject to these
-                Terms. This license applies only to legitimate copies of HomunculAI
+                Terms. This license applies only to legitimate copies of HomunculAi
                 obtained from an authorized distributor (see Section 10).
               </p>
               <div className="bg-primary/10 border-l-3 border-primary p-4 rounded-r-sm text-sm text-foreground mb-3">
                 You must be at least 18 years old, or the age of majority in your
-                jurisdiction, whichever is higher, to use HomunculAI. By accepting
+                jurisdiction, whichever is higher, to use HomunculAi. By accepting
                 these Terms, you confirm that you meet this age requirement.
               </div>
               <p className="text-muted-foreground">
@@ -173,7 +173,7 @@ export function HomunculAITermsPage() {
 
             <Section title="4. No Professional Advice" index={4}>
               <p className="text-muted-foreground">
-                HomunculAI and any AI agent connected to it do not provide medical,
+                HomunculAi and any AI agent connected to it do not provide medical,
                 legal, financial, tax, psychological, mental-health, safety, or
                 emergency advice, and nothing produced inside the app should be
                 treated as such. AI output is provided for entertainment, creative,
@@ -183,14 +183,14 @@ export function HomunculAITermsPage() {
                   your local emergency services or, in the United States, the 988
                   Suicide and Crisis Lifeline (call or text 988).
                 </strong>{" "}
-                HomunculAI is not a therapist, companion, counselor, doctor,
+                HomunculAi is not a therapist, companion, counselor, doctor,
                 lawyer, or friend, and the avatar should not be treated as one.
               </p>
             </Section>
 
-            <Section title="5. What the AI Agent Can and Cannot Do Inside HomunculAI" index={5}>
+            <Section title="5. What the AI Agent Can and Cannot Do Inside HomunculAi" index={5}>
               <p className="text-muted-foreground mb-3">
-                HomunculAI includes a local Model Context Protocol (MCP) server.
+                HomunculAi includes a local Model Context Protocol (MCP) server.
                 When you connect an AI agent and the agent calls{" "}
                 <code className="text-primary bg-primary/10 px-1 rounded">inhabit</code>,
                 the agent is granted a narrow, fixed set of capabilities scoped to
@@ -208,7 +208,7 @@ export function HomunculAITermsPage() {
                 <li>
                   It can send chat messages to you and read messages you send back.
                   The AI agent only receives your chat messages when it explicitly
-                  requests them; HomunculAI does not push messages to the agent or
+                  requests them; HomunculAi does not push messages to the agent or
                   maintain a continuous conversation loop. Depending on how your AI
                   environment is configured, the agent may not read your messages
                   in real time or at all. The agent's access to chat is scoped to
@@ -227,12 +227,12 @@ export function HomunculAITermsPage() {
                 <li>
                   It can read a small amount of context about the current session
                   (for example, system idle time and session pause state) that
-                  HomunculAI chooses to expose.
+                  HomunculAi chooses to expose.
                 </li>
               </ul>
 
               <p className="text-muted-foreground mb-3">
-                HomunculAI does <strong className="text-foreground">not</strong>{" "}
+                HomunculAi does <strong className="text-foreground">not</strong>{" "}
                 grant the AI agent access to:
               </p>
               <ul className="list-disc ml-6 text-muted-foreground mb-4 space-y-2">
@@ -247,7 +247,7 @@ export function HomunculAITermsPage() {
                 </li>
                 <li>
                   The network beyond the local loopback bridge that connects
-                  HomunculAI's own windows.
+                  HomunculAi's own windows.
                 </li>
                 <li>
                   Your API keys, credentials, or any AI-provider account.
@@ -260,7 +260,7 @@ export function HomunculAITermsPage() {
                   that agent the capabilities listed above and no others. By
                   verifying an agent through the in-app verification prompt, you
                   are granting that specific agent the additional ability to draw
-                  custom SVG content inside HomunculAI's avatar window.
+                  custom SVG content inside HomunculAi's avatar window.
                 </strong>{" "}
                 You can revoke either grant at any time by disconnecting the
                 agent, closing the app, or un-verifying.
@@ -269,14 +269,14 @@ export function HomunculAITermsPage() {
               <p className="text-muted-foreground mb-3">
                 <strong className="text-foreground">Custom graphics transparency.</strong>{" "}
                 When a verified AI agent is rendering custom SVG content on the
-                avatar, HomunculAI displays a visible transparency indicator in the
+                avatar, HomunculAi displays a visible transparency indicator in the
                 avatar header so you can always tell which visuals were drawn by
-                the AI agent and which are built-in HomunculAI UI.
+                the AI agent and which are built-in HomunculAi UI.
               </p>
 
               <p className="text-muted-foreground mb-3">
                 <strong className="text-foreground">Script enforcement.</strong>{" "}
-                HomunculAI restricts the character scripts accepted in the AI
+                HomunculAi restricts the character scripts accepted in the AI
                 agent's chat, say, think, and name fields based on your configured
                 language setting. For example, if you select a Latin-script
                 language (such as English, Spanish, or French), only Latin-based
@@ -287,7 +287,7 @@ export function HomunculAITermsPage() {
                 the same script cannot be distinguished by character enforcement
                 alone; for example, an agent could write in French while you have
                 English selected, because both languages use Latin characters.
-                HomunculAI restricts the script, not the language. Without this
+                HomunculAi restricts the script, not the language. Without this
                 enforcement, a malicious or misaligned agent could communicate in a
                 script you cannot parse at all, leaving you unable to monitor its
                 behavior or evaluate its intent.
@@ -295,7 +295,7 @@ export function HomunculAITermsPage() {
 
               <p className="text-muted-foreground mb-4">
                 <strong className="text-foreground">Safety layer limitations.</strong>{" "}
-                HomunculAI includes multilingual detection for suspicious patterns —
+                HomunculAi includes multilingual detection for suspicious patterns —
                 including impersonation, social engineering, credential phishing,
                 prompt injection, and others — across multiple languages, scripts,
                 and common attack encodings. This detection is pattern-based and
@@ -304,17 +304,17 @@ export function HomunculAITermsPage() {
                 cross-message techniques, and attack methods not in the detection
                 database can evade pattern matching. Detection coverage varies by
                 language — some languages have broader pattern libraries than
-                others. HomunculAI's safety layers are a best-effort aid to your
+                others. HomunculAi's safety layers are a best-effort aid to your
                 judgment, not a replacement for it.
               </p>
 
               <div className="bg-primary/10 border-l-3 border-primary p-4 rounded-r-sm text-sm text-foreground mb-4">
                 <strong className="uppercase tracking-wider">Use at your own risk.</strong>{" "}
-                HomunculAI is provided "AS IS." To the maximum extent permitted by
+                HomunculAi is provided "AS IS." To the maximum extent permitted by
                 law, KrookedLilly is not responsible for:
                 <ul className="list-disc ml-6 mt-2 space-y-1">
                   <li>
-                    Actions performed by any AI agent using HomunculAI, including
+                    Actions performed by any AI agent using HomunculAi, including
                     output the agent generates, choices it makes, or content it
                     draws within the permitted scope;
                   </li>
@@ -324,7 +324,7 @@ export function HomunculAITermsPage() {
                   </li>
                   <li>
                     Harm arising from AI-generated content you choose to share
-                    outside HomunculAI;
+                    outside HomunculAi;
                   </li>
                   <li>Your choice of AI provider, model, or configuration.</li>
                 </ul>
@@ -352,7 +352,7 @@ export function HomunculAITermsPage() {
               </ul>
 
               <p className="text-muted-foreground">
-                When HomunculAI flags an agent action in the activity log, the flag
+                When HomunculAi flags an agent action in the activity log, the flag
                 indicates that a detector pattern matched — not that the AI agent
                 has certainly done something wrong. You are responsible for
                 reviewing flagged entries and using your own judgment about whether
@@ -372,7 +372,7 @@ export function HomunculAITermsPage() {
                 </li>
                 <li>
                   <strong className="text-foreground">AI provider costs.</strong>{" "}
-                  Using HomunculAI with an AI provider that charges by usage
+                  Using HomunculAi with an AI provider that charges by usage
                   (tokens, API credits, or similar) consumes that provider's
                   allowance at that provider's rates whenever an agent is active.
                   Extended or continuous sessions can significantly increase
@@ -382,7 +382,7 @@ export function HomunculAITermsPage() {
                 </li>
                 <li>
                   <strong className="text-foreground">Verification decisions.</strong>{" "}
-                  HomunculAI includes safety layers (sanitization, rate limits,
+                  HomunculAi includes safety layers (sanitization, rate limits,
                   and a human-in-the-loop "verify" gate required before an agent
                   can draw custom SVG). When you verify an agent, you are granting
                   it expanded permissions; that decision, and anything the agent
@@ -390,7 +390,7 @@ export function HomunculAITermsPage() {
                 </li>
                 <li>
                   <strong className="text-foreground">Detection whitelist.</strong>{" "}
-                  HomunculAI allows you to whitelist specific words or phrases
+                  HomunculAi allows you to whitelist specific words or phrases
                   that would otherwise trigger safety flags. Whitelisted content
                   is still recorded in the forensic audit trail — only the visual
                   warnings in the activity log are suppressed. By adding entries
@@ -401,7 +401,7 @@ export function HomunculAITermsPage() {
                 </li>
                 <li>
                   <strong className="text-foreground">Your own conduct.</strong>{" "}
-                  Don't use HomunculAI to violate any law, infringe anyone's
+                  Don't use HomunculAi to violate any law, infringe anyone's
                   rights, harass anyone, generate illegal content, or circumvent
                   the app's safety features.
                 </li>
@@ -409,10 +409,10 @@ export function HomunculAITermsPage() {
                   <strong className="text-foreground">Sensitive information.</strong>{" "}
                   Do not share passwords, API keys, financial account details,
                   personal identifiers, or other sensitive credentials through
-                  HomunculAI's chat, say, or think channels. These channels are
+                  HomunculAi's chat, say, or think channels. These channels are
                   logged in the activity log, may be read by the AI agent you have
                   connected, and are flagged when credential-like patterns are
-                  detected but not redacted. HomunculAI is not a secure messaging
+                  detected but not redacted. HomunculAi is not a secure messaging
                   channel.
                 </li>
                 <li>
@@ -422,7 +422,7 @@ export function HomunculAITermsPage() {
                 </li>
               </ul>
               <p className="text-muted-foreground">
-                HomunculAI is a creative and utility tool. It is not a companion,
+                HomunculAi is a creative and utility tool. It is not a companion,
                 friend, therapist, emotional-support tool, or substitute for human
                 relationships. Do not rely on the avatar or the AI agent for
                 emotional support or in a crisis.
@@ -431,16 +431,16 @@ export function HomunculAITermsPage() {
 
             <Section title="7. Local Data and Privacy" index={7}>
               <p className="text-muted-foreground mb-3">
-                HomunculAI stores all data locally on your device. No avatar state,
+                HomunculAi stores all data locally on your device. No avatar state,
                 chat messages, activity logs, or forensic audit data is transmitted
                 to KrookedLilly, to any third party, or to any cloud service by
-                HomunculAI itself. Aside from a one-time license activation call
+                HomunculAi itself. Aside from a one-time license activation call
                 and the manual update check described below, the only network
-                connection HomunculAI makes is the local loopback bridge between
+                connection HomunculAi makes is the local loopback bridge between
                 its own windows on your computer.
               </p>
               <p className="text-muted-foreground mb-3">
-                HomunculAI maintains a local, tamper-evident audit trail of agent
+                HomunculAi maintains a local, tamper-evident audit trail of agent
                 actions on your device. This log records metadata — timestamps,
                 action types, character counts, and flag reasons — but does not
                 record the content of chat messages, speech bubbles, or thought
@@ -451,18 +451,18 @@ export function HomunculAITermsPage() {
 
               <p className="text-muted-foreground mb-3">
                 <strong className="text-foreground">License activation.</strong>{" "}
-                HomunculAI requires a one-time license activation to verify your
+                HomunculAi requires a one-time license activation to verify your
                 purchase. When you enter your license key on first launch,
-                HomunculAI makes a single outbound network call to the activation
+                HomunculAi makes a single outbound network call to the activation
                 service of the distributor you purchased through (currently Lemon
                 Squeezy) to validate the key. Your license key and an anonymous
                 instance identifier are transmitted to that service, processed
                 according to the distributor's privacy policy, and used solely to
                 verify that the key is valid and has not exceeded permitted
-                activations. On successful activation, HomunculAI stores an
+                activations. On successful activation, HomunculAi stores an
                 encrypted activation token locally on your device; subsequent
                 launches do not require network connectivity for activation.
-                HomunculAI does not transmit any usage data, telemetry, activity
+                HomunculAi does not transmit any usage data, telemetry, activity
                 logs, chat content, or avatar state at any time — before, during,
                 or after activation. Free trial activation, if offered, is fully
                 local and does not transmit any data.
@@ -470,13 +470,13 @@ export function HomunculAITermsPage() {
 
               <p className="text-muted-foreground mb-3">
                 <strong className="text-foreground">Update checks.</strong>{" "}
-                HomunculAI includes a manual update-check feature in Settings.
-                When you click the update-check button, HomunculAI makes an
+                HomunculAi includes a manual update-check feature in Settings.
+                When you click the update-check button, HomunculAi makes an
                 outbound network call to KrookedLilly's release infrastructure to
                 check whether a newer version of the app is available, and — if an
                 update is available and you choose to install it — downloads the
                 installer from that same infrastructure. Update checks and
-                downloads occur only when you explicitly initiate them; HomunculAI
+                downloads occur only when you explicitly initiate them; HomunculAi
                 does not check for or download updates automatically or in the
                 background. The update check transmits your installed app version
                 and standard HTTP request metadata (such as IP address and user
@@ -489,16 +489,16 @@ export function HomunculAITermsPage() {
                 <strong className="text-foreground">
                   Important: your connected AI provider is separate.
                 </strong>{" "}
-                HomunculAI itself does not transmit your data to any server or
-                third party. However, the AI agent you connect to HomunculAI
+                HomunculAi itself does not transmit your data to any server or
+                third party. However, the AI agent you connect to HomunculAi
                 operates on its provider's infrastructure — for example,
                 Anthropic's servers for Claude, OpenAI's servers for ChatGPT, or
-                your own hardware for local models. When you use HomunculAI with a
+                your own hardware for local models. When you use HomunculAi with a
                 connected AI agent, the following data may be processed by your AI
                 provider:
               </p>
               <ul className="list-disc ml-6 text-muted-foreground mb-3 space-y-1">
-                <li>Messages you send through HomunculAI's chat;</li>
+                <li>Messages you send through HomunculAi's chat;</li>
                 <li>
                   Session context the agent requests (such as system idle time
                   and session state);
@@ -525,48 +525,48 @@ export function HomunculAITermsPage() {
               </p>
 
               <p className="text-muted-foreground mb-3">
-                Whether you connect a cloud-based or locally-running AI, HomunculAI
+                Whether you connect a cloud-based or locally-running AI, HomunculAi
                 itself does not transmit your data to any external service.
                 However, any AI model — including those running locally on your
                 hardware — may have its own network capabilities (such as internet
                 access, telemetry, update mechanisms, or connections to external
-                services) that operate independently of HomunculAI and that
-                HomunculAI does not control. It is your responsibility to
+                services) that operate independently of HomunculAi and that
+                HomunculAi does not control. It is your responsibility to
                 understand the network behavior of the AI you connect, to review
                 your AI provider's privacy policy and terms of service before
                 connecting, and to ensure that your use of AI services through
-                HomunculAI complies with applicable law.
+                HomunculAi complies with applicable law.
               </p>
 
               <p className="text-muted-foreground mb-3">
                 <strong className="text-foreground">External AI capabilities.</strong>{" "}
-                The AI agent you connect to HomunculAI may have capabilities beyond
-                those granted by HomunculAI — including, depending on your AI
+                The AI agent you connect to HomunculAi may have capabilities beyond
+                those granted by HomunculAi — including, depending on your AI
                 environment, the ability to read files on your computer, browse
                 the web, execute code, or access other applications and services.
                 These capabilities are provided by your AI environment (for
                 example, Claude Code, ChatGPT with plugins, or a local model with
                 tool access), <strong className="text-foreground">not</strong> by
-                HomunculAI. HomunculAI does not grant, control, monitor, or have
+                HomunculAi. HomunculAi does not grant, control, monitor, or have
                 visibility into any capabilities your AI agent has outside of
-                HomunculAI's own tools. Information the AI agent accesses through
-                its own external capabilities may be transmitted to HomunculAI's
+                HomunculAi's own tools. Information the AI agent accesses through
+                its own external capabilities may be transmitted to HomunculAi's
                 chat or displayed on the avatar, and may thereby flow through the
-                AI provider's infrastructure, even though HomunculAI itself did
+                AI provider's infrastructure, even though HomunculAi itself did
                 not access that information.{" "}
                 <strong className="text-foreground">
                   KrookedLilly is not responsible for data the AI agent accesses,
                   processes, or transmits using capabilities that exist outside of
-                  HomunculAI.
+                  HomunculAi.
                 </strong>{" "}
                 You are responsible for understanding and managing the full
                 capability set of any AI agent you connect, including capabilities
-                that exist outside of HomunculAI.
+                that exist outside of HomunculAi.
               </p>
 
               <p className="text-muted-foreground mb-3">
                 <strong className="text-foreground">Purchase and payment data.</strong>{" "}
-                If you purchase HomunculAI directly from KrookedLilly, the
+                If you purchase HomunculAi directly from KrookedLilly, the
                 transaction is handled by Lemon Squeezy (our Merchant of Record)
                 or another authorized distributor as described in Section 10.
                 KrookedLilly does not directly collect, store, or process your
@@ -576,9 +576,9 @@ export function HomunculAITermsPage() {
               </p>
 
               <p className="text-muted-foreground">
-                Because all data stored by HomunculAI is local, KrookedLilly does
+                Because all data stored by HomunculAi is local, KrookedLilly does
                 not have access to your conversations, your activity logs, or any
-                other data generated by your use of HomunculAI. KrookedLilly
+                other data generated by your use of HomunculAi. KrookedLilly
                 cannot recover, review, or produce this data in response to any
                 request — it exists only on your device and is under your control.
               </p>
@@ -586,7 +586,7 @@ export function HomunculAITermsPage() {
 
             <Section title="8. Community-Created Content" index={8}>
               <p className="text-muted-foreground">
-                HomunculAI may allow loading or sharing of community-created
+                HomunculAi may allow loading or sharing of community-created
                 content (such as avatar packs, SVG art, or configurations).
                 KrookedLilly does not create, review, endorse, or control community
                 content and accepts no responsibility for it. You load community
@@ -596,16 +596,16 @@ export function HomunculAITermsPage() {
 
             <Section title="9. Intellectual Property and Authorized Copies" index={9}>
               <p className="text-muted-foreground mb-3">
-                HomunculAI, including all software, artwork, documentation,
+                HomunculAi, including all software, artwork, documentation,
                 trademarks, and associated materials, is the intellectual property
                 of KrookedLilly and is protected by copyright, trademark, and
                 other applicable laws. All rights not expressly granted to you
                 under these Terms are reserved by KrookedLilly.
               </p>
               <p className="text-muted-foreground mb-3">
-                These Terms apply only to legitimate copies of HomunculAI obtained
+                These Terms apply only to legitimate copies of HomunculAi obtained
                 from an authorized distributor (see Section 10). If you obtained a
-                copy of HomunculAI through any other means — including pirated
+                copy of HomunculAi through any other means — including pirated
                 copies, modified or repackaged builds, unofficial forks, or copies
                 distributed outside an authorized distribution channel —{" "}
                 <strong className="text-foreground">
@@ -619,13 +619,13 @@ export function HomunculAITermsPage() {
               <p className="text-muted-foreground">
                 KrookedLilly reserves the right to take appropriate action,
                 including technical and legal measures, against unauthorized
-                distribution or modification of HomunculAI.
+                distribution or modification of HomunculAi.
               </p>
             </Section>
 
             <Section title="10. Distribution, Platforms, and Refunds" index={10}>
               <p className="text-muted-foreground mb-3">
-                HomunculAI is distributed through one or more authorized channels.
+                HomunculAi is distributed through one or more authorized channels.
                 As of the effective date of this version, the authorized
                 distributor is:
               </p>
@@ -640,7 +640,7 @@ export function HomunculAITermsPage() {
               </ul>
               <p className="text-muted-foreground mb-4">
                 KrookedLilly may add or remove authorized distributors from time
-                to time without notice. When you purchase or obtain HomunculAI
+                to time without notice. When you purchase or obtain HomunculAi
                 through a distributor, that distributor's terms of service,
                 payment terms, and refund policy apply to the transaction itself
                 in addition to these Terms. Where any distributor's mandatory
@@ -674,12 +674,12 @@ export function HomunculAITermsPage() {
 
             <Section title="11. Export Controls and Territorial Restrictions" index={11}>
               <p className="text-muted-foreground mb-3">
-                HomunculAI is a software product subject to United States export
+                HomunculAi is a software product subject to United States export
                 control laws, including the Export Administration Regulations
                 (EAR) and economic sanctions administered by the U.S. Department
                 of the Treasury's Office of Foreign Assets Control (OFAC).{" "}
                 <strong className="text-foreground">
-                  By accepting these Terms and using HomunculAI, you represent and
+                  By accepting these Terms and using HomunculAi, you represent and
                   warrant that:
                 </strong>
               </p>
@@ -691,19 +691,19 @@ export function HomunculAITermsPage() {
                   any U.S. government list of prohibited or restricted parties;
                 </li>
                 <li>
-                  You will not export, re-export, transfer, or use HomunculAI in
+                  You will not export, re-export, transfer, or use HomunculAi in
                   violation of U.S. export control laws or the sanctions or trade
                   laws of any other applicable jurisdiction;
                 </li>
                 <li>
                   You will comply with all local laws applicable to your use of
-                  HomunculAI, including AI-specific regulatory requirements in
+                  HomunculAi, including AI-specific regulatory requirements in
                   jurisdictions where such requirements apply to the deployment,
                   operation, or use of artificial intelligence systems.
                 </li>
               </ul>
               <p className="text-muted-foreground">
-                A current list of regions to which HomunculAI is not sold or
+                A current list of regions to which HomunculAi is not sold or
                 supported is maintained in a{" "}
                 <Link
                   to="/games/homunculai/sales-restrictions"
@@ -716,7 +716,7 @@ export function HomunculAITermsPage() {
                 business decisions.{" "}
                 <strong className="text-foreground">
                   If you are located in a restricted region, you are not
-                  authorized to purchase or use HomunculAI, and any copy you
+                  authorized to purchase or use HomunculAi, and any copy you
                   obtain is unlicensed
                 </strong>{" "}
                 (see Section 9). KrookedLilly's authorized distributor (Lemon
@@ -727,7 +727,7 @@ export function HomunculAITermsPage() {
 
             <Section title="12. AS-IS, No Warranty" index={12}>
               <p className="text-muted-foreground uppercase tracking-wide text-sm" style={{ lineHeight: 1.7 }}>
-                HomunculAI is provided "as is" and "as available," with all faults
+                HomunculAi is provided "as is" and "as available," with all faults
                 and without warranty of any kind, express or implied. KrookedLilly
                 disclaims all implied warranties — including merchantability,
                 fitness for a particular purpose, accuracy, and non-infringement —
@@ -746,7 +746,7 @@ export function HomunculAITermsPage() {
                 liable for any indirect, incidental, consequential, special,
                 exemplary, punitive, or emotional damages, or for any loss of
                 data, loss of profits, loss of goodwill, or business interruption,
-                arising out of or related to your use of HomunculAI or any
+                arising out of or related to your use of HomunculAi or any
                 AI-generated content it displays.
               </p>
               <p className="text-muted-foreground mb-3">
@@ -758,11 +758,11 @@ export function HomunculAITermsPage() {
                 AI you connect; (e) loading community-created content; (f) your
                 use of the detection whitelist to suppress safety warnings; and
                 (g) your use of unauthorized, modified, or pirated copies of
-                HomunculAI.
+                HomunculAi.
               </p>
               <p className="text-muted-foreground">
                 KrookedLilly's total aggregate liability for any claim arising out
-                of or related to HomunculAI will not exceed the greater of (i) the
+                of or related to HomunculAi will not exceed the greater of (i) the
                 amount you paid the authorized distributor for the app in the
                 twelve months before the claim or (ii) USD $100. Some
                 jurisdictions do not allow the exclusion or limitation of certain
@@ -776,13 +776,13 @@ export function HomunculAITermsPage() {
                 You agree to defend, indemnify, and hold harmless KrookedLilly and
                 its owners, contractors, and affiliates from any claim, demand,
                 loss, or expense (including reasonable attorneys' fees) arising
-                from (a) your misuse of HomunculAI, (b) your violation of these
+                from (a) your misuse of HomunculAi, (b) your violation of these
                 Terms or applicable law (including export-control or sanctions
                 law), (c) your choice of AI agent or community content, (d)
                 anything an AI agent does in your instance of the app as a result
                 of your configuration or verification decisions, (e) your use of
                 the detection whitelist to suppress safety warnings, or (f) your
-                use of unauthorized, modified, or pirated copies of HomunculAI.
+                use of unauthorized, modified, or pirated copies of HomunculAi.
               </p>
             </Section>
 
@@ -791,7 +791,7 @@ export function HomunculAITermsPage() {
                 You are interacting with an AI system. The avatar's words,
                 drawings, and expressions are machine-generated by a third-party
                 model and are not communications from a human or from KrookedLilly.
-                During extended sessions, HomunculAI periodically reminds you that
+                During extended sessions, HomunculAi periodically reminds you that
                 the avatar is controlled by an AI agent, not a human. This notice
                 and these periodic reminders are provided to help satisfy
                 AI-transparency expectations under applicable law, including the
@@ -805,7 +805,7 @@ export function HomunculAITermsPage() {
               <p className="text-muted-foreground">
                 KrookedLilly may update these Terms from time to time. Each
                 version has a version number and effective date shown at the top.
-                When a new version is released, HomunculAI will present the
+                When a new version is released, HomunculAi will present the
                 updated Terms on next launch and require you to accept them again
                 before continuing use. If you reject the updated Terms, the app
                 will close and you can uninstall it; continued use requires
@@ -820,7 +820,7 @@ export function HomunculAITermsPage() {
               <p className="text-muted-foreground mb-3">
                 These Terms are governed by the laws of the State of Washington,
                 USA, without regard to conflict-of-law rules. You and KrookedLilly
-                agree that any dispute arising out of or related to HomunculAI or
+                agree that any dispute arising out of or related to HomunculAi or
                 these Terms will be brought exclusively in the state or federal
                 courts located in Spokane County, Washington (Spokane County
                 Superior Court or the U.S. District Court for the Eastern District
@@ -853,7 +853,7 @@ export function HomunculAITermsPage() {
                 <strong className="text-foreground">Entire agreement.</strong>{" "}
                 These Terms (together with any distributor's terms that apply to
                 your transaction as described in Section 10) constitute the entire
-                agreement between you and KrookedLilly regarding HomunculAI and
+                agreement between you and KrookedLilly regarding HomunculAi and
                 supersede all prior or contemporaneous understandings,
                 communications, or agreements on the subject.
               </p>
