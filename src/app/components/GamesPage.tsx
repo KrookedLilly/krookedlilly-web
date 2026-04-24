@@ -1,6 +1,9 @@
 import imgAutoHideHudLogo from "@/assets/autohidehud-logo.png";
 import imgCardLabelerLogo from "@/assets/cardlabeler-logo.png";
 import imgStorePageBackground from "@/assets/gps-store-background.png";
+import imgScreenManagerCover from "@/assets/screenmanager-cover.png";
+import imgTweenEngineCover from "@/assets/tweenengine-cover.png";
+import imgModalNotificationsCover from "@/assets/modalnotification-cover.png";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "motion/react";
@@ -115,7 +118,7 @@ const projects = [
     kind: "Tool" as Kind,
     type: "Unity Asset",
     description: "UI Toolkit screen management for Unity — transitions, navigation, lifecycle.",
-    image: null as string | null,
+    image: imgScreenManagerCover as string | null,
     status: "In Development",
     platforms: ["Unity"],
     tilt: "rotate-1",
@@ -130,7 +133,7 @@ const projects = [
     kind: "Tool" as Kind,
     type: "Unity Asset",
     description: "Chainable tweens for UI Toolkit — easing curves, sequences, zero-GC playback.",
-    image: null as string | null,
+    image: imgTweenEngineCover as string | null,
     status: "In Development",
     platforms: ["Unity"],
     tilt: "-rotate-1",
@@ -160,7 +163,7 @@ const projects = [
     kind: "Tool" as Kind,
     type: "Unity Asset",
     description: "Stackable modals and toast queues for UI Toolkit — focus traps, dismissal, theming.",
-    image: null as string | null,
+    image: imgModalNotificationsCover as string | null,
     status: "In Development",
     platforms: ["Unity"],
     tilt: "-rotate-1",

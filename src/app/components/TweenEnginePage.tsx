@@ -14,11 +14,12 @@ import {
   ChevronRight,
 } from "lucide-react";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
+import imgTweenEngineCover from "@/assets/tweenengine-cover.png";
 import { PageMeta } from "./PageMeta";
 
 /* ─── media (wire these up as assets arrive) ─── */
 const pageIcon: string | null = null;
-const promoImage: string | null = null;
+const promoImage: string | null = imgTweenEngineCover;
 const screenshots: { id: string; src: string; label: string }[] = [];
 
 /* ─── animation variants ─── */

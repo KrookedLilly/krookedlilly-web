@@ -15,11 +15,12 @@ import {
   X,
 } from "lucide-react";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
+import imgModalNotificationsCover from "@/assets/modalnotification-cover.png";
 import { PageMeta } from "./PageMeta";
 
 /* ─── media (wire these up as assets arrive) ─── */
 const pageIcon: string | null = null;
-const promoImage: string | null = null;
+const promoImage: string | null = imgModalNotificationsCover;
 const screenshots: { id: string; src: string; label: string }[] = [];
 
 /* ─── animation variants ─── */
