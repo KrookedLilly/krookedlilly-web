@@ -71,7 +71,7 @@ const games = [
     title: "HomunculAi",
     type: "Desktop App",
     description:
-      "A little transparent window where your AI gets a body it controls itself. 45 bodies, custom SVG, two-way chat — works with any MCP client",
+      "A little transparent window where your Ai gets a body it controls itself. 45 bodies, custom SVG, two-way chat — works with any MCP client",
     image: imgHomunculAiCard,
     imagePosition: "object-cover",
     status: "Released",

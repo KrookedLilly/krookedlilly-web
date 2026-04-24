@@ -57,7 +57,7 @@ const projects = [
     category: "Games & Apps" as const,
     kind: "App" as Kind,
     type: "Desktop App",
-    description: "What body will your AI make?",
+    description: "What body will your Ai make?",
     image: imgHomunculAiCard,
     status: "Released",
     platforms: ["Windows"],

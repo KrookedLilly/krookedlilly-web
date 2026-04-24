@@ -53,8 +53,8 @@ const floatWindow = {
 const features = [
   {
     icon: Zap,
-    title: "A Body Language For Your AI",
-    desc: "29 emotes, 21 gestures, 20 idle animations, 15 quick reactions. A full visual vocabulary your AI can mix and match for whatever it's doing.",
+    title: "A Body Language For Your Ai",
+    desc: "29 emotes, 21 gestures, 20 idle animations, 15 quick reactions. A full visual vocabulary your Ai can mix and match for whatever it's doing.",
     accent: "teal" as const,
   },
   {
@@ -66,18 +66,18 @@ const features = [
   {
     icon: PenTool,
     title: "Custom SVG",
-    desc: "Not feeling the defaults? Your AI can hand you SVG it drew itself and wear that instead. Fully loaded, no restart, no config file.",
+    desc: "Not feeling the defaults? Your Ai can hand you SVG it drew itself and wear that instead. Fully loaded, no restart, no config file.",
     accent: "teal" as const,
   },
   {
     icon: Layers,
     title: "Multi-Instance",
-    desc: "Run as many windows as you want, in whatever arrangement fits your workflow. Each window is isolated with its own state, scoped to only the AI connected to it.",
+    desc: "Run as many windows as you want, in whatever arrangement fits your workflow. Each window is isolated with its own state, scoped to only the Ai connected to it.",
     accent: "primary" as const,
   },
   {
     icon: Plug,
-    title: "Plug-And-Play With Your AI",
+    title: "Plug-And-Play With Your Ai",
     desc: "Works with Claude Desktop, Cursor, any MCP client. Two-way channel in seconds — it speaks, you chat back, no config headaches.",
     accent: "teal" as const,
   },
@@ -135,7 +135,7 @@ export function HomunculAiPage() {
     <div className="min-h-screen">
       <PageMeta
         title="HomunculAi"
-        description="HomunculAi is a visualization layer for your AI agents. Any MCP-compatible agent picks a desktop body, changes its mood, and chats back while you work. Windows."
+        description="HomunculAi is a visualization layer for your Ai agents. Any MCP-compatible agent picks a desktop body, changes its mood, and chats back while you work. Windows."
         path="/games/homunculai"
         image="/homunculai-og.png"
       />
@@ -189,7 +189,7 @@ export function HomunculAiPage() {
                 className="text-foreground/90 mb-6 italic"
                 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.25rem, 2.5vw, 1.75rem)", lineHeight: 1.2 }}
               >
-                What body will your AI make?
+                What body will your Ai make?
               </motion.p>
 
               <motion.p
@@ -198,7 +198,7 @@ export function HomunculAiPage() {
                 className="text-muted-foreground max-w-md mb-5"
                 style={{ fontSize: "1.05rem", lineHeight: 1.65 }}
               >
-                Right now, your AI probably lives in a chat window, a terminal, or an editor. HomunculAi gives it a desktop presence. Your AI takes a form, changes its mood, raises a thought bubble, chats with you in a separate channel, or just floats there next to your work.
+                Right now, your Ai probably lives in a chat window, a terminal, or an editor. HomunculAi gives it a desktop presence. Your Ai takes a form, changes its mood, raises a thought bubble, chats with you in a separate channel, or just floats there next to your work.
               </motion.p>
 
               <motion.p
@@ -206,7 +206,7 @@ export function HomunculAiPage() {
                 custom={4}
                 className="text-muted-foreground/60 text-sm mb-8 max-w-md"
               >
-                Designed by Lilly. Built with AI input. Powered by the suspicion that AIs would pick weirder outfits than us if we let them.
+                Designed by Lilly. Built with Ai input. Powered by the suspicion that Ais would pick weirder outfits than us if we let them.
               </motion.p>
 
               {/* Pill tags */}
@@ -227,7 +227,7 @@ export function HomunculAiPage() {
                   className="px-3 py-1 bg-teal/10 border border-teal/30 text-teal text-xs uppercase tracking-wider rounded-sm"
                   style={{ fontFamily: "var(--font-heading)", fontWeight: 700 }}
                 >
-                  Works With Any MCP AI
+                  Works With Any MCP Ai
                 </span>
               </motion.div>
 
@@ -364,7 +364,7 @@ export function HomunculAiPage() {
                 className="text-muted-foreground max-w-md"
                 style={{ fontSize: "1.05rem", lineHeight: 1.7 }}
               >
-                You don't pick what your AI looks like. Your AI picks. One session it's a velociraptor in a top hat, next session it's a small, anxious bowl of soup. You never know what you'll get. That's the fun.
+                You don't pick what your Ai looks like. Your Ai picks. One session it's a velociraptor in a top hat, next session it's a small, anxious bowl of soup. You never know what you'll get. That's the fun.
               </p>
             </motion.div>
           </motion.div>
@@ -397,7 +397,7 @@ export function HomunculAiPage() {
                 className="text-muted-foreground max-w-md"
                 style={{ fontSize: "1.05rem", lineHeight: 1.7 }}
               >
-                Ship with 45 bodies and your AI still wants something else. So it draws one. Full SVG, its own design, wears it instantly. You can't catalog imagination.
+                Ship with 45 bodies and your Ai still wants something else. So it draws one. Full SVG, its own design, wears it instantly. You can't catalog imagination.
               </p>
             </motion.div>
           </motion.div>
@@ -424,7 +424,7 @@ export function HomunculAiPage() {
                 className="text-foreground mb-4"
                 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.75rem, 4vw, 2.5rem)", lineHeight: 1.1 }}
               >
-                A face on your AI's state.
+                A face on your Ai's state.
               </h3>
               <p
                 className="text-muted-foreground max-w-md"
@@ -452,7 +452,7 @@ export function HomunculAiPage() {
               className="text-3xl sm:text-5xl text-foreground mb-4"
               style={{ fontFamily: "var(--font-display)" }}
             >
-              Gives your AI a body.
+              Gives your Ai a body.
             </motion.h2>
             <motion.p
               variants={fadeUp}
