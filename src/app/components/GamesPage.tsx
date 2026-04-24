@@ -110,7 +110,7 @@ const projects = [
   },
   {
     id: 7,
-    title: "Screen Manager",
+    title: "UI Toolkit: Screen Manager",
     category: "Tools & Mods" as const,
     kind: "Tool" as Kind,
     type: "Unity Asset",
@@ -121,7 +121,67 @@ const projects = [
     tilt: "rotate-1",
     accent: "primary" as const,
     imagePosition: "object-cover" as const,
-    slug: null as string | null,
+    slug: "screen-manager" as string | null,
+  },
+  {
+    id: 11,
+    title: "UI Toolkit: Tween Engine",
+    category: "Tools & Mods" as const,
+    kind: "Tool" as Kind,
+    type: "Unity Asset",
+    description: "Chainable tweens for UI Toolkit — easing curves, sequences, zero-GC playback.",
+    image: null as string | null,
+    status: "In Development",
+    platforms: ["Unity"],
+    tilt: "-rotate-1",
+    accent: "teal" as const,
+    imagePosition: "object-cover" as const,
+    slug: "tween-engine" as string | null,
+  },
+  {
+    id: 12,
+    title: "UI Toolkit: Responsive Layout",
+    category: "Tools & Mods" as const,
+    kind: "Tool" as Kind,
+    type: "Unity Asset",
+    description: "Breakpoints, adaptive grids, and safe areas for UI Toolkit. One UI, every aspect ratio.",
+    image: null as string | null,
+    status: "In Development",
+    platforms: ["Unity"],
+    tilt: "rotate-1",
+    accent: "primary" as const,
+    imagePosition: "object-cover" as const,
+    slug: "responsive-layout" as string | null,
+  },
+  {
+    id: 13,
+    title: "UI Toolkit: Modal & Notifications",
+    category: "Tools & Mods" as const,
+    kind: "Tool" as Kind,
+    type: "Unity Asset",
+    description: "Stackable modals and toast queues for UI Toolkit — focus traps, dismissal, theming.",
+    image: null as string | null,
+    status: "In Development",
+    platforms: ["Unity"],
+    tilt: "-rotate-1",
+    accent: "teal" as const,
+    imagePosition: "object-cover" as const,
+    slug: "modal-notifications" as string | null,
+  },
+  {
+    id: 14,
+    title: "UI Toolkit: Focus & Navigation",
+    category: "Tools & Mods" as const,
+    kind: "Tool" as Kind,
+    type: "Unity Asset",
+    description: "Keyboard and gamepad navigation for UI Toolkit. Auto-focus maps, visual indicators, mixed input.",
+    image: null as string | null,
+    status: "In Development",
+    platforms: ["Unity"],
+    tilt: "rotate-1",
+    accent: "primary" as const,
+    imagePosition: "object-cover" as const,
+    slug: "focus-navigation" as string | null,
   },
   {
     id: 8,
@@ -347,15 +407,18 @@ export function GamesPage() {
                       </div>
                     )}
                     <div className="absolute inset-0 bg-gradient-to-t from-card via-transparent to-transparent" />
-                    <div className="absolute top-3 left-3">
-                      <span
-                        className={`inline-flex items-center gap-1.5 px-3 py-1 text-xs uppercase tracking-wider rounded-sm ${statusInfo.bg} ${statusInfo.color}`}
-                        style={{ fontFamily: "var(--font-heading)", fontWeight: 600 }}
-                      >
-                        <StatusIcon className="w-3 h-3" />
-                        {project.status}
-                      </span>
-                    </div>
+                    {/* Released status hidden — only surface non-Released states */}
+                    {project.status !== "Released" && (
+                      <div className="absolute top-3 left-3">
+                        <span
+                          className={`inline-flex items-center gap-1.5 px-3 py-1 text-xs uppercase tracking-wider rounded-sm ${statusInfo.bg} ${statusInfo.color}`}
+                          style={{ fontFamily: "var(--font-heading)", fontWeight: 600 }}
+                        >
+                          <StatusIcon className="w-3 h-3" />
+                          {project.status}
+                        </span>
+                      </div>
+                    )}
                   </div>
                   <div className="p-6">
                     <div className="flex items-center justify-between mb-2">

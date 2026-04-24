@@ -1,12 +1,11 @@
 import imgAutoHideHudLogo from "@/assets/autohidehud-logo.png";
-import imgCardLabelerLogo from "@/assets/cardlabeler-logo.png";
+import imgScreenManagerLogo from "@/assets/screenmanager-icon.png";
 import { acrostixCardImage } from "../assets/acrostix-screenshots";
 import { matchFivesCardImage } from "../assets/matchfives-screenshots";
 import { ballDropCardImage } from "../assets/balldrop-screenshots";
 import { heKeyboardsIcon } from "../assets/hekeyboards-screenshots";
 import { lunchBoxLogo } from "../assets/lunchbox-screenshots";
 import imgAcrostixHero from "@/assets/acrostix-ipad-slide-1-gameplay.png";
-import imgHomunculAIHero from "@/assets/homunculai-library-capsule.png";
 import imgHomunculAICard from "@/assets/homunculai-capsule-main.png";
 import { Link } from "react-router-dom";
 import { motion } from "motion/react";
@@ -40,18 +39,18 @@ const games = [
     slug: "/games/acrostix" as string | null,
   },
   {
-    id: "homunculai",
-    title: "HomunculAI",
-    type: "Desktop App",
+    id: "50-ball-drop",
+    title: "50 Ball Drop",
+    type: "Arcade",
     description:
-      "A little transparent window where your AI gets a body it controls itself. 45 bodies, custom SVG, two-way chat — works with any MCP client",
-    image: imgHomunculAICard,
+      "Drop balls, watch mayhem unfold, unlock a wild amount of cosmetics. Way more drip than you'd expect",
+    image: ballDropCardImage,
     imagePosition: "object-cover",
     status: "Released",
-    platforms: ["Windows"],
+    platforms: ["Mobile"],
     accent: "primary" as const,
     rotate: "rotate-1",
-    slug: "/games/homunculai" as string | null,
+    slug: "/games/50-ball-drop" as string | null,
   },
   {
     id: "match-fives",
@@ -68,18 +67,18 @@ const games = [
     slug: "/games/match-fives" as string | null,
   },
   {
-    id: "50-ball-drop",
-    title: "50 Ball Drop",
-    type: "Arcade",
+    id: "homunculai",
+    title: "HomunculAI",
+    type: "Desktop App",
     description:
-      "Drop balls, watch mayhem unfold, unlock a wild amount of cosmetics. Way more drip than you'd expect",
-    image: ballDropCardImage,
+      "A little transparent window where your AI gets a body it controls itself. 45 bodies, custom SVG, two-way chat — works with any MCP client",
+    image: imgHomunculAICard,
     imagePosition: "object-cover",
     status: "Released",
-    platforms: ["Mobile"],
+    platforms: ["Windows"],
     accent: "primary" as const,
     rotate: "rotate-1",
-    slug: "/games/50-ball-drop" as string | null,
+    slug: "/games/homunculai" as string | null,
   },
 ];
 
@@ -95,14 +94,14 @@ const mods = [
     slug: "/tools/he-keyboards" as string | null,
   },
   {
-    title: "Screen Manager",
+    title: "UI Toolkit: Screen Manager",
     platform: "Unity Asset",
     description: "UI Toolkit screen management — transitions, nav stacks, and lifecycle events out of the box",
     status: "In Development",
     accent: "primary" as const,
     rotate: "-rotate-1",
-    logo: null as string | null,
-    slug: null as string | null,
+    logo: imgScreenManagerLogo as string | null,
+    slug: "/tools/screen-manager" as string | null,
   },
   {
     title: "LunchBox",
@@ -122,16 +121,6 @@ const mods = [
     accent: "primary" as const,
     rotate: "-rotate-1",
     logo: imgAutoHideHudLogo as string | null,
-    slug: null as string | null,
-  },
-  {
-    title: "Card Labeler",
-    platform: "Trello",
-    description: "Better labels and sorting for your boards. Organizing cards shouldn't require a PhD",
-    status: "In Development",
-    accent: "teal" as const,
-    rotate: "rotate-1",
-    logo: imgCardLabelerLogo as string | null,
     slug: null as string | null,
   },
 ];
@@ -160,35 +149,33 @@ export function HomePage() {
         path="/"
         image="/og-image.png"
       />
-      {/* Featured Heroes — Acrostix & HomunculAI, side-by-side for equal billing */}
-      <section className="relative pt-12 pb-20 lg:pt-16 lg:pb-24">
+      {/* Hero - Acrostix Featured */}
+      <section className="relative pt-12 pb-20 lg:pt-16 lg:pb-28">
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[radial-gradient(circle,_rgba(34,211,238,0.12)_0%,_transparent_70%)]" />
-          <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-[radial-gradient(circle,_rgba(160,92,246,0.12)_0%,_transparent_70%)]" />
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[radial-gradient(circle,_rgba(160,92,246,0.15)_0%,_transparent_70%)]" />
+          <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-[radial-gradient(circle,_rgba(34,211,238,0.10)_0%,_transparent_70%)]" />
         </div>
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 items-stretch">
-
-            {/* Acrostix */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, ease: "easeOut" as const }}
-              className="h-full"
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut" as const }}
+          >
+            <Link
+              to="/games/acrostix"
+              className="group block bg-white/[0.06] border-2 border-white/[0.12] hover:border-teal/40 rounded-sm overflow-hidden transition-all hover:-translate-y-1 hover:shadow-[8px_8px_0px_0px_rgba(34,211,238,0.12)] rotate-[0.5deg] hover:rotate-0"
             >
-              <Link
-                to="/games/acrostix"
-                className="group relative flex flex-col h-full bg-white/[0.06] border-2 border-white/[0.12] hover:border-teal/40 rounded-sm overflow-hidden transition-all hover:-translate-y-1 hover:shadow-[8px_8px_0px_0px_rgba(34,211,238,0.12)] -rotate-[0.5deg] hover:rotate-0"
-              >
-                <div className="relative flex items-center justify-center bg-black/20 py-10 lg:py-14 overflow-hidden">
+              <div className="grid grid-cols-1 lg:grid-cols-2">
+                <div className="relative flex items-center justify-center bg-black/20 py-8 lg:py-12 overflow-hidden">
                   <DesktopWindow
                     src={imgAcrostixHero}
                     alt="Acrostix — Craft Clever Sentences"
                     chrome={false}
                     aspect="133.3%"
-                    className="w-40 sm:w-44 lg:w-52 transition-transform duration-700 group-hover:scale-105"
+                    className="w-48 sm:w-56 lg:w-64 transition-transform duration-700 group-hover:scale-105"
                   />
+                  {/* Released badge hidden — we're a real product catalog, not a coming-soon page
                   <div className="absolute top-4 left-4">
                     <span
                       className="px-3 py-1.5 bg-lime text-black text-xs uppercase tracking-wider border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,0.8)] -rotate-3 inline-block rounded-sm"
@@ -197,8 +184,10 @@ export function HomePage() {
                       Released
                     </span>
                   </div>
+                  */}
                 </div>
-                <div className="p-6 lg:p-8 flex flex-col flex-1">
+
+                <div className="p-8 lg:p-12 flex flex-col justify-center">
                   <span
                     className="text-teal text-xs uppercase tracking-[0.2em] mb-2"
                     style={{ fontFamily: "var(--font-heading)", fontWeight: 600 }}
@@ -217,7 +206,7 @@ export function HomePage() {
                   <p className="text-teal/80 italic mb-6" style={{ fontSize: "0.95rem" }}>
                     "One word. Infinite sentences."
                   </p>
-                  <div className="flex items-center gap-2 text-lime group-hover:gap-3 transition-all mt-auto">
+                  <div className="flex items-center gap-2 text-lime group-hover:gap-3 transition-all">
                     <span
                       className="uppercase tracking-wider text-sm"
                       style={{ fontFamily: "var(--font-heading)", fontWeight: 700 }}
@@ -227,70 +216,9 @@ export function HomePage() {
                     <ArrowRight className="w-4 h-4" />
                   </div>
                 </div>
-              </Link>
-            </motion.div>
-
-            {/* HomunculAI */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.15, ease: "easeOut" as const }}
-              className="h-full"
-            >
-              <Link
-                to="/games/homunculai"
-                className="group relative flex flex-col h-full bg-white/[0.06] border-2 border-white/[0.12] hover:border-primary/40 rounded-sm overflow-hidden transition-all hover:-translate-y-1 hover:shadow-[8px_8px_0px_0px_rgba(160,92,246,0.12)] rotate-[0.5deg] hover:rotate-0"
-              >
-                <div className="relative flex items-center justify-center bg-black/20 py-10 lg:py-14 overflow-hidden">
-                  <DesktopWindow
-                    src={imgHomunculAIHero}
-                    alt="HomunculAI"
-                    chrome={false}
-                    aspect="150%"
-                    className="w-36 sm:w-40 lg:w-44 transition-transform duration-700 group-hover:scale-105"
-                  />
-                  <div className="absolute top-4 right-4">
-                    <span
-                      className="px-3 py-1.5 bg-lime text-black text-xs uppercase tracking-wider border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,0.8)] rotate-3 inline-block rounded-sm"
-                      style={{ fontFamily: "var(--font-heading)", fontWeight: 700 }}
-                    >
-                      Released
-                    </span>
-                  </div>
-                </div>
-                <div className="p-6 lg:p-8 flex flex-col flex-1">
-                  <span
-                    className="text-primary text-xs uppercase tracking-[0.2em] mb-2"
-                    style={{ fontFamily: "var(--font-heading)", fontWeight: 600 }}
-                  >
-                    Desktop App · Windows
-                  </span>
-                  <h2
-                    className="text-3xl sm:text-4xl lg:text-5xl text-foreground mb-4"
-                    style={{ fontFamily: "var(--font-display)" }}
-                  >
-                    HomunculAI
-                  </h2>
-                  <p className="text-muted-foreground mb-2" style={{ fontSize: "1.05rem" }}>
-                    A little transparent window where your AI gets a body it controls itself. 45 bodies, 22 emotions, custom SVG, two-way chat — works with any MCP client.
-                  </p>
-                  <p className="text-primary/80 italic mb-6" style={{ fontSize: "0.95rem" }}>
-                    "What body will your AI make?"
-                  </p>
-                  <div className="flex items-center gap-2 text-lime group-hover:gap-3 transition-all mt-auto">
-                    <span
-                      className="uppercase tracking-wider text-sm"
-                      style={{ fontFamily: "var(--font-heading)", fontWeight: 700 }}
-                    >
-                      Check it out
-                    </span>
-                    <ArrowRight className="w-4 h-4" />
-                  </div>
-                </div>
-              </Link>
-            </motion.div>
-
-          </div>
+              </div>
+            </Link>
+          </motion.div>
         </div>
       </section>
 
@@ -355,14 +283,17 @@ export function HomePage() {
                       className={`w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 ${game.imagePosition}`}
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-card/90 to-transparent" />
-                    <div className="absolute top-3 right-3">
-                      <span
-                        className="px-3 py-1 bg-lime text-black text-xs uppercase tracking-wider border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,0.8)] -rotate-3 inline-block rounded-sm"
-                        style={{ fontFamily: "var(--font-heading)", fontWeight: 700 }}
-                      >
-                        {game.status}
-                      </span>
-                    </div>
+                    {/* Released status hidden — only surface non-Released states */}
+                    {game.status !== "Released" && (
+                      <div className="absolute top-3 right-3">
+                        <span
+                          className="px-3 py-1 bg-lime text-black text-xs uppercase tracking-wider border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,0.8)] -rotate-3 inline-block rounded-sm"
+                          style={{ fontFamily: "var(--font-heading)", fontWeight: 700 }}
+                        >
+                          {game.status}
+                        </span>
+                      </div>
+                    )}
                   </div>
                   <div className="p-6">
                     <span
@@ -456,12 +387,15 @@ export function HomePage() {
                     >
                       {mod.platform}
                     </span>
-                    <span
-                      className="px-2 py-0.5 bg-white/[0.06] border border-white/[0.12] text-muted-foreground text-xs uppercase tracking-wider rounded-sm"
-                      style={{ fontFamily: "var(--font-heading)", fontWeight: 600 }}
-                    >
-                      {mod.status}
-                    </span>
+                    {/* Released pill hidden — only surface non-Released states */}
+                    {mod.status !== "Released" && (
+                      <span
+                        className="px-2 py-0.5 bg-white/[0.06] border border-white/[0.12] text-muted-foreground text-xs uppercase tracking-wider rounded-sm"
+                        style={{ fontFamily: "var(--font-heading)", fontWeight: 600 }}
+                      >
+                        {mod.status}
+                      </span>
+                    )}
                   </div>
                   <h3
                     className="text-foreground mb-2"

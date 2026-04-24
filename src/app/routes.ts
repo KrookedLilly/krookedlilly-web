@@ -109,6 +109,41 @@ export const routes: RouteRecord[] = [
           })),
       },
       {
+        path: "tools/screen-manager",
+        lazy: () =>
+          import("./components/ScreenManagerPage").then((m) => ({
+            Component: m.ScreenManagerPage,
+          })),
+      },
+      {
+        path: "tools/tween-engine",
+        lazy: () =>
+          import("./components/TweenEnginePage").then((m) => ({
+            Component: m.TweenEnginePage,
+          })),
+      },
+      {
+        path: "tools/responsive-layout",
+        lazy: () =>
+          import("./components/ResponsiveLayoutPage").then((m) => ({
+            Component: m.ResponsiveLayoutPage,
+          })),
+      },
+      {
+        path: "tools/modal-notifications",
+        lazy: () =>
+          import("./components/ModalNotificationsPage").then((m) => ({
+            Component: m.ModalNotificationsPage,
+          })),
+      },
+      {
+        path: "tools/focus-navigation",
+        lazy: () =>
+          import("./components/FocusNavigationPage").then((m) => ({
+            Component: m.FocusNavigationPage,
+          })),
+      },
+      {
         path: "games/acrostix/privacy",
         lazy: () =>
           import("./components/AcrostixPrivacyPage").then((m) => ({

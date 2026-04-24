@@ -3,24 +3,24 @@ import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "motion/react";
 import {
   ArrowLeft,
-  CheckCircle,
   Clock,
-  Monitor,
-  Layout,
+  Bell,
   Layers,
-  Move,
-  Keyboard,
-  Settings,
+  MessageSquare,
+  Palette,
+  Focus,
+  Package,
   ChevronLeft,
   ChevronRight,
-  ExternalLink,
+  X,
 } from "lucide-react";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
-import {
-  lunchBoxScreenshots,
-  lunchBoxLogo,
-} from "../assets/lunchbox-screenshots";
 import { PageMeta } from "./PageMeta";
+
+/* ─── media (wire these up as assets arrive) ─── */
+const pageIcon: string | null = null;
+const promoImage: string | null = null;
+const screenshots: { id: string; src: string; label: string }[] = [];
 
 /* ─── animation variants ─── */
 const fadeUp = {
@@ -35,40 +35,40 @@ const fadeUp = {
 /* ─── features ─── */
 const features = [
   {
-    icon: Layout,
-    title: "Custom Snap Zones",
-    desc: "Draw your own window zones instead of being stuck with whatever Apple thinks you need. Split the screen however you want",
-    accent: "primary" as const,
-  },
-  {
-    icon: Monitor,
-    title: "Multi-Monitor Support",
-    desc: "Different layouts for different monitors. Your ultrawide and your laptop screen don't need to play by the same rules",
-    accent: "teal" as const,
-  },
-  {
     icon: Layers,
-    title: "Multiple Layers",
-    desc: "Stack layout layers so zones can overlap. Snap a window to the top half, the left third, or some weird shape you invented at 2am",
-    accent: "primary" as const,
-  },
-  {
-    icon: Move,
-    title: "Drag to Snap",
-    desc: "Drag a window to a zone and it snaps into place. No keyboard shortcuts to memorize, no menu diving — just drag",
+    title: "Modal Stacks",
+    desc: "Stack modals on top of modals without z-index wars. Each layer knows who's above it and who to yield focus back to",
     accent: "teal" as const,
   },
   {
-    icon: Keyboard,
-    title: "Keyboard Shortcuts",
-    desc: "Record custom shortcuts for any zone. For when dragging feels too slow and you'd rather just slam a hotkey",
+    icon: Bell,
+    title: "Toast Queue",
+    desc: "Notifications queue up, stack elegantly, and auto-dismiss. Priorities and positions handled",
     accent: "primary" as const,
   },
   {
-    icon: Settings,
-    title: "Menu Bar App",
-    desc: "Lives in the menu bar, stays out of your way. Edit layouts when you need to, forget it exists the rest of the time",
+    icon: X,
+    title: "Dismissal Logic",
+    desc: "Backdrop tap, escape key, programmatic close — all wired up. Plus per-modal rules if you need them",
     accent: "teal" as const,
+  },
+  {
+    icon: Focus,
+    title: "Focus Trap",
+    desc: "Keyboard and gamepad focus stays inside the active modal. Exits release it cleanly back to where it came from",
+    accent: "primary" as const,
+  },
+  {
+    icon: Palette,
+    title: "Theme Ready",
+    desc: "USS-driven styling. Match your game's look without overriding a dozen classes. Variants built in",
+    accent: "teal" as const,
+  },
+  {
+    icon: Package,
+    title: "Unity Asset Store",
+    desc: "Import, show a modal with one line, get back to building your game. No boilerplate required",
+    accent: "primary" as const,
   },
 ];
 
@@ -79,6 +79,7 @@ const accentClasses = {
     bg: "bg-teal",
     hoverBorder: "hover:border-teal/40",
     shadow: "hover:shadow-[6px_6px_0px_0px_rgba(34,211,238,0.15)]",
+    glow: "bg-teal/10",
   },
   primary: {
     text: "text-primary",
@@ -86,13 +87,14 @@ const accentClasses = {
     bg: "bg-primary",
     hoverBorder: "hover:border-primary/40",
     shadow: "hover:shadow-[6px_6px_0px_0px_rgba(160,92,246,0.15)]",
+    glow: "bg-primary/10",
   },
 };
 
 /* ─── screenshot gallery ─── */
 function ScreenshotGallery() {
   const [current, setCurrent] = useState(0);
-  const screenshots = lunchBoxScreenshots;
+  if (screenshots.length === 0) return null;
 
   const next = () => setCurrent((c) => (c + 1) % screenshots.length);
   const prev = () =>
@@ -100,7 +102,7 @@ function ScreenshotGallery() {
 
   return (
     <div className="flex flex-col items-center gap-4">
-      <div className="relative w-full max-w-3xl">
+      <div className="relative w-full max-w-2xl">
         <AnimatePresence mode="wait">
           <motion.div
             key={screenshots[current].id}
@@ -155,13 +157,13 @@ function ScreenshotGallery() {
 /* ═══════════════════════════════════════════════════════
    MAIN PAGE
    ═══════════════════════════════════════════════════════ */
-export function LunchBoxPage() {
+export function ModalNotificationsPage() {
   return (
     <div className="min-h-screen">
       <PageMeta
-        title="LunchBox"
-        description="LunchBox — a productivity tool from KrookedLilly for organizing your day in tidy, portable boxes."
-        path="/tools/lunchbox"
+        title="UI Toolkit: Modal & Notifications"
+        description="UI Toolkit: Modal & Notifications — stackable modals, toast queues, and focus-safe dialogs for Unity's UI Toolkit."
+        path="/tools/modal-notifications"
       />
       {/* ═══════════ HERO ═══════════ */}
       <section className="relative pt-6 pb-20">
@@ -183,34 +185,43 @@ export function LunchBoxPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             {/* Left — copy */}
             <motion.div initial="hidden" animate="visible">
-              {/* Released badge hidden — we're a real product catalog, not a coming-soon page
               <motion.div variants={fadeUp} custom={0} className="mb-6">
                 <span
-                  className="inline-flex items-center gap-2 px-4 py-2 bg-lime text-black rounded-md -rotate-2 border-2 border-black shadow-[3px_3px_0px_0px_rgba(0,0,0,0.8)]"
+                  className="inline-flex items-center gap-2 px-4 py-2 bg-white/[0.06] border-2 border-white/[0.12] text-muted-foreground rounded-md -rotate-2"
                   style={{ fontFamily: "var(--font-heading)", fontWeight: 700 }}
                 >
-                  <CheckCircle className="w-4 h-4" />
-                  <span className="text-sm uppercase tracking-wider">Released</span>
+                  <Clock className="w-4 h-4" />
+                  <span className="text-sm uppercase tracking-wider">In Development</span>
                 </span>
               </motion.div>
-              */}
 
-              <motion.div variants={fadeUp} custom={0.5} className="mb-4">
-                <ImageWithFallback
-                  src={lunchBoxLogo}
-                  alt="LunchBox logo"
-                  className="w-20 h-20 rounded-sm"
-                />
-              </motion.div>
+              {pageIcon && (
+                <motion.div variants={fadeUp} custom={0.5} className="mb-4">
+                  <ImageWithFallback
+                    src={pageIcon}
+                    alt="UI Toolkit: Modal & Notifications icon"
+                    className="w-16 h-16 rounded-sm"
+                  />
+                </motion.div>
+              )}
+
+              <motion.p
+                variants={fadeUp}
+                custom={0.75}
+                className="text-xs uppercase tracking-[0.25em] text-muted-foreground/70 mb-3"
+                style={{ fontFamily: "var(--font-heading)", fontWeight: 600 }}
+              >
+                UI Toolkit
+              </motion.p>
 
               <motion.h1
                 variants={fadeUp}
                 custom={1}
-                className="text-5xl sm:text-7xl md:text-8xl text-foreground mb-6"
+                className="text-4xl sm:text-6xl md:text-7xl text-foreground mb-6"
                 style={{ fontFamily: "var(--font-display)", lineHeight: 0.95 }}
               >
                 <span className="bg-gradient-to-r from-teal to-primary bg-clip-text text-transparent">
-                  LunchBox
+                  Modal & Notifications
                 </span>
               </motion.h1>
 
@@ -220,9 +231,7 @@ export function LunchBoxPage() {
                 className="text-muted-foreground max-w-md mb-4"
                 style={{ fontSize: "1.125rem" }}
               >
-                A macOS menu bar app that lets you create custom window snapping
-                layouts across multiple monitors. Draw your zones, snap your
-                windows, stop fighting with macOS about where things go
+                Stackable modals and toast notifications for UI Toolkit. Focus traps, dismissal logic, and layering — all the boring parts, already solved
               </motion.p>
 
               <motion.p
@@ -230,7 +239,7 @@ export function LunchBoxPage() {
                 custom={3}
                 className="text-muted-foreground/60 text-sm mb-8 max-w-md"
               >
-                Built by Krooked. Because the built-in window management made him unreasonably angry
+                Built by Krooked. Coming to the Unity Asset Store
               </motion.p>
 
               <motion.div variants={fadeUp} custom={4} className="flex flex-wrap gap-3">
@@ -238,20 +247,20 @@ export function LunchBoxPage() {
                   className="inline-flex items-center gap-2 px-5 py-3 bg-white/[0.04] backdrop-blur-xl border-2 border-white/[0.12] rounded-sm text-muted-foreground"
                   style={{ fontFamily: "var(--font-heading)", fontWeight: 600 }}
                 >
-                  <Monitor className="w-4 h-4 text-teal" />
-                  <span className="text-sm uppercase tracking-wider">macOS</span>
+                  <Package className="w-4 h-4 text-teal" />
+                  <span className="text-sm uppercase tracking-wider">Unity Asset</span>
                 </div>
                 <div
                   className="inline-flex items-center gap-2 px-5 py-3 bg-white/[0.04] backdrop-blur-xl border-2 border-white/[0.12] rounded-sm text-muted-foreground"
                   style={{ fontFamily: "var(--font-heading)", fontWeight: 600 }}
                 >
-                  <Layout className="w-4 h-4 text-primary" />
-                  <span className="text-sm uppercase tracking-wider">Window Manager</span>
+                  <MessageSquare className="w-4 h-4 text-primary" />
+                  <span className="text-sm uppercase tracking-wider">Dialogs & Toasts</span>
                 </div>
               </motion.div>
             </motion.div>
 
-            {/* Right — hero screenshot */}
+            {/* Right — promo image or placeholder */}
             <motion.div
               className="flex justify-center lg:justify-end"
               initial={{ opacity: 0, y: 50 }}
@@ -259,18 +268,32 @@ export function LunchBoxPage() {
               transition={{ duration: 0.7, ease: "easeOut" }}
             >
               <div className="w-full max-w-lg">
-                <ImageWithFallback
-                  src={lunchBoxScreenshots[0].src}
-                  alt="LunchBox layout editor"
-                  className="w-full rounded-sm border-2 border-white/[0.12] shadow-[6px_6px_0px_0px_rgba(34,211,238,0.15)]"
-                />
+                {promoImage ? (
+                  <ImageWithFallback
+                    src={promoImage}
+                    alt="UI Toolkit: Modal & Notifications — Stackable Dialogs For Unity"
+                    className="w-full rounded-sm border-2 border-white/[0.12] shadow-[6px_6px_0px_0px_rgba(34,211,238,0.15)]"
+                  />
+                ) : (
+                  <div className="w-full aspect-video rounded-sm border-2 border-white/[0.12] bg-gradient-to-br from-teal/20 via-white/[0.04] to-primary/20 flex items-center justify-center shadow-[6px_6px_0px_0px_rgba(34,211,238,0.15)]">
+                    <div className="flex flex-col items-center gap-2 text-muted-foreground/60">
+                      <Bell className="w-16 h-16" />
+                      <span
+                        className="text-xs uppercase tracking-[0.25em]"
+                        style={{ fontFamily: "var(--font-heading)", fontWeight: 600 }}
+                      >
+                        Preview Coming Soon
+                      </span>
+                    </div>
+                  </div>
+                )}
               </div>
             </motion.div>
           </div>
         </div>
       </section>
 
-      {/* ═══════════ HOW IT WORKS ═══════════ */}
+      {/* ═══════════ WHAT IT DOES ═══════════ */}
       <section className="py-20 bg-white/[0.02] backdrop-blur-sm border-y-2 border-white/[0.08]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -281,10 +304,10 @@ export function LunchBoxPage() {
           >
             <motion.div variants={fadeUp} custom={0} className="inline-block mb-4">
               <span
-                className="text-xs uppercase tracking-[0.25em] text-teal bg-teal/10 px-3 py-1 rounded-sm border border-teal/20"
+                className="text-xs uppercase tracking-[0.25em] text-primary bg-primary/10 px-3 py-1 rounded-sm border border-primary/20"
                 style={{ fontFamily: "var(--font-heading)", fontWeight: 600 }}
               >
-                How it works
+                What it does
               </span>
             </motion.div>
             <motion.h2
@@ -293,7 +316,7 @@ export function LunchBoxPage() {
               className="text-3xl sm:text-5xl text-foreground mb-4"
               style={{ fontFamily: "var(--font-display)" }}
             >
-              Draw It. Snap It. Done.
+              Get Attention, Gracefully
             </motion.h2>
             <motion.p
               variants={fadeUp}
@@ -301,54 +324,8 @@ export function LunchBoxPage() {
               className="text-muted-foreground max-w-2xl mx-auto"
               style={{ fontSize: "1.05rem" }}
             >
-              Open the layout editor, draw zones on your screen, and assign
-              them names. Drag windows to a zone or hit a shortcut — they
-              snap into place. Each monitor gets its own layout with as
-              many layers and zones as you want
+              Every game needs dialogs. Confirmation prompts, settings panels, toast feedback. Modal & Notifications handles the layering, focus, and dismissal so you can just show the content
             </motion.p>
-          </motion.div>
-
-          {/* Side-by-side: two editor screenshots */}
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-80px" }}
-            className="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-4xl mx-auto"
-          >
-            {[lunchBoxScreenshots[0], lunchBoxScreenshots[1]].map(
-              (shot, idx) => (
-                <motion.div
-                  key={shot.id}
-                  variants={fadeUp}
-                  custom={idx}
-                  className="flex flex-col items-center gap-3"
-                >
-                  <div className="relative w-full">
-                    <div
-                      className={`absolute inset-0 ${
-                        idx === 0 ? "bg-teal/10" : "bg-primary/10"
-                      } blur-[60px] rounded-full scale-110`}
-                    />
-                    <ImageWithFallback
-                      src={shot.src}
-                      alt={shot.label}
-                      className={`relative w-full rounded-sm border-2 border-white/[0.12] ${
-                        idx === 0 ? "-rotate-1" : "rotate-1"
-                      } hover:rotate-0 transition-transform duration-500`}
-                    />
-                  </div>
-                  <span
-                    className="text-xs text-muted-foreground uppercase tracking-wider"
-                    style={{
-                      fontFamily: "var(--font-heading)",
-                      fontWeight: 500,
-                    }}
-                  >
-                    {shot.label}
-                  </span>
-                </motion.div>
-              )
-            )}
           </motion.div>
         </div>
       </section>
@@ -364,7 +341,7 @@ export function LunchBoxPage() {
           >
             <motion.div variants={fadeUp} custom={0} className="inline-block mb-4">
               <span
-                className="text-xs uppercase tracking-[0.25em] text-primary bg-primary/10 px-3 py-1 rounded-sm border border-primary/20"
+                className="text-xs uppercase tracking-[0.25em] text-teal bg-teal/10 px-3 py-1 rounded-sm border border-teal/20"
                 style={{ fontFamily: "var(--font-heading)", fontWeight: 600 }}
               >
                 Features
@@ -376,14 +353,14 @@ export function LunchBoxPage() {
               className="text-3xl sm:text-5xl text-foreground mb-4"
               style={{ fontFamily: "var(--font-display)" }}
             >
-              Your Screen, Your Rules
+              Dialogs Without The Headache
             </motion.h2>
             <motion.p
               variants={fadeUp}
               custom={2}
               className="text-muted-foreground max-w-lg mx-auto"
             >
-              macOS window management that doesn't make you want to throw your laptop
+              Sane defaults for the hundred little things that make modals feel right
             </motion.p>
           </motion.div>
 
@@ -432,51 +409,46 @@ export function LunchBoxPage() {
       </section>
 
       {/* ═══════════ SCREENSHOTS GALLERY ═══════════ */}
-      <section className="py-24 bg-white/[0.02] backdrop-blur-sm border-y-2 border-white/[0.08]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            className="text-center mb-16"
-          >
-            <motion.div variants={fadeUp} custom={0} className="inline-block mb-4">
-              <span
-                className="text-xs uppercase tracking-[0.25em] text-teal bg-teal/10 px-3 py-1 rounded-sm border border-teal/20"
-                style={{ fontFamily: "var(--font-heading)", fontWeight: 600 }}
+      {screenshots.length > 0 && (
+        <section className="py-24 bg-white/[0.02] backdrop-blur-sm border-y-2 border-white/[0.08]">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-100px" }}
+              className="text-center mb-16"
+            >
+              <motion.div variants={fadeUp} custom={0} className="inline-block mb-4">
+                <span
+                  className="text-xs uppercase tracking-[0.25em] text-primary bg-primary/10 px-3 py-1 rounded-sm border border-primary/20"
+                  style={{ fontFamily: "var(--font-heading)", fontWeight: 600 }}
+                >
+                  Screenshots
+                </span>
+              </motion.div>
+              <motion.h2
+                variants={fadeUp}
+                custom={1}
+                className="text-3xl sm:text-5xl text-foreground mb-4"
+                style={{ fontFamily: "var(--font-display)" }}
               >
-                Screenshots
-              </span>
+                See It In Action
+              </motion.h2>
             </motion.div>
-            <motion.h2
-              variants={fadeUp}
-              custom={1}
-              className="text-3xl sm:text-5xl text-foreground mb-4"
-              style={{ fontFamily: "var(--font-display)" }}
-            >
-              See It In Action
-            </motion.h2>
-            <motion.p
-              variants={fadeUp}
-              custom={2}
-              className="text-muted-foreground max-w-lg mx-auto"
-            >
-              The layout editor, zone splitting, and windows snapped across multiple monitors
-            </motion.p>
-          </motion.div>
 
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={fadeUp}
-            custom={0}
-            className="flex justify-center"
-          >
-            <ScreenshotGallery />
-          </motion.div>
-        </div>
-      </section>
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={fadeUp}
+              custom={0}
+              className="flex justify-center"
+            >
+              <ScreenshotGallery />
+            </motion.div>
+          </div>
+        </section>
+      )}
 
       {/* ═══════════ CTA ═══════════ */}
       <section className="py-24">
@@ -492,7 +464,7 @@ export function LunchBoxPage() {
               className="text-3xl sm:text-5xl text-foreground mb-6"
               style={{ fontFamily: "var(--font-display)" }}
             >
-              Available on macOS
+              Coming To The Asset Store
             </motion.h2>
             <motion.p
               variants={fadeUp}
@@ -500,23 +472,21 @@ export function LunchBoxPage() {
               className="text-muted-foreground mb-8 max-w-md mx-auto"
               style={{ fontSize: "1.05rem" }}
             >
-              Custom window layouts on macOS without the headaches — download it now
+              Modal & Notifications is in active development. Want early access or have feature requests? Reach out
             </motion.p>
             <motion.div
               variants={fadeUp}
               custom={2}
               className="flex flex-wrap justify-center gap-4"
             >
-              <a
-                href="http://github.com/krookedlilly/lunchbox-releases/releases"
-                target="_blank"
-                rel="noopener noreferrer"
+              <Link
+                to="/contact"
                 className="inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-teal hover:bg-teal/90 text-black rounded-md border-2 border-teal transition-all hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_rgba(34,211,238,0.4)] uppercase tracking-wider text-sm"
                 style={{ fontFamily: "var(--font-heading)", fontWeight: 700 }}
               >
-                Download on GitHub
-                <ExternalLink className="w-4 h-4" />
-              </a>
+                Get In Touch
+                <ArrowLeft className="w-4 h-4 rotate-180" />
+              </Link>
             </motion.div>
           </motion.div>
         </div>
@@ -524,3 +494,5 @@ export function LunchBoxPage() {
     </div>
   );
 }
+
+export default ModalNotificationsPage;

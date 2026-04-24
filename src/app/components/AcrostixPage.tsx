@@ -248,7 +248,7 @@ export function AcrostixPage() {
               initial="hidden"
               animate="visible"
             >
-              {/* Released badge */}
+              {/* Released badge hidden — we're a real product catalog, not a coming-soon page
               <motion.div variants={fadeUp} custom={0} className="mb-6">
                 <span
                   className="inline-flex items-center gap-2 px-4 py-2 bg-lime text-black rounded-md -rotate-2 border-2 border-black shadow-[3px_3px_0px_0px_rgba(0,0,0,0.8)]"
@@ -258,6 +258,7 @@ export function AcrostixPage() {
                   <span className="text-sm uppercase tracking-wider">Released</span>
                 </span>
               </motion.div>
+              */}
 
               <motion.h1
                 variants={fadeUp}

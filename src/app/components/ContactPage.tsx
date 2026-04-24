@@ -285,7 +285,11 @@ export function ContactPage() {
                           <option value="match-fives">Match Fives</option>
                           <option value="50-ball-drop">50 Ball Drop</option>
                           <option value="he-keyboards">HE Keyboards</option>
-                          <option value="screen-manager">Screen Manager</option>
+                          <option value="screen-manager">UI Toolkit: Screen Manager</option>
+                          <option value="tween-engine">UI Toolkit: Tween Engine</option>
+                          <option value="responsive-layout">UI Toolkit: Responsive Layout</option>
+                          <option value="modal-notifications">UI Toolkit: Modal & Notifications</option>
+                          <option value="focus-navigation">UI Toolkit: Focus & Navigation</option>
                           <option value="lunchbox">LunchBox</option>
                           <option value="autohidehud">AutoHideHud</option>
                           <option value="card-labeler">Card Labeler</option>
