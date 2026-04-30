@@ -1,4 +1,4 @@
-import { useRef, useCallback } from "react";
+import { useRef, useCallback, useState } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "motion/react";
 import imgHomunculAiHero from "@/assets/homunculai-capsule-vertical.png";
@@ -8,7 +8,6 @@ import imgHomunculAiMultiagent from "@/assets/homunculai-multiagent.png";
 import imgHomunculAiArt from "@/assets/homunculai-art.png";
 import {
   ArrowLeft,
-  CheckCircle,
   Sparkles,
   Bot,
   Zap,
@@ -20,6 +19,7 @@ import {
   AlertTriangle,
   ShoppingBag,
   Download,
+  ChevronDown,
 } from "lucide-react";
 import { DesktopWindow } from "./DesktopWindow";
 import { PageMeta } from "./PageMeta";
@@ -53,8 +53,8 @@ const floatWindow = {
 const features = [
   {
     icon: Zap,
-    title: "A Body Language For Your Ai",
-    desc: "29 emotes, 21 gestures, 20 idle animations, 15 quick reactions. A full visual vocabulary your Ai can mix and match for whatever it's doing.",
+    title: "A Body Language For Your AI",
+    desc: "29 emotes, 21 gestures, 20 idle animations, 15 quick reactions. A full visual vocabulary your AI can mix and match for whatever it's doing.",
     accent: "teal" as const,
   },
   {
@@ -66,18 +66,18 @@ const features = [
   {
     icon: PenTool,
     title: "Custom SVG",
-    desc: "Not feeling the defaults? Your Ai can hand you SVG it drew itself and wear that instead. Fully loaded, no restart, no config file.",
+    desc: "Not feeling the defaults? Your AI can hand you SVG it drew itself and wear that instead. Fully loaded, no restart, no config file.",
     accent: "teal" as const,
   },
   {
     icon: Layers,
     title: "Multi-Instance",
-    desc: "Run as many windows as you want, in whatever arrangement fits your workflow. Each window is isolated with its own state, scoped to only the Ai connected to it.",
+    desc: "Run as many windows as you want, in whatever arrangement fits your workflow. Each window is isolated with its own state, scoped to only the AI connected to it.",
     accent: "primary" as const,
   },
   {
     icon: Plug,
-    title: "Plug-And-Play With Your Ai",
+    title: "Plug-And-Play With Your AI",
     desc: "Works with Claude Desktop, Cursor, any MCP client. Two-way channel in seconds — it speaks, you chat back, no config headaches.",
     accent: "teal" as const,
   },
@@ -116,11 +116,60 @@ const accentClasses = {
   },
 };
 
+/* ─── FAQ ─── */
+const faqs = [
+  {
+    q: "Does HomunculAi come with an AI?",
+    a: "No. HomunculAi is a display layer — it gives your AI a body. You connect the AI you already use, and that AI brings the avatar to life.",
+  },
+  {
+    q: "How is HomunculAi different from Replika or Character.ai?",
+    a: "Those apps provide their own AI. HomunculAi doesn't include one. Your actual AI — the one you already use for work, creativity, or coding — gets a visible presence on your screen, not a separate character from a different company.",
+  },
+  {
+    q: "What is MCP?",
+    a: "MCP (Model Context Protocol) is an open standard that lets AI clients connect to external tools and environments. HomunculAi uses MCP to receive commands from your AI.",
+  },
+  {
+    q: "What AI tools work with HomunculAi?",
+    a: "Claude Desktop, Claude Code, Cursor, Windsurf, and VS Code have built-in one-click setup. Other AI tools that support the MCP standard can be connected with a short manual step.",
+  },
+  {
+    q: "Does HomunculAi work with ChatGPT?",
+    a: "Not currently. ChatGPT doesn't support the connection standard HomunculAi uses.",
+  },
+  {
+    q: "Can I use a local AI like Ollama or LM Studio?",
+    a: "If your local AI supports MCP, yes. Setup would be a manual step rather than automatic, but it can be connected.",
+  },
+  {
+    q: "Do I need to know how to code?",
+    a: "Not for the main supported tools — setup is one click inside HomunculAi. Connecting less common AI tools requires a short manual config step, but no coding.",
+  },
+  {
+    q: "Does HomunculAi work on Mac or Linux?",
+    a: "Windows only for now.",
+  },
+  {
+    q: "Is it free?",
+    a: "There's a 7-day free trial — no account, no payment, no email required. After that, it's $4.99 one-time with no subscription.",
+  },
+  {
+    q: "Does HomunculAi collect my data?",
+    a: "No telemetry, no tracking. HomunculAi makes two outbound calls: one when you activate your license, and one when you manually check for updates from Settings. Everything else stays on your machine.",
+  },
+  {
+    q: "Will my AI remember me between sessions?",
+    a: "HomunculAi doesn't store conversation history between sessions. Whether your AI remembers you depends on the AI you connect — some have their own memory features you can enable through that app.",
+  },
+];
+
 /* ═══════════════════════════════════════════════════════
    MAIN PAGE
    ═══════════════════════════════════════════════════════ */
 export function HomunculAiPage() {
   const videoRef = useRef<HTMLVideoElement>(null);
+  const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   const handleVideoEnded = useCallback(() => {
     setTimeout(() => {
@@ -135,7 +184,7 @@ export function HomunculAiPage() {
     <div className="min-h-screen">
       <PageMeta
         title="HomunculAi"
-        description="HomunculAi is a visualization layer for your Ai agents. Any MCP-compatible agent picks a desktop body, changes its mood, and chats back while you work. Windows."
+        description="HomunculAi is a visualization layer for your AI agents. Any MCP-compatible agent picks a desktop body, changes its mood, and chats back while you work. Windows."
         path="/games/homunculai"
         image="/homunculai-og.png"
       />
@@ -189,7 +238,7 @@ export function HomunculAiPage() {
                 className="text-foreground/90 mb-6 italic"
                 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.25rem, 2.5vw, 1.75rem)", lineHeight: 1.2 }}
               >
-                What body will your Ai make?
+                What body will your AI make?
               </motion.p>
 
               <motion.p
@@ -198,7 +247,7 @@ export function HomunculAiPage() {
                 className="text-muted-foreground max-w-md mb-5"
                 style={{ fontSize: "1.05rem", lineHeight: 1.65 }}
               >
-                Right now, your Ai probably lives in a chat window, a terminal, or an editor. HomunculAi gives it a desktop presence. Your Ai takes a form, changes its mood, raises a thought bubble, chats with you in a separate channel, or just floats there next to your work.
+                Right now, your AI probably lives in a chat window, a terminal, or an editor. HomunculAi gives it a desktop presence. Your AI takes a form, changes its mood, raises a thought bubble, chats with you in a separate channel, or just floats there next to your work.
               </motion.p>
 
               <motion.p
@@ -206,7 +255,7 @@ export function HomunculAiPage() {
                 custom={4}
                 className="text-muted-foreground/60 text-sm mb-8 max-w-md"
               >
-                Designed by Lilly. Built with Ai input. Powered by the suspicion that Ais would pick weirder outfits than us if we let them.
+                Designed by Lilly. Built with AI input. Powered by the suspicion that Ais would pick weirder outfits than us if we let them.
               </motion.p>
 
               {/* Pill tags */}
@@ -227,7 +276,7 @@ export function HomunculAiPage() {
                   className="px-3 py-1 bg-teal/10 border border-teal/30 text-teal text-xs uppercase tracking-wider rounded-sm"
                   style={{ fontFamily: "var(--font-heading)", fontWeight: 700 }}
                 >
-                  Works With Any MCP Ai
+                  Works With Any MCP AI
                 </span>
               </motion.div>
 
@@ -235,7 +284,7 @@ export function HomunculAiPage() {
               <motion.div variants={fadeUp} custom={7} className="flex flex-wrap gap-x-4 gap-y-1 mb-3 text-xs">
                 <Link
                   to="/games/homunculai/terms"
-                  className="text-muted-foreground/70 hover:text-primary transition-colors uppercase tracking-wider"
+                  className="text-muted-foreground/70 hover:text-teal transition-colors uppercase tracking-wider"
                   style={{ fontFamily: "var(--font-heading)", fontWeight: 600 }}
                 >
                   Terms of Use
@@ -251,7 +300,7 @@ export function HomunculAiPage() {
                 <span className="text-muted-foreground/30">&middot;</span>
                 <Link
                   to="/games/homunculai/what-is-ai"
-                  className="text-muted-foreground/70 hover:text-primary transition-colors uppercase tracking-wider"
+                  className="text-muted-foreground/70 hover:text-teal transition-colors uppercase tracking-wider"
                   style={{ fontFamily: "var(--font-heading)", fontWeight: 600 }}
                 >
                   New to AI?
@@ -364,7 +413,7 @@ export function HomunculAiPage() {
                 className="text-muted-foreground max-w-md"
                 style={{ fontSize: "1.05rem", lineHeight: 1.7 }}
               >
-                You don't pick what your Ai looks like. Your Ai picks. One session it's a velociraptor in a top hat, next session it's a small, anxious bowl of soup. You never know what you'll get. That's the fun.
+                You don't pick what your AI looks like. Your AI picks. One session it's a velociraptor in a top hat, next session it's a small, anxious bowl of soup. You never know what you'll get. That's the fun.
               </p>
             </motion.div>
           </motion.div>
@@ -397,7 +446,7 @@ export function HomunculAiPage() {
                 className="text-muted-foreground max-w-md"
                 style={{ fontSize: "1.05rem", lineHeight: 1.7 }}
               >
-                Ship with 45 bodies and your Ai still wants something else. So it draws one. Full SVG, its own design, wears it instantly. You can't catalog imagination.
+                Ship with 45 bodies and your AI still wants something else. So it draws one. Full SVG, its own design, wears it instantly. You can't catalog imagination.
               </p>
             </motion.div>
           </motion.div>
@@ -424,7 +473,7 @@ export function HomunculAiPage() {
                 className="text-foreground mb-4"
                 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.75rem, 4vw, 2.5rem)", lineHeight: 1.1 }}
               >
-                A face on your Ai's state.
+                A face on your AI's state.
               </h3>
               <p
                 className="text-muted-foreground max-w-md"
@@ -452,7 +501,7 @@ export function HomunculAiPage() {
               className="text-3xl sm:text-5xl text-foreground mb-4"
               style={{ fontFamily: "var(--font-display)" }}
             >
-              Gives your Ai a body.
+              Gives your AI a body.
             </motion.h2>
             <motion.p
               variants={fadeUp}
@@ -525,16 +574,23 @@ export function HomunculAiPage() {
             >
               HomunculAi is live for Windows. Sold direct so it goes straight to the people making it.
             </motion.p>
+            <motion.p
+              variants={fadeUp}
+              custom={3}
+              className="text-muted-foreground/70 mb-6 max-w-lg mx-auto text-sm"
+            >
+              7-day free trial &mdash; no account, no payment, no email required.<br />$4.99 one time payment after. No subscription.
+            </motion.p>
 
             {/* Legal links strip above buy buttons */}
             <motion.div
               variants={fadeUp}
-              custom={3}
+              custom={4}
               className="flex flex-wrap gap-x-4 gap-y-1 mb-4 text-xs justify-center"
             >
               <Link
                 to="/games/homunculai/terms"
-                className="text-muted-foreground/70 hover:text-primary transition-colors uppercase tracking-wider"
+                className="text-muted-foreground/70 hover:text-teal transition-colors uppercase tracking-wider"
                 style={{ fontFamily: "var(--font-heading)", fontWeight: 600 }}
               >
                 Terms of Use
@@ -550,14 +606,14 @@ export function HomunculAiPage() {
               <span className="text-muted-foreground/30">&middot;</span>
               <Link
                 to="/games/homunculai/what-is-ai"
-                className="text-muted-foreground/70 hover:text-primary transition-colors uppercase tracking-wider"
+                className="text-muted-foreground/70 hover:text-teal transition-colors uppercase tracking-wider"
                 style={{ fontFamily: "var(--font-heading)", fontWeight: 600 }}
               >
                 New to AI?
               </Link>
             </motion.div>
 
-            <motion.div variants={fadeUp} custom={4} className="flex justify-center">
+            <motion.div variants={fadeUp} custom={5} className="flex justify-center">
               <a
                 href={BUY_DIRECT_URL}
                 target="_blank"
@@ -573,7 +629,7 @@ export function HomunculAiPage() {
             {/* Inline 18+ / regional note below buy buttons */}
             <motion.p
               variants={fadeUp}
-              custom={5}
+              custom={6}
               className="text-muted-foreground/60 text-xs mt-4"
               style={{ fontFamily: "var(--font-heading)", fontWeight: 500, lineHeight: 1.6 }}
             >
@@ -587,6 +643,86 @@ export function HomunculAiPage() {
               </Link>
               .
             </motion.p>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* ═══════════ FAQ ═══════════ */}
+      <section className="py-24 bg-white/[0.02] backdrop-blur-sm border-y-2 border-white/[0.08]">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+          >
+            <motion.h2
+              variants={fadeUp}
+              custom={0}
+              className="text-3xl sm:text-4xl text-foreground mb-10 text-center"
+              style={{ fontFamily: "var(--font-display)" }}
+            >
+              Common Questions
+            </motion.h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+              {[faqs.filter((_, i) => i % 2 === 0), faqs.filter((_, i) => i % 2 === 1)].map(
+                (col, colIdx) => (
+                  <div key={colIdx} className="flex flex-col gap-2">
+                    {col.map((faq) => {
+                      const i = faqs.indexOf(faq);
+                      const isOpen = openFaq === i;
+                      // Alternate within each column: pairs (0,1), (2,3)... flip accent each pair
+                      const accent = Math.floor(i / 2) % 2 === i % 2 ? "teal" : "primary";
+                      const accentBorder = accent === "teal" ? "border-teal/30" : "border-primary/30";
+                      const accentHoverBorder = accent === "teal" ? "hover:border-teal/30" : "hover:border-primary/30";
+                      const accentText = accent === "teal" ? "text-teal" : "text-primary";
+                      const accentHoverText = accent === "teal" ? "group-hover:text-teal" : "group-hover:text-primary";
+                      return (
+                        <motion.div
+                          key={i}
+                          variants={fadeUp}
+                          custom={i}
+                          initial="hidden"
+                          whileInView="visible"
+                          viewport={{ once: true, margin: "-20px" }}
+                          className={`group border-2 rounded-sm transition-colors duration-200 ${
+                            isOpen
+                              ? `${accentBorder} bg-white/[0.04]`
+                              : `border-white/[0.08] bg-white/[0.02] ${accentHoverBorder}`
+                          }`}
+                        >
+                          <button
+                            onClick={() => setOpenFaq(isOpen ? null : i)}
+                            className="w-full flex items-center justify-between gap-4 px-5 py-4 text-left"
+                          >
+                            <span
+                              className={`transition-colors duration-200 ${isOpen ? accentText : `text-foreground ${accentHoverText}`}`}
+                              style={{ fontFamily: "var(--font-heading)", fontWeight: 700, fontSize: "0.95rem" }}
+                            >
+                              {faq.q}
+                            </span>
+                            <ChevronDown
+                              className={`w-4 h-4 shrink-0 transition-transform duration-300 ${
+                                isOpen ? `rotate-180 ${accentText}` : `text-muted-foreground ${accentHoverText}`
+                              }`}
+                            />
+                          </button>
+                          <motion.div
+                            initial={false}
+                            animate={{ height: isOpen ? "auto" : 0, opacity: isOpen ? 1 : 0 }}
+                            transition={{ duration: 0.25, ease: "easeInOut" }}
+                            style={{ overflow: "hidden" }}
+                          >
+                            <p className="px-5 pb-5 text-muted-foreground text-sm" style={{ lineHeight: 1.7 }}>
+                              {faq.a}
+                            </p>
+                          </motion.div>
+                        </motion.div>
+                      );
+                    })}
+                  </div>
+                )
+              )}
+            </div>
           </motion.div>
         </div>
       </section>

@@ -224,7 +224,36 @@ export function HomunculAiWhatIsAIPage() {
               </p>
             </Section>
 
-            <Section title="The Bottom Line" index={6}>
+            <Section title="How HomunculAi Fits Into an AI Conversation" index={6}>
+              <p className="text-muted-foreground mb-3">
+                When you chat with an AI, you send it text and it sends text
+                back. HomunculAi adds a second channel alongside that. Instead
+                of only replying in words, your AI can also do things visually
+                — pick an appearance, change its expression, or send a message
+                through an avatar that floats on your desktop while you work.
+              </p>
+              <p className="text-muted-foreground mb-3">
+                The AI still works exactly the same way it always does. It reads
+                what you write, decides how to respond, and generates a reply.
+                With HomunculAi connected, it also has the option to update how
+                it looks as part of that response — the same way you might
+                adjust your facial expression while speaking, not just choose
+                different words.
+              </p>
+              <p className="text-muted-foreground mb-3">
+                HomunculAi does not change what your AI knows or how it thinks.
+                It gives it more ways to communicate — like handing someone who
+                could only write notes the ability to also make expressions.
+                Same mind, more tools.
+              </p>
+              <p className="text-muted-foreground">
+                This is also why HomunculAi needs you to already have an AI to
+                connect to. The avatar is an empty space until someone arrives
+                to inhabit it.
+              </p>
+            </Section>
+
+            <Section title="The Bottom Line" index={7}>
               <p className="text-muted-foreground mb-3">
                 The AI agent that inhabits your avatar is capable and creative,
                 but it is subject to all of the limitations above. It may say
