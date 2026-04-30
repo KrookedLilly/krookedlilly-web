@@ -31,7 +31,7 @@ function Section({
       className="mb-10"
     >
       <h2
-        className="text-xl text-primary mb-3 pb-2 border-b-2 border-primary/20"
+        className={`text-xl ${index % 2 === 0 ? "text-teal" : "text-primary"} mb-3 pb-2 border-b-2 ${index % 2 === 0 ? "border-teal/20" : "border-primary/20"}`}
         style={{ fontFamily: "var(--font-display)" }}
       >
         {title}
