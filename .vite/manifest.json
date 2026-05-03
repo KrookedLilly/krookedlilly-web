@@ -1,0 +1,925 @@
+{
+  "_PhoneScreenshot-mIFiuVHH.js": {
+    "file": "assets/PhoneScreenshot-mIFiuVHH.js",
+    "name": "PhoneScreenshot",
+    "imports": [
+      "index.html"
+    ]
+  },
+  "_bell-BNkugWxl.js": {
+    "file": "assets/bell-BNkugWxl.js",
+    "name": "bell",
+    "imports": [
+      "index.html"
+    ]
+  },
+  "_chevron-right-Dj0Ur960.js": {
+    "file": "assets/chevron-right-Dj0Ur960.js",
+    "name": "chevron-right",
+    "imports": [
+      "index.html"
+    ]
+  },
+  "_circle-check-big-6fV1xEcb.js": {
+    "file": "assets/circle-check-big-6fV1xEcb.js",
+    "name": "circle-check-big",
+    "imports": [
+      "index.html"
+    ]
+  },
+  "_client-DigqemH2.js": {
+    "file": "assets/client-DigqemH2.js",
+    "name": "client",
+    "isDynamicEntry": true,
+    "imports": [
+      "_vendor-router-DU9kNmIe.js"
+    ]
+  },
+  "_clock-DWIEsSE1.js": {
+    "file": "assets/clock-DWIEsSE1.js",
+    "name": "clock",
+    "imports": [
+      "index.html"
+    ]
+  },
+  "_download-COtDJg4K.js": {
+    "file": "assets/download-COtDJg4K.js",
+    "name": "download",
+    "imports": [
+      "index.html"
+    ]
+  },
+  "_external-link-CYDTtEE4.js": {
+    "file": "assets/external-link-CYDTtEE4.js",
+    "name": "external-link",
+    "imports": [
+      "index.html"
+    ]
+  },
+  "_eye-BCPx7g9U.js": {
+    "file": "assets/eye-BCPx7g9U.js",
+    "name": "eye",
+    "imports": [
+      "index.html"
+    ]
+  },
+  "_globe-DP9T1GQl.js": {
+    "file": "assets/globe-DP9T1GQl.js",
+    "name": "globe",
+    "imports": [
+      "index.html"
+    ]
+  },
+  "_gps-store-background-CcHy27TF.js": {
+    "file": "assets/gps-store-background-CcHy27TF.js",
+    "name": "gps-store-background",
+    "assets": [
+      "assets/gps-store-background-CTHMIfAC.png"
+    ]
+  },
+  "_keyboard-0BDY5eUX.js": {
+    "file": "assets/keyboard-0BDY5eUX.js",
+    "name": "keyboard",
+    "imports": [
+      "index.html"
+    ]
+  },
+  "_layers-Bi8fS4XS.js": {
+    "file": "assets/layers-Bi8fS4XS.js",
+    "name": "layers",
+    "imports": [
+      "index.html"
+    ]
+  },
+  "_mail-BM1jOtQc.js": {
+    "file": "assets/mail-BM1jOtQc.js",
+    "name": "mail",
+    "imports": [
+      "index.html"
+    ]
+  },
+  "_modalnotification-cover-DuDThbI1.js": {
+    "file": "assets/modalnotification-cover-DuDThbI1.js",
+    "name": "modalnotification-cover",
+    "assets": [
+      "assets/modalnotification-cover-BHRERnBd.png"
+    ]
+  },
+  "_monitor-g7-6sdSN.js": {
+    "file": "assets/monitor-g7-6sdSN.js",
+    "name": "monitor",
+    "imports": [
+      "index.html"
+    ]
+  },
+  "_package-BmNAVoY2.js": {
+    "file": "assets/package-BmNAVoY2.js",
+    "name": "package",
+    "imports": [
+      "index.html"
+    ]
+  },
+  "_palette-eavVKKi4.js": {
+    "file": "assets/palette-eavVKKi4.js",
+    "name": "palette",
+    "imports": [
+      "index.html"
+    ]
+  },
+  "_panels-top-left-iHOOwzMS.js": {
+    "file": "assets/panels-top-left-iHOOwzMS.js",
+    "name": "panels-top-left",
+    "imports": [
+      "index.html"
+    ]
+  },
+  "_screenmanager-cover-CPlnVztb.js": {
+    "file": "assets/screenmanager-cover-CPlnVztb.js",
+    "name": "screenmanager-cover",
+    "assets": [
+      "assets/screenmanager-cover-C3L2mkY2.png"
+    ]
+  },
+  "_settings-B9xQhvhU.js": {
+    "file": "assets/settings-B9xQhvhU.js",
+    "name": "settings",
+    "imports": [
+      "index.html"
+    ]
+  },
+  "_shield-DG4vzo6n.js": {
+    "file": "assets/shield-DG4vzo6n.js",
+    "name": "shield",
+    "imports": [
+      "index.html"
+    ]
+  },
+  "_shopping-bag-CqLK98ho.js": {
+    "file": "assets/shopping-bag-CqLK98ho.js",
+    "name": "shopping-bag",
+    "imports": [
+      "index.html"
+    ]
+  },
+  "_smartphone-9Cm1y0Iv.js": {
+    "file": "assets/smartphone-9Cm1y0Iv.js",
+    "name": "smartphone",
+    "imports": [
+      "index.html"
+    ]
+  },
+  "_star-C1NqiWL5.js": {
+    "file": "assets/star-C1NqiWL5.js",
+    "name": "star",
+    "imports": [
+      "index.html"
+    ]
+  },
+  "_target-Bv059O0D.js": {
+    "file": "assets/target-Bv059O0D.js",
+    "name": "target",
+    "imports": [
+      "index.html"
+    ]
+  },
+  "_timer-BABpjr71.js": {
+    "file": "assets/timer-BABpjr71.js",
+    "name": "timer",
+    "imports": [
+      "index.html"
+    ]
+  },
+  "_tweenengine-cover-BLqSz9WY.js": {
+    "file": "assets/tweenengine-cover-BLqSz9WY.js",
+    "name": "tweenengine-cover",
+    "assets": [
+      "assets/tweenengine-cover-DG3jysew.png"
+    ]
+  },
+  "_vendor-motion-BTeieGXM.js": {
+    "file": "assets/vendor-motion-BTeieGXM.js",
+    "name": "vendor-motion"
+  },
+  "_vendor-react-l0sNRNKZ.js": {
+    "file": "assets/vendor-react-l0sNRNKZ.js",
+    "name": "vendor-react"
+  },
+  "_vendor-router-DU9kNmIe.js": {
+    "file": "assets/vendor-router-DU9kNmIe.js",
+    "name": "vendor-router"
+  },
+  "_zap-on36q8hk.js": {
+    "file": "assets/zap-on36q8hk.js",
+    "name": "zap",
+    "imports": [
+      "index.html"
+    ]
+  },
+  "index.html": {
+    "file": "assets/app-BAIqg2gB.js",
+    "name": "app",
+    "src": "index.html",
+    "isEntry": true,
+    "imports": [
+      "_vendor-router-DU9kNmIe.js",
+      "_vendor-motion-BTeieGXM.js"
+    ],
+    "dynamicImports": [
+      "_client-DigqemH2.js",
+      "src/app/components/GamesPage.tsx",
+      "src/app/components/AcrostixPage.tsx",
+      "src/app/components/GpsPage.tsx",
+      "src/app/components/MatchFivesPage.tsx",
+      "src/app/components/BallDropPage.tsx",
+      "src/app/components/BallDropPrivacyPage.tsx",
+      "src/app/components/HomunculAiPage.tsx",
+      "src/app/components/HomunculAiTermsPage.tsx",
+      "src/app/components/HomunculAiSalesRestrictionsPage.tsx",
+      "src/app/components/HomunculAiWhatIsAIPage.tsx",
+      "src/app/components/AboutPage.tsx",
+      "src/app/components/ShopPage.tsx",
+      "src/app/components/ContactPage.tsx",
+      "src/app/components/HEKeyboardsPage.tsx",
+      "src/app/components/LunchBoxPage.tsx",
+      "src/app/components/ScreenManagerPage.tsx",
+      "src/app/components/TweenEnginePage.tsx",
+      "src/app/components/ResponsiveLayoutPage.tsx",
+      "src/app/components/ModalNotificationsPage.tsx",
+      "src/app/components/FocusNavigationPage.tsx",
+      "src/app/components/AcrostixPrivacyPage.tsx",
+      "src/app/components/AcrostixUniversalLinkPage.tsx",
+      "src/app/components/PressKitsPage.tsx"
+    ],
+    "css": [
+      "assets/app-1drHQNyR.css"
+    ],
+    "assets": [
+      "assets/autohidehud-logo-DhMS1DRX.png",
+      "assets/screenmanager-icon-B8TkHL23.png",
+      "assets/IMG_0490-1-4VRl6Iue.PNG",
+      "assets/IMG_0495-1-B8sRlO-H.PNG",
+      "assets/scores-dark-xI6B2mnJ.png",
+      "assets/IMG_0519-qL2w-nSE.PNG",
+      "assets/achievements-CONEpEiv.webp",
+      "assets/acrostix-light-home-QjhbnNpc.png",
+      "assets/acrostix-light-challenge-DkAVAnjd.png",
+      "assets/acrostix-light-results-D57pog3I.png",
+      "assets/acrostix-light-stats-DAwo3rLC.png",
+      "assets/acrostix-light-achievements-B_QClTLA.png",
+      "assets/acrostix-cb-home-UGXRltr8.png",
+      "assets/acrostix-cb-challenge-CN88qkiq.png",
+      "assets/acrostix-cb-results-B8rr0Z4t.png",
+      "assets/acrostix-cb-stats-BMiVzGvA.png",
+      "assets/acrostix-cb-achievements-DiRyjRk4.png",
+      "assets/matchfives-train-KFGVplKB.png",
+      "assets/matchfives-match-qeqzsQZr.png",
+      "assets/matchfives-play-Db0-pGxR.png",
+      "assets/matchfives-strategy-DQa0uQw8.png",
+      "assets/balldrop-gameplay1-DaN_8kJP.png",
+      "assets/balldrop-gameplay2-B_wUXqgk.png",
+      "assets/balldrop-gameplay3-Bo2j3669.png",
+      "assets/balldrop-gameplay4-xMzO28eb.png",
+      "assets/balldrop-home-BJr-1Ms0.png",
+      "assets/balldrop-results-CmgtkAZN.png",
+      "assets/hekeyboards-screenshot-1-DWBGkKs-.png",
+      "assets/hekeyboards-screenshot-2-zCRibNge.png",
+      "assets/hekeyboards-screenshot-3-DhwCTRvF.png",
+      "assets/hekeyboards-card-BLch66_9.png",
+      "assets/hekeyboards-promo-Ba4rRIX0.png",
+      "assets/hekeyboards-icon-Cck9plH5.png",
+      "assets/lunchbox-logo-vzGrn2Jn.png",
+      "assets/lunchbox-editor-center-CLSc27sU.png",
+      "assets/lunchbox-editor-zones-BaSw9BHh.png",
+      "assets/lunchbox-desktop-preview-CTGYtC11.png",
+      "assets/lunchbox-desktop-overview-cqrNpvKG.png",
+      "assets/acrostix-ipad-slide-1-gameplay-Cz6rmlZ8.png",
+      "assets/homunculai-capsule-main-CQk8rcbQ.png"
+    ]
+  },
+  "src/app/components/AboutPage.tsx": {
+    "file": "assets/AboutPage-CY2LC1N0.js",
+    "name": "AboutPage",
+    "src": "src/app/components/AboutPage.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "index.html",
+      "_zap-on36q8hk.js",
+      "_target-Bv059O0D.js",
+      "_vendor-router-DU9kNmIe.js",
+      "_vendor-motion-BTeieGXM.js"
+    ]
+  },
+  "src/app/components/AcrostixPage.tsx": {
+    "file": "assets/AcrostixPage-BCNEEPdN.js",
+    "name": "AcrostixPage",
+    "src": "src/app/components/AcrostixPage.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "index.html",
+      "_vendor-router-DU9kNmIe.js",
+      "_PhoneScreenshot-mIFiuVHH.js",
+      "_smartphone-9Cm1y0Iv.js",
+      "_clock-DWIEsSE1.js",
+      "_eye-BCPx7g9U.js",
+      "_star-C1NqiWL5.js",
+      "_vendor-motion-BTeieGXM.js"
+    ],
+    "assets": [
+      "assets/acrostix-iphone-slide-1-gameplay-C-gcYRHx.png",
+      "assets/acrostix-gameplay-DV-nTemp.mp4",
+      "assets/acrostix-iphone-slide-2-score-breakdown-Dxv8BwFC.png",
+      "assets/acrostix-iphone-slide-3-campaign-worlds-BztWEe1T.png"
+    ]
+  },
+  "src/app/components/AcrostixPrivacyPage.tsx": {
+    "file": "assets/AcrostixPrivacyPage-BGMLDr8a.js",
+    "name": "AcrostixPrivacyPage",
+    "src": "src/app/components/AcrostixPrivacyPage.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "index.html",
+      "_shield-DG4vzo6n.js",
+      "_vendor-router-DU9kNmIe.js",
+      "_vendor-motion-BTeieGXM.js"
+    ]
+  },
+  "src/app/components/AcrostixUniversalLinkPage.tsx": {
+    "file": "assets/AcrostixUniversalLinkPage-CJ9aUjHP.js",
+    "name": "AcrostixUniversalLinkPage",
+    "src": "src/app/components/AcrostixUniversalLinkPage.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "index.html",
+      "_vendor-router-DU9kNmIe.js",
+      "_smartphone-9Cm1y0Iv.js",
+      "_vendor-motion-BTeieGXM.js"
+    ]
+  },
+  "src/app/components/BallDropPage.tsx": {
+    "file": "assets/BallDropPage-DFTe_6ei.js",
+    "name": "BallDropPage",
+    "src": "src/app/components/BallDropPage.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "index.html",
+      "_vendor-router-DU9kNmIe.js",
+      "_PhoneScreenshot-mIFiuVHH.js",
+      "_smartphone-9Cm1y0Iv.js",
+      "_target-Bv059O0D.js",
+      "_palette-eavVKKi4.js",
+      "_chevron-right-Dj0Ur960.js",
+      "_vendor-motion-BTeieGXM.js"
+    ]
+  },
+  "src/app/components/BallDropPrivacyPage.tsx": {
+    "file": "assets/BallDropPrivacyPage-B1a64yrw.js",
+    "name": "BallDropPrivacyPage",
+    "src": "src/app/components/BallDropPrivacyPage.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "index.html",
+      "_shield-DG4vzo6n.js",
+      "_vendor-router-DU9kNmIe.js",
+      "_vendor-motion-BTeieGXM.js"
+    ]
+  },
+  "src/app/components/ContactPage.tsx": {
+    "file": "assets/ContactPage-0ChbO09z.js",
+    "name": "ContactPage",
+    "src": "src/app/components/ContactPage.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "index.html",
+      "_vendor-router-DU9kNmIe.js",
+      "_mail-BM1jOtQc.js",
+      "_circle-check-big-6fV1xEcb.js",
+      "_vendor-motion-BTeieGXM.js"
+    ]
+  },
+  "src/app/components/FocusNavigationPage.tsx": {
+    "file": "assets/FocusNavigationPage-CWowKQyb.js",
+    "name": "FocusNavigationPage",
+    "src": "src/app/components/FocusNavigationPage.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "index.html",
+      "_vendor-router-DU9kNmIe.js",
+      "_clock-DWIEsSE1.js",
+      "_package-BmNAVoY2.js",
+      "_keyboard-0BDY5eUX.js",
+      "_target-Bv059O0D.js",
+      "_eye-BCPx7g9U.js",
+      "_chevron-right-Dj0Ur960.js",
+      "_vendor-motion-BTeieGXM.js"
+    ]
+  },
+  "src/app/components/GamesPage.tsx": {
+    "file": "assets/GamesPage-BZd1z__g.js",
+    "name": "GamesPage",
+    "src": "src/app/components/GamesPage.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "index.html",
+      "_gps-store-background-CcHy27TF.js",
+      "_screenmanager-cover-CPlnVztb.js",
+      "_tweenengine-cover-BLqSz9WY.js",
+      "_modalnotification-cover-DuDThbI1.js",
+      "_vendor-router-DU9kNmIe.js",
+      "_clock-DWIEsSE1.js",
+      "_circle-check-big-6fV1xEcb.js",
+      "_external-link-CYDTtEE4.js",
+      "_vendor-motion-BTeieGXM.js"
+    ],
+    "assets": [
+      "assets/cardlabeler-logo-CaTXSER3.png"
+    ]
+  },
+  "src/app/components/GpsPage.tsx": {
+    "file": "assets/GpsPage-CJZOHO68.js",
+    "name": "GpsPage",
+    "src": "src/app/components/GpsPage.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "index.html",
+      "_vendor-router-DU9kNmIe.js",
+      "_gps-store-background-CcHy27TF.js",
+      "_clock-DWIEsSE1.js",
+      "_monitor-g7-6sdSN.js",
+      "_smartphone-9Cm1y0Iv.js",
+      "_package-BmNAVoY2.js",
+      "_globe-DP9T1GQl.js",
+      "_shield-DG4vzo6n.js",
+      "_star-C1NqiWL5.js",
+      "_vendor-motion-BTeieGXM.js"
+    ],
+    "assets": [
+      "assets/gps-logo-9uOggrAx.png",
+      "assets/gps-tutorial-ocsN7TPb.png",
+      "assets/gps-narwhal-cUligC7t.png",
+      "assets/gps-tentacle-c4zhOelG.png",
+      "assets/gps-planet4-BDO2AV8i.png",
+      "assets/gps-planet6-8YBRal3g.png",
+      "assets/gps-planet2-Bfv2QoWq.png",
+      "assets/gps-dead-planet-DXfz4ki3.png",
+      "assets/gps-solar-system-DQUi5gu2.png"
+    ]
+  },
+  "src/app/components/HEKeyboardsPage.tsx": {
+    "file": "assets/HEKeyboardsPage-BnNKRvqK.js",
+    "name": "HEKeyboardsPage",
+    "src": "src/app/components/HEKeyboardsPage.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "index.html",
+      "_vendor-router-DU9kNmIe.js",
+      "_keyboard-0BDY5eUX.js",
+      "_settings-B9xQhvhU.js",
+      "_zap-on36q8hk.js",
+      "_package-BmNAVoY2.js",
+      "_external-link-CYDTtEE4.js",
+      "_chevron-right-Dj0Ur960.js",
+      "_vendor-motion-BTeieGXM.js"
+    ]
+  },
+  "src/app/components/HomunculAiPage.tsx": {
+    "file": "assets/HomunculAiPage-BeSlep-X.js",
+    "name": "HomunculAiPage",
+    "src": "src/app/components/HomunculAiPage.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "index.html",
+      "_vendor-router-DU9kNmIe.js",
+      "_download-COtDJg4K.js",
+      "_zap-on36q8hk.js",
+      "_shield-DG4vzo6n.js",
+      "_layers-Bi8fS4XS.js",
+      "_shopping-bag-CqLK98ho.js",
+      "_vendor-motion-BTeieGXM.js"
+    ],
+    "assets": [
+      "assets/homunculai-capsule-vertical-BdhaD5j7.png",
+      "assets/homunculai-trailer-D-9y0xEq.mp4",
+      "assets/homunculai-svg-document-B5lVJBjP.png",
+      "assets/homunculai-multiagent-t3stS7xS.png",
+      "assets/homunculai-art-CYrZTR9D.png"
+    ]
+  },
+  "src/app/components/HomunculAiSalesRestrictionsPage.tsx": {
+    "file": "assets/HomunculAiSalesRestrictionsPage-Bvi8d-wP.js",
+    "name": "HomunculAiSalesRestrictionsPage",
+    "src": "src/app/components/HomunculAiSalesRestrictionsPage.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "index.html",
+      "_vendor-router-DU9kNmIe.js",
+      "_globe-DP9T1GQl.js",
+      "_vendor-motion-BTeieGXM.js"
+    ]
+  },
+  "src/app/components/HomunculAiTermsPage.tsx": {
+    "file": "assets/HomunculAiTermsPage-CrV86rjT.js",
+    "name": "HomunculAiTermsPage",
+    "src": "src/app/components/HomunculAiTermsPage.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "index.html",
+      "_vendor-router-DU9kNmIe.js",
+      "_vendor-motion-BTeieGXM.js"
+    ]
+  },
+  "src/app/components/HomunculAiWhatIsAIPage.tsx": {
+    "file": "assets/HomunculAiWhatIsAIPage-BgVbNff8.js",
+    "name": "HomunculAiWhatIsAIPage",
+    "src": "src/app/components/HomunculAiWhatIsAIPage.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "index.html",
+      "_vendor-router-DU9kNmIe.js",
+      "_vendor-motion-BTeieGXM.js"
+    ]
+  },
+  "src/app/components/LunchBoxPage.tsx": {
+    "file": "assets/LunchBoxPage-BGzBeY2o.js",
+    "name": "LunchBoxPage",
+    "src": "src/app/components/LunchBoxPage.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "index.html",
+      "_vendor-router-DU9kNmIe.js",
+      "_monitor-g7-6sdSN.js",
+      "_panels-top-left-iHOOwzMS.js",
+      "_layers-Bi8fS4XS.js",
+      "_keyboard-0BDY5eUX.js",
+      "_settings-B9xQhvhU.js",
+      "_external-link-CYDTtEE4.js",
+      "_chevron-right-Dj0Ur960.js",
+      "_vendor-motion-BTeieGXM.js"
+    ]
+  },
+  "src/app/components/MatchFivesPage.tsx": {
+    "file": "assets/MatchFivesPage-DF3YvxcP.js",
+    "name": "MatchFivesPage",
+    "src": "src/app/components/MatchFivesPage.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "index.html",
+      "_vendor-router-DU9kNmIe.js",
+      "_PhoneScreenshot-mIFiuVHH.js",
+      "_smartphone-9Cm1y0Iv.js",
+      "_timer-BABpjr71.js",
+      "_zap-on36q8hk.js",
+      "_circle-check-big-6fV1xEcb.js",
+      "_chevron-right-Dj0Ur960.js",
+      "_vendor-motion-BTeieGXM.js"
+    ]
+  },
+  "src/app/components/ModalNotificationsPage.tsx": {
+    "file": "assets/ModalNotificationsPage-C-g6pb9O.js",
+    "name": "ModalNotificationsPage",
+    "src": "src/app/components/ModalNotificationsPage.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "index.html",
+      "_vendor-router-DU9kNmIe.js",
+      "_modalnotification-cover-DuDThbI1.js",
+      "_clock-DWIEsSE1.js",
+      "_package-BmNAVoY2.js",
+      "_layers-Bi8fS4XS.js",
+      "_bell-BNkugWxl.js",
+      "_palette-eavVKKi4.js",
+      "_chevron-right-Dj0Ur960.js",
+      "_vendor-motion-BTeieGXM.js"
+    ]
+  },
+  "src/app/components/PressKitsPage.tsx": {
+    "file": "assets/PressKitsPage-yGP0BcKK.js",
+    "name": "PressKitsPage",
+    "src": "src/app/components/PressKitsPage.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "index.html",
+      "_vendor-router-DU9kNmIe.js",
+      "_download-COtDJg4K.js",
+      "_mail-BM1jOtQc.js",
+      "_vendor-motion-BTeieGXM.js"
+    ]
+  },
+  "src/app/components/ResponsiveLayoutPage.tsx": {
+    "file": "assets/ResponsiveLayoutPage-B3DWPsPs.js",
+    "name": "ResponsiveLayoutPage",
+    "src": "src/app/components/ResponsiveLayoutPage.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "index.html",
+      "_vendor-router-DU9kNmIe.js",
+      "_clock-DWIEsSE1.js",
+      "_package-BmNAVoY2.js",
+      "_smartphone-9Cm1y0Iv.js",
+      "_shield-DG4vzo6n.js",
+      "_monitor-g7-6sdSN.js",
+      "_chevron-right-Dj0Ur960.js",
+      "_vendor-motion-BTeieGXM.js"
+    ]
+  },
+  "src/app/components/ScreenManagerPage.tsx": {
+    "file": "assets/ScreenManagerPage-Cl04lOqs.js",
+    "name": "ScreenManagerPage",
+    "src": "src/app/components/ScreenManagerPage.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "index.html",
+      "_vendor-router-DU9kNmIe.js",
+      "_screenmanager-cover-CPlnVztb.js",
+      "_clock-DWIEsSE1.js",
+      "_package-BmNAVoY2.js",
+      "_panels-top-left-iHOOwzMS.js",
+      "_layers-Bi8fS4XS.js",
+      "_zap-on36q8hk.js",
+      "_chevron-right-Dj0Ur960.js",
+      "_vendor-motion-BTeieGXM.js"
+    ]
+  },
+  "src/app/components/ShopPage.tsx": {
+    "file": "assets/ShopPage-U-XkcM2i.js",
+    "name": "ShopPage",
+    "src": "src/app/components/ShopPage.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "index.html",
+      "_vendor-router-DU9kNmIe.js",
+      "_shopping-bag-CqLK98ho.js",
+      "_bell-BNkugWxl.js",
+      "_package-BmNAVoY2.js",
+      "_vendor-motion-BTeieGXM.js"
+    ]
+  },
+  "src/app/components/TweenEnginePage.tsx": {
+    "file": "assets/TweenEnginePage-B5TFvbw_.js",
+    "name": "TweenEnginePage",
+    "src": "src/app/components/TweenEnginePage.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "index.html",
+      "_vendor-router-DU9kNmIe.js",
+      "_tweenengine-cover-BLqSz9WY.js",
+      "_clock-DWIEsSE1.js",
+      "_package-BmNAVoY2.js",
+      "_timer-BABpjr71.js",
+      "_zap-on36q8hk.js",
+      "_chevron-right-Dj0Ur960.js",
+      "_vendor-motion-BTeieGXM.js"
+    ]
+  },
+  "src/assets/IMG_0490-1.PNG": {
+    "file": "assets/IMG_0490-1-4VRl6Iue.PNG",
+    "src": "src/assets/IMG_0490-1.PNG"
+  },
+  "src/assets/IMG_0495-1.PNG": {
+    "file": "assets/IMG_0495-1-B8sRlO-H.PNG",
+    "src": "src/assets/IMG_0495-1.PNG"
+  },
+  "src/assets/IMG_0519.PNG": {
+    "file": "assets/IMG_0519-qL2w-nSE.PNG",
+    "src": "src/assets/IMG_0519.PNG"
+  },
+  "src/assets/achievements.webp": {
+    "file": "assets/achievements-CONEpEiv.webp",
+    "src": "src/assets/achievements.webp"
+  },
+  "src/assets/acrostix-cb-achievements.png": {
+    "file": "assets/acrostix-cb-achievements-DiRyjRk4.png",
+    "src": "src/assets/acrostix-cb-achievements.png"
+  },
+  "src/assets/acrostix-cb-challenge.png": {
+    "file": "assets/acrostix-cb-challenge-CN88qkiq.png",
+    "src": "src/assets/acrostix-cb-challenge.png"
+  },
+  "src/assets/acrostix-cb-home.png": {
+    "file": "assets/acrostix-cb-home-UGXRltr8.png",
+    "src": "src/assets/acrostix-cb-home.png"
+  },
+  "src/assets/acrostix-cb-results.png": {
+    "file": "assets/acrostix-cb-results-B8rr0Z4t.png",
+    "src": "src/assets/acrostix-cb-results.png"
+  },
+  "src/assets/acrostix-cb-stats.png": {
+    "file": "assets/acrostix-cb-stats-BMiVzGvA.png",
+    "src": "src/assets/acrostix-cb-stats.png"
+  },
+  "src/assets/acrostix-gameplay.mp4": {
+    "file": "assets/acrostix-gameplay-DV-nTemp.mp4",
+    "src": "src/assets/acrostix-gameplay.mp4"
+  },
+  "src/assets/acrostix-ipad-slide-1-gameplay.png": {
+    "file": "assets/acrostix-ipad-slide-1-gameplay-Cz6rmlZ8.png",
+    "src": "src/assets/acrostix-ipad-slide-1-gameplay.png"
+  },
+  "src/assets/acrostix-iphone-slide-1-gameplay.png": {
+    "file": "assets/acrostix-iphone-slide-1-gameplay-C-gcYRHx.png",
+    "src": "src/assets/acrostix-iphone-slide-1-gameplay.png"
+  },
+  "src/assets/acrostix-iphone-slide-2-score-breakdown.png": {
+    "file": "assets/acrostix-iphone-slide-2-score-breakdown-Dxv8BwFC.png",
+    "src": "src/assets/acrostix-iphone-slide-2-score-breakdown.png"
+  },
+  "src/assets/acrostix-light-achievements.png": {
+    "file": "assets/acrostix-light-achievements-B_QClTLA.png",
+    "src": "src/assets/acrostix-light-achievements.png"
+  },
+  "src/assets/acrostix-light-challenge.png": {
+    "file": "assets/acrostix-light-challenge-DkAVAnjd.png",
+    "src": "src/assets/acrostix-light-challenge.png"
+  },
+  "src/assets/acrostix-light-home.png": {
+    "file": "assets/acrostix-light-home-QjhbnNpc.png",
+    "src": "src/assets/acrostix-light-home.png"
+  },
+  "src/assets/acrostix-light-results.png": {
+    "file": "assets/acrostix-light-results-D57pog3I.png",
+    "src": "src/assets/acrostix-light-results.png"
+  },
+  "src/assets/acrostix-light-stats.png": {
+    "file": "assets/acrostix-light-stats-DAwo3rLC.png",
+    "src": "src/assets/acrostix-light-stats.png"
+  },
+  "src/assets/autohidehud-logo.png": {
+    "file": "assets/autohidehud-logo-DhMS1DRX.png",
+    "src": "src/assets/autohidehud-logo.png"
+  },
+  "src/assets/balldrop-gameplay1.png": {
+    "file": "assets/balldrop-gameplay1-DaN_8kJP.png",
+    "src": "src/assets/balldrop-gameplay1.png"
+  },
+  "src/assets/balldrop-gameplay2.png": {
+    "file": "assets/balldrop-gameplay2-B_wUXqgk.png",
+    "src": "src/assets/balldrop-gameplay2.png"
+  },
+  "src/assets/balldrop-gameplay3.png": {
+    "file": "assets/balldrop-gameplay3-Bo2j3669.png",
+    "src": "src/assets/balldrop-gameplay3.png"
+  },
+  "src/assets/balldrop-gameplay4.png": {
+    "file": "assets/balldrop-gameplay4-xMzO28eb.png",
+    "src": "src/assets/balldrop-gameplay4.png"
+  },
+  "src/assets/balldrop-home.png": {
+    "file": "assets/balldrop-home-BJr-1Ms0.png",
+    "src": "src/assets/balldrop-home.png"
+  },
+  "src/assets/balldrop-results.png": {
+    "file": "assets/balldrop-results-CmgtkAZN.png",
+    "src": "src/assets/balldrop-results.png"
+  },
+  "src/assets/cardlabeler-logo.png": {
+    "file": "assets/cardlabeler-logo-CaTXSER3.png",
+    "src": "src/assets/cardlabeler-logo.png"
+  },
+  "src/assets/gps-dead-planet.png": {
+    "file": "assets/gps-dead-planet-DXfz4ki3.png",
+    "src": "src/assets/gps-dead-planet.png"
+  },
+  "src/assets/gps-logo.png": {
+    "file": "assets/gps-logo-9uOggrAx.png",
+    "src": "src/assets/gps-logo.png"
+  },
+  "src/assets/gps-narwhal.png": {
+    "file": "assets/gps-narwhal-cUligC7t.png",
+    "src": "src/assets/gps-narwhal.png"
+  },
+  "src/assets/gps-planet2.png": {
+    "file": "assets/gps-planet2-Bfv2QoWq.png",
+    "src": "src/assets/gps-planet2.png"
+  },
+  "src/assets/gps-planet4.png": {
+    "file": "assets/gps-planet4-BDO2AV8i.png",
+    "src": "src/assets/gps-planet4.png"
+  },
+  "src/assets/gps-planet6.png": {
+    "file": "assets/gps-planet6-8YBRal3g.png",
+    "src": "src/assets/gps-planet6.png"
+  },
+  "src/assets/gps-solar-system.png": {
+    "file": "assets/gps-solar-system-DQUi5gu2.png",
+    "src": "src/assets/gps-solar-system.png"
+  },
+  "src/assets/gps-store-background.png": {
+    "file": "assets/gps-store-background-CTHMIfAC.png",
+    "src": "src/assets/gps-store-background.png"
+  },
+  "src/assets/gps-tentacle.png": {
+    "file": "assets/gps-tentacle-c4zhOelG.png",
+    "src": "src/assets/gps-tentacle.png"
+  },
+  "src/assets/gps-tutorial.png": {
+    "file": "assets/gps-tutorial-ocsN7TPb.png",
+    "src": "src/assets/gps-tutorial.png"
+  },
+  "src/assets/hekeyboards-card.png": {
+    "file": "assets/hekeyboards-card-BLch66_9.png",
+    "src": "src/assets/hekeyboards-card.png"
+  },
+  "src/assets/hekeyboards-icon.png": {
+    "file": "assets/hekeyboards-icon-Cck9plH5.png",
+    "src": "src/assets/hekeyboards-icon.png"
+  },
+  "src/assets/hekeyboards-promo.png": {
+    "file": "assets/hekeyboards-promo-Ba4rRIX0.png",
+    "src": "src/assets/hekeyboards-promo.png"
+  },
+  "src/assets/hekeyboards-screenshot-1.png": {
+    "file": "assets/hekeyboards-screenshot-1-DWBGkKs-.png",
+    "src": "src/assets/hekeyboards-screenshot-1.png"
+  },
+  "src/assets/hekeyboards-screenshot-2.png": {
+    "file": "assets/hekeyboards-screenshot-2-zCRibNge.png",
+    "src": "src/assets/hekeyboards-screenshot-2.png"
+  },
+  "src/assets/hekeyboards-screenshot-3.png": {
+    "file": "assets/hekeyboards-screenshot-3-DhwCTRvF.png",
+    "src": "src/assets/hekeyboards-screenshot-3.png"
+  },
+  "src/assets/homunculai-art.png": {
+    "file": "assets/homunculai-art-CYrZTR9D.png",
+    "src": "src/assets/homunculai-art.png"
+  },
+  "src/assets/homunculai-capsule-main.png": {
+    "file": "assets/homunculai-capsule-main-CQk8rcbQ.png",
+    "src": "src/assets/homunculai-capsule-main.png"
+  },
+  "src/assets/homunculai-capsule-vertical.png": {
+    "file": "assets/homunculai-capsule-vertical-BdhaD5j7.png",
+    "src": "src/assets/homunculai-capsule-vertical.png"
+  },
+  "src/assets/homunculai-multiagent.png": {
+    "file": "assets/homunculai-multiagent-t3stS7xS.png",
+    "src": "src/assets/homunculai-multiagent.png"
+  },
+  "src/assets/homunculai-svg-document.png": {
+    "file": "assets/homunculai-svg-document-B5lVJBjP.png",
+    "src": "src/assets/homunculai-svg-document.png"
+  },
+  "src/assets/homunculai-trailer.mp4": {
+    "file": "assets/homunculai-trailer-D-9y0xEq.mp4",
+    "src": "src/assets/homunculai-trailer.mp4"
+  },
+  "src/assets/lunchbox-desktop-overview.png": {
+    "file": "assets/lunchbox-desktop-overview-cqrNpvKG.png",
+    "src": "src/assets/lunchbox-desktop-overview.png"
+  },
+  "src/assets/lunchbox-desktop-preview.png": {
+    "file": "assets/lunchbox-desktop-preview-CTGYtC11.png",
+    "src": "src/assets/lunchbox-desktop-preview.png"
+  },
+  "src/assets/lunchbox-editor-center.png": {
+    "file": "assets/lunchbox-editor-center-CLSc27sU.png",
+    "src": "src/assets/lunchbox-editor-center.png"
+  },
+  "src/assets/lunchbox-editor-zones.png": {
+    "file": "assets/lunchbox-editor-zones-BaSw9BHh.png",
+    "src": "src/assets/lunchbox-editor-zones.png"
+  },
+  "src/assets/lunchbox-logo.png": {
+    "file": "assets/lunchbox-logo-vzGrn2Jn.png",
+    "src": "src/assets/lunchbox-logo.png"
+  },
+  "src/assets/matchfives-match.png": {
+    "file": "assets/matchfives-match-qeqzsQZr.png",
+    "src": "src/assets/matchfives-match.png"
+  },
+  "src/assets/matchfives-play.png": {
+    "file": "assets/matchfives-play-Db0-pGxR.png",
+    "src": "src/assets/matchfives-play.png"
+  },
+  "src/assets/matchfives-strategy.png": {
+    "file": "assets/matchfives-strategy-DQa0uQw8.png",
+    "src": "src/assets/matchfives-strategy.png"
+  },
+  "src/assets/matchfives-train.png": {
+    "file": "assets/matchfives-train-KFGVplKB.png",
+    "src": "src/assets/matchfives-train.png"
+  },
+  "src/assets/modalnotification-cover.png": {
+    "file": "assets/modalnotification-cover-BHRERnBd.png",
+    "src": "src/assets/modalnotification-cover.png"
+  },
+  "src/assets/scores-dark.png": {
+    "file": "assets/scores-dark-xI6B2mnJ.png",
+    "src": "src/assets/scores-dark.png"
+  },
+  "src/assets/screenmanager-cover.png": {
+    "file": "assets/screenmanager-cover-C3L2mkY2.png",
+    "src": "src/assets/screenmanager-cover.png"
+  },
+  "src/assets/screenmanager-icon.png": {
+    "file": "assets/screenmanager-icon-B8TkHL23.png",
+    "src": "src/assets/screenmanager-icon.png"
+  },
+  "src/assets/small/acrostix-iphone-slide-3-campaign-worlds.png": {
+    "file": "assets/acrostix-iphone-slide-3-campaign-worlds-BztWEe1T.png",
+    "src": "src/assets/small/acrostix-iphone-slide-3-campaign-worlds.png"
+  },
+  "src/assets/tweenengine-cover.png": {
+    "file": "assets/tweenengine-cover-DG3jysew.png",
+    "src": "src/assets/tweenengine-cover.png"
+  }
+}
