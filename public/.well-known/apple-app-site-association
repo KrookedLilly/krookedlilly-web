@@ -1,0 +1,14 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["CJ6VS87K3J.com.krookedlilly.acrostix"],
+        "components": [
+          { "/": "/games/acrostix/sv/*",       "comment": "Semantic Volley invites" },
+          { "/": "/games/acrostix/daily/*",    "comment": "Daily challenge (future)" },
+          { "/": "/games/acrostix/campaign/*", "comment": "Campaign deep links (future)" }
+        ]
+      }
+    ]
+  }
+}

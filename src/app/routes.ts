@@ -46,6 +46,13 @@ export const routes: RouteRecord[] = [
           })),
       },
       {
+        path: "games/50-ball-drop/privacy",
+        lazy: () =>
+          import("./components/BallDropPrivacyPage").then((m) => ({
+            Component: m.BallDropPrivacyPage,
+          })),
+      },
+      {
         path: "games/homunculai",
         lazy: () =>
           import("./components/HomunculAiPage").then((m) => ({
@@ -148,6 +155,13 @@ export const routes: RouteRecord[] = [
         lazy: () =>
           import("./components/AcrostixPrivacyPage").then((m) => ({
             Component: m.AcrostixPrivacyPage,
+          })),
+      },
+      {
+        path: "games/acrostix/sv/:gameId",
+        lazy: () =>
+          import("./components/AcrostixUniversalLinkPage").then((m) => ({
+            Component: m.AcrostixUniversalLinkPage,
           })),
       },
       {
