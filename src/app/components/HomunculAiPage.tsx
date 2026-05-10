@@ -188,6 +188,38 @@ export function HomunculAiPage() {
         path="/games/homunculai"
         image="/homunculai-og.png"
       />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "SoftwareApplication",
+            "name": "HomunculAi",
+            "operatingSystem": "Windows",
+            "applicationCategory": "UtilitiesApplication",
+            "offers": {
+              "@type": "Offer",
+              "price": "4.99",
+              "priceCurrency": "USD",
+              "availability": "https://schema.org/InStock",
+              "seller": { "@type": "Organization", "name": "KrookedLilly" }
+            },
+            "description": "HomunculAi is a visualization layer for your AI agents. Any MCP-compatible agent picks a desktop body, changes its mood, and chats back while you work.",
+            "url": "https://www.krookedlilly.com/games/homunculai/",
+            "image": "https://www.krookedlilly.com/homunculai-og.png",
+            "author": { "@type": "Organization", "name": "KrookedLilly", "url": "https://www.krookedlilly.com" },
+            "screenshot": "https://www.krookedlilly.com/homunculai-og.png",
+            "featureList": "MCP integration, Custom SVG avatars, Multi-instance, Two-way chat, 7-day free trial"
+          },
+          {
+            "@type": "FAQPage",
+            "mainEntity": faqs.map(faq => ({
+              "@type": "Question",
+              "name": faq.q,
+              "acceptedAnswer": { "@type": "Answer", "text": faq.a }
+            }))
+          }
+        ]
+      })}} />
       {/* ═══════════ HERO ═══════════ */}
       <section className="relative pt-6 pb-20">
         {/* Background glow */}
