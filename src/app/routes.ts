@@ -158,6 +158,13 @@ export const routes: RouteRecord[] = [
           })),
       },
       {
+        path: "games/acrostix/terms",
+        lazy: () =>
+          import("./components/AcrostixTermsPage").then((m) => ({
+            Component: m.AcrostixTermsPage,
+          })),
+      },
+      {
         path: "games/acrostix/sv/:gameId",
         lazy: () =>
           import("./components/AcrostixUniversalLinkPage").then((m) => ({

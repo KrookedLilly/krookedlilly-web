@@ -1,4 +1,5 @@
 import { motion } from "motion/react";
+import { Link } from "react-router-dom";
 import { Shield } from "lucide-react";
 import { PageMeta } from "./PageMeta";
 
@@ -84,7 +85,7 @@ export function AcrostixPrivacyPage() {
             transition={{ delay: 0.1 }}
             className="text-muted-foreground"
           >
-            Effective Date: April 3, 2026
+            Effective Date: May 23, 2026
           </motion.p>
         </div>
       </section>
@@ -98,30 +99,150 @@ export function AcrostixPrivacyPage() {
                 Krookedlilly LLC ("we," "our," or "us") built Acrostix as a word
                 game application available on iOS and Android. This Privacy
                 Policy explains what information we collect, how we use it, and
-                the choices you have. We are committed to protecting your privacy
-                and being transparent about our data practices.
+                the choices you have. We are committed to protecting your
+                privacy and being transparent about our data practices.
+              </p>
+              <p className="text-muted-foreground mb-3">
+                Acrostix is primarily a single-player game. Features such as
+                Semantic Volley multiplayer, the friends list, and
+                cross-platform leaderboards are optional and require
+                lightweight, pseudonymous account data to function. We do not
+                require you to provide your real name or email address to play
+                or to use any of these features.
               </p>
               <div className="bg-primary/10 border-l-3 border-primary p-4 rounded-r-sm text-sm text-foreground">
-                Acrostix does not require an account to play and does not sell
-                your personal information.
+                Acrostix does not require you to share personally identifiable
+                information to play, and we do not sell your personal
+                information. Your use of Acrostix is also governed by our{" "}
+                <Link
+                  to="/games/acrostix/terms"
+                  className="text-primary hover:text-primary/80 transition-colors underline underline-offset-2"
+                >
+                  Terms of Service
+                </Link>
+                .
               </div>
             </Section>
 
             <Section title="Information We Collect" index={1}>
               <p className="text-muted-foreground mb-3">
-                <strong className="text-foreground">Gameplay Data</strong>
+                <strong className="text-foreground">
+                  Local Gameplay Data
+                </strong>
                 <br />
-                Your campaign progress, high scores, collectibles, and user
-                preferences are stored locally on your device in an on-device
-                database.
+                Your campaign progress, high scores, collectibles, in-game
+                inventory, and user preferences are stored locally on your
+                device in an on-device database. This data does not leave your
+                device unless you opt in to a feature that requires it (such as
+                cloud sync, leaderboards, or multiplayer).
               </p>
 
               <p className="text-muted-foreground mb-3">
-                <strong className="text-foreground">Score Submissions</strong>
+                <strong className="text-foreground">
+                  Anonymous Player Account
+                </strong>
                 <br />
-                When you complete levels, scoring data is sent to our servers to
-                help improve the scoring engine, level design, and game balance.
-                These submissions include:
+                When you first launch Acrostix, the app creates an anonymous
+                account through Firebase Authentication and assigns your
+                install a randomly generated user identifier (a "UID"). This
+                UID is not linked to your name, email address, phone number, or
+                any other personal information by default. It is used to keep
+                your multiplayer games, friends list, and player profile
+                consistent across launches on the same device. If you uninstall
+                and reinstall the app, a new UID is generated.
+              </p>
+              <p className="text-muted-foreground mb-3">
+                You may optionally choose to link your anonymous account to a
+                Google Account or Apple ID. Linking is only used to keep your
+                Acrostix UID stable across reinstalls or devices. We do not
+                store your Google or Apple email address on our servers beyond
+                what Firebase Authentication retains for sign-in purposes.
+              </p>
+
+              <p className="text-muted-foreground mb-3">
+                <strong className="text-foreground">
+                  Player Profile &amp; Display Identity
+                </strong>
+                <br />
+                If you use a feature that interacts with other players (such
+                as multiplayer or friends), Acrostix maintains a public player
+                profile in our cloud database that may include: your chosen
+                display name, a display title, customization choices for your
+                player card (background, tile color, letter border style, and
+                equipped sticker), your friend code, your platform (iOS or
+                Android), the date your profile was created, and your
+                preferences for matchmaking and friend requests. Display
+                names are not free-form text — you assemble one by combining
+                two words from a curated word pool that we maintain, so they
+                cannot contain personal information, contact details, or
+                arbitrary text.
+              </p>
+
+              <p className="text-muted-foreground mb-3">
+                <strong className="text-foreground">
+                  Multiplayer Game Data
+                </strong>
+                <br />
+                When you play a Semantic Volley multiplayer match, we
+                store a record of the match in our cloud database so that both
+                players can resume and review it. A match record may include:
+                the target word, each turn's word and score, scoring metadata,
+                the mode and difficulty, timestamps, any in-game reactions
+                (such as squamoji) you send, and a snapshot of each
+                participant's display identity (display name and player card
+                customizations) at the time the match was played. Both players
+                can see each other's submissions for matches you've both
+                participated in.
+              </p>
+
+              <p className="text-muted-foreground mb-3">
+                <strong className="text-foreground">Friends</strong>
+                <br />
+                If you use the friends feature, we store a list of friendships
+                (pairs of UIDs), pending friend requests, and the 6-character
+                friend code we generate for your account. A friend code lookup
+                returns only your public player profile (display name, title,
+                card customizations) — never your underlying UID, email
+                address, or contact info. You can disable incoming friend
+                requests in the app's settings.
+              </p>
+
+              <p className="text-muted-foreground mb-3">
+                <strong className="text-foreground">Push Notifications</strong>
+                <br />
+                If you grant notification permission, Acrostix registers a push
+                notification token issued by Apple Push Notification service
+                (iOS) or Firebase Cloud Messaging (Android) through the Expo
+                push service. We store this token on your player profile so we
+                can send you gameplay notifications (such as "It's your turn"
+                in multiplayer). You can revoke notification permission at any
+                time in your device settings; the token is then no longer
+                usable.
+              </p>
+
+              <p className="text-muted-foreground mb-3">
+                <strong className="text-foreground">Device Attestation</strong>
+                <br />
+                To protect multiplayer fairness and prevent abuse of features
+                such as friend lookup and game submission, Acrostix uses
+                Apple's App Attest (iOS) and Google's Play Integrity API
+                (Android). These services generate a cryptographic token that
+                confirms requests are coming from a genuine, unmodified copy of
+                the app on a real device. The attestation token does not
+                identify you personally. A randomly generated device identifier
+                may be sent alongside the token for rate-limiting purposes;
+                this identifier is not linked to your name or contact
+                information.
+              </p>
+
+              <p className="text-muted-foreground mb-3">
+                <strong className="text-foreground">
+                  Score &amp; Telemetry Submissions
+                </strong>
+                <br />
+                When you complete levels, scoring data is sent to our servers
+                to help us improve the scoring engine, level design, and game
+                balance. These submissions include:
               </p>
               <ul className="list-disc ml-6 text-muted-foreground mb-3 space-y-1">
                 <li>The sentence you wrote and the target word</li>
@@ -133,20 +254,25 @@ export function AcrostixPrivacyPage() {
                 <li>App version number and platform (iOS or Android)</li>
               </ul>
               <p className="text-muted-foreground mb-3">
-                These submissions do not include any device identifiers, account
-                information, or any data that could be used to identify you
-                personally. We use this data solely to improve the game's scoring
-                accuracy and level design.
+                Single-player score submissions are anonymous and are not
+                linked to your player profile or display name. Multiplayer
+                turns are stored alongside the match record described above and
+                are visible to your opponent for that match.
               </p>
 
               <p className="text-muted-foreground mb-3">
                 <strong className="text-foreground">Advertising Data</strong>
                 <br />
-                Acrostix displays optional rewarded ads powered by Google AdMob.
-                When you choose to watch a rewarded ad, AdMob may collect
-                certain device information, including your device's advertising
-                identifier (IDFA on iOS, GAID on Android), to serve and measure
-                ads. This data is collected by Google and is governed by{" "}
+                Acrostix displays banner ads on certain non-gameplay screens
+                and offers optional rewarded ads (which you may choose to watch
+                in exchange for in-game rewards). Both types are served by
+                Google AdMob. AdMob may collect certain device information,
+                including your device's advertising identifier (IDFA on iOS,
+                GAID on Android) and other technical signals, to serve and
+                measure ads. On iOS, Acrostix will present Apple's App Tracking
+                Transparency prompt the first time it is appropriate; if you
+                deny tracking, non-personalized ads will be served instead.
+                Advertising data is collected by Google and is governed by{" "}
                 <a
                   href="https://policies.google.com/privacy"
                   className="text-primary hover:text-primary/80 transition-colors underline underline-offset-2"
@@ -155,19 +281,19 @@ export function AcrostixPrivacyPage() {
                 >
                   Google's Privacy Policy
                 </a>
-                . We do not have access to this data.
+                . We do not have access to advertising identifiers.
               </p>
-
               <p className="text-muted-foreground">
                 <strong className="text-foreground">Premium Sync Data</strong>
                 <br />
                 If you are a premium subscriber and choose to enable data
-                syncing, your gameplay data (including campaign progress, high
-                scores, and collectibles) will be synced through your platform's
-                cloud storage service — Apple iCloud on iOS or Google Drive on
-                Android. This data is stored in your personal cloud storage
-                account and is governed by the respective platform's privacy
-                policies.
+                syncing, your single-player gameplay data (including campaign
+                progress, high scores, and collectibles) will be synced through
+                your platform's cloud storage service — Apple iCloud on iOS or
+                Google Drive on Android. This data is stored in your personal
+                cloud storage account and is governed by the respective
+                platform's privacy policies. We do not operate our own server
+                for premium sync.
               </p>
             </Section>
 
@@ -177,36 +303,149 @@ export function AcrostixPrivacyPage() {
               </p>
               <ul className="list-disc ml-6 text-muted-foreground space-y-1">
                 <li>
-                  We do not collect your name, email address, or any personal
-                  contact information through the app.
+                  We do not require or collect your real name, email address,
+                  phone number, or any other personal contact information
+                  through the app.
                 </li>
                 <li>
-                  We do not collect device identifiers or any information that
-                  could be used to identify you — advertising identifiers are
-                  collected only by Google AdMob when you watch a rewarded ad.
+                  We do not collect your device's advertising identifier
+                  ourselves — only Google AdMob does, and only as described
+                  above.
                 </li>
                 <li>We do not collect location data.</li>
-                <li>We do not use our own analytics or tracking services.</li>
+                <li>
+                  We do not use our own third-party analytics or behavioral
+                  tracking services.
+                </li>
                 <li>
                   We do not collect payment or financial information — all
                   purchases are processed entirely by the Apple App Store or
                   Google Play Store.
                 </li>
+                <li>
+                  We do not access your device contacts, photos, microphone, or
+                  camera.
+                </li>
               </ul>
             </Section>
 
-            <Section title="Third-Party Services" index={3}>
+            <Section
+              title="Multiplayer &amp; Friends — What's Visible to Others"
+              index={3}
+            >
+              <p className="text-muted-foreground mb-3">
+                When you use Acrostix's social features, the following
+                information may be visible to other players:
+              </p>
+              <ul className="list-disc ml-6 text-muted-foreground space-y-1">
+                <li>
+                  <strong className="text-foreground">Opponents:</strong> Your
+                  display name, display title, and player card customizations
+                  are shown to anyone you are matched with in Semantic
+                  Volley. The words and scores you submit during a match
+                  are visible to your opponent for that match.
+                </li>
+                <li>
+                  <strong className="text-foreground">Friends:</strong> Anyone
+                  you add as a friend (or who adds you) can see your display
+                  name, title, and player card customizations, and can invite
+                  you to matches.
+                </li>
+                <li>
+                  <strong className="text-foreground">Friend Lookup:</strong>{" "}
+                  Anyone who knows your 6-character friend code can look up
+                  your public player profile. They cannot see your UID, linked
+                  Google/Apple account, email address, or contact information.
+                </li>
+                <li>
+                  <strong className="text-foreground">Leaderboards:</strong>{" "}
+                  Your platform leaderboard name (set in Apple Game Center or
+                  Google Play Games) is visible to other players on those
+                  leaderboards. For cross-platform leaderboards, only your
+                  initials and score are shown to players on the other
+                  platform.
+                </li>
+                <li>
+                  <strong className="text-foreground">Match Invites:</strong>{" "}
+                  Multiplayer invite links you share (for example, via your
+                  device's share sheet) contain a match identifier that anyone
+                  with the link can use to join that match.
+                </li>
+              </ul>
+              <p className="text-muted-foreground mt-3">
+                You can change your display name and customizations, opt out
+                of random matchmaking, require friend requests for new
+                connections, or delete your account at any time from the
+                in-app settings.
+              </p>
+            </Section>
+
+            <Section title="Third-Party Services" index={4}>
+              <p className="text-muted-foreground mb-3">
+                <strong className="text-foreground">
+                  Firebase (Google)
+                </strong>
+                <br />
+                Acrostix uses Firebase Authentication, Cloud Firestore, and
+                Cloud Functions for its multiplayer, friends, and player
+                profile features. These services store your anonymous account,
+                player profile, multiplayer match records, and push
+                notification token. Firebase is provided by Google and is
+                governed by{" "}
+                <a
+                  href="https://firebase.google.com/support/privacy"
+                  className="text-primary hover:text-primary/80 transition-colors underline underline-offset-2"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Firebase's Privacy and Security policies
+                </a>
+                .
+              </p>
+
+              <p className="text-muted-foreground mb-3">
+                <strong className="text-foreground">
+                  Google &amp; Apple Sign-In (Optional)
+                </strong>
+                <br />
+                If you choose to link your anonymous Acrostix account to a
+                Google Account or Apple ID, that sign-in is handled by Google
+                or Apple. Their respective privacy policies apply to the
+                sign-in itself.
+              </p>
+
+              <p className="text-muted-foreground mb-3">
+                <strong className="text-foreground">
+                  Apple Push Notification Service &amp; Firebase Cloud
+                  Messaging
+                </strong>
+                <br />
+                If you enable notifications, push tokens issued by APNs (iOS)
+                or FCM (Android) are used to deliver gameplay notifications.
+                Token registration is handled through the Expo push service.
+              </p>
+
+              <p className="text-muted-foreground mb-3">
+                <strong className="text-foreground">
+                  Apple App Attest &amp; Google Play Integrity
+                </strong>
+                <br />
+                Used solely to verify that requests originate from a genuine,
+                unmodified copy of the app. These services do not provide us
+                with personal information.
+              </p>
+
               <p className="text-muted-foreground mb-3">
                 <strong className="text-foreground">
                   Advertising (Google AdMob)
                 </strong>
                 <br />
-                Acrostix includes optional rewarded ads served by Google AdMob.
-                Rewarded ads are never forced — you may choose to watch an ad in
-                exchange for additional daily scores. AdMob may use your device's
-                advertising identifier and other device information to serve
-                relevant ads and measure ad performance. For more information,
-                see{" "}
+                Acrostix includes banner ads on certain screens and optional
+                rewarded ads, both served by Google AdMob. Rewarded ads are
+                never forced — you may choose to watch an ad in exchange for
+                in-game rewards. AdMob may use your device's advertising
+                identifier and other device information to serve and measure
+                ads. For more information, see{" "}
                 <a
                   href="https://policies.google.com/privacy"
                   className="text-primary hover:text-primary/80 transition-colors underline underline-offset-2"
@@ -232,22 +471,22 @@ export function AcrostixPrivacyPage() {
                   Platform Game Services
                 </strong>
                 <br />
-                Acrostix integrates with Apple Game Center (iOS) and Google Play
-                Games Services (Android) to provide leaderboard functionality.
-                Your use of these services is governed by their respective
-                privacy policies. Participation in leaderboards requires you to
-                sign in to these platform services, which is handled entirely by
-                Apple or Google.
+                Acrostix integrates with Apple Game Center (iOS) and Google
+                Play Games Services (Android) to provide leaderboard
+                functionality. Your use of these services is governed by their
+                respective privacy policies. Participation in leaderboards
+                requires you to sign in to these platform services, which is
+                handled entirely by Apple or Google.
               </p>
 
               <p className="text-muted-foreground mb-3">
                 <strong className="text-foreground">In-App Purchases</strong>
                 <br />
                 Acrostix offers a premium subscription that unlocks additional
-                content. All subscription transactions are processed entirely by
-                Apple (App Store) or Google (Google Play). We do not receive,
-                process, or store any payment details. Subscription validation is
-                performed on-device.
+                content. All subscription transactions are processed entirely
+                by Apple (App Store) or Google (Google Play). We do not
+                receive, process, or store any payment details. Subscription
+                validation is performed on-device.
               </p>
 
               <p className="text-muted-foreground mb-3">
@@ -255,10 +494,11 @@ export function AcrostixPrivacyPage() {
                   Cloud Sync (Premium Feature)
                 </strong>
                 <br />
-                Premium users may opt in to sync their gameplay data via Apple
-                iCloud or Google Drive. We do not operate our own servers for
-                this feature — your data is stored in your personal cloud account
-                and subject to Apple's or Google's privacy policies.
+                Premium users may opt in to sync their single-player gameplay
+                data via Apple iCloud or Google Drive. We do not operate our
+                own server for this feature — your data is stored in your
+                personal cloud account and subject to Apple's or Google's
+                privacy policies.
               </p>
 
               <p className="text-muted-foreground mb-3">
@@ -266,59 +506,72 @@ export function AcrostixPrivacyPage() {
                   Scoring Data Updates
                 </strong>
                 <br />
-                Acrostix periodically checks for updated scoring data to improve
-                gameplay accuracy. These requests are authenticated with an
-                app-level token but do not include any user data, device
-                identifiers, or personal information.
+                Acrostix periodically checks for updated scoring data to
+                improve gameplay accuracy. These requests are authenticated
+                with an app-level token but do not include any user data,
+                device identifiers, or personal information.
               </p>
 
               <p className="text-muted-foreground">
-                <strong className="text-foreground">App Store Services</strong>
+                <strong className="text-foreground">
+                  App Store Services
+                </strong>
                 <br />
                 Apple and Google may independently collect crash reports,
                 diagnostics, and usage statistics through their respective app
                 store platforms. This data collection is managed by Apple and
-                Google under their own privacy policies and is not controlled by
-                us.
+                Google under their own privacy policies and is not controlled
+                by us.
               </p>
             </Section>
 
-            <Section title="Sharing Your Score" index={4}>
+            <Section title="Sharing Your Score" index={5}>
               <p className="text-muted-foreground">
-                Acrostix includes a "Share Score" feature that uses your device's
-                native share sheet. When you choose to share your score, you
-                control where and how that information is shared. We do not
-                access, track, or store any information about your sharing
-                activity.
+                Acrostix includes a "Share Score" feature that uses your
+                device's native share sheet. When you choose to share your
+                score, you control where and how that information is shared.
+                We do not access, track, or store any information about your
+                sharing activity.
               </p>
             </Section>
 
-            <Section title="Data Retention" index={5}>
+            <Section title="Data Retention &amp; Deletion" index={6}>
               <p className="text-muted-foreground mb-3">
-                Your local gameplay data remains on your device until you delete
-                the app or clear the app's data. Score submission data that we
-                receive for level design purposes is fully anonymous and cannot
-                be linked to any individual user or device.
+                Your local gameplay data remains on your device until you
+                delete the app or clear the app's data. Single-player score
+                submissions that we receive for level design purposes are
+                stored without any identifier linking them to your account.
+              </p>
+              <p className="text-muted-foreground mb-3">
+                Your player profile, friends list, push token, and multiplayer
+                match records are retained in our cloud database for as long
+                as your account remains active. You can delete your player
+                profile from the in-app settings; doing so removes your
+                profile, friends, friend requests, and push token. For
+                fairness to opponents, completed multiplayer match records
+                may be retained in a redacted form so the other participant
+                can continue to view the match in their own history.
               </p>
               <p className="text-muted-foreground">
-                If you use the premium sync feature, your synced data is retained
-                in your personal iCloud or Google Drive account and can be
-                managed through your platform's storage settings.
+                If you use the premium sync feature, your synced data is
+                retained in your personal iCloud or Google Drive account and
+                can be managed through your platform's storage settings.
               </p>
             </Section>
 
-            <Section title="Children's Privacy" index={6}>
+            <Section title="Children's Privacy" index={7}>
               <p className="text-muted-foreground mb-3">
-                Acrostix is rated for all ages and is not specifically directed
-                at children under the age of 13. We do not knowingly collect
-                personal information from children. The app includes optional
-                rewarded ads served by Google AdMob; these ads are not
-                personalized for children and comply with applicable regulations.
+                Acrostix is rated for all ages and is not specifically
+                directed at children under the age of 13. We do not knowingly
+                collect personal information from children. The app includes
+                banner and optional rewarded ads served by Google AdMob;
+                these are configured to comply with applicable regulations
+                and, where required, are served as non-personalized ads.
               </p>
               <p className="text-muted-foreground">
                 If you are a parent or guardian and believe your child has
-                somehow provided us with personal information, please contact us
-                at{" "}
+                somehow provided us with personal information, please contact
+                us at{" "}
                 <a
                   href="mailto:support@krookedlilly.com"
                   className="text-primary hover:text-primary/80 transition-colors underline underline-offset-2"
@@ -329,33 +582,63 @@ export function AcrostixPrivacyPage() {
               </p>
             </Section>
 
-            <Section title="Data Security" index={7}>
+            <Section title="Data Security" index={8}>
               <p className="text-muted-foreground">
                 We take reasonable measures to protect the limited data we
-                collect. Score submission data is stored securely and access is
-                restricted. However, no method of electronic transmission or
-                storage is 100% secure, and we cannot guarantee absolute
-                security.
+                collect. Requests to our servers are sent over HTTPS, sensitive
+                multiplayer endpoints require device attestation, and access
+                to backend data is restricted. However, no method of
+                electronic transmission or storage is 100% secure, and we
+                cannot guarantee absolute security.
               </p>
             </Section>
 
-            <Section title="Your Rights and Choices" index={8}>
+            <Section title="Your Rights and Choices" index={9}>
               <p className="text-muted-foreground mb-3">
                 You have control over your data in the following ways:
               </p>
               <ul className="list-disc ml-6 text-muted-foreground space-y-1">
                 <li>
                   <strong className="text-foreground">Local Data:</strong> You
-                  can delete all local gameplay data by uninstalling the app or
-                  clearing its data through your device settings.
+                  can delete all local gameplay data by uninstalling the app
+                  or clearing its data through your device settings.
                 </li>
                 <li>
-                  <strong className="text-foreground">Advertising:</strong> You
-                  can limit ad tracking or reset your advertising identifier
-                  through your device's privacy settings. On iOS, you can
-                  disable the IDFA via Settings &gt; Privacy &gt; Tracking. On
-                  Android, you can opt out of personalized ads via Settings &gt;
-                  Google &gt; Ads.
+                  <strong className="text-foreground">
+                    Account Deletion:
+                  </strong>{" "}
+                  You can delete your player profile, friends list, friend
+                  requests, and push token from the in-app settings at any
+                  time.
+                </li>
+                <li>
+                  <strong className="text-foreground">
+                    Profile &amp; Display Name:
+                  </strong>{" "}
+                  You can change your display name, title, and player card
+                  customizations at any time in the in-app settings.
+                </li>
+                <li>
+                  <strong className="text-foreground">
+                    Friends &amp; Matchmaking:
+                  </strong>{" "}
+                  You can require approval for new friend requests, opt out
+                  of random matchmaking, and remove existing friends from the
+                  in-app settings.
+                </li>
+                <li>
+                  <strong className="text-foreground">Notifications:</strong>{" "}
+                  You can revoke notification permission at any time in your
+                  device settings. The associated push token will then no
+                  longer be usable.
+                </li>
+                <li>
+                  <strong className="text-foreground">Advertising:</strong>{" "}
+                  You can limit ad tracking or reset your advertising
+                  identifier through your device's privacy settings. On iOS,
+                  you can disable the IDFA via Settings &gt; Privacy &amp;
+                  Security &gt; Tracking. On Android, you can opt out of
+                  personalized ads via Settings &gt; Google &gt; Ads.
                 </li>
                 <li>
                   <strong className="text-foreground">Cloud Sync:</strong> You
@@ -364,26 +647,27 @@ export function AcrostixPrivacyPage() {
                   your iCloud or Google Drive account.
                 </li>
                 <li>
-                  <strong className="text-foreground">Leaderboards:</strong> You
-                  can opt out of leaderboards by signing out of Game Center or
-                  Google Play Games Services in your device settings.
+                  <strong className="text-foreground">Leaderboards:</strong>{" "}
+                  You can opt out of leaderboards by signing out of Game
+                  Center or Google Play Games Services in your device
+                  settings.
                 </li>
               </ul>
             </Section>
 
-            <Section title="Changes to This Privacy Policy" index={9}>
+            <Section title="Changes to This Privacy Policy" index={10}>
               <p className="text-muted-foreground">
-                We may update this Privacy Policy from time to time. If we make
-                material changes, we will notify you through an in-app notice or
-                by updating the effective date at the top of this page. We
-                encourage you to review this policy periodically.
+                We may update this Privacy Policy from time to time. If we
+                make material changes, we will notify you through an in-app
+                notice or by updating the effective date at the top of this
+                page. We encourage you to review this policy periodically.
               </p>
             </Section>
 
-            <Section title="Contact Us" index={10}>
+            <Section title="Contact Us" index={11}>
               <p className="text-muted-foreground mb-3">
-                If you have any questions or concerns about this Privacy Policy
-                or our data practices, please contact us:
+                If you have any questions or concerns about this Privacy
+                Policy or our data practices, please contact us:
               </p>
               <p className="text-foreground">
                 Krookedlilly LLC
