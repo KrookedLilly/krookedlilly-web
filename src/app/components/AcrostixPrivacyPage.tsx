@@ -153,10 +153,17 @@ export function AcrostixPrivacyPage() {
               </p>
               <p className="text-muted-foreground mb-3">
                 You may optionally choose to link your anonymous account to a
-                Google Account or Apple ID. Linking is only used to keep your
-                Acrostix UID stable across reinstalls or devices. We do not
-                store your Google or Apple email address on our servers beyond
-                what Firebase Authentication retains for sign-in purposes.
+                Google Account or Apple ID. Linking serves two purposes: it
+                keeps your Acrostix identity stable across reinstalls and
+                across devices, and it enables cross-platform syncing of
+                your gameplay data so that signing in with the same linked
+                account on a different device (including across iOS and
+                Android) restores your profile, progress, friends, and
+                multiplayer history. The cross-device sync is mediated by
+                Firebase Authentication and Cloud Firestore using your
+                stable Acrostix account. We do not store your Google or
+                Apple email address on our servers beyond what Firebase
+                Authentication retains for sign-in purposes.
               </p>
 
               <p className="text-muted-foreground mb-3">
@@ -254,10 +261,95 @@ export function AcrostixPrivacyPage() {
                 <li>App version number and platform (iOS or Android)</li>
               </ul>
               <p className="text-muted-foreground mb-3">
-                Single-player score submissions are anonymous and are not
-                linked to your player profile or display name. Multiplayer
-                turns are stored alongside the match record described above and
-                are visible to your opponent for that match.
+                Single-player score submissions are pseudonymous: they are
+                not linked to your player profile, display name, or any
+                personally identifying information, although they are
+                associated with a randomly generated device identifier as
+                described under "Cloud-Based Scoring" below. Multiplayer
+                turns are stored alongside the match record described above
+                and are visible to your opponent for that match.
+              </p>
+
+              <p className="text-muted-foreground mb-3">
+                <strong className="text-foreground">
+                  Cloud-Based Scoring
+                </strong>
+                <br />
+                Acrostix uses a hybrid scoring engine. Most scoring runs
+                entirely on your device using data we ship inside the App.
+                However, whenever a word in your sentence is not present in
+                our pre-scored data — which is common — the App sends that
+                word, the target word, and (for grammar scoring) the
+                surrounding sentence text to our scoring backend hosted on
+                Cloudflare so that the missing score can be computed in real
+                time. This applies to all players, not only premium
+                subscribers; the premium subscription only affects daily
+                usage quotas, not whether this path is used.
+              </p>
+              <p className="text-muted-foreground mb-3">
+                Our backend in turn calls Anthropic's Claude API — a
+                third-party large-language-model service — to produce the
+                score. Anthropic processes the submitted text under its
+                contractual commitments to us as an API customer and under{" "}
+                <a
+                  href="https://www.anthropic.com/legal/privacy"
+                  className="text-primary hover:text-primary/80 transition-colors underline underline-offset-2"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Anthropic's privacy policy
+                </a>
+                . We do not provide Anthropic with your name, contact
+                information, Acrostix account identifier, or any other
+                directly identifying information.
+              </p>
+              <p className="text-muted-foreground mb-3">
+                For performance and operational logging, our scoring backend
+                stores the following in a Cloudflare D1 database:
+              </p>
+              <ul className="list-disc ml-6 text-muted-foreground mb-3 space-y-1">
+                <li>
+                  The target word, the individual words scored, and the
+                  normalized sentence text
+                </li>
+                <li>
+                  The scores returned and an indication of which model
+                  produced them
+                </li>
+                <li>
+                  A randomly generated, pseudonymous device identifier and
+                  game identifier
+                </li>
+                <li>
+                  Cache hit/miss statistics and token-usage counts for the
+                  request
+                </li>
+                <li>
+                  A label indicating whether the request originated from
+                  single-player or multiplayer mode
+                </li>
+              </ul>
+              <p className="text-muted-foreground mb-3">
+                The device identifier is generated by the App on first
+                launch and is not linked to your name, email address,
+                Apple/Google sign-in, or Acrostix display name. We retain
+                this scoring cache so that repeat scoring of the same word
+                or sentence does not require another call to the
+                language-model provider.
+              </p>
+              <p className="text-muted-foreground mb-3">
+                <strong className="text-foreground">
+                  You can opt out of cloud-based scoring entirely
+                </strong>{" "}
+                by denying Acrostix network access in your device settings.
+                Acrostix is designed to work offline: the base
+                single-player game will continue to function using only the
+                on-device scoring engine. The trade-off is that words not
+                present in the pre-scored data shipped with the App will
+                receive a lower fallback score, which may reduce your
+                overall scoring accuracy. Multiplayer, friends, push
+                notifications, leaderboards, and cloud sync also require
+                network access and are unavailable while offline.
               </p>
 
               <p className="text-muted-foreground mb-3">
@@ -284,16 +376,23 @@ export function AcrostixPrivacyPage() {
                 . We do not have access to advertising identifiers.
               </p>
               <p className="text-muted-foreground">
-                <strong className="text-foreground">Premium Sync Data</strong>
+                <strong className="text-foreground">Cloud Sync Data</strong>
                 <br />
-                If you are a premium subscriber and choose to enable data
-                syncing, your single-player gameplay data (including campaign
-                progress, high scores, and collectibles) will be synced through
-                your platform's cloud storage service — Apple iCloud on iOS or
-                Google Drive on Android. This data is stored in your personal
-                cloud storage account and is governed by the respective
-                platform's privacy policies. We do not operate our own server
-                for premium sync.
+                Acrostix offers two options for syncing your gameplay data
+                across devices. (1) <strong>Platform cloud storage:</strong>{" "}
+                If you enable platform-cloud sync, your single-player
+                gameplay data (campaign progress, high scores, and
+                collectibles) is stored in your own Apple iCloud (iOS) or
+                Google Drive (Android) account and governed by the
+                respective platform's privacy policies; we do not operate
+                our own server for this option. (2) <strong>Cross-platform
+                sync via a linked account:</strong> If you have linked a
+                Google or Apple account to your Acrostix account (see
+                "Anonymous Player Account" above), your gameplay data syncs
+                across all devices and platforms where you sign in with
+                that linked account using Firebase Cloud Firestore. This
+                cross-platform option works between iOS and Android. You
+                may use either option, both, or neither.
               </p>
             </Section>
 
@@ -490,15 +589,36 @@ export function AcrostixPrivacyPage() {
               </p>
 
               <p className="text-muted-foreground mb-3">
+                <strong className="text-foreground">Cloud Sync</strong>
+                <br />
+                You may sync your single-player gameplay data via Apple
+                iCloud or Google Drive (in which case the data is stored in
+                your personal cloud account and subject to Apple's or
+                Google's privacy policies; we do not operate a server for
+                this option) and/or via Firebase Cloud Firestore using a
+                linked Google or Apple account, which enables cross-platform
+                syncing between iOS and Android as described above.
+              </p>
+
+              <p className="text-muted-foreground mb-3">
                 <strong className="text-foreground">
-                  Cloud Sync (Premium Feature)
+                  Anthropic (Claude API)
                 </strong>
                 <br />
-                Premium users may opt in to sync their single-player gameplay
-                data via Apple iCloud or Google Drive. We do not operate our
-                own server for this feature — your data is stored in your
-                personal cloud account and subject to Apple's or Google's
-                privacy policies.
+                When real-time scoring requires a language-model call (see
+                "Cloud-Based Scoring" above), our scoring backend forwards
+                the relevant words and sentence text to Anthropic's Claude
+                API. Anthropic is a sub-processor of player-submitted
+                scoring content and processes that content under{" "}
+                <a
+                  href="https://www.anthropic.com/legal/privacy"
+                  className="text-primary hover:text-primary/80 transition-colors underline underline-offset-2"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Anthropic's privacy policy
+                </a>{" "}
+                and its contractual commitments to us as an API customer.
               </p>
 
               <p className="text-muted-foreground mb-3">
@@ -553,7 +673,7 @@ export function AcrostixPrivacyPage() {
                 can continue to view the match in their own history.
               </p>
               <p className="text-muted-foreground">
-                If you use the premium sync feature, your synced data is
+                If you use the cloud sync feature, your synced data is
                 retained in your personal iCloud or Google Drive account and
                 can be managed through your platform's storage settings.
               </p>
@@ -602,6 +722,15 @@ export function AcrostixPrivacyPage() {
                   <strong className="text-foreground">Local Data:</strong> You
                   can delete all local gameplay data by uninstalling the app
                   or clearing its data through your device settings.
+                </li>
+                <li>
+                  <strong className="text-foreground">Offline Play:</strong>{" "}
+                  You can deny Acrostix network access in your device
+                  settings to prevent any cloud-based scoring, multiplayer
+                  activity, or other network use by the App. The base
+                  single-player game continues to work offline, with the
+                  trade-off that words not in the App's pre-scored data
+                  will receive a lower fallback score.
                 </li>
                 <li>
                   <strong className="text-foreground">

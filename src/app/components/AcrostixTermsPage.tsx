@@ -252,16 +252,22 @@ export function AcrostixTermsPage() {
               <p className="text-muted-foreground mb-3">
                 By submitting a Submission, you grant Krookedlilly LLC a
                 worldwide, non-exclusive, royalty-free, transferable license
-                to host, store, display, transmit, and process that Submission
-                solely for the purposes of (a) operating the App and its
-                multiplayer features, (b) showing your Submission to the
-                opponent in the match where it was submitted and to you for
-                your own review, (c) anonymized improvement of our scoring
-                engine, level design, and game balance, and (d) safety and
-                anti-abuse review. This license ends when you delete the
-                relevant data, except to the extent we have already used your
-                Submission in anonymized form for scoring improvement, in
-                which case the anonymized data may be retained.
+                to host, store, display, transmit, and process that
+                Submission solely for the purposes of (a) operating the App
+                and its multiplayer features, (b) showing your Submission to
+                the opponent in the match where it was submitted and to you
+                for your own review, (c) scoring your Submission through our
+                scoring infrastructure, including by forwarding individual
+                words and the sentence text to a third-party
+                language-model provider (currently Anthropic) when those
+                words are not present in the App's pre-scored data, as
+                further described in our Privacy Policy, (d) anonymized
+                improvement of our scoring engine, level design, and game
+                balance, and (e) safety and anti-abuse review. This license
+                ends when you delete the relevant data, except to the
+                extent we have already used your Submission in anonymized
+                or pseudonymized form for scoring improvement or scoring
+                cache, in which case the resulting data may be retained.
               </p>
               <p className="text-muted-foreground">
                 You represent that you have all rights necessary to grant the
@@ -285,14 +291,24 @@ export function AcrostixTermsPage() {
                 display name and the approximate date and mode of the match)
                 for us to identify the activity.
               </p>
+              <p className="text-muted-foreground mb-3">
+                Acrostix automatically filters player Submissions against a
+                list of prohibited words that we maintain. Submissions that
+                match this list are rejected at the point of input and are
+                never delivered to your opponent. This automated filter is
+                provided as a baseline safeguard and is not exhaustive —
+                novel spellings, intentional misspellings, words not on the
+                list, or combinations of permitted words may still be
+                submitted. We do not manually pre-screen every Submission
+                and we are not obligated to monitor multiplayer matches in
+                real time.
+              </p>
               <p className="text-muted-foreground">
-                We do not pre-screen player Submissions and we are not
-                obligated to monitor multiplayer matches. We do, however,
-                reserve the right to investigate reports, review match
-                records, and take action under Section 7. The friends system
-                allows you to remove any friend, require approval for new
-                friend requests, and opt out of random matchmaking from
-                within the App at any time.
+                We reserve the right to investigate reports, review match
+                records, update the filter list, and take action under
+                Section 7. The friends system also allows you to remove any
+                friend, require approval for new friend requests, and opt
+                out of random matchmaking from within the App at any time.
               </p>
             </Section>
 
