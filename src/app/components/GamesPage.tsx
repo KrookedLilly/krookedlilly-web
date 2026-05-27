@@ -14,7 +14,7 @@ import { acrostixCardImage } from "../assets/acrostix-screenshots";
 import { matchFivesCardImage } from "../assets/matchfives-screenshots";
 import { ballDropCardImage } from "../assets/balldrop-screenshots";
 import { heKeyboardsCardImage } from "../assets/hekeyboards-screenshots";
-import { lunchBoxCardImage } from "../assets/lunchbox-screenshots";
+import { snackTrayCardImage } from "../assets/snacktray-screenshots";
 import imgHomunculAiCard from "@/assets/homunculai-capsule-main.png";
 
 type Category = "All" | "Games & Apps" | "Tools & Mods";
@@ -188,18 +188,18 @@ const projects = [
   },
   {
     id: 8,
-    title: "LunchBox",
+    title: "SnackTray",
     category: "Tools & Mods" as const,
     kind: "Tool" as Kind,
     type: "macOS App",
     description: "Menu bar window snapping for multi-monitor macOS setups.",
-    image: lunchBoxCardImage,
+    image: snackTrayCardImage,
     status: "Released",
     platforms: ["macOS"],
     tilt: "-rotate-1",
     accent: "teal" as const,
     imagePosition: "object-cover" as const,
-    slug: "lunchbox" as string | null,
+    slug: "snacktray" as string | null,
   },
   {
     id: 9,

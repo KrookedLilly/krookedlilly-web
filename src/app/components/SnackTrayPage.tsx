@@ -17,9 +17,9 @@ import {
 } from "lucide-react";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
 import {
-  lunchBoxScreenshots,
-  lunchBoxLogo,
-} from "../assets/lunchbox-screenshots";
+  snackTrayScreenshots,
+  snackTrayLogo,
+} from "../assets/snacktray-screenshots";
 import { PageMeta } from "./PageMeta";
 
 /* ─── animation variants ─── */
@@ -92,7 +92,7 @@ const accentClasses = {
 /* ─── screenshot gallery ─── */
 function ScreenshotGallery() {
   const [current, setCurrent] = useState(0);
-  const screenshots = lunchBoxScreenshots;
+  const screenshots = snackTrayScreenshots;
 
   const next = () => setCurrent((c) => (c + 1) % screenshots.length);
   const prev = () =>
@@ -155,13 +155,13 @@ function ScreenshotGallery() {
 /* ═══════════════════════════════════════════════════════
    MAIN PAGE
    ═══════════════════════════════════════════════════════ */
-export function LunchBoxPage() {
+export function SnackTrayPage() {
   return (
     <div className="min-h-screen">
       <PageMeta
-        title="LunchBox"
-        description="LunchBox — a productivity tool from KrookedLilly for organizing your day in tidy, portable boxes."
-        path="/tools/lunchbox"
+        title="SnackTray"
+        description="SnackTray — a productivity tool from KrookedLilly for organizing your day in tidy, portable boxes."
+        path="/tools/snacktray"
       />
       {/* ═══════════ HERO ═══════════ */}
       <section className="relative pt-6 pb-20">
@@ -197,8 +197,8 @@ export function LunchBoxPage() {
 
               <motion.div variants={fadeUp} custom={0.5} className="mb-4">
                 <ImageWithFallback
-                  src={lunchBoxLogo}
-                  alt="LunchBox logo"
+                  src={snackTrayLogo}
+                  alt="SnackTray logo"
                   className="w-20 h-20 rounded-sm"
                 />
               </motion.div>
@@ -210,7 +210,7 @@ export function LunchBoxPage() {
                 style={{ fontFamily: "var(--font-display)", lineHeight: 0.95 }}
               >
                 <span className="bg-gradient-to-r from-teal to-primary bg-clip-text text-transparent">
-                  LunchBox
+                  SnackTray
                 </span>
               </motion.h1>
 
@@ -260,8 +260,8 @@ export function LunchBoxPage() {
             >
               <div className="w-full max-w-lg">
                 <ImageWithFallback
-                  src={lunchBoxScreenshots[0].src}
-                  alt="LunchBox layout editor"
+                  src={snackTrayScreenshots[0].src}
+                  alt="SnackTray layout editor"
                   className="w-full rounded-sm border-2 border-white/[0.12] shadow-[6px_6px_0px_0px_rgba(34,211,238,0.15)]"
                 />
               </div>
@@ -315,7 +315,7 @@ export function LunchBoxPage() {
             viewport={{ once: true, margin: "-80px" }}
             className="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-4xl mx-auto"
           >
-            {[lunchBoxScreenshots[0], lunchBoxScreenshots[1]].map(
+            {[snackTrayScreenshots[0], snackTrayScreenshots[1]].map(
               (shot, idx) => (
                 <motion.div
                   key={shot.id}
@@ -508,7 +508,7 @@ export function LunchBoxPage() {
               className="flex flex-wrap justify-center gap-4"
             >
               <a
-                href="http://github.com/krookedlilly/lunchbox-releases/releases"
+                href="http://github.com/krookedlilly/snacktray-releases/releases"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-teal hover:bg-teal/90 text-black rounded-md border-2 border-teal transition-all hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_rgba(34,211,238,0.4)] uppercase tracking-wider text-sm"

@@ -4,7 +4,7 @@ import { acrostixCardImage } from "../assets/acrostix-screenshots";
 import { matchFivesCardImage } from "../assets/matchfives-screenshots";
 import { ballDropCardImage } from "../assets/balldrop-screenshots";
 import { heKeyboardsIcon } from "../assets/hekeyboards-screenshots";
-import { lunchBoxLogo } from "../assets/lunchbox-screenshots";
+import { snackTrayLogo } from "../assets/snacktray-screenshots";
 import imgAcrostixHero from "@/assets/acrostix-ipad-slide-1-gameplay.png";
 import imgHomunculAiCard from "@/assets/homunculai-capsule-main.png";
 import { Link } from "react-router-dom";
@@ -104,14 +104,14 @@ const mods = [
     slug: "/tools/screen-manager" as string | null,
   },
   {
-    title: "LunchBox",
+    title: "SnackTray",
     platform: "macOS",
     description: "Menu bar app for custom window snapping layouts on multiple monitors",
     status: "Released",
     accent: "teal" as const,
     rotate: "rotate-1",
-    logo: lunchBoxLogo as string | null,
-    slug: "/tools/lunchbox" as string | null,
+    logo: snackTrayLogo as string | null,
+    slug: "/tools/snacktray" as string | null,
   },
   {
     title: "AutoHideHud",

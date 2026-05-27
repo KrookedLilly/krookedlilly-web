@@ -109,10 +109,10 @@ export const routes: RouteRecord[] = [
           })),
       },
       {
-        path: "tools/lunchbox",
+        path: "tools/snacktray",
         lazy: () =>
-          import("./components/LunchBoxPage").then((m) => ({
-            Component: m.LunchBoxPage,
+          import("./components/SnackTrayPage").then((m) => ({
+            Component: m.SnackTrayPage,
           })),
       },
       {
