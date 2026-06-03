@@ -516,6 +516,15 @@ export function MatchFivesPage() {
                 Download on App Store
               </a>
             </motion.div>
+            <motion.div variants={fadeUp} custom={3} className="mt-6">
+              <Link
+                to="/games/match-fives/privacy"
+                className="text-muted-foreground/50 hover:text-muted-foreground transition-colors text-xs uppercase tracking-wider"
+                style={{ fontFamily: "var(--font-heading)", fontWeight: 500 }}
+              >
+                Privacy Policy
+              </Link>
+            </motion.div>
           </motion.div>
         </div>
       </section>

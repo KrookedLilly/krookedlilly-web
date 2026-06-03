@@ -40,13 +40,13 @@ function Section({
   );
 }
 
-export function BallDropPrivacyPage() {
+export function MatchFivesPrivacyPage() {
   return (
     <div className="min-h-screen">
       <PageMeta
-        title="50 Ball Drop Privacy Policy"
-        description="Privacy policy for the 50 Ball Drop iOS app."
-        path="/games/50-ball-drop/privacy"
+        title="Match Fives Privacy Policy"
+        description="Privacy policy for the Match Fives iOS app."
+        path="/games/match-fives/privacy"
         noIndex
       />
       {/* Hero */}
@@ -76,7 +76,7 @@ export function BallDropPrivacyPage() {
             className="text-4xl sm:text-6xl text-foreground mb-4"
             style={{ fontFamily: "var(--font-display)" }}
           >
-            50 Ball Drop Privacy Policy
+            Match Fives Privacy Policy
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -97,12 +97,12 @@ export function BallDropPrivacyPage() {
               <p className="text-muted-foreground mb-3">
                 This Privacy Policy describes how Krookedlilly LLC ("we," "us,"
                 or "our") collects, uses, and shares information when you play{" "}
-                <strong className="text-foreground">50 Ball Drop</strong> (the
+                <strong className="text-foreground">Match Fives</strong> (the
                 "Game") on iOS or Android devices. By downloading or playing
                 the Game, you agree to the practices described here.
               </p>
               <div className="bg-primary/10 border-l-3 border-primary p-4 rounded-r-sm text-sm text-foreground">
-                50 Ball Drop does not require an account with us, and we do not
+                Match Fives does not require an account with us, and we do not
                 sell your personal information.
               </div>
             </Section>
@@ -156,7 +156,7 @@ export function BallDropPrivacyPage() {
                 </strong>
                 <br />
                 Most user state — high scores, owned themes, achievements,
-                golden balls, gems, and other progression — is stored locally
+                and other progression — is stored locally
                 on your device in an on-device database. This data does not
                 leave your device unless you sync with Game Center / Google
                 Play Games leaderboards or contact us for support.

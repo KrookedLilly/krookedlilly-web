@@ -39,6 +39,13 @@ export const routes: RouteRecord[] = [
           })),
       },
       {
+        path: "games/match-fives/privacy",
+        lazy: () =>
+          import("./components/MatchFivesPrivacyPage").then((m) => ({
+            Component: m.MatchFivesPrivacyPage,
+          })),
+      },
+      {
         path: "games/50-ball-drop",
         lazy: () =>
           import("./components/BallDropPage").then((m) => ({
