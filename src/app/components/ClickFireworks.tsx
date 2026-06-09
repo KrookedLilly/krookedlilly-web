@@ -91,13 +91,18 @@ export function ClickFireworks() {
     };
 
     // ── Click handler ──
+    // Touch devices fire a synthetic `click` after `touchstart`; ignore the
+    // click that immediately follows a touch so we only burst once per tap.
+    let lastTouchTime = 0;
     const handleClick = (e: MouseEvent) => {
+      if (Date.now() - lastTouchTime < 700) return;
       spawnBurst(e.clientX, e.clientY);
     };
     window.addEventListener("click", handleClick);
 
     // ── Touch support ──
     const handleTouch = (e: TouchEvent) => {
+      lastTouchTime = Date.now();
       for (let i = 0; i < e.changedTouches.length; i++) {
         spawnBurst(e.changedTouches[i].clientX, e.changedTouches[i].clientY);
       }
