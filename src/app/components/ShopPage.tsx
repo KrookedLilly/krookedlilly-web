@@ -16,14 +16,14 @@ const upcomingItems = [
   {
     icon: Sparkles,
     title: "Merch & Stuff",
-    description: "We've got some ideas bouncing around — stay tuned to see what lands",
+    description: "We've got some ideas bouncing around. Stay tuned to see what lands",
     tilt: "-rotate-1",
     accent: "primary" as const,
   },
   {
     icon: Package,
     title: "Digital Goodies",
-    description: "Wallpapers, soundtracks, maybe more — we're still figuring it out",
+    description: "Wallpapers, soundtracks, maybe more. We're still figuring it out",
     tilt: "rotate-2",
     accent: "teal" as const,
   },
@@ -65,7 +65,7 @@ export function ShopPage() {
     <div className="min-h-screen">
       <PageMeta
         title="Shop"
-        description="The KrookedLilly shop — merch, prints, and odd physical objects tied to the games and tools we make."
+        description="The KrookedLilly shop: merch, prints, and odd physical objects tied to the games and tools we make."
         path="/shop"
       />
       {/* Hero */}

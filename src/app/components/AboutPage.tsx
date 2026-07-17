@@ -59,7 +59,7 @@ const whatWeDo = [
   {
     icon: Gamepad2,
     label: "Games",
-    description: "From space delivery sims to word games — if it sounds fun and a bit off-kilter, we're probably building it",
+    description: "From space delivery sims to word games. If it sounds fun and a bit off-kilter, we're probably building it",
     color: "text-primary",
     border: "border-primary/20",
     bg: "bg-primary/10",
@@ -67,7 +67,7 @@ const whatWeDo = [
   {
     icon: Sparkles,
     label: "Tools",
-    description: "Occasionally we build little utilities that make our lives easier — and then share them, in case others find them useful",
+    description: "Occasionally we build little utilities that make our lives easier, and then share them, in case others find them useful",
     color: "text-lime",
     border: "border-lime/20",
     bg: "bg-lime/10",
@@ -87,7 +87,7 @@ export function AboutPage() {
     <div className="min-h-screen">
       <PageMeta
         title="About"
-        description="About KrookedLilly — the indie studio behind HomunculAi, Acrostix, Galactic Parcel Service, and a handful of sharp tools and mods."
+        description="About KrookedLilly, the indie studio behind HomunculAi, Acrostix, Galactic Parcel Service, and a handful of sharp tools and mods."
         path="/about"
       />
       {/* Hero */}
@@ -166,7 +166,7 @@ export function AboutPage() {
                 <p>
                   KrookedLilly is a husband and wife team that makes games, apps, mods, and
                   whatever else we feel like. We started separately in our lives, came
-                  together without expecting how well it would work, and now we're here —
+                  together without expecting how well it would work, and now we're here,
                   building things we believe in and hoping other people find them worth
                   their time.
                 </p>

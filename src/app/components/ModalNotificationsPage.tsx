@@ -50,7 +50,7 @@ const features = [
   {
     icon: X,
     title: "Dismissal Logic",
-    desc: "Backdrop tap, escape key, programmatic close — all wired up. Plus per-modal rules if you need them",
+    desc: "Backdrop tap, escape key, and programmatic close are all wired up, plus per-modal rules if you need them",
     accent: "teal" as const,
   },
   {
@@ -163,7 +163,7 @@ export function ModalNotificationsPage() {
     <div className="min-h-screen">
       <PageMeta
         title="UI Toolkit: Modal & Notifications"
-        description="UI Toolkit: Modal & Notifications — stackable modals, toast queues, and focus-safe dialogs for Unity's UI Toolkit."
+        description="Modal & Notifications adds stackable modals, toast queues, and focus-safe dialogs to Unity's UI Toolkit."
         path="/tools/modal-notifications"
       />
       {/* ═══════════ HERO ═══════════ */}
@@ -232,7 +232,7 @@ export function ModalNotificationsPage() {
                 className="text-muted-foreground max-w-md mb-4"
                 style={{ fontSize: "1.125rem" }}
               >
-                Stackable modals and toast notifications for UI Toolkit. Focus traps, dismissal logic, and layering — all the boring parts, already solved
+                Stackable modals and toast notifications for UI Toolkit. Focus traps, dismissal logic, and layering. All the boring parts, already solved
               </motion.p>
 
               <motion.p
@@ -272,7 +272,7 @@ export function ModalNotificationsPage() {
                 {promoImage ? (
                   <ImageWithFallback
                     src={promoImage}
-                    alt="UI Toolkit: Modal & Notifications — Stackable Dialogs For Unity"
+                    alt="UI Toolkit: Modal & Notifications, Stackable Dialogs For Unity"
                     className="w-full rounded-sm border-2 border-white/[0.12] shadow-[6px_6px_0px_0px_rgba(34,211,238,0.15)]"
                   />
                 ) : (

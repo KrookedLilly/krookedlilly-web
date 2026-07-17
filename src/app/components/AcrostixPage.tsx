@@ -75,7 +75,7 @@ const features = [
   {
     icon: Puzzle,
     title: "Your Words, Your Way",
-    desc: "Given a word, you craft sentences where each line starts with the next letter. There's no right answer — just your creativity and whatever your mind comes up with",
+    desc: "Given a word, you craft sentences where each line starts with the next letter. There's no right answer, just your creativity and whatever your mind comes up with",
     accent: "teal" as const,
   },
   {
@@ -99,13 +99,13 @@ const features = [
   {
     icon: Eye,
     title: "Accessibility Modes",
-    desc: "Dark, Light, and Colorblind themes — because word games should be for everybody",
+    desc: "Dark, Light, and Colorblind themes, because word games should be for everybody",
     accent: "teal" as const,
   },
   {
     icon: Star,
     title: "Campaign Mode",
-    desc: "Five themed worlds with curated word sets — from Starter Shore to Crystal Castle. New worlds and content added regularly.",
+    desc: "Five themed worlds with curated word sets, from Starter Shore to Crystal Castle. New worlds and content added regularly.",
     accent: "primary" as const,
   },
 ];
@@ -220,7 +220,7 @@ export function AcrostixPage() {
     <div className="min-h-screen">
       <PageMeta
         title="Acrostix"
-        description="Acrostix is a creative word game for iOS — spell across and down to build tiny acrostic grids and chase high scores."
+        description="Acrostix is a creative word game for iOS: spell across and down to build tiny acrostic grids and chase high scores."
         path="/games/acrostix"
       />
       {/* ═══════════ HERO ═══════════ */}
@@ -278,7 +278,7 @@ export function AcrostixPage() {
                 style={{ fontSize: "1.125rem" }}
               >
                 A creative word game where you build sentences from acrostic
-                words — then get scored on grammar, complexity, and how well
+                words, then get scored on grammar, complexity, and how well
                 it all ties together. Your words, your rules
               </motion.p>
 
@@ -387,7 +387,7 @@ export function AcrostixPage() {
                 className="text-muted-foreground max-w-md"
                 style={{ fontSize: "1.05rem", lineHeight: 1.7 }}
               >
-                You get a word. Each letter becomes the start of a new word in your sentence. What you write is entirely up to you — build something clever, tell a micro-story, get creative with it. The game scores you on grammar, word complexity, and how well your creation ties back to the original word.
+                You get a word. Each letter becomes the start of a new word in your sentence. What you write is entirely up to you: build something clever, tell a micro-story, get creative with it. The game scores you on grammar, word complexity, and how well your creation ties back to the original word.
               </p>
             </motion.div>
           </motion.div>
@@ -418,7 +418,7 @@ export function AcrostixPage() {
                 className="text-muted-foreground max-w-md"
                 style={{ fontSize: "1.05rem", lineHeight: 1.7 }}
               >
-                Every sentence is scored across grammar, complexity, and relevance — then rewarded with synergy bonuses for doing multiple things well. No random luck. No guessing. Pure creative skill.
+                Every sentence is scored across grammar, complexity, and relevance, then rewarded with synergy bonuses for doing multiple things well. No random luck. No guessing. Pure creative skill.
               </p>
             </motion.div>
           </motion.div>
@@ -559,8 +559,8 @@ export function AcrostixPage() {
               custom={2}
               className="text-muted-foreground max-w-lg mx-auto"
             >
-              Every word you play tells a different story. Stats, streaks, and achievements
-              — all yours to obsess over
+              Every word you play tells a different story. Stats, streaks, and achievements,
+              all yours to obsess over
             </motion.p>
           </motion.div>
 

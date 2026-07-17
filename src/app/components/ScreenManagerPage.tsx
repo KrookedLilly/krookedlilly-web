@@ -50,7 +50,7 @@ const features = [
   {
     icon: GitBranch,
     title: "Lifecycle Hooks",
-    desc: "OnShow, OnHide, OnFocus, OnBlur — everything you need to load, save, and pause at the right moments",
+    desc: "Everything you need to load, save, and pause at the right moments: OnShow, OnHide, OnFocus, OnBlur",
     accent: "primary" as const,
   },
   {
@@ -163,7 +163,7 @@ export function ScreenManagerPage() {
     <div className="min-h-screen">
       <PageMeta
         title="UI Toolkit: Screen Manager"
-        description="UI Toolkit: Screen Manager — opinionated screen navigation for Unity's UI Toolkit. Nav stacks, transitions, and lifecycle events, handled."
+        description="Screen Manager brings opinionated navigation to Unity's UI Toolkit, with nav stacks, transitions, and lifecycle events handled for you."
         path="/tools/screen-manager"
       />
       {/* ═══════════ HERO ═══════════ */}
@@ -232,7 +232,7 @@ export function ScreenManagerPage() {
                 className="text-muted-foreground max-w-md mb-4"
                 style={{ fontSize: "1.125rem" }}
               >
-                Opinionated screen navigation for Unity's UI Toolkit. Push, pop, and replace screens with a real stack — transitions, lifecycle hooks, and back behavior included
+                Opinionated screen navigation for Unity's UI Toolkit. Push, pop, and replace screens with a real stack. Transitions, lifecycle hooks, and back behavior included
               </motion.p>
 
               <motion.p
@@ -272,7 +272,7 @@ export function ScreenManagerPage() {
                 {promoImage ? (
                   <ImageWithFallback
                     src={promoImage}
-                    alt="UI Toolkit: Screen Manager — Opinionated Screen Navigation For Unity"
+                    alt="UI Toolkit: Screen Manager, Opinionated Screen Navigation For Unity"
                     className="w-full rounded-sm border-2 border-white/[0.12] shadow-[6px_6px_0px_0px_rgba(160,92,246,0.15)]"
                   />
                 ) : (
@@ -325,7 +325,7 @@ export function ScreenManagerPage() {
               className="text-muted-foreground max-w-2xl mx-auto"
               style={{ fontSize: "1.05rem" }}
             >
-              UI Toolkit gives you the primitives. Screen Manager gives you the workflow — a stack-based navigator with transitions, lifecycle events, and modal layers so your UI has actual structure
+              UI Toolkit gives you the primitives. Screen Manager gives you the workflow: a stack-based navigator with transitions, lifecycle events, and modal layers so your UI has actual structure
             </motion.p>
           </motion.div>
         </div>
@@ -361,7 +361,7 @@ export function ScreenManagerPage() {
               custom={2}
               className="text-muted-foreground max-w-lg mx-auto"
             >
-              Everything you'd build yourself eventually — already built, already tested
+              Everything you'd build yourself eventually. Already built, already tested
             </motion.p>
           </motion.div>
 

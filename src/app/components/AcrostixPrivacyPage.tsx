@@ -179,7 +179,7 @@ export function AcrostixPrivacyPage() {
                 equipped sticker), your friend code, your platform (iOS or
                 Android), the date your profile was created, and your
                 preferences for matchmaking and friend requests. Display
-                names are not free-form text — you assemble one by combining
+                names are not free-form text: you assemble one by combining
                 two words from a curated word pool that we maintain, so they
                 cannot contain personal information, contact details, or
                 arbitrary text.
@@ -209,7 +209,7 @@ export function AcrostixPrivacyPage() {
                 (pairs of UIDs), pending friend requests, and the 6-character
                 friend code we generate for your account. A friend code lookup
                 returns only your public player profile (display name, title,
-                card customizations) — never your underlying UID, email
+                card customizations), never your underlying UID, email
                 address, or contact info. You can disable incoming friend
                 requests in the app's settings.
               </p>
@@ -278,7 +278,7 @@ export function AcrostixPrivacyPage() {
                 Acrostix uses a hybrid scoring engine. Most scoring runs
                 entirely on your device using data we ship inside the App.
                 However, whenever a word in your sentence is not present in
-                our pre-scored data — which is common — the App sends that
+                our pre-scored data (which is common), the App sends that
                 word, the target word, and (for grammar scoring) the
                 surrounding sentence text to our scoring backend hosted on
                 Cloudflare so that the missing score can be computed in real
@@ -287,8 +287,8 @@ export function AcrostixPrivacyPage() {
                 usage quotas, not whether this path is used.
               </p>
               <p className="text-muted-foreground mb-3">
-                Our backend in turn calls Anthropic's Claude API — a
-                third-party large-language-model service — to produce the
+                Our backend in turn calls Anthropic's Claude API, a
+                third-party large-language-model service, to produce the
                 score. Anthropic processes the submitted text under its
                 contractual commitments to us as an API customer and under{" "}
                 <a
@@ -408,7 +408,7 @@ export function AcrostixPrivacyPage() {
                 </li>
                 <li>
                   We do not collect your device's advertising identifier
-                  ourselves — only Google AdMob does, and only as described
+                  ourselves; only Google AdMob does, and only as described
                   above.
                 </li>
                 <li>We do not collect location data.</li>
@@ -417,7 +417,7 @@ export function AcrostixPrivacyPage() {
                   tracking services.
                 </li>
                 <li>
-                  We do not collect payment or financial information — all
+                  We do not collect payment or financial information; all
                   purchases are processed entirely by the Apple App Store or
                   Google Play Store.
                 </li>
@@ -429,7 +429,7 @@ export function AcrostixPrivacyPage() {
             </Section>
 
             <Section
-              title="Multiplayer &amp; Friends — What's Visible to Others"
+              title="Multiplayer &amp; Friends: What's Visible to Others"
               index={3}
             >
               <p className="text-muted-foreground mb-3">
@@ -541,7 +541,7 @@ export function AcrostixPrivacyPage() {
                 <br />
                 Acrostix includes banner ads on certain screens and optional
                 rewarded ads, both served by Google AdMob. Rewarded ads are
-                never forced — you may choose to watch an ad in exchange for
+                never forced; you may choose to watch an ad in exchange for
                 in-game rewards. AdMob may use your device's advertising
                 identifier and other device information to serve and measure
                 ads. For more information, see{" "}

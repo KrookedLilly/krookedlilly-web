@@ -84,7 +84,7 @@ const features = [
   {
     icon: Palette,
     title: "Tons of Cosmetics",
-    desc: "Unlock entirely different visual themes that change the balls, the catcher, the background — everything. Way more drip than an arcade game has any right to have",
+    desc: "Unlock entirely different visual themes that change everything: the balls, the catcher, the background. Way more drip than an arcade game has any right to have",
     accent: "primary" as const,
   },
   {
@@ -102,7 +102,7 @@ const features = [
   {
     icon: Gift,
     title: "Unlock Everything",
-    desc: "New cosmetics unlock as you play — no pay-to-win, no loot boxes. Just play the game and earn your drip",
+    desc: "New cosmetics unlock as you play. No pay-to-win, no loot boxes. Just play the game and earn your drip",
     accent: "teal" as const,
   },
   {
@@ -202,7 +202,7 @@ export function BallDropPage() {
     <div className="min-h-screen">
       <PageMeta
         title="50 Ball Drop"
-        description="50 Ball Drop is a quick-hit arcade puzzler for iOS — release fifty balls, bank the biggest runs, beat your best."
+        description="50 Ball Drop is a quick-hit arcade puzzler for iOS: release fifty balls, bank the biggest runs, beat your best."
         path="/games/50-ball-drop"
       />
       {/* ═══════════ HERO ═══════════ */}
@@ -338,7 +338,7 @@ export function BallDropPage() {
               className="text-muted-foreground max-w-2xl mx-auto"
               style={{ fontSize: "1.05rem" }}
             >
-              Each cosmetic theme completely transforms the game — balls,
+              Each cosmetic theme completely transforms the game: balls,
               catchers, backgrounds, effects, all of it. Unlock them by playing.
               No microtransactions, no loot boxes, just earn and equip
             </motion.p>

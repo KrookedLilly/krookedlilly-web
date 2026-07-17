@@ -71,7 +71,7 @@ const games = [
     title: "HomunculAi",
     type: "Desktop App",
     description:
-      "A little transparent window where your AI gets a body it controls itself. 45 bodies, custom SVG, two-way chat — works with any MCP client",
+      "A little transparent window where your AI gets a body it controls itself. 45 bodies, custom SVG, two-way chat. Works with any MCP client",
     image: imgHomunculAiCard,
     imagePosition: "object-cover",
     status: "Released",
@@ -96,7 +96,7 @@ const mods = [
   {
     title: "UI Toolkit: Screen Manager",
     platform: "Unity Asset",
-    description: "UI Toolkit screen management — transitions, nav stacks, and lifecycle events out of the box",
+    description: "UI Toolkit screen management: transitions, nav stacks, and lifecycle events out of the box",
     status: "In Development",
     accent: "primary" as const,
     rotate: "-rotate-1",
@@ -145,7 +145,7 @@ export function HomePage() {
     <div className="overflow-hidden">
       <PageMeta
         title="KrookedLilly"
-        description="KrookedLilly makes indie games, creative tools, and mods — playful software with sharp edges and weird ideas."
+        description="KrookedLilly makes indie games, creative tools, and mods. Playful software with sharp edges and weird ideas."
         path="/"
         image="/og-image.png"
       />
@@ -170,7 +170,7 @@ export function HomePage() {
                 <div className="relative flex items-center justify-center bg-black/20 py-8 lg:py-12 overflow-hidden">
                   <DesktopWindow
                     src={imgAcrostixHero}
-                    alt="Acrostix — Craft Clever Sentences"
+                    alt="Acrostix: Craft Clever Sentences"
                     chrome={false}
                     aspect="133.3%"
                     className="w-48 sm:w-56 lg:w-64 transition-transform duration-700 group-hover:scale-105"
@@ -201,7 +201,7 @@ export function HomePage() {
                     Acrostix
                   </h2>
                   <p className="text-muted-foreground mb-2" style={{ fontSize: "1.05rem" }}>
-                    A creative word game where you build sentences from a single word — then get scored on grammar, complexity, and relevance.
+                    A creative word game where you build sentences from a single word, then get scored on grammar, complexity, and relevance.
                   </p>
                   <p className="text-teal/80 italic mb-6" style={{ fontSize: "0.95rem" }}>
                     "One word. Infinite sentences."

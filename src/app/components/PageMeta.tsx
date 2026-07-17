@@ -12,7 +12,7 @@ type Props = {
 };
 
 export function PageMeta({ title, description, path, image, noIndex }: Props) {
-  const fullTitle = title.includes(SITE_NAME) ? title : `${title} — ${SITE_NAME}`;
+  const fullTitle = title.includes(SITE_NAME) ? title : `${title} | ${SITE_NAME}`;
   const url = `${SITE}${path}`;
   const ogImage = image ? (image.startsWith("http") ? image : `${SITE}${image}`) : undefined;
 

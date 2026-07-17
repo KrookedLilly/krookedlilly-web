@@ -115,7 +115,7 @@ export function MatchFivesPrivacyPage() {
                 <br />
                 The Game does not require you to create an account with us. If
                 you sign in to Apple Game Center or Google Play Games to use
-                leaderboards, that sign-in is handled by Apple or Google — we
+                leaderboards, that sign-in is handled by Apple or Google. We
                 do not receive your account password.
               </p>
 
@@ -130,20 +130,20 @@ export function MatchFivesPrivacyPage() {
               <ul className="list-disc ml-6 text-muted-foreground mb-3 space-y-1">
                 <li>
                   <strong className="text-foreground">
-                    Device and technical data
+                    Device and technical data:
                   </strong>{" "}
-                  — device model, operating system version, language, country,
+                  device model, operating system version, language, country,
                   mobile carrier, screen size, advertising identifier (IDFA on
                   iOS, GAID on Android), and crash logs.
                 </li>
                 <li>
-                  <strong className="text-foreground">Usage data</strong> —
+                  <strong className="text-foreground">Usage data:</strong>{" "}
                   session length, frequency of play, in-app screens viewed, ad
                   impressions and clicks, and remote configuration values
                   delivered to your device.
                 </li>
                 <li>
-                  <strong className="text-foreground">Purchase data</strong> —
+                  <strong className="text-foreground">Purchase data:</strong>{" "}
                   transaction identifiers and entitlements for in-app purchases
                   (the App Store and Google Play handle payment information; we
                   do not receive your full payment details).
@@ -155,8 +155,8 @@ export function MatchFivesPrivacyPage() {
                   Information Stored on Your Device
                 </strong>
                 <br />
-                Most user state — high scores, owned themes, achievements,
-                and other progression — is stored locally
+                Most user state (high scores, owned themes, achievements,
+                and other progression) is stored locally
                 on your device in an on-device database. This data does not
                 leave your device unless you sync with Game Center / Google
                 Play Games leaderboards or contact us for support.
@@ -204,8 +204,8 @@ export function MatchFivesPrivacyPage() {
               </p>
               <ul className="list-disc ml-6 text-muted-foreground space-y-2">
                 <li>
-                  <strong className="text-foreground">Unity Ads</strong> —
-                  serves rewarded and banner advertising.{" "}
+                  <strong className="text-foreground">Unity Ads</strong> serves
+                  rewarded and banner advertising.{" "}
                   <a
                     href="https://unity.com/legal/game-player-and-app-user-privacy-policy"
                     className="text-primary hover:text-primary/80 transition-colors underline underline-offset-2"
@@ -218,7 +218,7 @@ export function MatchFivesPrivacyPage() {
                 </li>
                 <li>
                   <strong className="text-foreground">Unity Analytics</strong>{" "}
-                  — collects gameplay and usage telemetry.{" "}
+                  collects gameplay and usage telemetry.{" "}
                   <a
                     href="https://unity.com/legal/game-player-and-app-user-privacy-policy"
                     className="text-primary hover:text-primary/80 transition-colors underline underline-offset-2"
@@ -233,19 +233,19 @@ export function MatchFivesPrivacyPage() {
                   <strong className="text-foreground">
                     Unity Remote Config
                   </strong>{" "}
-                  — delivers configuration updates to the Game.
+                  delivers configuration updates to the Game.
                 </li>
                 <li>
                   <strong className="text-foreground">
                     Unity In-App Purchasing
                   </strong>{" "}
-                  — mediates purchases through the App Store and Google Play.
+                  mediates purchases through the App Store and Google Play.
                 </li>
                 <li>
                   <strong className="text-foreground">
                     Apple Game Center
                   </strong>{" "}
-                  (iOS) — leaderboards and achievements.{" "}
+                  (iOS): leaderboards and achievements.{" "}
                   <a
                     href="https://www.apple.com/legal/privacy/"
                     className="text-primary hover:text-primary/80 transition-colors underline underline-offset-2"
@@ -260,7 +260,7 @@ export function MatchFivesPrivacyPage() {
                   <strong className="text-foreground">
                     Google Play Games Services
                   </strong>{" "}
-                  (Android) — leaderboards and achievements.{" "}
+                  (Android): leaderboards and achievements.{" "}
                   <a
                     href="https://policies.google.com/privacy"
                     className="text-primary hover:text-primary/80 transition-colors underline underline-offset-2"
@@ -273,16 +273,16 @@ export function MatchFivesPrivacyPage() {
                 </li>
                 <li>
                   <strong className="text-foreground">
-                    VoxelBusters EssentialKit
+                    VoxelBusters EssentialKit:
                   </strong>{" "}
-                  — native plugin layer used to access platform features such
+                  native plugin layer used to access platform features such
                   as Game Center and Google Play Games.
                 </li>
                 <li>
                   <strong className="text-foreground">
-                    Apple App Store / Google Play
+                    Apple App Store / Google Play:
                   </strong>{" "}
-                  — payment processing and app distribution. We receive only
+                  payment processing and app distribution. We receive only
                   the transaction confirmation and entitlement, not your
                   payment instrument.
                 </li>
@@ -345,8 +345,8 @@ export function MatchFivesPrivacyPage() {
 
             <Section title="Data Storage and Retention" index={7}>
               <p className="text-muted-foreground mb-3">
-                Most user data — including scores, purchases, unlocks, and
-                achievements — is stored locally on your device. Deleting the
+                Most user data (including scores, purchases, unlocks, and
+                achievements) is stored locally on your device. Deleting the
                 Game from your device will remove this local data. Data
                 submitted to Apple Game Center, Google Play Games Services, or
                 used by Unity services is retained according to those

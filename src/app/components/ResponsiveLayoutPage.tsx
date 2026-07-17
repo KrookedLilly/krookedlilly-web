@@ -37,7 +37,7 @@ const features = [
   {
     icon: Maximize,
     title: "Breakpoints",
-    desc: "Mobile, tablet, desktop, ultrawide — define the ones you need and UI Toolkit adapts automatically",
+    desc: "Define the breakpoints you need, from mobile to ultrawide, and UI Toolkit adapts automatically",
     accent: "primary" as const,
   },
   {
@@ -55,7 +55,7 @@ const features = [
   {
     icon: Shield,
     title: "Safe Areas",
-    desc: "Notches, punch-holes, gesture bars — respected automatically on mobile. Your UI doesn't need to know about the hardware",
+    desc: "Notches, punch-holes, and gesture bars are respected automatically on mobile. Your UI doesn't need to know about the hardware",
     accent: "teal" as const,
   },
   {
@@ -67,7 +67,7 @@ const features = [
   {
     icon: Package,
     title: "Unity Asset Store",
-    desc: "Drop it in, define your breakpoints, and your existing UI becomes responsive. No rewrites",
+    desc: "Define your breakpoints and your existing UI becomes responsive. No rewrites",
     accent: "teal" as const,
   },
 ];
@@ -162,7 +162,7 @@ export function ResponsiveLayoutPage() {
     <div className="min-h-screen">
       <PageMeta
         title="UI Toolkit: Responsive Layout"
-        description="UI Toolkit: Responsive Layout — breakpoints, adaptive grids, and safe-area handling for Unity UI Toolkit. One UI, every aspect ratio."
+        description="Responsive Layout gives Unity's UI Toolkit breakpoints, adaptive grids, and safe-area handling. One UI, every aspect ratio."
         path="/tools/responsive-layout"
       />
       {/* ═══════════ HERO ═══════════ */}
@@ -231,7 +231,7 @@ export function ResponsiveLayoutPage() {
                 className="text-muted-foreground max-w-md mb-4"
                 style={{ fontSize: "1.125rem" }}
               >
-                Breakpoints, adaptive grids, and resolution-aware containers for UI Toolkit. Build one UI, ship every aspect ratio — phone to ultrawide
+                Breakpoints, adaptive grids, and resolution-aware containers for UI Toolkit. Build one UI, ship every aspect ratio: phone to ultrawide
               </motion.p>
 
               <motion.p
@@ -271,7 +271,7 @@ export function ResponsiveLayoutPage() {
                 {promoImage ? (
                   <ImageWithFallback
                     src={promoImage}
-                    alt="UI Toolkit: Responsive Layout — One UI, Every Aspect Ratio"
+                    alt="UI Toolkit: Responsive Layout, One UI, Every Aspect Ratio"
                     className="w-full rounded-sm border-2 border-white/[0.12] shadow-[6px_6px_0px_0px_rgba(160,92,246,0.15)]"
                   />
                 ) : (
@@ -324,7 +324,7 @@ export function ResponsiveLayoutPage() {
               className="text-muted-foreground max-w-2xl mx-auto"
               style={{ fontSize: "1.05rem" }}
             >
-              Ship a single UI that adapts. Breakpoints collapse columns, orientation flips stacks, safe areas get respected — all without writing platform-specific branches
+              Ship a single UI that adapts. Breakpoints collapse columns, orientation flips stacks, safe areas get respected. All without writing platform-specific branches
             </motion.p>
           </motion.div>
         </div>

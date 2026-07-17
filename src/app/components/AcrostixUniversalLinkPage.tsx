@@ -91,7 +91,7 @@ export function AcrostixUniversalLinkPage() {
               style={{ fontSize: "1.125rem" }}
             >
               A friend sent you a Semantic Volley round in Acrostix. Open the
-              app to play your turn — or download Acrostix to join in.
+              app to play your turn, or download Acrostix to join in.
             </motion.p>
 
             {gameId && (
@@ -141,8 +141,8 @@ export function AcrostixUniversalLinkPage() {
                 custom={5}
                 className="text-muted-foreground/70 text-sm mt-8 max-w-md mx-auto"
               >
-                Acrostix is a mobile game. Open this link on your phone — or
-                scan it with your camera — to play.
+                Acrostix is a mobile game. Open this link on your phone, or
+                scan it with your camera, to play.
               </motion.p>
             )}
           </motion.div>

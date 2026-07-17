@@ -55,7 +55,7 @@ const features = [
   {
     icon: Move,
     title: "Drag to Snap",
-    desc: "Drag a window to a zone and it snaps into place. No keyboard shortcuts to memorize, no menu diving — just drag",
+    desc: "Drag a window to a zone and it snaps into place. No keyboard shortcuts to memorize, no menu diving. Just drag",
     accent: "teal" as const,
   },
   {
@@ -160,7 +160,7 @@ export function SnackTrayPage() {
     <div className="min-h-screen">
       <PageMeta
         title="SnackTray"
-        description="SnackTray — a productivity tool from KrookedLilly for organizing your day in tidy, portable boxes."
+        description="SnackTray is a productivity tool from KrookedLilly for organizing your day in tidy, portable boxes."
         path="/tools/snacktray"
       />
       {/* ═══════════ HERO ═══════════ */}
@@ -302,7 +302,7 @@ export function SnackTrayPage() {
               style={{ fontSize: "1.05rem" }}
             >
               Open the layout editor, draw zones on your screen, and assign
-              them names. Drag windows to a zone or hit a shortcut — they
+              them names. Drag windows to a zone or hit a shortcut and they
               snap into place. Each monitor gets its own layout with as
               many layers and zones as you want
             </motion.p>
@@ -500,7 +500,7 @@ export function SnackTrayPage() {
               className="text-muted-foreground mb-8 max-w-md mx-auto"
               style={{ fontSize: "1.05rem" }}
             >
-              Custom window layouts on macOS without the headaches — download it now
+              Custom window layouts on macOS without the headaches. Download it now
             </motion.p>
             <motion.div
               variants={fadeUp}

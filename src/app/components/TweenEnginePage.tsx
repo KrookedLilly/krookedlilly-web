@@ -37,13 +37,13 @@ const features = [
   {
     icon: Waves,
     title: "Easing Library",
-    desc: "30+ curves out of the box — quad, cubic, bounce, elastic, back. Or drop in your own AnimationCurve",
+    desc: "30+ curves out of the box: quad, cubic, bounce, elastic, back. Or drop in your own AnimationCurve",
     accent: "teal" as const,
   },
   {
     icon: Link2,
     title: "Chainable API",
-    desc: "Fluent builder syntax. Tween from A to B, then C, then loop, then callback — all in one line",
+    desc: "Fluent builder syntax. Tween from A to B, then C, then loop, then callback. All in one line",
     accent: "primary" as const,
   },
   {
@@ -55,7 +55,7 @@ const features = [
   {
     icon: Timer,
     title: "Timeline Control",
-    desc: "Play, pause, reverse, seek. Treat tweens like video — scrub to any point in time",
+    desc: "Play, pause, reverse, seek. Treat tweens like video: scrub to any point in time",
     accent: "primary" as const,
   },
   {
@@ -162,7 +162,7 @@ export function TweenEnginePage() {
     <div className="min-h-screen">
       <PageMeta
         title="UI Toolkit: Tween Engine"
-        description="UI Toolkit: Tween Engine — a chainable, zero-GC tween library built for Unity's UI Toolkit. Bring motion to static layouts."
+        description="Tween Engine is a chainable, zero-GC tween library for Unity's UI Toolkit. Bring motion to static layouts."
         path="/tools/tween-engine"
       />
       {/* ═══════════ HERO ═══════════ */}
@@ -231,7 +231,7 @@ export function TweenEnginePage() {
                 className="text-muted-foreground max-w-md mb-4"
                 style={{ fontSize: "1.125rem" }}
               >
-                A chainable tween library purpose-built for UI Toolkit. Fluid easing curves, sequences, timeline scrubbing — and zero garbage while it runs
+                A chainable tween library purpose-built for UI Toolkit. Fluid easing curves, sequences, and timeline scrubbing. Zero garbage while it runs
               </motion.p>
 
               <motion.p
@@ -271,7 +271,7 @@ export function TweenEnginePage() {
                 {promoImage ? (
                   <ImageWithFallback
                     src={promoImage}
-                    alt="UI Toolkit: Tween Engine — Chainable Motion For UI Toolkit"
+                    alt="UI Toolkit: Tween Engine, Chainable Motion For UI Toolkit"
                     className="w-full rounded-sm border-2 border-white/[0.12] shadow-[6px_6px_0px_0px_rgba(34,211,238,0.15)]"
                   />
                 ) : (
@@ -324,7 +324,7 @@ export function TweenEnginePage() {
               className="text-muted-foreground max-w-2xl mx-auto"
               style={{ fontSize: "1.05rem" }}
             >
-              Static UI is a missed opportunity. Tween Engine animates any UI Toolkit property — position, color, opacity, custom USS variables — with a clean chainable API and curves that actually feel good
+              Static UI is a missed opportunity. Tween Engine animates any UI Toolkit property (position, color, opacity, custom USS variables) with a clean chainable API and curves that actually feel good
             </motion.p>
           </motion.div>
         </div>

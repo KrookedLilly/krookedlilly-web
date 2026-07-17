@@ -118,7 +118,7 @@ export function HomunculAiSalesRestrictionsPage() {
                 >
                   Terms of Use
                 </Link>{" "}
-                (Section 11 — Export Controls and Territorial Restrictions). The list is subject to change as applicable laws, distributor policies, and KrookedLilly's business decisions evolve.
+                (Section 11: Export Controls and Territorial Restrictions). The list is subject to change as applicable laws, distributor policies, and KrookedLilly's business decisions evolve.
               </div>
               <p className="text-muted-foreground">
                 HomunculAi is not sold, licensed, or supported in the regions
@@ -131,7 +131,7 @@ export function HomunculAiSalesRestrictionsPage() {
                 distributor (currently Lemon Squeezy) through its point-of-sale
                 compliance system. Users in restricted regions who obtain
                 HomunculAi through any means are not granted a license under the
-                Terms of Use (see Section 9 — Intellectual Property and Authorized
+                Terms of Use (see Section 9: Intellectual Property and Authorized
                 Copies).
               </p>
             </motion.div>
@@ -187,16 +187,16 @@ export function HomunculAiSalesRestrictionsPage() {
               <ul className="list-disc ml-6 text-muted-foreground space-y-2">
                 <li>
                   <strong className="text-foreground">Russia</strong> (Russian
-                  Federation) — subject to Export Administration Regulations (EAR)
+                  Federation): subject to Export Administration Regulations (EAR)
                   restrictions on software exports imposed following 2022 and
                   subsequent updates
                 </li>
                 <li>
-                  <strong className="text-foreground">Belarus</strong> — subject
+                  <strong className="text-foreground">Belarus</strong>: subject
                   to EAR restrictions paralleling Russia
                 </li>
                 <li>
-                  <strong className="text-foreground">Myanmar</strong> (Burma) —
+                  <strong className="text-foreground">Myanmar</strong> (Burma):
                   subject to targeted sanctions
                 </li>
               </ul>

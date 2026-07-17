@@ -296,7 +296,7 @@ export function AcrostixTermsPage() {
                 list of prohibited words that we maintain. Submissions that
                 match this list are rejected at the point of input and are
                 never delivered to your opponent. This automated filter is
-                provided as a baseline safeguard and is not exhaustive —
+                provided as a baseline safeguard and is not exhaustive:
                 novel spellings, intentional misspellings, words not on the
                 list, or combinations of permitted words may still be
                 submitted. We do not manually pre-screen every Submission
@@ -416,7 +416,7 @@ export function AcrostixTermsPage() {
                 Acrostix is provided "as is" and "as available," with all
                 faults and without warranty of any kind, express or implied,
                 to the maximum extent permitted by law. Krookedlilly LLC
-                disclaims all implied warranties — including merchantability,
+                disclaims all implied warranties, including merchantability,
                 fitness for a particular purpose, accuracy, uninterrupted or
                 error-free operation, and non-infringement. We do not warrant
                 that the App, multiplayer matchmaking, leaderboards, or any
@@ -436,7 +436,7 @@ export function AcrostixTermsPage() {
                 not be liable for any indirect, incidental, consequential,
                 special, exemplary, or punitive damages, or for any loss of
                 data, profits, goodwill, or business interruption, arising
-                out of or related to your use of Acrostix — including without
+                out of or related to your use of Acrostix, including without
                 limitation any interaction with another player, any
                 Submission, any advertisement displayed in the App, or any
                 outage, delay, or error in the App or its online features.
@@ -677,7 +677,7 @@ export function AcrostixTermsPage() {
                 <strong className="text-foreground">Assignment.</strong> You
                 may not assign or transfer these Terms without our prior
                 written consent. We may assign these Terms, in whole or in
-                part, without restriction — including in connection with a
+                part, without restriction, including in connection with a
                 merger, acquisition, reorganization, or sale of assets.
               </p>
               <p className="text-muted-foreground">

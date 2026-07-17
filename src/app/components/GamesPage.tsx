@@ -117,7 +117,7 @@ const projects = [
     category: "Tools & Mods" as const,
     kind: "Tool" as Kind,
     type: "Unity Asset",
-    description: "UI Toolkit screen management for Unity — transitions, navigation, lifecycle.",
+    description: "UI Toolkit screen management for Unity: transitions, navigation, lifecycle.",
     image: imgScreenManagerCover as string | null,
     status: "In Development",
     platforms: ["Unity"],
@@ -132,7 +132,7 @@ const projects = [
     category: "Tools & Mods" as const,
     kind: "Tool" as Kind,
     type: "Unity Asset",
-    description: "Chainable tweens for UI Toolkit — easing curves, sequences, zero-GC playback.",
+    description: "Chainable tweens for UI Toolkit: easing curves, sequences, zero-GC playback.",
     image: imgTweenEngineCover as string | null,
     status: "In Development",
     platforms: ["Unity"],
@@ -162,7 +162,7 @@ const projects = [
     category: "Tools & Mods" as const,
     kind: "Tool" as Kind,
     type: "Unity Asset",
-    description: "Stackable modals and toast queues for UI Toolkit — focus traps, dismissal, theming.",
+    description: "Stackable modals and toast queues for UI Toolkit: focus traps, dismissal, theming.",
     image: imgModalNotificationsCover as string | null,
     status: "In Development",
     platforms: ["Unity"],
@@ -318,7 +318,7 @@ export function GamesPage() {
     <div className="min-h-screen">
       <PageMeta
         title="Catalog"
-        description="Browse every KrookedLilly game, app, tool, and mod — from Acrostix to HomunculAi to Galactic Parcel Service."
+        description="Browse every KrookedLilly game, app, tool, and mod. From Acrostix to HomunculAi to Galactic Parcel Service."
         path="/catalog"
       />
       {/* Header */}

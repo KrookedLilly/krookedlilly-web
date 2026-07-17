@@ -13,7 +13,7 @@ type PressKit = {
 const kits: PressKit[] = [
   {
     product: "HomunculAi",
-    tagline: "Desktop app — Windows",
+    tagline: "Desktop app for Windows",
     file: "/press-kits/homunculai-press-kit.zip",
     size: "32 MB",
   },

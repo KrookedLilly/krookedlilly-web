@@ -37,13 +37,13 @@ const features = [
   {
     icon: Target,
     title: "Auto Focus Maps",
-    desc: "Spatial inference figures out what's up, down, left, right — so you don't hand-wire every button to its neighbors",
+    desc: "Spatial inference figures out what's up, down, left, and right, so you don't hand-wire every button to its neighbors",
     accent: "primary" as const,
   },
   {
     icon: Gamepad2,
     title: "Gamepad Native",
-    desc: "Works with Unity's Input System out of the box. D-pad, sticks, face buttons — all mapped sensibly",
+    desc: "Works with Unity's Input System out of the box, with D-pad, sticks, and face buttons all mapped sensibly",
     accent: "teal" as const,
   },
   {
@@ -61,7 +61,7 @@ const features = [
   {
     icon: MousePointer2,
     title: "Mixed Input",
-    desc: "Seamlessly blend mouse, keyboard, and gamepad. Hover to move focus, click to commit — whichever the player prefers",
+    desc: "Blend mouse, keyboard, and gamepad. Hover to move focus, click to commit, whichever the player prefers",
     accent: "primary" as const,
   },
   {
@@ -162,7 +162,7 @@ export function FocusNavigationPage() {
     <div className="min-h-screen">
       <PageMeta
         title="UI Toolkit: Focus & Navigation"
-        description="UI Toolkit: Focus & Navigation — first-class keyboard and gamepad navigation for Unity's UI Toolkit. Controller-ready out of the box."
+        description="Focus & Navigation makes Unity's UI Toolkit controller-ready out of the box, with first-class keyboard and gamepad support."
         path="/tools/focus-navigation"
       />
       {/* ═══════════ HERO ═══════════ */}
@@ -271,7 +271,7 @@ export function FocusNavigationPage() {
                 {promoImage ? (
                   <ImageWithFallback
                     src={promoImage}
-                    alt="UI Toolkit: Focus & Navigation — Controller-Ready UI For Unity"
+                    alt="UI Toolkit: Focus & Navigation, Controller-Ready UI For Unity"
                     className="w-full rounded-sm border-2 border-white/[0.12] shadow-[6px_6px_0px_0px_rgba(160,92,246,0.15)]"
                   />
                 ) : (
@@ -324,7 +324,7 @@ export function FocusNavigationPage() {
               className="text-muted-foreground max-w-2xl mx-auto"
               style={{ fontSize: "1.05rem" }}
             >
-              UI Toolkit's built-in navigation is a starting point. Focus & Navigation adds the polish — spatial inference, focus rings, mixed-input handling — that turns a usable menu into a great one
+              UI Toolkit's built-in navigation is a starting point. Focus & Navigation adds the polish (spatial inference, focus rings, mixed-input handling) that turns a usable menu into a great one
             </motion.p>
           </motion.div>
         </div>

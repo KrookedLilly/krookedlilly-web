@@ -37,7 +37,7 @@ const features = [
   {
     icon: Gauge,
     title: "Analog Key Values",
-    desc: "Read exact pressure values from each key — not just on/off. WASD becomes a throttle, not a light switch",
+    desc: "Read exact pressure values from each key, not just on/off. WASD becomes a throttle, not a light switch",
     accent: "primary" as const,
   },
   {
@@ -162,7 +162,7 @@ export function HEKeyboardsPage() {
     <div className="min-h-screen">
       <PageMeta
         title="HE Keyboards"
-        description="HE Keyboards — a KrookedLilly tool for Hall-Effect keyboard enthusiasts. Tune, tweak, and get the most out of your hardware."
+        description="HE Keyboards: a KrookedLilly tool for Hall-Effect keyboard enthusiasts. Tune, tweak, and get the most out of your hardware."
         path="/tools/he-keyboards"
       />
       {/* ═══════════ HERO ═══════════ */}
@@ -263,7 +263,7 @@ export function HEKeyboardsPage() {
               <div className="w-full max-w-lg">
                 <ImageWithFallback
                   src={heKeyboardsPromoImage}
-                  alt="HE Keyboards — Apply Pressure Sensitive Keyboard Inputs To Your Game"
+                  alt="HE Keyboards: Apply Pressure Sensitive Keyboard Inputs To Your Game"
                   className="w-full rounded-sm border-2 border-white/[0.12] shadow-[6px_6px_0px_0px_rgba(160,92,246,0.15)]"
                 />
               </div>
@@ -303,7 +303,7 @@ export function HEKeyboardsPage() {
               className="text-muted-foreground max-w-2xl mx-auto"
               style={{ fontSize: "1.05rem" }}
             >
-              Hall Effect keyboards can detect how far a key is pressed — not
+              Hall Effect keyboards can detect how far a key is pressed, not
               just whether it's down. HE Keyboards lets Unity games read those
               analog values so players can use pressure-sensitive controls
               without needing a controller

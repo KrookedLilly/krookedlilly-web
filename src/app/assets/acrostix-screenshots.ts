@@ -78,7 +78,7 @@ export function getScreenshot(mode: ThemeMode, screen: ScreenName): Screenshot {
   return {
     src: screenshotMap[mode][screen],
     screen,
-    label: `${screenLabels[screen]} — ${modeLabels[mode]}`,
+    label: `${screenLabels[screen]} (${modeLabels[mode]})`,
     mode,
   };
 }

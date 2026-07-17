@@ -11,8 +11,8 @@ export interface SnackTrayScreenshot {
 }
 
 export const snackTrayScreenshots: SnackTrayScreenshot[] = [
-  { id: "st-editor-center", src: imgEditorCenter, label: "Layout Editor — Center Zone" },
-  { id: "st-editor-zones", src: imgEditorZones, label: "Layout Editor — Zone Splitting" },
+  { id: "st-editor-center", src: imgEditorCenter, label: "Layout Editor: Center Zone" },
+  { id: "st-editor-zones", src: imgEditorZones, label: "Layout Editor: Zone Splitting" },
   { id: "st-desktop-preview", src: imgDesktopPreview, label: "Snapped Windows on Desktop" },
   { id: "st-desktop-overview", src: imgDesktopOverview, label: "Multi-Monitor Layout Overview" },
 ];

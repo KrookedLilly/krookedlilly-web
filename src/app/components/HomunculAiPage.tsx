@@ -78,7 +78,7 @@ const features = [
   {
     icon: Plug,
     title: "Plug-And-Play With Your AI",
-    desc: "Works with Claude Desktop, Cursor, any MCP client. Two-way channel in seconds — it speaks, you chat back, no config headaches.",
+    desc: "Works with Claude Desktop, Cursor, any MCP client. Two-way channel in seconds: it speaks, you chat back, no config headaches.",
     accent: "teal" as const,
   },
   {
@@ -120,11 +120,11 @@ const accentClasses = {
 const faqs = [
   {
     q: "Does HomunculAi come with an AI?",
-    a: "No. HomunculAi is a display layer — it gives your AI a body. You connect the AI you already use, and that AI brings the avatar to life.",
+    a: "No. HomunculAi is a display layer that gives your AI a body. You connect the AI you already use, and that AI brings the avatar to life.",
   },
   {
     q: "How is HomunculAi different from Replika or Character.ai?",
-    a: "Those apps provide their own AI. HomunculAi doesn't include one. Your actual AI — the one you already use for work, creativity, or coding — gets a visible presence on your screen, not a separate character from a different company.",
+    a: "Those apps provide their own AI. HomunculAi doesn't include one. Your actual AI (the one you already use for work, creativity, or coding) gets a visible presence on your screen, not a separate character from a different company.",
   },
   {
     q: "What is MCP?",
@@ -144,7 +144,7 @@ const faqs = [
   },
   {
     q: "Do I need to know how to code?",
-    a: "Not for the main supported tools — setup is one click inside HomunculAi. Connecting less common AI tools requires a short manual config step, but no coding.",
+    a: "Not for the main supported tools: setup is one click inside HomunculAi. Connecting less common AI tools requires a short manual config step, but no coding.",
   },
   {
     q: "Does HomunculAi work on Mac or Linux?",
@@ -152,7 +152,7 @@ const faqs = [
   },
   {
     q: "Is it free?",
-    a: "There's a 7-day free trial — no account, no payment, no email required. After that, it's $4.99 one-time with no subscription.",
+    a: "There's a 7-day free trial: no account, no payment, no email required. After that, it's $4.99 one-time with no subscription.",
   },
   {
     q: "Does HomunculAi collect my data?",
@@ -160,7 +160,7 @@ const faqs = [
   },
   {
     q: "Will my AI remember me between sessions?",
-    a: "HomunculAi doesn't store conversation history between sessions. Whether your AI remembers you depends on the AI you connect — some have their own memory features you can enable through that app.",
+    a: "HomunculAi doesn't store conversation history between sessions. Whether your AI remembers you depends on the AI you connect. Some have their own memory features you can enable through that app.",
   },
 ];
 
@@ -361,7 +361,7 @@ export function HomunculAiPage() {
                 style={{ fontFamily: "var(--font-heading)", fontWeight: 500, lineHeight: 1.6 }}
               >
                 <span className="uppercase tracking-wider text-amber-400/80">18+ only.</span>{" "}
-                Not available in certain regions &mdash;{" "}
+                Not available in certain regions:{" "}
                 <Link
                   to="/games/homunculai/sales-restrictions"
                   className="underline underline-offset-2 hover:text-foreground transition-colors"
@@ -611,7 +611,7 @@ export function HomunculAiPage() {
               custom={3}
               className="text-muted-foreground/70 mb-6 max-w-lg mx-auto text-sm"
             >
-              7-day free trial &mdash; no account, no payment, no email required.<br />$4.99 one time payment after. No subscription.
+              7-day free trial: no account, no payment, no email required.<br />$4.99 one time payment after. No subscription.
             </motion.p>
 
             {/* Legal links strip above buy buttons */}
@@ -666,7 +666,7 @@ export function HomunculAiPage() {
               style={{ fontFamily: "var(--font-heading)", fontWeight: 500, lineHeight: 1.6 }}
             >
               <span className="uppercase tracking-wider text-amber-400/80">18+ only.</span>{" "}
-              Not available in certain regions &mdash;{" "}
+              Not available in certain regions:{" "}
               <Link
                 to="/games/homunculai/sales-restrictions"
                 className="underline underline-offset-2 hover:text-foreground transition-colors"

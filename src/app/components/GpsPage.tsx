@@ -47,7 +47,7 @@ const features = [
   {
     icon: Package,
     title: "Deliver Everything",
-    desc: "Packages, contraband, hazardous cargo — your clients don't ask questions and neither should you. Contraband gets your ships arrested. Hazardous cargo can blow them up. Build automated routes and pray for the best",
+    desc: "Packages, contraband, hazardous cargo. Your clients don't ask questions and neither should you. Contraband gets your ships arrested. Hazardous cargo can blow them up. Build automated routes and pray for the best",
     accent: "teal" as const,
   },
   {
@@ -65,7 +65,7 @@ const features = [
   {
     icon: Rocket,
     title: "Build Your Fleet",
-    desc: "Your Semi-autonomous Cargo, Attack, Mining, Exploration, and Defense fleet — S.C.A.M.E.D. for short. Yeah, you got scammed into running this thing. Outfit them, automate their routes, and let them do the heavy lifting",
+    desc: "Your Semi-autonomous Cargo, Attack, Mining, Exploration, and Defense fleet. S.C.A.M.E.D. for short. Yeah, you got scammed into running this thing. Outfit them, automate their routes, and let them do the heavy lifting",
     accent: "primary" as const,
   },
   {
@@ -89,7 +89,7 @@ const features = [
   {
     icon: Megaphone,
     title: "Grow Your Business",
-    desc: "Advertise your services, ferry clients between planets, and build a reputation. Good deliveries mean more customers — and more customers mean more weird packages",
+    desc: "Advertise your services, ferry clients between planets, and build a reputation. Good deliveries mean more customers. And more customers mean more weird packages",
     accent: "primary" as const,
   },
   {
@@ -124,7 +124,7 @@ export function GpsPage() {
     <div className="min-h-screen">
       <PageMeta
         title="Galactic Parcel Service"
-        description="Galactic Parcel Service is an open-world delivery sim — build a fleet, haul packages across the galaxy, and terraform planets along the way."
+        description="Galactic Parcel Service is an open-world delivery sim: build a fleet, haul packages across the galaxy, and terraform planets along the way."
         path="/games/galactic-parcel-service"
       />
       {/* ═══════════ HERO ═══════════ */}
@@ -156,7 +156,7 @@ export function GpsPage() {
             <div className="relative aspect-[21/9] sm:aspect-[2.5/1]">
               <img
                 src={imgStorePageBackground}
-                alt="Galactic Parcel Service — space scene with planets and ships"
+                alt="Galactic Parcel Service: space scene with planets and ships"
                 className="absolute inset-0 w-full h-full object-cover"
               />
               {/* Gradient overlay */}
@@ -213,7 +213,7 @@ export function GpsPage() {
             >
               Build a fleet of automated ships, deliver packages across randomly generated
               solar systems, and try not to get blown up by space tentacles along the way.
-              Open-world, play-your-way space delivery — contraband, hazardous cargo, and all
+              Open-world, play-your-way space delivery: contraband, hazardous cargo, and all
             </motion.p>
             <motion.p
               variants={fadeUp}
@@ -261,8 +261,8 @@ export function GpsPage() {
               >
                 You're a delivery company in space. Planets need their packages, and you're the one
                 crazy enough to haul them through asteroid fields, hostile territory, and whatever
-                else the galaxy throws at you. Build ships, automate routes, expand your reach —
-                or steal everything and go full space pirate. Your call
+                else the galaxy throws at you. Build ships, automate routes, expand your reach.
+                Or steal everything and go full space pirate. Your call
               </motion.p>
               <motion.p
                 variants={fadeUp}
@@ -271,7 +271,7 @@ export function GpsPage() {
                 style={{ fontSize: "1.05rem", lineHeight: 1.7 }}
               >
                 Every solar system is randomly generated, every client has something weird to ship,
-                and the more you look, the stranger it gets. But be careful — mismanage your fleet,
+                and the more you look, the stranger it gets. But be careful: mismanage your fleet,
                 lose too many clients, or blow through your budget, and you'll go broke faster than
                 you can say "space bankruptcy." The galaxy doesn't judge, but it doesn't bail you out either
               </motion.p>
@@ -283,7 +283,7 @@ export function GpsPage() {
                 <div className="rounded-sm overflow-hidden border-2 border-white/[0.12] rotate-1 hover:rotate-0 transition-transform duration-500 shadow-[6px_6px_0px_0px_rgba(160,92,246,0.2)]">
                   <img
                     src={imgTutorialScreenshot}
-                    alt="GPS tutorial gameplay — building routes around a sun with planets"
+                    alt="GPS tutorial gameplay: building routes around a sun with planets"
                     className="w-full max-w-lg"
                   />
                 </div>
@@ -333,7 +333,7 @@ export function GpsPage() {
               style={{ fontSize: "1.05rem", lineHeight: 1.7 }}
             >
               Ever wonder what's in all those packages? You'll find out. Clients across the galaxy
-              are shipping absurd things from day one — and the more you look into what's actually
+              are shipping absurd things from day one, and the more you look into what's actually
               in those boxes, the weirder it gets. Some of it's valuable. Some of it's contraband
               that'll get your ships arrested. Some of it's hazardous enough to blow them up.
               All of it's entertaining
@@ -379,7 +379,7 @@ export function GpsPage() {
               style={{ fontSize: "1.05rem", lineHeight: 1.7 }}
             >
               Each new game generates 50+ unique solar systems. Every one has different suns,
-              planets, moons, and asteroid fields — and everything moves. Moons orbit planets,
+              planets, moons, and asteroid fields. And everything moves. Moons orbit planets,
               planets orbit suns, asteroids drift through systems, and entire solar systems orbit
               the center of the map. It's a living galaxy that never plays the same way twice
             </motion.p>
@@ -400,7 +400,7 @@ export function GpsPage() {
               <div className="rounded-sm overflow-hidden border-2 border-teal/30 hover:border-teal/50 transition-all hover:-translate-y-1 shadow-[6px_6px_0px_0px_rgba(34,211,238,0.15)] hover:shadow-[8px_8px_0px_0px_rgba(34,211,238,0.25)]">
                 <img
                   src={imgSolarSystem}
-                  alt="Solar system overview — a glowing blue-white star surrounded by orbiting planets, moons, and asteroids, one of 50+ randomly generated systems per game"
+                  alt="Solar system overview: a glowing blue-white star surrounded by orbiting planets, moons, and asteroids, one of 50+ randomly generated systems per game"
                   className="w-full"
                 />
               </div>
@@ -411,7 +411,7 @@ export function GpsPage() {
                 className="text-center mt-4 text-muted-foreground/60 text-sm italic"
                 style={{ fontFamily: "var(--font-heading)" }}
               >
-                One of 50+ randomly generated solar systems. Every orbit, every planet, every moon — different every game
+                One of 50+ randomly generated solar systems. Every orbit, every planet, every moon: different every game
               </motion.p>
             </motion.div>
           </motion.div>
@@ -427,7 +427,7 @@ export function GpsPage() {
               { src: imgPlanet4, alt: "A randomly generated planet with teal oceans and brown landmasses", tilt: "-rotate-3", delay: 0, border: "border-teal/30", hoverBorder: "hover:border-teal/50", shadow: "shadow-[4px_4px_0px_0px_rgba(34,211,238,0.15)]", hoverShadow: "hover:shadow-[6px_6px_0px_0px_rgba(34,211,238,0.25)]" },
               { src: imgPlanet6, alt: "A randomly generated small planet system with moons", tilt: "rotate-2", delay: 1, border: "border-primary/30", hoverBorder: "hover:border-primary/50", shadow: "shadow-[4px_4px_0px_0px_rgba(160,92,246,0.15)]", hoverShadow: "hover:shadow-[6px_6px_0px_0px_rgba(160,92,246,0.25)]" },
               { src: imgPlanet2, alt: "A randomly generated purple and magenta planet", tilt: "-rotate-1", delay: 2, border: "border-teal/30", hoverBorder: "hover:border-teal/50", shadow: "shadow-[4px_4px_0px_0px_rgba(34,211,238,0.15)]", hoverShadow: "hover:shadow-[6px_6px_0px_0px_rgba(34,211,238,0.25)]" },
-              { src: imgDeadPlanet, alt: "A dead planet — cracked molten surface glowing with lava, waiting to be terraformed", tilt: "rotate-3", delay: 3, border: "border-primary/30", hoverBorder: "hover:border-primary/50", shadow: "shadow-[4px_4px_0px_0px_rgba(160,92,246,0.15)]", hoverShadow: "hover:shadow-[6px_6px_0px_0px_rgba(160,92,246,0.25)]" },
+              { src: imgDeadPlanet, alt: "A dead planet: cracked molten surface glowing with lava, waiting to be terraformed", tilt: "rotate-3", delay: 3, border: "border-primary/30", hoverBorder: "hover:border-primary/50", shadow: "shadow-[4px_4px_0px_0px_rgba(160,92,246,0.15)]", hoverShadow: "hover:shadow-[6px_6px_0px_0px_rgba(160,92,246,0.25)]" },
             ].map((planet, i) => (
               <motion.div
                 key={planet.alt}
@@ -488,7 +488,7 @@ export function GpsPage() {
               custom={2}
               className="text-muted-foreground max-w-lg mx-auto"
             >
-              Deliver, mine, build, steal, terraform, fight — or just vibe in space. It's your empire
+              Deliver, mine, build, steal, terraform, fight. Or just vibe in space. It's your empire
             </motion.p>
           </motion.div>
 
@@ -579,7 +579,7 @@ export function GpsPage() {
               >
                 <img
                   src={imgTentacle}
-                  alt="A weird organic tentacle appendage — pink and cyan, covered in spots, dancing menacingly"
+                  alt="A weird organic tentacle appendage: pink and cyan, covered in spots, dancing menacingly"
                   className="block max-h-[360px] w-auto"
                 />
               </motion.div>
@@ -620,7 +620,7 @@ export function GpsPage() {
                 <div className="relative aspect-video bg-black/30">
                   <img
                     src={imgNarwhal}
-                    alt="The Space Narwhal — a majestic purple narwhal with cyan accents swimming through space"
+                    alt="The Space Narwhal: a majestic purple narwhal with cyan accents swimming through space"
                     className="w-full h-full object-contain p-6"
                   />
                   {/* Subtle glow behind */}

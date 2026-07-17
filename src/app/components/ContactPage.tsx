@@ -48,7 +48,7 @@ export function ContactPage() {
     <div className="min-h-screen">
       <PageMeta
         title="Contact"
-        description="Get in touch with KrookedLilly — press, partnerships, support, or just to say hi."
+        description="Get in touch with KrookedLilly: press, partnerships, support, or just to say hi."
         path="/contact"
       />
       {/* Hero */}

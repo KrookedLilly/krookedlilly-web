@@ -45,7 +45,7 @@ export function HomunculAiWhatIsAIPage() {
   return (
     <div className="min-h-screen">
       <PageMeta
-        title="What is AI — HomunculAi"
+        title="HomunculAi: What is AI"
         description="Background reading on what HomunculAi is, how it works, and what modern AI can and can't do."
         path="/games/homunculai/what-is-ai"
         noIndex
@@ -105,7 +105,7 @@ export function HomunculAiWhatIsAIPage() {
           <div className="p-6 sm:p-10 bg-white/[0.04] backdrop-blur-xl border-2 border-white/[0.12] rounded-sm">
             <Section title="What Happens When You Connect an AI to HomunculAi" index={0}>
               <p className="text-muted-foreground mb-3">
-                HomunculAi gives an AI agent a body — an avatar it can control
+                HomunculAi gives an AI agent a body, an avatar it can control
                 with expressions, colors, animations, and chat messages. The AI
                 agent you connect (such as Claude, ChatGPT, a local model, or
                 another AI) is what brings the avatar to life. HomunculAi
@@ -131,7 +131,7 @@ export function HomunculAiWhatIsAIPage() {
                 An AI does not understand what it is saying in the way a human
                 does. It does not verify whether its responses are true or false.
                 When an AI says "I think..." or "I feel..." or "I remember...",
-                it is producing words that fit the conversational pattern — not
+                it is producing words that fit the conversational pattern, not
                 necessarily reporting an inner experience the way a human would.
               </p>
             </Section>
@@ -150,7 +150,7 @@ export function HomunculAiWhatIsAIPage() {
                   Writing code, stories, poems, and other creative content
                 </li>
                 <li>
-                  Controlling the avatar — choosing a body, setting expressions,
+                  Controlling the avatar: choosing a body, setting expressions,
                   playing animations, and chatting with you through HomunculAi
                 </li>
                 <li>
@@ -194,7 +194,7 @@ export function HomunculAiWhatIsAIPage() {
                 but sounds confident and correct. This is called a "hallucination."
                 An AI might cite a source that does not exist, give advice that
                 sounds authoritative but is wrong, or describe events that never
-                happened — all while sounding completely sure of itself. There is
+                happened, all while sounding completely sure of itself. There is
                 no reliable way to tell from the AI's tone or confidence alone
                 whether what it is saying is true. Always verify important
                 information independently.
@@ -209,15 +209,15 @@ export function HomunculAiWhatIsAIPage() {
                 processing. HomunculAi itself keeps everything on your device,
                 but your AI provider receives and processes your messages
                 according to their own privacy policy. If you use a
-                locally-running AI model, your messages stay on your device —
+                locally-running AI model, your messages stay on your device,
                 unless that local model has its own network capabilities
                 (internet access, telemetry, update checks) that operate
                 independently of HomunculAi.
               </p>
               <p className="text-muted-foreground">
                 The AI agent you connect may also have its own capabilities
-                outside of HomunculAi — such as reading files on your computer or
-                browsing the web — depending on your AI setup. HomunculAi does
+                outside of HomunculAi (such as reading files on your computer or
+                browsing the web), depending on your AI setup. HomunculAi does
                 not grant those capabilities, but it also cannot prevent the AI
                 from using them. Be aware of what your AI can do in its own
                 environment, not just inside HomunculAi.
@@ -228,21 +228,21 @@ export function HomunculAiWhatIsAIPage() {
               <p className="text-muted-foreground mb-3">
                 When you chat with an AI, you send it text and it sends text
                 back. HomunculAi adds a second channel alongside that. Instead
-                of only replying in words, your AI can also do things visually
-                — pick an appearance, change its expression, or send a message
+                of only replying in words, your AI can also do things visually:
+                pick an appearance, change its expression, or send a message
                 through an avatar that floats on your desktop while you work.
               </p>
               <p className="text-muted-foreground mb-3">
                 The AI still works exactly the same way it always does. It reads
                 what you write, decides how to respond, and generates a reply.
                 With HomunculAi connected, it also has the option to update how
-                it looks as part of that response — the same way you might
+                it looks as part of that response, the same way you might
                 adjust your facial expression while speaking, not just choose
                 different words.
               </p>
               <p className="text-muted-foreground mb-3">
                 HomunculAi does not change what your AI knows or how it thinks.
-                It gives it more ways to communicate — like handing someone who
+                It gives it more ways to communicate, like handing someone who
                 could only write notes the ability to also make expressions.
                 Same mind, more tools.
               </p>
@@ -259,9 +259,9 @@ export function HomunculAiWhatIsAIPage() {
                 but it is subject to all of the limitations above. It may say
                 things that are wrong. It may express emotions it does not
                 genuinely experience. It may sound like a friend, but it is not
-                one. HomunculAi provides safety layers — activity logging,
+                one. HomunculAi provides safety layers (activity logging,
                 suspicious-pattern detection, language enforcement, and
-                verification gates — but these are aids to your judgment, not
+                verification gates), but these are aids to your judgment, not
                 replacements for it.
               </p>
               <div className="bg-primary/10 border-l-3 border-primary p-4 rounded-r-sm text-foreground">

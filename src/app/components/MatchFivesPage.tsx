@@ -69,7 +69,7 @@ const features = [
   {
     icon: Zap,
     title: "No Timers, No Pressure",
-    desc: "Take your time and think it through, or tap fast and wing it. There's no clock ticking — just you and the numbers",
+    desc: "Take your time and think it through, or tap fast and wing it. There's no clock ticking. Just you and the numbers",
     accent: "primary" as const,
   },
   {
@@ -169,7 +169,7 @@ export function MatchFivesPage() {
     <div className="min-h-screen">
       <PageMeta
         title="Match Fives"
-        description="Match Fives is a brain-stretching iOS puzzle — line up five-in-a-row across overlapping grids against the clock."
+        description="Match Fives is a brain-stretching iOS puzzle: line up five-in-a-row across overlapping grids against the clock."
         path="/games/match-fives"
       />
       {/* ═══════════ HERO ═══════════ */}
@@ -307,7 +307,7 @@ export function MatchFivesPage() {
             >
               Tap two matching numbers next to each other to merge them into
               one bigger number. Chain matches together to multiply your score.
-              The board fills up fast — plan ahead or accept your fate
+              The board fills up fast. Plan ahead or accept your fate
             </motion.p>
           </motion.div>
 
