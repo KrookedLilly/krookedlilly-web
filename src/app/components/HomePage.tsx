@@ -13,6 +13,8 @@ import { ArrowRight, Gamepad2, Wrench, Sparkles } from "lucide-react";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
 import { DesktopWindow } from "./DesktopWindow";
 import { PageMeta } from "./PageMeta";
+import { unityToolkitCount } from "../data/unityAssets";
+import { minecraftModCount } from "../data/minecraftMods";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -94,14 +96,14 @@ const mods = [
     slug: "/tools/he-keyboards" as string | null,
   },
   {
-    title: "UI Toolkit: Screen Manager",
+    title: "UI Toolkit Suite",
     platform: "Unity Asset",
-    description: "UI Toolkit screen management: transitions, nav stacks, and lifecycle events out of the box",
-    status: "In Development",
+    description: `${unityToolkitCount} drop-in packages for Unity's UI Toolkit: screens, tweens, layout, modals, navigation, and more`,
+    status: "Released",
     accent: "primary" as const,
     rotate: "-rotate-1",
     logo: imgScreenManagerLogo as string | null,
-    slug: "/tools/screen-manager" as string | null,
+    slug: "/tools/ui-toolkit" as string | null,
   },
   {
     title: "SnackTray",
@@ -114,14 +116,14 @@ const mods = [
     slug: "/tools/snacktray" as string | null,
   },
   {
-    title: "AutoHideHud",
-    platform: "Minecraft",
-    description: "Auto-hides HUD elements to your parameters. See the world, not your hotbar",
+    title: "Minecraft Mods",
+    platform: "CurseForge · Modrinth",
+    description: `${minecraftModCount} mods for creatures, gameplay, and quality-of-life fixes on Minecraft`,
     status: "Released",
     accent: "primary" as const,
     rotate: "-rotate-1",
     logo: imgAutoHideHudLogo as string | null,
-    slug: null as string | null,
+    slug: "/tools/minecraft-mods" as string | null,
   },
 ];
 

@@ -291,7 +291,7 @@ export function ContactPage() {
                           <option value="modal-notifications">UI Toolkit: Modal & Notifications</option>
                           <option value="focus-navigation">UI Toolkit: Focus & Navigation</option>
                           <option value="snacktray">SnackTray</option>
-                          <option value="autohidehud">AutoHideHud</option>
+                          <option value="minecraft-mods">Minecraft Mods</option>
                           <option value="card-labeler">Card Labeler</option>
                           <option value="homunculai">HomunculAi</option>
                         </select>

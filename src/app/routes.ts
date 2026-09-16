@@ -123,40 +123,34 @@ export const routes: RouteRecord[] = [
           })),
       },
       {
-        path: "tools/screen-manager",
+        path: "tools/ui-toolkit",
         lazy: () =>
-          import("./components/ScreenManagerPage").then((m) => ({
-            Component: m.ScreenManagerPage,
+          import("./components/UiToolkitSuitePage").then((m) => ({
+            Component: m.UiToolkitSuitePage,
           })),
       },
       {
-        path: "tools/tween-engine",
+        path: "tools/minecraft-mods",
         lazy: () =>
-          import("./components/TweenEnginePage").then((m) => ({
-            Component: m.TweenEnginePage,
+          import("./components/MinecraftModsPage").then((m) => ({
+            Component: m.MinecraftModsPage,
           })),
       },
-      {
-        path: "tools/responsive-layout",
+      // Retired UI Toolkit detail pages now consolidated into the suite hub.
+      // Keep the old paths alive as redirects for existing inbound links.
+      ...[
+        "tools/screen-manager",
+        "tools/tween-engine",
+        "tools/responsive-layout",
+        "tools/modal-notifications",
+        "tools/focus-navigation",
+      ].map((path) => ({
+        path,
         lazy: () =>
-          import("./components/ResponsiveLayoutPage").then((m) => ({
-            Component: m.ResponsiveLayoutPage,
+          import("./components/ToolkitRedirect").then((m) => ({
+            Component: m.ToolkitRedirect,
           })),
-      },
-      {
-        path: "tools/modal-notifications",
-        lazy: () =>
-          import("./components/ModalNotificationsPage").then((m) => ({
-            Component: m.ModalNotificationsPage,
-          })),
-      },
-      {
-        path: "tools/focus-navigation",
-        lazy: () =>
-          import("./components/FocusNavigationPage").then((m) => ({
-            Component: m.FocusNavigationPage,
-          })),
-      },
+      })),
       {
         path: "games/acrostix/privacy",
         lazy: () =>

@@ -1,9 +1,5 @@
-import imgAutoHideHudLogo from "@/assets/autohidehud-logo.png";
 import imgCardLabelerLogo from "@/assets/cardlabeler-logo.png";
 import imgStorePageBackground from "@/assets/gps-store-background.png";
-import imgScreenManagerCover from "@/assets/screenmanager-cover.png";
-import imgTweenEngineCover from "@/assets/tweenengine-cover.png";
-import imgModalNotificationsCover from "@/assets/modalnotification-cover.png";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "motion/react";
@@ -16,6 +12,24 @@ import { ballDropCardImage } from "../assets/balldrop-screenshots";
 import { heKeyboardsCardImage } from "../assets/hekeyboards-screenshots";
 import { snackTrayCardImage } from "../assets/snacktray-screenshots";
 import imgHomunculAiCard from "@/assets/homunculai-capsule-main.png";
+import { unityToolkitAssets, unityToolkitCount } from "../data/unityAssets";
+import { minecraftMods, minecraftModCount } from "../data/minecraftMods";
+import { CollectionChip } from "./collectionUi";
+
+/**
+ * Synthetic catalog cards that stand in for a whole collection. Each maps its
+ * slug to the member list (for the logo cluster) and a count badge label.
+ */
+const UI_TOOLKIT_SUITE_SLUG = "ui-toolkit";
+const MINECRAFT_MODS_SLUG = "minecraft-mods";
+
+const collectionCards: Record<
+  string,
+  { members: { name: string; logo?: string }[]; badge: string }
+> = {
+  [UI_TOOLKIT_SUITE_SLUG]: { members: unityToolkitAssets, badge: `${unityToolkitCount} assets` },
+  [MINECRAFT_MODS_SLUG]: { members: minecraftMods, badge: `${minecraftModCount} mods` },
+};
 
 type Category = "All" | "Games & Apps" | "Tools & Mods";
 type Kind = "Game" | "App" | "Tool" | "Mod";
@@ -113,78 +127,18 @@ const projects = [
   },
   {
     id: 7,
-    title: "UI Toolkit: Screen Manager",
+    title: "UI Toolkit Suite",
     category: "Tools & Mods" as const,
     kind: "Tool" as Kind,
-    type: "Unity Asset",
-    description: "UI Toolkit screen management for Unity: transitions, navigation, lifecycle.",
-    image: imgScreenManagerCover as string | null,
-    status: "In Development",
-    platforms: ["Unity"],
-    tilt: "rotate-1",
-    accent: "primary" as const,
-    imagePosition: "object-cover" as const,
-    slug: "screen-manager" as string | null,
-  },
-  {
-    id: 11,
-    title: "UI Toolkit: Tween Engine",
-    category: "Tools & Mods" as const,
-    kind: "Tool" as Kind,
-    type: "Unity Asset",
-    description: "Chainable tweens for UI Toolkit: easing curves, sequences, zero-GC playback.",
-    image: imgTweenEngineCover as string | null,
-    status: "In Development",
-    platforms: ["Unity"],
-    tilt: "-rotate-1",
-    accent: "teal" as const,
-    imagePosition: "object-cover" as const,
-    slug: "tween-engine" as string | null,
-  },
-  {
-    id: 12,
-    title: "UI Toolkit: Responsive Layout",
-    category: "Tools & Mods" as const,
-    kind: "Tool" as Kind,
-    type: "Unity Asset",
-    description: "Breakpoints, adaptive grids, and safe areas for UI Toolkit. One UI, every aspect ratio.",
+    type: "Unity Asset Suite",
+    description: `${unityToolkitCount} drop-in packages for Unity's UI Toolkit. Screens, tweens, layout, modals, and navigation.`,
     image: null as string | null,
-    status: "In Development",
+    status: "Released",
     platforms: ["Unity"],
     tilt: "rotate-1",
     accent: "primary" as const,
     imagePosition: "object-cover" as const,
-    slug: "responsive-layout" as string | null,
-  },
-  {
-    id: 13,
-    title: "UI Toolkit: Modal & Notifications",
-    category: "Tools & Mods" as const,
-    kind: "Tool" as Kind,
-    type: "Unity Asset",
-    description: "Stackable modals and toast queues for UI Toolkit: focus traps, dismissal, theming.",
-    image: imgModalNotificationsCover as string | null,
-    status: "In Development",
-    platforms: ["Unity"],
-    tilt: "-rotate-1",
-    accent: "teal" as const,
-    imagePosition: "object-cover" as const,
-    slug: "modal-notifications" as string | null,
-  },
-  {
-    id: 14,
-    title: "UI Toolkit: Focus & Navigation",
-    category: "Tools & Mods" as const,
-    kind: "Tool" as Kind,
-    type: "Unity Asset",
-    description: "Keyboard and gamepad navigation for UI Toolkit. Auto-focus maps, visual indicators, mixed input.",
-    image: null as string | null,
-    status: "In Development",
-    platforms: ["Unity"],
-    tilt: "rotate-1",
-    accent: "primary" as const,
-    imagePosition: "object-cover" as const,
-    slug: "focus-navigation" as string | null,
+    slug: UI_TOOLKIT_SUITE_SLUG as string | null,
   },
   {
     id: 8,
@@ -203,18 +157,18 @@ const projects = [
   },
   {
     id: 9,
-    title: "AutoHideHud",
+    title: "Minecraft Mods",
     category: "Tools & Mods" as const,
     kind: "Mod" as Kind,
-    type: "Minecraft Mod",
-    description: "Auto-hides Minecraft HUD to your parameters. See the world, not your hotbar.",
-    image: imgAutoHideHudLogo,
+    type: "Minecraft Mod Collection",
+    description: `${minecraftModCount} Minecraft mods for creatures, gameplay, and quality-of-life fixes. On CurseForge and Modrinth.`,
+    image: null as string | null,
     status: "Released",
     platforms: ["Minecraft"],
     tilt: "rotate-1",
     accent: "primary" as const,
-    imagePosition: "object-contain" as const,
-    slug: null as string | null,
+    imagePosition: "object-cover" as const,
+    slug: MINECRAFT_MODS_SLUG as string | null,
   },
   {
     id: 10,
@@ -305,6 +259,20 @@ function sortProjects<T extends { category: Category; status: string }>(items: T
   });
 }
 
+/** Cluster of member chips used as a collection card's thumbnail. */
+function CollectionThumb({ members }: { members: { name: string; logo?: string }[] }) {
+  const chips = members.slice(0, 8);
+  return (
+    <div className="w-full h-full flex items-center justify-center bg-[radial-gradient(circle_at_50%_38%,_rgba(160,92,246,0.18)_0%,_rgba(0,0,0,0.35)_75%)]">
+      <div className="grid grid-cols-4 gap-2 -rotate-[4deg] transition-transform duration-500 group-hover:rotate-0 group-hover:scale-105">
+        {chips.map((m, i) => (
+          <CollectionChip key={m.name} name={m.name} logo={m.logo} index={i} size="sm" />
+        ))}
+      </div>
+    </div>
+  );
+}
+
 export function GamesPage() {
   const [activeCategory, setActiveCategory] = useState<Category>("All");
 
@@ -376,6 +344,7 @@ export function GamesPage() {
             {filtered.map((project, i) => {
               const statusInfo = statusConfig[project.status];
               const StatusIcon = statusInfo.icon;
+              const collection = project.slug ? collectionCards[project.slug] : undefined;
               // Compute tilt + accent from render position so alternation stays clean after sort
               const accentKey = i % 2 === 0 ? ("teal" as const) : ("primary" as const);
               const accent = accentMap[accentKey];
@@ -398,7 +367,9 @@ export function GamesPage() {
                     />
                   )}
                   <div className="relative aspect-video overflow-hidden">
-                    {project.image ? (
+                    {collection ? (
+                      <CollectionThumb members={collection.members} />
+                    ) : project.image ? (
                       <ImageWithFallback
                         src={project.image}
                         alt={project.title}
@@ -410,6 +381,16 @@ export function GamesPage() {
                       </div>
                     )}
                     <div className="absolute inset-0 bg-gradient-to-t from-card via-transparent to-transparent" />
+                    {collection && (
+                      <div className="absolute top-3 right-3 z-[5]">
+                        <span
+                          className="px-2.5 py-1 text-xs uppercase tracking-wider rounded-sm bg-black/60 border border-primary/30 text-primary backdrop-blur-sm"
+                          style={{ fontFamily: "var(--font-heading)", fontWeight: 700 }}
+                        >
+                          {collection.badge}
+                        </span>
+                      </div>
+                    )}
                     {/* Released status hidden — only surface non-Released states */}
                     {project.status !== "Released" && (
                       <div className="absolute top-3 left-3">
