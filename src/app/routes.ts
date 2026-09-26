@@ -173,6 +173,13 @@ export const routes: RouteRecord[] = [
           })),
       },
       {
+        path: "acrostix",
+        lazy: () =>
+          import("./components/AcrostixGetPage").then((m) => ({
+            Component: m.AcrostixGetPage,
+          })),
+      },
+      {
         path: "press-kits",
         lazy: () =>
           import("./components/PressKitsPage").then((m) => ({
