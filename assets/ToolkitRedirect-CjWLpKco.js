@@ -1,0 +1,1 @@
+import{j as t}from"./app-Boz8C2_7.js";import{N as o}from"./vendor-router-CGw9j0jD.js";import"./vendor-motion-BTeieGXM.js";function a(){return t.jsx(o,{to:"/tools/ui-toolkit",replace:!0})}export{a as ToolkitRedirect,a as default};

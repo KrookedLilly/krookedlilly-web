@@ -126,22 +126,22 @@
     "/assets/homunculai-capsule-main-CQk8rcbQ.png"
   ],
   "\u0000/Users/krookedmac/Documents/Development/KrookedLilly/krookedlilly-web/node_modules/react-dom/cjs/react-dom-client.production.js?commonjs-exports": [
-    "/assets/client-DigqemH2.js"
+    "/assets/client-Do7AEA2p.js"
   ],
   "\u0000/Users/krookedmac/Documents/Development/KrookedLilly/krookedlilly-web/node_modules/react-dom/cjs/react-dom.production.js?commonjs-exports": [
-    "/assets/vendor-router-DU9kNmIe.js"
+    "/assets/vendor-router-CGw9j0jD.js"
   ],
   "\u0000/Users/krookedmac/Documents/Development/KrookedLilly/krookedlilly-web/node_modules/react-dom/client.js?commonjs-es-import": [
-    "/assets/client-DigqemH2.js"
+    "/assets/client-Do7AEA2p.js"
   ],
   "\u0000/Users/krookedmac/Documents/Development/KrookedLilly/krookedlilly-web/node_modules/react-dom/client.js?commonjs-module": [
-    "/assets/client-DigqemH2.js"
+    "/assets/client-Do7AEA2p.js"
   ],
   "\u0000/Users/krookedmac/Documents/Development/KrookedLilly/krookedlilly-web/node_modules/react-dom/index.js?commonjs-es-import": [
-    "/assets/vendor-router-DU9kNmIe.js"
+    "/assets/vendor-router-CGw9j0jD.js"
   ],
   "\u0000/Users/krookedmac/Documents/Development/KrookedLilly/krookedlilly-web/node_modules/react-dom/index.js?commonjs-module": [
-    "/assets/vendor-router-DU9kNmIe.js"
+    "/assets/vendor-router-CGw9j0jD.js"
   ],
   "\u0000/Users/krookedmac/Documents/Development/KrookedLilly/krookedlilly-web/node_modules/react-fast-compare/index.js?commonjs-es-import": [
     "/assets/autohidehud-logo-DhMS1DRX.png",
@@ -228,13 +228,13 @@
     "/assets/homunculai-capsule-main-CQk8rcbQ.png"
   ],
   "\u0000/Users/krookedmac/Documents/Development/KrookedLilly/krookedlilly-web/node_modules/react/cjs/react.production.js?commonjs-exports": [
-    "/assets/vendor-router-DU9kNmIe.js"
+    "/assets/vendor-router-CGw9j0jD.js"
   ],
   "\u0000/Users/krookedmac/Documents/Development/KrookedLilly/krookedlilly-web/node_modules/react/index.js?commonjs-es-import": [
-    "/assets/vendor-router-DU9kNmIe.js"
+    "/assets/vendor-router-CGw9j0jD.js"
   ],
   "\u0000/Users/krookedmac/Documents/Development/KrookedLilly/krookedlilly-web/node_modules/react/index.js?commonjs-module": [
-    "/assets/vendor-router-DU9kNmIe.js"
+    "/assets/vendor-router-CGw9j0jD.js"
   ],
   "\u0000/Users/krookedmac/Documents/Development/KrookedLilly/krookedlilly-web/node_modules/react/jsx-runtime.js?commonjs-es-import": [
     "/assets/autohidehud-logo-DhMS1DRX.png",
@@ -321,10 +321,10 @@
     "/assets/homunculai-capsule-main-CQk8rcbQ.png"
   ],
   "\u0000/Users/krookedmac/Documents/Development/KrookedLilly/krookedlilly-web/node_modules/scheduler/cjs/scheduler.production.js?commonjs-exports": [
-    "/assets/client-DigqemH2.js"
+    "/assets/client-Do7AEA2p.js"
   ],
   "\u0000/Users/krookedmac/Documents/Development/KrookedLilly/krookedlilly-web/node_modules/scheduler/index.js?commonjs-module": [
-    "/assets/client-DigqemH2.js"
+    "/assets/client-Do7AEA2p.js"
   ],
   "\u0000/Users/krookedmac/Documents/Development/KrookedLilly/krookedlilly-web/node_modules/shallowequal/index.js?commonjs-es-import": [
     "/assets/autohidehud-logo-DhMS1DRX.png",
@@ -369,7 +369,7 @@
     "/assets/homunculai-capsule-main-CQk8rcbQ.png"
   ],
   "\u0000commonjsHelpers.js": [
-    "/assets/vendor-router-DU9kNmIe.js"
+    "/assets/vendor-router-CGw9j0jD.js"
   ],
   "\u0000vite/modulepreload-polyfill.js": [
     "/assets/autohidehud-logo-DhMS1DRX.png",
@@ -498,7 +498,7 @@
     "/assets/homunculai-capsule-main-CQk8rcbQ.png"
   ],
   "node_modules/@remix-run/router/dist/router.js": [
-    "/assets/vendor-router-DU9kNmIe.js"
+    "/assets/vendor-router-CGw9j0jD.js"
   ],
   "node_modules/framer-motion/dist/es/animation/animate/index.mjs": [
     "/assets/vendor-motion-BTeieGXM.js"
@@ -3404,14 +3404,20 @@
     "/assets/acrostix-ipad-slide-1-gameplay-Cz6rmlZ8.png",
     "/assets/homunculai-capsule-main-CQk8rcbQ.png"
   ],
+  "node_modules/lucide-react/dist/esm/icons/arrow-up-right.js": [
+    "/assets/arrow-up-right-CodDEjyP.js"
+  ],
   "node_modules/lucide-react/dist/esm/icons/bell.js": [
-    "/assets/bell-Dqp62fi0.js"
+    "/assets/ShopPage-DXH1vAfm.js"
+  ],
+  "node_modules/lucide-react/dist/esm/icons/blocks.js": [
+    "/assets/MinecraftModsPage-CxA0YrLx.js"
   ],
   "node_modules/lucide-react/dist/esm/icons/book-open.js": [
-    "/assets/HomunculAiWhatIsAIPage-CANjPrjn.js"
+    "/assets/HomunculAiWhatIsAIPage-Cmb9eoza.js"
   ],
   "node_modules/lucide-react/dist/esm/icons/bot.js": [
-    "/assets/HomunculAiPage-5krlz8kM.js",
+    "/assets/HomunculAiPage-DinmWjax.js",
     "/assets/homunculai-capsule-vertical-BdhaD5j7.png",
     "/assets/homunculai-trailer-D-9y0xEq.mp4",
     "/assets/homunculai-svg-document-B5lVJBjP.png",
@@ -3419,21 +3425,21 @@
     "/assets/homunculai-art-CYrZTR9D.png"
   ],
   "node_modules/lucide-react/dist/esm/icons/brain.js": [
-    "/assets/MatchFivesPage-DiijX3gZ.js"
+    "/assets/MatchFivesPage-DhQfytkh.js"
   ],
   "node_modules/lucide-react/dist/esm/icons/calendar.js": [
-    "/assets/GamesPage-BYQh-ZR2.js",
+    "/assets/GamesPage-B5Etmw_9.js",
     "/assets/cardlabeler-logo-CaTXSER3.png"
   ],
   "node_modules/lucide-react/dist/esm/icons/chart-column.js": [
-    "/assets/AcrostixPage-MSkIQWU0.js",
+    "/assets/AcrostixPage-D_2nIN8X.js",
     "/assets/acrostix-iphone-slide-1-gameplay-C-gcYRHx.png",
     "/assets/acrostix-gameplay-DV-nTemp.mp4",
     "/assets/acrostix-iphone-slide-2-score-breakdown-Dxv8BwFC.png",
     "/assets/acrostix-iphone-slide-3-campaign-worlds-BztWEe1T.png"
   ],
   "node_modules/lucide-react/dist/esm/icons/chevron-down.js": [
-    "/assets/HomunculAiPage-5krlz8kM.js",
+    "/assets/HomunculAiPage-DinmWjax.js",
     "/assets/homunculai-capsule-vertical-BdhaD5j7.png",
     "/assets/homunculai-trailer-D-9y0xEq.mp4",
     "/assets/homunculai-svg-document-B5lVJBjP.png",
@@ -3441,22 +3447,19 @@
     "/assets/homunculai-art-CYrZTR9D.png"
   ],
   "node_modules/lucide-react/dist/esm/icons/chevron-left.js": [
-    "/assets/chevron-right-eBV-Y2Ik.js"
+    "/assets/chevron-right-Ckznbflu.js"
   ],
   "node_modules/lucide-react/dist/esm/icons/chevron-right.js": [
-    "/assets/chevron-right-eBV-Y2Ik.js"
+    "/assets/chevron-right-Ckznbflu.js"
   ],
   "node_modules/lucide-react/dist/esm/icons/circle-check-big.js": [
-    "/assets/circle-check-big-CzD52h-s.js"
+    "/assets/circle-check-big-D30Srgtm.js"
   ],
   "node_modules/lucide-react/dist/esm/icons/clock.js": [
-    "/assets/clock-C91OGx3t.js"
-  ],
-  "node_modules/lucide-react/dist/esm/icons/compass.js": [
-    "/assets/FocusNavigationPage-CnUqv5lM.js"
+    "/assets/clock-D87sCxEM.js"
   ],
   "node_modules/lucide-react/dist/esm/icons/crosshair.js": [
-    "/assets/GpsPage-DLfbTA5n.js",
+    "/assets/GpsPage-BpDqhWLx.js",
     "/assets/gps-logo-9uOggrAx.png",
     "/assets/gps-tutorial-ocsN7TPb.png",
     "/assets/gps-narwhal-cUligC7t.png",
@@ -3468,22 +3471,23 @@
     "/assets/gps-solar-system-DQUi5gu2.png"
   ],
   "node_modules/lucide-react/dist/esm/icons/download.js": [
-    "/assets/download-4TzBjGL9.js"
+    "/assets/download-DbtjTsF8.js"
   ],
   "node_modules/lucide-react/dist/esm/icons/external-link.js": [
-    "/assets/external-link-YAwfbfJV.js"
+    "/assets/external-link-tsk24qvh.js"
   ],
   "node_modules/lucide-react/dist/esm/icons/eye.js": [
-    "/assets/eye-B_8qOWU-.js"
+    "/assets/AcrostixPage-D_2nIN8X.js",
+    "/assets/acrostix-iphone-slide-1-gameplay-C-gcYRHx.png",
+    "/assets/acrostix-gameplay-DV-nTemp.mp4",
+    "/assets/acrostix-iphone-slide-2-score-breakdown-Dxv8BwFC.png",
+    "/assets/acrostix-iphone-slide-3-campaign-worlds-BztWEe1T.png"
   ],
   "node_modules/lucide-react/dist/esm/icons/file-text.js": [
-    "/assets/file-text-5XtThrTF.js"
+    "/assets/file-text-Br4ShIXP.js"
   ],
   "node_modules/lucide-react/dist/esm/icons/flame.js": [
-    "/assets/AboutPage-Ch5Nqn2R.js"
-  ],
-  "node_modules/lucide-react/dist/esm/icons/focus.js": [
-    "/assets/ModalNotificationsPage-CJg6f7u6.js"
+    "/assets/AboutPage-B33_X01Y.js"
   ],
   "node_modules/lucide-react/dist/esm/icons/gamepad-2.js": [
     "/assets/autohidehud-logo-DhMS1DRX.png",
@@ -3528,10 +3532,10 @@
     "/assets/homunculai-capsule-main-CQk8rcbQ.png"
   ],
   "node_modules/lucide-react/dist/esm/icons/gauge.js": [
-    "/assets/HEKeyboardsPage-HlJnyVmZ.js"
+    "/assets/HEKeyboardsPage-DvWzE_xS.js"
   ],
   "node_modules/lucide-react/dist/esm/icons/ghost.js": [
-    "/assets/HomunculAiPage-5krlz8kM.js",
+    "/assets/HomunculAiPage-DinmWjax.js",
     "/assets/homunculai-capsule-vertical-BdhaD5j7.png",
     "/assets/homunculai-trailer-D-9y0xEq.mp4",
     "/assets/homunculai-svg-document-B5lVJBjP.png",
@@ -3539,19 +3543,16 @@
     "/assets/homunculai-art-CYrZTR9D.png"
   ],
   "node_modules/lucide-react/dist/esm/icons/gift.js": [
-    "/assets/BallDropPage-Jkgh0XPn.js"
-  ],
-  "node_modules/lucide-react/dist/esm/icons/git-branch.js": [
-    "/assets/ScreenManagerPage-CRKqWSxy.js"
+    "/assets/BallDropPage-CuFXkUnw.js"
   ],
   "node_modules/lucide-react/dist/esm/icons/globe.js": [
-    "/assets/globe-G6U-y4pR.js"
+    "/assets/globe-COJgW7JS.js"
   ],
   "node_modules/lucide-react/dist/esm/icons/grid-3x3.js": [
-    "/assets/MatchFivesPage-DiijX3gZ.js"
+    "/assets/MatchFivesPage-DhQfytkh.js"
   ],
   "node_modules/lucide-react/dist/esm/icons/heart.js": [
-    "/assets/AboutPage-Ch5Nqn2R.js"
+    "/assets/AboutPage-B33_X01Y.js"
   ],
   "node_modules/lucide-react/dist/esm/icons/house.js": [
     "/assets/autohidehud-logo-DhMS1DRX.png",
@@ -3596,25 +3597,19 @@
     "/assets/homunculai-capsule-main-CQk8rcbQ.png"
   ],
   "node_modules/lucide-react/dist/esm/icons/keyboard.js": [
-    "/assets/keyboard-CTUFsum_.js"
+    "/assets/settings-DWjCKB8O.js"
   ],
   "node_modules/lucide-react/dist/esm/icons/layers.js": [
-    "/assets/layers-8_FD5T7y.js"
-  ],
-  "node_modules/lucide-react/dist/esm/icons/layout-grid.js": [
-    "/assets/ResponsiveLayoutPage-B6Y3SC8g.js"
-  ],
-  "node_modules/lucide-react/dist/esm/icons/link-2.js": [
-    "/assets/TweenEnginePage-Bklwrm1_.js"
+    "/assets/layers-B30CipNM.js"
   ],
   "node_modules/lucide-react/dist/esm/icons/mail.js": [
-    "/assets/mail-0BwPCJpz.js"
+    "/assets/mail-CxbsL62_.js"
   ],
   "node_modules/lucide-react/dist/esm/icons/map-pin.js": [
-    "/assets/ContactPage-CHIjO18G.js"
+    "/assets/ContactPage-BXI9qM9f.js"
   ],
   "node_modules/lucide-react/dist/esm/icons/map.js": [
-    "/assets/GpsPage-DLfbTA5n.js",
+    "/assets/GpsPage-BpDqhWLx.js",
     "/assets/gps-logo-9uOggrAx.png",
     "/assets/gps-tutorial-ocsN7TPb.png",
     "/assets/gps-narwhal-cUligC7t.png",
@@ -3625,11 +3620,8 @@
     "/assets/gps-dead-planet-DXfz4ki3.png",
     "/assets/gps-solar-system-DQUi5gu2.png"
   ],
-  "node_modules/lucide-react/dist/esm/icons/maximize.js": [
-    "/assets/ResponsiveLayoutPage-B6Y3SC8g.js"
-  ],
   "node_modules/lucide-react/dist/esm/icons/megaphone.js": [
-    "/assets/GpsPage-DLfbTA5n.js",
+    "/assets/GpsPage-BpDqhWLx.js",
     "/assets/gps-logo-9uOggrAx.png",
     "/assets/gps-tutorial-ocsN7TPb.png",
     "/assets/gps-narwhal-cUligC7t.png",
@@ -3682,32 +3674,26 @@
     "/assets/acrostix-ipad-slide-1-gameplay-Cz6rmlZ8.png",
     "/assets/homunculai-capsule-main-CQk8rcbQ.png"
   ],
-  "node_modules/lucide-react/dist/esm/icons/message-square.js": [
-    "/assets/ModalNotificationsPage-CJg6f7u6.js"
-  ],
   "node_modules/lucide-react/dist/esm/icons/monitor.js": [
-    "/assets/monitor-BbqnCkOl.js"
-  ],
-  "node_modules/lucide-react/dist/esm/icons/mouse-pointer-2.js": [
-    "/assets/FocusNavigationPage-CnUqv5lM.js"
+    "/assets/monitor-Bbjs8eoK.js"
   ],
   "node_modules/lucide-react/dist/esm/icons/move.js": [
-    "/assets/SnackTrayPage-DN02zety.js"
+    "/assets/SnackTrayPage-DWkciyhE.js"
   ],
   "node_modules/lucide-react/dist/esm/icons/newspaper.js": [
-    "/assets/PressKitsPage-Bl97MaVY.js"
+    "/assets/PressKitsPage-znF9JR3M.js"
   ],
   "node_modules/lucide-react/dist/esm/icons/package.js": [
-    "/assets/package-BXW-0bD1.js"
+    "/assets/package-DDn9DGyC.js"
   ],
   "node_modules/lucide-react/dist/esm/icons/palette.js": [
-    "/assets/palette-B-2kEj6i.js"
+    "/assets/BallDropPage-CuFXkUnw.js"
   ],
   "node_modules/lucide-react/dist/esm/icons/panels-top-left.js": [
-    "/assets/panels-top-left-DBk-E9XX.js"
+    "/assets/panels-top-left-B662XrtH.js"
   ],
   "node_modules/lucide-react/dist/esm/icons/pen-tool.js": [
-    "/assets/HomunculAiPage-5krlz8kM.js",
+    "/assets/HomunculAiPage-DinmWjax.js",
     "/assets/homunculai-capsule-vertical-BdhaD5j7.png",
     "/assets/homunculai-trailer-D-9y0xEq.mp4",
     "/assets/homunculai-svg-document-B5lVJBjP.png",
@@ -3715,7 +3701,7 @@
     "/assets/homunculai-art-CYrZTR9D.png"
   ],
   "node_modules/lucide-react/dist/esm/icons/pickaxe.js": [
-    "/assets/GpsPage-DLfbTA5n.js",
+    "/assets/GpsPage-BpDqhWLx.js",
     "/assets/gps-logo-9uOggrAx.png",
     "/assets/gps-tutorial-ocsN7TPb.png",
     "/assets/gps-narwhal-cUligC7t.png",
@@ -3726,11 +3712,8 @@
     "/assets/gps-dead-planet-DXfz4ki3.png",
     "/assets/gps-solar-system-DQUi5gu2.png"
   ],
-  "node_modules/lucide-react/dist/esm/icons/play.js": [
-    "/assets/TweenEnginePage-Bklwrm1_.js"
-  ],
   "node_modules/lucide-react/dist/esm/icons/plug.js": [
-    "/assets/HomunculAiPage-5krlz8kM.js",
+    "/assets/HomunculAiPage-DinmWjax.js",
     "/assets/homunculai-capsule-vertical-BdhaD5j7.png",
     "/assets/homunculai-trailer-D-9y0xEq.mp4",
     "/assets/homunculai-svg-document-B5lVJBjP.png",
@@ -3738,14 +3721,14 @@
     "/assets/homunculai-art-CYrZTR9D.png"
   ],
   "node_modules/lucide-react/dist/esm/icons/puzzle.js": [
-    "/assets/AcrostixPage-MSkIQWU0.js",
+    "/assets/AcrostixPage-D_2nIN8X.js",
     "/assets/acrostix-iphone-slide-1-gameplay-C-gcYRHx.png",
     "/assets/acrostix-gameplay-DV-nTemp.mp4",
     "/assets/acrostix-iphone-slide-2-score-breakdown-Dxv8BwFC.png",
     "/assets/acrostix-iphone-slide-3-campaign-worlds-BztWEe1T.png"
   ],
   "node_modules/lucide-react/dist/esm/icons/rocket.js": [
-    "/assets/GpsPage-DLfbTA5n.js",
+    "/assets/GpsPage-BpDqhWLx.js",
     "/assets/gps-logo-9uOggrAx.png",
     "/assets/gps-tutorial-ocsN7TPb.png",
     "/assets/gps-narwhal-cUligC7t.png",
@@ -3756,23 +3739,20 @@
     "/assets/gps-dead-planet-DXfz4ki3.png",
     "/assets/gps-solar-system-DQUi5gu2.png"
   ],
-  "node_modules/lucide-react/dist/esm/icons/rotate-cw.js": [
-    "/assets/ResponsiveLayoutPage-B6Y3SC8g.js"
-  ],
   "node_modules/lucide-react/dist/esm/icons/send.js": [
-    "/assets/ContactPage-CHIjO18G.js"
+    "/assets/ContactPage-BXI9qM9f.js"
   ],
   "node_modules/lucide-react/dist/esm/icons/settings.js": [
-    "/assets/settings-B5FKb1bT.js"
+    "/assets/settings-DWjCKB8O.js"
   ],
   "node_modules/lucide-react/dist/esm/icons/shield.js": [
-    "/assets/shield-BSk9oVLR.js"
+    "/assets/shield-AlNWP5uC.js"
   ],
   "node_modules/lucide-react/dist/esm/icons/shopping-bag.js": [
-    "/assets/shopping-bag-BbeO597P.js"
+    "/assets/shopping-bag-B2CTtwyM.js"
   ],
   "node_modules/lucide-react/dist/esm/icons/skull.js": [
-    "/assets/GpsPage-DLfbTA5n.js",
+    "/assets/GpsPage-BpDqhWLx.js",
     "/assets/gps-logo-9uOggrAx.png",
     "/assets/gps-tutorial-ocsN7TPb.png",
     "/assets/gps-narwhal-cUligC7t.png",
@@ -3784,10 +3764,10 @@
     "/assets/gps-solar-system-DQUi5gu2.png"
   ],
   "node_modules/lucide-react/dist/esm/icons/smartphone.js": [
-    "/assets/smartphone-BMdzg8S3.js"
+    "/assets/smartphone-DVEkZ4Jt.js"
   ],
   "node_modules/lucide-react/dist/esm/icons/snowflake.js": [
-    "/assets/BallDropPage-Jkgh0XPn.js"
+    "/assets/BallDropPage-CuFXkUnw.js"
   ],
   "node_modules/lucide-react/dist/esm/icons/sparkles.js": [
     "/assets/autohidehud-logo-DhMS1DRX.png",
@@ -3832,16 +3812,16 @@
     "/assets/homunculai-capsule-main-CQk8rcbQ.png"
   ],
   "node_modules/lucide-react/dist/esm/icons/star.js": [
-    "/assets/star-pBAd1fDe.js"
+    "/assets/star-BjnRjIg0.js"
   ],
   "node_modules/lucide-react/dist/esm/icons/target.js": [
-    "/assets/target-BsWGy98S.js"
+    "/assets/target-9qfVDr8f.js"
   ],
   "node_modules/lucide-react/dist/esm/icons/timer.js": [
-    "/assets/timer-CedTz3p2.js"
+    "/assets/MatchFivesPage-DhQfytkh.js"
   ],
   "node_modules/lucide-react/dist/esm/icons/triangle-alert.js": [
-    "/assets/HomunculAiPage-5krlz8kM.js",
+    "/assets/HomunculAiPage-DinmWjax.js",
     "/assets/homunculai-capsule-vertical-BdhaD5j7.png",
     "/assets/homunculai-trailer-D-9y0xEq.mp4",
     "/assets/homunculai-svg-document-B5lVJBjP.png",
@@ -3849,13 +3829,13 @@
     "/assets/homunculai-art-CYrZTR9D.png"
   ],
   "node_modules/lucide-react/dist/esm/icons/trophy.js": [
-    "/assets/PhoneScreenshot-GGBE4PJ6.js"
+    "/assets/PhoneScreenshot-C6kqwbvp.js"
   ],
   "node_modules/lucide-react/dist/esm/icons/twitch.js": [
-    "/assets/ContactPage-CHIjO18G.js"
+    "/assets/ContactPage-BXI9qM9f.js"
   ],
   "node_modules/lucide-react/dist/esm/icons/users.js": [
-    "/assets/GpsPage-DLfbTA5n.js",
+    "/assets/GpsPage-BpDqhWLx.js",
     "/assets/gps-logo-9uOggrAx.png",
     "/assets/gps-tutorial-ocsN7TPb.png",
     "/assets/gps-narwhal-cUligC7t.png",
@@ -3865,9 +3845,6 @@
     "/assets/gps-planet2-Bfv2QoWq.png",
     "/assets/gps-dead-planet-DXfz4ki3.png",
     "/assets/gps-solar-system-DQUi5gu2.png"
-  ],
-  "node_modules/lucide-react/dist/esm/icons/waves.js": [
-    "/assets/TweenEnginePage-Bklwrm1_.js"
   ],
   "node_modules/lucide-react/dist/esm/icons/wrench.js": [
     "/assets/autohidehud-logo-DhMS1DRX.png",
@@ -3954,7 +3931,7 @@
     "/assets/homunculai-capsule-main-CQk8rcbQ.png"
   ],
   "node_modules/lucide-react/dist/esm/icons/zap.js": [
-    "/assets/zap-BQ9LUbhO.js"
+    "/assets/zap-iNhDD0tJ.js"
   ],
   "node_modules/lucide-react/dist/esm/shared/src/utils.js": [
     "/assets/autohidehud-logo-DhMS1DRX.png",
@@ -4878,16 +4855,16 @@
     "/assets/homunculai-capsule-main-CQk8rcbQ.png"
   ],
   "node_modules/react-dom/cjs/react-dom-client.production.js": [
-    "/assets/client-DigqemH2.js"
+    "/assets/client-Do7AEA2p.js"
   ],
   "node_modules/react-dom/cjs/react-dom.production.js": [
-    "/assets/vendor-router-DU9kNmIe.js"
+    "/assets/vendor-router-CGw9j0jD.js"
   ],
   "node_modules/react-dom/client.js": [
-    "/assets/client-DigqemH2.js"
+    "/assets/client-Do7AEA2p.js"
   ],
   "node_modules/react-dom/index.js": [
-    "/assets/vendor-router-DU9kNmIe.js"
+    "/assets/vendor-router-CGw9j0jD.js"
   ],
   "node_modules/react-dom/index.js?commonjs-entry": [
     "/assets/vendor-react-l0sNRNKZ.js"
@@ -4977,10 +4954,10 @@
     "/assets/homunculai-capsule-main-CQk8rcbQ.png"
   ],
   "node_modules/react-router-dom/dist/index.js": [
-    "/assets/vendor-router-DU9kNmIe.js"
+    "/assets/vendor-router-CGw9j0jD.js"
   ],
   "node_modules/react-router/dist/index.js": [
-    "/assets/vendor-router-DU9kNmIe.js"
+    "/assets/vendor-router-CGw9j0jD.js"
   ],
   "node_modules/react/cjs/react-jsx-runtime.production.js": [
     "/assets/autohidehud-logo-DhMS1DRX.png",
@@ -5025,10 +5002,10 @@
     "/assets/homunculai-capsule-main-CQk8rcbQ.png"
   ],
   "node_modules/react/cjs/react.production.js": [
-    "/assets/vendor-router-DU9kNmIe.js"
+    "/assets/vendor-router-CGw9j0jD.js"
   ],
   "node_modules/react/index.js": [
-    "/assets/vendor-router-DU9kNmIe.js"
+    "/assets/vendor-router-CGw9j0jD.js"
   ],
   "node_modules/react/index.js?commonjs-entry": [
     "/assets/vendor-react-l0sNRNKZ.js"
@@ -5076,10 +5053,10 @@
     "/assets/homunculai-capsule-main-CQk8rcbQ.png"
   ],
   "node_modules/scheduler/cjs/scheduler.production.js": [
-    "/assets/client-DigqemH2.js"
+    "/assets/client-Do7AEA2p.js"
   ],
   "node_modules/scheduler/index.js": [
-    "/assets/client-DigqemH2.js"
+    "/assets/client-Do7AEA2p.js"
   ],
   "node_modules/shallowequal/index.js": [
     "/assets/autohidehud-logo-DhMS1DRX.png",
@@ -5544,29 +5521,32 @@
     "/assets/homunculai-capsule-main-CQk8rcbQ.png"
   ],
   "src/app/components/AboutPage.tsx": [
-    "/assets/AboutPage-Ch5Nqn2R.js"
+    "/assets/AboutPage-B33_X01Y.js"
+  ],
+  "src/app/components/AcrostixGetPage.tsx": [
+    "/assets/AcrostixGetPage-DevIaPUM.js"
   ],
   "src/app/components/AcrostixPage.tsx": [
-    "/assets/AcrostixPage-MSkIQWU0.js",
+    "/assets/AcrostixPage-D_2nIN8X.js",
     "/assets/acrostix-iphone-slide-1-gameplay-C-gcYRHx.png",
     "/assets/acrostix-gameplay-DV-nTemp.mp4",
     "/assets/acrostix-iphone-slide-2-score-breakdown-Dxv8BwFC.png",
     "/assets/acrostix-iphone-slide-3-campaign-worlds-BztWEe1T.png"
   ],
   "src/app/components/AcrostixPrivacyPage.tsx": [
-    "/assets/AcrostixPrivacyPage-BN_RYicC.js"
+    "/assets/AcrostixPrivacyPage-DHc2zX2j.js"
   ],
   "src/app/components/AcrostixTermsPage.tsx": [
-    "/assets/AcrostixTermsPage-DugZENCC.js"
+    "/assets/AcrostixTermsPage-C48UugxS.js"
   ],
   "src/app/components/AcrostixUniversalLinkPage.tsx": [
-    "/assets/AcrostixUniversalLinkPage-C_nmtWMN.js"
+    "/assets/AcrostixUniversalLinkPage-BhLn50zL.js"
   ],
   "src/app/components/BallDropPage.tsx": [
-    "/assets/BallDropPage-Jkgh0XPn.js"
+    "/assets/BallDropPage-CuFXkUnw.js"
   ],
   "src/app/components/BallDropPrivacyPage.tsx": [
-    "/assets/BallDropPrivacyPage-Bq3svn0v.js"
+    "/assets/BallDropPrivacyPage-DJEOCB5T.js"
   ],
   "src/app/components/ClickFireworks.tsx": [
     "/assets/autohidehud-logo-DhMS1DRX.png",
@@ -5611,7 +5591,7 @@
     "/assets/homunculai-capsule-main-CQk8rcbQ.png"
   ],
   "src/app/components/ContactPage.tsx": [
-    "/assets/ContactPage-CHIjO18G.js"
+    "/assets/ContactPage-BXI9qM9f.js"
   ],
   "src/app/components/DesktopWindow.tsx": [
     "/assets/autohidehud-logo-DhMS1DRX.png",
@@ -5654,9 +5634,6 @@
     "/assets/snacktray-desktop-overview-cqrNpvKG.png",
     "/assets/acrostix-ipad-slide-1-gameplay-Cz6rmlZ8.png",
     "/assets/homunculai-capsule-main-CQk8rcbQ.png"
-  ],
-  "src/app/components/FocusNavigationPage.tsx": [
-    "/assets/FocusNavigationPage-CnUqv5lM.js"
   ],
   "src/app/components/Footer.tsx": [
     "/assets/autohidehud-logo-DhMS1DRX.png",
@@ -5701,11 +5678,11 @@
     "/assets/homunculai-capsule-main-CQk8rcbQ.png"
   ],
   "src/app/components/GamesPage.tsx": [
-    "/assets/GamesPage-BYQh-ZR2.js",
+    "/assets/GamesPage-B5Etmw_9.js",
     "/assets/cardlabeler-logo-CaTXSER3.png"
   ],
   "src/app/components/GpsPage.tsx": [
-    "/assets/GpsPage-DLfbTA5n.js",
+    "/assets/GpsPage-BpDqhWLx.js",
     "/assets/gps-logo-9uOggrAx.png",
     "/assets/gps-tutorial-ocsN7TPb.png",
     "/assets/gps-narwhal-cUligC7t.png",
@@ -5717,7 +5694,7 @@
     "/assets/gps-solar-system-DQUi5gu2.png"
   ],
   "src/app/components/HEKeyboardsPage.tsx": [
-    "/assets/HEKeyboardsPage-HlJnyVmZ.js"
+    "/assets/HEKeyboardsPage-DvWzE_xS.js"
   ],
   "src/app/components/HomePage.tsx": [
     "/assets/autohidehud-logo-DhMS1DRX.png",
@@ -5762,7 +5739,7 @@
     "/assets/homunculai-capsule-main-CQk8rcbQ.png"
   ],
   "src/app/components/HomunculAiPage.tsx": [
-    "/assets/HomunculAiPage-5krlz8kM.js",
+    "/assets/HomunculAiPage-DinmWjax.js",
     "/assets/homunculai-capsule-vertical-BdhaD5j7.png",
     "/assets/homunculai-trailer-D-9y0xEq.mp4",
     "/assets/homunculai-svg-document-B5lVJBjP.png",
@@ -5770,13 +5747,13 @@
     "/assets/homunculai-art-CYrZTR9D.png"
   ],
   "src/app/components/HomunculAiSalesRestrictionsPage.tsx": [
-    "/assets/HomunculAiSalesRestrictionsPage-CugWPR8Y.js"
+    "/assets/HomunculAiSalesRestrictionsPage-B8TXEWaW.js"
   ],
   "src/app/components/HomunculAiTermsPage.tsx": [
-    "/assets/HomunculAiTermsPage-DKQE1gBH.js"
+    "/assets/HomunculAiTermsPage-B9fQsB6w.js"
   ],
   "src/app/components/HomunculAiWhatIsAIPage.tsx": [
-    "/assets/HomunculAiWhatIsAIPage-CANjPrjn.js"
+    "/assets/HomunculAiWhatIsAIPage-Cmb9eoza.js"
   ],
   "src/app/components/InteractiveBackground.tsx": [
     "/assets/autohidehud-logo-DhMS1DRX.png",
@@ -5989,13 +5966,13 @@
     "/assets/homunculai-capsule-main-CQk8rcbQ.png"
   ],
   "src/app/components/MatchFivesPage.tsx": [
-    "/assets/MatchFivesPage-DiijX3gZ.js"
+    "/assets/MatchFivesPage-DhQfytkh.js"
   ],
   "src/app/components/MatchFivesPrivacyPage.tsx": [
-    "/assets/MatchFivesPrivacyPage-DCOLKYfL.js"
+    "/assets/MatchFivesPrivacyPage-gBOZ9j9e.js"
   ],
-  "src/app/components/ModalNotificationsPage.tsx": [
-    "/assets/ModalNotificationsPage-CJg6f7u6.js"
+  "src/app/components/MinecraftModsPage.tsx": [
+    "/assets/MinecraftModsPage-CxA0YrLx.js"
   ],
   "src/app/components/Navbar.tsx": [
     "/assets/autohidehud-logo-DhMS1DRX.png",
@@ -6124,27 +6101,111 @@
     "/assets/homunculai-capsule-main-CQk8rcbQ.png"
   ],
   "src/app/components/PhoneScreenshot.tsx": [
-    "/assets/PhoneScreenshot-GGBE4PJ6.js"
+    "/assets/PhoneScreenshot-C6kqwbvp.js"
   ],
   "src/app/components/PressKitsPage.tsx": [
-    "/assets/PressKitsPage-Bl97MaVY.js"
-  ],
-  "src/app/components/ResponsiveLayoutPage.tsx": [
-    "/assets/ResponsiveLayoutPage-B6Y3SC8g.js"
-  ],
-  "src/app/components/ScreenManagerPage.tsx": [
-    "/assets/ScreenManagerPage-CRKqWSxy.js"
+    "/assets/PressKitsPage-znF9JR3M.js"
   ],
   "src/app/components/ShopPage.tsx": [
-    "/assets/ShopPage-DsLFF0mv.js"
+    "/assets/ShopPage-DXH1vAfm.js"
   ],
   "src/app/components/SnackTrayPage.tsx": [
-    "/assets/SnackTrayPage-DN02zety.js"
+    "/assets/SnackTrayPage-DWkciyhE.js"
   ],
-  "src/app/components/TweenEnginePage.tsx": [
-    "/assets/TweenEnginePage-Bklwrm1_.js"
+  "src/app/components/ToolkitRedirect.tsx": [
+    "/assets/ToolkitRedirect-CjWLpKco.js"
+  ],
+  "src/app/components/UiToolkitSuitePage.tsx": [
+    "/assets/UiToolkitSuitePage-owjeMbwB.js"
+  ],
+  "src/app/components/collectionUi.tsx": [
+    "/assets/collectionUi-BSZnmh-3.js"
   ],
   "src/app/components/figma/ImageWithFallback.tsx": [
+    "/assets/autohidehud-logo-DhMS1DRX.png",
+    "/assets/screenmanager-icon-B8TkHL23.png",
+    "/assets/IMG_0490-1-4VRl6Iue.PNG",
+    "/assets/IMG_0495-1-B8sRlO-H.PNG",
+    "/assets/scores-dark-xI6B2mnJ.png",
+    "/assets/IMG_0519-qL2w-nSE.PNG",
+    "/assets/achievements-CONEpEiv.webp",
+    "/assets/acrostix-light-home-QjhbnNpc.png",
+    "/assets/acrostix-light-challenge-DkAVAnjd.png",
+    "/assets/acrostix-light-results-D57pog3I.png",
+    "/assets/acrostix-light-stats-DAwo3rLC.png",
+    "/assets/acrostix-light-achievements-B_QClTLA.png",
+    "/assets/acrostix-cb-home-UGXRltr8.png",
+    "/assets/acrostix-cb-challenge-CN88qkiq.png",
+    "/assets/acrostix-cb-results-B8rr0Z4t.png",
+    "/assets/acrostix-cb-stats-BMiVzGvA.png",
+    "/assets/acrostix-cb-achievements-DiRyjRk4.png",
+    "/assets/matchfives-train-KFGVplKB.png",
+    "/assets/matchfives-match-qeqzsQZr.png",
+    "/assets/matchfives-play-Db0-pGxR.png",
+    "/assets/matchfives-strategy-DQa0uQw8.png",
+    "/assets/balldrop-gameplay1-DaN_8kJP.png",
+    "/assets/balldrop-gameplay2-B_wUXqgk.png",
+    "/assets/balldrop-gameplay3-Bo2j3669.png",
+    "/assets/balldrop-gameplay4-xMzO28eb.png",
+    "/assets/balldrop-home-BJr-1Ms0.png",
+    "/assets/balldrop-results-CmgtkAZN.png",
+    "/assets/hekeyboards-screenshot-1-DWBGkKs-.png",
+    "/assets/hekeyboards-screenshot-2-zCRibNge.png",
+    "/assets/hekeyboards-screenshot-3-DhwCTRvF.png",
+    "/assets/hekeyboards-card-BLch66_9.png",
+    "/assets/hekeyboards-promo-Ba4rRIX0.png",
+    "/assets/hekeyboards-icon-Cck9plH5.png",
+    "/assets/snacktray-logo-DGpUXDKL.png",
+    "/assets/snacktray-editor-center-CLSc27sU.png",
+    "/assets/snacktray-editor-zones-BaSw9BHh.png",
+    "/assets/snacktray-desktop-preview-CTGYtC11.png",
+    "/assets/snacktray-desktop-overview-cqrNpvKG.png",
+    "/assets/acrostix-ipad-slide-1-gameplay-Cz6rmlZ8.png",
+    "/assets/homunculai-capsule-main-CQk8rcbQ.png"
+  ],
+  "src/app/data/minecraftMods.ts": [
+    "/assets/autohidehud-logo-DhMS1DRX.png",
+    "/assets/screenmanager-icon-B8TkHL23.png",
+    "/assets/IMG_0490-1-4VRl6Iue.PNG",
+    "/assets/IMG_0495-1-B8sRlO-H.PNG",
+    "/assets/scores-dark-xI6B2mnJ.png",
+    "/assets/IMG_0519-qL2w-nSE.PNG",
+    "/assets/achievements-CONEpEiv.webp",
+    "/assets/acrostix-light-home-QjhbnNpc.png",
+    "/assets/acrostix-light-challenge-DkAVAnjd.png",
+    "/assets/acrostix-light-results-D57pog3I.png",
+    "/assets/acrostix-light-stats-DAwo3rLC.png",
+    "/assets/acrostix-light-achievements-B_QClTLA.png",
+    "/assets/acrostix-cb-home-UGXRltr8.png",
+    "/assets/acrostix-cb-challenge-CN88qkiq.png",
+    "/assets/acrostix-cb-results-B8rr0Z4t.png",
+    "/assets/acrostix-cb-stats-BMiVzGvA.png",
+    "/assets/acrostix-cb-achievements-DiRyjRk4.png",
+    "/assets/matchfives-train-KFGVplKB.png",
+    "/assets/matchfives-match-qeqzsQZr.png",
+    "/assets/matchfives-play-Db0-pGxR.png",
+    "/assets/matchfives-strategy-DQa0uQw8.png",
+    "/assets/balldrop-gameplay1-DaN_8kJP.png",
+    "/assets/balldrop-gameplay2-B_wUXqgk.png",
+    "/assets/balldrop-gameplay3-Bo2j3669.png",
+    "/assets/balldrop-gameplay4-xMzO28eb.png",
+    "/assets/balldrop-home-BJr-1Ms0.png",
+    "/assets/balldrop-results-CmgtkAZN.png",
+    "/assets/hekeyboards-screenshot-1-DWBGkKs-.png",
+    "/assets/hekeyboards-screenshot-2-zCRibNge.png",
+    "/assets/hekeyboards-screenshot-3-DhwCTRvF.png",
+    "/assets/hekeyboards-card-BLch66_9.png",
+    "/assets/hekeyboards-promo-Ba4rRIX0.png",
+    "/assets/hekeyboards-icon-Cck9plH5.png",
+    "/assets/snacktray-logo-DGpUXDKL.png",
+    "/assets/snacktray-editor-center-CLSc27sU.png",
+    "/assets/snacktray-editor-zones-BaSw9BHh.png",
+    "/assets/snacktray-desktop-preview-CTGYtC11.png",
+    "/assets/snacktray-desktop-overview-cqrNpvKG.png",
+    "/assets/acrostix-ipad-slide-1-gameplay-Cz6rmlZ8.png",
+    "/assets/homunculai-capsule-main-CQk8rcbQ.png"
+  ],
+  "src/app/data/unityAssets.ts": [
     "/assets/autohidehud-logo-DhMS1DRX.png",
     "/assets/screenmanager-icon-B8TkHL23.png",
     "/assets/IMG_0490-1-4VRl6Iue.PNG",
@@ -6607,7 +6668,7 @@
     "/assets/homunculai-capsule-main-CQk8rcbQ.png"
   ],
   "src/assets/acrostix-gameplay.mp4": [
-    "/assets/AcrostixPage-MSkIQWU0.js",
+    "/assets/AcrostixPage-D_2nIN8X.js",
     "/assets/acrostix-iphone-slide-1-gameplay-C-gcYRHx.png",
     "/assets/acrostix-gameplay-DV-nTemp.mp4",
     "/assets/acrostix-iphone-slide-2-score-breakdown-Dxv8BwFC.png",
@@ -6656,14 +6717,14 @@
     "/assets/homunculai-capsule-main-CQk8rcbQ.png"
   ],
   "src/assets/acrostix-iphone-slide-1-gameplay.png": [
-    "/assets/AcrostixPage-MSkIQWU0.js",
+    "/assets/AcrostixPage-D_2nIN8X.js",
     "/assets/acrostix-iphone-slide-1-gameplay-C-gcYRHx.png",
     "/assets/acrostix-gameplay-DV-nTemp.mp4",
     "/assets/acrostix-iphone-slide-2-score-breakdown-Dxv8BwFC.png",
     "/assets/acrostix-iphone-slide-3-campaign-worlds-BztWEe1T.png"
   ],
   "src/assets/acrostix-iphone-slide-2-score-breakdown.png": [
-    "/assets/AcrostixPage-MSkIQWU0.js",
+    "/assets/AcrostixPage-D_2nIN8X.js",
     "/assets/acrostix-iphone-slide-1-gameplay-C-gcYRHx.png",
     "/assets/acrostix-gameplay-DV-nTemp.mp4",
     "/assets/acrostix-iphone-slide-2-score-breakdown-Dxv8BwFC.png",
@@ -7174,11 +7235,11 @@
     "/assets/homunculai-capsule-main-CQk8rcbQ.png"
   ],
   "src/assets/cardlabeler-logo.png": [
-    "/assets/GamesPage-BYQh-ZR2.js",
+    "/assets/GamesPage-B5Etmw_9.js",
     "/assets/cardlabeler-logo-CaTXSER3.png"
   ],
   "src/assets/gps-dead-planet.png": [
-    "/assets/GpsPage-DLfbTA5n.js",
+    "/assets/GpsPage-BpDqhWLx.js",
     "/assets/gps-logo-9uOggrAx.png",
     "/assets/gps-tutorial-ocsN7TPb.png",
     "/assets/gps-narwhal-cUligC7t.png",
@@ -7190,7 +7251,7 @@
     "/assets/gps-solar-system-DQUi5gu2.png"
   ],
   "src/assets/gps-logo.png": [
-    "/assets/GpsPage-DLfbTA5n.js",
+    "/assets/GpsPage-BpDqhWLx.js",
     "/assets/gps-logo-9uOggrAx.png",
     "/assets/gps-tutorial-ocsN7TPb.png",
     "/assets/gps-narwhal-cUligC7t.png",
@@ -7202,7 +7263,7 @@
     "/assets/gps-solar-system-DQUi5gu2.png"
   ],
   "src/assets/gps-narwhal.png": [
-    "/assets/GpsPage-DLfbTA5n.js",
+    "/assets/GpsPage-BpDqhWLx.js",
     "/assets/gps-logo-9uOggrAx.png",
     "/assets/gps-tutorial-ocsN7TPb.png",
     "/assets/gps-narwhal-cUligC7t.png",
@@ -7214,7 +7275,7 @@
     "/assets/gps-solar-system-DQUi5gu2.png"
   ],
   "src/assets/gps-planet2.png": [
-    "/assets/GpsPage-DLfbTA5n.js",
+    "/assets/GpsPage-BpDqhWLx.js",
     "/assets/gps-logo-9uOggrAx.png",
     "/assets/gps-tutorial-ocsN7TPb.png",
     "/assets/gps-narwhal-cUligC7t.png",
@@ -7226,7 +7287,7 @@
     "/assets/gps-solar-system-DQUi5gu2.png"
   ],
   "src/assets/gps-planet4.png": [
-    "/assets/GpsPage-DLfbTA5n.js",
+    "/assets/GpsPage-BpDqhWLx.js",
     "/assets/gps-logo-9uOggrAx.png",
     "/assets/gps-tutorial-ocsN7TPb.png",
     "/assets/gps-narwhal-cUligC7t.png",
@@ -7238,7 +7299,7 @@
     "/assets/gps-solar-system-DQUi5gu2.png"
   ],
   "src/assets/gps-planet6.png": [
-    "/assets/GpsPage-DLfbTA5n.js",
+    "/assets/GpsPage-BpDqhWLx.js",
     "/assets/gps-logo-9uOggrAx.png",
     "/assets/gps-tutorial-ocsN7TPb.png",
     "/assets/gps-narwhal-cUligC7t.png",
@@ -7250,7 +7311,7 @@
     "/assets/gps-solar-system-DQUi5gu2.png"
   ],
   "src/assets/gps-solar-system.png": [
-    "/assets/GpsPage-DLfbTA5n.js",
+    "/assets/GpsPage-BpDqhWLx.js",
     "/assets/gps-logo-9uOggrAx.png",
     "/assets/gps-tutorial-ocsN7TPb.png",
     "/assets/gps-narwhal-cUligC7t.png",
@@ -7266,7 +7327,7 @@
     "/assets/gps-store-background-CTHMIfAC.png"
   ],
   "src/assets/gps-tentacle.png": [
-    "/assets/GpsPage-DLfbTA5n.js",
+    "/assets/GpsPage-BpDqhWLx.js",
     "/assets/gps-logo-9uOggrAx.png",
     "/assets/gps-tutorial-ocsN7TPb.png",
     "/assets/gps-narwhal-cUligC7t.png",
@@ -7278,7 +7339,7 @@
     "/assets/gps-solar-system-DQUi5gu2.png"
   ],
   "src/assets/gps-tutorial.png": [
-    "/assets/GpsPage-DLfbTA5n.js",
+    "/assets/GpsPage-BpDqhWLx.js",
     "/assets/gps-logo-9uOggrAx.png",
     "/assets/gps-tutorial-ocsN7TPb.png",
     "/assets/gps-narwhal-cUligC7t.png",
@@ -7542,7 +7603,7 @@
     "/assets/homunculai-capsule-main-CQk8rcbQ.png"
   ],
   "src/assets/homunculai-art.png": [
-    "/assets/HomunculAiPage-5krlz8kM.js",
+    "/assets/HomunculAiPage-DinmWjax.js",
     "/assets/homunculai-capsule-vertical-BdhaD5j7.png",
     "/assets/homunculai-trailer-D-9y0xEq.mp4",
     "/assets/homunculai-svg-document-B5lVJBjP.png",
@@ -7592,7 +7653,7 @@
     "/assets/homunculai-capsule-main-CQk8rcbQ.png"
   ],
   "src/assets/homunculai-capsule-vertical.png": [
-    "/assets/HomunculAiPage-5krlz8kM.js",
+    "/assets/HomunculAiPage-DinmWjax.js",
     "/assets/homunculai-capsule-vertical-BdhaD5j7.png",
     "/assets/homunculai-trailer-D-9y0xEq.mp4",
     "/assets/homunculai-svg-document-B5lVJBjP.png",
@@ -7600,7 +7661,7 @@
     "/assets/homunculai-art-CYrZTR9D.png"
   ],
   "src/assets/homunculai-multiagent.png": [
-    "/assets/HomunculAiPage-5krlz8kM.js",
+    "/assets/HomunculAiPage-DinmWjax.js",
     "/assets/homunculai-capsule-vertical-BdhaD5j7.png",
     "/assets/homunculai-trailer-D-9y0xEq.mp4",
     "/assets/homunculai-svg-document-B5lVJBjP.png",
@@ -7608,7 +7669,7 @@
     "/assets/homunculai-art-CYrZTR9D.png"
   ],
   "src/assets/homunculai-svg-document.png": [
-    "/assets/HomunculAiPage-5krlz8kM.js",
+    "/assets/HomunculAiPage-DinmWjax.js",
     "/assets/homunculai-capsule-vertical-BdhaD5j7.png",
     "/assets/homunculai-trailer-D-9y0xEq.mp4",
     "/assets/homunculai-svg-document-B5lVJBjP.png",
@@ -7616,7 +7677,7 @@
     "/assets/homunculai-art-CYrZTR9D.png"
   ],
   "src/assets/homunculai-trailer.mp4": [
-    "/assets/HomunculAiPage-5krlz8kM.js",
+    "/assets/HomunculAiPage-DinmWjax.js",
     "/assets/homunculai-capsule-vertical-BdhaD5j7.png",
     "/assets/homunculai-trailer-D-9y0xEq.mp4",
     "/assets/homunculai-svg-document-B5lVJBjP.png",
@@ -7791,10 +7852,6 @@
     "/assets/acrostix-ipad-slide-1-gameplay-Cz6rmlZ8.png",
     "/assets/homunculai-capsule-main-CQk8rcbQ.png"
   ],
-  "src/assets/modalnotification-cover.png": [
-    "/assets/modalnotification-cover-DuDThbI1.js",
-    "/assets/modalnotification-cover-BHRERnBd.png"
-  ],
   "src/assets/scores-dark.png": [
     "/assets/autohidehud-logo-DhMS1DRX.png",
     "/assets/screenmanager-icon-B8TkHL23.png",
@@ -7836,10 +7893,6 @@
     "/assets/snacktray-desktop-overview-cqrNpvKG.png",
     "/assets/acrostix-ipad-slide-1-gameplay-Cz6rmlZ8.png",
     "/assets/homunculai-capsule-main-CQk8rcbQ.png"
-  ],
-  "src/assets/screenmanager-cover.png": [
-    "/assets/screenmanager-cover-CPlnVztb.js",
-    "/assets/screenmanager-cover-C3L2mkY2.png"
   ],
   "src/assets/screenmanager-icon.png": [
     "/assets/autohidehud-logo-DhMS1DRX.png",
@@ -7884,7 +7937,7 @@
     "/assets/homunculai-capsule-main-CQk8rcbQ.png"
   ],
   "src/assets/small/acrostix-iphone-slide-3-campaign-worlds.png": [
-    "/assets/AcrostixPage-MSkIQWU0.js",
+    "/assets/AcrostixPage-D_2nIN8X.js",
     "/assets/acrostix-iphone-slide-1-gameplay-C-gcYRHx.png",
     "/assets/acrostix-gameplay-DV-nTemp.mp4",
     "/assets/acrostix-iphone-slide-2-score-breakdown-Dxv8BwFC.png",
@@ -8100,10 +8153,6 @@
     "/assets/acrostix-ipad-slide-1-gameplay-Cz6rmlZ8.png",
     "/assets/homunculai-capsule-main-CQk8rcbQ.png"
   ],
-  "src/assets/tweenengine-cover.png": [
-    "/assets/tweenengine-cover-BLqSz9WY.js",
-    "/assets/tweenengine-cover-DG3jysew.png"
-  ],
   "src/hooks/useReducedMotion.ts": [
     "/assets/autohidehud-logo-DhMS1DRX.png",
     "/assets/screenmanager-icon-B8TkHL23.png",
@@ -8147,7 +8196,7 @@
     "/assets/homunculai-capsule-main-CQk8rcbQ.png"
   ],
   "src/lib/platform.ts": [
-    "/assets/AcrostixUniversalLinkPage-C_nmtWMN.js"
+    "/assets/platform-BJkeo_xF.js"
   ],
   "src/main.tsx": [
     "/assets/autohidehud-logo-DhMS1DRX.png",
