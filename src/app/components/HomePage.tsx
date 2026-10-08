@@ -15,7 +15,7 @@ import {
 } from "lucide-react";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
 import { PageMeta } from "./PageMeta";
-import { SocialIcon } from "./SocialIcon";
+import { SocialIcon, type SocialIconName } from "./SocialIcon";
 import { CountBadge } from "./collectionUi";
 import { categorySlug, itemsIn, type Category, type CatalogItem } from "../data/catalog";
 import { DISCORD_URL } from "../data/socials";
@@ -63,6 +63,9 @@ const sections: {
   { category: "Mods", icon: Blocks, accent: "teal", variant: "logo", iconTilt: "-rotate-6" },
   { category: "Game Dev Assets", icon: Package, accent: "primary", variant: "logo", iconTilt: "rotate-6" },
 ];
+
+/** Platform icons shown in the socials strip under the hero. */
+const socialStripIcons: SocialIconName[] = ["twitch", "youtube", "discord", "tiktok", "instagram"];
 
 /** Rows with more than this many items scroll sideways on desktop too. */
 const MAX_GRID_ITEMS = 4;
@@ -345,6 +348,49 @@ export function HomePage() {
                   </div>
                 </div>
               </div>
+            </Link>
+          </motion.div>
+
+          {/* Socials strip: slim call to action under the hero */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.25, duration: 0.5, ease: "easeOut" as const }}
+            className="mt-8"
+          >
+            <Link
+              to="/socials"
+              className="group flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-6 px-5 py-4 sm:py-3.5 bg-[linear-gradient(90deg,rgb(var(--primary-rgb)/0.14),rgb(var(--teal-rgb)/0.14))] border-2 border-white/[0.12] hover:border-teal-light/70 rounded-sm transition-all hover:-translate-y-0.5 hover:shadow-[6px_6px_0px_0px_rgb(var(--teal-rgb)/0.15)] -rotate-[0.3deg] hover:rotate-0"
+            >
+              <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-5 text-center sm:text-left min-w-0">
+                <div className="flex shrink-0" aria-hidden="true">
+                  {socialStripIcons.map((icon, i) => (
+                    <span
+                      key={icon}
+                      className={`w-8 h-8 -ml-1 first:ml-0 rounded-sm border-2 border-background flex items-center justify-center text-black transition-transform duration-300 ${
+                        i % 2 === 0 ? "bg-primary -rotate-6 group-hover:-rotate-12" : "bg-teal rotate-6 group-hover:rotate-12"
+                      }`}
+                    >
+                      <SocialIcon name={icon} className="w-4 h-4" />
+                    </span>
+                  ))}
+                </div>
+                <p className="text-sm sm:text-base">
+                  <span className="text-foreground" style={{ fontFamily: "var(--font-heading)", fontWeight: 700 }}>
+                    Come hang out.
+                  </span>{" "}
+                  <span className="text-muted-foreground">
+                    Live dev streams on Twitch, clips on YouTube, and our Discord crew.
+                  </span>
+                </p>
+              </div>
+              <span
+                className="flex items-center gap-2 text-lime shrink-0 uppercase tracking-wider text-sm group-hover:gap-3 transition-all"
+                style={{ fontFamily: "var(--font-heading)", fontWeight: 700 }}
+              >
+                Follow along
+                <ArrowRight className="w-4 h-4" />
+              </span>
             </Link>
           </motion.div>
         </div>
