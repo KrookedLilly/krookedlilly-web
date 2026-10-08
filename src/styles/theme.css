@@ -11,15 +11,27 @@
   --card-foreground: #f0f0e8;
   --popover: #161616;
   --popover-foreground: #f0f0e8;
-  --primary: #a05cf6;
-  --primary-foreground: #ffffff;
+  /* Brand accents: edit the -rgb triples to retheme the whole site.
+     Keep in sync with src/app/data/brandColors.ts (canvas effects).
+     Base (--primary, --teal) fills icon squares, buttons, and glows; the
+     -light tints are for text and outlines so they read brighter than fills.
+     Teal sits a little lighter than purple on purpose: saturated purple looks
+     brighter than it measures, so this pairing reads as equal brightness. */
+  --primary-rgb: 178 97 254;
+  --primary: rgb(var(--primary-rgb));
+  --primary-light-rgb: 203 148 255;
+  --primary-light: rgb(var(--primary-light-rgb));
+  --primary-foreground: #0c0c0c;
   --secondary: #1e1e1e;
   --secondary-foreground: #f0f0e8;
   --muted: #1e1e1e;
   --muted-foreground: #888880;
   --accent: #7c3aed;
   --accent-foreground: #ffffff;
-  --teal: #22d3ee;
+  --teal-rgb: 57 173 164;
+  --teal: rgb(var(--teal-rgb));
+  --teal-light-rgb: 63 224 204;
+  --teal-light: rgb(var(--teal-light-rgb));
   --teal-foreground: #ffffff;
   --lime: #84cc16;
   --lime-foreground: #0c0c0c;
@@ -31,7 +43,7 @@
   --switch-background: #2a2a2a;
   --font-weight-medium: 500;
   --font-weight-normal: 400;
-  --ring: #a05cf6;
+  --ring: var(--primary);
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
@@ -40,12 +52,12 @@
   --radius: 0.5rem;
   --sidebar: #111111;
   --sidebar-foreground: #f0f0e8;
-  --sidebar-primary: #a05cf6;
-  --sidebar-primary-foreground: #ffffff;
+  --sidebar-primary: var(--primary);
+  --sidebar-primary-foreground: #0c0c0c;
   --sidebar-accent: #1e1e1e;
   --sidebar-accent-foreground: #f0f0e8;
-  --sidebar-border: rgba(160, 92, 246, 0.15);
-  --sidebar-ring: #a05cf6;
+  --sidebar-border: rgb(var(--primary-rgb)/0.15);
+  --sidebar-ring: var(--primary);
 }
 
 .dark {
@@ -55,15 +67,15 @@
   --card-foreground: #f0f0e8;
   --popover: #161616;
   --popover-foreground: #f0f0e8;
-  --primary: #a05cf6;
-  --primary-foreground: #ffffff;
+  --primary: rgb(var(--primary-rgb));
+  --primary-foreground: #0c0c0c;
   --secondary: #1e1e1e;
   --secondary-foreground: #f0f0e8;
   --muted: #1e1e1e;
   --muted-foreground: #888880;
   --accent: #7c3aed;
   --accent-foreground: #ffffff;
-  --teal: #22d3ee;
+  --teal: rgb(var(--teal-rgb));
   --teal-foreground: #ffffff;
   --lime: #84cc16;
   --lime-foreground: #0c0c0c;
@@ -71,7 +83,7 @@
   --destructive-foreground: oklch(0.637 0.237 25.331);
   --border: rgba(255, 255, 255, 0.1);
   --input: #1a1a1a;
-  --ring: #a05cf6;
+  --ring: var(--primary);
   --font-weight-medium: 500;
   --font-weight-normal: 400;
   --chart-1: oklch(0.488 0.243 264.376);
@@ -81,12 +93,12 @@
   --chart-5: oklch(0.645 0.246 16.439);
   --sidebar: #111111;
   --sidebar-foreground: #f0f0e8;
-  --sidebar-primary: #a05cf6;
-  --sidebar-primary-foreground: #ffffff;
+  --sidebar-primary: var(--primary);
+  --sidebar-primary-foreground: #0c0c0c;
   --sidebar-accent: #1e1e1e;
   --sidebar-accent-foreground: #f0f0e8;
-  --sidebar-border: rgba(160, 92, 246, 0.15);
-  --sidebar-ring: #a05cf6;
+  --sidebar-border: rgb(var(--primary-rgb)/0.15);
+  --sidebar-ring: var(--primary);
 }
 
 @theme inline {
@@ -97,6 +109,7 @@
   --color-popover: var(--popover);
   --color-popover-foreground: var(--popover-foreground);
   --color-primary: var(--primary);
+  --color-primary-light: var(--primary-light);
   --color-primary-foreground: var(--primary-foreground);
   --color-secondary: var(--secondary);
   --color-secondary-foreground: var(--secondary-foreground);
@@ -105,6 +118,7 @@
   --color-accent: var(--accent);
   --color-accent-foreground: var(--accent-foreground);
   --color-teal: var(--teal);
+  --color-teal-light: var(--teal-light);
   --color-teal-foreground: var(--teal-foreground);
   --color-lime: var(--lime);
   --color-lime-foreground: var(--lime-foreground);
@@ -146,6 +160,34 @@
 
   html {
     font-size: var(--font-size);
+    /* Dark native UI (scrollbars, select menus) instead of the light defaults */
+    color-scheme: dark;
+  }
+
+  /* Site-colored scrollbars. Browsers with the standard properties use them
+     (and ignore ::-webkit-scrollbar); the rest get the webkit fallback. */
+  @supports (scrollbar-color: auto) {
+    html {
+      scrollbar-width: thin;
+      scrollbar-color: rgb(var(--primary-rgb)/0.6) var(--background);
+    }
+  }
+
+  @supports not (scrollbar-color: auto) {
+    ::-webkit-scrollbar {
+      width: 10px;
+      height: 10px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: var(--background);
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: linear-gradient(var(--primary), var(--teal));
+      border: 2px solid var(--background);
+      border-radius: 9999px;
+    }
   }
 
   h1 {

@@ -35,7 +35,7 @@ export function NotFound() {
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Link
             to="/"
-            className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-primary hover:bg-primary/90 text-white rounded-sm transition-all hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_rgba(160,92,246,0.4)] border-2 border-primary uppercase tracking-wider text-sm"
+            className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-primary hover:bg-primary/90 text-black rounded-sm transition-all hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_rgb(var(--primary-rgb)/0.4)] border-2 border-primary-light uppercase tracking-wider text-sm"
             style={{ fontFamily: "var(--font-heading)", fontWeight: 700 }}
           >
             <Home className="w-4 h-4" />

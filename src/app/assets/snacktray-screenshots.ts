@@ -1,8 +1,8 @@
 import imgLogo from "@/assets/snacktray-logo.png";
 import imgEditorCenter from "@/assets/snacktray-editor-center.png";
 import imgEditorZones from "@/assets/snacktray-editor-zones.png";
-import imgDesktopPreview from "@/assets/snacktray-desktop-preview.png";
-import imgDesktopOverview from "@/assets/snacktray-desktop-overview.png";
+import imgDesktopPreview from "@/assets/snacktray-desktop-preview.webp";
+import imgDesktopOverview from "@/assets/snacktray-desktop-overview.webp";
 
 export interface SnackTrayScreenshot {
   id: string;

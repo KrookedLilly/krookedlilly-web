@@ -21,6 +21,8 @@ import {
   snackTrayLogo,
 } from "../assets/snacktray-screenshots";
 import { PageMeta } from "./PageMeta";
+import { JsonLd, ORG_REF, SITE_URL, pageUrl } from "./JsonLd";
+import { snackTrayCardImage } from "../assets/snacktray-screenshots";
 
 /* ─── animation variants ─── */
 const fadeUp = {
@@ -74,18 +76,18 @@ const features = [
 
 const accentClasses = {
   teal: {
-    text: "text-teal",
-    border: "border-teal/30",
+    text: "text-teal-light",
+    border: "border-teal-light/55",
     bg: "bg-teal",
-    hoverBorder: "hover:border-teal/40",
-    shadow: "hover:shadow-[6px_6px_0px_0px_rgba(34,211,238,0.15)]",
+    hoverBorder: "hover:border-teal-light/70",
+    shadow: "hover:shadow-[6px_6px_0px_0px_rgb(var(--teal-rgb)/0.15)]",
   },
   primary: {
-    text: "text-primary",
-    border: "border-primary/30",
+    text: "text-primary-light",
+    border: "border-primary-light/55",
     bg: "bg-primary",
-    hoverBorder: "hover:border-primary/40",
-    shadow: "hover:shadow-[6px_6px_0px_0px_rgba(160,92,246,0.15)]",
+    hoverBorder: "hover:border-primary-light/70",
+    shadow: "hover:shadow-[6px_6px_0px_0px_rgb(var(--primary-rgb)/0.15)]",
   },
 };
 
@@ -160,20 +162,35 @@ export function SnackTrayPage() {
     <div className="min-h-screen">
       <PageMeta
         title="SnackTray"
-        description="SnackTray is a productivity tool from KrookedLilly for organizing your day in tidy, portable boxes."
+        description="SnackTray is a macOS menu bar app from KrookedLilly for custom window snapping layouts across multiple monitors. Draw your own zones, drag windows in, done."
         path="/tools/snacktray"
+      />
+      <JsonLd
+        data={{
+          "@type": "SoftwareApplication",
+          name: "SnackTray",
+          description:
+            "A macOS menu bar app for custom window snapping layouts across multiple monitors. Draw your own zones, then drag windows into them.",
+          applicationCategory: "UtilitiesApplication",
+          operatingSystem: "macOS",
+          url: pageUrl("/tools/snacktray"),
+          image: `${SITE_URL}${snackTrayCardImage}`,
+          downloadUrl: "https://github.com/krookedlilly/snacktray-releases/releases",
+          author: ORG_REF,
+          publisher: ORG_REF,
+        }}
       />
       {/* ═══════════ HERO ═══════════ */}
       <section className="relative pt-6 pb-20">
         <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute -top-[200px] left-1/4 w-[500px] h-[500px] bg-[radial-gradient(circle,_rgba(34,211,238,0.10)_0%,_transparent_70%)]" />
-          <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-[radial-gradient(circle,_rgba(160,92,246,0.08)_0%,_transparent_70%)]" />
+          <div className="absolute -top-[200px] left-1/4 w-[500px] h-[500px] bg-[radial-gradient(circle,_rgb(var(--teal-rgb)/0.10)_0%,_transparent_70%)]" />
+          <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-[radial-gradient(circle,_rgb(var(--primary-rgb)/0.08)_0%,_transparent_70%)]" />
         </div>
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Link
             to="/catalog"
-            className="inline-flex items-center gap-2 text-muted-foreground hover:text-teal transition-colors text-sm uppercase tracking-wider mb-8"
+            className="inline-flex items-center gap-2 text-muted-foreground hover:text-teal-light transition-colors text-sm uppercase tracking-wider mb-8"
             style={{ fontFamily: "var(--font-heading)", fontWeight: 600 }}
           >
             <ArrowLeft className="w-4 h-4" />
@@ -238,14 +255,14 @@ export function SnackTrayPage() {
                   className="inline-flex items-center gap-2 px-5 py-3 bg-white/[0.04] backdrop-blur-xl border-2 border-white/[0.12] rounded-sm text-muted-foreground"
                   style={{ fontFamily: "var(--font-heading)", fontWeight: 600 }}
                 >
-                  <Monitor className="w-4 h-4 text-teal" />
+                  <Monitor className="w-4 h-4 text-teal-light" />
                   <span className="text-sm uppercase tracking-wider">macOS</span>
                 </div>
                 <div
                   className="inline-flex items-center gap-2 px-5 py-3 bg-white/[0.04] backdrop-blur-xl border-2 border-white/[0.12] rounded-sm text-muted-foreground"
                   style={{ fontFamily: "var(--font-heading)", fontWeight: 600 }}
                 >
-                  <Layout className="w-4 h-4 text-primary" />
+                  <Layout className="w-4 h-4 text-primary-light" />
                   <span className="text-sm uppercase tracking-wider">Window Manager</span>
                 </div>
               </motion.div>
@@ -262,7 +279,7 @@ export function SnackTrayPage() {
                 <ImageWithFallback
                   src={snackTrayScreenshots[0].src}
                   alt="SnackTray layout editor"
-                  className="w-full rounded-sm border-2 border-white/[0.12] shadow-[6px_6px_0px_0px_rgba(34,211,238,0.15)]"
+                  className="w-full rounded-sm border-2 border-white/[0.12] shadow-[6px_6px_0px_0px_rgb(var(--teal-rgb)/0.15)]"
                 />
               </div>
             </motion.div>
@@ -281,7 +298,7 @@ export function SnackTrayPage() {
           >
             <motion.div variants={fadeUp} custom={0} className="inline-block mb-4">
               <span
-                className="text-xs uppercase tracking-[0.25em] text-teal bg-teal/10 px-3 py-1 rounded-sm border border-teal/20"
+                className="text-xs uppercase tracking-[0.25em] text-teal-light bg-teal/10 px-3 py-1 rounded-sm border border-teal-light/40"
                 style={{ fontFamily: "var(--font-heading)", fontWeight: 600 }}
               >
                 How it works
@@ -364,7 +381,7 @@ export function SnackTrayPage() {
           >
             <motion.div variants={fadeUp} custom={0} className="inline-block mb-4">
               <span
-                className="text-xs uppercase tracking-[0.25em] text-primary bg-primary/10 px-3 py-1 rounded-sm border border-primary/20"
+                className="text-xs uppercase tracking-[0.25em] text-primary-light bg-primary/10 px-3 py-1 rounded-sm border border-primary-light/40"
                 style={{ fontFamily: "var(--font-heading)", fontWeight: 600 }}
               >
                 Features
@@ -442,7 +459,7 @@ export function SnackTrayPage() {
           >
             <motion.div variants={fadeUp} custom={0} className="inline-block mb-4">
               <span
-                className="text-xs uppercase tracking-[0.25em] text-teal bg-teal/10 px-3 py-1 rounded-sm border border-teal/20"
+                className="text-xs uppercase tracking-[0.25em] text-teal-light bg-teal/10 px-3 py-1 rounded-sm border border-teal-light/40"
                 style={{ fontFamily: "var(--font-heading)", fontWeight: 600 }}
               >
                 Screenshots
@@ -511,7 +528,7 @@ export function SnackTrayPage() {
                 href="http://github.com/krookedlilly/snacktray-releases/releases"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-teal hover:bg-teal/90 text-black rounded-md border-2 border-teal transition-all hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_rgba(34,211,238,0.4)] uppercase tracking-wider text-sm"
+                className="inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-teal hover:bg-teal/90 text-black rounded-md border-2 border-teal-light transition-all hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_rgb(var(--teal-rgb)/0.4)] uppercase tracking-wider text-sm"
                 style={{ fontFamily: "var(--font-heading)", fontWeight: 700 }}
               >
                 Download on GitHub

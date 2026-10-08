@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 import { motion } from "motion/react";
 import imgHomunculAiHero from "@/assets/homunculai-capsule-vertical.png";
 import homunculAITrailer from "@/assets/homunculai-trailer.mp4";
-import imgHomunculAiSvgDoc from "@/assets/homunculai-svg-document.png";
-import imgHomunculAiMultiagent from "@/assets/homunculai-multiagent.png";
-import imgHomunculAiArt from "@/assets/homunculai-art.png";
+import imgHomunculAiSvgDoc from "@/assets/homunculai-svg-document.webp";
+import imgHomunculAiMultiagent from "@/assets/homunculai-multiagent.webp";
+import imgHomunculAiArt from "@/assets/homunculai-art.webp";
 import {
   ArrowLeft,
   Sparkles,
@@ -91,19 +91,19 @@ const features = [
 
 const accentClasses = {
   teal: {
-    text: "text-teal",
-    border: "border-teal/30",
+    text: "text-teal-light",
+    border: "border-teal-light/55",
     bg: "bg-teal",
-    hoverBorder: "hover:border-teal/40",
-    shadow: "hover:shadow-[6px_6px_0px_0px_rgba(34,211,238,0.15)]",
+    hoverBorder: "hover:border-teal-light/70",
+    shadow: "hover:shadow-[6px_6px_0px_0px_rgb(var(--teal-rgb)/0.15)]",
     glow: "bg-teal/10",
   },
   primary: {
-    text: "text-primary",
-    border: "border-primary/30",
+    text: "text-primary-light",
+    border: "border-primary-light/55",
     bg: "bg-primary",
-    hoverBorder: "hover:border-primary/40",
-    shadow: "hover:shadow-[6px_6px_0px_0px_rgba(160,92,246,0.15)]",
+    hoverBorder: "hover:border-primary-light/70",
+    shadow: "hover:shadow-[6px_6px_0px_0px_rgb(var(--primary-rgb)/0.15)]",
     glow: "bg-primary/10",
   },
   lime: {
@@ -201,12 +201,12 @@ export function HomunculAiPage() {
               "price": "4.99",
               "priceCurrency": "USD",
               "availability": "https://schema.org/InStock",
-              "seller": { "@type": "Organization", "name": "KrookedLilly" }
+              "seller": { "@id": "https://www.krookedlilly.com/#organization" }
             },
             "description": "HomunculAi is a visualization layer for your AI agents. Any MCP-compatible agent picks a desktop body, changes its mood, and chats back while you work.",
-            "url": "https://www.krookedlilly.com/games/homunculai/",
+            "url": "https://www.krookedlilly.com/games/homunculai",
             "image": "https://www.krookedlilly.com/homunculai-og.png",
-            "author": { "@type": "Organization", "name": "KrookedLilly", "url": "https://www.krookedlilly.com" },
+            "author": { "@id": "https://www.krookedlilly.com/#organization" },
             "screenshot": "https://www.krookedlilly.com/homunculai-og.png",
             "featureList": "MCP integration, Custom SVG avatars, Multi-instance, Two-way chat, 7-day free trial"
           },
@@ -224,14 +224,14 @@ export function HomunculAiPage() {
       <section className="relative pt-6 pb-20">
         {/* Background glow */}
         <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute -top-[200px] left-1/4 w-[500px] h-[500px] bg-[radial-gradient(circle,_rgba(34,211,238,0.10)_0%,_transparent_70%)]" />
-          <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-[radial-gradient(circle,_rgba(160,92,246,0.08)_0%,_transparent_70%)]" />
+          <div className="absolute -top-[200px] left-1/4 w-[500px] h-[500px] bg-[radial-gradient(circle,_rgb(var(--teal-rgb)/0.10)_0%,_transparent_70%)]" />
+          <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-[radial-gradient(circle,_rgb(var(--primary-rgb)/0.08)_0%,_transparent_70%)]" />
         </div>
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Link
             to="/catalog"
-            className="inline-flex items-center gap-2 text-muted-foreground hover:text-teal transition-colors text-sm uppercase tracking-wider mb-8"
+            className="inline-flex items-center gap-2 text-muted-foreground hover:text-teal-light transition-colors text-sm uppercase tracking-wider mb-8"
             style={{ fontFamily: "var(--font-heading)", fontWeight: 600 }}
           >
             <ArrowLeft className="w-4 h-4" />
@@ -293,19 +293,19 @@ export function HomunculAiPage() {
               {/* Pill tags */}
               <motion.div variants={fadeUp} custom={6} className="flex flex-wrap gap-2 mb-8">
                 <span
-                  className="px-3 py-1 bg-teal/10 border border-teal/30 text-teal text-xs uppercase tracking-wider rounded-sm"
+                  className="px-3 py-1 bg-teal/10 border border-teal-light/55 text-teal-light text-xs uppercase tracking-wider rounded-sm"
                   style={{ fontFamily: "var(--font-heading)", fontWeight: 700 }}
                 >
                   Desktop App
                 </span>
                 <span
-                  className="px-3 py-1 bg-primary/10 border border-primary/30 text-primary text-xs uppercase tracking-wider rounded-sm"
+                  className="px-3 py-1 bg-primary/10 border border-primary-light/55 text-primary-light text-xs uppercase tracking-wider rounded-sm"
                   style={{ fontFamily: "var(--font-heading)", fontWeight: 700 }}
                 >
                   Windows
                 </span>
                 <span
-                  className="px-3 py-1 bg-teal/10 border border-teal/30 text-teal text-xs uppercase tracking-wider rounded-sm"
+                  className="px-3 py-1 bg-teal/10 border border-teal-light/55 text-teal-light text-xs uppercase tracking-wider rounded-sm"
                   style={{ fontFamily: "var(--font-heading)", fontWeight: 700 }}
                 >
                   Works With Any MCP AI
@@ -316,7 +316,7 @@ export function HomunculAiPage() {
               <motion.div variants={fadeUp} custom={7} className="flex flex-wrap gap-x-4 gap-y-1 mb-3 text-xs">
                 <Link
                   to="/games/homunculai/terms"
-                  className="text-muted-foreground/70 hover:text-teal transition-colors uppercase tracking-wider"
+                  className="text-muted-foreground/70 hover:text-teal-light transition-colors uppercase tracking-wider"
                   style={{ fontFamily: "var(--font-heading)", fontWeight: 600 }}
                 >
                   Terms of Use
@@ -324,7 +324,7 @@ export function HomunculAiPage() {
                 <span className="text-muted-foreground/30">&middot;</span>
                 <Link
                   to="/games/homunculai/sales-restrictions"
-                  className="text-muted-foreground/70 hover:text-primary transition-colors uppercase tracking-wider"
+                  className="text-muted-foreground/70 hover:text-primary-light transition-colors uppercase tracking-wider"
                   style={{ fontFamily: "var(--font-heading)", fontWeight: 600 }}
                 >
                   Sales Restrictions
@@ -332,7 +332,7 @@ export function HomunculAiPage() {
                 <span className="text-muted-foreground/30">&middot;</span>
                 <Link
                   to="/games/homunculai/what-is-ai"
-                  className="text-muted-foreground/70 hover:text-teal transition-colors uppercase tracking-wider"
+                  className="text-muted-foreground/70 hover:text-teal-light transition-colors uppercase tracking-wider"
                   style={{ fontFamily: "var(--font-heading)", fontWeight: 600 }}
                 >
                   New to AI?
@@ -345,7 +345,7 @@ export function HomunculAiPage() {
                   href={TRIAL_DOWNLOAD_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex w-full items-center justify-center gap-3 px-10 py-4 bg-primary hover:bg-primary/90 text-white rounded-sm border-2 border-primary transition-all hover:-translate-y-1 hover:shadow-[6px_6px_0px_0px_rgba(160,92,246,0.4)]"
+                  className="flex w-full items-center justify-center gap-3 px-10 py-4 bg-primary hover:bg-primary/90 text-black rounded-sm border-2 border-primary-light transition-all hover:-translate-y-1 hover:shadow-[6px_6px_0px_0px_rgb(var(--primary-rgb)/0.4)]"
                   style={{ fontFamily: "var(--font-heading)", fontWeight: 700 }}
                 >
                   <Download className="w-5 h-5" />
@@ -580,14 +580,14 @@ export function HomunculAiPage() {
       {/* ═══════════ CTA ═══════════ */}
       <section className="py-24 relative">
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[radial-gradient(circle,_rgba(34,211,238,0.08)_0%,_transparent_70%)]" />
-          <div className="absolute top-1/4 right-1/4 w-[300px] h-[300px] bg-[radial-gradient(circle,_rgba(160,92,246,0.06)_0%,_transparent_70%)]" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[radial-gradient(circle,_rgb(var(--teal-rgb)/0.08)_0%,_transparent_70%)]" />
+          <div className="absolute top-1/4 right-1/4 w-[300px] h-[300px] bg-[radial-gradient(circle,_rgb(var(--primary-rgb)/0.06)_0%,_transparent_70%)]" />
         </div>
         <div className="relative max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }}>
             <motion.div variants={fadeUp} custom={0} className="flex items-center justify-center gap-3 mb-6">
-              <Sparkles className="w-5 h-5 text-teal -rotate-12" />
-              <Bot className="w-6 h-6 text-primary rotate-12" />
+              <Sparkles className="w-5 h-5 text-teal-light -rotate-12" />
+              <Bot className="w-6 h-6 text-primary-light rotate-12" />
               <Sparkles className="w-5 h-5 text-lime -rotate-6" />
             </motion.div>
             <motion.h2
@@ -622,7 +622,7 @@ export function HomunculAiPage() {
             >
               <Link
                 to="/games/homunculai/terms"
-                className="text-muted-foreground/70 hover:text-teal transition-colors uppercase tracking-wider"
+                className="text-muted-foreground/70 hover:text-teal-light transition-colors uppercase tracking-wider"
                 style={{ fontFamily: "var(--font-heading)", fontWeight: 600 }}
               >
                 Terms of Use
@@ -630,7 +630,7 @@ export function HomunculAiPage() {
               <span className="text-muted-foreground/30">&middot;</span>
               <Link
                 to="/games/homunculai/sales-restrictions"
-                className="text-muted-foreground/70 hover:text-primary transition-colors uppercase tracking-wider"
+                className="text-muted-foreground/70 hover:text-primary-light transition-colors uppercase tracking-wider"
                 style={{ fontFamily: "var(--font-heading)", fontWeight: 600 }}
               >
                 Sales Restrictions
@@ -638,7 +638,7 @@ export function HomunculAiPage() {
               <span className="text-muted-foreground/30">&middot;</span>
               <Link
                 to="/games/homunculai/what-is-ai"
-                className="text-muted-foreground/70 hover:text-teal transition-colors uppercase tracking-wider"
+                className="text-muted-foreground/70 hover:text-teal-light transition-colors uppercase tracking-wider"
                 style={{ fontFamily: "var(--font-heading)", fontWeight: 600 }}
               >
                 New to AI?
@@ -704,10 +704,10 @@ export function HomunculAiPage() {
                       const isOpen = openFaq === i;
                       // Alternate within each column: pairs (0,1), (2,3)... flip accent each pair
                       const accent = Math.floor(i / 2) % 2 === i % 2 ? "teal" : "primary";
-                      const accentBorder = accent === "teal" ? "border-teal/30" : "border-primary/30";
-                      const accentHoverBorder = accent === "teal" ? "hover:border-teal/30" : "hover:border-primary/30";
-                      const accentText = accent === "teal" ? "text-teal" : "text-primary";
-                      const accentHoverText = accent === "teal" ? "group-hover:text-teal" : "group-hover:text-primary";
+                      const accentBorder = accent === "teal" ? "border-teal-light/55" : "border-primary-light/55";
+                      const accentHoverBorder = accent === "teal" ? "hover:border-teal-light/55" : "hover:border-primary-light/55";
+                      const accentText = accent === "teal" ? "text-teal-light" : "text-primary-light";
+                      const accentHoverText = accent === "teal" ? "group-hover:text-teal-light" : "group-hover:text-primary-light";
                       return (
                         <motion.div
                           key={i}

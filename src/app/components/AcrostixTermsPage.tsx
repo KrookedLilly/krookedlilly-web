@@ -31,7 +31,7 @@ function Section({
       className="mb-10"
     >
       <h2
-        className={`text-xl ${index % 2 === 0 ? "text-teal" : "text-primary"} mb-3 pb-2 border-b-2 ${index % 2 === 0 ? "border-teal/20" : "border-primary/20"}`}
+        className={`text-xl ${index % 2 === 0 ? "text-teal-light" : "text-primary-light"} mb-3 pb-2 border-b-2 ${index % 2 === 0 ? "border-teal-light/40" : "border-primary-light/40"}`}
         style={{ fontFamily: "var(--font-display)" }}
       >
         {title}
@@ -53,13 +53,13 @@ export function AcrostixTermsPage() {
       {/* Hero */}
       <section className="pt-16 pb-12 relative">
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-0 right-1/3 w-72 h-72 bg-[radial-gradient(circle,_rgba(160,92,246,0.15)_0%,_transparent_70%)]" />
-          <div className="absolute top-12 left-1/3 w-56 h-56 bg-[radial-gradient(circle,_rgba(34,211,238,0.10)_0%,_transparent_70%)]" />
+          <div className="absolute top-0 right-1/3 w-72 h-72 bg-[radial-gradient(circle,_rgb(var(--primary-rgb)/0.15)_0%,_transparent_70%)]" />
+          <div className="absolute top-12 left-1/3 w-56 h-56 bg-[radial-gradient(circle,_rgb(var(--teal-rgb)/0.10)_0%,_transparent_70%)]" />
         </div>
         <div className="relative max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <Link
             to="/games/acrostix"
-            className="flex w-fit items-center gap-2 text-muted-foreground hover:text-primary transition-colors text-sm uppercase tracking-wider mb-6"
+            className="flex w-fit items-center gap-2 text-muted-foreground hover:text-primary-light transition-colors text-sm uppercase tracking-wider mb-6"
             style={{ fontFamily: "var(--font-heading)", fontWeight: 600 }}
           >
             <ArrowLeft className="w-4 h-4" />
@@ -68,7 +68,7 @@ export function AcrostixTermsPage() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="inline-flex items-center gap-2 px-4 py-1.5 bg-primary/10 border border-primary/20 rounded-sm text-primary text-sm mb-4"
+            className="inline-flex items-center gap-2 px-4 py-1.5 bg-primary/10 border border-primary-light/40 rounded-sm text-primary-light text-sm mb-4"
           >
             <FileText className="w-4 h-4" />
             <span
@@ -118,7 +118,7 @@ export function AcrostixTermsPage() {
                 installing, or using Acrostix, you agree to these Terms. If you
                 do not agree, please do not use the App.
               </p>
-              <div className="bg-primary/10 border-l-3 border-primary p-4 rounded-r-sm text-sm text-foreground mt-4">
+              <div className="bg-primary/10 border-l-3 border-primary-light p-4 rounded-r-sm text-sm text-foreground mt-4">
                 These Terms also serve as the end-user license agreement
                 (EULA) for Acrostix. Your purchase of the App and any
                 subscriptions through the Apple App Store or Google Play
@@ -164,7 +164,7 @@ export function AcrostixTermsPage() {
                 in-app settings. See our{" "}
                 <Link
                   to="/games/acrostix/privacy"
-                  className="text-primary hover:text-primary/80 transition-colors underline underline-offset-2"
+                  className="text-primary-light hover:text-primary-light/80 transition-colors underline underline-offset-2"
                 >
                   Privacy Policy
                 </Link>{" "}
@@ -283,7 +283,7 @@ export function AcrostixTermsPage() {
                 Terms, please report it to us at{" "}
                 <a
                   href="mailto:support@krookedlilly.com"
-                  className="text-primary hover:text-primary/80 transition-colors underline underline-offset-2"
+                  className="text-primary-light hover:text-primary-light/80 transition-colors underline underline-offset-2"
                 >
                   support@krookedlilly.com
                 </a>
@@ -362,7 +362,7 @@ export function AcrostixTermsPage() {
                 describe. See our{" "}
                 <Link
                   to="/games/acrostix/privacy"
-                  className="text-primary hover:text-primary/80 transition-colors underline underline-offset-2"
+                  className="text-primary-light hover:text-primary-light/80 transition-colors underline underline-offset-2"
                 >
                   Privacy Policy
                 </Link>{" "}
@@ -398,7 +398,7 @@ export function AcrostixTermsPage() {
                 Your use of Acrostix is also governed by our{" "}
                 <Link
                   to="/games/acrostix/privacy"
-                  className="text-primary hover:text-primary/80 transition-colors underline underline-offset-2"
+                  className="text-primary-light hover:text-primary-light/80 transition-colors underline underline-offset-2"
                 >
                   Privacy Policy
                 </Link>
@@ -570,7 +570,7 @@ export function AcrostixTermsPage() {
                 Acrostix should be directed to Krookedlilly LLC at{" "}
                 <a
                   href="mailto:support@krookedlilly.com"
-                  className="text-primary hover:text-primary/80 transition-colors underline underline-offset-2"
+                  className="text-primary-light hover:text-primary-light/80 transition-colors underline underline-offset-2"
                 >
                   support@krookedlilly.com
                 </a>{" "}
@@ -640,7 +640,7 @@ export function AcrostixTermsPage() {
                 County, Washington, and you consent to personal jurisdiction
                 there.
               </p>
-              <div className="bg-primary/10 border-l-3 border-primary p-4 rounded-r-sm text-sm text-foreground">
+              <div className="bg-primary/10 border-l-3 border-primary-light p-4 rounded-r-sm text-sm text-foreground">
                 Nothing in this section waives any non-waivable rights you may
                 have under the consumer-protection laws of your home
                 jurisdiction or the mandatory consumer-rights rules of the
@@ -697,7 +697,7 @@ export function AcrostixTermsPage() {
                 Email:{" "}
                 <a
                   href="mailto:support@krookedlilly.com"
-                  className="text-primary hover:text-primary/80 transition-colors underline underline-offset-2"
+                  className="text-primary-light hover:text-primary-light/80 transition-colors underline underline-offset-2"
                 >
                   support@krookedlilly.com
                 </a>

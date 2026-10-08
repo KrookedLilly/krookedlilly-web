@@ -2,6 +2,33 @@ import { useState } from "react";
 import { motion } from "motion/react";
 import { Mail, Send, MapPin, CheckCircle, Twitch } from "lucide-react";
 import { PageMeta } from "./PageMeta";
+import { useFormspree, FORM_ERROR_MESSAGE } from "../../hooks/useFormspree";
+import { SocialIcon } from "./SocialIcon";
+import { categories, itemsIn } from "../data/catalog";
+import { unityToolkitAssets } from "../data/unityAssets";
+import { socials, DISCORD_URL, JENN_TWITCH_URL } from "../data/socials";
+
+/** Readable names for the "What's this about?" values, used in the email subject. */
+const subjectLabels: Record<string, string> = {
+  general: "General Inquiry",
+  collab: "Collaboration",
+  feedback: "Feedback",
+  press: "Press / Media",
+  support: "Support",
+  other: "Other",
+};
+
+function DiscordIcon({ className }: { className?: string }) {
+  return <SocialIcon name="discord" className={className} />;
+}
+
+/** Support dropdown, grouped like the catalog. The UI Toolkit suite expands to its packages. */
+const supportProducts = categories.map((category) => ({
+  category,
+  items: itemsIn(category).flatMap((item) =>
+    item.id === "ui-toolkit" ? unityToolkitAssets.map((a) => `UI Toolkit: ${a.name}`) : [item.title]
+  ),
+}));
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -20,7 +47,8 @@ export function ContactPage() {
     product: "",
     message: "",
   });
-  const [submitted, setSubmitted] = useState(false);
+  const { status, submit, reset } = useFormspree("Contact page");
+  const submitted = status === "sent";
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
@@ -35,13 +63,13 @@ export function ContactPage() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    await fetch("https://formspree.io/f/mzdkwgka", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(formData),
-    });
-    setSubmitted(true);
-    setFormData({ name: "", email: "", subject: "", product: "", message: "" });
+    // e.g. "KrookedLilly contact: Support (Acrostix)"
+    const topic = subjectLabels[formData.subject] ?? "Message";
+    const subject = `KrookedLilly contact: ${topic}${formData.product ? ` (${formData.product})` : ""}`;
+    // Keep what they typed if it fails, so they can just hit send again
+    if (await submit(formData, subject)) {
+      setFormData({ name: "", email: "", subject: "", product: "", message: "" });
+    }
   };
 
   return (
@@ -54,8 +82,8 @@ export function ContactPage() {
       {/* Hero */}
       <section className="pt-16 pb-12 relative">
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-0 right-1/3 w-72 h-72 bg-[radial-gradient(circle,_rgba(160,92,246,0.15)_0%,_transparent_70%)]" />
-          <div className="absolute top-12 left-1/3 w-56 h-56 bg-[radial-gradient(circle,_rgba(34,211,238,0.10)_0%,_transparent_70%)]" />
+          <div className="absolute top-0 right-1/3 w-72 h-72 bg-[radial-gradient(circle,_rgb(var(--primary-rgb)/0.15)_0%,_transparent_70%)]" />
+          <div className="absolute top-12 left-1/3 w-56 h-56 bg-[radial-gradient(circle,_rgb(var(--teal-rgb)/0.10)_0%,_transparent_70%)]" />
         </div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.h1
@@ -107,10 +135,19 @@ export function ContactPage() {
                   icon: Mail,
                   label: "Email",
                   value: "support@krookedlilly.com",
-                  href: "",
+                  href: "mailto:support@krookedlilly.com",
                   subtext: "We try our best to respond within 48 hours",
                   tilt: "rotate-1",
                   accent: "primary" as const,
+                },
+                {
+                  icon: DiscordIcon,
+                  label: "Discord",
+                  value: "Join the KrookedLilly server",
+                  href: DISCORD_URL,
+                  subtext: "Announcements, ExfilCraft, and hanging out",
+                  tilt: "-rotate-1",
+                  accent: "teal" as const,
                 },
                 {
                   icon: Twitch,
@@ -118,8 +155,8 @@ export function ContactPage() {
                   value: "krookedlilly",
                   href: "https://www.twitch.tv/krookedlilly",
                   subtext: "Catch us streaming games & dev sessions",
-                  tilt: "-rotate-1",
-                  accent: "teal" as const,
+                  tilt: "rotate-1",
+                  accent: "primary" as const,
                 },
                 {
                   icon: MapPin,
@@ -127,13 +164,13 @@ export function ContactPage() {
                   value: "The Basement",
                   href: "",
                   subtext: "...sometimes a hammock in the backyard",
-                  tilt: "rotate-1",
-                  accent: "primary" as const,
+                  tilt: "-rotate-1",
+                  accent: "teal" as const,
                 },
               ].map((item, i) => {
                 const styles = item.accent === "primary"
-                  ? { hoverBorder: "hover:border-primary/30", shadow: "hover:shadow-[3px_3px_0px_0px_rgba(160,92,246,0.1)]", iconBg: "bg-primary/10 border-primary/20", iconColor: "text-primary" }
-                  : { hoverBorder: "hover:border-teal/30", shadow: "hover:shadow-[3px_3px_0px_0px_rgba(34,211,238,0.1)]", iconBg: "bg-teal/10 border-teal/20", iconColor: "text-teal" };
+                  ? { hoverBorder: "hover:border-primary-light/55", shadow: "hover:shadow-[3px_3px_0px_0px_rgb(var(--primary-rgb)/0.1)]", iconBg: "bg-primary/10 border-primary-light/40", iconColor: "text-primary-light" }
+                  : { hoverBorder: "hover:border-teal-light/55", shadow: "hover:shadow-[3px_3px_0px_0px_rgb(var(--teal-rgb)/0.1)]", iconBg: "bg-teal/10 border-teal-light/40", iconColor: "text-teal-light" };
                 return (
                 <motion.div
                   key={item.label}
@@ -152,7 +189,11 @@ export function ContactPage() {
                       {item.label}
                     </h4>
                     {item.href ? (
-                      <a href={item.href} target="_blank" rel="noopener noreferrer" className="text-foreground text-sm hover:text-teal transition-colors">
+                      <a
+                        href={item.href}
+                        {...(item.href.startsWith("http") ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                        className="text-foreground text-sm hover:text-teal-light transition-colors"
+                      >
                         {item.value}
                       </a>
                     ) : (
@@ -163,6 +204,38 @@ export function ContactPage() {
                 </motion.div>
                 );
               })}
+
+              <motion.div variants={fadeUp} custom={5} className="pt-2">
+                <h3
+                  className="text-foreground uppercase tracking-wider text-sm mb-3"
+                  style={{ fontFamily: "var(--font-heading)", fontWeight: 700 }}
+                >
+                  Find us everywhere
+                </h3>
+                <ul className="grid grid-cols-2 sm:grid-cols-3 gap-2">
+                  {[
+                    ...socials,
+                    { label: "Lilly's Twitch", handle: "deathlilly522", url: JENN_TWITCH_URL, icon: "twitch" as const },
+                  ].map((s, i) => (
+                    <li key={s.label}>
+                      <a
+                        href={s.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={`flex items-center gap-2 px-3 py-2 rounded-sm border-2 border-white/10 text-muted-foreground text-sm transition-colors ${
+                          i % 2 === 0 ? "hover:text-primary-light hover:border-primary-light/70" : "hover:text-teal-light hover:border-teal-light/70"
+                        }`}
+                      >
+                        <SocialIcon name={s.icon} className="w-4 h-4 shrink-0" />
+                        <span className="truncate">{s.label}</span>
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+                <p className="text-muted-foreground text-xs mt-3">
+                  Lilly also streams variety games and KrookedLilly dev on her own channel.
+                </p>
+              </motion.div>
             </motion.div>
 
             {/* Contact Form */}
@@ -192,7 +265,7 @@ export function ContactPage() {
                       Thanks for reaching out! We'll get back to you as soon as we can
                     </p>
                     <button
-                      onClick={() => setSubmitted(false)}
+                      onClick={reset}
                       className="text-lime hover:text-lime/80 transition-colors uppercase tracking-wider text-sm"
                       style={{ fontFamily: "var(--font-heading)", fontWeight: 700 }}
                     >
@@ -216,7 +289,7 @@ export function ContactPage() {
                           onChange={handleChange}
                           required
                           placeholder="Your name"
-                          className="w-full px-4 py-3 bg-input-background border-2 border-white/10 rounded-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary/50"
+                          className="w-full px-4 py-3 bg-input-background border-2 border-white/10 rounded-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary-light/80"
                         />
                       </div>
                       <div>
@@ -233,7 +306,7 @@ export function ContactPage() {
                           onChange={handleChange}
                           required
                           placeholder="your@email.com"
-                          className="w-full px-4 py-3 bg-input-background border-2 border-white/10 rounded-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary/50"
+                          className="w-full px-4 py-3 bg-input-background border-2 border-white/10 rounded-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary-light/80"
                         />
                       </div>
                     </div>
@@ -250,7 +323,7 @@ export function ContactPage() {
                         value={formData.subject}
                         onChange={handleChange}
                         required
-                        className="w-full px-4 py-3 bg-input-background border-2 border-white/10 rounded-sm text-foreground focus:outline-none focus:border-primary/50 appearance-none"
+                        className="w-full px-4 py-3 bg-input-background border-2 border-white/10 rounded-sm text-foreground focus:outline-none focus:border-primary-light/80 appearance-none"
                       >
                         <option value="" className="text-muted-foreground">
                           Pick one...
@@ -277,23 +350,16 @@ export function ContactPage() {
                           value={formData.product}
                           onChange={handleChange}
                           required
-                          className="w-full px-4 py-3 bg-input-background border-2 border-white/10 rounded-sm text-foreground focus:outline-none focus:border-primary/50 appearance-none"
+                          className="w-full px-4 py-3 bg-input-background border-2 border-white/10 rounded-sm text-foreground focus:outline-none focus:border-primary-light/80 appearance-none"
                         >
                           <option value="">Pick one...</option>
-                          <option value="galactic-parcel-service">Galactic Parcel Service</option>
-                          <option value="acrostix">Acrostix</option>
-                          <option value="match-fives">Match Fives</option>
-                          <option value="50-ball-drop">50 Ball Drop</option>
-                          <option value="he-keyboards">HE Keyboards</option>
-                          <option value="screen-manager">UI Toolkit: Screen Manager</option>
-                          <option value="tween-engine">UI Toolkit: Tween Engine</option>
-                          <option value="responsive-layout">UI Toolkit: Responsive Layout</option>
-                          <option value="modal-notifications">UI Toolkit: Modal & Notifications</option>
-                          <option value="focus-navigation">UI Toolkit: Focus & Navigation</option>
-                          <option value="snacktray">SnackTray</option>
-                          <option value="minecraft-mods">Minecraft Mods</option>
-                          <option value="card-labeler">Card Labeler</option>
-                          <option value="homunculai">HomunculAi</option>
+                          {supportProducts.map((group) => (
+                            <optgroup key={group.category} label={group.category}>
+                              {group.items.map((name) => (
+                                <option key={name} value={name}>{name}</option>
+                              ))}
+                            </optgroup>
+                          ))}
                         </select>
                       </div>
                     )}
@@ -312,18 +378,24 @@ export function ContactPage() {
                         required
                         rows={5}
                         placeholder="Tell us what's on your mind..."
-                        className="w-full px-4 py-3 bg-input-background border-2 border-white/10 rounded-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary/50 resize-none"
+                        className="w-full px-4 py-3 bg-input-background border-2 border-white/10 rounded-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary-light/80 resize-none"
                       />
                     </div>
 
                     <button
                       type="submit"
-                      className="inline-flex items-center gap-2 px-8 py-3.5 bg-gradient-to-r from-primary to-teal text-white rounded-sm transition-all hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_rgba(160,92,246,0.3)] w-full sm:w-auto justify-center uppercase tracking-wider text-sm border-2 border-transparent"
+                      disabled={status === "sending"}
+                      className="inline-flex items-center gap-2 px-8 py-3.5 bg-gradient-to-r from-primary to-teal text-black rounded-sm transition-all hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_rgb(var(--primary-rgb)/0.3)] w-full sm:w-auto justify-center uppercase tracking-wider text-sm border-2 border-transparent disabled:opacity-60 disabled:pointer-events-none"
                       style={{ fontFamily: "var(--font-heading)", fontWeight: 700 }}
                     >
                       <Send className="w-4 h-4" />
-                      Send It
+                      {status === "sending" ? "Sending..." : "Send It"}
                     </button>
+                    {status === "error" && (
+                      <p role="alert" className="text-sm text-red-400">
+                        {FORM_ERROR_MESSAGE}
+                      </p>
+                    )}
                   </form>
                 )}
               </motion.div>

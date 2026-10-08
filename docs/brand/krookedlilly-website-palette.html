@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>KrookedLilly Website Palette</title>
+<link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=block" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0c0c0c; --card: #161616; --muted: #1e1e1e; --fg: #f0f0e8; --muted-fg: #888880;
+    --purple: #b261fe; --purple-light: #cb94ff; --teal: #39ada4; --teal-light: #3fe0cc;
+    --lime: #84cc16; --violet: #7c3aed;
+  }
+  * { box-sizing: border-box; margin: 0; }
+  body { width: 1600px; background: var(--bg); color: var(--fg); font: 400 15px/1.5 Inter, sans-serif; padding: 56px 64px 64px; }
+  .display { font-family: 'Permanent Marker', cursive; font-weight: 400; }
+  .label { font-family: 'Space Grotesk', sans-serif; font-weight: 700; text-transform: uppercase; letter-spacing: .16em; font-size: 12px; }
+  header { display: flex; align-items: flex-end; justify-content: space-between; border-bottom: 2px solid rgba(255,255,255,.1); padding-bottom: 22px; margin-bottom: 36px; }
+  header h1 { font-size: 54px; line-height: 1; }
+  header h1 .p { color: var(--purple-light); } header h1 .t { color: var(--teal-light); }
+  header p { color: var(--muted-fg); max-width: 560px; text-align: right; }
+  h2 { font-family: 'Space Grotesk', sans-serif; font-size: 22px; font-weight: 700; margin: 0 0 16px; display: flex; gap: 12px; align-items: baseline; }
+  h2 small { font: 500 13px Inter, sans-serif; color: var(--muted-fg); }
+  section { margin-bottom: 40px; }
+  .pairs { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+  .pair { background: var(--card); border: 2px solid rgba(255,255,255,.08); border-radius: 4px; overflow: hidden; }
+  .pair .swatches { display: grid; grid-template-columns: 1fr 1fr; }
+  .sw { height: 150px; padding: 16px; display: flex; flex-direction: column; justify-content: flex-end; color: #0c0c0c; }
+  .sw .hex { font: 700 26px 'Space Grotesk', sans-serif; letter-spacing: .02em; }
+  .sw .rgb { font: 600 13px Inter, sans-serif; opacity: .75; }
+  .pair .info { padding: 16px 18px 18px; display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+  .info .role { margin-top: 6px; color: #d9d9d0; font-size: 14px; }
+  .info .code { margin-top: 8px; font: 500 12px ui-monospace, Consolas, monospace; color: var(--muted-fg); }
+  .info .contrast { margin-top: 8px; font-size: 12.5px; color: var(--muted-fg); }
+  .info .contrast b { color: var(--fg); }
+  .row { display: grid; gap: 16px; }
+  .row.five { grid-template-columns: repeat(5, 1fr); }
+  .row.three { grid-template-columns: repeat(3, 1fr); }
+  .chip { background: var(--card); border: 2px solid rgba(255,255,255,.08); border-radius: 4px; overflow: hidden; }
+  .chip .s { height: 90px; border-bottom: 1px solid rgba(255,255,255,.08); }
+  .chip .t { padding: 12px 14px 14px; }
+  .chip .hex { font: 700 18px 'Space Grotesk', sans-serif; }
+  .chip .role { color: #cfcfc6; font-size: 13px; margin-top: 4px; }
+  .chip .code { margin-top: 6px; font: 500 11.5px ui-monospace, Consolas, monospace; color: var(--muted-fg); }
+  .demo { background: var(--card); border: 2px solid rgba(255,255,255,.08); border-radius: 4px; padding: 26px 28px; display: grid; grid-template-columns: 1.1fr 1fr; gap: 36px; }
+  .demo .stack { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; margin-bottom: 18px; }
+  .btn { font: 700 13px 'Space Grotesk', sans-serif; text-transform: uppercase; letter-spacing: .1em; padding: 13px 22px; border-radius: 6px; border: 2px solid; color: #0c0c0c; }
+  .btn.p { background: var(--purple); border-color: var(--purple-light); box-shadow: 4px 4px 0 rgba(178,97,254,.4); }
+  .btn.t { background: var(--teal); border-color: var(--teal-light); box-shadow: 4px 4px 0 rgba(57,173,164,.45); }
+  .obtn { font: 700 12px 'Space Grotesk', sans-serif; text-transform: uppercase; letter-spacing: .1em; padding: 7px 12px; border-radius: 3px; border: 2px solid; }
+  .obtn.p { color: var(--purple-light); border-color: rgba(203,148,255,.7); background: rgba(178,97,254,.15); }
+  .obtn.t { color: var(--teal-light); border-color: rgba(63,224,204,.7); background: rgba(57,173,164,.15); }
+  .obtn.l { color: var(--lime); border-color: rgba(132,204,22,.6); background: rgba(132,204,22,.15); }
+  .sticker { font: 700 12px 'Space Grotesk', sans-serif; text-transform: uppercase; letter-spacing: .1em; padding: 5px 12px; border-radius: 3px; border: 2px solid; display: inline-flex; gap: 6px; align-items: center; }
+  .sticker.status { background: var(--lime); color: #0c0c0c; border-color: #000; box-shadow: 2px 2px 0 rgba(0,0,0,.8); transform: rotate(-3deg); }
+  .sticker.count { background: #000; color: var(--lime); border-color: var(--lime); box-shadow: 2px 2px 0 rgba(132,204,22,.45); transform: rotate(3deg); }
+  .text-demo .k { margin-bottom: 8px; }
+  .text-demo .k.p { color: var(--purple-light); } .text-demo .k.t { color: var(--teal-light); }
+  .text-demo h3 { font: 700 20px 'Space Grotesk', sans-serif; margin-bottom: 6px; }
+  .text-demo p { color: var(--muted-fg); }
+  .text-demo .link { color: var(--lime); margin-top: 12px; display: inline-block; }
+  .iconsq { width: 44px; height: 44px; border-radius: 3px; display: inline-flex; align-items: center; justify-content: center; font: 700 20px 'Space Grotesk'; color: #0c0c0c; }
+  .grad { height: 44px; border-radius: 4px; background: linear-gradient(90deg, var(--purple), var(--teal)); margin-top: 6px; }
+  .rules { display: grid; grid-template-columns: 1fr 1fr; gap: 14px 40px; }
+  .rule { display: flex; gap: 12px; }
+  .rule .n { font: 700 14px 'Space Grotesk'; width: 26px; height: 26px; border-radius: 3px; display: flex; align-items: center; justify-content: center; color: #0c0c0c; flex: none; }
+  .rule p { color: #d9d9d0; }
+  .fonts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .font { background: var(--card); border: 2px solid rgba(255,255,255,.08); border-radius: 4px; padding: 18px 20px; }
+  .font .sample { font-size: 34px; line-height: 1.1; margin: 6px 0 8px; }
+  .font p { color: var(--muted-fg); font-size: 13px; }
+  .origin { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+  .src { background: var(--card); border: 2px solid rgba(255,255,255,.08); border-radius: 4px; padding: 16px 18px; }
+  .src .bar { display: flex; height: 54px; border-radius: 3px; overflow: hidden; margin: 10px 0 8px; }
+  .src .bar div { flex: 1; display: flex; align-items: flex-end; padding: 5px 7px; font: 600 11px ui-monospace, Consolas, monospace; color: rgba(0,0,0,.75); }
+  .src .bar div.dk { color: rgba(255,255,255,.8); }
+  .src p { color: var(--muted-fg); font-size: 13px; }
+  footer { margin-top: 8px; color: var(--muted-fg); font-size: 12.5px; display: flex; justify-content: space-between; border-top: 2px solid rgba(255,255,255,.08); padding-top: 16px; }
+</style>
+</head>
+<body>
+<header>
+  <h1 class="display"><span class="p">Krooked</span><span class="t">Lilly</span> Website Palette</h1>
+  <p>Colors, roles, and rules for krookedlilly.com. Values match <code>src/styles/theme.css</code>. Purple and teal are tuned to look equally bright, not to measure equal.</p>
+</header>
+
+<section>
+  <h2>Brand accents <small>Base for fills · Light for text and outlines</small></h2>
+  <div class="pairs">
+    <div class="pair">
+      <div class="swatches">
+        <div class="sw" style="background:#b261fe"><span class="label" style="letter-spacing:.14em">Purple</span><span class="hex">#B261FE</span><span class="rgb">rgb 178 97 254</span></div>
+        <div class="sw" style="background:#cb94ff"><span class="label" style="letter-spacing:.14em">Purple light</span><span class="hex">#CB94FF</span><span class="rgb">rgb 203 148 255</span></div>
+      </div>
+      <div class="info">
+        <div><div class="label" style="color:var(--purple-light)">Base</div><div class="role">Icon squares, solid buttons (dark text), hover glows and shadows, gradients.</div><div class="code">--primary · bg-primary</div><div class="contrast">On background <b>5.6</b> · dark text on it <b>5.6</b></div></div>
+        <div><div class="label" style="color:var(--purple-light)">Light</div><div class="role">Text, links, labels, icons on dark, and all purple outlines.</div><div class="code">--primary-light · text-/border-primary-light</div><div class="contrast">On background <b>8.6</b></div></div>
+      </div>
+    </div>
+    <div class="pair">
+      <div class="swatches">
+        <div class="sw" style="background:#39ada4"><span class="label" style="letter-spacing:.14em">Teal</span><span class="hex">#39ADA4</span><span class="rgb">rgb 57 173 164</span></div>
+        <div class="sw" style="background:#3fe0cc"><span class="label" style="letter-spacing:.14em">Teal light</span><span class="hex">#3FE0CC</span><span class="rgb">rgb 63 224 204</span></div>
+      </div>
+      <div class="info">
+        <div><div class="label" style="color:var(--teal-light)">Base</div><div class="role">Icon squares, solid buttons (dark text), hover glows and shadows, gradients. Same teal as the ExfilCraft logo.</div><div class="code">--teal · bg-teal</div><div class="contrast">On background <b>7.2</b> · dark text on it <b>7.2</b></div></div>
+        <div><div class="label" style="color:var(--teal-light)">Light</div><div class="role">Text, links, labels, icons on dark, and all teal outlines.</div><div class="code">--teal-light · text-/border-teal-light</div><div class="contrast">On background <b>11.9</b></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Supporting colors</h2>
+  <div class="row three">
+    <div class="chip"><div class="s" style="background:#84cc16"></div><div class="t"><div class="hex">#84CC16 · Lime</div><div class="role">"See all" and "Check it out" links, In Development and count stickers, Details buttons, success messages.</div><div class="code">--lime · contrast 9.9</div></div></div>
+    <div class="chip"><div class="s" style="background:#7c3aed"></div><div class="t"><div class="hex">#7C3AED · Deep violet</div><div class="role">Background glow blobs and particles only. Not used for text.</div><div class="code">--accent</div></div></div>
+    <div class="chip"><div class="s" style="background:linear-gradient(90deg,#b261fe,#39ada4)"></div><div class="t"><div class="hex">Purple → Teal</div><div class="role">Gradient for big display headings and the Contact form's send button.</div><div class="code">from-primary to-teal</div></div></div>
+  </div>
+</section>
+
+<section>
+  <h2>Neutrals</h2>
+  <div class="row five">
+    <div class="chip"><div class="s" style="background:#0c0c0c"></div><div class="t"><div class="hex">#0C0C0C</div><div class="role">Page background, and the dark text on colored buttons.</div><div class="code">--background</div></div></div>
+    <div class="chip"><div class="s" style="background:#161616"></div><div class="t"><div class="hex">#161616</div><div class="role">Cards and panels.</div><div class="code">--card</div></div></div>
+    <div class="chip"><div class="s" style="background:#1e1e1e"></div><div class="t"><div class="hex">#1E1E1E</div><div class="role">Muted surfaces. Inputs use #1A1A1A.</div><div class="code">--muted · --input-background</div></div></div>
+    <div class="chip"><div class="s" style="background:#f0f0e8"></div><div class="t"><div class="hex">#F0F0E8</div><div class="role">Main text, a warm white. Contrast 17.</div><div class="code">--foreground</div></div></div>
+    <div class="chip"><div class="s" style="background:#888880"></div><div class="t"><div class="hex">#888880</div><div class="role">Secondary text and descriptions. Contrast 5.5. Borders are white at 10%.</div><div class="code">--muted-foreground</div></div></div>
+  </div>
+</section>
+
+<section>
+  <h2>In use</h2>
+  <div class="demo">
+    <div>
+      <div class="stack"><span class="btn p">Get it on CurseForge</span><span class="btn t">Get it on Modrinth</span></div>
+      <div class="stack"><span class="obtn l">Details</span><span class="obtn p">CurseForge ↗</span><span class="obtn t">Modrinth ↗</span><span class="sticker status">In Development</span><span class="sticker count">▤ 13 Assets</span></div>
+      <div class="stack"><span class="iconsq" style="background:var(--teal)">◆</span><span class="iconsq" style="background:var(--purple)">◆</span><span style="color:var(--muted-fg);font-size:13px">Icon squares use base colors; section icons alternate.</span></div>
+    </div>
+    <div class="text-demo">
+      <div class="label k p">Creative Word Game · iOS &amp; Android</div>
+      <h3>Acrostix</h3>
+      <p>Card text sits in warm white and muted gray. Small labels use the light tints, alternating purple and teal from card to card.</p>
+      <div class="label k t" style="margin-top:14px">Minecraft Mod · NeoForge</div>
+      <span class="label link">See all games →</span>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Rules</h2>
+  <div class="rules">
+    <div class="rule"><span class="n" style="background:var(--purple)">1</span><p><b>Rotate purple and teal.</b> Alternate them card to card and section to section. Never let a page or row go all one color.</p></div>
+    <div class="rule"><span class="n" style="background:var(--teal)">2</span><p><b>Base fills, light text.</b> Filled shapes use the base color; text and outlines use the light tint, so they read brighter than the fills.</p></div>
+    <div class="rule"><span class="n" style="background:var(--purple)">3</span><p><b>Dark text on color.</b> Purple, teal, and lime buttons and stickers always use #0C0C0C text, never white.</p></div>
+    <div class="rule"><span class="n" style="background:var(--teal)">4</span><p><b>Teal sits lighter on purpose.</b> Saturated purple looks brighter than it measures, so this pair reads as equal. Keep that balance if either shifts.</p></div>
+    <div class="rule"><span class="n" style="background:var(--purple)">5</span><p><b>Lime is the call to action.</b> Use it for "go here" links, stickers, and success, sparingly, so it keeps its pop.</p></div>
+    <div class="rule"><span class="n" style="background:var(--teal)">6</span><p><b>Stickers mean different things.</b> Solid lime, tilted left = status. Black with a lime outline, tilted right = a count.</p></div>
+  </div>
+</section>
+
+<section>
+  <h2>Type</h2>
+  <div class="fonts">
+    <div class="font"><div class="label" style="color:var(--purple-light)">Display</div><div class="sample display">Permanent Marker</div><p>Page titles and big section headings.</p></div>
+    <div class="font"><div class="label" style="color:var(--teal-light)">Headings &amp; labels</div><div class="sample" style="font-family:'Space Grotesk';font-weight:700">Space Grotesk</div><p>Card titles, buttons, and uppercase tracked labels.</p></div>
+    <div class="font"><div class="label" style="color:var(--purple-light)">Body</div><div class="sample" style="font-family:Inter;font-weight:500">Inter</div><p>Paragraphs, descriptions, and form fields.</p></div>
+  </div>
+</section>
+
+<section>
+  <h2>Where it came from <small>Brand art the website palette was shifted from</small></h2>
+  <div class="origin">
+    <div class="src">
+      <div class="label" style="color:var(--purple-light)">ExfilCraft logo</div>
+      <div class="bar"><div style="background:#c17dfe">C17DFE</div><div style="background:#c661fe">C661FE</div><div style="background:#c63fff">C63FFF</div><div class="dk" style="background:#3b007d">3B007D</div><div style="background:#50b6ad">50B6AD</div><div style="background:#39ada4">39ADA4</div><div style="background:#26a99f">26A99F</div><div class="dk" style="background:#002c24">002C24</div></div>
+      <p>Letter faces fade top to bottom; the darkest swatch in each set is the side shading. The site teal is the logo's mid teal; the site purple is the logo's purple nudged a little bluer.</p>
+    </div>
+    <div class="src">
+      <div class="label" style="color:var(--teal-light)">Contact graphic</div>
+      <div class="bar"><div class="dk" style="background:#8d00b7">8D00B7</div><div style="background:#00b7a2">00B7A2</div><div class="dk" style="background:#2d1835">2D1835</div><div style="background:#e8dde5">E8DDE5</div></div>
+      <p>Deep magenta-violet frame, sea-green brackets, dark plum background. Same family as the logo; the purple is too dark for text on the site, so it only informed the hue.</p>
+    </div>
+  </div>
+</section>
+
+<footer><span>KrookedLilly · krookedlilly.com</span><span>Website palette · October 8, 2026 · Contrast = readability against #0C0C0C (4.5+ is readable text)</span></footer>
+</body>
+</html>

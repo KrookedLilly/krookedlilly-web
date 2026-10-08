@@ -1,4 +1,5 @@
 import { useEffect, useRef, useCallback } from "react";
+import { BRAND, rgbTriple } from "../data/brandColors";
 
 interface Particle {
   baseX: number;
@@ -21,16 +22,16 @@ const BACK_COLORS = [
   "220,220,215",
   "200,190,230", // faint lavender
   "180,220,230", // faint cyan tint
-  "160,92,246",  // violet (rare pop)
-  "34,211,238",  // cyan (rare pop)
+  rgbTriple(BRAND.primary),  // violet (rare pop)
+  rgbTriple(BRAND.teal),  // cyan (rare pop)
 ];
 
 // Front layer: brand-heavy — close floating motes
 const FRONT_COLORS = [
-  "160,92,246", // violet
-  "160,92,246",
-  "34,211,238", // cyan
-  "34,211,238",
+  rgbTriple(BRAND.primary), // violet
+  rgbTriple(BRAND.primary),
+  rgbTriple(BRAND.teal), // cyan
+  rgbTriple(BRAND.teal),
   "124,58,237", // violet-shade accent
   "240,240,232", // white
 ];

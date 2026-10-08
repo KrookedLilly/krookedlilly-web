@@ -48,14 +48,14 @@ export function AcrostixUniversalLinkPage() {
       />
       <section className="relative pt-6 pb-24">
         <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute -top-[200px] left-1/4 w-[500px] h-[500px] bg-[radial-gradient(circle,_rgba(34,211,238,0.10)_0%,_transparent_70%)]" />
-          <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-[radial-gradient(circle,_rgba(160,92,246,0.08)_0%,_transparent_70%)]" />
+          <div className="absolute -top-[200px] left-1/4 w-[500px] h-[500px] bg-[radial-gradient(circle,_rgb(var(--teal-rgb)/0.10)_0%,_transparent_70%)]" />
+          <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-[radial-gradient(circle,_rgb(var(--primary-rgb)/0.08)_0%,_transparent_70%)]" />
         </div>
 
         <div className="relative max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <Link
             to="/games/acrostix"
-            className="inline-flex items-center gap-2 text-muted-foreground hover:text-teal transition-colors text-sm uppercase tracking-wider mb-10"
+            className="inline-flex items-center gap-2 text-muted-foreground hover:text-teal-light transition-colors text-sm uppercase tracking-wider mb-10"
             style={{ fontFamily: "var(--font-heading)", fontWeight: 600 }}
           >
             <ArrowLeft className="w-4 h-4" />
@@ -68,8 +68,8 @@ export function AcrostixUniversalLinkPage() {
               custom={0}
               className="flex items-center justify-center gap-3 mb-6"
             >
-              <Sparkles className="w-5 h-5 text-teal -rotate-12" />
-              <Sparkles className="w-6 h-6 text-primary rotate-6" />
+              <Sparkles className="w-5 h-5 text-teal-light -rotate-12" />
+              <Sparkles className="w-6 h-6 text-primary-light rotate-6" />
               <Sparkles className="w-5 h-5 text-lime -rotate-6" />
             </motion.div>
 
@@ -116,7 +116,7 @@ export function AcrostixUniversalLinkPage() {
               {showAppStore && (
                 <a
                   href={APP_STORE_URL}
-                  className="inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-primary hover:bg-primary/90 text-white rounded-md border-2 border-primary transition-all hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_rgba(160,92,246,0.4)] uppercase tracking-wider text-sm"
+                  className="inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-primary hover:bg-primary/90 text-black rounded-md border-2 border-primary-light transition-all hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_rgb(var(--primary-rgb)/0.4)] uppercase tracking-wider text-sm"
                   style={{ fontFamily: "var(--font-heading)", fontWeight: 700 }}
                 >
                   <Smartphone className="w-4 h-4" />
@@ -126,7 +126,7 @@ export function AcrostixUniversalLinkPage() {
               {showPlayStore && (
                 <a
                   href={PLAY_STORE_URL}
-                  className="inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-teal hover:bg-teal/90 text-black rounded-md border-2 border-teal transition-all hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_rgba(34,211,238,0.4)] uppercase tracking-wider text-sm"
+                  className="inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-teal hover:bg-teal/90 text-black rounded-md border-2 border-teal-light transition-all hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_rgb(var(--teal-rgb)/0.4)] uppercase tracking-wider text-sm"
                   style={{ fontFamily: "var(--font-heading)", fontWeight: 700 }}
                 >
                   <Smartphone className="w-4 h-4" />

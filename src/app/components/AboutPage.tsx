@@ -1,5 +1,5 @@
 import { motion } from "motion/react";
-import { Flame, Heart, Sparkles, Target, Zap, Gamepad2 } from "lucide-react";
+import { Flame, Heart, Sparkles, Target, Zap, Gamepad2, Package } from "lucide-react";
 import { LogoCircle } from "./LogoCircle";
 import { PageMeta } from "./PageMeta";
 
@@ -20,8 +20,8 @@ const principles = [
       "If we don't genuinely love what we're making, we scrap it. Life's too short for uninspired work",
     color: "bg-primary",
     tilt: "rotate-1",
-    hoverBorder: "hover:border-primary/30",
-    shadow: "hover:shadow-[4px_4px_0px_0px_rgba(160,92,246,0.15)]",
+    hoverBorder: "hover:border-primary-light/55",
+    shadow: "hover:shadow-[4px_4px_0px_0px_rgb(var(--primary-rgb)/0.15)]",
   },
   {
     icon: Heart,
@@ -30,8 +30,8 @@ const principles = [
       "We build for actual humans. Not engagement numbers, not download counts. Just things people actually want to use",
     color: "bg-teal",
     tilt: "-rotate-2",
-    hoverBorder: "hover:border-teal/30",
-    shadow: "hover:shadow-[4px_4px_0px_0px_rgba(34,211,238,0.15)]",
+    hoverBorder: "hover:border-teal-light/55",
+    shadow: "hover:shadow-[4px_4px_0px_0px_rgb(var(--teal-rgb)/0.15)]",
   },
   {
     icon: Sparkles,
@@ -40,8 +40,8 @@ const principles = [
       "Self-taught and proud of it. Every project teaches us something new, and that's the whole point",
     color: "bg-primary",
     tilt: "rotate-2",
-    hoverBorder: "hover:border-primary/30",
-    shadow: "hover:shadow-[4px_4px_0px_0px_rgba(160,92,246,0.15)]",
+    hoverBorder: "hover:border-primary-light/55",
+    shadow: "hover:shadow-[4px_4px_0px_0px_rgb(var(--primary-rgb)/0.15)]",
   },
   {
     icon: Target,
@@ -50,8 +50,8 @@ const principles = [
       "Normal is boring. We'd rather make something strange that sticks with you than something safe that doesn't",
     color: "bg-teal",
     tilt: "-rotate-1",
-    hoverBorder: "hover:border-teal/30",
-    shadow: "hover:shadow-[4px_4px_0px_0px_rgba(34,211,238,0.15)]",
+    hoverBorder: "hover:border-teal-light/55",
+    shadow: "hover:shadow-[4px_4px_0px_0px_rgb(var(--teal-rgb)/0.15)]",
   },
 ];
 
@@ -60,24 +60,32 @@ const whatWeDo = [
     icon: Gamepad2,
     label: "Games",
     description: "From space delivery sims to word games. If it sounds fun and a bit off-kilter, we're probably building it",
-    color: "text-primary",
-    border: "border-primary/20",
+    color: "text-primary-light",
+    border: "border-primary-light/40",
     bg: "bg-primary/10",
   },
   {
     icon: Sparkles,
-    label: "Tools",
-    description: "Occasionally we build little utilities that make our lives easier, and then share them, in case others find them useful",
-    color: "text-lime",
-    border: "border-lime/20",
-    bg: "bg-lime/10",
+    label: "Apps",
+    description: "Little utilities that make our lives easier, shared in case they make yours easier too. Desktop avatars, window snapping, and whatever bugs us next",
+    color: "text-teal-light",
+    border: "border-teal-light/40",
+    bg: "bg-teal/10",
   },
   {
     icon: Zap,
     label: "Mods",
-    description: "Small quality-of-life tweaks for games we already play. Scratching our own itch, basically",
-    color: "text-teal",
-    border: "border-teal/20",
+    description: "From quick quality-of-life fixes to ExfilCraft, a full extraction-survival overhaul for Minecraft with its own public server",
+    color: "text-primary-light",
+    border: "border-primary-light/40",
+    bg: "bg-primary/10",
+  },
+  {
+    icon: Package,
+    label: "Game Dev Assets",
+    description: "The Unity packages and art we wished existed while making our own games, now on the Unity Asset Store, itch.io, and GameDevMarket",
+    color: "text-teal-light",
+    border: "border-teal-light/40",
     bg: "bg-teal/10",
   },
 ];
@@ -87,14 +95,14 @@ export function AboutPage() {
     <div className="min-h-screen">
       <PageMeta
         title="About"
-        description="About KrookedLilly, the indie studio behind HomunculAi, Acrostix, Galactic Parcel Service, and a handful of sharp tools and mods."
+        description="About KrookedLilly, the husband-and-wife indie studio behind ExfilCraft, Acrostix, HomunculAi, Galactic Parcel Service, the Unity UI Toolkit Suite, and Squamojis."
         path="/about"
       />
       {/* Hero */}
       <section className="pt-16 pb-12 relative">
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-0 right-1/4 w-72 h-72 bg-[radial-gradient(circle,_rgba(160,92,246,0.15)_0%,_transparent_70%)]" />
-          <div className="absolute top-16 left-1/4 w-56 h-56 bg-[radial-gradient(circle,_rgba(34,211,238,0.10)_0%,_transparent_70%)]" />
+          <div className="absolute top-0 right-1/4 w-72 h-72 bg-[radial-gradient(circle,_rgb(var(--primary-rgb)/0.15)_0%,_transparent_70%)]" />
+          <div className="absolute top-16 left-1/4 w-56 h-56 bg-[radial-gradient(circle,_rgb(var(--teal-rgb)/0.10)_0%,_transparent_70%)]" />
         </div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.h1
@@ -128,7 +136,7 @@ export function AboutPage() {
               <motion.div variants={fadeUp} custom={0} className="relative">
                 <div className="flex items-center justify-center -rotate-2 hover:rotate-0 transition-transform">
                   <LogoCircle
-                    className="w-64 h-64 lg:w-80 lg:h-80 text-white drop-shadow-[0_0_40px_rgba(160,92,246,0.3)]"
+                    className="w-64 h-64 lg:w-80 lg:h-80 text-white drop-shadow-[0_0_40px_rgb(var(--primary-rgb)/0.3)]"
                   />
                 </div>
               </motion.div>
@@ -210,7 +218,7 @@ export function AboutPage() {
             </motion.p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {whatWeDo.map((item, i) => (
               <motion.div
                 key={item.label}

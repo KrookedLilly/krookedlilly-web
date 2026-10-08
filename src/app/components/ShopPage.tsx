@@ -2,6 +2,7 @@ import { useState } from "react";
 import { motion } from "motion/react";
 import { ShoppingBag, Bell, Sparkles, Package } from "lucide-react";
 import { PageMeta } from "./PageMeta";
+import { useFormspree, FORM_ERROR_MESSAGE } from "../../hooks/useFormspree";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -31,32 +32,27 @@ const upcomingItems = [
 
 const itemAccentMap = {
   primary: {
-    hoverBorder: "hover:border-primary/30",
-    shadow: "hover:shadow-[4px_4px_0px_0px_rgba(160,92,246,0.1)]",
-    iconBg: "bg-primary/10 border-primary/20",
-    iconColor: "text-primary",
+    hoverBorder: "hover:border-primary-light/55",
+    shadow: "hover:shadow-[4px_4px_0px_0px_rgb(var(--primary-rgb)/0.1)]",
+    iconBg: "bg-primary/10 border-primary-light/40",
+    iconColor: "text-primary-light",
   },
   teal: {
-    hoverBorder: "hover:border-teal/30",
-    shadow: "hover:shadow-[4px_4px_0px_0px_rgba(34,211,238,0.1)]",
-    iconBg: "bg-teal/10 border-teal/20",
-    iconColor: "text-teal",
+    hoverBorder: "hover:border-teal-light/55",
+    shadow: "hover:shadow-[4px_4px_0px_0px_rgb(var(--teal-rgb)/0.1)]",
+    iconBg: "bg-teal/10 border-teal-light/40",
+    iconColor: "text-teal-light",
   },
 };
 
 export function ShopPage() {
   const [email, setEmail] = useState("");
-  const [submitted, setSubmitted] = useState(false);
+  const { status, submit } = useFormspree("Shop page: notify me when merch launches");
+  const submitted = status === "sent";
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (email) {
-      await fetch("https://formspree.io/f/mzdkwgka", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email }),
-      });
-      setSubmitted(true);
+    if (email && (await submit({ email }, "KrookedLilly Shop: notify me when merch launches"))) {
       setEmail("");
     }
   };
@@ -71,7 +67,7 @@ export function ShopPage() {
       {/* Hero */}
       <section className="pt-16 pb-12 relative">
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-0 left-1/2 w-96 h-96 bg-[radial-gradient(circle,_rgba(160,92,246,0.10)_0%,_transparent_70%)]" />
+          <div className="absolute top-0 left-1/2 w-96 h-96 bg-[radial-gradient(circle,_rgb(var(--primary-rgb)/0.10)_0%,_transparent_70%)]" />
         </div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
@@ -124,17 +120,23 @@ export function ShopPage() {
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="Enter your email"
                   required
-                  className="flex-1 px-5 py-3 bg-input-background border-2 border-white/10 rounded-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-teal/50"
+                  className="flex-1 px-5 py-3 bg-input-background border-2 border-white/10 rounded-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-teal-light/80"
                 />
                 <button
                   type="submit"
-                  className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-white rounded-sm transition-all hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_rgba(160,92,246,0.4)] border-2 border-primary uppercase tracking-wider text-xs whitespace-nowrap"
+                  disabled={status === "sending"}
+                  className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-black rounded-sm transition-all hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_rgb(var(--primary-rgb)/0.4)] border-2 border-primary-light uppercase tracking-wider text-xs whitespace-nowrap disabled:opacity-60 disabled:pointer-events-none"
                   style={{ fontFamily: "var(--font-heading)", fontWeight: 700 }}
                 >
                   <Bell className="w-4 h-4" />
-                  Notify Me
+                  {status === "sending" ? "Sending..." : "Notify Me"}
                 </button>
               </form>
+            )}
+            {status === "error" && (
+              <p role="alert" className="mt-3 text-sm text-red-400">
+                {FORM_ERROR_MESSAGE}
+              </p>
             )}
           </motion.div>
         </div>

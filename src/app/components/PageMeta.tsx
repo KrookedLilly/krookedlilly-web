@@ -1,11 +1,14 @@
 import { Helmet } from "react-helmet-async";
+import { SITE_URL, pageUrl } from "./JsonLd";
 
-const SITE = "https://www.krookedlilly.com";
 const SITE_NAME = "KrookedLilly";
+/** Fallback share card for pages without their own image. */
+const DEFAULT_IMAGE = "/og-image.png";
 
 type Props = {
   title: string;
   description: string;
+  /** Route path, e.g. "/catalog". Canonical URLs never end in a slash (see pageUrl). */
   path: string;
   image?: string;
   noIndex?: boolean;
@@ -13,8 +16,9 @@ type Props = {
 
 export function PageMeta({ title, description, path, image, noIndex }: Props) {
   const fullTitle = title.includes(SITE_NAME) ? title : `${title} | ${SITE_NAME}`;
-  const url = `${SITE}${path}`;
-  const ogImage = image ? (image.startsWith("http") ? image : `${SITE}${image}`) : undefined;
+  const url = pageUrl(path);
+  const img = image ?? DEFAULT_IMAGE;
+  const ogImage = img.startsWith("http") ? img : `${SITE_URL}${img}`;
 
   return (
     <Helmet>
@@ -28,12 +32,13 @@ export function PageMeta({ title, description, path, image, noIndex }: Props) {
       <meta property="og:title" content={fullTitle} />
       <meta property="og:description" content={description} />
       <meta property="og:url" content={url} />
-      {ogImage && <meta property="og:image" content={ogImage} />}
+      <meta property="og:image" content={ogImage} />
 
-      <meta name="twitter:card" content={ogImage ? "summary_large_image" : "summary"} />
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:site" content="@krookedLilly" />
       <meta name="twitter:title" content={fullTitle} />
       <meta name="twitter:description" content={description} />
-      {ogImage && <meta name="twitter:image" content={ogImage} />}
+      <meta name="twitter:image" content={ogImage} />
     </Helmet>
   );
 }

@@ -1,7 +1,7 @@
-import imgTrainYourBrain from "@/assets/matchfives-train.png";
-import imgMatchNumbers from "@/assets/matchfives-match.png";
-import imgPlayForHours from "@/assets/matchfives-play.png";
-import imgStrategyPuzzle from "@/assets/matchfives-strategy.png";
+import imgTrainYourBrain from "@/assets/matchfives-train.webp";
+import imgMatchNumbers from "@/assets/matchfives-match.webp";
+import imgPlayForHours from "@/assets/matchfives-play.webp";
+import imgStrategyPuzzle from "@/assets/matchfives-strategy.webp";
 
 export interface MatchFivesScreenshot {
   src: string;

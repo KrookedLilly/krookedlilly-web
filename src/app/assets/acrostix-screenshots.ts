@@ -1,7 +1,7 @@
 // Dark Mode
 import imgDarkHome from "@/assets/IMG_0490-1.PNG";
 import imgDarkChallenge from "@/assets/IMG_0495-1.PNG";
-import imgDarkResults from "@/assets/scores-dark.png";
+import imgDarkResults from "@/assets/scores-dark.webp";
 import imgDarkStats from "@/assets/IMG_0519.PNG";
 import imgDarkAchievements from "@/assets/achievements.webp";
 

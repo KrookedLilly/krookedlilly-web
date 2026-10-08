@@ -19,18 +19,20 @@ import {
   Clock,
 } from "lucide-react";
 import { PageMeta } from "./PageMeta";
+import { JsonLd, ORG_REF, SITE_URL, pageUrl } from "./JsonLd";
+import { DISCORD_URL } from "../data/socials";
 
 /* ── asset imports ── */
-import imgStorePageBackground from "@/assets/gps-store-background.png";
-import imgGpsLogo from "@/assets/gps-logo.png";
-import imgTutorialScreenshot from "@/assets/gps-tutorial.png";
-import imgNarwhal from "@/assets/gps-narwhal.png";
-import imgTentacle from "@/assets/gps-tentacle.png";
+import imgStorePageBackground from "@/assets/gps-store-background.webp";
+import imgGpsLogo from "@/assets/gps-logo.webp";
+import imgTutorialScreenshot from "@/assets/gps-tutorial.webp";
+import imgNarwhal from "@/assets/gps-narwhal.webp";
+import imgTentacle from "@/assets/gps-tentacle.webp";
 import imgPlanet4 from "@/assets/gps-planet4.png";
 import imgPlanet6 from "@/assets/gps-planet6.png";
 import imgPlanet2 from "@/assets/gps-planet2.png";
-import imgDeadPlanet from "@/assets/gps-dead-planet.png";
-import imgSolarSystem from "@/assets/gps-solar-system.png";
+import imgDeadPlanet from "@/assets/gps-dead-planet.webp";
+import imgSolarSystem from "@/assets/gps-solar-system.webp";
 
 /* ─── animation variants ─── */
 const fadeUp = {
@@ -102,19 +104,19 @@ const features = [
 
 const accentClasses = {
   teal: {
-    text: "text-teal",
-    border: "border-teal/30",
+    text: "text-teal-light",
+    border: "border-teal-light/55",
     bg: "bg-teal",
-    hoverBorder: "hover:border-teal/40",
-    shadow: "hover:shadow-[6px_6px_0px_0px_rgba(34,211,238,0.15)]",
+    hoverBorder: "hover:border-teal-light/70",
+    shadow: "hover:shadow-[6px_6px_0px_0px_rgb(var(--teal-rgb)/0.15)]",
     glow: "bg-teal/10",
   },
   primary: {
-    text: "text-primary",
-    border: "border-primary/30",
+    text: "text-primary-light",
+    border: "border-primary-light/55",
     bg: "bg-primary",
-    hoverBorder: "hover:border-primary/40",
-    shadow: "hover:shadow-[6px_6px_0px_0px_rgba(160,92,246,0.15)]",
+    hoverBorder: "hover:border-primary-light/70",
+    shadow: "hover:shadow-[6px_6px_0px_0px_rgb(var(--primary-rgb)/0.15)]",
     glow: "bg-primary/10",
   },
 };
@@ -124,22 +126,36 @@ export function GpsPage() {
     <div className="min-h-screen">
       <PageMeta
         title="Galactic Parcel Service"
-        description="Galactic Parcel Service is an open-world delivery sim: build a fleet, haul packages across the galaxy, and terraform planets along the way."
+        description="Galactic Parcel Service is an open-world space delivery sim headed to Steam: build a fleet, haul packages across the galaxy, and terraform planets."
         path="/games/galactic-parcel-service"
+      />
+      <JsonLd
+        data={{
+          "@type": "VideoGame",
+          name: "Galactic Parcel Service",
+          description:
+            "An open-world space delivery simulation: build a fleet, haul packages across the galaxy, and terraform planets along the way. In development, headed to Steam.",
+          genre: "Simulation",
+          gamePlatform: ["PC", "Mobile"],
+          url: pageUrl("/games/galactic-parcel-service"),
+          image: `${SITE_URL}${imgStorePageBackground}`,
+          author: ORG_REF,
+          publisher: ORG_REF,
+        }}
       />
       {/* ═══════════ HERO ═══════════ */}
       <section className="relative pt-6 pb-20">
         {/* Background glow */}
         <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute -top-[200px] left-1/4 w-[500px] h-[500px] bg-[radial-gradient(circle,_rgba(160,92,246,0.10)_0%,_transparent_70%)]" />
-          <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-[radial-gradient(circle,_rgba(34,211,238,0.08)_0%,_transparent_70%)]" />
+          <div className="absolute -top-[200px] left-1/4 w-[500px] h-[500px] bg-[radial-gradient(circle,_rgb(var(--primary-rgb)/0.10)_0%,_transparent_70%)]" />
+          <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-[radial-gradient(circle,_rgb(var(--teal-rgb)/0.08)_0%,_transparent_70%)]" />
         </div>
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Back nav */}
           <Link
             to="/catalog"
-            className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors text-sm uppercase tracking-wider mb-8"
+            className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary-light transition-colors text-sm uppercase tracking-wider mb-8"
             style={{ fontFamily: "var(--font-heading)", fontWeight: 600 }}
           >
             <ArrowLeft className="w-4 h-4" />
@@ -167,14 +183,18 @@ export function GpsPage() {
             {/* Logo + info overlay */}
             <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8 lg:p-10">
               <div className="flex flex-col sm:flex-row items-start sm:items-end gap-6">
-                <img
-                  src={imgGpsLogo}
-                  alt="Galactic Parcel Service logo"
-                  className="w-40 sm:w-52 lg:w-64 drop-shadow-2xl"
-                />
+                <h1>
+                  <span className="sr-only">Galactic Parcel Service: open-world space delivery sim</span>
+                  <img
+                    src={imgGpsLogo}
+                    alt=""
+                    aria-hidden="true"
+                    className="w-40 sm:w-52 lg:w-64 drop-shadow-2xl"
+                  />
+                </h1>
                 <div className="flex flex-wrap items-center gap-3">
                   <span
-                    className="inline-flex items-center gap-2 px-4 py-2 bg-primary text-white rounded-md -rotate-2 border-2 border-black shadow-[3px_3px_0px_0px_rgba(0,0,0,0.8)]"
+                    className="inline-flex items-center gap-2 px-4 py-2 bg-primary text-black rounded-md -rotate-2 border-2 border-black shadow-[3px_3px_0px_0px_rgba(0,0,0,0.8)]"
                     style={{ fontFamily: "var(--font-heading)", fontWeight: 700 }}
                   >
                     <Clock className="w-4 h-4" />
@@ -184,14 +204,14 @@ export function GpsPage() {
                     className="inline-flex items-center gap-2 px-4 py-2 bg-white/[0.06] backdrop-blur-xl border-2 border-white/[0.12] rounded-sm text-muted-foreground"
                     style={{ fontFamily: "var(--font-heading)", fontWeight: 600 }}
                   >
-                    <Monitor className="w-4 h-4 text-primary" />
+                    <Monitor className="w-4 h-4 text-primary-light" />
                     <span className="text-sm uppercase tracking-wider">PC</span>
                   </div>
                   <div
                     className="inline-flex items-center gap-2 px-4 py-2 bg-white/[0.06] backdrop-blur-xl border-2 border-white/[0.12] rounded-sm text-muted-foreground"
                     style={{ fontFamily: "var(--font-heading)", fontWeight: 600 }}
                   >
-                    <Smartphone className="w-4 h-4 text-teal" />
+                    <Smartphone className="w-4 h-4 text-teal-light" />
                     <span className="text-sm uppercase tracking-wider">Mobile</span>
                   </div>
                 </div>
@@ -239,7 +259,7 @@ export function GpsPage() {
             <div>
               <motion.div variants={fadeUp} custom={0} className="inline-block mb-4">
                 <span
-                  className="text-xs uppercase tracking-[0.25em] text-teal bg-teal/10 px-3 py-1 rounded-sm border border-teal/20"
+                  className="text-xs uppercase tracking-[0.25em] text-teal-light bg-teal/10 px-3 py-1 rounded-sm border border-teal-light/40"
                   style={{ fontFamily: "var(--font-heading)", fontWeight: 600 }}
                 >
                   The Pitch
@@ -280,7 +300,7 @@ export function GpsPage() {
             {/* Tutorial screenshot */}
             <motion.div variants={fadeUp} custom={2} className="flex justify-center">
               <div className="relative">
-                <div className="rounded-sm overflow-hidden border-2 border-white/[0.12] rotate-1 hover:rotate-0 transition-transform duration-500 shadow-[6px_6px_0px_0px_rgba(160,92,246,0.2)]">
+                <div className="rounded-sm overflow-hidden border-2 border-white/[0.12] rotate-1 hover:rotate-0 transition-transform duration-500 shadow-[6px_6px_0px_0px_rgb(var(--primary-rgb)/0.2)]">
                   <img
                     src={imgTutorialScreenshot}
                     alt="GPS tutorial gameplay: building routes around a sun with planets"
@@ -345,8 +365,8 @@ export function GpsPage() {
       {/* ═══════════ RANDOMLY GENERATED WORLDS ═══════════ */}
       <section className="py-24 relative overflow-hidden bg-white/[0.02] backdrop-blur-sm border-y-2 border-white/[0.08]">
         <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-1/3 left-1/4 w-[500px] h-[500px] bg-[radial-gradient(circle,_rgba(34,211,238,0.06)_0%,_transparent_70%)]" />
-          <div className="absolute bottom-1/4 right-1/3 w-[400px] h-[400px] bg-[radial-gradient(circle,_rgba(160,92,246,0.08)_0%,_transparent_70%)]" />
+          <div className="absolute top-1/3 left-1/4 w-[500px] h-[500px] bg-[radial-gradient(circle,_rgb(var(--teal-rgb)/0.06)_0%,_transparent_70%)]" />
+          <div className="absolute bottom-1/4 right-1/3 w-[400px] h-[400px] bg-[radial-gradient(circle,_rgb(var(--primary-rgb)/0.08)_0%,_transparent_70%)]" />
         </div>
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -358,7 +378,7 @@ export function GpsPage() {
           >
             <motion.div variants={fadeUp} custom={0} className="inline-block mb-4">
               <span
-                className="text-xs uppercase tracking-[0.25em] text-teal bg-teal/10 px-3 py-1 rounded-sm border border-teal/20"
+                className="text-xs uppercase tracking-[0.25em] text-teal-light bg-teal/10 px-3 py-1 rounded-sm border border-teal-light/40"
                 style={{ fontFamily: "var(--font-heading)", fontWeight: 600 }}
               >
                 Procedural Generation
@@ -397,7 +417,7 @@ export function GpsPage() {
               custom={0}
               className="relative max-w-4xl w-full"
             >
-              <div className="rounded-sm overflow-hidden border-2 border-teal/30 hover:border-teal/50 transition-all hover:-translate-y-1 shadow-[6px_6px_0px_0px_rgba(34,211,238,0.15)] hover:shadow-[8px_8px_0px_0px_rgba(34,211,238,0.25)]">
+              <div className="rounded-sm overflow-hidden border-2 border-teal-light/55 hover:border-teal-light/80 transition-all hover:-translate-y-1 shadow-[6px_6px_0px_0px_rgb(var(--teal-rgb)/0.15)] hover:shadow-[8px_8px_0px_0px_rgb(var(--teal-rgb)/0.25)]">
                 <img
                   src={imgSolarSystem}
                   alt="Solar system overview: a glowing blue-white star surrounded by orbiting planets, moons, and asteroids, one of 50+ randomly generated systems per game"
@@ -424,10 +444,10 @@ export function GpsPage() {
             className="grid grid-cols-2 md:grid-cols-4 gap-6 lg:gap-8 items-center"
           >
             {[
-              { src: imgPlanet4, alt: "A randomly generated planet with teal oceans and brown landmasses", tilt: "-rotate-3", delay: 0, border: "border-teal/30", hoverBorder: "hover:border-teal/50", shadow: "shadow-[4px_4px_0px_0px_rgba(34,211,238,0.15)]", hoverShadow: "hover:shadow-[6px_6px_0px_0px_rgba(34,211,238,0.25)]" },
-              { src: imgPlanet6, alt: "A randomly generated small planet system with moons", tilt: "rotate-2", delay: 1, border: "border-primary/30", hoverBorder: "hover:border-primary/50", shadow: "shadow-[4px_4px_0px_0px_rgba(160,92,246,0.15)]", hoverShadow: "hover:shadow-[6px_6px_0px_0px_rgba(160,92,246,0.25)]" },
-              { src: imgPlanet2, alt: "A randomly generated purple and magenta planet", tilt: "-rotate-1", delay: 2, border: "border-teal/30", hoverBorder: "hover:border-teal/50", shadow: "shadow-[4px_4px_0px_0px_rgba(34,211,238,0.15)]", hoverShadow: "hover:shadow-[6px_6px_0px_0px_rgba(34,211,238,0.25)]" },
-              { src: imgDeadPlanet, alt: "A dead planet: cracked molten surface glowing with lava, waiting to be terraformed", tilt: "rotate-3", delay: 3, border: "border-primary/30", hoverBorder: "hover:border-primary/50", shadow: "shadow-[4px_4px_0px_0px_rgba(160,92,246,0.15)]", hoverShadow: "hover:shadow-[6px_6px_0px_0px_rgba(160,92,246,0.25)]" },
+              { src: imgPlanet4, alt: "A randomly generated planet with teal oceans and brown landmasses", tilt: "-rotate-3", delay: 0, border: "border-teal-light/55", hoverBorder: "hover:border-teal-light/80", shadow: "shadow-[4px_4px_0px_0px_rgb(var(--teal-rgb)/0.15)]", hoverShadow: "hover:shadow-[6px_6px_0px_0px_rgb(var(--teal-rgb)/0.25)]" },
+              { src: imgPlanet6, alt: "A randomly generated small planet system with moons", tilt: "rotate-2", delay: 1, border: "border-primary-light/55", hoverBorder: "hover:border-primary-light/80", shadow: "shadow-[4px_4px_0px_0px_rgb(var(--primary-rgb)/0.15)]", hoverShadow: "hover:shadow-[6px_6px_0px_0px_rgb(var(--primary-rgb)/0.25)]" },
+              { src: imgPlanet2, alt: "A randomly generated purple and magenta planet", tilt: "-rotate-1", delay: 2, border: "border-teal-light/55", hoverBorder: "hover:border-teal-light/80", shadow: "shadow-[4px_4px_0px_0px_rgb(var(--teal-rgb)/0.15)]", hoverShadow: "hover:shadow-[6px_6px_0px_0px_rgb(var(--teal-rgb)/0.25)]" },
+              { src: imgDeadPlanet, alt: "A dead planet: cracked molten surface glowing with lava, waiting to be terraformed", tilt: "rotate-3", delay: 3, border: "border-primary-light/55", hoverBorder: "hover:border-primary-light/80", shadow: "shadow-[4px_4px_0px_0px_rgb(var(--primary-rgb)/0.15)]", hoverShadow: "hover:shadow-[6px_6px_0px_0px_rgb(var(--primary-rgb)/0.25)]" },
             ].map((planet, i) => (
               <motion.div
                 key={planet.alt}
@@ -445,7 +465,7 @@ export function GpsPage() {
                 {i === 3 && (
                   <div className="absolute bottom-0 left-0 right-0 p-2 bg-gradient-to-t from-black/80 to-transparent">
                     <span
-                      className="text-xs text-primary/80 uppercase tracking-wider"
+                      className="text-xs text-primary-light/80 uppercase tracking-wider"
                       style={{ fontFamily: "var(--font-heading)", fontWeight: 600 }}
                     >
                       Before Terraforming
@@ -469,7 +489,7 @@ export function GpsPage() {
           >
             <motion.div variants={fadeUp} custom={0} className="inline-block mb-4">
               <span
-                className="text-xs uppercase tracking-[0.25em] text-primary bg-primary/10 px-3 py-1 rounded-sm border border-primary/20"
+                className="text-xs uppercase tracking-[0.25em] text-primary-light bg-primary/10 px-3 py-1 rounded-sm border border-primary-light/40"
                 style={{ fontFamily: "var(--font-heading)", fontWeight: 600 }}
               >
                 Features
@@ -528,8 +548,8 @@ export function GpsPage() {
       {/* ═══════════ ENEMIES & THE NARWHAL ═══════════ */}
       <section className="py-24 relative bg-white/[0.02] backdrop-blur-sm border-y-2 border-white/[0.08]">
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
-          <div className="absolute top-0 right-1/4 w-[500px] h-[500px] bg-[radial-gradient(circle,_rgba(160,92,246,0.08)_0%,_transparent_70%)]" />
-          <div className="absolute bottom-0 left-1/4 w-[400px] h-[400px] bg-[radial-gradient(circle,_rgba(34,211,238,0.06)_0%,_transparent_70%)]" />
+          <div className="absolute top-0 right-1/4 w-[500px] h-[500px] bg-[radial-gradient(circle,_rgb(var(--primary-rgb)/0.08)_0%,_transparent_70%)]" />
+          <div className="absolute bottom-0 left-1/4 w-[400px] h-[400px] bg-[radial-gradient(circle,_rgb(var(--teal-rgb)/0.06)_0%,_transparent_70%)]" />
         </div>
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -541,7 +561,7 @@ export function GpsPage() {
           >
             <motion.div variants={fadeUp} custom={0} className="inline-block mb-4">
               <span
-                className="text-xs uppercase tracking-[0.25em] text-primary bg-primary/10 px-3 py-1 rounded-sm border border-primary/20"
+                className="text-xs uppercase tracking-[0.25em] text-primary-light bg-primary/10 px-3 py-1 rounded-sm border border-primary-light/40"
                 style={{ fontFamily: "var(--font-heading)", fontWeight: 600 }}
               >
                 Wildlife & Threats
@@ -575,7 +595,7 @@ export function GpsPage() {
               <motion.div
                 variants={fadeUp}
                 custom={0}
-                className="relative rounded-sm overflow-hidden border-2 border-primary/30 hover:border-primary/50 transition-all -rotate-1 hover:rotate-0 hover:-translate-y-2 shadow-[4px_4px_0px_0px_rgba(160,92,246,0.2)] hover:shadow-[6px_6px_0px_0px_rgba(160,92,246,0.3)] inline-block bg-black/50"
+                className="relative rounded-sm overflow-hidden border-2 border-primary-light/55 hover:border-primary-light/80 transition-all -rotate-1 hover:rotate-0 hover:-translate-y-2 shadow-[4px_4px_0px_0px_rgb(var(--primary-rgb)/0.2)] hover:shadow-[6px_6px_0px_0px_rgb(var(--primary-rgb)/0.3)] inline-block bg-black/50"
               >
                 <img
                   src={imgTentacle}
@@ -615,7 +635,7 @@ export function GpsPage() {
               <motion.div
                 variants={fadeUp}
                 custom={0}
-                className="relative rounded-sm overflow-hidden border-2 border-teal/30 hover:border-teal/50 transition-all rotate-1 hover:rotate-0 hover:-translate-y-2 shadow-[4px_4px_0px_0px_rgba(34,211,238,0.2)] hover:shadow-[6px_6px_0px_0px_rgba(34,211,238,0.3)]"
+                className="relative rounded-sm overflow-hidden border-2 border-teal-light/55 hover:border-teal-light/80 transition-all rotate-1 hover:rotate-0 hover:-translate-y-2 shadow-[4px_4px_0px_0px_rgb(var(--teal-rgb)/0.2)] hover:shadow-[6px_6px_0px_0px_rgb(var(--teal-rgb)/0.3)]"
               >
                 <div className="relative aspect-video bg-black/30">
                   <img
@@ -646,7 +666,7 @@ export function GpsPage() {
                   It's majestic. It may or may not be worth killing
                 </p>
                 <p
-                  className="text-primary/80 text-sm italic"
+                  className="text-primary-light/80 text-sm italic"
                   style={{ fontFamily: "var(--font-heading)" }}
                 >
                   (You're a monster for even thinking about it)
@@ -660,8 +680,8 @@ export function GpsPage() {
       {/* ═══════════ OPEN WORLD FREEDOM ═══════════ */}
       <section className="py-20 relative">
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[radial-gradient(circle,_rgba(160,92,246,0.08)_0%,_transparent_70%)]" />
-          <div className="absolute top-1/4 right-1/4 w-[300px] h-[300px] bg-[radial-gradient(circle,_rgba(34,211,238,0.06)_0%,_transparent_70%)]" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[radial-gradient(circle,_rgb(var(--primary-rgb)/0.08)_0%,_transparent_70%)]" />
+          <div className="absolute top-1/4 right-1/4 w-[300px] h-[300px] bg-[radial-gradient(circle,_rgb(var(--teal-rgb)/0.06)_0%,_transparent_70%)]" />
         </div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -672,7 +692,7 @@ export function GpsPage() {
           >
             <motion.div variants={fadeUp} custom={0} className="inline-block mb-4">
               <span
-                className="text-xs uppercase tracking-[0.25em] text-teal bg-teal/10 px-3 py-1 rounded-sm border border-teal/20"
+                className="text-xs uppercase tracking-[0.25em] text-teal-light bg-teal/10 px-3 py-1 rounded-sm border border-teal-light/40"
                 style={{ fontFamily: "var(--font-heading)", fontWeight: 600 }}
               >
                 Open World
@@ -743,8 +763,8 @@ export function GpsPage() {
       {/* ═══════════ CTA ═══════════ */}
       <section className="py-24 relative bg-white/[0.02] backdrop-blur-sm border-y-2 border-white/[0.08]">
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[radial-gradient(circle,_rgba(160,92,246,0.08)_0%,_transparent_70%)]" />
-          <div className="absolute top-1/4 right-1/4 w-[300px] h-[300px] bg-[radial-gradient(circle,_rgba(34,211,238,0.06)_0%,_transparent_70%)]" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[radial-gradient(circle,_rgb(var(--primary-rgb)/0.08)_0%,_transparent_70%)]" />
+          <div className="absolute top-1/4 right-1/4 w-[300px] h-[300px] bg-[radial-gradient(circle,_rgb(var(--teal-rgb)/0.06)_0%,_transparent_70%)]" />
         </div>
         <div className="relative max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
@@ -753,8 +773,8 @@ export function GpsPage() {
             viewport={{ once: true }}
           >
             <motion.div variants={fadeUp} custom={0} className="flex items-center justify-center gap-3 mb-6">
-              <Rocket className="w-5 h-5 text-primary -rotate-12" />
-              <Package className="w-6 h-6 text-teal rotate-12" />
+              <Rocket className="w-5 h-5 text-primary-light -rotate-12" />
+              <Package className="w-6 h-6 text-teal-light rotate-12" />
               <Sparkles className="w-5 h-5 text-lime -rotate-6" />
             </motion.div>
             <motion.h2
@@ -771,19 +791,20 @@ export function GpsPage() {
               className="text-muted-foreground mb-8 max-w-lg mx-auto"
               style={{ fontSize: "1.05rem" }}
             >
-              Galactic Parcel Service is currently in development. Stay tuned as we build
+              Galactic Parcel Service is in development and headed to Steam. Stay tuned as we build
               out the galaxy and shape the game. The galaxy will need couriers soon
             </motion.p>
             <motion.div variants={fadeUp} custom={3} className="flex flex-col sm:flex-row gap-4 justify-center">
+              {/* TODO: swap back to "Wishlist on Steam" once the GPS store page is public */}
               <a
-                href="https://store.steampowered.com"
+                href={DISCORD_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-primary hover:bg-primary/90 text-white rounded-md border-2 border-primary transition-all hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_rgba(160,92,246,0.4)] uppercase tracking-wider text-sm"
+                className="inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-primary hover:bg-primary/90 text-black rounded-md border-2 border-primary-light transition-all hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_rgb(var(--primary-rgb)/0.4)] uppercase tracking-wider text-sm"
                 style={{ fontFamily: "var(--font-heading)", fontWeight: 700 }}
               >
                 <Rocket className="w-4 h-4" />
-                Wishlist on Steam
+                Follow development on Discord
               </a>
             </motion.div>
           </motion.div>

@@ -10,22 +10,23 @@ const navLinks = [
   { to: "/", label: "Home", accent: "primary" as const },
   { to: "/catalog", label: "Catalog", accent: "teal" as const },
   { to: "/about", label: "About", accent: "primary" as const },
-  { to: "/shop", label: "Shop", accent: "teal" as const },
-  { to: "/contact", label: "Contact", accent: "primary" as const },
+  { to: "/socials", label: "Socials", accent: "teal" as const },
+  { to: "/shop", label: "Shop", accent: "primary" as const },
+  { to: "/contact", label: "Contact", accent: "teal" as const },
 ];
 
 const accentStyles = {
   primary: {
-    active: "text-primary bg-primary/10",
+    active: "text-primary-light bg-primary/10",
     indicator: "bg-primary",
-    mobileBorder: "border-primary",
-    hover: "hover:text-primary",
+    mobileBorder: "border-primary-light",
+    hover: "hover:text-primary-light",
   },
   teal: {
-    active: "text-teal bg-teal/10",
+    active: "text-teal-light bg-teal/10",
     indicator: "bg-teal",
-    mobileBorder: "border-teal",
-    hover: "hover:text-teal",
+    mobileBorder: "border-teal-light",
+    hover: "hover:text-teal-light",
   },
 };
 
@@ -76,7 +77,7 @@ export function Navbar() {
 
           {/* Mobile hamburger */}
           <button
-            className="md:hidden p-2 text-foreground hover:text-primary transition-colors"
+            className="md:hidden p-2 text-foreground hover:text-primary-light transition-colors"
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-label="Toggle menu"
           >

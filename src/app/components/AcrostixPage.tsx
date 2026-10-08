@@ -17,10 +17,12 @@ import {
 } from "lucide-react";
 import { PhoneScreenshot } from "./PhoneScreenshot";
 import { PageMeta } from "./PageMeta";
-import imgAcrostixGameplay from "@/assets/acrostix-iphone-slide-1-gameplay.png";
+import { JsonLd, ORG_REF, SITE_URL, pageUrl } from "./JsonLd";
+import { acrostixCardImage } from "../assets/acrostix-screenshots";
+import imgAcrostixGameplay from "@/assets/acrostix-iphone-slide-1-gameplay.webp";
 import acrostixGameplayVideo from "@/assets/acrostix-gameplay.mp4";
-import imgAcrostixScoreBreakdown from "@/assets/acrostix-iphone-slide-2-score-breakdown.png";
-import imgAcrostixCampaign from "@/assets/small/acrostix-iphone-slide-3-campaign-worlds.png";
+import imgAcrostixScoreBreakdown from "@/assets/acrostix-iphone-slide-2-score-breakdown.webp";
+import imgAcrostixCampaign from "@/assets/small/acrostix-iphone-slide-3-campaign-worlds.webp";
 import {
   getScreenshot,
   getScreenshotsByMode,
@@ -112,19 +114,19 @@ const features = [
 
 const accentClasses = {
   teal: {
-    text: "text-teal",
-    border: "border-teal/30",
+    text: "text-teal-light",
+    border: "border-teal-light/55",
     bg: "bg-teal",
-    hoverBorder: "hover:border-teal/40",
-    shadow: "hover:shadow-[6px_6px_0px_0px_rgba(34,211,238,0.15)]",
+    hoverBorder: "hover:border-teal-light/70",
+    shadow: "hover:shadow-[6px_6px_0px_0px_rgb(var(--teal-rgb)/0.15)]",
     glow: "bg-teal/10",
   },
   primary: {
-    text: "text-primary",
-    border: "border-primary/30",
+    text: "text-primary-light",
+    border: "border-primary-light/55",
     bg: "bg-primary",
-    hoverBorder: "hover:border-primary/40",
-    shadow: "hover:shadow-[6px_6px_0px_0px_rgba(160,92,246,0.15)]",
+    hoverBorder: "hover:border-primary-light/70",
+    shadow: "hover:shadow-[6px_6px_0px_0px_rgb(var(--primary-rgb)/0.15)]",
     glow: "bg-primary/10",
   },
   lime: {
@@ -220,22 +222,43 @@ export function AcrostixPage() {
     <div className="min-h-screen">
       <PageMeta
         title="Acrostix"
-        description="Acrostix is a creative word game for iOS: spell across and down to build tiny acrostic grids and chase high scores."
+        description="Acrostix is a free word game for iOS and Android: turn one word into a sentence, one letter per word, and get scored on grammar, complexity, and relevance."
         path="/games/acrostix"
+      />
+      <JsonLd
+        data={{
+          "@type": "MobileApplication",
+          name: "Acrostix",
+          description:
+            "A creative sentence-building word game. You're given a word and build a sentence where each word starts with its letters, then get scored on grammar, word complexity, and relevance.",
+          applicationCategory: "GameApplication",
+          applicationSubCategory: "Word game",
+          operatingSystem: "iOS 15.1+, Android",
+          url: pageUrl("/games/acrostix"),
+          image: `${SITE_URL}${acrostixCardImage}`,
+          offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+          downloadUrl: "https://apps.apple.com/us/app/acrostix/id6760374016",
+          sameAs: [
+            "https://apps.apple.com/us/app/acrostix/id6760374016",
+            "https://play.google.com/store/apps/details?id=com.krookedlilly.acrostix",
+          ],
+          author: ORG_REF,
+          publisher: ORG_REF,
+        }}
       />
       {/* ═══════════ HERO ═══════════ */}
       <section className="relative pt-6 pb-20">
         {/* Background glow */}
         <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute -top-[200px] left-1/4 w-[500px] h-[500px] bg-[radial-gradient(circle,_rgba(34,211,238,0.10)_0%,_transparent_70%)]" />
-          <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-[radial-gradient(circle,_rgba(160,92,246,0.08)_0%,_transparent_70%)]" />
+          <div className="absolute -top-[200px] left-1/4 w-[500px] h-[500px] bg-[radial-gradient(circle,_rgb(var(--teal-rgb)/0.10)_0%,_transparent_70%)]" />
+          <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-[radial-gradient(circle,_rgb(var(--primary-rgb)/0.08)_0%,_transparent_70%)]" />
         </div>
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* ── Back nav ── */}
           <Link
             to="/catalog"
-            className="inline-flex items-center gap-2 text-muted-foreground hover:text-teal transition-colors text-sm uppercase tracking-wider mb-8"
+            className="inline-flex items-center gap-2 text-muted-foreground hover:text-teal-light transition-colors text-sm uppercase tracking-wider mb-8"
             style={{ fontFamily: "var(--font-heading)", fontWeight: 600 }}
           >
             <ArrowLeft className="w-4 h-4" />
@@ -295,20 +318,20 @@ export function AcrostixPage() {
                   href="https://play.google.com/store/apps/details?id=com.krookedlilly.acrostix"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-5 py-3 bg-white/[0.06] border-2 border-white/[0.12] rounded-sm text-muted-foreground hover:text-foreground hover:border-teal/40 transition-all"
+                  className="inline-flex items-center gap-2 px-5 py-3 bg-white/[0.06] border-2 border-white/[0.12] rounded-sm text-muted-foreground hover:text-foreground hover:border-teal-light/70 transition-all"
                   style={{ fontFamily: "var(--font-heading)", fontWeight: 600 }}
                 >
-                  <Smartphone className="w-4 h-4 text-teal" />
+                  <Smartphone className="w-4 h-4 text-teal-light" />
                   <span className="text-sm uppercase tracking-wider">Download on Google Play</span>
                 </a>
                 <a
                   href="https://apps.apple.com/us/app/acrostix/id6760374016"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-5 py-3 bg-white/[0.06] border-2 border-white/[0.12] rounded-sm text-muted-foreground hover:text-foreground hover:border-primary/40 transition-all"
+                  className="inline-flex items-center gap-2 px-5 py-3 bg-white/[0.06] border-2 border-white/[0.12] rounded-sm text-muted-foreground hover:text-foreground hover:border-primary-light/70 transition-all"
                   style={{ fontFamily: "var(--font-heading)", fontWeight: 600 }}
                 >
-                  <Smartphone className="w-4 h-4 text-primary" />
+                  <Smartphone className="w-4 h-4 text-primary-light" />
                   <span className="text-sm uppercase tracking-wider">Download on App Store</span>
                 </a>
               </motion.div>
@@ -473,7 +496,7 @@ export function AcrostixPage() {
           >
             <motion.div variants={fadeUp} custom={0} className="inline-block mb-4">
               <span
-                className="text-xs uppercase tracking-[0.25em] text-primary bg-primary/10 px-3 py-1 rounded-sm border border-primary/20"
+                className="text-xs uppercase tracking-[0.25em] text-primary-light bg-primary/10 px-3 py-1 rounded-sm border border-primary-light/40"
                 style={{ fontFamily: "var(--font-heading)", fontWeight: 600 }}
               >
                 Features
@@ -540,7 +563,7 @@ export function AcrostixPage() {
           >
             <motion.div variants={fadeUp} custom={0} className="inline-block mb-4">
               <span
-                className="text-xs uppercase tracking-[0.25em] text-teal bg-teal/10 px-3 py-1 rounded-sm border border-teal/20"
+                className="text-xs uppercase tracking-[0.25em] text-teal-light bg-teal/10 px-3 py-1 rounded-sm border border-teal-light/40"
                 style={{ fontFamily: "var(--font-heading)", fontWeight: 600 }}
               >
                 Progress
@@ -578,7 +601,7 @@ export function AcrostixPage() {
                 className="w-44 sm:w-52 -rotate-3 hover:rotate-0 transition-transform duration-500"
               />
               <span
-                className="absolute -bottom-3 left-1/2 -translate-x-1/2 px-3 py-1 bg-primary text-white text-xs uppercase tracking-wider rounded-sm border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,0.8)] rotate-2"
+                className="absolute -bottom-3 left-1/2 -translate-x-1/2 px-3 py-1 bg-primary text-black text-xs uppercase tracking-wider rounded-sm border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,0.8)] rotate-2"
                 style={{ fontFamily: "var(--font-heading)", fontWeight: 700 }}
               >
                 Stats
@@ -606,8 +629,8 @@ export function AcrostixPage() {
       {/* ═══════════ CTA ═══════════ */}
       <section className="py-24 relative">
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[radial-gradient(circle,_rgba(34,211,238,0.08)_0%,_transparent_70%)]" />
-          <div className="absolute top-1/4 right-1/4 w-[300px] h-[300px] bg-[radial-gradient(circle,_rgba(160,92,246,0.06)_0%,_transparent_70%)]" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[radial-gradient(circle,_rgb(var(--teal-rgb)/0.08)_0%,_transparent_70%)]" />
+          <div className="absolute top-1/4 right-1/4 w-[300px] h-[300px] bg-[radial-gradient(circle,_rgb(var(--primary-rgb)/0.06)_0%,_transparent_70%)]" />
         </div>
         <div className="relative max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
@@ -616,8 +639,8 @@ export function AcrostixPage() {
             viewport={{ once: true }}
           >
             <motion.div variants={fadeUp} custom={0} className="flex items-center justify-center gap-3 mb-6">
-              <Sparkles className="w-5 h-5 text-teal -rotate-12" />
-              <Puzzle className="w-6 h-6 text-primary rotate-12" />
+              <Sparkles className="w-5 h-5 text-teal-light -rotate-12" />
+              <Puzzle className="w-6 h-6 text-primary-light rotate-12" />
               <Sparkles className="w-5 h-5 text-lime -rotate-6" />
             </motion.div>
             <motion.h2
@@ -641,7 +664,7 @@ export function AcrostixPage() {
                 href="https://play.google.com/store/apps/details?id=com.krookedlilly.acrostix"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-teal hover:bg-teal/90 text-black rounded-md border-2 border-teal transition-all hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_rgba(34,211,238,0.4)] uppercase tracking-wider text-sm"
+                className="inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-teal hover:bg-teal/90 text-black rounded-md border-2 border-teal-light transition-all hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_rgb(var(--teal-rgb)/0.4)] uppercase tracking-wider text-sm"
                 style={{ fontFamily: "var(--font-heading)", fontWeight: 700 }}
               >
                 <Smartphone className="w-4 h-4" />
@@ -651,7 +674,7 @@ export function AcrostixPage() {
                 href="https://apps.apple.com/us/app/acrostix/id6760374016"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-primary hover:bg-primary/90 text-white rounded-md border-2 border-primary transition-all hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_rgba(160,92,246,0.4)] uppercase tracking-wider text-sm"
+                className="inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-primary hover:bg-primary/90 text-black rounded-md border-2 border-primary-light transition-all hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_rgb(var(--primary-rgb)/0.4)] uppercase tracking-wider text-sm"
                 style={{ fontFamily: "var(--font-heading)", fontWeight: 700 }}
               >
                 <Smartphone className="w-4 h-4" />

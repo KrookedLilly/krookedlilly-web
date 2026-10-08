@@ -1,9 +1,9 @@
-import imgGameplay1 from "@/assets/balldrop-gameplay1.png";
-import imgGameplay2 from "@/assets/balldrop-gameplay2.png";
-import imgGameplay3 from "@/assets/balldrop-gameplay3.png";
-import imgGameplay4 from "@/assets/balldrop-gameplay4.png";
-import imgHomePage from "@/assets/balldrop-home.png";
-import imgResults from "@/assets/balldrop-results.png";
+import imgGameplay1 from "@/assets/balldrop-gameplay1.webp";
+import imgGameplay2 from "@/assets/balldrop-gameplay2.webp";
+import imgGameplay3 from "@/assets/balldrop-gameplay3.webp";
+import imgGameplay4 from "@/assets/balldrop-gameplay4.webp";
+import imgHomePage from "@/assets/balldrop-home.webp";
+import imgResults from "@/assets/balldrop-results.webp";
 
 export interface BallDropScreenshot {
   src: string;

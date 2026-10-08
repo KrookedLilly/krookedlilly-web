@@ -1,213 +1,41 @@
-import imgCardLabelerLogo from "@/assets/cardlabeler-logo.png";
-import imgStorePageBackground from "@/assets/gps-store-background.png";
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import { motion } from "motion/react";
 import { ExternalLink, Clock, CheckCircle, Wrench, Calendar } from "lucide-react";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
 import { PageMeta } from "./PageMeta";
-import { acrostixCardImage } from "../assets/acrostix-screenshots";
-import { matchFivesCardImage } from "../assets/matchfives-screenshots";
-import { ballDropCardImage } from "../assets/balldrop-screenshots";
-import { heKeyboardsCardImage } from "../assets/hekeyboards-screenshots";
-import { snackTrayCardImage } from "../assets/snacktray-screenshots";
-import imgHomunculAiCard from "@/assets/homunculai-capsule-main.png";
-import { unityToolkitAssets, unityToolkitCount } from "../data/unityAssets";
-import { minecraftMods, minecraftModCount } from "../data/minecraftMods";
-import { CollectionChip } from "./collectionUi";
+import { CollectionChip, CountBadge } from "./collectionUi";
+import {
+  catalog,
+  categories as catalogCategories,
+  categoryFromSlug,
+  categorySlug,
+  type Category as CatalogCategory,
+} from "../data/catalog";
+import { useHydrated } from "../../hooks/useHydrated";
 
-/**
- * Synthetic catalog cards that stand in for a whole collection. Each maps its
- * slug to the member list (for the logo cluster) and a count badge label.
- */
-const UI_TOOLKIT_SUITE_SLUG = "ui-toolkit";
-const MINECRAFT_MODS_SLUG = "minecraft-mods";
-
-const collectionCards: Record<
-  string,
-  { members: { name: string; logo?: string }[]; badge: string }
-> = {
-  [UI_TOOLKIT_SUITE_SLUG]: { members: unityToolkitAssets, badge: `${unityToolkitCount} assets` },
-  [MINECRAFT_MODS_SLUG]: { members: minecraftMods, badge: `${minecraftModCount} mods` },
-};
-
-type Category = "All" | "Games & Apps" | "Tools & Mods";
-type Kind = "Game" | "App" | "Tool" | "Mod";
-
-const projects = [
-  {
-    id: 1,
-    title: "Galactic Parcel Service",
-    category: "Games & Apps" as const,
-    kind: "Game" as Kind,
-    type: "Simulation",
-    description: "Build a fleet, deliver packages, terraform planets. Open-world, play your way.",
-    image: imgStorePageBackground,
-    status: "In Development",
-    platforms: ["PC", "Mobile"],
-    tilt: "rotate-1",
-    accent: "primary" as const,
-    imagePosition: "object-cover" as const,
-    slug: "galactic-parcel-service" as string | null,
-  },
-  {
-    id: 2,
-    title: "Acrostix",
-    category: "Games & Apps" as const,
-    kind: "Game" as Kind,
-    type: "Creative Word Game",
-    description: "One word. Infinite sentences.",
-    image: acrostixCardImage,
-    status: "Released",
-    platforms: ["Mobile"],
-    tilt: "-rotate-1",
-    accent: "teal" as const,
-    imagePosition: "object-cover object-[center_12%]" as const,
-    slug: "acrostix" as string | null,
-  },
-  {
-    id: 3,
-    title: "HomunculAi",
-    category: "Games & Apps" as const,
-    kind: "App" as Kind,
-    type: "Desktop App",
-    description: "What body will your AI make?",
-    image: imgHomunculAiCard,
-    status: "Released",
-    platforms: ["Windows"],
-    tilt: "rotate-1",
-    accent: "primary" as const,
-    imagePosition: "object-cover" as const,
-    slug: "homunculai" as string | null,
-  },
-  {
-    id: 4,
-    title: "Match Fives",
-    category: "Games & Apps" as const,
-    kind: "Game" as Kind,
-    type: "Puzzle",
-    description: "Match numbers, chase high scores. Simple to pick up, hard to put down.",
-    image: matchFivesCardImage,
-    status: "Released",
-    platforms: ["Mobile"],
-    tilt: "-rotate-1",
-    accent: "teal" as const,
-    imagePosition: "object-cover object-center" as const,
-    slug: "match-fives" as string | null,
-  },
-  {
-    id: 5,
-    title: "50 Ball Drop",
-    category: "Games & Apps" as const,
-    kind: "Game" as Kind,
-    type: "Arcade",
-    description: "Drop balls, watch mayhem unfold, unlock a pile of cosmetics.",
-    image: ballDropCardImage,
-    status: "Released",
-    platforms: ["Mobile"],
-    tilt: "rotate-1",
-    accent: "primary" as const,
-    imagePosition: "object-cover" as const,
-    slug: "50-ball-drop" as string | null,
-  },
-  {
-    id: 6,
-    title: "HE Keyboards",
-    category: "Tools & Mods" as const,
-    kind: "Tool" as Kind,
-    type: "Unity Asset",
-    description: "Hall Effect keyboard support for Unity. Analog pressure from every key.",
-    image: heKeyboardsCardImage,
-    status: "Released",
-    platforms: ["Unity"],
-    tilt: "-rotate-1",
-    accent: "teal" as const,
-    imagePosition: "object-cover" as const,
-    slug: "he-keyboards" as string | null,
-  },
-  {
-    id: 7,
-    title: "UI Toolkit Suite",
-    category: "Tools & Mods" as const,
-    kind: "Tool" as Kind,
-    type: "Unity Asset Suite",
-    description: `${unityToolkitCount} drop-in packages for Unity's UI Toolkit. Screens, tweens, layout, modals, and navigation.`,
-    image: null as string | null,
-    status: "Released",
-    platforms: ["Unity"],
-    tilt: "rotate-1",
-    accent: "primary" as const,
-    imagePosition: "object-cover" as const,
-    slug: UI_TOOLKIT_SUITE_SLUG as string | null,
-  },
-  {
-    id: 8,
-    title: "SnackTray",
-    category: "Tools & Mods" as const,
-    kind: "Tool" as Kind,
-    type: "macOS App",
-    description: "Menu bar window snapping for multi-monitor macOS setups.",
-    image: snackTrayCardImage,
-    status: "Released",
-    platforms: ["macOS"],
-    tilt: "-rotate-1",
-    accent: "teal" as const,
-    imagePosition: "object-cover" as const,
-    slug: "snacktray" as string | null,
-  },
-  {
-    id: 9,
-    title: "Minecraft Mods",
-    category: "Tools & Mods" as const,
-    kind: "Mod" as Kind,
-    type: "Minecraft Mod Collection",
-    description: `${minecraftModCount} Minecraft mods for creatures, gameplay, and quality-of-life fixes. On CurseForge and Modrinth.`,
-    image: null as string | null,
-    status: "Released",
-    platforms: ["Minecraft"],
-    tilt: "rotate-1",
-    accent: "primary" as const,
-    imagePosition: "object-cover" as const,
-    slug: MINECRAFT_MODS_SLUG as string | null,
-  },
-  {
-    id: 10,
-    title: "Card Labeler",
-    category: "Tools & Mods" as const,
-    kind: "Mod" as Kind,
-    type: "Trello Extension",
-    description: "Better labels and sorting for Trello boards.",
-    image: imgCardLabelerLogo,
-    status: "In Development",
-    platforms: ["Trello"],
-    tilt: "-rotate-1",
-    accent: "teal" as const,
-    imagePosition: "object-contain" as const,
-    slug: null as string | null,
-  },
-];
+type Category = "All" | CatalogCategory;
 
 const accentMap = {
   primary: {
-    hoverBorder: "hover:border-primary/40",
-    shadow: "hover:shadow-[6px_6px_0px_0px_rgba(160,92,246,0.15)]",
-    typeColor: "text-primary",
-    hoverLink: "hover:text-primary",
+    hoverBorder: "hover:border-primary-light/70",
+    shadow: "hover:shadow-[6px_6px_0px_0px_rgb(var(--primary-rgb)/0.15)]",
+    typeColor: "text-primary-light",
+    hoverLink: "hover:text-primary-light",
   },
   teal: {
-    hoverBorder: "hover:border-teal/40",
-    shadow: "hover:shadow-[6px_6px_0px_0px_rgba(34,211,238,0.15)]",
-    typeColor: "text-teal",
-    hoverLink: "hover:text-teal",
+    hoverBorder: "hover:border-teal-light/70",
+    shadow: "hover:shadow-[6px_6px_0px_0px_rgb(var(--teal-rgb)/0.15)]",
+    typeColor: "text-teal-light",
+    hoverLink: "hover:text-teal-light",
   },
 };
 
-const categories: Category[] = ["All", "Games & Apps", "Tools & Mods"];
+const categories: Category[] = ["All", ...catalogCategories];
 
 const statusConfig: Record<string, { icon: typeof Clock; color: string; bg: string }> = {
   "Released": { icon: CheckCircle, color: "text-lime", bg: "bg-black/60 border border-lime/20 backdrop-blur-sm" },
-  "In Review": { icon: Clock, color: "text-primary", bg: "bg-black/60 border border-primary/20 backdrop-blur-sm" },
-  "Coming Soon": { icon: Clock, color: "text-teal", bg: "bg-black/60 border border-teal/20 backdrop-blur-sm" },
+  "In Review": { icon: Clock, color: "text-primary-light", bg: "bg-black/60 border border-primary-light/40 backdrop-blur-sm" },
+  "Coming Soon": { icon: Clock, color: "text-teal-light", bg: "bg-black/60 border border-teal-light/40 backdrop-blur-sm" },
   "Coming May 7": { icon: Calendar, color: "text-lime", bg: "bg-black/60 border border-lime/20 backdrop-blur-sm" },
   "In Development": { icon: Clock, color: "text-muted-foreground", bg: "bg-black/60 border border-white/10 backdrop-blur-sm" },
 };
@@ -222,7 +50,7 @@ const fadeUp = {
 };
 
 /* ─── sort helpers ─── */
-const categoryOrder: Category[] = ["Games & Apps", "Tools & Mods"];
+const categoryOrder: CatalogCategory[] = catalogCategories;
 
 // Lower number = higher priority (renders first). Coming items lead (dated
 // first, sorted by date asc, then generic "Coming Soon"), then Released,
@@ -246,7 +74,7 @@ function comingDate(status: string): number {
   return isNaN(d.getTime()) ? Infinity : d.getTime();
 }
 
-function sortProjects<T extends { category: Category; status: string }>(items: T[]): T[] {
+function sortProjects<T extends { category: CatalogCategory; status: string }>(items: T[]): T[] {
   return [...items].sort((a, b) => {
     const catA = categoryOrder.indexOf(a.category);
     const catB = categoryOrder.indexOf(b.category);
@@ -259,11 +87,33 @@ function sortProjects<T extends { category: Category; status: string }>(items: T
   });
 }
 
-/** Cluster of member chips used as a collection card's thumbnail. */
-function CollectionThumb({ members }: { members: { name: string; logo?: string }[] }) {
+/**
+ * A collection card's thumbnail. With enough cover art it's a tilted mosaic of
+ * member covers that fills the card like its neighbors' screenshots, built from
+ * the data so new members show up automatically. Otherwise a cluster of logo chips.
+ */
+function CollectionThumb({ members }: { members: { name: string; logo?: string; cover?: string }[] }) {
+  const covers = members.filter((m) => m.cover).slice(0, 12);
+  if (covers.length >= 8) {
+    return (
+      <div className="relative w-full h-full overflow-hidden bg-black">
+        <div className="absolute -inset-[22%] grid grid-cols-4 content-center gap-2 -rotate-[8deg] transition-transform duration-500 group-hover:-rotate-[5deg] group-hover:scale-105">
+          {covers.map((m) => (
+            <img
+              key={m.name}
+              src={m.cover}
+              alt=""
+              loading="lazy"
+              className="w-full aspect-[3/2] object-cover rounded-sm border border-white/10"
+            />
+          ))}
+        </div>
+      </div>
+    );
+  }
   const chips = members.slice(0, 8);
   return (
-    <div className="w-full h-full flex items-center justify-center bg-[radial-gradient(circle_at_50%_38%,_rgba(160,92,246,0.18)_0%,_rgba(0,0,0,0.35)_75%)]">
+    <div className="w-full h-full flex items-center justify-center bg-[radial-gradient(circle_at_50%_38%,_rgb(var(--primary-rgb)/0.18)_0%,_rgba(0,0,0,0.35)_75%)]">
       <div className="grid grid-cols-4 gap-2 -rotate-[4deg] transition-transform duration-500 group-hover:rotate-0 group-hover:scale-105">
         {chips.map((m, i) => (
           <CollectionChip key={m.name} name={m.name} logo={m.logo} index={i} size="sm" />
@@ -274,26 +124,33 @@ function CollectionThumb({ members }: { members: { name: string; logo?: string }
 }
 
 export function GamesPage() {
-  const [activeCategory, setActiveCategory] = useState<Category>("All");
+  // The filter lives in the URL (/catalog?category=mods) so home page rows can
+  // deep-link into it. The pre-rendered HTML always shows "All"; the requested
+  // filter applies once hydrated.
+  const [searchParams, setSearchParams] = useSearchParams();
+  const hydrated = useHydrated();
+  const activeCategory: Category = (hydrated && categoryFromSlug(searchParams.get("category"))) || "All";
+  const setActiveCategory = (cat: Category) =>
+    setSearchParams(cat === "All" ? {} : { category: categorySlug(cat) }, { replace: true });
 
   const filtered = sortProjects(
     activeCategory === "All"
-      ? projects
-      : projects.filter((p) => p.category === activeCategory)
+      ? catalog
+      : catalog.filter((p) => p.category === activeCategory)
   );
 
   return (
     <div className="min-h-screen">
       <PageMeta
         title="Catalog"
-        description="Browse every KrookedLilly game, app, tool, and mod. From Acrostix to HomunculAi to Galactic Parcel Service."
+        description="Every KrookedLilly game, app, Minecraft mod, and game dev asset: ExfilCraft, Acrostix, HomunculAi, the Unity UI Toolkit Suite, Squamojis, and more."
         path="/catalog"
       />
       {/* Header */}
       <section className="pt-16 pb-8 relative">
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-0 left-1/3 w-72 h-72 bg-[radial-gradient(circle,_rgba(160,92,246,0.15)_0%,_transparent_70%)]" />
-          <div className="absolute top-12 right-1/3 w-56 h-56 bg-[radial-gradient(circle,_rgba(34,211,238,0.10)_0%,_transparent_70%)]" />
+          <div className="absolute top-0 left-1/3 w-72 h-72 bg-[radial-gradient(circle,_rgb(var(--primary-rgb)/0.15)_0%,_transparent_70%)]" />
+          <div className="absolute top-12 right-1/3 w-56 h-56 bg-[radial-gradient(circle,_rgb(var(--teal-rgb)/0.10)_0%,_transparent_70%)]" />
         </div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.h1
@@ -302,7 +159,7 @@ export function GamesPage() {
             className="text-4xl sm:text-6xl text-foreground mb-4"
             style={{ fontFamily: "var(--font-display)" }}
           >
-            Games, Apps & Tools
+            Everything We Make
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -310,7 +167,8 @@ export function GamesPage() {
             transition={{ delay: 0.1 }}
             className="text-muted-foreground max-w-lg mx-auto"
           >
-            Everything we've shipped, everything we're building, and the tools we've made along the way.
+            Games, apps, mods, and the tools we've made along the way. Everything we've shipped
+            and everything we're building.
           </motion.p>
         </div>
       </section>
@@ -318,14 +176,14 @@ export function GamesPage() {
       {/* Filter */}
       <section className="pb-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-center">
-          <div className="inline-flex gap-2 p-1.5 bg-white/[0.04] backdrop-blur-xl border-2 border-white/[0.12] rounded-sm">
+          <div className="inline-flex flex-wrap justify-center gap-2 p-1.5 bg-white/[0.04] backdrop-blur-xl border-2 border-white/[0.12] rounded-sm">
             {categories.map((cat) => (
               <button
                 key={cat}
                 onClick={() => setActiveCategory(cat)}
-                className={`px-5 py-2 rounded-sm transition-all text-xs uppercase tracking-wider ${
+                className={`px-4 sm:px-5 py-2 rounded-sm transition-all text-xs uppercase tracking-wider ${
                   activeCategory === cat
-                    ? "bg-primary text-white shadow-[2px_2px_0px_0px_rgba(160,92,246,0.4)]"
+                    ? "bg-primary text-black shadow-[2px_2px_0px_0px_rgb(var(--primary-rgb)/0.4)]"
                     : "text-muted-foreground hover:text-foreground hover:bg-white/5"
                 }`}
                 style={{ fontFamily: "var(--font-heading)", fontWeight: 700 }}
@@ -344,11 +202,12 @@ export function GamesPage() {
             {filtered.map((project, i) => {
               const statusInfo = statusConfig[project.status];
               const StatusIcon = statusInfo.icon;
-              const collection = project.slug ? collectionCards[project.slug] : undefined;
+              const collection = project.collection;
               // Compute tilt + accent from render position so alternation stays clean after sort
               const accentKey = i % 2 === 0 ? ("teal" as const) : ("primary" as const);
               const accent = accentMap[accentKey];
               const tilt = i % 2 === 0 ? "-rotate-1" : "rotate-1";
+              const contain = project.imagePosition === "object-contain";
               return (
                 <motion.div
                   key={project.id}
@@ -356,12 +215,12 @@ export function GamesPage() {
                   animate="visible"
                   variants={fadeUp}
                   custom={i}
-                  className={`group relative overflow-hidden bg-white/[0.06] border-2 border-white/[0.12] ${accent.hoverBorder} transition-[border-color,box-shadow] duration-300 hover:-translate-y-2 ${accent.shadow} ${tilt} hover:rotate-0 rounded-sm will-change-transform ${project.slug ? "cursor-pointer" : ""}`}
+                  className={`group relative overflow-hidden bg-white/[0.06] border-2 border-white/[0.12] ${accent.hoverBorder} transition-[border-color,box-shadow] duration-300 hover:-translate-y-2 ${accent.shadow} ${tilt} hover:rotate-0 rounded-sm will-change-transform ${project.path ? "cursor-pointer" : ""}`}
                 >
                   {/* Make the whole card clickable if it has a detail page */}
-                  {project.slug && (
+                  {project.path && (
                     <Link
-                      to={`/${project.category === "Tools & Mods" ? "tools" : "games"}/${project.slug}`}
+                      to={project.path}
                       className="absolute inset-0 z-10"
                       aria-label={`View ${project.title} details`}
                     />
@@ -373,7 +232,7 @@ export function GamesPage() {
                       <ImageWithFallback
                         src={project.image}
                         alt={project.title}
-                        className={`w-full h-full ${project.imagePosition} transition-transform duration-500 group-hover:scale-110 ${project.imagePosition === ("object-contain" as string) ? "p-4 bg-black/40" : ""}`}
+                        className={`w-full h-full ${project.imagePosition} transition-transform duration-500 group-hover:scale-110 ${contain ? "p-6 bg-black/40" : ""}`}
                       />
                     ) : (
                       <div className="w-full h-full bg-white/[0.02] flex items-center justify-center">
@@ -383,12 +242,7 @@ export function GamesPage() {
                     <div className="absolute inset-0 bg-gradient-to-t from-card via-transparent to-transparent" />
                     {collection && (
                       <div className="absolute top-3 right-3 z-[5]">
-                        <span
-                          className="px-2.5 py-1 text-xs uppercase tracking-wider rounded-sm bg-black/60 border border-primary/30 text-primary backdrop-blur-sm"
-                          style={{ fontFamily: "var(--font-heading)", fontWeight: 700 }}
-                        >
-                          {collection.badge}
-                        </span>
+                        <CountBadge>{collection.badge}</CountBadge>
                       </div>
                     )}
                     {/* Released status hidden — only surface non-Released states */}
@@ -421,7 +275,7 @@ export function GamesPage() {
                       {project.title}
                     </h3>
                     <p className="text-muted-foreground text-sm mb-4 line-clamp-2">
-                      {project.description}
+                      {project.tagline}
                     </p>
                     <div className="flex items-center justify-between">
                       <div className="flex gap-2 flex-wrap">

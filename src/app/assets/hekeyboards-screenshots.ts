@@ -2,7 +2,7 @@ import imgScreenshot1 from "@/assets/hekeyboards-screenshot-1.png";
 import imgScreenshot2 from "@/assets/hekeyboards-screenshot-2.png";
 import imgScreenshot3 from "@/assets/hekeyboards-screenshot-3.png";
 import imgStoreCard from "@/assets/hekeyboards-card.png";
-import imgPromo from "@/assets/hekeyboards-promo.png";
+import imgPromo from "@/assets/hekeyboards-promo.webp";
 import imgIcon from "@/assets/hekeyboards-icon.png";
 
 export interface HEKeyboardsScreenshot {

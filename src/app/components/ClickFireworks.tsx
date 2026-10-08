@@ -1,4 +1,5 @@
 import { useEffect, useRef } from "react";
+import { BRAND } from "../data/brandColors";
 
 /**
  * Click-anywhere firework bursts.
@@ -22,13 +23,13 @@ interface Spark {
 }
 
 const PALETTE = [
-  "#a05cf6", // violet
-  "#7c3aed", // violet-shade
-  "#22d3ee", // cyan
-  "#84cc16", // lime pop
-  "#f0f0e8", // warm white
-  "#a05cf6",
-  "#22d3ee",
+  BRAND.primary, // violet
+  BRAND.primaryShade, // violet-shade
+  BRAND.teal, // teal
+  BRAND.lime, // lime pop
+  BRAND.warmWhite, // warm white
+  BRAND.primary,
+  BRAND.teal,
 ];
 
 const SPARKS_PER_BURST = 22;

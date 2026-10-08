@@ -21,6 +21,7 @@ import {
   heKeyboardsIcon,
 } from "../assets/hekeyboards-screenshots";
 import { PageMeta } from "./PageMeta";
+import { JsonLd, ORG_REF, pageUrl } from "./JsonLd";
 
 /* ─── animation variants ─── */
 const fadeUp = {
@@ -74,19 +75,19 @@ const features = [
 
 const accentClasses = {
   teal: {
-    text: "text-teal",
-    border: "border-teal/30",
+    text: "text-teal-light",
+    border: "border-teal-light/55",
     bg: "bg-teal",
-    hoverBorder: "hover:border-teal/40",
-    shadow: "hover:shadow-[6px_6px_0px_0px_rgba(34,211,238,0.15)]",
+    hoverBorder: "hover:border-teal-light/70",
+    shadow: "hover:shadow-[6px_6px_0px_0px_rgb(var(--teal-rgb)/0.15)]",
     glow: "bg-teal/10",
   },
   primary: {
-    text: "text-primary",
-    border: "border-primary/30",
+    text: "text-primary-light",
+    border: "border-primary-light/55",
     bg: "bg-primary",
-    hoverBorder: "hover:border-primary/40",
-    shadow: "hover:shadow-[6px_6px_0px_0px_rgba(160,92,246,0.15)]",
+    hoverBorder: "hover:border-primary-light/70",
+    shadow: "hover:shadow-[6px_6px_0px_0px_rgb(var(--primary-rgb)/0.15)]",
     glow: "bg-primary/10",
   },
 };
@@ -161,21 +162,33 @@ export function HEKeyboardsPage() {
   return (
     <div className="min-h-screen">
       <PageMeta
-        title="HE Keyboards"
-        description="HE Keyboards: a KrookedLilly tool for Hall-Effect keyboard enthusiasts. Tune, tweak, and get the most out of your hardware."
+        title="HE Keyboard: Hall Effect Keyboards for Unity"
+        description="HE Keyboard adds Hall Effect Keyboards support to Unity: per-key analog pressure from Wooting, Razer, and more on Windows, macOS, and Linux. On the Asset Store."
         path="/tools/he-keyboards"
+      />
+      <JsonLd
+        data={{
+          "@type": "Product",
+          name: "HE Keyboard",
+          alternateName: "Hall Effect Keyboards for Unity",
+          description:
+            "Hall Effect Keyboards support for Unity: per-key analog pressure from HE keyboards in Unity's Input System, with an analog WASD-to-joystick composite and native plugins for Windows, macOS, and Linux.",
+          brand: ORG_REF,
+          url: pageUrl("/tools/he-keyboards"),
+          sameAs: ["https://assetstore.unity.com/packages/tools/utilities/he-keyboard-364800"],
+        }}
       />
       {/* ═══════════ HERO ═══════════ */}
       <section className="relative pt-6 pb-20">
         <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute -top-[200px] left-1/4 w-[500px] h-[500px] bg-[radial-gradient(circle,_rgba(160,92,246,0.10)_0%,_transparent_70%)]" />
-          <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-[radial-gradient(circle,_rgba(34,211,238,0.08)_0%,_transparent_70%)]" />
+          <div className="absolute -top-[200px] left-1/4 w-[500px] h-[500px] bg-[radial-gradient(circle,_rgb(var(--primary-rgb)/0.10)_0%,_transparent_70%)]" />
+          <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-[radial-gradient(circle,_rgb(var(--teal-rgb)/0.08)_0%,_transparent_70%)]" />
         </div>
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Link
             to="/catalog"
-            className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors text-sm uppercase tracking-wider mb-8"
+            className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary-light transition-colors text-sm uppercase tracking-wider mb-8"
             style={{ fontFamily: "var(--font-heading)", fontWeight: 600 }}
           >
             <ArrowLeft className="w-4 h-4" />
@@ -200,10 +213,19 @@ export function HEKeyboardsPage() {
               <motion.div variants={fadeUp} custom={0.5} className="mb-4">
                 <ImageWithFallback
                   src={heKeyboardsIcon}
-                  alt="HE Keyboards icon"
+                  alt="HE Keyboard icon"
                   className="w-16 h-16 rounded-sm"
                 />
               </motion.div>
+
+              <motion.p
+                variants={fadeUp}
+                custom={0.75}
+                className="text-xs uppercase tracking-[0.25em] text-teal-light mb-3"
+                style={{ fontFamily: "var(--font-heading)", fontWeight: 600 }}
+              >
+                Hall Effect Keyboards · Unity Asset Store
+              </motion.p>
 
               <motion.h1
                 variants={fadeUp}
@@ -212,7 +234,7 @@ export function HEKeyboardsPage() {
                 style={{ fontFamily: "var(--font-display)", lineHeight: 0.95 }}
               >
                 <span className="bg-gradient-to-r from-primary to-teal bg-clip-text text-transparent">
-                  HE Keyboards
+                  HE Keyboard
                 </span>
               </motion.h1>
 
@@ -222,7 +244,7 @@ export function HEKeyboardsPage() {
                 className="text-muted-foreground max-w-md mb-4"
                 style={{ fontSize: "1.125rem" }}
               >
-                A Unity plugin that adds Hall Effect keyboard compatibility to
+                A Unity plugin that adds Hall Effect Keyboards support to
                 your game. Read analog pressure values from individual keys and
                 turn a keyboard into a proper analog input device
               </motion.p>
@@ -232,7 +254,8 @@ export function HEKeyboardsPage() {
                 custom={3}
                 className="text-muted-foreground/60 text-sm mb-8 max-w-md"
               >
-                Built by Krooked. Available on the Unity Asset Store
+                Built by Krooked. Available on the Unity Asset Store. Needs Unity 6 and Input System
+                1.18+
               </motion.p>
 
               <motion.div variants={fadeUp} custom={4} className="flex flex-wrap gap-3">
@@ -240,14 +263,14 @@ export function HEKeyboardsPage() {
                   className="inline-flex items-center gap-2 px-5 py-3 bg-white/[0.04] backdrop-blur-xl border-2 border-white/[0.12] rounded-sm text-muted-foreground"
                   style={{ fontFamily: "var(--font-heading)", fontWeight: 600 }}
                 >
-                  <Keyboard className="w-4 h-4 text-primary" />
+                  <Keyboard className="w-4 h-4 text-primary-light" />
                   <span className="text-sm uppercase tracking-wider">Unity Asset</span>
                 </div>
                 <div
                   className="inline-flex items-center gap-2 px-5 py-3 bg-white/[0.04] backdrop-blur-xl border-2 border-white/[0.12] rounded-sm text-muted-foreground"
                   style={{ fontFamily: "var(--font-heading)", fontWeight: 600 }}
                 >
-                  <Gauge className="w-4 h-4 text-teal" />
+                  <Gauge className="w-4 h-4 text-teal-light" />
                   <span className="text-sm uppercase tracking-wider">Analog Input</span>
                 </div>
               </motion.div>
@@ -263,8 +286,8 @@ export function HEKeyboardsPage() {
               <div className="w-full max-w-lg">
                 <ImageWithFallback
                   src={heKeyboardsPromoImage}
-                  alt="HE Keyboards: Apply Pressure Sensitive Keyboard Inputs To Your Game"
-                  className="w-full rounded-sm border-2 border-white/[0.12] shadow-[6px_6px_0px_0px_rgba(160,92,246,0.15)]"
+                  alt="HE Keyboard: Apply Pressure Sensitive Keyboard Inputs To Your Game"
+                  className="w-full rounded-sm border-2 border-white/[0.12] shadow-[6px_6px_0px_0px_rgb(var(--primary-rgb)/0.15)]"
                 />
               </div>
             </motion.div>
@@ -283,7 +306,7 @@ export function HEKeyboardsPage() {
           >
             <motion.div variants={fadeUp} custom={0} className="inline-block mb-4">
               <span
-                className="text-xs uppercase tracking-[0.25em] text-teal bg-teal/10 px-3 py-1 rounded-sm border border-teal/20"
+                className="text-xs uppercase tracking-[0.25em] text-teal-light bg-teal/10 px-3 py-1 rounded-sm border border-teal-light/40"
                 style={{ fontFamily: "var(--font-heading)", fontWeight: 600 }}
               >
                 What it does
@@ -304,7 +327,7 @@ export function HEKeyboardsPage() {
               style={{ fontSize: "1.05rem" }}
             >
               Hall Effect keyboards can detect how far a key is pressed, not
-              just whether it's down. HE Keyboards lets Unity games read those
+              just whether it's down. HE Keyboard lets Unity games read those
               analog values so players can use pressure-sensitive controls
               without needing a controller
             </motion.p>
@@ -339,7 +362,7 @@ export function HEKeyboardsPage() {
           >
             <motion.div variants={fadeUp} custom={0} className="inline-block mb-4">
               <span
-                className="text-xs uppercase tracking-[0.25em] text-primary bg-primary/10 px-3 py-1 rounded-sm border border-primary/20"
+                className="text-xs uppercase tracking-[0.25em] text-primary-light bg-primary/10 px-3 py-1 rounded-sm border border-primary-light/40"
                 style={{ fontFamily: "var(--font-heading)", fontWeight: 600 }}
               >
                 Features
@@ -417,7 +440,7 @@ export function HEKeyboardsPage() {
           >
             <motion.div variants={fadeUp} custom={0} className="inline-block mb-4">
               <span
-                className="text-xs uppercase tracking-[0.25em] text-teal bg-teal/10 px-3 py-1 rounded-sm border border-teal/20"
+                className="text-xs uppercase tracking-[0.25em] text-teal-light bg-teal/10 px-3 py-1 rounded-sm border border-teal-light/40"
                 style={{ fontFamily: "var(--font-heading)", fontWeight: 600 }}
               >
                 Screenshots
@@ -487,7 +510,7 @@ export function HEKeyboardsPage() {
                 href="https://assetstore.unity.com/packages/tools/utilities/he-keyboard-364800"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-primary hover:bg-primary/90 text-white rounded-md border-2 border-primary transition-all hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_rgba(160,92,246,0.4)] uppercase tracking-wider text-sm"
+                className="inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-primary hover:bg-primary/90 text-black rounded-md border-2 border-primary-light transition-all hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_rgb(var(--primary-rgb)/0.4)] uppercase tracking-wider text-sm"
                 style={{ fontFamily: "var(--font-heading)", fontWeight: 700 }}
               >
                 Unity Asset Store
@@ -497,6 +520,17 @@ export function HEKeyboardsPage() {
           </motion.div>
         </div>
       </section>
+
+      {/* Same name, different product: the Minecraft mod lives on the mods page */}
+      <p className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 pb-16 text-center text-muted-foreground/70 text-sm">
+        Also check out our{" "}
+        <Link
+          to="/tools/minecraft-mods#hall-effect-analog-keyboard-movement"
+          className="text-teal-light hover:text-teal-light/80 underline underline-offset-2"
+        >
+          Minecraft HE Keyboards mod
+        </Link>
+      </p>
     </div>
   );
 }

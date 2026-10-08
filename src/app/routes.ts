@@ -60,6 +60,13 @@ export const routes: RouteRecord[] = [
           })),
       },
       {
+        path: "games/exfilcraft",
+        lazy: () =>
+          import("./components/ExfilCraftPage").then((m) => ({
+            Component: m.ExfilCraftPage,
+          })),
+      },
+      {
         path: "games/homunculai",
         lazy: () =>
           import("./components/HomunculAiPage").then((m) => ({
@@ -95,6 +102,13 @@ export const routes: RouteRecord[] = [
           })),
       },
       {
+        path: "socials",
+        lazy: () =>
+          import("./components/SocialsPage").then((m) => ({
+            Component: m.SocialsPage,
+          })),
+      },
+      {
         path: "shop",
         lazy: () =>
           import("./components/ShopPage").then((m) => ({
@@ -127,6 +141,13 @@ export const routes: RouteRecord[] = [
         lazy: () =>
           import("./components/UiToolkitSuitePage").then((m) => ({
             Component: m.UiToolkitSuitePage,
+          })),
+      },
+      {
+        path: "tools/squamojis",
+        lazy: () =>
+          import("./components/SquamojisPage").then((m) => ({
+            Component: m.SquamojisPage,
           })),
       },
       {

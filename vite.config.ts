@@ -7,19 +7,23 @@ import 'vite-react-ssg'
 
 const SITE_ORIGIN = 'https://www.krookedlilly.com'
 
-function walkHtmlFiles(dir: string, base = dir): string[] {
-  const out: string[] = []
+// Every pre-rendered page as a URL path without a trailing slash ("/" for the
+// root), paired with its nested `<path>/index.html` file.
+function walkPages(dir: string, base = dir): { url: string; file: string }[] {
+  const out: { url: string; file: string }[] = []
   for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
     const full = path.join(dir, entry.name)
-    if (entry.isDirectory()) out.push(...walkHtmlFiles(full, base))
+    if (entry.isDirectory()) out.push(...walkPages(full, base))
     else if (entry.name === 'index.html') {
       const rel = path.relative(base, full).replace(/\\/g, '/')
-      const url = '/' + rel.replace(/index\.html$/, '').replace(/\/$/, '')
-      out.push(url === '/' ? '/' : url)
+      out.push({ url: '/' + rel.replace(/\/?index\.html$/, ''), file: full })
     }
   }
   return out
 }
+
+const isNoIndex = (file: string) =>
+  /<meta[^>]+name="robots"[^>]+noindex/i.test(fs.readFileSync(file, 'utf8'))
 
 export default defineConfig(({ isSsrBuild }) => ({
   base: '/',
@@ -51,11 +55,32 @@ export default defineConfig(({ isSsrBuild }) => ({
     script: 'async',
     dirStyle: 'nested',
     formatting: 'minify',
+    // vite-react-ssg preloads every image in every chunk a page touches. Since
+    // the layout chunk carries the home page and catalog data, that was ~70
+    // images (20+ MB) on every page, and the preloads go unused anyway
+    // (credentials mismatch), so images downloaded twice. Pages already list
+    // their <img> tags in the pre-rendered HTML, so the browser finds them
+    // without preloads. Strip them.
+    onPageRendered(_route: string, html: string) {
+      return html.replace(/<link rel="preload" as="image"[^>]*>/g, '')
+    },
     onFinished(dir: string) {
       // GitHub Pages serves 404.html for any unresolvable path; copy the shell so the SPA boots and the client router renders NotFound.
       fs.copyFileSync(path.join(dir, 'index.html'), path.join(dir, '404.html'))
 
-      const urls = walkHtmlFiles(dir).sort()
+      // Canonical URLs have no trailing slash. GitHub Pages 301s /foo to /foo/
+      // when only foo/index.html exists, but serves foo.html directly (200) for
+      // /foo, even when a foo/ directory sits next to it. So write a flat copy
+      // of every page; foo/index.html stays so old /foo/ links keep working,
+      // and its canonical tag points search engines at /foo.
+      const pages = walkPages(dir)
+      for (const { url, file } of pages) {
+        if (url !== '/') fs.copyFileSync(file, path.join(dir, `${url.slice(1)}.html`))
+      }
+
+      // Sitemap: indexable pages only (robots noindex pages, like legal pages,
+      // redirect stubs, and deep-link shells, are left out).
+      const urls = pages.filter((p) => !isNoIndex(p.file)).map((p) => p.url).sort()
       const xml = [
         '<?xml version="1.0" encoding="UTF-8"?>',
         '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',

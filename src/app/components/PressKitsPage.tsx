@@ -12,6 +12,12 @@ type PressKit = {
 
 const kits: PressKit[] = [
   {
+    product: "ExfilCraft",
+    tagline: "Extraction survival mod for Minecraft",
+    file: "/press-kits/exfilcraft-press-kit.zip",
+    size: "25 MB",
+  },
+  {
     product: "HomunculAi",
     tagline: "Desktop app for Windows",
     file: "/press-kits/homunculai-press-kit.zip",
@@ -40,14 +46,14 @@ export function PressKitsPage() {
       {/* Hero */}
       <section className="pt-16 pb-12 relative">
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-0 right-1/3 w-72 h-72 bg-[radial-gradient(circle,_rgba(160,92,246,0.15)_0%,_transparent_70%)]" />
-          <div className="absolute top-12 left-1/3 w-56 h-56 bg-[radial-gradient(circle,_rgba(34,211,238,0.10)_0%,_transparent_70%)]" />
+          <div className="absolute top-0 right-1/3 w-72 h-72 bg-[radial-gradient(circle,_rgb(var(--primary-rgb)/0.15)_0%,_transparent_70%)]" />
+          <div className="absolute top-12 left-1/3 w-56 h-56 bg-[radial-gradient(circle,_rgb(var(--teal-rgb)/0.10)_0%,_transparent_70%)]" />
         </div>
         <div className="relative max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="inline-flex items-center gap-2 px-4 py-1.5 bg-teal/10 border border-teal/20 rounded-sm text-teal text-sm mb-4"
+            className="inline-flex items-center gap-2 px-4 py-1.5 bg-teal/10 border border-teal-light/40 rounded-sm text-teal-light text-sm mb-4"
           >
             <Newspaper className="w-4 h-4" />
             <span
@@ -87,7 +93,7 @@ export function PressKitsPage() {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
-              className="text-xl text-primary mb-5 pb-2 border-b-2 border-primary/20"
+              className="text-xl text-primary-light mb-5 pb-2 border-b-2 border-primary-light/40"
               style={{ fontFamily: "var(--font-display)" }}
             >
               Available Press Kits
@@ -118,7 +124,7 @@ export function PressKitsPage() {
                   <a
                     href={kit.file}
                     download
-                    className="inline-flex items-center justify-center gap-2 px-5 py-3 bg-teal hover:bg-teal/90 text-black rounded-sm border-2 border-teal transition-all hover:-translate-y-0.5 hover:shadow-[4px_4px_0px_0px_rgba(34,211,238,0.4)] uppercase tracking-wider text-xs shrink-0"
+                    className="inline-flex items-center justify-center gap-2 px-5 py-3 bg-teal hover:bg-teal/90 text-black rounded-sm border-2 border-teal-light transition-all hover:-translate-y-0.5 hover:shadow-[4px_4px_0px_0px_rgb(var(--teal-rgb)/0.4)] uppercase tracking-wider text-xs shrink-0"
                     style={{ fontFamily: "var(--font-heading)", fontWeight: 700 }}
                   >
                     <Download className="w-4 h-4" />
@@ -142,7 +148,7 @@ export function PressKitsPage() {
               </p>
               <Link
                 to="/contact"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-transparent hover:bg-white/5 text-foreground border-2 border-white/20 hover:border-primary/40 rounded-sm transition-all hover:-translate-y-0.5 hover:shadow-[4px_4px_0px_0px_rgba(160,92,246,0.2)] uppercase tracking-wider text-sm"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-transparent hover:bg-white/5 text-foreground border-2 border-white/20 hover:border-primary-light/70 rounded-sm transition-all hover:-translate-y-0.5 hover:shadow-[4px_4px_0px_0px_rgb(var(--primary-rgb)/0.2)] uppercase tracking-wider text-sm"
                 style={{ fontFamily: "var(--font-heading)", fontWeight: 700 }}
               >
                 <Mail className="w-4 h-4" />

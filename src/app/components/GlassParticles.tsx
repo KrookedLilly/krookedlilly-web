@@ -1,4 +1,5 @@
 import { useEffect, useRef } from "react";
+import { BRAND, rgbTriple } from "../data/brandColors";
 
 /**
  * Lightweight particle overlay for frosted-glass surfaces.
@@ -22,10 +23,10 @@ interface GlassParticle {
 }
 
 const COLORS = [
-  "160,92,246", // violet
-  "160,92,246",
-  "34,211,238", // cyan
-  "34,211,238",
+  rgbTriple(BRAND.primary), // violet
+  rgbTriple(BRAND.primary),
+  rgbTriple(BRAND.teal), // cyan
+  rgbTriple(BRAND.teal),
   "124,58,237", // violet-shade
   "220,220,215", // soft white
 ];
