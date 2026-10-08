@@ -43,6 +43,8 @@ const DRAG = 0.965; // velocity kept per frame; lower = stops sooner
 // Glow radius = size × (GLOW_BASE + life × GLOW_FADE): 2.5× the spark at most.
 const GLOW_BASE = 1.2;
 const GLOW_FADE = 1.3;
+// Glow brightness at its center, relative to the spark (0-1). Lower = darker.
+const GLOW_OPACITY = 0.3;
 
 export function ClickFireworks() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -153,7 +155,7 @@ export function ClickFireworks() {
           s.x, s.y, 0,
           s.x, s.y, glowRadius
         );
-        gradient.addColorStop(0, `rgba(${s.r},${s.g},${s.b},${alpha * 0.5})`);
+        gradient.addColorStop(0, `rgba(${s.r},${s.g},${s.b},${alpha * GLOW_OPACITY})`);
         gradient.addColorStop(1, `rgba(${s.r},${s.g},${s.b},0)`);
         ctx.beginPath();
         ctx.arc(s.x, s.y, glowRadius, 0, Math.PI * 2);
