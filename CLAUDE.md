@@ -59,7 +59,8 @@ Only show prices for things sold directly on krookedlilly.com (currently Homuncu
 - `PageMeta` sets title, description, canonical, Open Graph, and Twitter tags. Pages without an `image` fall back to `public/og-image.png`.
 - The sitemap is generated at build time in `vite.config.ts` (`onFinished`); there is no hand-written sitemap. It lists every pre-rendered page except those with a robots `noindex` tag.
 - Structured data lives in `JsonLd.tsx`. `SiteJsonLd` (rendered by `Layout`) emits the Organization and WebSite nodes on every page; product pages add their own nodes and reference the studio by `ORG_REF`.
-- `public/llms.txt` is a hand-written summary of every product for AI assistants. Update it whenever a product, price, or store link changes.
+- `public/llms.txt` is a hand-written summary of every product for AI assistants. Update it whenever a product or store link changes.
+- IndexNow: after `npm run deploy`, the `postdeploy` script (`scripts/indexnow.mjs`) waits for GitHub Pages to serve the new build, then submits every sitemap URL so Bing (which also feeds ChatGPT search and Copilot) recrawls immediately. The key is the 32-hex `.txt` file in `public/`; keep it.
 - Retired URLs redirect via a component that emits a meta refresh plus a canonical to the new page (see `ToolkitRedirect.tsx`), since GitHub Pages can't send real 301s.
 - Local `npm run preview` can show "Unexpected Application Error" on load: the async app script can run before the trailing `__VITE_REACT_SSG_HASH__` script on localhost. The live site isn't affected; test with real latency if you need to check hydration.
 

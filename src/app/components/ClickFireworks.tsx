@@ -34,6 +34,16 @@ const PALETTE = [
 
 const SPARKS_PER_BURST = 22;
 
+// Tuning. Travel distance ≈ speed / (1 - DRAG) over a spark's life, so
+// speed and drag together set how far a burst spreads (about 55px on average).
+const SPEED_MIN = 1;
+const SPEED_MAX = 3.5;
+const LAUNCH_LIFT = 1; // extra upward kick so bursts arc before falling
+const DRAG = 0.965; // velocity kept per frame; lower = stops sooner
+// Glow radius = size × (GLOW_BASE + life × GLOW_FADE): 2.5× the spark at most.
+const GLOW_BASE = 1.2;
+const GLOW_FADE = 1.3;
+
 export function ClickFireworks() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const sparksRef = useRef<Spark[]>([]);
@@ -65,7 +75,7 @@ export function ClickFireworks() {
       if (sparksRef.current.length >= MAX_SPARKS) return;
       for (let i = 0; i < SPARKS_PER_BURST; i++) {
         const angle = Math.random() * Math.PI * 2;
-        const speed = 1.5 + Math.random() * 4.5;
+        const speed = SPEED_MIN + Math.random() * (SPEED_MAX - SPEED_MIN);
         const color = PALETTE[Math.floor(Math.random() * PALETTE.length)];
         const r = parseInt(color.slice(1, 3), 16);
         const g = parseInt(color.slice(3, 5), 16);
@@ -74,7 +84,7 @@ export function ClickFireworks() {
           x,
           y,
           vx: Math.cos(angle) * speed,
-          vy: Math.sin(angle) * speed - 1.5,
+          vy: Math.sin(angle) * speed - LAUNCH_LIFT,
           size: 1.5 + Math.random() * 2.5,
           color,
           r, g, b,
@@ -125,8 +135,8 @@ export function ClickFireworks() {
         s.x += s.vx;
         s.y += s.vy;
         s.vy += s.gravity;
-        s.vx *= 0.98; // drag
-        s.vy *= 0.98;
+        s.vx *= DRAG;
+        s.vy *= DRAG;
         s.life -= s.decay;
 
         if (s.life <= 0) {
@@ -136,7 +146,7 @@ export function ClickFireworks() {
 
         // Draw glow + dot using pre-computed RGB
         const alpha = s.life;
-        const glowRadius = s.size * (2 + s.life * 2);
+        const glowRadius = s.size * (GLOW_BASE + s.life * GLOW_FADE);
 
         // Soft glow
         const gradient = ctx.createRadialGradient(
