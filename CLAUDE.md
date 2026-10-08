@@ -62,7 +62,7 @@ Only show prices for things sold directly on krookedlilly.com (currently Homuncu
 - `public/llms.txt` is a hand-written summary of every product for AI assistants. Update it whenever a product or store link changes.
 - IndexNow: after `npm run deploy`, the `postdeploy` script (`scripts/indexnow.mjs`) waits for GitHub Pages to serve the new build, then submits every sitemap URL so Bing (which also feeds ChatGPT search and Copilot) recrawls immediately. The key is the 32-hex `.txt` file in `public/`; keep it.
 - Retired URLs redirect via a component that emits a meta refresh plus a canonical to the new page (see `ToolkitRedirect.tsx`), since GitHub Pages can't send real 301s.
-- Local `npm run preview` can show "Unexpected Application Error" on load: the async app script can run before the trailing `__VITE_REACT_SSG_HASH__` script on localhost. The live site isn't affected; test with real latency if you need to check hydration.
+- `ssgOptions.script` must stay `'defer'`. With `'async'`, fast loads (including Googlebot) could run the app before the inline `__VITE_REACT_SSG_HASH__` script at the end of `<body>`, render "Unexpected Application Error", and get pages flagged as soft 404s in Search Console.
 
 ## Dependency audit posture
 

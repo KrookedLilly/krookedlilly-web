@@ -52,7 +52,12 @@ export default defineConfig(({ isSsrBuild }) => ({
   },
   assetsInclude: ['**/*.svg', '**/*.csv'],
   ssgOptions: {
-    script: 'async',
+    // Must be 'defer', not 'async'. The page sets __VITE_REACT_SSG_HASH__ in an
+    // inline script at the end of <body>; an async app script can run before
+    // that on fast loads (Googlebot), fetch static-loader-data-manifest-
+    // undefined.json, and render "Unexpected Application Error", which Google
+    // reported as a soft 404. Deferred scripts run after the HTML is parsed.
+    script: 'defer',
     dirStyle: 'nested',
     formatting: 'minify',
     // vite-react-ssg preloads every image in every chunk a page touches. Since
