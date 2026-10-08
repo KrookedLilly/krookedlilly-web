@@ -1,0 +1,51 @@
+# KrookedLilly
+
+> KrookedLilly is a husband-and-wife indie studio that makes games, apps, Minecraft mods, and game dev assets. Official website: https://www.krookedlilly.com/
+
+The studio name is one word: KrookedLilly. Contact: support@krookedlilly.com. Community Discord: https://discord.gg/aad7aYPRfs
+
+## Games
+
+- [Acrostix](https://www.krookedlilly.com/games/acrostix): Free creative word game for iOS (iPhone and iPad) and Android. Build sentences from acrostic words and get scored on grammar, complexity, and creativity. Campaign mode with themed islands. App Store: https://apps.apple.com/us/app/acrostix/id6760374016 Google Play: https://play.google.com/store/apps/details?id=com.krookedlilly.acrostix
+- [50 Ball Drop](https://www.krookedlilly.com/games/50-ball-drop): Free arcade game for iPhone and iPad. Drop balls, watch the chaos, unlock a huge pile of cosmetics. App Store: https://apps.apple.com/us/app/50-ball-drop/id1315446718
+- [Match Fives](https://www.krookedlilly.com/games/match-fives): Free number-matching puzzle game for iPhone and iPad. Match numbers and chase high scores. App Store: https://apps.apple.com/us/app/match-fives/id1444786124
+- [Galactic Parcel Service](https://www.krookedlilly.com/games/galactic-parcel-service): Open-world space delivery simulation, in development and headed to Steam. Build a fleet, deliver packages, terraform planets.
+
+## Apps
+
+- [HomunculAi](https://www.krookedlilly.com/games/homunculai): A visualization layer for your AI agents, for Windows. It gives the AI you already use (any MCP-compatible client) a desktop body it controls: 45 bodies, custom SVG, two-way chat. HomunculAi does not include an AI of its own. 7-day free trial, then $4.99 one-time.
+- [SnackTray](https://www.krookedlilly.com/tools/snacktray): macOS menu bar app for custom window snapping layouts across multiple monitors. Download: https://github.com/krookedlilly/snacktray-releases/releases
+
+## Minecraft mods
+
+All KrookedLilly Minecraft mods are free on CurseForge (https://www.curseforge.com/members/krookedlilly/projects) and Modrinth (https://modrinth.com/user/krookedlilly). Overview: https://www.krookedlilly.com/tools/minecraft-mods
+
+- [ExfilCraft](https://www.krookedlilly.com/games/exfilcraft): Extraction survival mod for Minecraft ("Infil. Loot. Exfil."). Carry your kit into hostile raid worlds, fight for loot, and survive the extraction channel to bring it home, or die and drop it all. Home plots, residents, the Market, squads, raid maps (Overworld, Nether, End, Deep Dark), about 20 new mobs. Requires Minecraft 26.2, NeoForge 26.2.0.57+, Java 25, installed on client and server. Public server: play.exfilcraft.com. Wiki: https://exfilcraft.dev/ Downloads: https://www.curseforge.com/minecraft/mc-mods/exfilcraft and https://modrinth.com/mod/exfilcraft
+- [Auto Hide HUD](https://modrinth.com/mod/auto-hide-hud): Client mod that hides the HUD when you're idle and brings it back on triggers you choose (low health, hunger, air). Optional companion app shows player info on a second monitor. Fabric and NeoForge, Minecraft 1.21 to 26.3.
+- [Hall Effect: Analog Keyboard Movement](https://modrinth.com/mod/hall-effect-analog-keyboard-movement): Real analog WASD movement for Hall Effect Keyboards (HE keyboards) via the Wooting Analog SDK. A Minecraft mod for players; it is a separate product from the HE Keyboard Unity asset below. Press partway to walk slowly, fully for full speed. Fabric and NeoForge, Minecraft 1.21 to 26.3.
+- [Snail Mob](https://modrinth.com/mod/snail-mob): Jeffery the snail hunts you for revenge. Slow, relentless, and his touch kills you. Items help you track him. NeoForge, Minecraft 1.21 to 26.2.
+
+## Game dev assets
+
+- [UI Toolkit Suite](https://www.krookedlilly.com/tools/ui-toolkit): 13 standalone packages for Unity 6's UI Toolkit, sold individually on the Unity Asset Store (publisher page: https://assetstore.unity.com/publishers/36914). Screen Manager, Tween Engine, Responsive Layout, Modal & Notification, Focus & Navigation, Data Binding, Theme Switcher, Form Validation, Motion Importer (Lottie and sprite sheets), ECS Bridge (DOTS/ECS bindings), Element Library (35+ controls), Audio & Feedback, and Visual Styling. See the Asset Store for current prices.
+- [HE Keyboard](https://www.krookedlilly.com/tools/he-keyboards): Hall Effect Keyboards support for Unity game developers (a separate product from the Hall Effect Minecraft mod above). A Unity Input System package for per-key analog pressure from HE keyboards (Wooting everywhere; Razer, NuPhy, DrunkDeer, Keychron and others on Windows and Linux). Native plugins for Windows, macOS, Linux. On the Unity Asset Store: https://assetstore.unity.com/packages/tools/utilities/he-keyboard-364800
+- [Squamojis](https://www.krookedlilly.com/tools/squamojis): 80 hand-made square emoji in 3 styles (240 icons). A still pack (SVG, PSD, PNG, Unity prefabs), an animated pack (sprite sheets, Lottie, animated SVG), and a bundle of both on GameDevMarket. Stores: https://krookedlilly.itch.io/ and https://www.gamedevmarket.net/member/krookedlilly
+
+## Social
+
+- YouTube: https://www.youtube.com/@KrookedLilly
+- Twitch: https://www.twitch.tv/krookedlilly
+- TikTok: https://www.tiktok.com/@krookedlilly
+- Instagram: https://www.instagram.com/krookedlilly/
+- Bluesky: https://bsky.app/profile/krookedlilly.bsky.social
+- X: https://x.com/krookedLilly
+- Reddit: https://www.reddit.com/user/KrookedLilly/
+- Ko-fi: https://ko-fi.com/krookedlilly
+
+## Optional
+
+- [Catalog](https://www.krookedlilly.com/catalog): Everything KrookedLilly makes, in one place.
+- [About](https://www.krookedlilly.com/about): Who we are.
+- [Socials](https://www.krookedlilly.com/socials): Live streams on Twitch, videos on YouTube, and every other place to follow KrookedLilly.
+- [Contact](https://www.krookedlilly.com/contact): Support, press, and collaboration.
+- [Press kits](https://www.krookedlilly.com/press-kits): Downloadable press assets.
