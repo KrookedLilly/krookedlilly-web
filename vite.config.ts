@@ -22,11 +22,18 @@ function walkPages(dir: string, base = dir): { url: string; file: string }[] {
   return out
 }
 
+// Site version shown in the footer as "v<major>.<minor>". Bump it in package.json.
+const pkg = JSON.parse(fs.readFileSync(path.resolve(__dirname, 'package.json'), 'utf8'))
+const siteVersion = pkg.version.split('.').slice(0, 2).join('.')
+
 const isNoIndex = (file: string) =>
   /<meta[^>]+name="robots"[^>]+noindex/i.test(fs.readFileSync(file, 'utf8'))
 
 export default defineConfig(({ isSsrBuild }) => ({
   base: '/',
+  define: {
+    __SITE_VERSION__: JSON.stringify(siteVersion),
+  },
   plugins: [
     react(),
     tailwindcss(),

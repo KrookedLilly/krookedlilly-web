@@ -128,6 +128,7 @@ export function Footer() {
 
         <div className="border-t border-white/5 mt-12 pt-8 text-center text-muted-foreground text-sm">
           <p>&copy; 2026 KrookedLilly. Made with mayhem and caffeine</p>
+          <p className="mt-2 text-xs text-muted-foreground/50">{`v${__SITE_VERSION__}`}</p>
         </div>
       </div>
     </footer>
