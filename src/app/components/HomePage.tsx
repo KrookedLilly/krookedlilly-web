@@ -130,9 +130,14 @@ function CategoryRow({
     return () => window.removeEventListener("resize", updateEdges);
   }, []);
 
+  // Below md each card fills the scroller's content box and the side padding
+  // sets its width, so every card (first and last included) can snap to the
+  // center between the arrows. Padding percentages resolve against the parent,
+  // which is the bleed (2rem / 3rem) narrower than the scroller, hence the px
+  // terms: 10% each side leaves an 80% card on phones, 22.5% a 55% card on sm.
   const itemWidth = scrolls
-    ? "w-[80%] sm:w-[55%] md:w-[calc((100%-1.5rem)/2)] lg:w-[calc((100%-4.5rem)/4)]"
-    : "w-[80%] sm:w-[55%] md:w-auto";
+    ? "w-full md:w-[calc((100%-1.5rem)/2)] lg:w-[calc((100%-4.5rem)/4)]"
+    : "w-full md:w-auto";
 
   return (
     <div className="relative">
@@ -141,12 +146,12 @@ function CategoryRow({
         onScroll={updateEdges}
         role="region"
         aria-label={label}
-        className={`flex gap-6 overflow-x-auto snap-x snap-mandatory scroll-px-4 sm:scroll-px-6 -mx-4 sm:-mx-6 px-4 sm:px-6 py-4 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden ${
+        className={`flex gap-6 overflow-x-auto overflow-y-hidden overscroll-x-contain touch-pan-x touch-pan-y snap-x snap-mandatory scroll-px-0 -mx-4 sm:-mx-6 px-[calc(10%+3.2px)] sm:px-[calc(22.5%+10.8px)] py-4 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden ${
           scrolls ? "md:mx-0 md:px-1 md:scroll-px-1" : `${gridAtMd[children.length] ?? ""} md:overflow-visible md:mx-0 md:px-0 md:py-0`
         }`}
       >
         {children.map((child, i) => (
-          <div key={i} className={`snap-start shrink-0 ${itemWidth}`}>
+          <div key={i} className={`snap-center md:snap-start shrink-0 ${itemWidth}`}>
             {child}
           </div>
         ))}
