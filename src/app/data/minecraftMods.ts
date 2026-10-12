@@ -14,13 +14,13 @@ export { CURSEFORGE_AUTHOR_URL, MODRINTH_AUTHOR_URL };
  * Single source of truth for the Minecraft mods collection.
  *
  * To add a mod: append one entry below. The catalog cards, the home page
- * Mods row, the count badge, and every row on /tools/minecraft-mods all derive
+ * Mods row, the count badge, and every row on /mods/minecraft-mods all derive
  * from this array.
  *
  * Each mod links out to both CurseForge (primary) and Modrinth. The slug is
  * the same on both hosts, so the URLs are built from it. A mod with its own
  * page on this site sets `detailPath`; the rest link to their row on the hub
- * (`/tools/minecraft-mods#<slug>`).
+ * (`/mods/minecraft-mods#<slug>`).
  */
 export interface MinecraftMod {
   name: string;
@@ -71,7 +71,7 @@ export const minecraftMods: MinecraftMod[] = [
       "The Market, squads, and optional proximity voice chat",
       "About 20 new mobs, plus a public server at play.exfilcraft.com",
     ],
-    detailPath: "/games/exfilcraft",
+    detailPath: "/mods/exfilcraft",
   },
   {
     name: "Auto Hide HUD",
@@ -134,7 +134,7 @@ export const minecraftMods: MinecraftMod[] = [
 
 /** Where a mod card should link: its own page, or its row on the hub. */
 export function modPath(mod: MinecraftMod): string {
-  return mod.detailPath ?? `/tools/minecraft-mods#${mod.slug}`;
+  return mod.detailPath ?? `/mods/minecraft-mods#${mod.slug}`;
 }
 
 /** Count used by the catalog collection card badge and the hub header. */

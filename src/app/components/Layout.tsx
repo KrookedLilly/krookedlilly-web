@@ -13,7 +13,7 @@ export function Layout() {
   const { pathname, hash } = useLocation();
   const reducedMotion = useReducedMotion();
   useEffect(() => {
-    // In-app links like /tools/minecraft-mods#snail-mob land on that row.
+    // In-app links like /mods/minecraft-mods#snail-mob land on that row.
     const target = hash ? document.getElementById(decodeURIComponent(hash.slice(1))) : null;
     if (target) target.scrollIntoView();
     else window.scrollTo(0, 0);

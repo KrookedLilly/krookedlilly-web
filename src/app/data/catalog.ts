@@ -152,7 +152,7 @@ export const catalog: CatalogItem[] = [
     image: imgHomunculAiCard,
     imagePosition: "object-cover",
     status: "Released",
-    path: "/games/homunculai",
+    path: "/apps/homunculai",
   },
   {
     id: "snacktray",
@@ -167,7 +167,7 @@ export const catalog: CatalogItem[] = [
     imagePosition: "object-cover",
     logo: snackTrayLogo,
     status: "Released",
-    path: "/tools/snacktray",
+    path: "/apps/snacktray",
   },
 
   /* ─── Mods ─── */

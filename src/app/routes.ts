@@ -1,3 +1,4 @@
+import { createElement } from "react";
 import type { RouteRecord } from "vite-react-ssg";
 import { Layout } from "./components/Layout";
 import { HomePage } from "./components/HomePage";
@@ -60,35 +61,35 @@ export const routes: RouteRecord[] = [
           })),
       },
       {
-        path: "games/exfilcraft",
+        path: "mods/exfilcraft",
         lazy: () =>
           import("./components/ExfilCraftPage").then((m) => ({
             Component: m.ExfilCraftPage,
           })),
       },
       {
-        path: "games/homunculai",
+        path: "apps/homunculai",
         lazy: () =>
           import("./components/HomunculAiPage").then((m) => ({
             Component: m.HomunculAiPage,
           })),
       },
       {
-        path: "games/homunculai/terms",
+        path: "apps/homunculai/terms",
         lazy: () =>
           import("./components/HomunculAiTermsPage").then((m) => ({
             Component: m.HomunculAiTermsPage,
           })),
       },
       {
-        path: "games/homunculai/sales-restrictions",
+        path: "apps/homunculai/sales-restrictions",
         lazy: () =>
           import("./components/HomunculAiSalesRestrictionsPage").then((m) => ({
             Component: m.HomunculAiSalesRestrictionsPage,
           })),
       },
       {
-        path: "games/homunculai/what-is-ai",
+        path: "apps/homunculai/what-is-ai",
         lazy: () =>
           import("./components/HomunculAiWhatIsAIPage").then((m) => ({
             Component: m.HomunculAiWhatIsAIPage,
@@ -130,7 +131,7 @@ export const routes: RouteRecord[] = [
           })),
       },
       {
-        path: "tools/snacktray",
+        path: "apps/snacktray",
         lazy: () =>
           import("./components/SnackTrayPage").then((m) => ({
             Component: m.SnackTrayPage,
@@ -151,7 +152,7 @@ export const routes: RouteRecord[] = [
           })),
       },
       {
-        path: "tools/minecraft-mods",
+        path: "mods/minecraft-mods",
         lazy: () =>
           import("./components/MinecraftModsPage").then((m) => ({
             Component: m.MinecraftModsPage,
@@ -170,6 +171,29 @@ export const routes: RouteRecord[] = [
         lazy: () =>
           import("./components/ToolkitRedirect").then((m) => ({
             Component: m.ToolkitRedirect,
+          })),
+      })),
+      // Products that moved to the prefix matching their catalog category
+      // (mods under /mods, apps under /apps). Old path -> [new path, title].
+      ...(
+        [
+          ["games/exfilcraft", "/mods/exfilcraft", "ExfilCraft"],
+          ["tools/minecraft-mods", "/mods/minecraft-mods", "Minecraft Mods"],
+          ["games/homunculai", "/apps/homunculai", "HomunculAi"],
+          ["games/homunculai/terms", "/apps/homunculai/terms", "HomunculAi Terms"],
+          [
+            "games/homunculai/sales-restrictions",
+            "/apps/homunculai/sales-restrictions",
+            "HomunculAi Sales Restrictions",
+          ],
+          ["games/homunculai/what-is-ai", "/apps/homunculai/what-is-ai", "HomunculAi: What is AI"],
+          ["tools/snacktray", "/apps/snacktray", "SnackTray"],
+        ] as const
+      ).map(([path, to, title]) => ({
+        path,
+        lazy: () =>
+          import("./components/PageRedirect").then((m) => ({
+            Component: () => createElement(m.PageRedirect, { to, title }),
           })),
       })),
       {

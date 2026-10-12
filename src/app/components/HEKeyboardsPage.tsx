@@ -525,7 +525,7 @@ export function HEKeyboardsPage() {
       <p className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 pb-16 text-center text-muted-foreground/70 text-sm">
         Also check out our{" "}
         <Link
-          to="/tools/minecraft-mods#hall-effect-analog-keyboard-movement"
+          to="/mods/minecraft-mods#hall-effect-analog-keyboard-movement"
           className="text-teal-light hover:text-teal-light/80 underline underline-offset-2"
         >
           Minecraft HE Keyboards mod

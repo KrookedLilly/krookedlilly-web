@@ -163,7 +163,7 @@ export function SnackTrayPage() {
       <PageMeta
         title="SnackTray"
         description="SnackTray is a macOS menu bar app from KrookedLilly for custom window snapping layouts across multiple monitors. Draw your own zones, drag windows in, done."
-        path="/tools/snacktray"
+        path="/apps/snacktray"
       />
       <JsonLd
         data={{
@@ -173,7 +173,7 @@ export function SnackTrayPage() {
             "A macOS menu bar app for custom window snapping layouts across multiple monitors. Draw your own zones, then drag windows into them.",
           applicationCategory: "UtilitiesApplication",
           operatingSystem: "macOS",
-          url: pageUrl("/tools/snacktray"),
+          url: pageUrl("/apps/snacktray"),
           image: `${SITE_URL}${snackTrayCardImage}`,
           downloadUrl: "https://github.com/krookedlilly/snacktray-releases/releases",
           author: ORG_REF,

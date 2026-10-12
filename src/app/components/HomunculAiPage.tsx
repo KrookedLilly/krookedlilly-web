@@ -185,7 +185,7 @@ export function HomunculAiPage() {
       <PageMeta
         title="HomunculAi"
         description="HomunculAi is a visualization layer for your AI agents. Any MCP-compatible agent picks a desktop body, changes its mood, and chats back while you work. Windows."
-        path="/games/homunculai"
+        path="/apps/homunculai"
         image="/homunculai-og.png"
       />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
@@ -204,7 +204,7 @@ export function HomunculAiPage() {
               "seller": { "@id": "https://www.krookedlilly.com/#organization" }
             },
             "description": "HomunculAi is a visualization layer for your AI agents. Any MCP-compatible agent picks a desktop body, changes its mood, and chats back while you work.",
-            "url": "https://www.krookedlilly.com/games/homunculai",
+            "url": "https://www.krookedlilly.com/apps/homunculai",
             "image": "https://www.krookedlilly.com/homunculai-og.png",
             "author": { "@id": "https://www.krookedlilly.com/#organization" },
             "screenshot": "https://www.krookedlilly.com/homunculai-og.png",
@@ -315,7 +315,7 @@ export function HomunculAiPage() {
               {/* Legal links strip above buy buttons */}
               <motion.div variants={fadeUp} custom={7} className="flex flex-wrap gap-x-4 gap-y-1 mb-3 text-xs">
                 <Link
-                  to="/games/homunculai/terms"
+                  to="/apps/homunculai/terms"
                   className="text-muted-foreground/70 hover:text-teal-light transition-colors uppercase tracking-wider"
                   style={{ fontFamily: "var(--font-heading)", fontWeight: 600 }}
                 >
@@ -323,7 +323,7 @@ export function HomunculAiPage() {
                 </Link>
                 <span className="text-muted-foreground/30">&middot;</span>
                 <Link
-                  to="/games/homunculai/sales-restrictions"
+                  to="/apps/homunculai/sales-restrictions"
                   className="text-muted-foreground/70 hover:text-primary-light transition-colors uppercase tracking-wider"
                   style={{ fontFamily: "var(--font-heading)", fontWeight: 600 }}
                 >
@@ -331,7 +331,7 @@ export function HomunculAiPage() {
                 </Link>
                 <span className="text-muted-foreground/30">&middot;</span>
                 <Link
-                  to="/games/homunculai/what-is-ai"
+                  to="/apps/homunculai/what-is-ai"
                   className="text-muted-foreground/70 hover:text-teal-light transition-colors uppercase tracking-wider"
                   style={{ fontFamily: "var(--font-heading)", fontWeight: 600 }}
                 >
@@ -363,7 +363,7 @@ export function HomunculAiPage() {
                 <span className="uppercase tracking-wider text-amber-400/80">18+ only.</span>{" "}
                 Not available in certain regions:{" "}
                 <Link
-                  to="/games/homunculai/sales-restrictions"
+                  to="/apps/homunculai/sales-restrictions"
                   className="underline underline-offset-2 hover:text-foreground transition-colors"
                 >
                   see list
@@ -621,7 +621,7 @@ export function HomunculAiPage() {
               className="flex flex-wrap gap-x-4 gap-y-1 mb-4 text-xs justify-center"
             >
               <Link
-                to="/games/homunculai/terms"
+                to="/apps/homunculai/terms"
                 className="text-muted-foreground/70 hover:text-teal-light transition-colors uppercase tracking-wider"
                 style={{ fontFamily: "var(--font-heading)", fontWeight: 600 }}
               >
@@ -629,7 +629,7 @@ export function HomunculAiPage() {
               </Link>
               <span className="text-muted-foreground/30">&middot;</span>
               <Link
-                to="/games/homunculai/sales-restrictions"
+                to="/apps/homunculai/sales-restrictions"
                 className="text-muted-foreground/70 hover:text-primary-light transition-colors uppercase tracking-wider"
                 style={{ fontFamily: "var(--font-heading)", fontWeight: 600 }}
               >
@@ -637,7 +637,7 @@ export function HomunculAiPage() {
               </Link>
               <span className="text-muted-foreground/30">&middot;</span>
               <Link
-                to="/games/homunculai/what-is-ai"
+                to="/apps/homunculai/what-is-ai"
                 className="text-muted-foreground/70 hover:text-teal-light transition-colors uppercase tracking-wider"
                 style={{ fontFamily: "var(--font-heading)", fontWeight: 600 }}
               >
@@ -668,7 +668,7 @@ export function HomunculAiPage() {
               <span className="uppercase tracking-wider text-amber-400/80">18+ only.</span>{" "}
               Not available in certain regions:{" "}
               <Link
-                to="/games/homunculai/sales-restrictions"
+                to="/apps/homunculai/sales-restrictions"
                 className="underline underline-offset-2 hover:text-foreground transition-colors"
               >
                 see list

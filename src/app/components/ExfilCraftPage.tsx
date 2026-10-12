@@ -42,7 +42,7 @@ const MODRINTH_URL = exfilcraft.modrinthUrl!;
 const WIKI_URL = "https://exfilcraft.dev/";
 const SERVER_ADDRESS = "play.exfilcraft.com";
 const YOUTUBE_ID = "rfLN7Jkrk2o";
-const PATH = "/games/exfilcraft";
+const PATH = "/mods/exfilcraft";
 
 const DESCRIPTION =
   "ExfilCraft is a free extraction survival mod for Minecraft. Carry your kit into hostile raid worlds, fight for loot, and survive the extraction channel to bring it home, or die and drop it all.";

@@ -47,7 +47,7 @@ export function HomunculAiSalesRestrictionsPage() {
       <PageMeta
         title="HomunculAi Sales Restrictions"
         description="Sales restrictions for HomunculAi."
-        path="/games/homunculai/sales-restrictions"
+        path="/apps/homunculai/sales-restrictions"
         noIndex
       />
       {/* Hero */}
@@ -58,7 +58,7 @@ export function HomunculAiSalesRestrictionsPage() {
         </div>
         <div className="relative max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <Link
-            to="/games/homunculai"
+            to="/apps/homunculai"
             className="flex w-fit items-center gap-2 text-muted-foreground hover:text-primary-light transition-colors text-sm uppercase tracking-wider mb-6"
             style={{ fontFamily: "var(--font-heading)", fontWeight: 600 }}
           >
@@ -113,7 +113,7 @@ export function HomunculAiSalesRestrictionsPage() {
               <div className="bg-primary/10 border-l-3 border-primary-light p-4 rounded-r-sm text-sm text-foreground mb-4">
                 This is not legal advice. This list is maintained by KrookedLilly as a companion to the HomunculAi{" "}
                 <Link
-                  to="/games/homunculai/terms"
+                  to="/apps/homunculai/terms"
                   className="text-primary-light hover:text-primary-light/80 transition-colors underline underline-offset-2"
                 >
                   Terms of Use

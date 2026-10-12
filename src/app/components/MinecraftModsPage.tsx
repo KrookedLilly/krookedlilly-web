@@ -114,7 +114,7 @@ export function MinecraftModsPage() {
       <PageMeta
         title="Minecraft Mods"
         description="Free Minecraft mods from KrookedLilly on CurseForge and Modrinth: ExfilCraft, Auto Hide HUD, Hall Effect: Analog Keyboard Movement, and Snail Mob."
-        path="/tools/minecraft-mods"
+        path="/mods/minecraft-mods"
       />
 
       {/* ═══════════ HERO ═══════════ */}

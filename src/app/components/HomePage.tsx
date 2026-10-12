@@ -310,7 +310,7 @@ export function HomePage() {
             transition={{ duration: 0.6, ease: "easeOut" as const }}
           >
             <Link
-              to="/games/exfilcraft"
+              to="/mods/exfilcraft"
               className="group block bg-white/[0.06] border-2 border-white/[0.12] hover:border-primary-light/70 rounded-sm overflow-hidden transition-all hover:-translate-y-1 hover:shadow-[8px_8px_0px_0px_rgb(var(--primary-rgb)/0.12)] rotate-[0.5deg] hover:rotate-0"
             >
               <div className="grid grid-cols-1 lg:grid-cols-5">
