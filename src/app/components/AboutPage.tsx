@@ -1,5 +1,7 @@
 import { motion } from "motion/react";
-import { Flame, Heart, Sparkles, Target, Zap, Gamepad2, Package } from "lucide-react";
+import { Link } from "react-router-dom";
+import { ArrowRight, Flame, Heart, Sparkles, Target, Zap, Gamepad2, Package } from "lucide-react";
+import { categorySlug, type Category } from "../data/catalog";
 import { LogoCircle } from "./LogoCircle";
 import { PageMeta } from "./PageMeta";
 
@@ -55,7 +57,16 @@ const principles = [
   },
 ];
 
-const whatWeDo = [
+const whatWeDo: {
+  icon: typeof Gamepad2;
+  label: Category;
+  description: string;
+  color: string;
+  border: string;
+  bg: string;
+  hoverBorder: string;
+  shadow: string;
+}[] = [
   {
     icon: Gamepad2,
     label: "Games",
@@ -63,6 +74,8 @@ const whatWeDo = [
     color: "text-primary-light",
     border: "border-primary-light/40",
     bg: "bg-primary/10",
+    hoverBorder: "hover:border-primary-light/55 focus-visible:border-primary-light/55",
+    shadow: "hover:shadow-[4px_4px_0px_0px_rgb(var(--primary-rgb)/0.15)]",
   },
   {
     icon: Sparkles,
@@ -71,6 +84,8 @@ const whatWeDo = [
     color: "text-teal-light",
     border: "border-teal-light/40",
     bg: "bg-teal/10",
+    hoverBorder: "hover:border-teal-light/55 focus-visible:border-teal-light/55",
+    shadow: "hover:shadow-[4px_4px_0px_0px_rgb(var(--teal-rgb)/0.15)]",
   },
   {
     icon: Zap,
@@ -79,6 +94,8 @@ const whatWeDo = [
     color: "text-primary-light",
     border: "border-primary-light/40",
     bg: "bg-primary/10",
+    hoverBorder: "hover:border-primary-light/55 focus-visible:border-primary-light/55",
+    shadow: "hover:shadow-[4px_4px_0px_0px_rgb(var(--primary-rgb)/0.15)]",
   },
   {
     icon: Package,
@@ -87,6 +104,8 @@ const whatWeDo = [
     color: "text-teal-light",
     border: "border-teal-light/40",
     bg: "bg-teal/10",
+    hoverBorder: "hover:border-teal-light/55 focus-visible:border-teal-light/55",
+    shadow: "hover:shadow-[4px_4px_0px_0px_rgb(var(--teal-rgb)/0.15)]",
   },
 ];
 
@@ -227,24 +246,33 @@ export function AboutPage() {
                 viewport={{ once: true }}
                 variants={fadeUp}
                 custom={i}
-                className={`p-6 bg-white/[0.06] border-2 border-white/[0.12] hover:border-white/[0.2] transition-[border-color,box-shadow] duration-300 hover:-translate-y-2 rounded-sm will-change-transform ${
-                  i === 0 ? "rotate-1" : i === 1 ? "-rotate-1" : "rotate-2"
-                } hover:rotate-0`}
               >
-                <div
-                  className={`w-12 h-12 ${item.bg} border ${item.border} flex items-center justify-center mb-4 -rotate-6 rounded-sm`}
+                <Link
+                  to={`/catalog?category=${categorySlug(item.label)}`}
+                  aria-label={`Browse ${item.label} in the catalog`}
+                  className={`group block h-full cursor-pointer p-6 bg-white/[0.06] border-2 border-white/[0.12] ${item.hoverBorder} ${item.shadow} transition-[border-color,box-shadow] duration-300 hover:-translate-y-2 rounded-sm will-change-transform focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-lime ${
+                    i === 0 ? "rotate-1" : i === 1 ? "-rotate-1" : "rotate-2"
+                  } hover:rotate-0`}
                 >
-                  <item.icon className={`w-6 h-6 ${item.color}`} />
-                </div>
-                <h3
-                  className="text-foreground mb-2 uppercase tracking-wide"
-                  style={{ fontFamily: "var(--font-heading)", fontWeight: 700 }}
-                >
-                  {item.label}
-                </h3>
-                <p className="text-muted-foreground text-sm">
-                  {item.description}
-                </p>
+                  <div
+                    className={`w-12 h-12 ${item.bg} border ${item.border} flex items-center justify-center mb-4 -rotate-6 rounded-sm`}
+                  >
+                    <item.icon className={`w-6 h-6 ${item.color}`} />
+                  </div>
+                  <h3
+                    className="text-foreground mb-2 uppercase tracking-wide flex items-center gap-2"
+                    style={{ fontFamily: "var(--font-heading)", fontWeight: 700 }}
+                  >
+                    {item.label}
+                    <ArrowRight
+                      aria-hidden="true"
+                      className={`w-4 h-4 ${item.color} transition-transform duration-300 group-hover:translate-x-1 group-focus-visible:translate-x-1`}
+                    />
+                  </h3>
+                  <p className="text-muted-foreground text-sm">
+                    {item.description}
+                  </p>
+                </Link>
               </motion.div>
             ))}
           </div>
