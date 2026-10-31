@@ -157,8 +157,8 @@ const gallery = [
 ];
 
 const requirements = [
-  { label: "Minecraft", value: "26.2" },
-  { label: "Loader", value: "NeoForge 26.2.0.57+" },
+  { label: "Minecraft", value: "26.3" },
+  { label: "Loader", value: "NeoForge 26.3.0.99+" },
   { label: "Java", value: "25" },
   { label: "Install on", value: "Client & server" },
 ];
@@ -170,7 +170,7 @@ const faqs = [
   },
   {
     q: "What do I need to play ExfilCraft?",
-    a: "Minecraft 26.2 with NeoForge 26.2.0.57 or newer, and Java 25. ExfilCraft has to be installed on both the client and the server. There's no Fabric or Forge version.",
+    a: "Minecraft 26.3 with NeoForge 26.3.0.99 or newer, and Java 25. ExfilCraft has to be installed on both the client and the server. There's no Fabric or Forge version.",
   },
   {
     q: "Is there an ExfilCraft server I can join?",
@@ -284,7 +284,7 @@ export function ExfilCraftPage() {
     <div className="min-h-screen">
       <PageMeta
         title="ExfilCraft: Extraction Survival Minecraft Mod"
-        description="Free extraction survival mod for Minecraft (NeoForge 26.2). Raid hostile worlds for loot, then extract or drop it all. Public server: play.exfilcraft.com"
+        description="Free extraction survival mod for Minecraft (NeoForge 26.3). Raid hostile worlds for loot, then extract or drop it all. Public server: play.exfilcraft.com"
         path={PATH}
         image="/exfilcraft-og.jpg"
       />
@@ -298,7 +298,7 @@ export function ExfilCraftPage() {
               applicationCategory: "GameApplication",
               applicationSubCategory: "Minecraft mod",
               operatingSystem: "Windows, macOS, Linux",
-              softwareRequirements: "Minecraft 26.2, NeoForge 26.2.0.57 or newer, Java 25",
+              softwareRequirements: "Minecraft 26.3, NeoForge 26.3.0.99 or newer, Java 25",
               description: DESCRIPTION,
               url: pageUrl(PATH),
               image: `${SITE_URL}/exfilcraft-og.jpg`,

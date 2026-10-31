@@ -58,7 +58,7 @@ export const minecraftMods: MinecraftMod[] = [
     blurb: "Extraction survival: raid hostile worlds for loot, then reach the portal or drop it all.",
     status: "Released",
     loaders: ["NeoForge"],
-    versions: "26.2",
+    versions: "26.3",
     side: "Client & server",
     curseForgeUrl: curseForge("exfilcraft"),
     modrinthUrl: modrinth("exfilcraft"),
