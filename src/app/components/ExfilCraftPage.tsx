@@ -386,9 +386,9 @@ export function ExfilCraftPage() {
                 className="text-muted-foreground mb-4"
                 style={{ fontSize: "1.125rem" }}
               >
-                ExfilCraft is extraction survival for Minecraft. Carry your kit into hostile raid
-                worlds, fight for loot, and survive the extraction channel to bring it home, or die
-                and drop it all. Build a home base, squad up, and risk it for one more chest.
+                Extraction survival for Minecraft: Deploy into hostile raid dimensions, fight for
+                loot, and extract to bring it home — die and drop it all. Build a home base, squad
+                up, and risk it for one more chest.
               </motion.p>
               <motion.p variants={fadeUp} custom={1} className="text-muted-foreground/60 text-sm mb-8">
                 Free on CurseForge and Modrinth. NeoForge only.
