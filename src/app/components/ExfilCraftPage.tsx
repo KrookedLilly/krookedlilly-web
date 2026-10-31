@@ -130,10 +130,10 @@ const loop = [
 ];
 
 const raidMaps = [
-  { name: "Overworld", window: "45 min", size: "2,000 blocks", entry: "Free" },
-  { name: "Nether", window: "90 min", size: "1,008 blocks", entry: "Nether Key" },
-  { name: "End", window: "90 min", size: "4,000 blocks", entry: "End Key" },
-  { name: "Deep Dark", window: "120 min", size: "800 blocks", entry: "Deep Dark Key" },
+  { name: "Overworld", window: "60 min", size: "2,000 blocks", entry: "Free" },
+  { name: "Nether", window: "90 min", size: "2,000 blocks", entry: "Quest: Requisition" },
+  { name: "End", window: "90 min", size: "4,000 blocks", entry: "Quest: The Same Stone" },
+  { name: "Deep Dark", window: "120 min", size: "800 blocks", entry: "Quest: What The Map Remembers" },
 ];
 
 const features = [
@@ -605,8 +605,9 @@ export function ExfilCraftPage() {
             </table>
           </div>
           <p className="text-muted-foreground/60 text-xs mt-3 text-center">
-            Rebirthed players also unlock Phoenix, an Overworld raid that costs 5 Rebirth Sigils to
-            enter and pays double. These are the defaults; server owners can tune every map.
+            The Nether, End and Deep Dark open once you accept the Cartographer's quest that sends you
+            there. Rebirthed players also unlock Phoenix, an Overworld raid that costs 5 Rebirth Sigils
+            to enter and pays double. These are the defaults; server owners can tune every map.
           </p>
         </div>
       </section>
