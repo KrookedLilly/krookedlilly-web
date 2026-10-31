@@ -7,6 +7,7 @@ import {
   Check,
   Coins,
   Copy,
+  Download,
   ExternalLink,
   Ghost,
   House,
@@ -43,6 +44,12 @@ const WIKI_URL = "https://exfilcraft.dev/";
 const SERVER_ADDRESS = "play.exfilcraft.com";
 const YOUTUBE_ID = "rfLN7Jkrk2o";
 const PATH = "/games/exfilcraft";
+
+// Self-hosted modpack builds (files live in public/downloads/exfilcraft/) while the
+// CurseForge and Modrinth listings await approval. Bump the version with each new pack.
+const MODPACK_VERSION = "1.9.1";
+const MODPACK_CURSEFORGE_URL = `/downloads/exfilcraft/ExfilCraft-${MODPACK_VERSION}-curseforge.zip`;
+const MODPACK_MODRINTH_URL = `/downloads/exfilcraft/ExfilCraft-${MODPACK_VERSION}.mrpack`;
 
 const DESCRIPTION =
   "ExfilCraft is a free extraction survival mod for Minecraft. Carry your kit into hostile raid worlds, fight for loot, and survive the extraction channel to bring it home, or die and drop it all.";
@@ -198,29 +205,51 @@ function SectionLabel({ children, accent }: { children: string; accent: "primary
   );
 }
 
-function DownloadButtons() {
+function DownloadButtons({ centered = false }: { centered?: boolean }) {
   return (
-    <div className="flex flex-wrap gap-3">
-      <a
-        href={CURSEFORGE_URL}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="inline-flex items-center gap-2 px-6 py-3.5 bg-primary hover:bg-primary/90 text-black rounded-md border-2 border-primary-light transition-all hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_rgb(var(--primary-rgb)/0.4)] uppercase tracking-wider text-sm"
-        style={{ fontFamily: "var(--font-heading)", fontWeight: 700 }}
-      >
-        Get it on CurseForge
-        <ExternalLink className="w-4 h-4" />
-      </a>
-      <a
-        href={MODRINTH_URL}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="inline-flex items-center gap-2 px-6 py-3.5 bg-teal hover:bg-teal/90 text-black rounded-md border-2 border-teal-light transition-all hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_rgb(var(--teal-rgb)/0.4)] uppercase tracking-wider text-sm"
-        style={{ fontFamily: "var(--font-heading)", fontWeight: 700 }}
-      >
-        Get it on Modrinth
-        <ExternalLink className="w-4 h-4" />
-      </a>
+    <div className={`flex flex-col gap-3 ${centered ? "items-center" : "items-start"}`}>
+      <div className={`flex flex-wrap gap-3 ${centered ? "justify-center" : ""}`}>
+        <a
+          href={MODPACK_CURSEFORGE_URL}
+          download
+          className="inline-flex items-center gap-2 px-4 py-2.5 rounded-md border-2 border-primary/50 bg-primary/10 text-primary-light hover:bg-primary/20 transition-colors uppercase tracking-wider text-xs"
+          style={{ fontFamily: "var(--font-heading)", fontWeight: 700 }}
+        >
+          <Download className="w-4 h-4" />
+          CurseForge Modpack {MODPACK_VERSION} (.zip)
+        </a>
+        <a
+          href={MODPACK_MODRINTH_URL}
+          download
+          className="inline-flex items-center gap-2 px-4 py-2.5 rounded-md border-2 border-teal/50 bg-teal/10 text-teal-light hover:bg-teal/20 transition-colors uppercase tracking-wider text-xs"
+          style={{ fontFamily: "var(--font-heading)", fontWeight: 700 }}
+        >
+          <Download className="w-4 h-4" />
+          Modrinth Modpack {MODPACK_VERSION} (.mrpack)
+        </a>
+      </div>
+      <div className={`flex flex-wrap gap-3 ${centered ? "justify-center" : ""}`}>
+        <a
+          href={CURSEFORGE_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-2 px-6 py-3.5 bg-primary hover:bg-primary/90 text-black rounded-md border-2 border-primary-light transition-all hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_rgb(var(--primary-rgb)/0.4)] uppercase tracking-wider text-sm"
+          style={{ fontFamily: "var(--font-heading)", fontWeight: 700 }}
+        >
+          Get it on CurseForge
+          <ExternalLink className="w-4 h-4" />
+        </a>
+        <a
+          href={MODRINTH_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-2 px-6 py-3.5 bg-teal hover:bg-teal/90 text-black rounded-md border-2 border-teal-light transition-all hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_rgb(var(--teal-rgb)/0.4)] uppercase tracking-wider text-sm"
+          style={{ fontFamily: "var(--font-heading)", fontWeight: 700 }}
+        >
+          Get it on Modrinth
+          <ExternalLink className="w-4 h-4" />
+        </a>
+      </div>
     </div>
   );
 }
@@ -783,7 +812,7 @@ export function ExfilCraftPage() {
               Grab ExfilCraft, hop on {SERVER_ADDRESS}, and see how much you're willing to risk.
             </motion.p>
             <motion.div variants={fadeUp} custom={2} className="flex justify-center">
-              <DownloadButtons />
+              <DownloadButtons centered />
             </motion.div>
           </motion.div>
         </div>
