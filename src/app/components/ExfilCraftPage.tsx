@@ -49,7 +49,30 @@ const PATH = "/games/exfilcraft";
 // CurseForge and Modrinth listings await approval. Bump the version with each new pack.
 const MODPACK_VERSION = "1.9.1";
 const MODPACK_CURSEFORGE_URL = `/downloads/exfilcraft/ExfilCraft-${MODPACK_VERSION}-curseforge.zip`;
-const MODPACK_MODRINTH_URL = `/downloads/exfilcraft/ExfilCraft-${MODPACK_VERSION}.mrpack`;
+const MODPACK_MODRINTH_FILE = `ExfilCraft-${MODPACK_VERSION}.mrpack`;
+const MODPACK_MODRINTH_URL = `/downloads/exfilcraft/${MODPACK_MODRINTH_FILE}`;
+
+// An .mrpack is a zip inside. Safari sniffs that, renames the download to .zip and may
+// auto-unpack it, and GitHub Pages won't let us send a Content-Type to stop it. Handing
+// Safari a blob typed as opaque binary keeps the .mrpack name. Falls back to the plain link.
+async function downloadMrpack(e: React.MouseEvent<HTMLAnchorElement>) {
+  e.preventDefault();
+  try {
+    const res = await fetch(MODPACK_MODRINTH_URL);
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    const blob = new Blob([await res.arrayBuffer()], { type: "application/octet-stream" });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = MODPACK_MODRINTH_FILE;
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    setTimeout(() => URL.revokeObjectURL(url), 10_000);
+  } catch {
+    window.location.href = MODPACK_MODRINTH_URL;
+  }
+}
 
 const DESCRIPTION =
   "ExfilCraft is a free extraction survival mod for Minecraft. Carry your kit into hostile raid worlds, fight for loot, and survive the extraction channel to bring it home, or die and drop it all.";
@@ -220,7 +243,8 @@ function DownloadButtons({ centered = false }: { centered?: boolean }) {
         </a>
         <a
           href={MODPACK_MODRINTH_URL}
-          download
+          download={MODPACK_MODRINTH_FILE}
+          onClick={downloadMrpack}
           className="inline-flex items-center gap-2 px-4 py-2.5 rounded-md border-2 border-teal/50 bg-teal/10 text-teal-light hover:bg-teal/20 transition-colors uppercase tracking-wider text-xs"
           style={{ fontFamily: "var(--font-heading)", fontWeight: 700 }}
         >
