@@ -1,4 +1,4 @@
-import imgExfilCraftHero from "@/assets/exfilcraft-portal.webp";
+import imgExfilCraftHero from "@/assets/exfilcraft-banner.webp";
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "motion/react";
@@ -314,10 +314,10 @@ export function HomePage() {
               className="group block bg-white/[0.06] border-2 border-white/[0.12] hover:border-primary-light/70 rounded-sm overflow-hidden transition-all hover:-translate-y-1 hover:shadow-[8px_8px_0px_0px_rgb(var(--primary-rgb)/0.12)] rotate-[0.5deg] hover:rotate-0"
             >
               <div className="grid grid-cols-1 lg:grid-cols-5">
-                <div className="relative lg:col-span-3 aspect-video lg:aspect-auto lg:min-h-[22rem] overflow-hidden bg-black/20">
+                <div className="relative lg:col-span-3 aspect-[1201/400] lg:aspect-auto lg:min-h-[22rem] overflow-hidden bg-black/20">
                   <ImageWithFallback
                     src={imgExfilCraftHero}
-                    alt="ExfilCraft: an extraction portal beam rising over a Minecraft valley at dusk"
+                    alt="ExfilCraft, a KrookedLilly modpack: the logo over a Minecraft valley at dusk"
                     className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
                 </div>

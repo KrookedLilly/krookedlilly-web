@@ -17,8 +17,7 @@ import {
   Users,
   Newspaper,
 } from "lucide-react";
-import imgTitle from "@/assets/exfilcraft-title.webp";
-import imgHeroBg from "@/assets/exfilcraft-floatingislands.webp";
+import imgBanner from "@/assets/exfilcraft-banner.webp";
 import imgRaidMap from "@/assets/exfilcraft-raidmap.webp";
 import imgSupplyDrops from "@/assets/exfilcraft-supplydrops.webp";
 import imgFirstExtract from "@/assets/exfilcraft-firstextract.webp";
@@ -399,31 +398,28 @@ export function ExfilCraftPage() {
             Back to Catalog
           </Link>
 
-          {/* Banner: title art over a sunset raid world */}
+          {/* Banner: logo art over a sunset raid world, with the tagline beneath */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: "easeOut" as const }}
             className="relative overflow-hidden rounded-sm border-2 border-white/[0.12] mb-12"
           >
-            <ImageWithFallback
-              src={imgHeroBg}
-              alt=""
-              className="absolute inset-0 w-full h-full object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-background via-background/30 to-transparent" />
-            <div className="relative px-6 pt-16 pb-10 sm:pt-24 sm:pb-14 flex flex-col items-center text-center">
-              <h1 className="w-full max-w-2xl">
-                <span className="sr-only">ExfilCraft: extraction survival Minecraft mod</span>
-                <img
-                  src={imgTitle}
-                  alt=""
-                  aria-hidden="true"
-                  className="w-full h-auto drop-shadow-[0_6px_24px_rgba(0,0,0,0.6)]"
-                />
-              </h1>
+            <h1>
+              <span className="sr-only">ExfilCraft: extraction survival Minecraft mod</span>
+              <img
+                src={imgBanner}
+                alt=""
+                aria-hidden="true"
+                width={1201}
+                height={400}
+                fetchPriority="high"
+                className="block w-full h-auto"
+              />
+            </h1>
+            <div className="px-6 py-6 sm:py-8 flex flex-col items-center text-center">
               <p
-                className="mt-6 text-2xl sm:text-3xl text-foreground"
+                className="text-2xl sm:text-3xl text-foreground"
                 style={{ fontFamily: "var(--font-display)" }}
               >
                 Infil. Loot. Exfil.
