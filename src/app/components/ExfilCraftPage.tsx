@@ -45,10 +45,15 @@ const YOUTUBE_ID = "rfLN7Jkrk2o";
 const PATH = "/games/exfilcraft";
 
 // Self-hosted modpack builds (files live in public/downloads/exfilcraft/) while the
-// CurseForge and Modrinth listings await approval. Bump the version with each new pack.
-const MODPACK_VERSION = "1.9.1";
-const MODPACK_CURSEFORGE_URL = `/downloads/exfilcraft/ExfilCraft-${MODPACK_VERSION}-curseforge.zip`;
-const MODPACK_MODRINTH_FILE = `ExfilCraft-${MODPACK_VERSION}.mrpack`;
+// CurseForge and Modrinth listings await approval. Bump each version with each new pack.
+// The CurseForge pack can only be built once CurseForge has approved the ExfilCraft jar it
+// pins, so it can trail the Modrinth one; null hides its button until that pack exists.
+const MODPACK_MODRINTH_VERSION = "1.10.0";
+const MODPACK_CURSEFORGE_VERSION: string | null = null;
+const MODPACK_CURSEFORGE_URL = MODPACK_CURSEFORGE_VERSION
+  ? `/downloads/exfilcraft/ExfilCraft-${MODPACK_CURSEFORGE_VERSION}-curseforge.zip`
+  : null;
+const MODPACK_MODRINTH_FILE = `ExfilCraft-${MODPACK_MODRINTH_VERSION}.mrpack`;
 const MODPACK_MODRINTH_URL = `/downloads/exfilcraft/${MODPACK_MODRINTH_FILE}`;
 
 // An .mrpack is a zip inside. Safari sniffs that, renames the download to .zip and may
@@ -231,15 +236,17 @@ function DownloadButtons({ centered = false }: { centered?: boolean }) {
   return (
     <div className={`flex flex-col gap-3 ${centered ? "items-center" : "items-start"}`}>
       <div className={`flex flex-wrap gap-3 ${centered ? "justify-center" : ""}`}>
-        <a
-          href={MODPACK_CURSEFORGE_URL}
-          download
-          className="inline-flex items-center gap-2 px-4 py-2.5 rounded-md border-2 border-primary/50 bg-primary/10 text-primary-light hover:bg-primary/20 transition-colors uppercase tracking-wider text-xs"
-          style={{ fontFamily: "var(--font-heading)", fontWeight: 700 }}
-        >
-          <Download className="w-4 h-4" />
-          CurseForge Modpack {MODPACK_VERSION} (.zip)
-        </a>
+        {MODPACK_CURSEFORGE_URL && (
+          <a
+            href={MODPACK_CURSEFORGE_URL}
+            download
+            className="inline-flex items-center gap-2 px-4 py-2.5 rounded-md border-2 border-primary/50 bg-primary/10 text-primary-light hover:bg-primary/20 transition-colors uppercase tracking-wider text-xs"
+            style={{ fontFamily: "var(--font-heading)", fontWeight: 700 }}
+          >
+            <Download className="w-4 h-4" />
+            CurseForge Modpack {MODPACK_CURSEFORGE_VERSION} (.zip)
+          </a>
+        )}
         <a
           href={MODPACK_MODRINTH_URL}
           download={MODPACK_MODRINTH_FILE}
@@ -248,7 +255,7 @@ function DownloadButtons({ centered = false }: { centered?: boolean }) {
           style={{ fontFamily: "var(--font-heading)", fontWeight: 700 }}
         >
           <Download className="w-4 h-4" />
-          Modrinth Modpack {MODPACK_VERSION} (.mrpack)
+          Modrinth Modpack {MODPACK_MODRINTH_VERSION} (.mrpack)
         </a>
       </div>
       <div className={`flex flex-wrap gap-3 ${centered ? "justify-center" : ""}`}>
