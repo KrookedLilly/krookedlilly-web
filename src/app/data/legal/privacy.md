@@ -28,7 +28,7 @@ We do not use your information for automated decisions or profiling, and we do n
 HomunculAi sends information over the internet only in these cases (Terms of Use, Section 7, has the details):
 
 - **License activation and removal:** your license key and the activation ID go to Lemon Squeezy’s license service.
-- **Update checks you start in Settings:** a request for the list of releases goes to our release page on GitHub. It does not include your license key or any usage data.
+- **Update checks** (when you select Check in Settings, or each time HomunculAi starts if you turned that on): a request for the list of releases goes to our release page on GitHub. It does not include your license key or any usage data.
 - **Feedback:** the form opens in your browser on Google Forms. Google receives your answers when the form opens; they are saved as a response only when you select Submit.
 
 Each of these services also receives standard request information, such as your IP address. We do not receive that information from them, except what appears in the Lemon Squeezy order and license records.

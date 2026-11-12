@@ -67,10 +67,9 @@ export function HomunculAiSafetyPage() {
           They do not replace emergency services, a crisis line, or professional help.
         </p>
         <p>
-          These checks run only on your computer. HomunculAi does not send chat messages or usage data
-          to KrookedLilly, so KrookedLilly cannot count the crisis resource notices shown across all
-          copies of HomunculAi. Each copy counts the notices it shows, by calendar year, on that computer
-          only (Settings → About → Crisis resources). How HomunculAi handles this information is in the{" "}
+          These checks run only on your computer, and HomunculAi keeps no record of them. HomunculAi does
+          not send chat messages or usage data to KrookedLilly, so KrookedLilly does not know how many
+          times crisis resources were shown. How HomunculAi handles this information is in the{" "}
           <Link to="/games/homunculai/health-data" className={linkClass}>
             Consumer Health Data Privacy Policy
           </Link>
