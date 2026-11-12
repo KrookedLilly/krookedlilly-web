@@ -37,7 +37,7 @@ The messages you write in HomunculAi’s chat go to the AI you connect and its p
 
 ## Who else receives information
 
-- **Lemon Squeezy** ([CHECK: confirm the current legal entity name on the Lemon Squeezy dashboard; the draft says Link, LLC, formerly Lemon Squeezy LLC, part of Stripe]) sells HomunculAi licenses as merchant of record. It is responsible for your payment and billing information under its own privacy policy: lemonsqueezy.com/privacy [CHECK: confirm this address].
+- **Lemon Squeezy** (Sold through Link, LLC, formerly Lemon Squeezy LLC; part of Stripe) sells HomunculAi licenses as merchant of record. It is responsible for your payment and billing information under its own privacy policy: lemonsqueezy.com/privacy.
 - **Our email provider** [FILL IN: name of the provider that hosts the krookedlilly.com mailbox] stores the email you send us.
 - **Google** hosts the feedback form (Google’s privacy policy applies).
 - **GitHub** hosts our website and release downloads (GitHub’s privacy statement applies).
