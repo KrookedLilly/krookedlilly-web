@@ -1,3 +1,7 @@
+## Manufacturer and contact
+
+HomunculAi is made by **KrookedLilly LLC**, 506 N. Sullivan Rd, STE #F182, Spokane, WA 99037, USA. Email: **support@krookedlilly.com**. Website: www.krookedlilly.com.
+
 ## Reporting a vulnerability
 
 To report a security vulnerability in HomunculAi, email **support@krookedlilly.com** with “Security” in the subject line. Include the HomunculAi version (Settings → About), your operating system, and the steps to reproduce the issue. Do not include personal data that we do not need.
@@ -6,7 +10,7 @@ We will confirm that we received your report within 5 business days, keep you in
 
 ## Supported versions
 
-Security fixes are released as HomunculAi updates (Settings → About → Updates). Only the latest version receives fixes. HomunculAi does not install updates automatically, so install updates when they are available.
+Security fixes are released as HomunculAi updates (Settings → About → Version & updates). Only the latest version receives fixes. HomunculAi never installs updates on its own. Turn on “Check for updates when HomunculAi starts” to be told when one is available, and install updates when they are available.
 
 ## What is in scope
 
