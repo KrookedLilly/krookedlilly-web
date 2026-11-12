@@ -10,6 +10,8 @@ export function HomunculAiWhatIsAIPage() {
       metaTitle="HomunculAi: About AI"
       description="What AI is, what it can and cannot do, and how it works with HomunculAi."
       path="/games/homunculai/what-is-ai"
+      // Site convention: legal pages stay out of search results (as before v4).
+      noIndex
       icon={<BookOpen className="w-4 h-4" />}
       subtitle={<em>What AI is, what it can and cannot do, and how it works with HomunculAi.</em>}
     >
