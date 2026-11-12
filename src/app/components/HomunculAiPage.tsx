@@ -152,11 +152,11 @@ const faqs = [
   },
   {
     q: "Is it free?",
-    a: "There's a 7-day free trial: no account, no payment, no email required. After that, it's $4.99 one-time with no subscription.",
+    a: "There's a 7-day free trial: no account, no payment, no email required. After that, a license is $4.99 one-time with no subscription.",
   },
   {
     q: "Does HomunculAi collect my data?",
-    a: "No telemetry, no tracking. HomunculAi makes two outbound calls: one when you activate your license, and one when you manually check for updates from Settings. Everything else stays on your machine.",
+    a: "No telemetry, no tracking. HomunculAi goes online only to activate or remove your license (Lemon Squeezy) and when you check for updates in Settings (GitHub). Send feedback opens a Google Form in your browser. Everything else stays on your computer.",
   },
   {
     q: "Will my AI remember me between sessions?",
@@ -335,7 +335,31 @@ export function HomunculAiPage() {
                   className="text-muted-foreground/70 hover:text-teal-light transition-colors uppercase tracking-wider"
                   style={{ fontFamily: "var(--font-heading)", fontWeight: 600 }}
                 >
-                  New to AI?
+                  About AI
+                </Link>
+                <span className="text-muted-foreground/30">&middot;</span>
+                <Link
+                  to="/games/homunculai/privacy"
+                  className="text-muted-foreground/70 hover:text-primary-light transition-colors uppercase tracking-wider"
+                  style={{ fontFamily: "var(--font-heading)", fontWeight: 600 }}
+                >
+                  Privacy
+                </Link>
+                <span className="text-muted-foreground/30">&middot;</span>
+                <Link
+                  to="/games/homunculai/safety"
+                  className="text-muted-foreground/70 hover:text-teal-light transition-colors uppercase tracking-wider"
+                  style={{ fontFamily: "var(--font-heading)", fontWeight: 600 }}
+                >
+                  Safety
+                </Link>
+                <span className="text-muted-foreground/30">&middot;</span>
+                <Link
+                  to="/games/homunculai/security"
+                  className="text-muted-foreground/70 hover:text-primary-light transition-colors uppercase tracking-wider"
+                  style={{ fontFamily: "var(--font-heading)", fontWeight: 600 }}
+                >
+                  Security
                 </Link>
               </motion.div>
 
@@ -604,14 +628,14 @@ export function HomunculAiPage() {
               className="text-muted-foreground mb-6 max-w-lg mx-auto"
               style={{ fontSize: "1.05rem" }}
             >
-              HomunculAi is live for Windows. Sold direct so it goes straight to the people making it.
+              HomunculAi is live for Windows. Licenses are sold through krookedlilly.com, so the money goes straight to the people making it. Lemon Squeezy handles checkout as merchant of record.
             </motion.p>
             <motion.p
               variants={fadeUp}
               custom={3}
               className="text-muted-foreground/70 mb-6 max-w-lg mx-auto text-sm"
             >
-              7-day free trial: no account, no payment, no email required.<br />$4.99 one time payment after. No subscription.
+              7-day free trial: no account, no payment, no email required.<br />A license is $4.99, one time, after that. No subscription.
             </motion.p>
 
             {/* Legal links strip above buy buttons */}
@@ -641,7 +665,31 @@ export function HomunculAiPage() {
                 className="text-muted-foreground/70 hover:text-teal-light transition-colors uppercase tracking-wider"
                 style={{ fontFamily: "var(--font-heading)", fontWeight: 600 }}
               >
-                New to AI?
+                About AI
+              </Link>
+              <span className="text-muted-foreground/30">&middot;</span>
+              <Link
+                to="/games/homunculai/privacy"
+                className="text-muted-foreground/70 hover:text-primary-light transition-colors uppercase tracking-wider"
+                style={{ fontFamily: "var(--font-heading)", fontWeight: 600 }}
+              >
+                Privacy
+              </Link>
+              <span className="text-muted-foreground/30">&middot;</span>
+              <Link
+                to="/games/homunculai/safety"
+                className="text-muted-foreground/70 hover:text-teal-light transition-colors uppercase tracking-wider"
+                style={{ fontFamily: "var(--font-heading)", fontWeight: 600 }}
+              >
+                Safety
+              </Link>
+              <span className="text-muted-foreground/30">&middot;</span>
+              <Link
+                to="/games/homunculai/security"
+                className="text-muted-foreground/70 hover:text-primary-light transition-colors uppercase tracking-wider"
+                style={{ fontFamily: "var(--font-heading)", fontWeight: 600 }}
+              >
+                Security
               </Link>
             </motion.div>
 
@@ -654,9 +702,25 @@ export function HomunculAiPage() {
                 style={{ fontFamily: "var(--font-heading)", fontWeight: 700 }}
               >
                 <ShoppingBag className="w-5 h-5" />
-                Buy Now
+                Get a license &mdash; $4.99
               </a>
             </motion.div>
+
+            <motion.p
+              variants={fadeUp}
+              custom={5}
+              className="text-muted-foreground/70 text-xs mt-3 max-w-xs mx-auto"
+              style={{ fontFamily: "var(--font-heading)", fontWeight: 500, lineHeight: 1.6 }}
+            >
+              You receive a license to use HomunculAi, not ownership of the software. See the{" "}
+              <Link
+                to="/games/homunculai/terms"
+                className="underline underline-offset-2 hover:text-foreground transition-colors"
+              >
+                Terms of Use
+              </Link>
+              .
+            </motion.p>
 
             {/* Inline 18+ / regional note below buy buttons */}
             <motion.p

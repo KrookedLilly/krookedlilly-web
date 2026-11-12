@@ -96,6 +96,27 @@ export const routes: RouteRecord[] = [
           })),
       },
       {
+        path: "games/homunculai/privacy",
+        lazy: () =>
+          import("./components/HomunculAiPrivacyPage").then((m) => ({
+            Component: m.HomunculAiPrivacyPage,
+          })),
+      },
+      {
+        path: "games/homunculai/security",
+        lazy: () =>
+          import("./components/HomunculAiSecurityPage").then((m) => ({
+            Component: m.HomunculAiSecurityPage,
+          })),
+      },
+      {
+        path: "games/homunculai/safety",
+        lazy: () =>
+          import("./components/HomunculAiSafetyPage").then((m) => ({
+            Component: m.HomunculAiSafetyPage,
+          })),
+      },
+      {
         path: "about",
         lazy: () =>
           import("./components/AboutPage").then((m) => ({
