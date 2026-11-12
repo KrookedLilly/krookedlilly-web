@@ -347,6 +347,14 @@ export function HomunculAiPage() {
                 </Link>
                 <span className="text-muted-foreground/30">&middot;</span>
                 <Link
+                  to="/games/homunculai/health-data"
+                  className="text-muted-foreground/70 hover:text-primary-light transition-colors uppercase tracking-wider"
+                  style={{ fontFamily: "var(--font-heading)", fontWeight: 600 }}
+                >
+                  Consumer Health Data
+                </Link>
+                <span className="text-muted-foreground/30">&middot;</span>
+                <Link
                   to="/games/homunculai/safety"
                   className="text-muted-foreground/70 hover:text-teal-light transition-colors uppercase tracking-wider"
                   style={{ fontFamily: "var(--font-heading)", fontWeight: 600 }}
@@ -635,7 +643,7 @@ export function HomunculAiPage() {
               custom={3}
               className="text-muted-foreground/70 mb-6 max-w-lg mx-auto text-sm"
             >
-              7-day free trial: no account, no payment, no email required.<br />A license is $4.99, one time, after that. No subscription.
+              7-day free trial: no account, no payment, no email required.<br />A license is $4.99, one time, after that. No subscription.<br />Prices are in US dollars. Any sales tax or VAT is added at checkout, where it applies.
             </motion.p>
 
             {/* Legal links strip above buy buttons */}
@@ -674,6 +682,14 @@ export function HomunculAiPage() {
                 style={{ fontFamily: "var(--font-heading)", fontWeight: 600 }}
               >
                 Privacy
+              </Link>
+              <span className="text-muted-foreground/30">&middot;</span>
+              <Link
+                to="/games/homunculai/health-data"
+                className="text-muted-foreground/70 hover:text-primary-light transition-colors uppercase tracking-wider"
+                style={{ fontFamily: "var(--font-heading)", fontWeight: 600 }}
+              >
+                Consumer Health Data
               </Link>
               <span className="text-muted-foreground/30">&middot;</span>
               <Link

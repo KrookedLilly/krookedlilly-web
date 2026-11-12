@@ -117,6 +117,13 @@ export const routes: RouteRecord[] = [
           })),
       },
       {
+        path: "games/homunculai/health-data",
+        lazy: () =>
+          import("./components/HomunculAiHealthDataPage").then((m) => ({
+            Component: m.HomunculAiHealthDataPage,
+          })),
+      },
+      {
         path: "about",
         lazy: () =>
           import("./components/AboutPage").then((m) => ({

@@ -57,7 +57,17 @@ We do not keep our own database of orders. Order and license records stay with t
 
 Depending on where you live, you may have the right to access, correct, delete, or receive a copy of your information, to object to or restrict how we use it, and to withdraw consent where we rely on it. To use any of these rights, write to **support@krookedlilly.com**. We may need to confirm that the request comes from the purchaser, for example by replying to the email address on the order.
 
-If you are in the EU or the UK, you can also complain to your local data protection authority.
+## Complaints
+
+If you are unhappy with how we handle your information, write to **support@krookedlilly.com** with “Privacy complaint” in the subject line. We confirm that we received your complaint within 30 days (usually much sooner), look into it without undue delay, and tell you the outcome. You can also complain to a data protection authority: in the UK, the Information Commissioner’s Office (ico.org.uk); in the EU, the authority in your country; in India, the Data Protection Board of India.
+
+## Buyers in India
+
+For buyers in India, KrookedLilly is the Data Fiduciary for the order and support information described above, and **support@krookedlilly.com** is the contact for questions and grievances about your personal data. You can ask us to access, correct, or erase your information, and to name someone to act for you. We answer grievances within the time the Digital Personal Data Protection Rules allow.
+
+## If something goes wrong
+
+We protect the information we hold with reasonable security measures. If a breach affects your information, we will tell you and the authorities that the law requires us to tell, without undue delay.
 
 ## Children
 
