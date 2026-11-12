@@ -38,7 +38,7 @@ export function HomunculAiSafetyPage() {
         <p>To keep it clear that you are dealing with an AI, HomunculAi:</p>
         <ul className="list-disc pl-6 space-y-1.5">
           <li>
-            shows “This is an AI agent, not a human.” under the AI’s name on the avatar when an AI connects, at least every three hours while
+            shows “This is an AI agent, not a human.” in the avatar window, under the AI’s name, when an AI connects, at least every three hours while
             it stays connected, and whenever the AI writes that it is human;
           </li>
           <li>instructs connected AIs never to claim to be human;</li>
