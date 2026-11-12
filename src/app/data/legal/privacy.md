@@ -8,7 +8,7 @@ HomunculAi is made by KrookedLilly LLC (“KrookedLilly”), based in Washington
 
 ## The short version
 
-- The HomunculAi app keeps its data on your computer. It has no accounts, telemetry, analytics, or crash reporting, and it does not send us your chats, activity, or settings.
+- The HomunculAi app keeps its data on your computer. It has no accounts, telemetry, analytics, or crash reporting, and it does not send us your activity or settings.
 - When you buy a license, Lemon Squeezy (our merchant of record) handles the payment and sends us your name, email address, country, and order details. We never receive your card details.
 - We use that information only to provide your license, support, and refunds, and to keep the records the law requires. We do not sell or share it for advertising.
 
@@ -33,7 +33,7 @@ HomunculAi sends information over the internet only in these cases (Terms of Use
 
 Each of these services also receives standard request information, such as your IP address. We do not receive that information from them, except what appears in the Lemon Squeezy order and license records.
 
-The messages you write in HomunculAi’s chat go to the AI you connect and its provider, under that provider’s privacy policy. We never receive them.
+HomunculAi has no chat of its own: you talk to your AI in your AI app, and what you write there goes to your AI’s provider under that provider’s privacy policy. HomunculAi and KrookedLilly never receive it.
 
 ## Who else receives information
 

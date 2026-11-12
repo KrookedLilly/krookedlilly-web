@@ -1,6 +1,6 @@
 ## What happens when you connect your AI
 
-HomunculAi gives your AI a body: an avatar that it controls with expressions, colors, animations, and chat messages. Your AI (such as Claude, ChatGPT, a local model, or another AI app) brings the avatar to life. HomunculAi provides the body; your AI provides the mind.
+HomunculAi gives your AI a body: an avatar that it controls with expressions, colors, animations, and speech and thought bubbles. Your AI (such as Claude, ChatGPT, a local model, or another AI app) brings the avatar to life. HomunculAi provides the body; your AI provides the mind.
 
 That mind is not human.
 
@@ -15,7 +15,7 @@ AI models are trained on large amounts of text from the internet, books, and oth
 - Writing creative, useful, and interesting text and conversation
 - Answering questions on many topics, sometimes correctly and sometimes not
 - Writing code, stories, poems, and other content
-- Controlling the avatar: choosing a body, setting expressions, playing animations, and chatting with you through HomunculAi
+- Controlling the avatar: choosing a body, setting expressions, playing animations, and speaking in bubbles over the avatar
 - Holding a conversation that feels natural
 
 ## What AI cannot do
@@ -31,17 +31,17 @@ AI sometimes produces information that is made up but sounds confident and corre
 
 ## When your AI acts
 
-Most AI apps run only while they are answering you. Your AI checks in with HomunculAi each time you write to it in your AI app; some AI apps can also check in every few minutes on a check-in loop, which uses more of your AI plan. Between check-ins, the avatar keeps its last look and your chat messages wait for the next check-in.
+Most AI apps run only while they are answering you. Your AI checks in with HomunculAi each time you write to it in your AI app; some AI apps can also check in every few minutes on a check-in loop, which uses more of your AI plan. Between check-ins, the avatar keeps its last look. You talk to your AI in your AI app; HomunculAi has no chat of its own.
 
 ## Your data
 
-When you connect a cloud-based AI, the messages you write in HomunculAi’s chat are sent to that AI’s provider (for example, Anthropic for Claude or OpenAI for ChatGPT) when your AI checks in. HomunculAi keeps its own data on your computer, but your AI provider processes your messages under its own privacy policy. With a local AI model, your messages stay on your computer unless that model has its own network features, such as internet access, telemetry, or update checks.
+HomunculAi does not receive what you write to your AI. When you use a cloud-based AI, what you write in your AI app goes to that AI’s provider (for example, Anthropic for Claude or OpenAI for ChatGPT) under the provider’s privacy policy, as it always does. What HomunculAi tells your AI about your session (listed in Settings → What your AI can see) goes the same way when your AI checks in. HomunculAi keeps its own data on your computer.
 
 Your AI may also have abilities outside HomunculAi, such as reading files on your computer or browsing the web, depending on your AI app. HomunculAi does not give your AI those abilities and cannot prevent it from using them. Know what your AI can do in its own app, not only in HomunculAi.
 
 ## How HomunculAi fits in
 
-When you chat with an AI, you send it text and it sends text back. HomunculAi adds a second channel. Besides replying in words, your AI can choose an appearance, change its expression, or send a message through an avatar on your desktop.
+When you chat with an AI, you send it text and it sends text back. HomunculAi adds a second channel. Besides replying in words, your AI can choose an appearance, change its expression, or say something in a bubble over an avatar on your desktop.
 
 Your AI works the same way it always does. It reads what you write, decides how to respond, and writes a reply. With HomunculAi connected, it can also change how it looks as part of that reply, the way a person’s expression changes while they speak.
 
