@@ -1,9 +1,12 @@
 Read these Terms before you use HomunculAi. To use the app, select **Accept**. If you select **Decline and quit**, the app closes and you cannot use it.
 
+These Terms are an agreement between you and KrookedLilly LLC (“KrookedLilly”), based in Washington, USA.
+
 **What changed in Version 4.** This summary is for convenience only; the full Terms below control.
 - HomunculAi is described as it works today: how your AI receives your messages (Section 5), check-in loops (Section 5), what your AI can see (Section 5), and every network request the app makes (Section 7).
 - Section 7 now also describes the trial information stored on your computer, the records HomunculAi keeps, what uninstalling leaves behind, and the changes HomunculAi makes to AI apps you set up.
 - Section 10 lists where you can download HomunculAi and how refunds work. Section 11 describes sales restrictions more accurately.
+- Section 2 now lets you transfer your license to another person after you remove it from your computers.
 - Sections 12 and 13 state more clearly the consumer rights and liability that these Terms cannot limit.
 - Section 4 gives crisis resources and describes how HomunculAi shows them in the chat. Section 15 describes the AI disclosure HomunculAi shows.
 
@@ -17,13 +20,15 @@ HomunculAi is a desktop application that gives an AI that you choose and connect
 
 ## 2. License Grant
 
-KrookedLilly grants you a personal, non-exclusive, non-transferable license to install and use HomunculAi on devices you own or control, for personal or internal business use, subject to these Terms. This license applies only to copies of HomunculAi obtained from an authorized source (see Section 10).
+KrookedLilly grants you a personal, non-exclusive license to install and use HomunculAi on devices you own or control, for personal or internal business use, subject to these Terms. This license applies only to copies of HomunculAi obtained from an authorized source (see Section 10).
 
 **When you pay for HomunculAi, you are buying a license to use the software under these Terms, not ownership of the software.** KrookedLilly may end your license only if you materially breach these Terms. Once activated, HomunculAi does not need KrookedLilly’s or any seller’s servers to start.
 
 **You must be at least 18 years old, or the age of majority in your jurisdiction, whichever is higher, to use HomunculAi.** By accepting these Terms, you confirm that you meet this age requirement. HomunculAi is not designed for or directed to children or teenagers.
 
-You may not redistribute, resell, sublicense, reverse engineer, decompile, disassemble, modify, or remove proprietary notices from the app, except where such restrictions are prohibited by law. Open-source components included in HomunculAi are licensed under their own licenses, listed in the THIRD-PARTY-NOTICES.txt file in HomunculAi’s program folder; nothing in these Terms limits your rights under those licenses.
+**Transferring your license.** You may give your license to another person if you first select Remove license in Settings on every computer where you activated it, and then give them your license key. From then on, the license is theirs, and you may no longer use HomunculAi under it. Apart from this, you may not transfer, rent, or lend your license.
+
+Except for transferring your license as described above, you may not redistribute, resell, sublicense, reverse engineer, decompile, disassemble, modify, or remove proprietary notices from the app, except where such restrictions are prohibited by law. Open-source components included in HomunculAi are licensed under their own licenses, listed in the THIRD-PARTY-NOTICES.txt file in HomunculAi’s program folder; nothing in these Terms limits your rights under those licenses.
 
 ## 3. AI-Generated Content — No Endorsement, No Review, No Guarantee
 
@@ -205,7 +210,7 @@ These Terms are governed by the laws of the State of Washington, USA, without re
 
 **No waiver.** KrookedLilly’s failure to enforce any right or provision of these Terms is not a waiver of that right or provision. No waiver is effective unless made in writing and signed by an authorized representative of KrookedLilly.
 
-**Assignment.** You may not assign or transfer these Terms or any rights or licenses granted under them, by operation of law or otherwise, without KrookedLilly’s prior written consent. KrookedLilly may assign these Terms, in whole or in part, without restriction — including in connection with a merger, acquisition, reorganization, or sale of assets. Any unauthorized assignment by you is void.
+**Assignment.** Except for transferring your license as Section 2 allows, you may not assign or transfer these Terms or any rights or licenses granted under them, by operation of law or otherwise, without KrookedLilly’s prior written consent. KrookedLilly may assign these Terms, in whole or in part, without restriction — including in connection with a merger, acquisition, reorganization, or sale of assets. Any unauthorized assignment by you is void.
 
 **Force majeure.** KrookedLilly is not liable for any failure or delay in performance caused by events beyond its reasonable control, including acts of God, natural disasters, war, terrorism, civil unrest, labor disputes, internet or infrastructure outages, government actions, or pandemics.
 

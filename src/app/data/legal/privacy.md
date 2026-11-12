@@ -1,10 +1,10 @@
-**Last updated: [FILL IN: publication date]**
+**Last updated: [release date]**
 
 This notice explains what personal information KrookedLilly receives when you buy, use, or contact us about HomunculAi, and what we do with it. HomunculAi’s Terms of Use (Section 7) describe what the app itself does on your computer.
 
 ## Who we are
 
-HomunculAi is made by KrookedLilly, [FILL IN: legal name of the owner(s) or business], Spokane, Washington, USA. Contact: **support@krookedlilly.com**.
+HomunculAi is made by KrookedLilly LLC (“KrookedLilly”), based in Washington, USA. Contact: **support@krookedlilly.com**.
 
 ## The short version
 
@@ -38,7 +38,7 @@ The messages you write in HomunculAi’s chat go to the AI you connect and its p
 ## Who else receives information
 
 - **Lemon Squeezy** (Sold through Link, LLC, formerly Lemon Squeezy LLC; part of Stripe) sells HomunculAi licenses as merchant of record. It is responsible for your payment and billing information under its own privacy policy: lemonsqueezy.com/privacy.
-- **Our email provider** [FILL IN: name of the provider that hosts the krookedlilly.com mailbox] stores the email you send us.
+- **Our email hosting provider** stores the email you send us.
 - **Google** hosts the feedback form (Google’s privacy policy applies).
 - **GitHub** hosts our website and release downloads (GitHub’s privacy statement applies).
 - Authorities, when the law requires it.
@@ -51,7 +51,7 @@ We and our service providers are in the United States, and your information is s
 
 ## How long we keep it
 
-We keep order and license records for [FILL IN: how long order and license records are kept; the draft suggests as long as your license may need support, and at least the period tax law requires, typically 7 years]. We keep support email for [FILL IN: how long support email is kept; the draft suggests 2 years] after your last message, unless we need it longer for an open issue. You can ask us to delete your information earlier where the law allows.
+We do not keep our own database of orders. Order and license records stay with the seller (currently Lemon Squeezy), which keeps them under its own retention policy, and we look them up in the seller’s dashboard when you ask for support or a refund. The order notices the seller emails to us are kept with our support email. We keep support email as long as we need it to answer you and to handle any refund, license, or legal question that follows from it, and then delete it. You can ask us to delete your information earlier where the law allows.
 
 ## Your rights
 

@@ -9,7 +9,7 @@ export function HomunculAiPrivacyPage() {
       metaTitle="HomunculAi Privacy Notice"
       description="What personal information KrookedLilly receives when you buy, use, or contact us about HomunculAi, and what we do with it."
       path="/games/homunculai/privacy"
-      // Stays out of the sitemap until the owner fills the bracketed blanks.
+      // Site convention: legal pages stay out of search results.
       noIndex
       icon={<ShieldCheck className="w-4 h-4" />}
     >

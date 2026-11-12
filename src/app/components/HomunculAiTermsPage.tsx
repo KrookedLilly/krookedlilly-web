@@ -15,7 +15,7 @@ export function HomunculAiTermsPage() {
       // Site convention: legal pages stay out of search results (as before v4).
       noIndex
       icon={<FileText className="w-4 h-4" />}
-      subtitle={<>Version 4 &middot; Effective {TERMS_EFFECTIVE} &middot; Publisher: KrookedLilly, Spokane, Washington, USA</>}
+      subtitle={<>Version 4 &middot; Effective {TERMS_EFFECTIVE} &middot; Publisher: KrookedLilly LLC, Washington, USA</>}
     >
       <MarkdownSections md={terms} />
     </LegalShell>
