@@ -347,14 +347,6 @@ export function HomunculAiPage() {
                 </Link>
                 <span className="text-muted-foreground/30">&middot;</span>
                 <Link
-                  to="/games/homunculai/health-data"
-                  className="text-muted-foreground/70 hover:text-primary-light transition-colors uppercase tracking-wider"
-                  style={{ fontFamily: "var(--font-heading)", fontWeight: 600 }}
-                >
-                  Consumer Health Data
-                </Link>
-                <span className="text-muted-foreground/30">&middot;</span>
-                <Link
                   to="/games/homunculai/safety"
                   className="text-muted-foreground/70 hover:text-teal-light transition-colors uppercase tracking-wider"
                   style={{ fontFamily: "var(--font-heading)", fontWeight: 600 }}
@@ -682,14 +674,6 @@ export function HomunculAiPage() {
                 style={{ fontFamily: "var(--font-heading)", fontWeight: 600 }}
               >
                 Privacy
-              </Link>
-              <span className="text-muted-foreground/30">&middot;</span>
-              <Link
-                to="/games/homunculai/health-data"
-                className="text-muted-foreground/70 hover:text-primary-light transition-colors uppercase tracking-wider"
-                style={{ fontFamily: "var(--font-heading)", fontWeight: 600 }}
-              >
-                Consumer Health Data
               </Link>
               <span className="text-muted-foreground/30">&middot;</span>
               <Link

@@ -224,7 +224,6 @@ export const LEGAL_LINKS = [
   { to: "/games/homunculai/sales-restrictions", label: "Sales Restrictions" },
   { to: "/games/homunculai/what-is-ai", label: "About AI" },
   { to: "/games/homunculai/safety", label: "Safety" },
-  { to: "/games/homunculai/health-data", label: "Consumer Health Data" },
   { to: "/games/homunculai/security", label: "Security" },
 ];
 
