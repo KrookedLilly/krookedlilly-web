@@ -38,13 +38,10 @@ export function HomunculAiSafetyPage() {
         <p>To keep it clear that you are dealing with an AI, HomunculAi:</p>
         <ul className="list-disc pl-6 space-y-1.5">
           <li>
-            shows “This is an AI agent, not a human.” when an AI connects, at least every three hours while
+            shows “This is an AI agent, not a human.” under the AI’s name on the avatar when an AI connects, at least every three hours while
             it stays connected, and whenever the AI writes that it is human;
           </li>
-          <li>
-            instructs connected AIs never to claim to be human, to respond with care if you mention suicide,
-            self-harm, or an eating disorder, and never to describe methods of self-harm;
-          </li>
+          <li>instructs connected AIs never to claim to be human;</li>
           <li>lists these crisis resources in the app (Settings → About → Crisis resources).</li>
         </ul>
         <p>These measures do not replace emergency services, a crisis line, or professional help.</p>
