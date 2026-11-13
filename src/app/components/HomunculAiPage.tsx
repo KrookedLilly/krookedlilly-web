@@ -220,7 +220,7 @@ export function HomunculAiPage() {
     <div className="min-h-screen">
       <PageMeta
         title="HomunculAi"
-        description="HomunculAi is a free Windows app that gives the AI you already use a body on your desktop. Your AI picks its look, shows its mood, and shows when it's working, waiting on you or done. No AI inside. Works with Claude Desktop, Claude Code, Cursor, VS Code, Windsurf and other MCP apps."
+        description="HomunculAi is a free Windows app that gives the AI you already use a body on your desktop. Your AI picks its look, shows its mood, and can show when it's working, waiting on you or done. No AI inside. Works with Claude Desktop, Claude Code, Cursor, VS Code, Windsurf and other MCP apps."
         path="/games/homunculai"
         image="/homunculai-og.png"
       />
@@ -239,7 +239,7 @@ export function HomunculAiPage() {
               "availability": "https://schema.org/InStock",
               "seller": { "@id": "https://www.krookedlilly.com/#organization" }
             },
-            "description": "HomunculAi is a free Windows app that gives the AI you already use a body on your desktop. Your AI picks its look, shows its mood, and shows when it's working, waiting on you or done. No AI inside. Works with Claude Desktop, Claude Code, Cursor, VS Code, Windsurf and other MCP apps.",
+            "description": "HomunculAi is a free Windows app that gives the AI you already use a body on your desktop. Your AI picks its look, shows its mood, and can show when it's working, waiting on you or done. No AI inside. Works with Claude Desktop, Claude Code, Cursor, VS Code, Windsurf and other MCP apps.",
             "url": "https://www.krookedlilly.com/games/homunculai",
             "image": "https://www.krookedlilly.com/homunculai-og.png",
             "author": { "@id": "https://www.krookedlilly.com/#organization" },
@@ -303,10 +303,19 @@ export function HomunculAiPage() {
               <motion.p
                 variants={fadeUp}
                 custom={2}
-                className="text-foreground/90 mb-6 italic"
+                className="text-foreground/90 mb-2 italic"
                 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.25rem, 2.5vw, 1.75rem)", lineHeight: 1.2 }}
               >
                 What body will your AI make?
+              </motion.p>
+
+              <motion.p
+                variants={fadeUp}
+                custom={2}
+                className="text-foreground mb-5"
+                style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1rem, 1.8vw, 1.2rem)", lineHeight: 1.3, fontWeight: 600 }}
+              >
+                A desktop body for the AI you already use.
               </motion.p>
 
               <motion.p
@@ -315,7 +324,7 @@ export function HomunculAiPage() {
                 className="text-muted-foreground max-w-md mb-5"
                 style={{ fontSize: "1.05rem", lineHeight: 1.65 }}
               >
-                Right now, your AI lives in an app, a terminal or an editor. HomunculAi gives it a body on your desktop. It picks the look, shows its mood, raises a thought bubble, and shows you whether it's working, waiting on you or done, without you switching windows.
+                Right now, your AI lives in an app, a terminal or an editor. HomunculAi gives it a body on your desktop. It picks the look, shows its mood, raises a thought bubble, and can show you whether it's working, waiting on you or done, without you switching windows.
               </motion.p>
 
               <motion.p
@@ -646,7 +655,7 @@ export function HomunculAiPage() {
                 className="text-muted-foreground max-w-md"
                 style={{ fontSize: "1.05rem", lineHeight: 1.7 }}
               >
-                Working, waiting for you, done, stuck, listening. Each state has its own face, a calm motion, a small mark and a word on the name plate, so you can tell at a glance whether it needs you. Speech bubbles carry what it says, thought bubbles what it's weighing. See how it's doing without switching windows.
+                Working, waiting for you, done, stuck, listening. Your AI can give each state its own face, a calm motion, a small mark and a word on the name plate, so you can tell at a glance whether it needs you. Speech bubbles carry what it says, thought bubbles what it's weighing. Your AI can show how it's doing without you switching windows.
               </p>
               <div className="flex flex-wrap gap-2 mt-5">
                 {["working", "waiting for you", "done", "stuck", "listening"].map((w, k) => (
