@@ -14,6 +14,7 @@ import {
   ChevronLeft,
   ChevronRight,
   ExternalLink,
+  Download,
 } from "lucide-react";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
 import {
@@ -23,6 +24,11 @@ import {
 import { PageMeta } from "./PageMeta";
 import { JsonLd, ORG_REF, SITE_URL, pageUrl } from "./JsonLd";
 import { snackTrayCardImage } from "../assets/snacktray-screenshots";
+
+// Direct DMG for the hero button. Bump the version with each release. GitHub serves
+// release assets with Content-Disposition: attachment, so a plain link downloads it.
+const SNACKTRAY_VERSION = "1.4.1";
+const SNACKTRAY_DMG_URL = `https://github.com/KrookedLilly/snacktray-releases/releases/download/v${SNACKTRAY_VERSION}/SnackTray-${SNACKTRAY_VERSION}.dmg`;
 
 /* ─── animation variants ─── */
 const fadeUp = {
@@ -250,7 +256,25 @@ export function SnackTrayPage() {
                 Built by Krooked. Because the built-in window management made him unreasonably angry
               </motion.p>
 
-              <motion.div variants={fadeUp} custom={4} className="flex flex-wrap gap-3">
+              <motion.div
+                variants={fadeUp}
+                custom={4}
+                className="flex flex-wrap items-center gap-x-4 gap-y-2 mb-6"
+              >
+                <a
+                  href={SNACKTRAY_DMG_URL}
+                  className="inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-teal hover:bg-teal/90 text-black rounded-md border-2 border-teal-light transition-all hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_rgb(var(--teal-rgb)/0.4)] uppercase tracking-wider text-sm"
+                  style={{ fontFamily: "var(--font-heading)", fontWeight: 700 }}
+                >
+                  <Download className="w-4 h-4" />
+                  Download for macOS
+                </a>
+                <span className="text-muted-foreground/60 text-xs">
+                  Version {SNACKTRAY_VERSION} · .dmg
+                </span>
+              </motion.div>
+
+              <motion.div variants={fadeUp} custom={5} className="flex flex-wrap gap-3">
                 <div
                   className="inline-flex items-center gap-2 px-5 py-3 bg-white/[0.04] backdrop-blur-xl border-2 border-white/[0.12] rounded-sm text-muted-foreground"
                   style={{ fontFamily: "var(--font-heading)", fontWeight: 600 }}
