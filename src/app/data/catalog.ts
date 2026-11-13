@@ -148,7 +148,7 @@ export const catalog: CatalogItem[] = [
     platforms: ["Windows"],
     tagline: "What body will your AI make?",
     description:
-      "A free app that gives the AI you already use a body on your desktop. Three styles, work states, custom SVG, speech and thought bubbles. Works with any MCP client",
+      "A free app that gives the AI you already use a body on your desktop. Three styles, work states, custom SVG, speech and thought bubbles. Works with any MCP app",
     image: imgHomunculAiCard,
     imagePosition: "object-cover",
     status: "Released",

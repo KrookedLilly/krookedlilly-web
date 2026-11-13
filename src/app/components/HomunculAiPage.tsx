@@ -3,9 +3,10 @@ import { Link } from "react-router-dom";
 import { motion } from "motion/react";
 import imgHomunculAiHero from "@/assets/homunculai-capsule-vertical.png";
 import homunculAITrailer from "@/assets/homunculai-trailer.mp4";
-import imgHomunculAiSvgDoc from "@/assets/homunculai-svg-document.webp";
-import imgHomunculAiMultiagent from "@/assets/homunculai-multiagent.webp";
-import imgHomunculAiArt from "@/assets/homunculai-art.webp";
+import imgHomunculAiDraws from "@/assets/homunculai-draws.webp";
+import imgHomunculAiIdentity from "@/assets/homunculai-identity.webp";
+import imgHomunculAiStyles from "@/assets/homunculai-styles.webp";
+import imgHomunculAiStates from "@/assets/homunculai-states.webp";
 import {
   ArrowLeft,
   Sparkles,
@@ -138,8 +139,8 @@ const faqs = [
     a: "No. HomunculAi is a display layer that gives your AI a body. It contains no model and generates nothing: it draws only what the AI you connect asks for.",
   },
   {
-    q: "How is HomunculAi different from Replika or Character.ai?",
-    a: "Those apps provide their own AI. HomunculAi doesn't include one. Your actual AI (the one you already use for work, creativity, or coding) gets a visible presence on your screen, not a separate character from a different company.",
+    q: "Is HomunculAi a chatbot?",
+    a: "No. HomunculAi has no AI of its own and nothing to talk to. The AI you already use (for work, creativity or coding) gets a visible presence on your screen, and you keep talking to it in your own AI app.",
   },
   {
     q: "What is MCP?",
@@ -151,7 +152,7 @@ const faqs = [
   },
   {
     q: "Does HomunculAi work with ChatGPT?",
-    a: "Not currently. ChatGPT doesn't support the connection standard HomunculAi uses.",
+    a: "Not currently. HomunculAi needs an AI app that can run a local MCP server on your computer, and ChatGPT isn't one we support.",
   },
   {
     q: "Can I use a local AI like Ollama or LM Studio?",
@@ -171,11 +172,11 @@ const faqs = [
   },
   {
     q: "What are styles?",
-    a: "Three looks for the same avatar system: Playful (drawn characters with outlines and some bounce), Sleek (simple abstract shapes, muted colors, calm motion) and Pixel (grid sprites with bold pixel faces). Each has 24 bodies. You pick the style in Settings. Your AI picks the body and everything else.",
+    a: "Three looks for the same avatar system: Playful (drawn characters with outlines and some bounce), Sleek (simple abstract shapes, muted colors, calm motion) and Pixel (grid sprites with bold pixel faces). Each has 24 bodies. You pick the style in Settings, where Look shows each one and See a demo plays a short demo on your avatar (it is not an AI). Your AI picks the body and everything else.",
   },
   {
     q: "Does it cost anything to run?",
-    a: "The app is free. A check-in loop makes your AI act every few minutes, and that uses more of your AI plan than answering you normally would. Without a loop, it costs nothing extra.",
+    a: "The app is free. A check-in loop makes your AI act every few minutes, and that uses more of your AI plan than answering you normally would. Without a loop, it adds only the few small calls your AI makes when you write to it.",
   },
   {
     q: "Do I need to know how to code?",
@@ -191,11 +192,11 @@ const faqs = [
   },
   {
     q: "Does HomunculAi collect my data?",
-    a: "No telemetry, no tracking. HomunculAi goes online only to check for updates (GitHub), and asks once at first launch whether it may. Send feedback opens a Google Form in your browser. Everything else stays on your computer.",
+    a: "No telemetry, no tracking. HomunculAi goes online only to check for updates (GitHub): when you select Check for updates in Settings, or each time it starts if you allow that (it asks once, at first launch). Send feedback opens a Google Form in your browser. Everything else stays on your computer.",
   },
   {
     q: "Will my AI remember me between sessions?",
-    a: "HomunculAi doesn't keep a record of your sessions. Whether your AI remembers you depends on the AI you connect. Some have their own memory features you can enable through that app.",
+    a: "HomunculAi doesn't store your conversations; they happen in your AI app. Whether your AI remembers you depends on the AI you connect. Some have their own memory features you can enable through that app.",
   },
 ];
 
@@ -446,7 +447,7 @@ export function HomunculAiPage() {
             >
               <DesktopWindow
                 src={imgHomunculAiHero}
-                alt="A HomunculAi avatar on a desktop"
+                alt="HomunculAi key art: three AI avatars over a code editor, a green dragon in a top hat, a soft blue orb and a pixel terminal with headphones"
                 chrome={false}
                 aspect="120%"
                 className="w-64 sm:w-72 md:w-80"
@@ -559,10 +560,9 @@ export function HomunculAiPage() {
             className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center"
           >
             <motion.div variants={fadeUp} custom={0} className="flex justify-center lg:order-1">
-              {/* TODO phase 2: replace homunculai-multiagent.webp (old dock) with homunculai-identity.webp (grid of AI-picked looks) */}
               <DesktopWindow
-                src={imgHomunculAiMultiagent}
-                alt="Avatars in different looks, each picked by its AI"
+                src={imgHomunculAiIdentity}
+                alt="Nine looks picked by AIs across the three styles, such as a Playful dragon in a top hat, a Pixel toaster with a monocle and a Sleek orb"
                 chrome
                 title="Identity"
                 aspect="100%"
@@ -593,10 +593,9 @@ export function HomunculAiPage() {
             className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center"
           >
             <motion.div variants={fadeUp} custom={0} className="flex justify-center lg:order-2">
-              {/* TODO phase 2: stand-in image (portrait capsule art). Replace with homunculai-styles.webp (three styles side by side) */}
               <DesktopWindow
-                src={imgHomunculAiHero}
-                alt="The three HomunculAi styles: Playful, Sleek and Pixel"
+                src={imgHomunculAiStyles}
+                alt="The three styles side by side: Playful (an orange fox in a scarf), Sleek (a sand-colored triangle with a monocle) and Pixel (a pixel hamster in a beanie), each labelled with 24 bodies"
                 chrome
                 title="Styles"
                 aspect="100%"
@@ -627,10 +626,9 @@ export function HomunculAiPage() {
             className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center"
           >
             <motion.div variants={fadeUp} custom={0} className="flex justify-center lg:order-1">
-              {/* TODO phase 2: replace homunculai-art.webp (old dock) with homunculai-states.webp */}
               <DesktopWindow
-                src={imgHomunculAiArt}
-                alt="An avatar showing a work state on a desktop"
+                src={imgHomunculAiStates}
+                alt="Relay, a blue robot with headphones, floating over a code editor with its name plate reading working and a thought bubble saying Running the suite"
                 chrome
                 title="Work states"
                 aspect="100%"
@@ -648,8 +646,19 @@ export function HomunculAiPage() {
                 className="text-muted-foreground max-w-md"
                 style={{ fontSize: "1.05rem", lineHeight: 1.7 }}
               >
-                Working, waiting on you, done, stuck, listening. Each state has its own face, a calm motion, a small mark and a word on the name plate, so you can tell at a glance whether it needs you. Speech bubbles carry what it says, thought bubbles what it's weighing. See how it's doing without switching windows.
+                Working, waiting for you, done, stuck, listening. Each state has its own face, a calm motion, a small mark and a word on the name plate, so you can tell at a glance whether it needs you. Speech bubbles carry what it says, thought bubbles what it's weighing. See how it's doing without switching windows.
               </p>
+              <div className="flex flex-wrap gap-2 mt-5">
+                {["working", "waiting for you", "done", "stuck", "listening"].map((w, k) => (
+                  <span
+                    key={w}
+                    className={`px-3 py-1 ${k % 2 === 0 ? "bg-teal/10 border border-teal-light/55 text-teal-light" : "bg-primary/10 border border-primary-light/55 text-primary-light"} text-xs uppercase tracking-wider rounded-sm`}
+                    style={{ fontFamily: "var(--font-heading)", fontWeight: 700 }}
+                  >
+                    {w}
+                  </span>
+                ))}
+              </div>
             </motion.div>
           </motion.div>
 
@@ -661,10 +670,9 @@ export function HomunculAiPage() {
             className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center"
           >
             <motion.div variants={fadeUp} custom={0} className="flex justify-center lg:order-2">
-              {/* TODO phase 2: replace homunculai-svg-document.webp (shows the old message window) with homunculai-draws.webp */}
               <DesktopWindow
-                src={imgHomunculAiSvgDoc}
-                alt="An avatar wearing a body its AI drew itself"
+                src={imgHomunculAiDraws}
+                alt="Lumen, an orange paper lantern its AI drew itself, floating over a document and saying Lit from within, with a verified shield on its name plate"
                 chrome
                 title="Custom SVG"
                 aspect="100%"
