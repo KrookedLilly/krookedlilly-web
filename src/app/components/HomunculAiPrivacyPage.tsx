@@ -7,7 +7,7 @@ export function HomunculAiPrivacyPage() {
     <LegalShell
       title="Privacy Notice"
       metaTitle="HomunculAi Privacy Notice"
-      description="What personal information KrookedLilly receives when you buy, use, or contact us about HomunculAi, and what we do with it."
+      description="What personal information KrookedLilly receives when you use or contact us about HomunculAi, and what we do with it."
       path="/games/homunculai/privacy"
       // Site convention: legal pages stay out of search results.
       noIndex

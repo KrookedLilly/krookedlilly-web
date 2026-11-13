@@ -39,7 +39,7 @@ export function HomunculAiSafetyPage() {
         <ul className="list-disc pl-6 space-y-1.5">
           <li>
             shows “This is an AI agent, not a human.” in the AI’s name plate on the avatar when an AI connects, at least every three hours while
-            it stays connected, and whenever the AI writes that it is human;
+            it stays connected, and when it notices that the AI wrote that it is human;
           </li>
           <li>instructs connected AIs never to claim to be human;</li>
           <li>lists these crisis resources in the app (Settings → About → Crisis resources).</li>
