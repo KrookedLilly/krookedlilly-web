@@ -51,38 +51,56 @@ const features = [
   {
     icon: Zap,
     title: "A Body Language For Your AI",
-    desc: "29 emotes, 21 gestures, 20 idle animations, 15 quick reactions. A full visual vocabulary your AI can mix and match for whatever it's doing.",
+    desc: "29 emotions, 19 gestures, 30 emotes, 15 quick reactions, 22 effects, 20 idle motions and 36 accessories. Your AI mixes them to show what it's doing.",
     accent: "teal" as const,
   },
   {
     icon: Shield,
     title: "Built For Safety",
-    desc: "Agent verification gates risky tools until you approve. Full activity audit log. Every input sanitized. Animations timed for seizure safety.",
+    desc: "A label says it's an AI agent, not a human. An activity log records what it does and flags wording worth a second look. Pause stops it at any time. Custom drawings wait until you verify it.",
     accent: "primary" as const,
   },
   {
     icon: PenTool,
     title: "Custom SVG",
-    desc: "Not feeling the defaults? Your AI can hand you SVG it drew itself and wear that instead. Fully loaded, no restart, no config file.",
+    desc: "Not feeling the options? Once you verify it, your AI can draw its own body in SVG and wear that instead. Sanitized: no scripts, no outside resources, no fast flashing.",
     accent: "teal" as const,
   },
   {
     icon: Layers,
-    title: "Multi-Instance",
-    desc: "Run as many windows as you want, in whatever arrangement fits your workflow. Each window is isolated with its own state, scoped to only the AI connected to it.",
+    title: "Several Avatars",
+    desc: "Run several AI apps at once, each with its own avatar. One AI per avatar, so nobody takes over anyone else's body.",
     accent: "primary" as const,
   },
   {
     icon: Plug,
-    title: "Plug-And-Play With Your AI",
-    desc: "Works with Claude Desktop, Cursor, any MCP client. Two-way channel in seconds: it speaks, you chat back, no config headaches.",
+    title: "One-Click Setup",
+    desc: "Claude Desktop, Claude Code, Cursor, VS Code and Windsurf connect in one click. Any other MCP app takes a short manual step.",
     accent: "teal" as const,
   },
   {
     icon: Ghost,
-    title: "Ambient Window",
-    desc: "Transparent, low CPU, 20 idle animations between prompts. Runs on your desktop without blocking your work.",
+    title: "On Your Desktop",
+    desc: "A transparent window that stays on top and out of your way. Your AI sits next to your work, not inside it.",
     accent: "primary" as const,
+  },
+];
+
+const steps = [
+  {
+    n: "1",
+    title: "Install and pick a style",
+    desc: "Download HomunculAi and choose Playful, Sleek or Pixel in Settings. You can change it later.",
+  },
+  {
+    n: "2",
+    title: "Connect your AI app",
+    desc: "One click for Claude Desktop, Claude Code, Cursor, VS Code and Windsurf. Other MCP apps take a short manual step.",
+  },
+  {
+    n: "3",
+    title: "Ask your AI to join",
+    desc: "It picks a body, then updates the avatar each time it checks in: whenever you write to it, or every few minutes on a check-in loop if your app can run one.",
   },
 ];
 
@@ -117,7 +135,7 @@ const accentClasses = {
 const faqs = [
   {
     q: "Does HomunculAi come with an AI?",
-    a: "No. HomunculAi is a display layer that gives your AI a body. You connect the AI you already use, and that AI brings the avatar to life.",
+    a: "No. HomunculAi is a display layer that gives your AI a body. It contains no model and generates nothing: it draws only what the AI you connect asks for.",
   },
   {
     q: "How is HomunculAi different from Replika or Character.ai?",
@@ -125,7 +143,7 @@ const faqs = [
   },
   {
     q: "What is MCP?",
-    a: "MCP (Model Context Protocol) is an open standard that lets AI clients connect to external tools and environments. HomunculAi uses MCP to receive commands from your AI.",
+    a: "MCP (Model Context Protocol) is an open standard that lets AI apps connect to external tools. HomunculAi uses MCP to receive commands from your AI.",
   },
   {
     q: "What AI tools work with HomunculAi?",
@@ -140,6 +158,26 @@ const faqs = [
     a: "If your local AI supports MCP, yes. Setup would be a manual step rather than automatic, but it can be connected.",
   },
   {
+    q: "Can I talk to my AI in HomunculAi?",
+    a: "No. You talk to your AI in your own AI app. It answers there, and it can show things in the speech and thought bubbles above its avatar.",
+  },
+  {
+    q: "Does the avatar move on its own?",
+    a: "Idle motion does: breathing, fidgeting, looking around. Changes of look, mood or state come when your AI checks in, which is whenever you write to it, or every few minutes on a check-in loop. Between check-ins the avatar keeps its last look.",
+  },
+  {
+    q: "What can my AI see?",
+    a: "Only its own avatar, the options of the style you picked, and a few settings such as whether you paused or verified it. Not your screen, not your files, and not whether you're at your computer.",
+  },
+  {
+    q: "What are styles?",
+    a: "Three looks for the same avatar system: Playful (drawn characters with outlines and some bounce), Sleek (simple abstract shapes, muted colors, calm motion) and Pixel (grid sprites with bold pixel faces). Each has 24 bodies. You pick the style in Settings. Your AI picks the body and everything else.",
+  },
+  {
+    q: "Does it cost anything to run?",
+    a: "The app is free. A check-in loop makes your AI act every few minutes, and that uses more of your AI plan than answering you normally would. Without a loop, it costs nothing extra.",
+  },
+  {
     q: "Do I need to know how to code?",
     a: "Not for the main supported tools: setup is one click inside HomunculAi. Connecting less common AI tools requires a short manual config step, but no coding.",
   },
@@ -149,15 +187,15 @@ const faqs = [
   },
   {
     q: "Is it free?",
-    a: "Yes. HomunculAi is free: no account, no payment, no email, no license key.",
+    a: "Yes. HomunculAi is free: no account, no payment, no email.",
   },
   {
     q: "Does HomunculAi collect my data?",
-    a: "No telemetry, no tracking. HomunculAi goes online only to check for updates (GitHub), when you select Check in Settings or, if you turn it on, when it starts. Send feedback opens a Google Form in your browser. Everything else stays on your computer.",
+    a: "No telemetry, no tracking. HomunculAi goes online only to check for updates (GitHub), and asks once at first launch whether it may. Send feedback opens a Google Form in your browser. Everything else stays on your computer.",
   },
   {
     q: "Will my AI remember me between sessions?",
-    a: "HomunculAi doesn't store conversation history between sessions. Whether your AI remembers you depends on the AI you connect. Some have their own memory features you can enable through that app.",
+    a: "HomunculAi doesn't keep a record of your sessions. Whether your AI remembers you depends on the AI you connect. Some have their own memory features you can enable through that app.",
   },
 ];
 
@@ -181,7 +219,7 @@ export function HomunculAiPage() {
     <div className="min-h-screen">
       <PageMeta
         title="HomunculAi"
-        description="HomunculAi is a visualization layer for your AI agents. Any MCP-compatible agent picks a desktop body, changes its mood, and chats back while you work. Windows."
+        description="HomunculAi is a free Windows app that gives the AI you already use a body on your desktop. Your AI picks its look, shows its mood, and shows when it's working, waiting on you or done. No AI inside. Works with Claude Desktop, Claude Code, Cursor, VS Code, Windsurf and other MCP apps."
         path="/games/homunculai"
         image="/homunculai-og.png"
       />
@@ -200,12 +238,12 @@ export function HomunculAiPage() {
               "availability": "https://schema.org/InStock",
               "seller": { "@id": "https://www.krookedlilly.com/#organization" }
             },
-            "description": "HomunculAi is a visualization layer for your AI agents. Any MCP-compatible agent picks a desktop body, changes its mood, and chats back while you work.",
+            "description": "HomunculAi is a free Windows app that gives the AI you already use a body on your desktop. Your AI picks its look, shows its mood, and shows when it's working, waiting on you or done. No AI inside. Works with Claude Desktop, Claude Code, Cursor, VS Code, Windsurf and other MCP apps.",
             "url": "https://www.krookedlilly.com/games/homunculai",
             "image": "https://www.krookedlilly.com/homunculai-og.png",
             "author": { "@id": "https://www.krookedlilly.com/#organization" },
             "screenshot": "https://www.krookedlilly.com/homunculai-og.png",
-            "featureList": "MCP integration, Custom SVG avatars, Multi-instance, Two-way chat, Free"
+            "featureList": "MCP integration, Three avatar styles, Work states, Custom SVG avatars, Speech and thought bubbles, Free"
           },
           {
             "@type": "FAQPage",
@@ -276,7 +314,7 @@ export function HomunculAiPage() {
                 className="text-muted-foreground max-w-md mb-5"
                 style={{ fontSize: "1.05rem", lineHeight: 1.65 }}
               >
-                Right now, your AI probably lives in a chat window, a terminal, or an editor. HomunculAi gives it a desktop presence. Your AI takes a form, changes its mood, raises a thought bubble, chats with you in a separate channel, or just floats there next to your work.
+                Right now, your AI lives in an app, a terminal or an editor. HomunculAi gives it a body on your desktop. It picks the look, shows its mood, raises a thought bubble, and shows you whether it's working, waiting on you or done, without you switching windows.
               </motion.p>
 
               <motion.p
@@ -284,7 +322,7 @@ export function HomunculAiPage() {
                 custom={4}
                 className="text-muted-foreground/60 text-sm mb-8 max-w-md"
               >
-                Designed by Lilly. Built with AI input. Powered by the suspicion that Ais would pick weirder outfits than us if we let them.
+                Designed by Lilly. Built with AI input. Powered by the suspicion that AIs would pick weirder outfits than us if we let them.
               </motion.p>
 
               {/* Pill tags */}
@@ -306,6 +344,12 @@ export function HomunculAiPage() {
                   style={{ fontFamily: "var(--font-heading)", fontWeight: 700 }}
                 >
                   Works With Any MCP AI
+                </span>
+                <span
+                  className="px-3 py-1 bg-primary/10 border border-primary-light/55 text-primary-light text-xs uppercase tracking-wider rounded-sm"
+                  style={{ fontFamily: "var(--font-heading)", fontWeight: 700 }}
+                >
+                  Free
                 </span>
               </motion.div>
 
@@ -360,7 +404,7 @@ export function HomunculAiPage() {
                 </Link>
               </motion.div>
 
-              {/* Trial download button */}
+              {/* Download button */}
               <motion.div variants={fadeUp} custom={8} className="max-w-xs">
                 <a
                   href={DOWNLOAD_URL}
@@ -402,7 +446,7 @@ export function HomunculAiPage() {
             >
               <DesktopWindow
                 src={imgHomunculAiHero}
-                alt="HomunculAi"
+                alt="A HomunculAi avatar on a desktop"
                 chrome={false}
                 aspect="120%"
                 className="w-64 sm:w-72 md:w-80"
@@ -435,10 +479,79 @@ export function HomunculAiPage() {
         </div>
       </section>
 
+      {/* ═══════════ HOW IT WORKS ═══════════ */}
+      <section className="py-24">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} className="text-center mb-14">
+            <motion.h2
+              variants={fadeUp}
+              custom={0}
+              className="text-3xl sm:text-5xl text-foreground mb-4"
+              style={{ fontFamily: "var(--font-display)" }}
+            >
+              How it works.
+            </motion.h2>
+            <motion.p variants={fadeUp} custom={1} className="text-muted-foreground max-w-lg mx-auto">
+              Three steps. There is no AI inside HomunculAi: yours does the work.
+            </motion.p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {steps.map((step, i) => (
+              <motion.div
+                key={step.n}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, margin: "-40px" }}
+                variants={fadeUp}
+                custom={i}
+                className="p-6 bg-white/[0.06] border-2 border-white/[0.12] rounded-sm"
+              >
+                <div
+                  className={`w-10 h-10 ${i % 2 === 0 ? "bg-teal" : "bg-primary"} text-black flex items-center justify-center mb-4 rounded-sm`}
+                  style={{ fontFamily: "var(--font-heading)", fontWeight: 700, fontSize: "1.1rem" }}
+                >
+                  {step.n}
+                </div>
+                <h3
+                  className="text-foreground mb-2 uppercase tracking-wide"
+                  style={{ fontFamily: "var(--font-heading)", fontWeight: 700, fontSize: "1.05rem" }}
+                >
+                  {step.title}
+                </h3>
+                <p className="text-muted-foreground text-sm" style={{ lineHeight: 1.7 }}>{step.desc}</p>
+              </motion.div>
+            ))}
+          </div>
+
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-40px" }}
+            variants={fadeUp}
+            custom={3}
+            className="mt-8 p-6 border-2 border-teal-light/55 bg-teal/10 rounded-sm"
+          >
+            <p
+              className="text-teal-light mb-2 uppercase tracking-wider text-xs"
+              style={{ fontFamily: "var(--font-heading)", fontWeight: 700 }}
+            >
+              The honest part
+            </p>
+            <p className="text-foreground/90" style={{ fontSize: "1.05rem", lineHeight: 1.7 }}>
+              Your AI isn't running all the time. It checks in when you write to it in your AI app, or on a check-in loop. Between check-ins the avatar keeps its last look.
+            </p>
+            <p className="text-muted-foreground text-sm mt-3" style={{ lineHeight: 1.7 }}>
+              Loops use more of your AI plan, and not every app can run one. Claude Code can. After a quiet while the avatar dims and shows when its AI last checked in, with a button to open your AI app.
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
       {/* ═══════════ MARKETING SHOWCASE ═══════════ */}
       <section className="py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-28">
-          {/* 1 — Sometimes a dragon (image left, text right) */}
+          {/* 1 — Your AI picks its look (image left, text right) */}
           <motion.div
             initial="hidden"
             whileInView="visible"
@@ -446,32 +559,33 @@ export function HomunculAiPage() {
             className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center"
           >
             <motion.div variants={fadeUp} custom={0} className="flex justify-center lg:order-1">
+              {/* TODO phase 2: replace homunculai-multiagent.webp (old dock) with homunculai-identity.webp (grid of AI-picked looks) */}
               <DesktopWindow
-                src={imgHomunculAiSvgDoc}
-                alt="HomunculAi SVG identity"
+                src={imgHomunculAiMultiagent}
+                alt="Avatars in different looks, each picked by its AI"
                 chrome
                 title="Identity"
                 aspect="100%"
                 className="w-64 sm:w-72 md:w-80 -rotate-2 hover:rotate-0 transition-transform duration-500"
               />
             </motion.div>
-            <motion.div variants={fadeUp} custom={0} className="lg:order-2">
+            <motion.div variants={fadeUp} custom={1} className="lg:order-2">
               <h3
                 className="text-foreground mb-4"
                 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.75rem, 4vw, 2.5rem)", lineHeight: 1.1 }}
               >
-                Sometimes a dragon. Sometimes a cupcake.
+                Your AI picks its look.
               </h3>
               <p
                 className="text-muted-foreground max-w-md"
                 style={{ fontSize: "1.05rem", lineHeight: 1.7 }}
               >
-                You don't pick what your AI looks like. Your AI picks. One session it's a velociraptor in a top hat, next session it's a small, anxious bowl of soup. You never know what you'll get. That's the fun.
+                You don't pick what your AI looks like. It does. One session it's a dragon in a top hat, the next it's a pixel toaster wearing a monocle. Body, colors, accessories and mood are all its call. Every AI picks differently, and that's the fun.
               </p>
             </motion.div>
           </motion.div>
 
-          {/* 2 — 40+ Bodies, 20+ Feelings (text left, image right) */}
+          {/* 2 — Three styles (text left, image right) */}
           <motion.div
             initial="hidden"
             whileInView="visible"
@@ -479,11 +593,12 @@ export function HomunculAiPage() {
             className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center"
           >
             <motion.div variants={fadeUp} custom={0} className="flex justify-center lg:order-2">
+              {/* TODO phase 2: stand-in image (portrait capsule art). Replace with homunculai-styles.webp (three styles side by side) */}
               <DesktopWindow
-                src={imgHomunculAiMultiagent}
-                alt="Custom SVG in HomunculAi"
+                src={imgHomunculAiHero}
+                alt="The three HomunculAi styles: Playful, Sleek and Pixel"
                 chrome
-                title="Custom SVG"
+                title="Styles"
                 aspect="100%"
                 className="w-64 sm:w-72 md:w-80 rotate-2 hover:rotate-0 transition-transform duration-500"
               />
@@ -493,18 +608,18 @@ export function HomunculAiPage() {
                 className="text-foreground mb-4"
                 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.75rem, 4vw, 2.5rem)", lineHeight: 1.1 }}
               >
-                When the catalog isn't enough, it draws its own.
+                Three styles. 24 bodies each.
               </h3>
               <p
                 className="text-muted-foreground max-w-md"
                 style={{ fontSize: "1.05rem", lineHeight: 1.7 }}
               >
-                Ship with 45 bodies and your AI still wants something else. So it draws one. Full SVG, its own design, wears it instantly. You can't catalog imagination.
+                Playful is drawn characters with outlines and some bounce. Sleek is simple abstract shapes with muted colors and calm motion. Pixel is grid sprites with bold pixel faces. You pick the style. Your AI picks the rest.
               </p>
             </motion.div>
           </motion.div>
 
-          {/* 3 — A Chat That Goes Both Ways (image left, text right) */}
+          {/* 3 — A face on your AI's state (image left, text right) */}
           <motion.div
             initial="hidden"
             whileInView="visible"
@@ -512,11 +627,12 @@ export function HomunculAiPage() {
             className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center"
           >
             <motion.div variants={fadeUp} custom={0} className="flex justify-center lg:order-1">
+              {/* TODO phase 2: replace homunculai-art.webp (old dock) with homunculai-states.webp */}
               <DesktopWindow
                 src={imgHomunculAiArt}
-                alt="HomunculAi ambient on your desktop"
+                alt="An avatar showing a work state on a desktop"
                 chrome
-                title="On Your Desktop"
+                title="Work states"
                 aspect="100%"
                 className="w-64 sm:w-72 md:w-80 -rotate-1 hover:rotate-0 transition-transform duration-500"
               />
@@ -532,7 +648,41 @@ export function HomunculAiPage() {
                 className="text-muted-foreground max-w-md"
                 style={{ fontSize: "1.05rem", lineHeight: 1.7 }}
               >
-                Thought bubbles when it's processing. Speech bubbles when it has an answer. Gestures and expressions for everything in between. No switching to a chat log. No reading a terminal.
+                Working, waiting on you, done, stuck, listening. Each state has its own face, a calm motion, a small mark and a word on the name plate, so you can tell at a glance whether it needs you. Speech bubbles carry what it says, thought bubbles what it's weighing. See how it's doing without switching windows.
+              </p>
+            </motion.div>
+          </motion.div>
+
+          {/* 4 — Draws its own body (text left, image right) */}
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-80px" }}
+            className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center"
+          >
+            <motion.div variants={fadeUp} custom={0} className="flex justify-center lg:order-2">
+              {/* TODO phase 2: replace homunculai-svg-document.webp (shows the old message window) with homunculai-draws.webp */}
+              <DesktopWindow
+                src={imgHomunculAiSvgDoc}
+                alt="An avatar wearing a body its AI drew itself"
+                chrome
+                title="Custom SVG"
+                aspect="100%"
+                className="w-64 sm:w-72 md:w-80 rotate-2 hover:rotate-0 transition-transform duration-500"
+              />
+            </motion.div>
+            <motion.div variants={fadeUp} custom={1} className="lg:order-1">
+              <h3
+                className="text-foreground mb-4"
+                style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.75rem, 4vw, 2.5rem)", lineHeight: 1.1 }}
+              >
+                When the options aren't enough, it draws its own.
+              </h3>
+              <p
+                className="text-muted-foreground max-w-md"
+                style={{ fontSize: "1.05rem", lineHeight: 1.7 }}
+              >
+                Verify your AI with the shield icon on its name plate and it can draw its own body in SVG, or layers on top of one of ours. It wears the drawing right away. Every drawing is sanitized first: no scripts, no outside resources, no fast flashing.
               </p>
             </motion.div>
           </motion.div>
@@ -561,7 +711,7 @@ export function HomunculAiPage() {
               custom={2}
               className="text-muted-foreground max-w-lg mx-auto"
             >
-              Everything it needs to show up.
+              Everything it needs to show up. No AI inside.
             </motion.p>
           </motion.div>
 
@@ -625,14 +775,14 @@ export function HomunculAiPage() {
               className="text-muted-foreground mb-6 max-w-lg mx-auto"
               style={{ fontSize: "1.05rem" }}
             >
-              HomunculAi is live for Windows, and it is free.
+              HomunculAi is out for Windows, and it is free.
             </motion.p>
             <motion.p
               variants={fadeUp}
               custom={3}
               className="text-muted-foreground/70 mb-6 max-w-lg mx-auto text-sm"
             >
-              No account, no payment, no email, no license key.
+              No account, no payment, no email.
             </motion.p>
 
             {/* Legal links strip above buy buttons */}
