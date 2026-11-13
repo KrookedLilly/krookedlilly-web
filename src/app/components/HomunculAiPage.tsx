@@ -681,7 +681,7 @@ export function HomunculAiPage() {
             <motion.div variants={fadeUp} custom={0} className="flex justify-center lg:order-2">
               <DesktopWindow
                 src={imgHomunculAiDraws}
-                alt="Lumen, an orange paper lantern its AI drew itself, floating over a document and saying Lit from within, with a verified shield on its name plate"
+                alt="Lumen, a red paper lantern its AI drew itself, floating over a code editor and saying Lit from within, with a verified shield on its name plate. Beside it, the activity log shows You verified Lumen and Drew custom body."
                 chrome
                 title="Custom SVG"
                 aspect="100%"
