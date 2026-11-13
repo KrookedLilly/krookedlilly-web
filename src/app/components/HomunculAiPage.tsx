@@ -17,16 +17,13 @@ import {
   Ghost,
   Shield,
   AlertTriangle,
-  ShoppingBag,
   Download,
   ChevronDown,
 } from "lucide-react";
 import { DesktopWindow } from "./DesktopWindow";
 import { PageMeta } from "./PageMeta";
 
-const BUY_DIRECT_URL =
-  "https://krookedlilly.lemonsqueezy.com/checkout/buy/dbbcf923-b434-4fcf-a1b4-5f35225ad16b";
-const TRIAL_DOWNLOAD_URL =
+const DOWNLOAD_URL =
   "https://github.com/KrookedLilly/homunculai-releases/releases";
 
 /* ─── animation variants ─── */
@@ -152,11 +149,11 @@ const faqs = [
   },
   {
     q: "Is it free?",
-    a: "There's a 7-day free trial: no account, no payment, no email required. After that, a license is $4.99 one-time with no subscription.",
+    a: "Yes. HomunculAi is free: no account, no payment, no email, no license key.",
   },
   {
     q: "Does HomunculAi collect my data?",
-    a: "No telemetry, no tracking. HomunculAi goes online only to activate or remove your license (Lemon Squeezy) and when you check for updates in Settings (GitHub). Send feedback opens a Google Form in your browser. Everything else stays on your computer.",
+    a: "No telemetry, no tracking. HomunculAi goes online only to check for updates (GitHub), when you select Check in Settings or, if you turn it on, when it starts. Send feedback opens a Google Form in your browser. Everything else stays on your computer.",
   },
   {
     q: "Will my AI remember me between sessions?",
@@ -198,7 +195,7 @@ export function HomunculAiPage() {
             "applicationCategory": "UtilitiesApplication",
             "offers": {
               "@type": "Offer",
-              "price": "4.99",
+              "price": "0",
               "priceCurrency": "USD",
               "availability": "https://schema.org/InStock",
               "seller": { "@id": "https://www.krookedlilly.com/#organization" }
@@ -208,7 +205,7 @@ export function HomunculAiPage() {
             "image": "https://www.krookedlilly.com/homunculai-og.png",
             "author": { "@id": "https://www.krookedlilly.com/#organization" },
             "screenshot": "https://www.krookedlilly.com/homunculai-og.png",
-            "featureList": "MCP integration, Custom SVG avatars, Multi-instance, Two-way chat, 7-day free trial"
+            "featureList": "MCP integration, Custom SVG avatars, Multi-instance, Two-way chat, Free"
           },
           {
             "@type": "FAQPage",
@@ -327,7 +324,7 @@ export function HomunculAiPage() {
                   className="text-muted-foreground/70 hover:text-primary-light transition-colors uppercase tracking-wider"
                   style={{ fontFamily: "var(--font-heading)", fontWeight: 600 }}
                 >
-                  Sales Restrictions
+                  Download Restrictions
                 </Link>
                 <span className="text-muted-foreground/30">&middot;</span>
                 <Link
@@ -366,14 +363,14 @@ export function HomunculAiPage() {
               {/* Trial download button */}
               <motion.div variants={fadeUp} custom={8} className="max-w-xs">
                 <a
-                  href={TRIAL_DOWNLOAD_URL}
+                  href={DOWNLOAD_URL}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex w-full items-center justify-center gap-3 px-10 py-4 bg-primary hover:bg-primary/90 text-black rounded-sm border-2 border-primary-light transition-all hover:-translate-y-1 hover:shadow-[6px_6px_0px_0px_rgb(var(--primary-rgb)/0.4)]"
                   style={{ fontFamily: "var(--font-heading)", fontWeight: 700 }}
                 >
                   <Download className="w-5 h-5" />
-                  <span className="text-base uppercase tracking-wider">Download 7-Day Trial</span>
+                  <span className="text-base uppercase tracking-wider">Download free</span>
                 </a>
               </motion.div>
 
@@ -628,14 +625,14 @@ export function HomunculAiPage() {
               className="text-muted-foreground mb-6 max-w-lg mx-auto"
               style={{ fontSize: "1.05rem" }}
             >
-              HomunculAi is live for Windows. Licenses are sold through krookedlilly.com, so the money goes straight to the people making it. Lemon Squeezy handles checkout as merchant of record.
+              HomunculAi is live for Windows, and it is free.
             </motion.p>
             <motion.p
               variants={fadeUp}
               custom={3}
               className="text-muted-foreground/70 mb-6 max-w-lg mx-auto text-sm"
             >
-              7-day free trial: no account, no payment, no email required.<br />A license is $4.99, one time, after that. No subscription.<br />Prices are in US dollars. Any sales tax or VAT is added at checkout, where it applies.
+              No account, no payment, no email, no license key.
             </motion.p>
 
             {/* Legal links strip above buy buttons */}
@@ -657,7 +654,7 @@ export function HomunculAiPage() {
                 className="text-muted-foreground/70 hover:text-primary-light transition-colors uppercase tracking-wider"
                 style={{ fontFamily: "var(--font-heading)", fontWeight: 600 }}
               >
-                Sales Restrictions
+                Download Restrictions
               </Link>
               <span className="text-muted-foreground/30">&middot;</span>
               <Link
@@ -695,32 +692,17 @@ export function HomunculAiPage() {
 
             <motion.div variants={fadeUp} custom={5} className="flex justify-center">
               <a
-                href={BUY_DIRECT_URL}
+                href={DOWNLOAD_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex w-full max-w-xs items-center justify-center gap-3 px-10 py-4 bg-lime hover:bg-lime/90 text-black rounded-md border-2 border-lime transition-all hover:-translate-y-1 hover:shadow-[6px_6px_0px_0px_rgba(132,204,22,0.4)] uppercase tracking-wider text-base"
                 style={{ fontFamily: "var(--font-heading)", fontWeight: 700 }}
               >
-                <ShoppingBag className="w-5 h-5" />
-                Get a license &mdash; $4.99
+                <Download className="w-5 h-5" />
+                Download free
               </a>
             </motion.div>
 
-            <motion.p
-              variants={fadeUp}
-              custom={5}
-              className="text-muted-foreground/70 text-xs mt-3 max-w-xs mx-auto"
-              style={{ fontFamily: "var(--font-heading)", fontWeight: 500, lineHeight: 1.6 }}
-            >
-              You receive a license to use HomunculAi, not ownership of the software. See the{" "}
-              <Link
-                to="/games/homunculai/terms"
-                className="underline underline-offset-2 hover:text-foreground transition-colors"
-              >
-                Terms of Use
-              </Link>
-              .
-            </motion.p>
 
             {/* Inline 18+ / regional note below buy buttons */}
             <motion.p

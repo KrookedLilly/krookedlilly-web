@@ -221,7 +221,7 @@ function blocks(md: string): ReactNode[] {
 export const LEGAL_LINKS = [
   { to: "/games/homunculai/terms", label: "Terms of Use" },
   { to: "/games/homunculai/privacy", label: "Privacy Notice" },
-  { to: "/games/homunculai/sales-restrictions", label: "Sales Restrictions" },
+  { to: "/games/homunculai/sales-restrictions", label: "Download Restrictions" },
   { to: "/games/homunculai/what-is-ai", label: "About AI" },
   { to: "/games/homunculai/safety", label: "Safety" },
   { to: "/games/homunculai/security", label: "Security" },

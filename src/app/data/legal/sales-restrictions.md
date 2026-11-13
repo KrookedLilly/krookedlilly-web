@@ -1,6 +1,6 @@
-HomunculAi is not sold, licensed, or supported in the regions listed below. This list is referenced from Section 11 of the HomunculAi Terms of Use and may be updated without a new version of the Terms.
+HomunculAi is free, but it is not offered or supported in the regions listed below. This list is referenced from Section 11 of the HomunculAi Terms of Use and may be updated without a new version of the Terms.
 
-If you are located in a listed region, or you are a restricted party, you are not licensed to buy or use HomunculAi, however you obtained it (see Sections 9 and 11 of the Terms of Use).
+If you are located in a listed region, or you are a restricted party, you are not licensed to download or use HomunculAi, however you obtained it (see Sections 9 and 11 of the Terms of Use).
 
 ---
 
@@ -17,28 +17,24 @@ These regions are subject to comprehensive U.S. economic sanctions administered 
 
 ## Other restricted regions
 
-HomunculAi is also not sold in these regions:
+HomunculAi is also not offered in these regions:
 
 - **Russia** — U.S. export controls on software (Export Administration Regulations, 15 CFR 746.8) and related sanctions.
 - **Belarus** — U.S. export controls that treat Belarus together with Russia (15 CFR 746.8) and related sanctions.
-- **Syria** — the main U.S. sanctions program on Syria ended in 2025, but some export controls and list-based sanctions remain, and our payment provider does not accept payments from Syria.
+- **Syria** — the main U.S. sanctions program on Syria ended in 2025, but some export controls and list-based sanctions remain.
 
 ## Restricted parties
 
-HomunculAi is not sold to, and may not be used by, any person or organization on a U.S. government list of prohibited or restricted parties, including:
+HomunculAi is not offered to, and may not be used by, any person or organization on a U.S. government list of prohibited or restricted parties, including:
 
 - OFAC’s Specially Designated Nationals and Blocked Persons List (SDN List) and other OFAC sanctions lists;
 - The Bureau of Industry and Security’s Denied Persons List, Entity List, and Unverified List.
 
-## Payment provider restrictions
-
-Lemon Squeezy, which sells HomunculAi licenses as merchant of record, does not accept payments from a number of countries, including some that are not listed above. Its current list is at docs.lemonsqueezy.com/help/getting-started/supported-countries. If Lemon Squeezy does not accept payments from your country, you cannot buy a license there.
-
 ## How these restrictions are applied
 
-- Lemon Squeezy screens payments under its own compliance program and does not accept payments from the countries on its list.
-- Lemon Squeezy’s list does not cover every region above. The restrictions on this page apply whether or not a purchase goes through.
-- KrookedLilly may add or remove regions when laws, seller policies, or business needs change.
+- The HomunculAi download pages state these restrictions.
+- GitHub, which hosts the HomunculAi release page, also limits access from some sanctioned regions under its own policies.
+- KrookedLilly may add or remove regions when laws or business needs change.
 
 ## Questions
 

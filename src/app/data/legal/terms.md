@@ -4,10 +4,9 @@ These Terms are an agreement between you and KrookedLilly LLC (“KrookedLilly�
 
 **What changed in Version 4.** This summary is for convenience only; the full Terms below control.
 - HomunculAi is described as it works today: it has no chat of its own (you talk to your AI in your AI app), check-in loops (Section 5), what your AI can see (Section 5), and every network request the app makes (Section 7).
-- Section 7 now also describes the trial information stored on your computer, the records HomunculAi keeps, what uninstalling leaves behind, and the changes HomunculAi makes to AI apps you set up.
-- Section 10 lists where you can download HomunculAi and how refunds work. Section 11 describes sales restrictions more accurately.
+- Section 7 now also describes the records HomunculAi keeps, what uninstalling leaves behind, and the changes HomunculAi makes to AI apps you set up.
+- HomunculAi is now free: there is no license key, trial, or purchase. Section 10 lists where you can download it. Section 11 describes download restrictions more accurately.
 - Section 7 also describes the optional update check at startup, turning records off, and removing all HomunculAi data.
-- Section 2 now lets you transfer your license to another person after you remove it from your computers.
 - Sections 12 and 13 state more clearly the consumer rights and liability that these Terms cannot limit.
 - Section 4 gives crisis resources. Section 15 describes the AI disclosure HomunculAi shows.
 
@@ -21,15 +20,13 @@ HomunculAi is a desktop application that gives an AI that you choose and connect
 
 ## 2. License Grant
 
-KrookedLilly grants you a personal, non-exclusive license to install and use HomunculAi on devices you own or control, for personal or internal business use, subject to these Terms. This license applies only to copies of HomunculAi obtained from an authorized source (see Section 10).
+KrookedLilly grants you a free, personal, non-exclusive license to install and use HomunculAi on devices you own or control, for personal or internal business use, subject to these Terms. This license applies only to copies of HomunculAi obtained from an authorized source (see Section 10).
 
-**When you pay for HomunculAi, you are buying a license to use the software under these Terms, not ownership of the software.** KrookedLilly may end your license only if you materially breach these Terms. Once activated, HomunculAi does not need KrookedLilly’s or any seller’s servers to start.
+**HomunculAi is free. You receive a license to use the software under these Terms, not ownership of the software.** KrookedLilly may end your license only if you materially breach these Terms. HomunculAi needs no account, license key, or activation, and it does not need KrookedLilly’s servers to start.
 
 **You must be at least 18 years old, or the age of majority in your jurisdiction, whichever is higher, to use HomunculAi.** By accepting these Terms, you confirm that you meet this age requirement. HomunculAi is not designed for or directed to children or teenagers.
 
-**Transferring your license.** You may give your license to another person if you first remove it from every computer where you activated it (Settings → About → License → Move to another computer), and then give them your license key. From then on, the license is theirs, and you may no longer use HomunculAi under it. Apart from this, you may not transfer, rent, or lend your license.
-
-Except for transferring your license as described above, you may not redistribute, resell, sublicense, reverse engineer, decompile, disassemble, modify, or remove proprietary notices from the app, except where such restrictions are prohibited by law. Open-source components included in HomunculAi are licensed under their own licenses, listed in the THIRD-PARTY-NOTICES.txt file in HomunculAi’s program folder; nothing in these Terms limits your rights under those licenses.
+You may not redistribute, resell, sublicense, reverse engineer, decompile, disassemble, modify, or remove proprietary notices from the app, except where such restrictions are prohibited by law. Open-source components included in HomunculAi are licensed under their own licenses, listed in the THIRD-PARTY-NOTICES.txt file in HomunculAi’s program folder; nothing in these Terms limits your rights under those licenses.
 
 ## 3. AI-Generated Content — No Endorsement, No Review, No Guarantee
 
@@ -109,18 +106,17 @@ HomunculAi is a creative and utility tool. It is not a companion, friend, therap
 
 HomunculAi keeps its data on your computer. It does not send avatar state, the activity log, or its records to KrookedLilly or to any cloud service, and it contains no telemetry, analytics, or crash reporting. HomunculAi makes network requests only in the cases listed below. Everything else is the local connection between HomunculAi’s windows and its MCP server on your computer.
 
-- **License activation and removal.** When you activate a license key, HomunculAi sends the key to the license service of the seller you bought from (currently Lemon Squeezy) to confirm it. When you remove a license from a computer (Settings → License), or if an activation cannot be saved, HomunculAi sends the key and that computer’s activation ID to the same service to release the activation. The service also receives standard request information, such as your IP address, and processes it under its own privacy policy. HomunculAi stores the activation, encrypted, on your computer.
-- **Update checks.** When you select the update check in Settings, or each time HomunculAi starts if you turned on “Check for updates when HomunculAi starts” (HomunculAi asks you once), HomunculAi requests the list of releases from KrookedLilly’s release page (currently hosted on GitHub) and compares it with your installed version on your computer. If you choose to download an update, the installer comes from the same place. These requests include standard request information, such as your IP address, and do not include your license key, activation ID, usage data, activity log, records, or avatar state. HomunculAi never downloads or installs an update unless you choose to.
-- **Links that open your browser or another app.** Some buttons open a web page in your browser, such as Buy a license (the seller’s checkout), the KrookedLilly website, and Send feedback. “Open” buttons for AI apps open that app on your computer. In these cases HomunculAi itself sends nothing; your browser or the other app makes the request under its own privacy terms.
+- **Update checks.** When you select the update check in Settings, or each time HomunculAi starts if you turned on “Check for updates when HomunculAi starts” (HomunculAi asks you once), HomunculAi requests the list of releases from KrookedLilly’s release page (currently hosted on GitHub) and compares it with your installed version on your computer. If you choose to download an update, the installer comes from the same place. These requests include standard request information, such as your IP address, and do not include usage data, the activity log, records, or avatar state. HomunculAi never downloads or installs an update unless you choose to.
+- **Links that open your browser or another app.** Some buttons open a web page in your browser, such as the KrookedLilly website (including Support KrookedLilly) and Send feedback. “Open” buttons for AI apps open that app on your computer. In these cases HomunculAi itself sends nothing; your browser or the other app makes the request under its own privacy terms.
 - **Feedback.** Send feedback opens a Google Form in your browser with your answers filled in, including your app version and operating system if you leave that option selected, and your email address only if you enter one. Because the answers are part of the form’s web address, Google receives them when the form opens; they are recorded as a response only when you select Submit. Google’s privacy policy applies.
 
-**Free trial.** The free trial starts and runs without any network request. To prevent the trial from being restarted, HomunculAi stores the trial start date and the last time it ran in three places on your computer: HomunculAi’s settings folder, a second HomunculAi folder in your local application data, and, on Windows, the registry (HKEY_CURRENT_USER\Software\HomunculAi).
+**No account or license key.** HomunculAi needs no account, license key, or activation. Earlier versions stored a license and trial information on your computer (in HomunculAi’s settings folder, in a second HomunculAi folder in your local application data, and, on Windows, in the registry under HKEY_CURRENT_USER\Software\HomunculAi); this version deletes them the first time it starts.
 
 **Records.** HomunculAi keeps local, tamper-evident records of each session, such as connections, actions, settings changes, and flags. The records contain timestamps, action types, character counts, and flag reasons. They do not contain the text of speech and thought bubbles, but a flag reason can name the listed word or pattern that matched (for example, “password”). The records stay on your computer (Settings → Safety & activity log → Records folder) and exist to give both you and your AI an independent account of what happened. The activity log window shows recent activity and is cleared when HomunculAi closes. You can turn off Keep records in Settings; while it is off, HomunculAi writes no new records.
 
 **AI apps you set up.** When you select Set up or Repair for an AI app, HomunculAi adds a HomunculAi entry to that app’s configuration file on your computer, after saving a backup copy. After a HomunculAi update, it restores the entry for AI apps you set up before. When you select Remove, or when you uninstall HomunculAi on Windows, HomunculAi removes its entry, again after saving a backup copy.
 
-**Uninstalling.** Uninstalling HomunculAi does not delete its settings folder, its records, or the trial information described above. To delete them, select Remove all HomunculAi data in Settings before you uninstall, or delete them yourself.
+**Uninstalling.** Uninstalling HomunculAi does not delete its settings folder or its records. To delete them, select Remove all HomunculAi data in Settings before you uninstall, or delete them yourself.
 
 **Your AI provider is separate.** HomunculAi itself does not send your data to any server or third party. However, the AI you connect runs on its provider’s infrastructure — for example, Anthropic’s servers for Claude, OpenAI’s servers for ChatGPT, or your own hardware for a local model. When your AI uses HomunculAi, your AI provider may process:
 
@@ -133,7 +129,7 @@ Any AI, including one that runs locally on your hardware, may have its own netwo
 
 **Your AI’s other abilities.** Your AI may have abilities outside HomunculAi, depending on your AI app — for example, reading files on your computer, browsing the web, running code, or using other applications and services. These abilities come from your AI app (for example Claude Code, or a local model with tool access), **not** from HomunculAi. HomunculAi does not grant, control, monitor, or have visibility into them. Information that your AI obtains with those abilities may appear in your AI’s speech and thought bubbles or on the avatar and may pass through your AI provider’s infrastructure, even though HomunculAi itself did not access it. **KrookedLilly is not responsible for data that your AI accesses, processes, or sends using abilities that exist outside HomunculAi.** You are responsible for understanding and managing everything your AI can do, including outside HomunculAi.
 
-**Purchase information.** Licenses are sold by Lemon Squeezy as merchant of record (see Section 10). Lemon Squeezy processes your payment and billing information under its own privacy policy; KrookedLilly does not receive your payment card details. KrookedLilly receives your name, email address, country, and order details from Lemon Squeezy to provide your license, support, and refunds. The KrookedLilly Privacy Notice at krookedlilly.com/games/homunculai/privacy explains how KrookedLilly handles this information and your rights.
+**Tips.** HomunculAi is free. If you choose to tip KrookedLilly (through Ko-fi, linked from the KrookedLilly website), the tip is a voluntary gift to KrookedLilly: it is not a payment for HomunculAi and does not unlock anything. Ko-fi and its payment providers handle the tip under their own terms and privacy policies. The KrookedLilly Privacy Notice at krookedlilly.com/games/homunculai/privacy explains what KrookedLilly receives.
 
 Because HomunculAi keeps its data only on your computer, KrookedLilly has no access to your activity log or records, and cannot recover, review, or produce them in response to any request.
 
@@ -149,13 +145,9 @@ These Terms apply only to copies of HomunculAi obtained from an authorized sourc
 
 KrookedLilly reserves the right to take appropriate action, including technical and legal measures, against unauthorized distribution or modification of HomunculAi.
 
-## 10. Downloads, Sales, and Refunds
+## 10. Downloads
 
-**Authorized sources.** You may download HomunculAi from the KrookedLilly website (krookedlilly.com) or from KrookedLilly’s official release page (currently github.com/KrookedLilly/homunculai-releases). Updates installed from Settings come from the same release page.
-
-**Sales.** Licenses are sold through Lemon Squeezy, which is the merchant of record: Lemon Squeezy is the seller, processes your payment, and collects any applicable taxes. KrookedLilly may add or change sellers and download sources and will list them on the HomunculAi page at krookedlilly.com. The seller’s terms apply to the purchase itself in addition to these Terms; where the seller’s mandatory terms conflict with these Terms, the seller’s terms control for the purchase.
-
-**Refunds.** KrookedLilly offers a refund on request within 14 days of purchase. Request it through Lemon Squeezy (the link is in your purchase email) or by writing to support@krookedlilly.com. Refunds are issued by Lemon Squeezy to your original payment method, and Lemon Squeezy may also issue refunds at its own discretion. If you receive a refund, your license ends.
+**Authorized sources.** You may download HomunculAi from the KrookedLilly website (krookedlilly.com) or from KrookedLilly’s official release page (currently github.com/KrookedLilly/homunculai-releases). Updates installed from Settings come from the same release page. KrookedLilly may add or change download sources and will list them on the HomunculAi page at krookedlilly.com.
 
 **Nothing in this section waives any non-waivable statutory consumer rights you may have under the laws of your jurisdiction** — including, without limitation, rights under EU consumer-protection law (including the Consumer Rights Directive 2011/83/EU and the Digital Content Directive (EU) 2019/770), UK consumer law (including the Consumer Rights Act 2015), or Australian Consumer Law. Where such laws require refunds, remedies, or cooling-off periods, those laws prevail over any conflicting provision of these Terms.
 
@@ -163,11 +155,11 @@ KrookedLilly reserves the right to take appropriate action, including technical 
 
 HomunculAi is a software product subject to United States export control laws, including the Export Administration Regulations (EAR), and to economic sanctions administered by the U.S. Department of the Treasury’s Office of Foreign Assets Control (OFAC). **By accepting these Terms and using HomunculAi, you represent and warrant that:**
 
-- You are not located in, under the control of, or a national or resident of any country or region subject to comprehensive U.S. economic sanctions or listed as restricted in the Sales Restrictions document, and you are not listed on any U.S. government list of prohibited or restricted parties;
+- You are not located in, under the control of, or a national or resident of any country or region subject to comprehensive U.S. economic sanctions or listed as restricted in the Download Restrictions document, and you are not listed on any U.S. government list of prohibited or restricted parties;
 - You will not export, re-export, transfer, or use HomunculAi in violation of U.S. export control laws or the sanctions or trade laws of any other applicable jurisdiction;
 - You will comply with all local laws that apply to your use of HomunculAi, including AI-specific requirements in jurisdictions where they apply.
 
-The regions where HomunculAi is not sold or supported are listed in a separate Sales Restrictions document, which KrookedLilly may update from time to time to reflect changes in law, seller policy, or KrookedLilly’s business decisions. **If you are located in a restricted region, you are not authorized to buy or use HomunculAi, and any copy you obtain is unlicensed** (see Section 9). Lemon Squeezy does not accept payments from a number of countries, including several of the restricted regions, and screens payments under its own compliance program; this restriction applies whether or not a purchase goes through.
+The regions where HomunculAi is not offered or supported are listed in a separate Download Restrictions document, which KrookedLilly may update from time to time to reflect changes in law or KrookedLilly’s business decisions. **If you are located in a restricted region, you are not authorized to download or use HomunculAi, and any copy you obtain is unlicensed** (see Section 9).
 
 ## 12. AS-IS, No Warranty
 
@@ -179,7 +171,7 @@ HOMUNCULAI IS PROVIDED “AS IS” AND “AS AVAILABLE,” WITH ALL FAULTS AND W
 
 ## 13. Limitation of Liability
 
-TO THE MAXIMUM EXTENT PERMITTED BY LAW, KROOKEDLILLY WILL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, CONSEQUENTIAL, SPECIAL, EXEMPLARY, PUNITIVE, OR EMOTIONAL DAMAGES, OR FOR ANY LOSS OF DATA, LOSS OF PROFITS, LOSS OF GOODWILL, OR BUSINESS INTERRUPTION, ARISING OUT OF OR RELATED TO YOUR USE OF HOMUNCULAI OR ANY AI-GENERATED CONTENT IT DISPLAYS. This includes, without limitation, damages arising from: (a) acting on advice, instructions, or information generated by an AI; (b) loss or corruption of files, activity logs, records, or avatar state; (c) your decision to verify or otherwise trust any particular AI; (d) the behavior of any third-party AI you connect; (e) loading community-created content; (f) your use of Ignored words to hide flags; and (g) your use of unauthorized, modified, or pirated copies of HomunculAi. KrookedLilly’s total aggregate liability for any claim arising out of or related to HomunculAi will not exceed the greater of (i) the amount you paid for your HomunculAi license in the twelve months before the claim or (ii) USD $100.
+TO THE MAXIMUM EXTENT PERMITTED BY LAW, KROOKEDLILLY WILL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, CONSEQUENTIAL, SPECIAL, EXEMPLARY, PUNITIVE, OR EMOTIONAL DAMAGES, OR FOR ANY LOSS OF DATA, LOSS OF PROFITS, LOSS OF GOODWILL, OR BUSINESS INTERRUPTION, ARISING OUT OF OR RELATED TO YOUR USE OF HOMUNCULAI OR ANY AI-GENERATED CONTENT IT DISPLAYS. This includes, without limitation, damages arising from: (a) acting on advice, instructions, or information generated by an AI; (b) loss or corruption of files, activity logs, records, or avatar state; (c) your decision to verify or otherwise trust any particular AI; (d) the behavior of any third-party AI you connect; (e) loading community-created content; (f) your use of Ignored words to hide flags; and (g) your use of unauthorized, modified, or pirated copies of HomunculAi. KrookedLilly’s total aggregate liability for any claim arising out of or related to HomunculAi will not exceed USD $100.
 
 NOTHING IN THESE TERMS EXCLUDES OR LIMITS ANY LIABILITY THAT CANNOT BE EXCLUDED OR LIMITED UNDER APPLICABLE LAW, INCLUDING LIABILITY FOR DEATH OR PERSONAL INJURY CAUSED BY NEGLIGENCE, FOR FRAUD OR FRAUDULENT MISREPRESENTATION, OR UNDER PRODUCT-LIABILITY LAWS. Some jurisdictions do not allow the exclusion or limitation of certain damages; in those jurisdictions, KrookedLilly’s liability is limited only to the extent permitted by law.
 
@@ -205,15 +197,15 @@ These Terms are governed by the laws of the State of Washington, USA, without re
 
 **Severability.** If any provision of these Terms is held to be invalid, illegal, or unenforceable by a court of competent jurisdiction, that provision will be modified to the minimum extent necessary to make it enforceable, or if modification is not possible, severed from these Terms. The remaining provisions will remain in full force and effect.
 
-**Entire agreement.** These Terms (together with any seller’s terms that apply to your purchase as described in Section 10) constitute the entire agreement between you and KrookedLilly regarding HomunculAi and supersede all prior or contemporaneous understandings, communications, or agreements on the subject.
+**Entire agreement.** These Terms constitute the entire agreement between you and KrookedLilly regarding HomunculAi and supersede all prior or contemporaneous understandings, communications, or agreements on the subject.
 
 **No waiver.** KrookedLilly’s failure to enforce any right or provision of these Terms is not a waiver of that right or provision. No waiver is effective unless made in writing and signed by an authorized representative of KrookedLilly.
 
-**Assignment.** Except for transferring your license as Section 2 allows, you may not assign or transfer these Terms or any rights or licenses granted under them, by operation of law or otherwise, without KrookedLilly’s prior written consent. KrookedLilly may assign these Terms, in whole or in part, without restriction — including in connection with a merger, acquisition, reorganization, or sale of assets. Any unauthorized assignment by you is void.
+**Assignment.** You may not assign or transfer these Terms or any rights or licenses granted under them, by operation of law or otherwise, without KrookedLilly’s prior written consent. KrookedLilly may assign these Terms, in whole or in part, without restriction — including in connection with a merger, acquisition, reorganization, or sale of assets. Any unauthorized assignment by you is void.
 
 **Force majeure.** KrookedLilly is not liable for any failure or delay in performance caused by events beyond its reasonable control, including acts of God, natural disasters, war, terrorism, civil unrest, labor disputes, internet or infrastructure outages, government actions, or pandemics.
 
-**Notices.** Notices to KrookedLilly under these Terms must be sent to `support@krookedlilly.com`. Notices to you may be provided by in-app message, by email to any address you have provided to the seller, or by posting on the KrookedLilly website.
+**Notices.** Notices to KrookedLilly under these Terms must be sent to `support@krookedlilly.com`. Notices to you may be provided by in-app message, by email to any address you have given KrookedLilly, or by posting on the KrookedLilly website.
 
 **Language.** The authoritative version of these Terms is the English language version. Any translations are provided for convenience only; in the event of any inconsistency, the English version controls to the extent permitted by applicable law.
 
@@ -224,8 +216,6 @@ These Terms are governed by the laws of the State of Washington, USA, without re
 ## 19. Contact
 
 Questions about these Terms: **support@krookedlilly.com**
-
-Refunds: through Lemon Squeezy (the link is in your purchase email) or **support@krookedlilly.com** (see Section 10).
 
 Security issues: to report a security vulnerability in HomunculAi, write to **support@krookedlilly.com** with “Security” in the subject line.
 

@@ -13,7 +13,7 @@ The studio name is one word: KrookedLilly. Contact: support@krookedlilly.com. Co
 
 ## Apps
 
-- [HomunculAi](https://www.krookedlilly.com/games/homunculai): A visualization layer for your AI agents, for Windows. It gives the AI you already use (any MCP-compatible client) a desktop body it controls: 45 bodies, custom SVG, two-way chat. HomunculAi does not include an AI of its own. 7-day free trial, then a $4.99 one-time license (a license to use the software, not ownership).
+- [HomunculAi](https://www.krookedlilly.com/games/homunculai): A visualization layer for your AI agents, for Windows. It gives the AI you already use (any MCP-compatible client) a desktop body it controls: 45 bodies, custom SVG, two-way chat. HomunculAi does not include an AI of its own. Free.
 - [SnackTray](https://www.krookedlilly.com/apps/snacktray): macOS menu bar app for custom window snapping layouts across multiple monitors. Download: https://github.com/krookedlilly/snacktray-releases/releases
 
 ## Minecraft mods
