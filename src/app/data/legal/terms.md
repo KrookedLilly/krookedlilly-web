@@ -129,9 +129,9 @@ Any AI, including one that runs locally on your hardware, may have its own netwo
 
 **Your AI’s other abilities.** Your AI may have abilities outside HomunculAi, depending on your AI app — for example, reading files on your computer, browsing the web, running code, or using other applications and services. These abilities come from your AI app (for example Claude Code, or a local model with tool access), **not** from HomunculAi. HomunculAi does not grant, control, monitor, or have visibility into them. Information that your AI obtains with those abilities may appear in your AI’s speech and thought bubbles or on the avatar and may pass through your AI provider’s infrastructure, even though HomunculAi itself did not access it. **KrookedLilly is not responsible for data that your AI accesses, processes, or sends using abilities that exist outside HomunculAi.** You are responsible for understanding and managing everything your AI can do, including outside HomunculAi.
 
-**Tips.** HomunculAi is free. If you choose to tip KrookedLilly (through Ko-fi, linked from the KrookedLilly website), the tip is a voluntary gift to KrookedLilly: it is not a payment for HomunculAi and does not unlock anything. Ko-fi and its payment providers handle the tip under their own terms and privacy policies. The KrookedLilly Privacy Notice at krookedlilly.com/games/homunculai/privacy explains what KrookedLilly receives.
+**Tips.** HomunculAi is free. If you choose to tip KrookedLilly (through Ko-fi, linked from the KrookedLilly website), the tip is a voluntary gift to KrookedLilly: it is not a payment for HomunculAi and does not unlock anything. Ko-fi and its payment providers handle the tip under their own terms and privacy policies.
 
-Because HomunculAi keeps its data only on your computer, KrookedLilly has no access to your activity log or records, and cannot recover, review, or produce them in response to any request.
+Because HomunculAi keeps its data only on your computer, KrookedLilly has no access to your activity log or records, and cannot recover, review, or produce them in response to any request. If you contact KrookedLilly, the Privacy Notice at krookedlilly.com/games/homunculai/privacy explains what KrookedLilly receives.
 
 ## 8. Community-Created Content
 
