@@ -1,6 +1,6 @@
 ## Manufacturer and contact
 
-HomunculAi is made by **KrookedLilly LLC**, 506 N. Sullivan Rd, STE #F182, Spokane, WA 99037, USA. Email: **support@krookedlilly.com**. Website: www.krookedlilly.com.
+HomunculAi is made by **KrookedLilly LLC**, Washington, USA. Email: **support@krookedlilly.com**. Website: www.krookedlilly.com.
 
 ## Reporting a vulnerability
 
