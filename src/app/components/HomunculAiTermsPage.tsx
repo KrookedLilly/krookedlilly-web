@@ -11,7 +11,7 @@ export function HomunculAiTermsPage() {
       title="Terms of Use"
       metaTitle="HomunculAi Terms of Use"
       description="Terms of Use for HomunculAi, the desktop app that gives your AI a body: license, what your AI can do, local data, and consumer rights."
-      path="/games/homunculai/terms"
+      path="/apps/homunculai/terms"
       // Site convention: legal pages stay out of search results (as before v4).
       noIndex
       icon={<FileText className="w-4 h-4" />}

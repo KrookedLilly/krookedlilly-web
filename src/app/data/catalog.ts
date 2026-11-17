@@ -146,13 +146,13 @@ export const catalog: CatalogItem[] = [
     kind: "App",
     type: "Desktop App",
     platforms: ["Windows"],
-    tagline: "What body will your AI make?",
+    tagline: "What would your AI look like?",
     description:
-      "A free app that gives the AI you already use a body on your desktop. Three styles, work states, custom drawings, speech and thought bubbles. Works with any MCP app",
+      "A free desktop avatar for the AI you already use. Three styles, work states, custom drawings, speech and thought bubbles. Works with any MCP app",
     image: imgHomunculAiCard,
     imagePosition: "object-cover",
     status: "Released",
-    path: "/games/homunculai",
+    path: "/apps/homunculai",
   },
   {
     id: "snacktray",

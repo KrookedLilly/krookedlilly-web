@@ -57,8 +57,8 @@ export const linkClass =
 const AUTO_LINKS: { re: string; to: (m: string) => { href: string; internal?: boolean } }[] = [
   { re: "support@krookedlilly\\.com", to: (m) => ({ href: `mailto:${m}` }) },
   {
-    re: "krookedlilly\\.com/games/homunculai/privacy",
-    to: () => ({ href: "/games/homunculai/privacy", internal: true }),
+    re: "krookedlilly\\.com/(?:apps|games)/homunculai/privacy", // the old address too (moved 2026-11-17)
+    to: () => ({ href: "/apps/homunculai/privacy", internal: true }),
   },
   { re: "github\\.com/KrookedLilly/homunculai-releases", to: (m) => ({ href: `https://${m}` }) },
   {
@@ -219,12 +219,12 @@ function blocks(md: string): ReactNode[] {
 
 /** Cross-links to every HomunculAi legal page, shown at the bottom of each. */
 export const LEGAL_LINKS = [
-  { to: "/games/homunculai/terms", label: "Terms of Use" },
-  { to: "/games/homunculai/privacy", label: "Privacy Notice" },
-  { to: "/games/homunculai/sales-restrictions", label: "Download Restrictions" },
-  { to: "/games/homunculai/what-is-ai", label: "About AI" },
-  { to: "/games/homunculai/safety", label: "Safety" },
-  { to: "/games/homunculai/security", label: "Security" },
+  { to: "/apps/homunculai/terms", label: "Terms of Use" },
+  { to: "/apps/homunculai/privacy", label: "Privacy Notice" },
+  { to: "/apps/homunculai/sales-restrictions", label: "Download Restrictions" },
+  { to: "/apps/homunculai/what-is-ai", label: "About AI" },
+  { to: "/apps/homunculai/safety", label: "Safety" },
+  { to: "/apps/homunculai/security", label: "Security" },
 ];
 
 function LegalLinks() {
@@ -277,7 +277,7 @@ export function LegalShell({
         </div>
         <div className="relative max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <Link
-            to="/games/homunculai"
+            to="/apps/homunculai"
             className="flex w-fit items-center gap-2 text-muted-foreground hover:text-primary-light transition-colors text-sm uppercase tracking-wider mb-6"
             style={{ fontFamily: "var(--font-heading)", fontWeight: 600 }}
           >

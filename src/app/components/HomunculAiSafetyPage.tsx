@@ -10,7 +10,7 @@ export function HomunculAiSafetyPage() {
       title="Crisis resources and safety"
       metaTitle="HomunculAi Crisis Resources and Safety"
       description="Crisis resources, and how HomunculAi discloses that the AI you connect is not a human."
-      path="/games/homunculai/safety"
+      path="/apps/homunculai/safety"
       // Site convention: legal pages stay out of search results (as before v4).
       noIndex
       icon={<LifeBuoy className="w-4 h-4" />}

@@ -8,7 +8,7 @@ export function HomunculAiSalesRestrictionsPage() {
       title="Download Restrictions"
       metaTitle="HomunculAi Download Restrictions"
       description="The regions and restricted parties where HomunculAi is not offered or supported."
-      path="/games/homunculai/sales-restrictions"
+      path="/apps/homunculai/sales-restrictions"
       // Site convention: legal pages stay out of search results (as before v4).
       noIndex
       icon={<Globe className="w-4 h-4" />}

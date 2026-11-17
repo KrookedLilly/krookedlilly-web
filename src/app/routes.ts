@@ -68,49 +68,49 @@ export const routes: RouteRecord[] = [
           })),
       },
       {
-        path: "games/homunculai",
+        path: "apps/homunculai",
         lazy: () =>
           import("./components/HomunculAiPage").then((m) => ({
             Component: m.HomunculAiPage,
           })),
       },
       {
-        path: "games/homunculai/terms",
+        path: "apps/homunculai/terms",
         lazy: () =>
           import("./components/HomunculAiTermsPage").then((m) => ({
             Component: m.HomunculAiTermsPage,
           })),
       },
       {
-        path: "games/homunculai/sales-restrictions",
+        path: "apps/homunculai/sales-restrictions",
         lazy: () =>
           import("./components/HomunculAiSalesRestrictionsPage").then((m) => ({
             Component: m.HomunculAiSalesRestrictionsPage,
           })),
       },
       {
-        path: "games/homunculai/what-is-ai",
+        path: "apps/homunculai/what-is-ai",
         lazy: () =>
           import("./components/HomunculAiWhatIsAIPage").then((m) => ({
             Component: m.HomunculAiWhatIsAIPage,
           })),
       },
       {
-        path: "games/homunculai/privacy",
+        path: "apps/homunculai/privacy",
         lazy: () =>
           import("./components/HomunculAiPrivacyPage").then((m) => ({
             Component: m.HomunculAiPrivacyPage,
           })),
       },
       {
-        path: "games/homunculai/security",
+        path: "apps/homunculai/security",
         lazy: () =>
           import("./components/HomunculAiSecurityPage").then((m) => ({
             Component: m.HomunculAiSecurityPage,
           })),
       },
       {
-        path: "games/homunculai/safety",
+        path: "apps/homunculai/safety",
         lazy: () =>
           import("./components/HomunculAiSafetyPage").then((m) => ({
             Component: m.HomunculAiSafetyPage,
@@ -179,6 +179,24 @@ export const routes: RouteRecord[] = [
             Component: m.MinecraftModsPage,
           })),
       },
+      // HomunculAi moved from /games/homunculai to /apps/homunculai (2026-11-17). The old
+      // paths stay alive as redirects: installed copies of the app, the Terms and old
+      // posts link to them.
+      ...[
+        "games/homunculai",
+        "games/homunculai/terms",
+        "games/homunculai/sales-restrictions",
+        "games/homunculai/what-is-ai",
+        "games/homunculai/privacy",
+        "games/homunculai/security",
+        "games/homunculai/safety",
+      ].map((path) => ({
+        path,
+        lazy: () =>
+          import("./components/HomunculAiMoved").then((m) => ({
+            Component: m.HomunculAiMoved,
+          })),
+      })),
       // Retired UI Toolkit detail pages now consolidated into the suite hub.
       // Keep the old paths alive as redirects for existing inbound links.
       ...[

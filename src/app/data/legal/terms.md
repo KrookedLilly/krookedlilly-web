@@ -138,7 +138,7 @@ Any AI, including one that runs locally on your hardware, may have its own netwo
 
 **Tips.** HomunculAi is free. If you choose to tip KrookedLilly (through Ko-fi, linked from the KrookedLilly website), the tip is a voluntary gift to KrookedLilly: it is not a payment for HomunculAi and does not unlock anything. Ko-fi and its payment providers handle the tip under their own terms and privacy policies.
 
-Because HomunculAi keeps its data only on your computer, KrookedLilly has no access to your activity log or records, and cannot recover, review, or produce them in response to any request. If you contact KrookedLilly, the Privacy Notice at krookedlilly.com/games/homunculai/privacy explains what KrookedLilly receives.
+Because HomunculAi keeps its data only on your computer, KrookedLilly has no access to your activity log or records, and cannot recover, review, or produce them in response to any request. If you contact KrookedLilly, the Privacy Notice at krookedlilly.com/apps/homunculai/privacy explains what KrookedLilly receives.
 
 ## 8. Community-Created Content
 
