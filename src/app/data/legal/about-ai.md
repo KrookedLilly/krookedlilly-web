@@ -35,7 +35,7 @@ Most AI apps run only while they are answering you. Your AI checks in with Homun
 
 ## Your data
 
-HomunculAi does not receive what you write to your AI. When you use a cloud-based AI, what you write in your AI app goes to that AI’s provider (for example, Anthropic for Claude or OpenAI for its GPT models) under the provider’s privacy policy, as it always does. What HomunculAi tells your AI about your session (listed in Settings → What your AI can see) goes the same way when your AI checks in. HomunculAi keeps its own data on your computer.
+HomunculAi does not receive what you write to your AI. When you use a cloud-based AI, what you write in your AI app goes to that AI’s provider (for example, Anthropic for Claude or OpenAI for its GPT models) under the provider’s privacy policy, as it always does. What HomunculAi tells your AI about your session (listed in Settings → About → What your AI can see) goes the same way when your AI checks in. HomunculAi keeps its own data on your computer.
 
 Your AI may also have abilities outside HomunculAi, such as reading files on your computer or browsing the web, depending on your AI app. HomunculAi does not give your AI those abilities and cannot prevent it from using them. Know what your AI can do in its own app, not only in HomunculAi.
 

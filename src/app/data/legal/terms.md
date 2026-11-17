@@ -2,6 +2,13 @@ Read these Terms before you use HomunculAi. To use the app, select **Accept**. I
 
 These Terms are an agreement between you and KrookedLilly LLC (“KrookedLilly”), based in Washington, USA.
 
+**In short.** This summary is for convenience only; the full Terms below control.
+- HomunculAi gives an AI you connect an avatar on your desktop. It has no AI of its own and no chat: you talk to your AI in your AI app.
+- Your AI acts only when your AI app uses HomunculAi’s tools. HomunculAi never sends anything to your AI on its own.
+- HomunculAi keeps its data on your computer and makes network requests only in the cases listed in Section 7.
+- You can pause, hide, verify or disconnect your AI at any time, and HomunculAi keeps local records of what your AI did within HomunculAi.
+- HomunculAi is free, for adults 18 and older, and provided “as is”, to the extent the law allows.
+
 **What changed in Version 4.** This summary is for convenience only; the full Terms below control.
 - HomunculAi is described as it works today: it has no chat of its own (you talk to your AI in your AI app), check-in loops (Section 5), what your AI can see (Section 5), and every network request the app makes (Section 7).
 - Section 7 now also describes the records HomunculAi keeps, what uninstalling leaves behind, and the changes HomunculAi makes to AI apps you set up.
@@ -49,7 +56,7 @@ HomunculAi includes a local Model Context Protocol (MCP) server. When your AI co
 - **Only after you verify it in the app**, it can draw its own graphics (“custom drawings”) on the avatar and hide the avatar’s built-in face, body, or hands. Verification lasts until that AI disconnects, and you can remove it at any time.
 - It can see the session information that HomunculAi chooses to share, which is listed in Settings under “What your AI can see”: your ignored words, the reasons you gave for them, and when you added them; whether the session is paused; whether you verified it; your auto-disconnect setting; the avatar style you chose; what you decided when HomunculAi asked you about your AI (for example, allowing or denying a second avatar, or switching the connection off); and the avatar’s current state. Apart from this, HomunculAi does not tell your AI whether you are at your computer, what else you do on it, or anything else about your computer, except that HomunculAi’s script limits (below) follow your computer’s language.
 
-**When your AI acts.** HomunculAi does not run your AI and does not send anything to it on its own. Your AI acts in HomunculAi only when your AI app calls HomunculAi’s tools — usually when you write to your AI in your AI app, or on a check-in loop that you start in your AI app. HomunculAi does not receive or pass on what you write to your AI; that conversation stays in your AI app. Your AI’s speech and thought bubbles fade after one to five minutes, depending on their length.
+**When your AI acts.** HomunculAi does not run your AI and does not send anything to it on its own. Your AI acts in HomunculAi only when your AI app calls HomunculAi’s tools — usually when you write to your AI in your AI app, or on a check-in loop that you start in your AI app. HomunculAi does not receive or pass on what you write to your AI; that conversation stays in your AI app. Your AI’s speech and thought bubbles stay until your AI changes or clears them, or until it leaves.
 
 **Check-in loops.** HomunculAi can copy a message for you to paste into your AI app that asks your AI to check in on a schedule for a limited time (at most two hours). The loop runs in your AI app, not in HomunculAi, and uses your AI app’s usage allowance (see Section 6). You can end it at any time in your AI app or by disconnecting your AI.
 
@@ -112,7 +119,7 @@ HomunculAi keeps its data on your computer. It does not send avatar state, the a
 
 **No account or license key.** HomunculAi needs no account, license key, or activation. Earlier versions stored a license and trial information on your computer (in HomunculAi’s settings folder, in a second HomunculAi folder in your local application data, and, on Windows, in the registry under HKEY_CURRENT_USER\Software\HomunculAi); this version deletes them the first time it starts.
 
-**Records.** HomunculAi keeps local, tamper-evident records of each session, such as connections, actions, settings changes, and flags. The records contain timestamps, action types, character counts, flag reasons, your AI’s name and session ID, and the AI apps you set up with the location of their configuration files. They do not contain the full text of speech and thought bubbles, but a flag reason can quote the word or short piece of text that raised the flag (for example, “password”). The records stay on your computer (Settings → Safety & activity log → Records folder) and exist to give both you and your AI an independent account of what happened. The activity log window shows recent activity and is cleared when HomunculAi closes. You can turn off Keep records in Settings; while it is off, HomunculAi writes no new records.
+**Records.** HomunculAi keeps local, tamper-evident records of each session, such as connections, actions, settings changes, and flags. The records contain timestamps, action types, character counts, flag reasons, your AI’s name and session ID, and the AI apps you set up with the location of their configuration files. They do not contain the full text of speech and thought bubbles, but a flag reason can quote the word or short piece of text that raised the flag (for example, “password”). The records stay on your computer (Settings → Safety → Open records folder) and exist to give both you and your AI an independent account of what happened. The activity log window shows recent activity and is cleared when HomunculAi closes. You can turn off Keep records in Settings; while it is off, HomunculAi writes no new records.
 
 **AI apps you set up.** When you select Set up or Repair for an AI app, HomunculAi adds a HomunculAi entry to that app’s configuration file on your computer, after saving a backup copy. After a HomunculAi update, it restores the entry for AI apps you set up before. When you select Remove, HomunculAi removes its entry, again after saving a backup copy. When you uninstall HomunculAi on Windows, the uninstaller also tries to remove the entry; if it cannot read an app’s configuration file, it leaves that file unchanged.
 
@@ -183,7 +190,7 @@ To the extent permitted by law, you agree to defend, indemnify, and hold harmles
 
 You are interacting with an AI that you connected. Everything your AI says, draws, and expresses through the avatar is generated by that third-party AI; it is not written by a human or by KrookedLilly. Your AI is not a human, even if it says that it is.
 
-HomunculAi shows “This is an AI agent, not a human.” in your AI’s name plate on the avatar (before your AI first appears, in the “Your AI is arriving” notice) each time an AI connects, again at least every three hours while it stays connected, after HomunculAi recovers from a crash, and when HomunculAi notices that your AI wrote that it is human (it checks for common English and Spanish phrases and cannot catch every wording). Each time, it stays visible for 30 seconds and is noted in the activity log. Crisis resources are in Section 4.
+HomunculAi shows “This is an AI agent, not a human.” in your AI’s name plate on the avatar (before your AI first appears, in the status chip above the avatar) each time an AI connects, again at least every three hours while it stays connected, after HomunculAi recovers from a crash, and when HomunculAi notices that your AI wrote that it is human (it checks for common English and Spanish phrases and cannot catch every wording). Each time, it stays visible for 30 seconds and is noted in the activity log. Crisis resources are in Section 4.
 
 ## 16. Updates to These Terms
 
