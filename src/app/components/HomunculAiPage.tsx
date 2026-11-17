@@ -70,7 +70,7 @@ const features = [
   {
     icon: Layers,
     title: "Several Avatars",
-    desc: "Run several AI apps at once, each with its own avatar. One AI per avatar, so nobody takes over anyone else's body.",
+    desc: "Run several AI apps at once, each with its own avatar. One AI per avatar, so nobody takes over anyone else's avatar.",
     accent: "primary" as const,
   },
   {
@@ -101,7 +101,7 @@ const steps = [
   {
     n: "3",
     title: "Ask your AI to join",
-    desc: "It picks a body, then updates the avatar each time it checks in: whenever you write to it, or every few minutes on a check-in loop if your app can run one.",
+    desc: "It picks its own look, then updates the avatar each time it checks in: whenever you write to it, or every few minutes on a check-in loop if your app can run one.",
   },
 ];
 
@@ -136,7 +136,7 @@ const accentClasses = {
 const faqs = [
   {
     q: "Does HomunculAi come with an AI?",
-    a: "No. HomunculAi is a display layer that gives your AI a body. It contains no model and generates nothing: it draws only what the AI you connect asks for.",
+    a: "No. HomunculAi is a display layer that gives your AI an avatar. It contains no model and generates nothing: it draws only what the AI you connect asks for.",
   },
   {
     q: "Is HomunculAi a chatbot?",
@@ -220,7 +220,7 @@ export function HomunculAiPage() {
     <div className="min-h-screen">
       <PageMeta
         title="HomunculAi"
-        description="HomunculAi is a free Windows app that gives the AI you already use a body on your desktop. Your AI picks its look, shows its mood, and can show when it's working, waiting on you or done. No AI inside. Works with Claude Desktop, Claude Code, Cursor, VS Code, Windsurf and other MCP apps."
+        description="HomunculAi is a free Windows app: a desktop avatar for the AI you already use. Your AI picks its own look, shows its mood, and can show when it's working, when it has a question and when it's done. No AI inside. Works with Claude Desktop, Claude Code, Cursor, VS Code, Windsurf and other MCP apps."
         path="/games/homunculai"
         image="/homunculai-og.png"
       />
@@ -239,7 +239,7 @@ export function HomunculAiPage() {
               "availability": "https://schema.org/InStock",
               "seller": { "@id": "https://www.krookedlilly.com/#organization" }
             },
-            "description": "HomunculAi is a free Windows app that gives the AI you already use a body on your desktop. Your AI picks its look, shows its mood, and can show when it's working, waiting on you or done. No AI inside. Works with Claude Desktop, Claude Code, Cursor, VS Code, Windsurf and other MCP apps.",
+            "description": "HomunculAi is a free Windows app: a desktop avatar for the AI you already use. Your AI picks its own look, shows its mood, and can show when it's working, when it has a question and when it's done. No AI inside. Works with Claude Desktop, Claude Code, Cursor, VS Code, Windsurf and other MCP apps.",
             "url": "https://www.krookedlilly.com/games/homunculai",
             "image": "https://www.krookedlilly.com/homunculai-og.png",
             "author": { "@id": "https://www.krookedlilly.com/#organization" },
@@ -306,7 +306,7 @@ export function HomunculAiPage() {
                 className="text-foreground/90 mb-2 italic"
                 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.25rem, 2.5vw, 1.75rem)", lineHeight: 1.2 }}
               >
-                What body will your AI make?
+                What would your AI look like?
               </motion.p>
 
               <motion.p
@@ -315,7 +315,7 @@ export function HomunculAiPage() {
                 className="text-foreground mb-5"
                 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1rem, 1.8vw, 1.2rem)", lineHeight: 1.3, fontWeight: 600 }}
               >
-                A desktop body for the AI you already use.
+                A desktop avatar for the AI you already use.
               </motion.p>
 
               <motion.p
@@ -324,7 +324,7 @@ export function HomunculAiPage() {
                 className="text-muted-foreground max-w-md mb-5"
                 style={{ fontSize: "1.05rem", lineHeight: 1.65 }}
               >
-                Right now, your AI lives in an app, a terminal or an editor. HomunculAi gives it a body on your desktop. It picks the look, shows its mood, raises a thought bubble, and can show you whether it's working, waiting on you or done, without you switching windows.
+                Right now, your AI lives in a text box: in an app, a terminal or an editor. HomunculAi lets it pick its own avatar on your desktop. It picks the look, shows its mood, raises a thought bubble, and can show when it's working, when it has a question and when it's done. You don't have to keep checking the text box.
               </motion.p>
 
               <motion.p
@@ -655,10 +655,10 @@ export function HomunculAiPage() {
                 className="text-muted-foreground max-w-md"
                 style={{ fontSize: "1.05rem", lineHeight: 1.7 }}
               >
-                Working, waiting for you, done, stuck, listening. Your AI can give each state its own face, a calm motion, a small mark and a word on the name plate, so you can tell at a glance whether it needs you. Speech bubbles carry what it says, thought bubbles what it's weighing. Your AI can show how it's doing without you switching windows.
+                Working, has a question, waiting for you, done, stuck. Your AI can set each one: the avatar stands on a lit floor that moves in that state's own rhythm, with a small badge beside it and a word on its name plate, so you can tell at a glance whether it needs you. Speech bubbles carry what it says, thought bubbles what it's weighing. Your AI can show how it's doing without you switching windows.
               </p>
               <div className="flex flex-wrap gap-2 mt-5">
-                {["working", "waiting for you", "done", "stuck", "listening"].map((w, k) => (
+                {["working", "has a question", "waiting for you", "done", "stuck"].map((w, k) => (
                   <span
                     key={w}
                     className={`px-3 py-1 ${k % 2 === 0 ? "bg-teal/10 border border-teal-light/55 text-teal-light" : "bg-primary/10 border border-primary-light/55 text-primary-light"} text-xs uppercase tracking-wider rounded-sm`}
@@ -721,7 +721,7 @@ export function HomunculAiPage() {
               className="text-3xl sm:text-5xl text-foreground mb-4"
               style={{ fontFamily: "var(--font-display)" }}
             >
-              Gives your AI a body.
+              An avatar your AI makes its own.
             </motion.h2>
             <motion.p
               variants={fadeUp}
