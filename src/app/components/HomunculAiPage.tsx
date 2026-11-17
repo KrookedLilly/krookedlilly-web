@@ -91,7 +91,7 @@ const steps = [
   {
     n: "1",
     title: "Install and pick a style",
-    desc: "Download HomunculAi and choose Playful, Sleek or Pixel in Settings. You can change it later.",
+    desc: "Download HomunculAi and choose Playful, Sleek or Pixel in Settings. You can change it later. To see it move before you connect anything, select See a demo: a short preview on your avatar, with no AI involved.",
   },
   {
     n: "2",
