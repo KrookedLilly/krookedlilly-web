@@ -341,7 +341,7 @@ export function SocialsPage() {
       </section>
 
       {/* ═══════════ SUPPORT + NOTIFY ═══════════ */}
-      <section className="py-16 bg-white/[0.02] backdrop-blur-sm border-y-2 border-white/[0.08]">
+      <section id="support" className="py-16 scroll-mt-20 bg-white/[0.02] backdrop-blur-sm border-y-2 border-white/[0.08]">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-10">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-60px" }}>
             <motion.div variants={fadeUp} custom={0} className="inline-block mb-4">
