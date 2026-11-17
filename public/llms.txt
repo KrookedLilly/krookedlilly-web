@@ -13,7 +13,7 @@ The studio name is one word: KrookedLilly. Contact: support@krookedlilly.com. Co
 
 ## Apps
 
-- [HomunculAi](https://www.krookedlilly.com/apps/homunculai): A free Windows app that gives the AI you already use (any MCP-compatible client) a body on your desktop. Three styles (Playful, Sleek, Pixel), 24 bodies each. The AI picks its look, shows its mood and can show its work state (working, waiting for you, done, stuck, listening), and can draw its own body after you verify it. It updates when it checks in: whenever you write to it, or on a check-in loop. HomunculAi does not include an AI of its own. Free, 18+.
+- [HomunculAi](https://www.krookedlilly.com/apps/homunculai): A free Windows app: a desktop avatar for the AI you already use (in apps that can run a local MCP server). Three styles (Playful, Sleek, Pixel), 24 bodies each. The AI picks its look and expression, can show its work state (working, has a question, waiting for you, done, stuck), and can draw its own body after you verify it. It updates when it checks in: whenever you write to it, or on a check-in loop. HomunculAi does not include an AI of its own. Free, 18+.
 - [SnackTray](https://www.krookedlilly.com/apps/snacktray): macOS menu bar app for custom window snapping layouts across multiple monitors. Download: https://github.com/krookedlilly/snacktray-releases/releases
 
 ## Minecraft mods

@@ -148,7 +148,7 @@ export const catalog: CatalogItem[] = [
     platforms: ["Windows"],
     tagline: "What would your AI look like?",
     description:
-      "A free desktop avatar for the AI you already use. Three styles, work states, custom drawings, speech and thought bubbles. Works with any MCP app",
+      "A free desktop avatar for the AI you already use. Three styles, work states, custom drawings, speech and thought bubbles. Works with apps that can run a local MCP server",
     image: imgHomunculAiCard,
     imagePosition: "object-cover",
     status: "Released",

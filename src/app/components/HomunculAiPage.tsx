@@ -58,7 +58,7 @@ const features = [
   {
     icon: Shield,
     title: "Built For Safety",
-    desc: "A label says it's an AI agent, not a human. An activity log shows what it does and marks wording worth a second look. Pause stops it at any time. Custom drawings wait until you verify it.",
+    desc: "A label says it's an AI agent, not a human. An activity log shows what it does and marks wording worth a second look. Pause stops the avatar at any time. Custom drawings wait until you verify it.",
     accent: "primary" as const,
   },
   {
@@ -76,7 +76,7 @@ const features = [
   {
     icon: Plug,
     title: "One-Click Setup",
-    desc: "Claude Desktop, Claude Code, Cursor, VS Code and Windsurf connect in one click. Any other MCP app takes a short manual step.",
+    desc: "Claude Desktop, Claude Code, Cursor, VS Code and Windsurf connect in one click. Other apps that can run a local MCP server take a short manual step.",
     accent: "teal" as const,
   },
   {
@@ -148,7 +148,7 @@ const faqs = [
   },
   {
     q: "What AI tools work with HomunculAi?",
-    a: "Claude Desktop, Claude Code, Cursor, Windsurf, and VS Code have built-in one-click setup. Other AI tools that support the MCP standard can be connected with a short manual step.",
+    a: "Claude Desktop, Claude Code, Cursor, Windsurf, and VS Code have built-in one-click setup. Other AI apps that can run a local MCP server can be connected with a short manual step. HomunculAi is an independent app by KrookedLilly. It is not affiliated with or endorsed by the makers of these apps; product names belong to their owners.",
   },
   {
     q: "Does HomunculAi work with ChatGPT?",
@@ -156,7 +156,7 @@ const faqs = [
   },
   {
     q: "Can I use a local AI like Ollama or LM Studio?",
-    a: "If your local AI supports MCP, yes. Setup would be a manual step rather than automatic, but it can be connected.",
+    a: "If the app you run it in can run a local MCP server, yes. Setup would be a manual step rather than automatic, but it can be connected.",
   },
   {
     q: "Can I talk to my AI in HomunculAi?",
@@ -353,7 +353,7 @@ export function HomunculAiPage() {
                   className="px-3 py-1 bg-teal/10 border border-teal-light/55 text-teal-light text-xs uppercase tracking-wider rounded-sm"
                   style={{ fontFamily: "var(--font-heading)", fontWeight: 700 }}
                 >
-                  Works With Any MCP AI
+                  Connects Through Local MCP
                 </span>
                 <span
                   className="px-3 py-1 bg-primary/10 border border-primary-light/55 text-primary-light text-xs uppercase tracking-wider rounded-sm"
