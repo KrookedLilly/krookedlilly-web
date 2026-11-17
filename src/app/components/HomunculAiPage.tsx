@@ -58,13 +58,13 @@ const features = [
   {
     icon: Shield,
     title: "Built For Safety",
-    desc: "A label says it's an AI agent, not a human. An activity log records what it does and flags wording worth a second look. Pause stops it at any time. Custom drawings wait until you verify it.",
+    desc: "A label says it's an AI agent, not a human. An activity log shows what it does and marks wording worth a second look. Pause stops it at any time. Custom drawings wait until you verify it.",
     accent: "primary" as const,
   },
   {
     icon: PenTool,
-    title: "Custom SVG",
-    desc: "Not feeling the options? Once you verify it, your AI can draw its own body in SVG and wear that instead. Sanitized: no scripts, no outside resources, no fast flashing.",
+    title: "Draws its own body",
+    desc: "Not feeling the options? Once you verify it, your AI can draw its own body (a custom drawing, in SVG) and wear that instead. Sanitized: no scripts, no outside resources, no fast flashing.",
     accent: "teal" as const,
   },
   {
@@ -168,7 +168,7 @@ const faqs = [
   },
   {
     q: "What can my AI see?",
-    a: "Only its own avatar, the options of the style you picked, and a few settings such as whether you paused or verified it. Not your screen, not your files, and not whether you're at your computer.",
+    a: "Only what Settings lists under What your AI can see: its own avatar, the style you picked, whether you paused or verified it, your auto-disconnect setting and your ignored words. Not your screen, not your files, and not whether you're at your computer.",
   },
   {
     q: "What are styles?",
@@ -552,7 +552,7 @@ export function HomunculAiPage() {
               Your AI isn't running all the time. It checks in when you write to it in your AI app, or on a check-in loop. Between check-ins the avatar keeps its last look.
             </p>
             <p className="text-muted-foreground text-sm mt-3" style={{ lineHeight: 1.7 }}>
-              Loops use more of your AI plan, and not every app can run one. Claude Code can. After a quiet while the avatar dims and shows when its AI last checked in, with a button to open your AI app.
+              Loops use more of your AI plan, and not every app can run one. Claude Code can. After a quiet while the avatar dims and can show when its AI last checked in, with a link to open your AI app when your computer can open it.
             </p>
           </motion.div>
         </div>
@@ -683,7 +683,7 @@ export function HomunculAiPage() {
                 src={imgHomunculAiDraws}
                 alt="Lumen, a red paper lantern its AI drew itself, floating over a code editor and saying Lit from within, with a verified shield on its name plate. Beside it, the activity log shows You verified Lumen and Drew custom body."
                 chrome
-                title="Custom SVG"
+                title="Custom drawing"
                 aspect="100%"
                 className="w-64 sm:w-72 md:w-80 rotate-2 hover:rotate-0 transition-transform duration-500"
               />
@@ -699,7 +699,7 @@ export function HomunculAiPage() {
                 className="text-muted-foreground max-w-md"
                 style={{ fontSize: "1.05rem", lineHeight: 1.7 }}
               >
-                Verify your AI with the shield icon on its name plate and it can draw its own body in SVG, or layers on top of one of ours. It wears the drawing right away. Every drawing is sanitized first: no scripts, no outside resources, no fast flashing.
+                Verify your AI with the shield icon on its name plate and it can draw its own body (a custom drawing, in SVG), or layers on top of one of ours. It wears the drawing right away. Every drawing is sanitized first: no scripts, no outside resources, no fast flashing.
               </p>
             </motion.div>
           </motion.div>
