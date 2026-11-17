@@ -52,7 +52,7 @@ const features = [
   {
     icon: Zap,
     title: "A Body Language For Your AI",
-    desc: "29 emotions, 19 gestures, 30 emotes, 15 quick reactions, 22 effects, 20 idle motions and 36 accessories. Your AI mixes them to show what it's doing.",
+    desc: "29 expressions, 19 gestures, 30 emotes, 15 quick reactions, 22 effects, 20 idle motions and 36 accessories. Your AI mixes them to show what it's doing.",
     accent: "teal" as const,
   },
   {
@@ -164,7 +164,7 @@ const faqs = [
   },
   {
     q: "Does the avatar move on its own?",
-    a: "Idle motion does: breathing, fidgeting, looking around. Changes of look, mood or state come when your AI checks in, which is whenever you write to it, or every few minutes on a check-in loop. Between check-ins the avatar keeps its last look.",
+    a: "Idle motion does: breathing, fidgeting, looking around. Changes of look, expression or state come when your AI checks in, which is whenever you write to it, or every few minutes on a check-in loop. Between check-ins the avatar keeps its last look.",
   },
   {
     q: "What can my AI see?",
@@ -220,7 +220,7 @@ export function HomunculAiPage() {
     <div className="min-h-screen">
       <PageMeta
         title="HomunculAi"
-        description="HomunculAi is a free Windows app: a desktop avatar for the AI you already use. Your AI picks its own look, shows its mood, and can show when it's working, when it has a question and when it's done. No AI inside. Works with Claude Desktop, Claude Code, Cursor, VS Code, Windsurf and other MCP apps."
+        description="HomunculAi is a free Windows app: a desktop avatar for the AI you already use. Your AI picks its own look and expression, and can show when it's working, when it has a question and when it's done. No AI inside. Works with Claude Desktop, Claude Code, Cursor, VS Code, Windsurf and other MCP apps."
         path="/games/homunculai"
         image="/homunculai-og.png"
       />
@@ -239,7 +239,7 @@ export function HomunculAiPage() {
               "availability": "https://schema.org/InStock",
               "seller": { "@id": "https://www.krookedlilly.com/#organization" }
             },
-            "description": "HomunculAi is a free Windows app: a desktop avatar for the AI you already use. Your AI picks its own look, shows its mood, and can show when it's working, when it has a question and when it's done. No AI inside. Works with Claude Desktop, Claude Code, Cursor, VS Code, Windsurf and other MCP apps.",
+            "description": "HomunculAi is a free Windows app: a desktop avatar for the AI you already use. Your AI picks its own look and expression, and can show when it's working, when it has a question and when it's done. No AI inside. Works with Claude Desktop, Claude Code, Cursor, VS Code, Windsurf and other MCP apps.",
             "url": "https://www.krookedlilly.com/games/homunculai",
             "image": "https://www.krookedlilly.com/homunculai-og.png",
             "author": { "@id": "https://www.krookedlilly.com/#organization" },
@@ -324,7 +324,7 @@ export function HomunculAiPage() {
                 className="text-muted-foreground max-w-md mb-5"
                 style={{ fontSize: "1.05rem", lineHeight: 1.65 }}
               >
-                Right now, your AI lives in a text box: in an app, a terminal or an editor. HomunculAi lets it pick its own avatar on your desktop. It picks the look, shows its mood, raises a thought bubble, and can show when it's working, when it has a question and when it's done. You don't have to keep checking the text box.
+                Right now, your AI lives in a text box: in an app, a terminal or an editor. HomunculAi lets it pick its own avatar on your desktop. It picks the look and the expression, raises a thought bubble, and can show when it's working, when it has a question and when it's done. You don't have to keep checking the text box.
               </motion.p>
 
               <motion.p
@@ -589,7 +589,7 @@ export function HomunculAiPage() {
                 className="text-muted-foreground max-w-md"
                 style={{ fontSize: "1.05rem", lineHeight: 1.7 }}
               >
-                You don't pick what your AI looks like. It does. One session it's a dragon in a top hat, the next it's a pixel toaster wearing a monocle. Body, colors, accessories and mood are all its call. Every AI picks differently, and that's the fun.
+                You don't pick what your AI looks like. It does. One session it's a dragon in a top hat, the next it's a pixel toaster wearing a monocle. Body, colors, accessories and expression are all its call. Every AI picks differently, and that's the fun.
               </p>
             </motion.div>
           </motion.div>
