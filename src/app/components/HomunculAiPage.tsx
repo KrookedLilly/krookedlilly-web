@@ -571,7 +571,7 @@ export function HomunculAiPage() {
             <motion.div variants={fadeUp} custom={0} className="flex justify-center lg:order-1">
               <DesktopWindow
                 src={imgHomunculAiIdentity}
-                alt="Nine looks picked by AIs across the three styles, such as a Playful dragon in a top hat, a Pixel toaster with a monocle and a Sleek orb"
+                alt="Nine looks your AI could pick, across the three styles, such as a Playful dragon in a top hat, a Pixel toaster with a monocle and a Sleek orb"
                 chrome
                 title="Identity"
                 aspect="100%"
