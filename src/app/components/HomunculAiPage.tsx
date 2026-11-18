@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import { motion } from "motion/react";
 import imgHomunculAiHero from "@/assets/homunculai-hero.webp";
 import homunculAITrailer from "@/assets/homunculai-trailer.mp4";
+// RELEASE BLOCKER: this picture's activity log says "Feeling proud". Swap in marketing's re-shoot from
+// the rebuilt 0.1.5 ("Expression: happy") before deploying (owner 2026-11-18).
 import imgHomunculAiDraws from "@/assets/homunculai-draws.webp";
 import imgHomunculAiIdentity from "@/assets/homunculai-identity.webp";
 import imgHomunculAiStyles from "@/assets/homunculai-styles.webp";
