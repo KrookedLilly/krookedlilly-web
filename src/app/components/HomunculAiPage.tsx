@@ -462,7 +462,7 @@ export function HomunculAiPage() {
             >
               <DesktopWindow
                 src={imgHomunculAiHero}
-                alt="An AI avatar on a desktop: Juniper, an orange fox in a cream scarf (Playful style), one look an AI could pick, floats over a code editor under its name plate, saying Found it. The cache was stale."
+                alt="An AI avatar on a desktop: Juniper, an orange fox in a cream scarf (Playful style), one look an AI could pick, floats over a code editor under its name plate (speaking), saying Found it. The cache was stale."
                 chrome={false}
                 aspect="120%"
                 className="w-64 sm:w-72 md:w-80"
@@ -495,7 +495,7 @@ export function HomunculAiPage() {
             </video>
           </DesktopWindow>
           <p className="mt-4 text-xs text-muted-foreground">
-            Turn the sound on for the voice-over and music. Music: "Return Home" by Harris Heller (StreamBeats).
+            Turn the sound on for the voice-over and music.
           </p>
         </div>
       </section>
@@ -648,7 +648,7 @@ export function HomunculAiPage() {
             <motion.div variants={fadeUp} custom={0} className="flex justify-center lg:order-1">
               <DesktopWindow
                 src={imgHomunculAiStates}
-                alt="Relay, a blue robot with headphones, floating over a code editor on a violet lit floor, with a badge of three dots beside it, its name plate reading working and a thought bubble saying Running the suite"
+                alt="Relay, a blue robot with headphones (Playful style), floating over a code editor on a violet lit floor, with a badge of three dots beside it, its name plate reading working and a thought bubble saying Running the suite"
                 chrome
                 title="Work states"
                 aspect="100%"
