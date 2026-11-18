@@ -21,7 +21,7 @@ const kits: PressKit[] = [
     product: "HomunculAi",
     tagline: "Desktop app for Windows",
     file: "/press-kits/homunculai-press-kit.zip",
-    size: "40 MB",
+    size: "44 MB",
   },
 ];
 

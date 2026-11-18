@@ -1,7 +1,7 @@
 import { useRef, useCallback, useState } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "motion/react";
-import imgHomunculAiHero from "@/assets/homunculai-capsule-vertical.png";
+import imgHomunculAiHero from "@/assets/homunculai-hero.webp";
 import homunculAITrailer from "@/assets/homunculai-trailer.mp4";
 import imgHomunculAiDraws from "@/assets/homunculai-draws.webp";
 import imgHomunculAiIdentity from "@/assets/homunculai-identity.webp";
@@ -211,9 +211,11 @@ export function HomunculAiPage() {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
+  // Muted, the trailer replays (its lines are captioned on screen). Once someone turns the sound
+  // on (voice-over and music), it stops at the end instead of starting over.
   const handleVideoEnded = useCallback(() => {
     setTimeout(() => {
-      if (videoRef.current) {
+      if (videoRef.current?.muted) {
         videoRef.current.currentTime = 0;
         videoRef.current.play();
       }
@@ -460,7 +462,7 @@ export function HomunculAiPage() {
             >
               <DesktopWindow
                 src={imgHomunculAiHero}
-                alt="HomunculAi key art: three AI avatars over a code editor, a green dragon in a top hat, a soft blue orb and a pixel terminal with headphones"
+                alt="An AI avatar on a desktop: Juniper, an orange fox in a cream scarf (Playful style), one look an AI could pick, floats over a code editor under its name plate, saying Found it. The cache was stale."
                 chrome={false}
                 aspect="120%"
                 className="w-64 sm:w-72 md:w-80"
@@ -472,7 +474,7 @@ export function HomunculAiPage() {
 
       {/* ═══════════ DEMO ═══════════ */}
       <section className="py-16 bg-white/[0.02] backdrop-blur-sm border-y-2 border-white/[0.08]">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-center">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center">
           <DesktopWindow
             chrome
             title="Demo"
@@ -485,11 +487,16 @@ export function HomunculAiPage() {
               autoPlay
               muted
               playsInline
+              controls
+              aria-label="HomunculAi trailer, with captions on screen"
               onEnded={handleVideoEnded}
             >
               <source src={homunculAITrailer} type="video/mp4" />
             </video>
           </DesktopWindow>
+          <p className="mt-4 text-xs text-muted-foreground">
+            Turn the sound on for the voice-over and music. Music: "Return Home" by Harris Heller (StreamBeats).
+          </p>
         </div>
       </section>
 
@@ -575,7 +582,7 @@ export function HomunculAiPage() {
             <motion.div variants={fadeUp} custom={0} className="flex justify-center lg:order-1">
               <DesktopWindow
                 src={imgHomunculAiIdentity}
-                alt="Nine looks your AI could pick, across the three styles, such as a Playful dragon in a top hat, a Pixel toaster with a monocle and a Sleek orb"
+                alt="Nine looks your AI could pick, across the three styles, each labelled with its name and body: Nova (Playful cat, bowtie), Rill (Sleek droplet, headphones), Brine (Pixel whale, top hat), Sol (Pixel snail, glasses), Quill (Playful owl, glasses and book), Moss (Sleek pebble, glasses), Mochi (Playful axolotl, flower), Cocoa (Pixel mug) and Tide (Sleek ripple)"
                 chrome
                 title="Identity"
                 aspect="100%"
@@ -608,7 +615,7 @@ export function HomunculAiPage() {
             <motion.div variants={fadeUp} custom={0} className="flex justify-center lg:order-2">
               <DesktopWindow
                 src={imgHomunculAiStyles}
-                alt="The three styles side by side: Playful (an orange fox in a scarf), Sleek (a sand-colored triangle with a monocle) and Pixel (a pixel hamster in a beanie), each labelled with 24 bodies"
+                alt="The three styles side by side, each with one look an AI could pick: Sleek (Tide, a mauve ripple, waiting for you), Playful (Nova, a ginger cat with a navy bow tie, working) and Pixel (Brine, a pixel-art blue whale in a top hat, done), each labelled with 24 bodies"
                 chrome
                 title="Styles"
                 aspect="100%"
@@ -641,7 +648,7 @@ export function HomunculAiPage() {
             <motion.div variants={fadeUp} custom={0} className="flex justify-center lg:order-1">
               <DesktopWindow
                 src={imgHomunculAiStates}
-                alt="Relay, a blue robot with headphones, floating over a code editor with its name plate reading working and a thought bubble saying Running the suite"
+                alt="Relay, a blue robot with headphones, floating over a code editor on a violet lit floor, with a badge of three dots beside it, its name plate reading working and a thought bubble saying Running the suite"
                 chrome
                 title="Work states"
                 aspect="100%"
