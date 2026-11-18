@@ -167,7 +167,7 @@ export const catalog: CatalogItem[] = [
     imagePosition: "object-cover",
     logo: snackTrayLogo,
     status: "Released",
-    path: "/tools/snacktray",
+    path: "/apps/snacktray",
   },
 
   /* ─── Mods ─── */

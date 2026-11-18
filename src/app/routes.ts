@@ -2,6 +2,7 @@ import type { RouteRecord } from "vite-react-ssg";
 import { Layout } from "./components/Layout";
 import { HomePage } from "./components/HomePage";
 import { NotFound } from "./components/NotFound";
+import { movedPages } from "./data/movedPages";
 
 export const routes: RouteRecord[] = [
   {
@@ -130,7 +131,7 @@ export const routes: RouteRecord[] = [
           })),
       },
       {
-        path: "tools/snacktray",
+        path: "apps/snacktray",
         lazy: () =>
           import("./components/SnackTrayPage").then((m) => ({
             Component: m.SnackTrayPage,
@@ -170,6 +171,14 @@ export const routes: RouteRecord[] = [
         lazy: () =>
           import("./components/ToolkitRedirect").then((m) => ({
             Component: m.ToolkitRedirect,
+          })),
+      })),
+      // Pages that moved to a new address (data/movedPages.ts).
+      ...movedPages.map(({ from }) => ({
+        path: from.slice(1),
+        lazy: () =>
+          import("./components/PageMoved").then((m) => ({
+            Component: m.PageMoved,
           })),
       })),
       {

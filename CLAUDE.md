@@ -23,7 +23,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 - `src/main.tsx` — Entry point
 - `src/app/App.tsx` — Root component
-- `src/app/routes.ts` — All route definitions (consumed by `vite-react-ssg` for pre-rendering)
+- `src/app/routes.ts` — All route definitions (consumed by `vite-react-ssg` for pre-rendering). URL layout: games under `/games/...`, apps under `/apps/...`, game dev assets and mods under `/tools/...`.
 - `src/app/components/Layout.tsx` — Shared layout (Navbar, Footer, ambient effects)
 - `src/app/components/` — Page and shared components
 - `src/app/data/` — Single sources of truth for content:
@@ -61,7 +61,7 @@ Only show prices for things sold directly on krookedlilly.com (currently Homuncu
 - Structured data lives in `JsonLd.tsx`. `SiteJsonLd` (rendered by `Layout`) emits the Organization and WebSite nodes on every page; product pages add their own nodes and reference the studio by `ORG_REF`.
 - `public/llms.txt` is a hand-written summary of every product for AI assistants. Update it whenever a product or store link changes.
 - IndexNow: after `npm run deploy`, the `postdeploy` script (`scripts/indexnow.mjs`) waits for GitHub Pages to serve the new build, then submits every sitemap URL so Bing (which also feeds ChatGPT search and Copilot) recrawls immediately. The key is the 32-hex `.txt` file in `public/`; keep it.
-- Retired URLs redirect via a component that emits a meta refresh plus a canonical to the new page (see `ToolkitRedirect.tsx`), since GitHub Pages can't send real 301s.
+- Retired URLs redirect via a component that emits a meta refresh plus a canonical to the new page, since GitHub Pages can't send real 301s. To move a page, add a row to `src/app/data/movedPages.ts`; `PageMoved.tsx` renders the redirect and `routes.ts` pre-renders every row. (`ToolkitRedirect.tsx` is the older one-off for the retired UI Toolkit detail pages.)
 - `ssgOptions.script` must stay `'defer'`. With `'async'`, fast loads (including Googlebot) could run the app before the inline `__VITE_REACT_SSG_HASH__` script at the end of `<body>`, render "Unexpected Application Error", and get pages flagged as soft 404s in Search Console.
 
 ## Dependency audit posture
