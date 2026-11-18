@@ -70,7 +70,7 @@ const features = [
   {
     icon: Layers,
     title: "Several Avatars",
-    desc: "Run several AI apps at once, each with its own avatar. One AI per avatar, so nobody takes over anyone else's avatar.",
+    desc: "Run several AI apps at once, each with its own avatar. One AI per avatar at a time.",
     accent: "primary" as const,
   },
   {
@@ -167,8 +167,12 @@ const faqs = [
     a: "Idle motion does: breathing, fidgeting, looking around. Changes of look, expression or state come when your AI checks in, which is whenever you write to it, or every few minutes on a check-in loop. Between check-ins the avatar keeps its last look.",
   },
   {
+    q: "Does it make sounds?",
+    a: "A few short ones: when your AI arrives or leaves, when it finishes a stretch of work, has a question or gets stuck, and for a high-priority flag. Mute one avatar or all of them in Settings.",
+  },
+  {
     q: "What can my AI see?",
-    a: "Only what Settings lists under What your AI can see: its own avatar, the style you picked, whether you paused or verified it, your auto-disconnect setting and your ignored words. Not your screen, not your files, and not whether you're at your computer.",
+    a: "Only what Settings lists under What your AI can see: the avatar's current state, the style you picked, whether you paused or verified it, your auto-disconnect setting, your ignored words with the reasons and dates you gave, and what you decided when HomunculAi asked you about it (such as allowing a second avatar or switching the connection off). Not your screen, not your files, and not whether you're at your computer.",
   },
   {
     q: "What are styles?",
@@ -192,7 +196,7 @@ const faqs = [
   },
   {
     q: "Does HomunculAi collect my data?",
-    a: "No telemetry, no tracking. HomunculAi goes online only to check for updates (GitHub): when you select Check for updates in Settings, or each time it starts if you allow that (it asks once, at first launch). Send feedback opens a Google Form in your browser. Everything else stays on your computer.",
+    a: "No telemetry, no tracking. HomunculAi goes online only to check for updates and, if you choose, to download one (GitHub): when you select Check for updates in Settings, or each time it starts if you allow that (it asks once, at first launch). Send feedback opens a Google Form in your browser. Everything else stays on your computer.",
   },
   {
     q: "Will my AI remember me between sessions?",
@@ -655,7 +659,7 @@ export function HomunculAiPage() {
                 className="text-muted-foreground max-w-md"
                 style={{ fontSize: "1.05rem", lineHeight: 1.7 }}
               >
-                Working, has a question, waiting for you, done, stuck. Your AI can set each one: the avatar stands on a lit floor that moves in that state's own rhythm, with a small badge beside it and a word on its name plate, so you can tell at a glance whether it needs you. Speech bubbles carry what it says, thought bubbles what it's weighing. Your AI can show how it's doing without you switching windows.
+                Working, has a question, waiting for you, done, stuck. Your AI can set each one: the avatar stands on a lit floor (a status bar in Pixel) that moves in that state's own rhythm, with a small badge beside it and a word on its name plate, so you can tell at a glance whether it needs you. Speech bubbles carry what it says, thought bubbles what it's weighing. Your AI can show how it's doing without you switching windows.
               </p>
               <div className="flex flex-wrap gap-2 mt-5">
                 {["working", "has a question", "waiting for you", "done", "stuck"].map((w, k) => (
