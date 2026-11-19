@@ -3,7 +3,7 @@ import { LegalShell, MarkdownSections } from "./LegalDoc";
 import terms from "../data/legal/terms.md?raw";
 
 /** Effective date of Terms v4. Set to the release date of the build that ships it. */
-const TERMS_EFFECTIVE = "[release date]";
+const TERMS_EFFECTIVE = "November 18, 2026";
 
 export function HomunculAiTermsPage() {
   return (

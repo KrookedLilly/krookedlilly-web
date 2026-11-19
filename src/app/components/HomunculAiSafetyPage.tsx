@@ -2,7 +2,7 @@ import { LifeBuoy } from "lucide-react";
 import { LegalShell, linkClass } from "./LegalDoc";
 
 /** First HomunculAi version without the in-app chat (it displays the AI only). Set when the release number is known. */
-const PROTOCOL_VERSION = "[version]";
+const PROTOCOL_VERSION = "0.1.5";
 
 export function HomunculAiSafetyPage() {
   return (

@@ -1,4 +1,4 @@
-**Last updated: [release date]**
+**Last updated: November 18, 2026**
 
 This notice explains what personal information KrookedLilly receives when you use HomunculAi or contact us about it, and what we do with it. HomunculAi’s Terms of Use (Section 7) describe what the app itself does on your computer.
 
