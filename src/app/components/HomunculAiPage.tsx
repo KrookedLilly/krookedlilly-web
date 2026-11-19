@@ -64,7 +64,7 @@ const features = [
   {
     icon: PenTool,
     title: "Draws its own body",
-    desc: "Not feeling the options? Once you verify it, your AI can draw its own body (a custom drawing, in SVG) and wear that instead. Sanitized: no scripts, no outside resources, no fast flashing.",
+    desc: "Options not enough? Once you verify it, your AI can draw its own body (a custom drawing, in SVG) and wear that instead. Sanitized: no scripts, no outside resources, no fast flashing.",
     accent: "teal" as const,
   },
   {
