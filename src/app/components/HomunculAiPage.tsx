@@ -1,4 +1,4 @@
-import { useRef, useCallback, useState } from "react";
+import { Fragment, useRef, useCallback, useState } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "motion/react";
 import imgHomunculAiHero from "@/assets/homunculai-hero.webp";
@@ -26,6 +26,50 @@ import { PageMeta } from "./PageMeta";
 
 const DOWNLOAD_URL =
   "https://github.com/KrookedLilly/homunculai-releases/releases";
+
+/* ─── legal links (shown above both download buttons) ─── */
+const LEGAL_LINKS = [
+  { to: "/apps/homunculai/terms", label: "Terms of Use" },
+  { to: "/apps/homunculai/sales-restrictions", label: "Download Restrictions" },
+  { to: "/apps/homunculai/what-is-ai", label: "About AI" },
+  { to: "/apps/homunculai/privacy", label: "Privacy" },
+  { to: "/apps/homunculai/safety", label: "Safety" },
+  { to: "/apps/homunculai/security", label: "Security" },
+];
+
+/**
+ * The six links in even rows, so no link sits alone on a line (owner, 2026-11-18): three rows
+ * of two on phones, two rows of three from `sm` up. Zero-height full-width spans force the line
+ * breaks, and the dot before the first link of each row is hidden at that breakpoint. Items
+ * carry their own vertical padding instead of a row gap, so a break adds no extra space.
+ */
+function LegalLinks({ center = false }: { center?: boolean }) {
+  return (
+    <div className={`flex flex-wrap gap-x-4 text-xs ${center ? "justify-center" : ""}`}>
+      {LEGAL_LINKS.map((link, i) => (
+        <Fragment key={link.to}>
+          {i > 0 && i % 2 === 0 && <span aria-hidden="true" className="basis-full h-0 sm:hidden" />}
+          {i > 0 && i % 3 === 0 && <span aria-hidden="true" className="basis-full h-0 hidden sm:block" />}
+          {i > 0 && (
+            <span
+              aria-hidden="true"
+              className={`py-0.5 text-muted-foreground/30 ${i % 2 === 0 ? "hidden sm:inline" : ""} ${i % 3 === 0 ? "sm:hidden" : ""}`}
+            >
+              &middot;
+            </span>
+          )}
+          <Link
+            to={link.to}
+            className={`py-0.5 text-muted-foreground/70 ${i % 2 === 0 ? "hover:text-teal-light" : "hover:text-primary-light"} transition-colors uppercase tracking-wider`}
+            style={{ fontFamily: "var(--font-heading)", fontWeight: 600 }}
+          >
+            {link.label}
+          </Link>
+        </Fragment>
+      ))}
+    </div>
+  );
+}
 
 /* ─── animation variants ─── */
 const fadeUp = {
@@ -370,54 +414,8 @@ export function HomunculAiPage() {
               </motion.div>
 
               {/* Legal links strip above the download buttons */}
-              <motion.div variants={fadeUp} custom={7} className="flex flex-wrap gap-x-4 gap-y-1 mb-3 text-xs">
-                <Link
-                  to="/apps/homunculai/terms"
-                  className="text-muted-foreground/70 hover:text-teal-light transition-colors uppercase tracking-wider"
-                  style={{ fontFamily: "var(--font-heading)", fontWeight: 600 }}
-                >
-                  Terms of Use
-                </Link>
-                <span className="text-muted-foreground/30">&middot;</span>
-                <Link
-                  to="/apps/homunculai/sales-restrictions"
-                  className="text-muted-foreground/70 hover:text-primary-light transition-colors uppercase tracking-wider"
-                  style={{ fontFamily: "var(--font-heading)", fontWeight: 600 }}
-                >
-                  Download Restrictions
-                </Link>
-                <span className="text-muted-foreground/30">&middot;</span>
-                <Link
-                  to="/apps/homunculai/what-is-ai"
-                  className="text-muted-foreground/70 hover:text-teal-light transition-colors uppercase tracking-wider"
-                  style={{ fontFamily: "var(--font-heading)", fontWeight: 600 }}
-                >
-                  About AI
-                </Link>
-                <span className="text-muted-foreground/30">&middot;</span>
-                <Link
-                  to="/apps/homunculai/privacy"
-                  className="text-muted-foreground/70 hover:text-primary-light transition-colors uppercase tracking-wider"
-                  style={{ fontFamily: "var(--font-heading)", fontWeight: 600 }}
-                >
-                  Privacy
-                </Link>
-                <span className="text-muted-foreground/30">&middot;</span>
-                <Link
-                  to="/apps/homunculai/safety"
-                  className="text-muted-foreground/70 hover:text-teal-light transition-colors uppercase tracking-wider"
-                  style={{ fontFamily: "var(--font-heading)", fontWeight: 600 }}
-                >
-                  Safety
-                </Link>
-                <span className="text-muted-foreground/30">&middot;</span>
-                <Link
-                  to="/apps/homunculai/security"
-                  className="text-muted-foreground/70 hover:text-primary-light transition-colors uppercase tracking-wider"
-                  style={{ fontFamily: "var(--font-heading)", fontWeight: 600 }}
-                >
-                  Security
-                </Link>
+              <motion.div variants={fadeUp} custom={7} className="mb-3">
+                <LegalLinks />
               </motion.div>
 
               {/* Download button */}
@@ -814,58 +812,8 @@ export function HomunculAiPage() {
             </motion.p>
 
             {/* Legal links strip above the download buttons */}
-            <motion.div
-              variants={fadeUp}
-              custom={4}
-              className="flex flex-wrap gap-x-4 gap-y-1 mb-4 text-xs justify-center"
-            >
-              <Link
-                to="/apps/homunculai/terms"
-                className="text-muted-foreground/70 hover:text-teal-light transition-colors uppercase tracking-wider"
-                style={{ fontFamily: "var(--font-heading)", fontWeight: 600 }}
-              >
-                Terms of Use
-              </Link>
-              <span className="text-muted-foreground/30">&middot;</span>
-              <Link
-                to="/apps/homunculai/sales-restrictions"
-                className="text-muted-foreground/70 hover:text-primary-light transition-colors uppercase tracking-wider"
-                style={{ fontFamily: "var(--font-heading)", fontWeight: 600 }}
-              >
-                Download Restrictions
-              </Link>
-              <span className="text-muted-foreground/30">&middot;</span>
-              <Link
-                to="/apps/homunculai/what-is-ai"
-                className="text-muted-foreground/70 hover:text-teal-light transition-colors uppercase tracking-wider"
-                style={{ fontFamily: "var(--font-heading)", fontWeight: 600 }}
-              >
-                About AI
-              </Link>
-              <span className="text-muted-foreground/30">&middot;</span>
-              <Link
-                to="/apps/homunculai/privacy"
-                className="text-muted-foreground/70 hover:text-primary-light transition-colors uppercase tracking-wider"
-                style={{ fontFamily: "var(--font-heading)", fontWeight: 600 }}
-              >
-                Privacy
-              </Link>
-              <span className="text-muted-foreground/30">&middot;</span>
-              <Link
-                to="/apps/homunculai/safety"
-                className="text-muted-foreground/70 hover:text-teal-light transition-colors uppercase tracking-wider"
-                style={{ fontFamily: "var(--font-heading)", fontWeight: 600 }}
-              >
-                Safety
-              </Link>
-              <span className="text-muted-foreground/30">&middot;</span>
-              <Link
-                to="/apps/homunculai/security"
-                className="text-muted-foreground/70 hover:text-primary-light transition-colors uppercase tracking-wider"
-                style={{ fontFamily: "var(--font-heading)", fontWeight: 600 }}
-              >
-                Security
-              </Link>
+            <motion.div variants={fadeUp} custom={4} className="mb-4">
+              <LegalLinks center />
             </motion.div>
 
             <motion.div variants={fadeUp} custom={5} className="flex justify-center">
