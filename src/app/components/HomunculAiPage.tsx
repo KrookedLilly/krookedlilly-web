@@ -25,7 +25,7 @@ import { DesktopWindow } from "./DesktopWindow";
 import { PageMeta } from "./PageMeta";
 
 const DOWNLOAD_URL =
-  "https://github.com/KrookedLilly/homunculai-releases/releases/latest";
+  "https://github.com/KrookedLilly/homunculai-releases/releases";
 
 /* ─── animation variants ─── */
 const fadeUp = {
