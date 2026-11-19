@@ -17,7 +17,7 @@ HomunculAi is made by KrookedLilly LLC (“KrookedLilly”), based in Washington
 | Information | Where it comes from | Why we use it | Legal basis (EU/UK) |
 |---|---|---|---|
 | Your email address and anything you write to us | You, when you email support@krookedlilly.com | To answer you | Our legitimate interest in answering questions |
-| Feedback answers (rating, AI apps used, comments, and, if you choose, your app version, operating system, and email address) | You, through the Google Form that Send feedback opens | To improve HomunculAi and, if you gave an email address, to reply | Your consent (sending feedback is optional) |
+| Feedback answers (rating, AI apps used, what isn’t working, comments, and, if you choose, your app version, operating system, and email address) | You, through the Google Form that Send feedback opens | To improve HomunculAi and, if you gave an email address, to reply | Your consent (sending feedback is optional) |
 
 We do not use your information for automated decisions or profiling, and we do not use it to train AI models.
 
@@ -25,14 +25,14 @@ We do not use your information for automated decisions or profiling, and we do n
 
 HomunculAi sends information over the internet only in these cases (Terms of Use, Section 7, has the details):
 
-- **Update checks** (when you select Check in Settings, or each time HomunculAi starts if you turned that on): a request for the list of releases goes to our release page on GitHub. It does not include any usage data.
+- **Update checks** (when you select Check in Settings, or each time HomunculAi starts if you turned that on): a request for the list of releases goes to our release page on GitHub. It does not include any usage data. If you choose to download an update, the installer comes from the same place.
 - **Feedback:** the form opens in your browser on Google Forms. Google receives your answers when the form opens; they are saved as a response only when you select Submit.
 
 Each of these services also receives standard request information, such as your IP address. We do not receive that information from them.
 
 HomunculAi has no chat of its own: you talk to your AI in your AI app, and what you write there goes to your AI’s provider under that provider’s privacy policy. HomunculAi and KrookedLilly never receive it.
 
-Links in the app open web pages in your browser, such as the KrookedLilly website. Those pages, and the services they link to, have their own privacy policies.
+Links in the app open web pages in your browser, such as the KrookedLilly website. Other websites and services that those pages link to have their own privacy policies.
 
 ## Who else receives information
 
