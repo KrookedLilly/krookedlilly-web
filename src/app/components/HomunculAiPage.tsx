@@ -168,7 +168,7 @@ const faqs = [
   },
   {
     q: "Does it make sounds?",
-    a: "A few short ones: when your AI arrives or leaves, when its status goes from working to done, has a question, waiting for you or stuck, and for a high-priority flag. Mute one avatar or all of them in Settings.",
+    a: "A few short ones: when your AI arrives or leaves, when its status changes to done, has a question, waiting for you or stuck, and for a high-priority flag. Choose how often in Settings (Always, Often, Rarely or Off), or mute one avatar or all of them. High-priority flags sound unless muted.",
   },
   {
     q: "What can my AI see?",
