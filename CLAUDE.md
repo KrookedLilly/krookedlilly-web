@@ -40,7 +40,7 @@ Deployed to GitHub Pages with custom domain (`www.krookedlilly.com`). `public/CN
 
 ## Prices
 
-Only show prices for things sold directly on krookedlilly.com (currently HomunculAi). Anything sold on another storefront (Unity Asset Store, itch.io, GameDevMarket, CurseForge, Modrinth, app stores) links to that store with no price on the site, in `llms.txt`, or in structured data, so the site never disagrees with the store. "Free" labels are fine.
+Only show prices for things sold directly on krookedlilly.com (currently nothing: HomunculAi is free since 0.1.5). Anything sold on another storefront (Unity Asset Store, itch.io, GameDevMarket, CurseForge, Modrinth, app stores) links to that store with no price on the site, in `llms.txt`, or in structured data, so the site never disagrees with the store. "Free" labels are fine.
 
 ## Colors
 
@@ -61,7 +61,7 @@ Only show prices for things sold directly on krookedlilly.com (currently Homuncu
 - Structured data lives in `JsonLd.tsx`. `SiteJsonLd` (rendered by `Layout`) emits the Organization and WebSite nodes on every page; product pages add their own nodes and reference the studio by `ORG_REF`.
 - `public/llms.txt` is a hand-written summary of every product for AI assistants. Update it whenever a product or store link changes.
 - IndexNow: after `npm run deploy`, the `postdeploy` script (`scripts/indexnow.mjs`) waits for GitHub Pages to serve the new build, then submits every sitemap URL so Bing (which also feeds ChatGPT search and Copilot) recrawls immediately. The key is the 32-hex `.txt` file in `public/`; keep it.
-- Retired URLs redirect via a component that emits a meta refresh plus a canonical to the new page, since GitHub Pages can't send real 301s. To move a page, add a row to `src/app/data/movedPages.ts`; `PageMoved.tsx` renders the redirect and `routes.ts` pre-renders every row. (`ToolkitRedirect.tsx` is the older one-off for the retired UI Toolkit detail pages.)
+- Retired URLs redirect via a component that emits a meta refresh plus a canonical to the new page, since GitHub Pages can't send real 301s. To move a page, add a row to `src/app/data/movedPages.ts`; `PageMoved.tsx` renders the redirect and `routes.ts` pre-renders every row. (Two older one-offs work the same way: `ToolkitRedirect.tsx` for the retired UI Toolkit detail pages, and `HomunculAiMoved.tsx` for the old `/games/homunculai/*` paths, which installed copies of HomunculAi 0.1.4 and older posts still link to.)
 - `ssgOptions.script` must stay `'defer'`. With `'async'`, fast loads (including Googlebot) could run the app before the inline `__VITE_REACT_SSG_HASH__` script at the end of `<body>`, render "Unexpected Application Error", and get pages flagged as soft 404s in Search Console.
 
 ## Dependency audit posture
