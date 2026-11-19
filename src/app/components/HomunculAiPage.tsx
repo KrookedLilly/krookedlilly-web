@@ -369,7 +369,7 @@ export function HomunculAiPage() {
                 </span>
               </motion.div>
 
-              {/* Legal links strip above buy buttons */}
+              {/* Legal links strip above the download buttons */}
               <motion.div variants={fadeUp} custom={7} className="flex flex-wrap gap-x-4 gap-y-1 mb-3 text-xs">
                 <Link
                   to="/apps/homunculai/terms"
@@ -434,7 +434,7 @@ export function HomunculAiPage() {
                 </a>
               </motion.div>
 
-              {/* Inline 18+ / regional note below buy buttons */}
+              {/* Inline 18+ / regional note below the download buttons */}
               <motion.p
                 variants={fadeUp}
                 custom={9}
@@ -813,7 +813,7 @@ export function HomunculAiPage() {
               No account, no payment, no email.
             </motion.p>
 
-            {/* Legal links strip above buy buttons */}
+            {/* Legal links strip above the download buttons */}
             <motion.div
               variants={fadeUp}
               custom={4}
@@ -882,7 +882,7 @@ export function HomunculAiPage() {
             </motion.div>
 
 
-            {/* Inline 18+ / regional note below buy buttons */}
+            {/* Inline 18+ / regional note below the download buttons */}
             <motion.p
               variants={fadeUp}
               custom={6}
