@@ -1,0 +1,5 @@
+Contact: mailto:support@krookedlilly.com
+Expires: 2027-11-12T00:00:00.000Z
+Preferred-Languages: en
+Policy: https://www.krookedlilly.com/apps/homunculai/security
+Canonical: https://www.krookedlilly.com/.well-known/security.txt
